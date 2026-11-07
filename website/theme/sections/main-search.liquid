@@ -1,0 +1,44 @@
+{{ 'card.css' | asset_url | stylesheet_tag }}
+{{ 'collection.css' | asset_url | stylesheet_tag }}
+{{ 'editorial.css' | asset_url | stylesheet_tag }}
+{%- paginate search.results by 24 -%}
+<header class="chead wrap">
+  <nav class="crumbs label" aria-label="{{ 'collection.breadcrumb' | t }}"><a href="{{ routes.root_url }}">{{ 'general.home_crumb' | t }}</a><span aria-hidden="true">/</span><span aria-current="page">{{ 'search.title' | t }}</span></nav>
+  <div class="chead__row">
+    <h1 class="h1 ctitle">{{ 'search.title' | t }}</h1>
+    <form class="cintro search-form" action="{{ routes.search_url }}" method="get" role="search">
+      <label class="sr" for="search-q">{{ 'search.label' | t }}</label>
+      <input id="search-q" type="search" name="q" value="{{ search.terms | escape }}" placeholder="{{ 'search.placeholder' | t }}" autocomplete="off">
+      <button class="label" type="submit">{{ 'search.submit' | t }}</button>
+    </form>
+  </div>
+</header>
+<section class="plpwrap wrap" aria-label="{{ 'search.title' | t }}">
+  {%- if search.performed -%}
+    <p class="label muted" role="status">{{ 'search.results_for' | t: count: search.results_count, terms: search.terms }}</p>
+    {%- if search.results_count > 0 -%}
+      <div class="plp search-grid">
+        {%- for item in search.results -%}
+          {%- if item.object_type == 'product' -%}
+            {% render 'product-card', product: item %}
+          {%- else -%}
+            <article class="obj"><a href="{{ item.url }}"><div class="cap"><div><div class="name">{{ item.title }}</div><div class="label muted">{{ item.object_type }}</div></div></div></a></article>
+          {%- endif -%}
+        {%- endfor -%}
+      </div>
+      {%- if paginate.pages > 1 -%}
+        <nav class="pager label" aria-label="{{ 'collection.pagination' | t }}">
+          {%- if paginate.previous -%}<a href="{{ paginate.previous.url }}" rel="prev">{{ 'collection.previous' | t }}</a>{%- else -%}<span></span>{%- endif -%}
+          <span class="muted">{{ paginate.current_page }} / {{ paginate.pages }}</span>
+          {%- if paginate.next -%}<a href="{{ paginate.next.url }}" rel="next">{{ 'collection.next' | t }}</a>{%- else -%}<span></span>{%- endif -%}
+        </nav>
+      {%- endif -%}
+    {%- else -%}
+      <div class="empty">{% render 'shape', name: 'bowl' %}<p class="h3">{{ 'search.no_results' | t }}</p><a class="link" href="{{ routes.all_products_collection_url }}">{{ 'cart.continue' | t }}</a></div>
+    {%- endif -%}
+  {%- endif -%}
+</section>
+{%- endpaginate -%}
+{% schema %}
+{ "name": "Search", "settings": [] }
+{% endschema %}

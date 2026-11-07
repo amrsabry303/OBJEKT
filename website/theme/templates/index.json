@@ -1,0 +1,83 @@
+{
+  "sections": {
+    "hero": {
+      "type": "hero",
+      "settings": {
+        "heading": "Objekts\nof Character.",
+        "link_label": "Explore the Collection"
+      }
+    },
+    "selected": {
+      "type": "featured-products",
+      "settings": {
+        "heading": "Selected Objekts",
+        "collection": "all",
+        "limit": 5
+      }
+    },
+    "story": {
+      "type": "editorial-split",
+      "settings": {
+        "label": "Form \u00b7 Material \u00b7 Surface",
+        "heading": "Made to be looked at, then lived with."
+      }
+    },
+    "categories": {
+      "type": "category-index",
+      "settings": {
+        "heading": "Shop by Category"
+      },
+      "blocks": {
+        "c1": {
+          "type": "category",
+          "settings": {
+            "collection": "furniture",
+            "shape": "table"
+          }
+        },
+        "c2": {
+          "type": "category",
+          "settings": {
+            "collection": "table-living",
+            "shape": "lamp"
+          }
+        },
+        "c3": {
+          "type": "category",
+          "settings": {
+            "collection": "objects",
+            "shape": "vase-faceted"
+          }
+        },
+        "c4": {
+          "type": "category",
+          "settings": {
+            "collection": "planters",
+            "shape": "planter"
+          }
+        }
+      },
+      "block_order": [
+        "c1",
+        "c2",
+        "c3",
+        "c4"
+      ]
+    },
+    "edit": {
+      "type": "the-edit",
+      "settings": {
+        "heading": "The Edit",
+        "blog": "the-edit"
+      }
+    }
+  },
+  "order": [
+    "hero",
+    "selected",
+    "story",
+    "categories",
+    "edit"
+  ]
+}
+ 

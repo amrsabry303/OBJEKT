@@ -1,0 +1,67 @@
+{%- comment -%}
+  Availability rules (D-018: this file is the only place they live).
+  Card mode:  render 'availability', product: product            -> dot + one line, aggregated over variants.
+  Buy mode:   render 'availability', product: product, variant: v, mode: 'buy'
+              -> state box, delivery lines, hidden line-item properties and the submit button.
+  A variant is "ready" only when custom.fulfilment = ready; anything else is made to order (D-023).
+  Nothing is shown for lead time or delivery when the data is missing.
+{%- endcomment -%}
+{%- assign only_id = variant.id | default: 0 -%}
+{%- assign ready_count = 0 -%}
+{%- assign mto_count = 0 -%}
+{%- assign wk_min = 0 -%}
+{%- assign wk_max = 0 -%}
+{%- assign d_min = 0 -%}
+{%- assign d_max = 0 -%}
+{%- for v in product.variants -%}
+  {%- if only_id != 0 and v.id != only_id -%}{%- continue -%}{%- endif -%}
+  {%- if v.available -%}
+    {%- if v.metafields.custom.fulfilment.value == 'ready' -%}
+      {%- assign ready_count = ready_count | plus: 1 -%}
+    {%- else -%}
+      {%- assign mto_count = mto_count | plus: 1 -%}
+      {%- assign vmin = v.metafields.custom.lead_time_weeks_min.value | default: 0 -%}
+      {%- assign vmax = v.metafields.custom.lead_time_weeks_max.value | default: 0 -%}
+      {%- if wk_min == 0 or vmin < wk_min and vmin > 0 -%}{%- assign wk_min = vmin -%}{%- endif -%}
+      {%- if vmax > wk_max -%}{%- assign wk_max = vmax -%}{%- endif -%}
+    {%- endif -%}
+    {%- assign d_min = v.metafields.custom.delivery_days_min.value | default: 0 -%}
+    {%- assign d_max = v.metafields.custom.delivery_days_max.value | default: 0 -%}
+  {%- endif -%}
+{%- endfor -%}
+
+{%- if mode == 'buy' -%}
+  {%- if ready_count > 0 -%}{%- assign key = 'ready' -%}{%- elsif mto_count > 0 -%}{%- assign key = 'mto' -%}{%- else -%}{%- assign key = 'out' -%}{%- endif -%}
+  <div class="avail-box" data-state="{{ key }}" aria-live="polite" aria-atomic="true">
+    <p class="avail-state label"><span class="dot{% if key == 'mto' %} dot--mto{% elsif key == 'out' %} dot--out{% endif %}" aria-hidden="true"></span>{% if key == 'ready' %}{{ 'availability.ready' | t }}{% elsif key == 'mto' %}{{ 'availability.mto' | t }}{% else %}{{ 'availability.out' | t }}{% endif %}</p>
+    {%- if key == 'mto' and wk_max > 0 -%}
+      <p class="avail-line">{% if wk_min == wk_max %}{{ 'availability.weeks_one' | t: count: wk_max }}{% else %}{{ 'availability.weeks_range' | t: min: wk_min, max: wk_max }}{% endif %} {{ 'availability.to_make' | t }}</p>
+    {%- endif -%}
+    {%- if key != 'out' and d_max > 0 -%}
+      <p class="avail-line muted">{% if key == 'mto' %}{{ 'availability.delivery_after' | t }}{% else %}{{ 'availability.delivery' | t }}{% endif %} {% if d_min == d_max or d_min == 0 %}{{ 'availability.days_one' | t: count: d_max }}{% else %}{{ 'availability.days_range' | t: min: d_min, max: d_max }}{% endif %}</p>
+    {%- endif -%}
+  </div>
+  <div class="buy" id="buy">
+    {%- if key == 'out' -%}
+      <button class="btn" type="button" disabled>{{ 'availability.out' | t }}</button>
+    {%- else -%}
+      <input type="hidden" name="properties[_fulfilment]" value="{{ key }}">
+      {%- if key == 'mto' and wk_max > 0 -%}<input type="hidden" name="properties[_lead_time_weeks]" value="{% if wk_min == wk_max %}{{ wk_max }}{% else %}{{ wk_min }}-{{ wk_max }}{% endif %}">{%- endif -%}
+      <button class="btn{% if key == 'mto' %} btn--mto{% endif %}" type="submit" name="add" data-add>{% if key == 'mto' %}{{ 'product.add_mto' | t }}{% else %}{{ 'product.add_ready' | t }}{% endif %}</button>
+    {%- endif -%}
+    <p class="status label muted" id="status" role="status"></p>
+  </div>
+{%- else -%}
+  <div class="avail label muted">
+    {%- if ready_count > 0 -%}
+      <span class="dot" aria-hidden="true"></span><span>{{ 'availability.ready' | t }}{% if mto_count > 0 %}<span class="sub">{{ 'availability.more_made_to_order' | t }}</span>{% endif %}</span>
+    {%- elsif mto_count > 0 -%}
+      <span class="dot dot--mto" aria-hidden="true"></span>
+      <span>{{ 'availability.mto' | t }}
+        {%- if wk_max > 0 -%}<span class="sub">{% if wk_min == wk_max %}{{ 'availability.weeks_one' | t: count: wk_max }}{% else %}{{ 'availability.weeks_range' | t: min: wk_min, max: wk_max }}{% endif %}</span>{%- endif -%}
+      </span>
+    {%- else -%}
+      <span class="dot dot--out" aria-hidden="true"></span><span>{{ 'availability.out' | t }}</span>
+    {%- endif -%}
+  </div>
+{%- endif -%}

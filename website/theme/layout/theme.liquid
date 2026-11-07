@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="{{ request.locale.iso_code }}" dir="{{ request.locale.direction | default: 'ltr' }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="{{ settings.color_paper }}">
+  <title>{{ page_title }}{% unless page_title contains shop.name %} · {{ shop.name }}{% endunless %}</title>
+  {%- assign meta_description = page_description -%}
+  {%- if meta_description == blank and template.name == 'product' -%}{%- assign meta_description = product.metafields.custom.short_description.value | strip_html | truncate: 160 -%}{%- endif -%}
+  {% if meta_description != blank %}<meta name="description" content="{{ meta_description | escape }}">{% endif %}
+  <link rel="canonical" href="{{ canonical_url }}">
+  <link rel="icon" href="{{ 'favicon.svg' | asset_url }}" type="image/svg+xml">
+  <link rel="preconnect" href="https://cdn.shopify.com" crossorigin>
+  {% render 'meta-tags', description: meta_description %}
+  {% render 'structured-data' %}
+  <script>document.documentElement.classList.add('js');</script>
+  {% render 'css-variables' %}
+  {{ 'base.css' | asset_url | stylesheet_tag }}
+  {{ content_for_header }}
+</head>
+<body>
+  <a class="skip" href="#main">{{ 'general.skip_to_content' | t }}</a>
+  {% sections 'header-group' %}
+  <main id="main" tabindex="-1">{{ content_for_layout }}</main>
+  {% sections 'footer-group' %}
+</body>
+</html>

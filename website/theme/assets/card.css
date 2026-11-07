@@ -1,0 +1,17 @@
+.obj a { display: block; }
+.obj .ph { position: relative; overflow: hidden; background: var(--field); aspect-ratio: 4 / 5; }
+.obj .ph img { width: 100%; height: 100%; object-fit: cover; }
+.obj .ph .alt { position: absolute; inset: 0; opacity: 0; transition: opacity var(--t-base) var(--ease); }
+@media (hover: hover) { .obj a:hover .alt, .obj a:focus-visible .alt { opacity: 1; } }
+.obj .tag { position: absolute; inset-inline-start: 10px; top: 10px; font-size: 12px; letter-spacing: .1em; text-transform: uppercase; color: var(--ink); font-weight: 500; }
+.obj .cap { display: flex; justify-content: space-between; gap: 16px; padding-block-start: 14px; font-size: var(--fs-small); }
+.obj .cap > div:first-child { min-width: 0; }
+.obj .name { font-weight: 500; }
+.obj .price { white-space: nowrap; }
+.avail { display: flex; align-items: flex-start; gap: 9px; margin-block-start: 6px; font-size: 12px; }
+.avail .dot { margin-block-start: 3px; }
+.avail .sub { display: block; margin-block-start: 2px; font-size: 12px; letter-spacing: 0; text-transform: none; }
+.dot { width: 9px; height: 9px; background: var(--navy); display: inline-block; flex: none; }
+.dot--mto { background: none; border: 1.25px solid var(--navy); }
+.dot--out { background: none; border: 1.25px solid var(--grey-text); position: relative; }
+.dot--out::after { content: ""; position: absolute; inset-inline: -1px; top: 50%; height: 1.25px; background: var(--grey-text); transform: rotate(-45deg); }

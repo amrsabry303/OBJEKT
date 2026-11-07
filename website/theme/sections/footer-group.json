@@ -1,0 +1,15 @@
+{
+  "name": "Footer",
+  "type": "footer",
+  "sections": {
+    "footer": {
+      "type": "footer",
+      "blocks": {
+        "support": { "type": "links", "settings": { "title": "Support", "menu": "footer" } },
+        "policies": { "type": "links", "settings": { "title": "Policies", "menu": "footer" } }
+      },
+      "block_order": ["support", "policies"]
+    }
+  },
+  "order": ["footer"]
+}

@@ -1,0 +1,9 @@
+{{ 'editorial.css' | asset_url | stylesheet_tag }}
+<header class="ahead wrap">
+  <nav class="crumbs label" aria-label="{{ 'collection.breadcrumb' | t }}"><a href="{{ routes.root_url }}">{{ 'general.home_crumb' | t }}</a><span aria-hidden="true">/</span><span aria-current="page">{{ page.title }}</span></nav>
+  <h1 class="atitle">{{ page.title }}</h1>
+</header>
+<div class="pagebody abody wrap"><div class="prose">{{ page.content }}</div></div>
+{% schema %}
+{ "name": "Page", "settings": [] }
+{% endschema %}

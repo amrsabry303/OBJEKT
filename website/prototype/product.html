@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Drum side table — OBJEKT (prototype)</title>
+<meta name="description" content="Drum side table, product page visual prototype with sample data.">
+<meta name="theme-color" content="#F7F5F1">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/tokens.css">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/home.css">
+<link rel="stylesheet" href="css/product.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<!-- Placeholder object forms. Flat, geometric, deliberately not photography. -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="vase" viewBox="0 0 200 200" stroke-linejoin="round" stroke-width="3"><path d="M84 34h32v24l34 34v78l-14 20H64l-14-20V92l34-34z" fill="var(--obj)" stroke="var(--obj)"/><path d="M84 34h32v8H84z" fill="var(--obj-top)" stroke="var(--obj-top)"/></symbol>
+  <symbol id="arch" viewBox="0 0 200 200" stroke-linejoin="round" stroke-width="3"><path d="M44 190V100l50-38 62 40v88z" fill="var(--obj)" stroke="var(--obj)"/><path d="M76 190v-72l22-16 26 18v70z" fill="var(--obj-top)" stroke="var(--obj-top)"/></symbol>
+  <symbol id="stool" viewBox="0 0 200 200" stroke-linejoin="round" stroke-width="3"><path d="M56 190v-80l14-14h60l14 14v80z" fill="var(--obj)" stroke="var(--obj)"/><path d="M70 96h60l14 14H56z" fill="var(--obj-top)" stroke="var(--obj-top)"/></symbol>
+  <symbol id="plinth" viewBox="0 0 200 200" stroke-linejoin="round" stroke-width="3"><path d="M68 190v-44h64v44z" fill="var(--obj)" stroke="var(--obj)"/><path d="M100 70l36 22v40l-36 14-36-14V92z" fill="var(--obj-top)" stroke="var(--obj-top)"/></symbol>
+  <symbol id="lamp" viewBox="0 0 200 200" stroke-linejoin="round" stroke-width="3"><path d="M97 80h6v104h-6z" fill="var(--obj)" stroke="var(--obj)"/><path d="M60 82l24-40h32l24 40z" fill="var(--obj-top)" stroke="var(--obj-top)"/><path d="M68 190l6-8h52l6 8z" fill="var(--obj)" stroke="var(--obj)"/></symbol>
+  <symbol id="tray" viewBox="0 0 200 200" stroke-linejoin="round" stroke-width="3"><path d="M22 182l8-14h140l8 14z" fill="var(--obj)" stroke="var(--obj)"/><path d="M50 168l10-26h28l10 26z" fill="var(--obj-top)" stroke="var(--obj-top)"/><path d="M114 168l8-16h22l8 16z" fill="var(--obj-top)" stroke="var(--obj-top)"/></symbol>
+  <symbol id="console" viewBox="0 0 200 200" stroke-linejoin="round" stroke-width="3"><path d="M18 104l8-8h148l8 8v12H18z" fill="var(--obj)" stroke="var(--obj)"/><path d="M34 116h12l-6 74H30z" fill="var(--obj)" stroke="var(--obj)"/><path d="M154 116h12l4 74h-10z" fill="var(--obj)" stroke="var(--obj)"/><path d="M82 104V78l10-8h16l10 8v26z" fill="var(--obj-top)" stroke="var(--obj-top)"/></symbol>
+</svg>
+
+<div class="proto-bar" role="note">Visual prototype · placeholder imagery and sample data · not for sale</div>
+
+<header class="hdr">
+  <div class="hdr__in wrap">
+    <button class="menu-btn label" data-menu-open aria-expanded="false" aria-controls="menu">Menu</button>
+    <nav aria-label="Primary">
+      <ul>
+        <li class="has-panel"><a class="label" href="collection.html">Shop</a>
+          <div class="panel" id="shop-panel">
+            <div class="panel__in wrap">
+              <div class="panel__col"><p class="label muted">Shop</p><ul>
+                <li><a href="collection.html?cat=furniture">Furniture</a></li>
+                <li><a href="collection.html?cat=living">Table &amp; Living</a></li>
+                <li><a href="collection.html?cat=objects">Objects</a></li>
+                <li><a href="collection.html?cat=planters">Planters</a></li>
+              </ul></div>
+              <a class="panel__feat" href="product.html"><div class="ph ph--paper"><svg viewBox="0 0 200 200" preserveAspectRatio="xMidYMax meet" aria-hidden="true"><use href="#stool"/></svg><span class="tag">Placeholder · featured object</span></div><span class="label">Drum side table</span></a>
+            </div>
+          </div>
+        </li>
+        <li><a class="label" href="index.html#collection">Collections</a></li>
+        <li><a class="label" href="edit.html">The Edit</a></li>
+        <li><a class="label" href="about.html">About</a></li>
+      </ul>
+    </nav>
+    <a class="wordmark" href="index.html" aria-label="OBJEKT home"><img src="assets/objekt-wordmark.svg" alt="" width="100" height="22"></a>
+    <div class="hdr__tools">
+      <a class="label tool-desktop" href="#">Search</a>
+      <a class="label tool-desktop" href="#">Account</a>
+      <a class="label" href="cart.html">Bag (<span data-bag>0</span>)</a>
+    </div>
+  </div>
+</header>
+
+<dialog id="menu" class="menu" aria-label="Menu">
+  <div class="menu__top wrap">
+    <a class="wordmark" href="index.html" aria-label="OBJEKT home"><img src="assets/objekt-wordmark.svg" alt="" width="100" height="22"></a>
+    <button class="label" data-menu-close>Close</button>
+  </div>
+  <div class="menu__body">
+    <details>
+      <summary>Shop</summary>
+      <ul>
+        <li><a href="collection.html?cat=furniture">Furniture</a></li>
+        <li><a href="collection.html?cat=living">Table &amp; Living</a></li>
+        <li><a href="collection.html?cat=objects">Objects</a></li>
+        <li><a href="collection.html?cat=planters">Planters</a></li>
+      </ul>
+    </details>
+    <a href="index.html#collection">Collections</a>
+    <a href="edit.html">The Edit</a>
+    <a href="about.html">About</a>
+  </div>
+  <div class="menu__foot label"><a href="#">Search</a><a href="#">Account</a><a href="cart.html">Bag (<span data-bag>0</span>)</a></div>
+</dialog>
+
+<main id="main">
+  <nav class="crumbs wrap label" aria-label="Breadcrumb">
+    <a href="index.html">Home</a><span aria-hidden="true">/</span><a href="#">Furniture</a><span aria-hidden="true">/</span><span aria-current="page">Drum side table</span>
+  </nav>
+
+  <div class="pdp wrap" id="pdp">
+    <!-- Gallery: four registers (studio, lifestyle, detail, material) -->
+    <div class="gallery" id="gallery" role="group" aria-label="Product images, placeholders">
+      <div class="g g1 ph" id="g-studio"><svg viewBox="0 0 200 200" preserveAspectRatio="xMidYMax meet" aria-hidden="true"><use href="#stool"/></svg><span class="tag">Placeholder · sculptural studio</span></div>
+      <div class="g g2 ph ph--paper"><svg viewBox="0 0 600 750" preserveAspectRatio="xMidYMax slice" aria-hidden="true"><rect width="600" height="750" fill="#D9CFC2"/><path d="M0 560l600-40v230H0z" fill="#C4B7A6"/><path d="M360 0h240v540L360 520z" fill="#CBBFAE"/><use href="#stool" x="120" y="300" width="330" height="330"/></svg><span class="tag">Placeholder · editorial lifestyle</span></div>
+      <div class="g g3 ph"><svg viewBox="40 84 120 80" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect x="0" y="0" width="200" height="200" fill="#E2D9CF"/><use href="#stool" width="200" height="200"/></svg><span class="tag">Placeholder · detail</span></div>
+      <div class="g g4 ph ph--paper"><svg viewBox="0 0 900 600" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="900" height="600" fill="#EDE6DD"/><path d="M0 200L300 150l320 70 280-40v420H0z" fill="var(--obj)"/><path d="M0 330l260-40 340 80 300-50v280H0z" fill="var(--obj-top)"/><path d="M0 470l300-30 300 60 300-40v140H0z" fill="var(--obj)"/></svg><span class="tag">Placeholder · material surface</span></div>
+      <p class="g-count label" id="g-count" aria-hidden="true">1 / 4</p>
+    </div>
+
+    <div class="info">
+      <p class="label muted">Furniture · Side tables</p>
+      <h1 class="h2 title">Drum side table</h1>
+      <p class="ref label muted">Ref. SMP-02 <span class="sample">· sample data</span></p>
+      <p class="price" id="price" aria-live="off">EGP 9,800</p>
+      <p class="lede">Short editorial description goes here, written with OBJEKT. Placeholder text: no specifications or claims have been supplied.</p>
+
+      <fieldset class="finish">
+        <legend class="label">Finish <span id="finish-name" class="muted"></span></legend>
+        <div id="finish-list" class="finish__list"></div>
+      </fieldset>
+
+      <div class="avail-box" id="avail" aria-live="polite" aria-atomic="true">
+        <p class="avail-state label" id="avail-state"></p>
+        <p class="avail-line" id="avail-l1"></p>
+        <p class="avail-line muted" id="avail-l2"></p>
+      </div>
+
+      <div class="buy" id="buy">
+        <button class="btn" id="add" type="button"></button>
+        <p class="status label muted" id="status" role="status"></p>
+      </div>
+
+      <dl class="specs">
+        <div><dt class="label muted">Material</dt><dd id="spec-material"></dd></div>
+        <div><dt class="label muted">Finish</dt><dd id="spec-finish"></dd></div>
+        <div><dt class="label muted">Dimensions</dt><dd>To be supplied</dd></div>
+      </dl>
+
+      <div class="acc">
+        <details open><summary><span class="label">The Story</span><i aria-hidden="true"></i></summary><p>Story text to be written with OBJEKT. Nothing about origin, designer or process is stated until supplied.</p></details>
+        <details><summary><span class="label">Materials &amp; Craftsmanship</span><i aria-hidden="true"></i></summary><p>Material and making notes to be supplied. This section reads from the product's metafields in the theme.</p></details>
+        <details><summary><span class="label">Dimensions</span><i aria-hidden="true"></i></summary><p>Dimension rows (width, depth, height, diameter, weight) to be supplied per product type.</p></details>
+        <details><summary><span class="label">Care Instructions</span><i aria-hidden="true"></i></summary><p>Care notes to be supplied per material.</p></details>
+        <details><summary><span class="label">Delivery &amp; Returns</span><i aria-hidden="true"></i></summary><p>Delivery areas, costs, returns and made-to-order terms to be confirmed by OBJEKT. The estimates above come from product data, not from this text.</p></details>
+      </div>
+    </div>
+  </div>
+
+  <section class="sec wrap" aria-labelledby="igc-h">
+    <div class="sec__head"><h2 class="label" id="igc-h">In Good Company</h2></div>
+    <div class="igc">
+      <article class="obj"><a href="#"><div class="ph ph--paper"><svg viewBox="0 0 200 200" preserveAspectRatio="xMidYMax meet" aria-hidden="true"><use href="#plinth"/></svg><span class="tag">Placeholder</span></div><div class="cap"><div><div class="name">Pedestal</div><div class="avail label muted"><span class="dot"></span>Ready to deliver</div></div><div class="muted">EGP 7,400</div></div></a></article>
+      <article class="obj"><a href="#"><div class="ph"><svg viewBox="0 0 200 200" preserveAspectRatio="xMidYMax meet" aria-hidden="true"><use href="#vase"/></svg><span class="tag">Placeholder</span></div><div class="cap"><div><div class="name">Tall vase</div><div class="avail label muted"><span class="dot"></span>Ready to deliver</div></div><div class="muted">EGP 4,800</div></div></a></article>
+      <article class="obj"><a href="#"><div class="ph ph--ink"><svg viewBox="0 0 200 200" preserveAspectRatio="xMidYMax meet" aria-hidden="true"><use href="#console"/></svg><span class="tag">Placeholder</span></div><div class="cap"><div><div class="name">Coffee table</div><div class="avail label muted"><span class="dot dot--mto"></span>Made to order · 8–10 wks</div></div><div class="muted">EGP 24,500</div></div></a></article>
+    </div>
+  </section>
+</main>
+
+<div class="sticky-buy" id="sticky" hidden>
+  <div><p class="label muted" id="sticky-state"></p><p class="price" id="sticky-price"></p></div>
+  <button class="btn" id="sticky-add" type="button"></button>
+</div>
+
+<!-- 7 · Footer -->
+<footer class="ftr">
+  <div class="grid ftr__grid">
+    <div class="news">
+      <h2 class="h3">New objects, first.</h2>
+      <form data-news>
+        <label class="sr" for="em">Email address</label>
+        <input id="em" type="email" placeholder="Email address" autocomplete="email" required>
+        <button class="label" type="submit">Subscribe</button>
+      </form>
+    </div>
+    <div class="fcol"><span class="label">Support</span><ul><li><a href="#">Contact</a></li><li><a href="#">Care</a></li><li><a href="#">FAQ</a></li></ul></div>
+    <div class="fcol"><span class="label">Shipping</span><ul><li><a href="#">Delivery</a></li><li><a href="#">Made to order</a></li><li><a href="#">Returns</a></li></ul></div>
+    <div class="fcol"><span class="label">Policies</span><ul><li><a href="#">Terms</a></li><li><a href="#">Privacy</a></li><li><a href="#">Refunds</a></li></ul></div>
+    <div class="fcol"><span class="label">Follow</span><ul><li><a href="#">Instagram</a></li><li><a href="#">Pinterest</a></li></ul></div>
+  </div>
+  <div class="ftr__base">
+    <img class="ftr__logo" src="assets/objekt-wordmark.svg" alt="OBJEKT" width="410" height="90">
+    <small>Contact details, social handles and policy copy to be supplied. © OBJEKT</small>
+  </div>
+</footer>
+
+<script src="js/proto.js"></script>
+<script src="js/product.js"></script>
+</body>
+</html>

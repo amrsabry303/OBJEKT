@@ -1,0 +1,135 @@
+{{ 'card.css' | asset_url | stylesheet_tag }}
+{{ 'collection.css' | asset_url | stylesheet_tag }}
+{%- paginate collection.products by section.settings.per_page -%}
+<div id="collection-root" data-section-id="{{ section.id }}">
+  <header class="chead wrap">
+    <nav class="crumbs label" aria-label="{{ 'collection.breadcrumb' | t }}">
+      <a href="{{ routes.root_url }}">{{ 'general.home_crumb' | t }}</a><span aria-hidden="true">/</span><span aria-current="page">{{ collection.title }}</span>
+    </nav>
+    <div class="chead__row">
+      <h1 class="h1 ctitle">{{ collection.title }}</h1>
+      <div class="cintro">
+        {%- if collection.description != blank -%}<div class="lead">{{ collection.description }}</div>{%- endif -%}
+      </div>
+    </div>
+  </header>
+
+  {%- if section.settings.show_image and collection.image -%}
+    <div class="cband">{{ collection.image | image_url: width: 2000 | image_tag: loading: 'eager', widths: '800, 1200, 1600, 2000', sizes: '100vw', alt: collection.image.alt | default: collection.title }}</div>
+  {%- endif -%}
+
+  <div class="toolbar" id="toolbar">
+    <div class="toolbar__in wrap">
+      {%- if collection.filters.size > 0 -%}
+        <button class="tbtn label" id="open-filters" type="button" aria-haspopup="dialog" aria-controls="drawer" hidden>{{ 'collection.filter' | t }}</button>
+      {%- else -%}<span></span>{%- endif -%}
+      <p class="label muted" id="rcount" role="status" aria-live="polite">{{ 'collection.results' | t: count: collection.products_count }}</p>
+      <div class="sort">
+        <label class="label" for="sort">{{ 'collection.sort' | t }}</label>
+        {%- assign sort_by = collection.sort_by | default: collection.default_sort_by -%}
+        <select id="sort" name="sort_by" form="filters-form">
+          {%- for option in collection.sort_options -%}
+            <option value="{{ option.value }}"{% if option.value == sort_by %} selected{% endif %}>{{ option.name }}</option>
+          {%- endfor -%}
+        </select>
+      </div>
+    </div>
+    {%- assign chips = false -%}
+    {%- for filter in collection.filters -%}
+      {%- if filter.active_values.size > 0 -%}{%- assign chips = true -%}{%- endif -%}
+      {%- if filter.type == 'price_range' and filter.min_value.value != blank or filter.type == 'price_range' and filter.max_value.value != blank -%}{%- assign chips = true -%}{%- endif -%}
+    {%- endfor -%}
+    {%- if chips -%}
+      <div class="chips wrap" aria-label="{{ 'collection.active_filters' | t }}">
+        {%- for filter in collection.filters -%}
+          {%- if filter.type == 'price_range' -%}
+            {%- if filter.min_value.value != blank or filter.max_value.value != blank -%}
+              <a class="chip" href="{{ filter.url_to_remove }}">{{ filter.label }}: {{ filter.min_value.value | default: 0 | money }}–{{ filter.max_value.value | default: filter.range_max | money }} <span aria-hidden="true">×</span><span class="sr">{{ 'collection.remove' | t }}</span></a>
+            {%- endif -%}
+          {%- else -%}
+            {%- for value in filter.active_values -%}
+              <a class="chip" href="{{ value.url_to_remove }}"><span class="lbl">{% render 'filter-value-label', value: value %}</span> <span aria-hidden="true">×</span><span class="sr">{{ 'collection.remove' | t }}</span></a>
+            {%- endfor -%}
+          {%- endif -%}
+        {%- endfor -%}
+      </div>
+    {%- endif -%}
+  </div>
+
+  <section class="plpwrap wrap" aria-label="{{ 'collection.products' | t }}">
+    {%- if collection.products.size > 0 -%}
+      <div class="plp">
+        {%- for product in collection.products -%}{% render 'product-card', product: product %}{%- endfor -%}
+      </div>
+      {%- if paginate.pages > 1 -%}
+        <nav class="pager label" aria-label="{{ 'collection.pagination' | t }}">
+          {%- if paginate.previous -%}<a href="{{ paginate.previous.url }}" rel="prev">{{ 'collection.previous' | t }}</a>{%- else -%}<span></span>{%- endif -%}
+          <span class="muted">{{ paginate.current_page }} / {{ paginate.pages }}</span>
+          {%- if paginate.next -%}<a href="{{ paginate.next.url }}" rel="next">{{ 'collection.next' | t }}</a>{%- else -%}<span></span>{%- endif -%}
+        </nav>
+      {%- endif -%}
+    {%- else -%}
+      <div class="empty">
+        {% render 'shape', name: 'vase' %}
+        {%- if collection.all_products_count > 0 and collection.products_count == 0 -%}
+          <p class="h3">{{ 'collection.empty_filtered' | t }}</p>
+          <a class="link" href="{{ collection.url }}{% if collection.sort_by != blank %}?sort_by={{ collection.sort_by }}{% endif %}">{{ 'collection.clear_all' | t }}</a>
+        {%- else -%}
+          <p class="h3">{{ 'collection.empty' | t }}</p>
+        {%- endif -%}
+      </div>
+    {%- endif -%}
+  </section>
+
+  {%- if collection.filters.size > 0 -%}
+    <dialog class="drawer" id="drawer" aria-label="{{ 'collection.filter' | t }}">
+      <form id="filters-form" class="drawer__panel" method="get" action="{{ collection.url }}">
+        <div class="drawer__top"><h2 class="label">{{ 'collection.filter' | t }}</h2><button class="tbtn label" id="close-filters" type="button" hidden>{{ 'general.close' | t }}</button></div>
+        <div class="drawer__body" id="fbody">
+          {%- for filter in collection.filters -%}
+            <details class="fg"{% if filter.active_values.size > 0 or filter.type == 'price_range' and filter.min_value.value != blank %} open{% endif %}>
+              <summary class="label"><span>{{ filter.label }}</span><i aria-hidden="true"></i></summary>
+              <fieldset>
+                <legend class="sr">{{ filter.label }}</legend>
+                {%- if filter.type == 'price_range' -%}
+                  <div class="price-range">
+                    <label>{{ 'collection.from' | t }} <input type="number" name="{{ filter.min_value.param_name }}" value="{{ filter.min_value.value | money_without_currency | remove: ',' }}" min="0" inputmode="numeric" placeholder="0" dir="ltr"></label>
+                    <label>{{ 'collection.to' | t }} <input type="number" name="{{ filter.max_value.param_name }}" value="{{ filter.max_value.value | money_without_currency | remove: ',' }}" min="0" inputmode="numeric" placeholder="{{ filter.range_max | money_without_currency | remove: ',' }}" dir="ltr"></label>
+                  </div>
+                {%- else -%}
+                  <ul>
+                    {%- for value in filter.values -%}
+                      {%- assign is_zero = false -%}
+                      {%- if value.count == 0 and value.active == false -%}{%- assign is_zero = true -%}{%- endif -%}
+                      <li>
+                        <label class="fo{% if is_zero %} is-zero{% endif %}">
+                          <input type="checkbox" name="{{ value.param_name }}" value="{{ value.value }}"{% if value.active %} checked{% endif %}{% if is_zero %} disabled{% endif %}>
+                          <span class="bx" aria-hidden="true"></span><span class="lbl">{% render 'filter-value-label', value: value %}</span><span class="ct">{{ value.count }}</span>
+                        </label>
+                      </li>
+                    {%- endfor -%}
+                  </ul>
+                {%- endif -%}
+              </fieldset>
+            </details>
+          {%- endfor -%}
+        </div>
+        <div class="drawer__foot">
+          <a class="link" href="{{ collection.url }}">{{ 'collection.clear_all' | t }}</a>
+          <button class="btn" id="show-results" type="submit">{{ 'collection.show' | t: count: collection.products_count }}</button>
+        </div>
+      </form>
+    </dialog>
+  {%- endif -%}
+</div>
+{%- endpaginate -%}
+<script src="{{ 'collection.js' | asset_url }}" defer></script>
+{% schema %}
+{
+  "name": "Collection",
+  "settings": [
+    { "type": "range", "id": "per_page", "min": 8, "max": 48, "step": 4, "default": 24, "label": "Products per page" },
+    { "type": "checkbox", "id": "show_image", "label": "Show the collection image", "default": true }
+  ]
+}
+{% endschema %}

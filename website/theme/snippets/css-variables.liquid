@@ -1,0 +1,19 @@
+{%- comment -%} Brand colours are theme settings; defaults are the exact brand values. {%- endcomment -%}
+<style>
+  :root {
+    --navy: {{ settings.color_navy }};
+    --sand: {{ settings.color_sand }};
+    --midnight: {{ settings.color_midnight }};
+    --bronze: {{ settings.color_bronze }};
+    --paper: {{ settings.color_paper }};
+    --white: {{ settings.color_white }};
+    --ink: {{ settings.color_ink }};
+    --grey: #B4AEA7;
+    --grey-text: #5F5A54;
+    --field: color-mix(in srgb, var(--sand) 50%, var(--white));
+    --font-display: "Galak Round", "Avenir Next", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    --font-sans: "PP Mori", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    --font-arabic: "IBM Plex Sans Arabic", "Noto Sans Arabic", "Geeza Pro", Tahoma, sans-serif;
+  }
+  :lang(ar) { --font-sans: var(--font-arabic); --font-display: var(--font-arabic); }
+</style>

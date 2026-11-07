@@ -1,0 +1,32 @@
+{{ 'home.css' | asset_url | stylesheet_tag }}
+{%- assign c = section.settings.collection -%}
+{%- if c != blank -%}
+<section class="coll" id="collection" aria-labelledby="coll-h-{{ section.id }}">
+  <div class="ph">
+    {%- if section.settings.image -%}{{ section.settings.image | image_url: width: 2400 | image_tag: loading: 'lazy', widths: '1000, 1600, 2400', sizes: '100vw', alt: section.settings.image.alt }}
+    {%- elsif c.image -%}{{ c.image | image_url: width: 2400 | image_tag: loading: 'lazy', widths: '1000, 1600, 2400', sizes: '100vw', alt: c.image.alt }}
+    {%- else -%}{% render 'shape', name: 'pedestal' %}<span class="tag">{{ 'home.image_to_come' | t }}</span>{%- endif -%}
+  </div>
+  <div class="coll__copy">
+    {%- if section.settings.label != blank -%}<span class="label">{{ section.settings.label }}</span>{%- endif -%}
+    <h2 class="h2" id="coll-h-{{ section.id }}">{{ section.settings.heading | default: c.title }}</h2>
+    {%- assign body = section.settings.text | default: c.description -%}
+    {%- if body != blank -%}<div>{{ body }}</div>{%- endif -%}
+    <a class="link" href="{{ c.url }}">{% if section.settings.link_label != blank %}{{ section.settings.link_label }}{% else %}{{ 'home.view_all' | t }}{% endif %}</a>
+  </div>
+</section>
+{%- endif -%}
+{% schema %}
+{
+  "name": "Collection feature",
+  "settings": [
+    { "type": "collection", "id": "collection", "label": "Collection" },
+    { "type": "image_picker", "id": "image", "label": "Image", "info": "Leave empty to use the collection image." },
+    { "type": "text", "id": "label", "label": "Small label" },
+    { "type": "text", "id": "heading", "label": "Heading", "info": "Leave empty to use the collection title." },
+    { "type": "richtext", "id": "text", "label": "Text", "info": "Leave empty to use the collection description." },
+    { "type": "text", "id": "link_label", "label": "Link text" }
+  ],
+  "presets": [{ "name": "Collection feature" }]
+}
+{% endschema %}

@@ -1,0 +1,56 @@
+<footer class="ftr">
+  <div class="grid ftr__grid">
+    <div class="news">
+      <h2 class="h3">{{ section.settings.news_heading }}</h2>
+      {%- form 'customer', id: 'footer-news' -%}
+        <input type="hidden" name="contact[tags]" value="newsletter">
+        <div class="news__row">
+          <label class="sr" for="footer-email">{{ 'general.email' | t }}</label>
+          <input id="footer-email" type="email" name="contact[email]" placeholder="{{ 'general.email' | t }}" autocomplete="email" dir="ltr" required>
+          <button class="label" type="submit">{{ 'general.subscribe' | t }}</button>
+        </div>
+        {%- if form.posted_successfully? -%}<p role="status">{{ 'general.subscribed' | t }}</p>{%- endif -%}
+        {%- if form.errors -%}<p role="alert">{{ form.errors | default_errors }}</p>{%- endif -%}
+      {%- endform -%}
+    </div>
+    {%- for block in section.blocks -%}
+      <div class="fcol" {{ block.shopify_attributes }}>
+        <span class="label">{{ block.settings.title }}</span>
+        <ul>
+          {%- for link in linklists[block.settings.menu].links -%}<li><a href="{{ link.url }}">{{ link.title }}</a></li>{%- endfor -%}
+        </ul>
+      </div>
+    {%- endfor -%}
+  </div>
+  <div class="ftr__base">
+    <img class="ftr__logo" src="{{ 'objekt-wordmark-sand.svg' | asset_url }}" alt="{{ shop.name }}" width="410" height="90">
+    <div class="ftr__meta">
+      {%- if localization.available_languages.size > 1 -%}
+        <ul class="ftr__lang" aria-label="{{ 'general.language' | t }}">
+          {%- for language in localization.available_languages -%}
+            <li><a href="{{ language.url }}" lang="{{ language.iso_code }}" hreflang="{{ language.iso_code }}"{% if language.iso_code == localization.language.iso_code %} aria-current="true"{% endif %}>{{ language.endonym_name }}</a></li>
+          {%- endfor -%}
+        </ul>
+      {%- endif -%}
+      <small>© {{ 'now' | date: '%Y' }} {{ shop.name }}</small>
+    </div>
+  </div>
+</footer>
+{% schema %}
+{
+  "name": "Footer",
+  "settings": [{ "type": "text", "id": "news_heading", "label": "Newsletter heading", "default": "New objekts, first." }],
+  "blocks": [
+    {
+      "type": "links", "name": "Link column", "limit": 6,
+      "settings": [
+        { "type": "text", "id": "title", "label": "Title", "default": "Support" },
+        { "type": "link_list", "id": "menu", "label": "Menu" }
+      ]
+    }
+  ],
+  "default": {
+    "blocks": [{ "type": "links", "settings": { "title": "Support" } }, { "type": "links", "settings": { "title": "Policies", "menu": "footer" } }]
+  }
+}
+{% endschema %}

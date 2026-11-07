@@ -1,0 +1,53 @@
+{{ 'editorial.css' | asset_url | stylesheet_tag }}
+<header class="ahead wrap">
+  <nav class="crumbs label" aria-label="{{ 'collection.breadcrumb' | t }}"><a href="{{ routes.root_url }}">{{ 'general.home_crumb' | t }}</a><span aria-hidden="true">/</span><span aria-current="page">{{ page.title }}</span></nav>
+  <h1 class="atitle">{{ page.title }}</h1>
+  {%- if section.settings.statement != blank -%}<p class="statement">{{ section.settings.statement }}</p>{%- endif -%}
+</header>
+{%- if section.settings.image -%}<div class="aband">{{ section.settings.image | image_url: width: 2000 | image_tag: loading: 'eager', widths: '800, 1200, 1600, 2000', sizes: '100vw', alt: section.settings.image.alt | default: '' }}</div>{%- endif -%}
+{%- assign principles = section.blocks | where: 'type', 'principle' -%}
+{%- if principles.size > 0 -%}
+  <section class="wrap principles" aria-labelledby="pr-h">
+    <h2 class="label" id="pr-h">{{ section.settings.principles_heading }}</h2>
+    <ul class="plist">{%- for block in principles -%}<li {{ block.shopify_attributes }}><span class="h3">{{ block.settings.text }}</span></li>{%- endfor -%}</ul>
+  </section>
+{%- endif -%}
+{%- assign n = 0 -%}
+{%- for block in section.blocks -%}
+  {%- if block.type == 'story' -%}
+    {%- assign n = n | plus: 1 -%}
+    {%- assign parity = n | modulo: 2 -%}
+    <section class="wrap abt{% if parity == 0 %} abt--rev{% endif %}" aria-labelledby="a{{ n }}" {{ block.shopify_attributes }}>
+      <div class="abt__txt">
+        <p class="label muted"><bdi>{% if n < 10 %}0{% endif %}{{ n }}</bdi></p>
+        <h2 class="h2" id="a{{ n }}">{{ block.settings.title }}</h2>
+        {%- if block.settings.text != blank -%}<div class="rich">{{ block.settings.text }}</div>{%- endif -%}
+        {%- if block.settings.link_label != blank and block.settings.link_url != blank -%}<a class="link" href="{{ block.settings.link_url }}">{{ block.settings.link_label }}</a>{%- endif -%}
+      </div>
+      <div class="abt__img ph">{%- if block.settings.image -%}{{ block.settings.image | image_url: width: 1200 | image_tag: loading: 'lazy', widths: '600, 900, 1200', sizes: '(max-width: 880px) 100vw, 50vw', alt: block.settings.image.alt | default: '' }}{%- else -%}<span class="tag">{{ 'home.image_to_come' | t }}</span>{%- endif -%}</div>
+    </section>
+  {%- endif -%}
+{%- endfor -%}
+{% schema %}
+{
+  "name": "About",
+  "settings": [
+    { "type": "textarea", "id": "statement", "label": "Opening statement", "default": "OBJEKT celebrates everyday objekts as pieces of design in their own right." },
+    { "type": "image_picker", "id": "image", "label": "Wide image" },
+    { "type": "text", "id": "principles_heading", "label": "Principles heading", "default": "What we look for" }
+  ],
+  "blocks": [
+    { "type": "principle", "name": "Principle", "limit": 6, "settings": [{ "type": "text", "id": "text", "label": "Text", "default": "Sculptural presence" }] },
+    {
+      "type": "story", "name": "Story block",
+      "settings": [
+        { "type": "text", "id": "title", "label": "Title", "default": "Title" },
+        { "type": "richtext", "id": "text", "label": "Text" },
+        { "type": "image_picker", "id": "image", "label": "Image" },
+        { "type": "text", "id": "link_label", "label": "Link text" },
+        { "type": "url", "id": "link_url", "label": "Link" }
+      ]
+    }
+  ]
+}
+{% endschema %}

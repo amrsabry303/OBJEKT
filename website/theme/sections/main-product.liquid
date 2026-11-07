@@ -1,0 +1,103 @@
+{{ 'card.css' | asset_url | stylesheet_tag }}
+{{ 'product.css' | asset_url | stylesheet_tag }}
+{%- assign current = product.selected_or_first_available_variant -%}
+{%- assign ref = product.metafields.custom.reference.value | default: product.variants.first.sku -%}
+<div id="product-root" data-section-id="{{ section.id }}" data-product-url="{{ product.url }}" data-added="{{ 'product.added' | t }}" data-error="{{ 'product.add_error' | t }}">
+  <nav class="crumbs wrap label" aria-label="{{ 'collection.breadcrumb' | t }}">
+    <a href="{{ routes.root_url }}">{{ 'general.home_crumb' | t }}</a><span aria-hidden="true">/</span>
+    {%- if collection -%}<a href="{{ collection.url }}">{{ collection.title }}</a><span aria-hidden="true">/</span>{%- endif -%}
+    <span aria-current="page">{{ product.title }}</span>
+  </nav>
+
+  <div class="pdp wrap" id="pdp">
+    {%- assign images = product.media | where: 'media_type', 'image' -%}
+    <div class="gallery" id="gallery" role="group" aria-label="{{ 'product.images' | t }}">
+      {%- if images.size > 0 -%}
+        {%- for media in images -%}
+          <div class="g{% if forloop.first %} g1{% endif %}" data-media-id="{{ media.id }}">
+            {% if forloop.first %}{{ media | image_url: width: 1400 | image_tag: loading: 'eager', fetchpriority: 'high', widths: '600, 900, 1200, 1400', sizes: '(max-width: 880px) 88vw, 58vw', alt: media.alt | default: product.title }}{% else %}{{ media | image_url: width: 1400 | image_tag: loading: 'lazy', widths: '600, 900, 1200, 1400', sizes: '(max-width: 880px) 88vw, 58vw', alt: media.alt | default: product.title }}{% endif %}
+          </div>
+        {%- endfor -%}
+        <p class="g-count label" id="g-count" aria-hidden="true">1 / {{ images.size }}</p>
+      {%- else -%}
+        <div class="g g1 g--empty">{%- assign shape_i = product.id | modulo: 12 -%}{% render 'shape', index: shape_i %}<span class="tag label">{{ 'collection.no_image' | t }}</span></div>
+      {%- endif -%}
+    </div>
+
+    <div class="info">
+      {%- if product.type != blank -%}<p class="label muted">{{ product.type }}</p>{%- endif -%}
+      <h1 class="h2 title">{{ product.title }}</h1>
+      {%- if ref != blank -%}<p class="ref label muted">{{ 'product.ref' | t }} <bdi dir="ltr">{{ ref }}</bdi></p>{%- endif -%}
+      {%- assign lede = product.metafields.custom.short_description.value -%}
+      {%- if lede != blank -%}<div class="lede">{{ product.metafields.custom.short_description | metafield_tag }}</div>{%- endif -%}
+
+      <div id="buy-box">
+        {%- form 'product', product, id: 'product-form', novalidate: 'novalidate' -%}
+          <input type="hidden" name="id" value="{{ current.id }}">
+          <p class="price" aria-live="off">{{ current.price | money }}</p>
+          {%- if product.has_only_default_variant == false -%}
+            <fieldset class="finish">
+              <legend class="label">{{ product.options.first }} <span class="muted">· {{ current.title }}</span></legend>
+              <ul class="finish__list">
+                {%- for v in product.variants -%}
+                  <li>
+                    <a class="opt{% unless v.available %} is-out{% endunless %}" href="{{ product.url }}?variant={{ v.id }}" data-variant-id="{{ v.id }}"{% if v.id == current.id %} aria-current="true"{% endif %}>
+                      {%- assign sw = v.metafields.custom.colour.value.hex.value -%}
+                      <span class="sw"{% if sw != blank %} style="--c: {{ sw }}"{% else %} style="--c: var(--sand)"{% endif %} aria-hidden="true"></span>
+                      <span class="nm"{% if v.id == current.id %} data-selected="{{ 'product.selected' | t }}"{% endif %}>{{ v.title }}</span>
+                      <span class="st">{% render 'availability', product: product, variant: v %}</span>
+                    </a>
+                  </li>
+                {%- endfor -%}
+              </ul>
+            </fieldset>
+          {%- endif -%}
+          {% render 'availability', product: product, variant: current, mode: 'buy' %}
+          <div class="sticky-buy" id="sticky-buy" hidden>
+            <div><p class="label muted">{{ product.title }}</p><p class="price">{{ current.price | money }}</p></div>
+            <button class="btn" type="submit" name="add" form="product-form"{% unless current.available %} disabled{% endunless %}>{{ 'product.add_short' | t }}</button>
+          </div>
+        {%- endform -%}
+      </div>
+
+      <div class="acc">
+        {%- assign delivery_page = pages[section.settings.delivery_page] -%}
+        {%- assign acc_keys = 'story,materials_craft,dimensions,care' | split: ',' -%}
+        {%- assign acc_opened = false -%}
+        {%- for key in acc_keys -%}
+          {%- assign mf = product.metafields.custom[key] -%}
+          {%- if mf.value != blank -%}
+            <details{% unless acc_opened %} open{% endunless %}>{%- assign acc_opened = true -%}<summary><span class="label">{% case key %}{% when 'story' %}{{ 'product.acc.story' | t }}{% when 'materials_craft' %}{{ 'product.acc.materials_craft' | t }}{% when 'dimensions' %}{{ 'product.acc.dimensions' | t }}{% else %}{{ 'product.acc.care' | t }}{% endcase %}</span><i aria-hidden="true"></i></summary><div class="acc__body">{{ mf | metafield_tag }}</div></details>
+          {%- endif -%}
+        {%- endfor -%}
+        {%- if delivery_page.content != blank -%}
+          <details><summary><span class="label">{{ delivery_page.title }}</span><i aria-hidden="true"></i></summary><div class="acc__body">{{ delivery_page.content }}</div></details>
+        {%- endif -%}
+      </div>
+      <div class="ptag" aria-hidden="true">
+        <span class="ptag__hole"></span>
+        <img class="ptag__word" src="{{ 'objekt-wordmark-sand.svg' | asset_url }}" alt="" width="410" height="90" loading="lazy">
+        <span class="ptag__meta">{{ 'product.tag_meta' | t }}</span>
+        {%- if ref != blank -%}<span class="ptag__ref" dir="ltr">{{ ref }}</span>{%- endif -%}
+      </div>
+    </div>
+  </div>
+
+  {%- assign companions = product.metafields.custom.complementary.value -%}
+  {%- if companions.size > 0 -%}
+    <section class="sec wrap" aria-labelledby="igc-h">
+      <h2 class="label" id="igc-h">{{ 'product.in_good_company' | t }}</h2>
+      <div class="igc">
+        {%- for p in companions limit: 3 -%}{% render 'product-card', product: p %}{%- endfor -%}
+      </div>
+    </section>
+  {%- endif -%}
+</div>
+{% render 'product-jsonld', product: product %}
+<script src="{{ 'product.js' | asset_url }}" defer></script>
+{% schema %}
+{
+  "name": "Product",
+  "settings": [{ "type": "page", "id": "delivery_page", "label": "Delivery and returns page (shown as an accordion when set)" }]
+}
+{% endschema %}

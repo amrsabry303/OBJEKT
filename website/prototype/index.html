@@ -1,0 +1,265 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>OBJEKT — Objects of Character (prototype)</title>
+<meta name="description" content="OBJEKT — contemporary furniture and objects with sculptural presence. Visual prototype.">
+<meta name="theme-color" content="#F7F5F1">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/tokens.css">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/home.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<!-- Placeholder object forms. Flat, geometric, deliberately not photography. -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="vase" viewBox="0 0 200 200" stroke-linejoin="round" stroke-width="3"><path d="M84 34h32v24l34 34v78l-14 20H64l-14-20V92l34-34z" fill="var(--obj)" stroke="var(--obj)"/><path d="M84 34h32v8H84z" fill="var(--obj-top)" stroke="var(--obj-top)"/></symbol>
+  <symbol id="arch" viewBox="0 0 200 200" stroke-linejoin="round" stroke-width="3"><path d="M44 190V100l50-38 62 40v88z" fill="var(--obj)" stroke="var(--obj)"/><path d="M76 190v-72l22-16 26 18v70z" fill="var(--obj-top)" stroke="var(--obj-top)"/></symbol>
+  <symbol id="stool" viewBox="0 0 200 200" stroke-linejoin="round" stroke-width="3"><path d="M56 190v-80l14-14h60l14 14v80z" fill="var(--obj)" stroke="var(--obj)"/><path d="M70 96h60l14 14H56z" fill="var(--obj-top)" stroke="var(--obj-top)"/></symbol>
+  <symbol id="plinth" viewBox="0 0 200 200" stroke-linejoin="round" stroke-width="3"><path d="M68 190v-44h64v44z" fill="var(--obj)" stroke="var(--obj)"/><path d="M100 70l36 22v40l-36 14-36-14V92z" fill="var(--obj-top)" stroke="var(--obj-top)"/></symbol>
+  <symbol id="lamp" viewBox="0 0 200 200" stroke-linejoin="round" stroke-width="3"><path d="M97 80h6v104h-6z" fill="var(--obj)" stroke="var(--obj)"/><path d="M60 82l24-40h32l24 40z" fill="var(--obj-top)" stroke="var(--obj-top)"/><path d="M68 190l6-8h52l6 8z" fill="var(--obj)" stroke="var(--obj)"/></symbol>
+  <symbol id="tray" viewBox="0 0 200 200" stroke-linejoin="round" stroke-width="3"><path d="M22 182l8-14h140l8 14z" fill="var(--obj)" stroke="var(--obj)"/><path d="M50 168l10-26h28l10 26z" fill="var(--obj-top)" stroke="var(--obj-top)"/><path d="M114 168l8-16h22l8 16z" fill="var(--obj-top)" stroke="var(--obj-top)"/></symbol>
+  <symbol id="console" viewBox="0 0 200 200" stroke-linejoin="round" stroke-width="3"><path d="M18 104l8-8h148l8 8v12H18z" fill="var(--obj)" stroke="var(--obj)"/><path d="M34 116h12l-6 74H30z" fill="var(--obj)" stroke="var(--obj)"/><path d="M154 116h12l4 74h-10z" fill="var(--obj)" stroke="var(--obj)"/><path d="M82 104V78l10-8h16l10 8v26z" fill="var(--obj-top)" stroke="var(--obj-top)"/></symbol>
+</svg>
+
+<div class="proto-bar" role="note">Visual prototype · placeholder imagery and sample data · not for sale</div>
+
+<header class="hdr">
+  <div class="hdr__in wrap">
+    <button class="menu-btn label" data-menu-open aria-expanded="false" aria-controls="menu">Menu</button>
+    <nav aria-label="Primary">
+      <ul>
+        <li class="has-panel"><a class="label" href="collection.html">Shop</a>
+          <div class="panel" id="shop-panel">
+            <div class="panel__in wrap">
+              <div class="panel__col"><p class="label muted">Shop</p><ul>
+                <li><a href="collection.html?cat=furniture">Furniture</a></li>
+                <li><a href="collection.html?cat=living">Table &amp; Living</a></li>
+                <li><a href="collection.html?cat=objects">Objects</a></li>
+                <li><a href="collection.html?cat=planters">Planters</a></li>
+              </ul></div>
+              <a class="panel__feat" href="product.html"><div class="ph ph--paper"><svg viewBox="0 0 200 200" preserveAspectRatio="xMidYMax meet" aria-hidden="true"><use href="#stool"/></svg><span class="tag">Placeholder · featured object</span></div><span class="label">Drum side table</span></a>
+            </div>
+          </div>
+        </li>
+        <li><a class="label" href="#collection">Collections</a></li>
+        <li><a class="label" href="edit.html">The Edit</a></li>
+        <li><a class="label" href="about.html">About</a></li>
+      </ul>
+    </nav>
+    <a class="wordmark" href="#" aria-label="OBJEKT home"><img src="assets/objekt-wordmark.svg" alt="" width="100" height="22"></a>
+    <div class="hdr__tools">
+      <a class="label tool-desktop" href="#">Search</a>
+      <a class="label tool-desktop" href="#">Account</a>
+      <a class="label" href="cart.html">Bag (<span data-bag>0</span>)</a>
+    </div>
+  </div>
+</header>
+
+<dialog id="menu" class="menu" aria-label="Menu">
+  <div class="menu__top wrap">
+    <a class="wordmark" href="#" aria-label="OBJEKT home"><img src="assets/objekt-wordmark.svg" alt="" width="100" height="22"></a>
+    <button class="label" data-menu-close>Close</button>
+  </div>
+  <div class="menu__body">
+    <details>
+      <summary>Shop</summary>
+      <ul>
+        <li><a href="collection.html?cat=furniture">Furniture</a></li>
+        <li><a href="collection.html?cat=living">Table &amp; Living</a></li>
+        <li><a href="collection.html?cat=objects">Objects</a></li>
+        <li><a href="collection.html?cat=planters">Planters</a></li>
+      </ul>
+    </details>
+    <a href="#collection">Collections</a>
+    <a href="edit.html">The Edit</a>
+    <a href="about.html">About</a>
+  </div>
+  <div class="menu__foot label"><a href="#">Search</a><a href="#">Account</a><a href="cart.html">Bag (<span data-bag>0</span>)</a></div>
+</dialog>
+
+<main id="main">
+
+  <!-- 1 · Hero -->
+  <section class="hero" aria-labelledby="hero-h">
+    <div class="ph" role="img" aria-label="Placeholder for hero photograph: sculptural arch and sphere in a sand-coloured room">
+      <svg class="hero-m" viewBox="0 0 600 900" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
+        <rect y="560" width="600" height="340" fill="#D6CCBF"/>
+        <g transform="translate(0 -40)" stroke-linejoin="round" stroke-width="6">
+        <path d="M250 600V160l80-60 220 130v370z" fill="var(--navy)" stroke="var(--navy)"/>
+        <path d="M305 600V215l32-24 158 96v313z" fill="#EDE6DD" stroke="#EDE6DD"/>
+        <path d="M400 350l58 34v66l-58 34-58-34v-66z" fill="var(--navy)" stroke="var(--navy)"/>
+        <path d="M70 600V510l16-24h78l16 24v90z" fill="#C9BDAE" stroke="#C9BDAE"/>
+        <path d="M86 486h78l16 24H70z" fill="#EDE6DD" stroke="#EDE6DD"/>
+        </g>
+      </svg>
+      <svg class="hero-d" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
+        <rect y="760" width="1600" height="140" fill="#D6CCBF"/>
+        <g transform="translate(150 0)" stroke-linejoin="round" stroke-width="8">
+        <path d="M840 760V360l150-110 290 170v340z" fill="var(--navy)" stroke="var(--navy)"/>
+        <path d="M920 760V410l60-44 220 130v264z" fill="#EDE6DD" stroke="#EDE6DD"/>
+        <path d="M1070 470l80 46v92l-80 46-80-46v-92z" fill="var(--navy)" stroke="var(--navy)"/>
+        <path d="M1330 760V610l22-30h108l22 30v150z" fill="#C9BDAE" stroke="#C9BDAE"/>
+        <path d="M1352 580h108l22 30h-152z" fill="#EDE6DD" stroke="#EDE6DD"/>
+        </g>
+      </svg>
+      <span class="tag">Placeholder · editorial lifestyle photograph</span>
+    </div>
+    <div class="hero__copy">
+      <span class="label">Edition placeholder</span>
+      <h1 class="h1" id="hero-h">Objects <br>of Character.</h1>
+      <a class="link" href="#selected">Explore the Collection</a>
+    </div>
+  </section>
+
+  <!-- 2 · Selected objects -->
+  <section class="sec wrap" id="selected" aria-labelledby="sel-h">
+    <div class="sec__head reveal">
+      <h2 class="label" id="sel-h">Selected Objects</h2>
+      <a class="link" href="collection.html">View all</a>
+    </div>
+    <p class="legend label muted reveal"><span class="dot"></span>Ready to deliver<span class="dot dot--mto"></span>Made to order</p>
+    <div class="grid sel">
+      <article class="obj o1 reveal"><a href="#">
+        <div class="ph"><svg viewBox="0 0 200 200" preserveAspectRatio="xMidYMax meet" aria-hidden="true"><use href="#vase"/></svg><span class="tag">Placeholder · sculptural studio</span>
+          <div class="ph ph--paper alt"><svg viewBox="0 0 200 200" preserveAspectRatio="xMidYMax slice" aria-hidden="true"><use href="#vase"/></svg><span class="tag">Placeholder · lifestyle</span></div></div>
+        <div class="cap"><div><div class="name">Tall vase</div><div class="avail label muted"><span class="dot"></span>Ready to deliver</div></div><div class="muted">EGP 4,800<br><span class="label">SMP-01</span></div></div>
+      </a></article>
+      <article class="obj o2 reveal"><a href="product.html">
+        <div class="ph ph--ink"><svg viewBox="0 0 200 200" preserveAspectRatio="xMidYMax meet" aria-hidden="true"><use href="#stool"/></svg><span class="tag">Placeholder · sculptural studio</span>
+          <div class="ph alt"><svg viewBox="0 0 200 200" preserveAspectRatio="xMidYMax slice" aria-hidden="true"><use href="#stool"/></svg><span class="tag">Placeholder · lifestyle</span></div></div>
+        <div class="cap"><div><div class="name">Drum side table</div><div class="avail label muted"><span class="dot"></span>Ready to deliver · more finishes to order</div></div><div class="muted">From EGP 9,800<br><span class="label">SMP-02</span></div></div>
+      </a></article>
+      <article class="obj o3 reveal"><a href="#">
+        <div class="ph ph--paper"><svg viewBox="0 0 200 200" preserveAspectRatio="xMidYMax meet" aria-hidden="true"><use href="#plinth"/></svg><span class="tag">Placeholder · sculptural studio</span>
+          <div class="ph alt"><svg viewBox="0 0 200 200" preserveAspectRatio="xMidYMax slice" aria-hidden="true"><use href="#plinth"/></svg><span class="tag">Placeholder · lifestyle</span></div></div>
+        <div class="cap"><div><div class="name">Pedestal</div><div class="avail label muted"><span class="dot"></span>Ready to deliver</div></div><div class="muted">EGP 7,400<br><span class="label">SMP-03</span></div></div>
+      </a></article>
+      <article class="obj o4 reveal"><a href="#">
+        <div class="ph ph--navy"><svg viewBox="0 0 200 200" preserveAspectRatio="xMidYMax meet" aria-hidden="true"><use href="#console"/></svg><span class="tag">Placeholder · sculptural studio</span>
+          <div class="ph alt"><svg viewBox="0 0 200 200" preserveAspectRatio="xMidYMax slice" aria-hidden="true"><use href="#console"/></svg><span class="tag">Placeholder · lifestyle</span></div></div>
+        <div class="cap"><div><div class="name">Coffee table</div><div class="avail label muted"><span class="dot dot--mto"></span>Made to order · 8–10 wks</div></div><div class="muted">EGP 24,500<br><span class="label">SMP-04</span></div></div>
+      </a></article>
+      <article class="obj o5 reveal"><a href="#">
+        <div class="ph"><svg viewBox="0 0 200 200" preserveAspectRatio="xMidYMax meet" aria-hidden="true"><use href="#tray"/></svg><span class="tag">Placeholder · sculptural studio</span>
+          <div class="ph ph--paper alt"><svg viewBox="0 0 200 200" preserveAspectRatio="xMidYMax slice" aria-hidden="true"><use href="#tray"/></svg><span class="tag">Placeholder · lifestyle</span></div></div>
+        <div class="cap"><div><div class="name">Tray</div><div class="avail label muted"><span class="dot"></span>Ready to deliver</div></div><div class="muted">EGP 2,600<br><span class="label">SMP-05</span></div></div>
+      </a></article>
+    </div>
+  </section>
+
+  <!-- 3 · Editorial story -->
+  <section class="story" aria-labelledby="story-h">
+    <div class="ph" role="img" aria-label="Placeholder for detail photograph: macro of a material surface">
+      <svg viewBox="0 0 800 900" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+        <rect width="800" height="900" fill="#CFC3B4"/>
+        <path d="M0 500L260 440l300 90 240-50v420H0z" fill="#BFB19F"/>
+        <path d="M0 620l220-50 320 80 260-40v290H0z" fill="#AE9F8C"/>
+        <path d="M0 750l260-40 280 70 260-30v150H0z" fill="var(--navy)"/>
+      </svg>
+      <span class="tag">Placeholder · detail / material macro</span>
+    </div>
+    <div class="story__copy reveal">
+      <span class="label">Form · Material · Surface</span>
+      <div>
+        <h2 class="h2" id="story-h" style="margin-bottom:28px">Made to be looked at, then lived with.</h2>
+        <p class="lead">A short editorial paragraph on proportion and material goes here. Copy to be written with the founder; no claims until facts are supplied.</p>
+      </div>
+      <a class="link" href="about.html" style="align-self:flex-start">About OBJEKT</a>
+    </div>
+  </section>
+
+  <!-- 4 · Shop by category -->
+  <section class="sec wrap" id="categories" aria-labelledby="cat-h">
+    <div class="sec__head reveal"><h2 class="label" id="cat-h">Shop by Category</h2></div>
+    <div class="cats">
+      <ul class="reveal">
+        <li><a href="collection.html?cat=furniture" data-cat="furniture"><span class="h3">Furniture</span><span class="label">→</span></a></li>
+        <li><a href="collection.html?cat=living" data-cat="living"><span class="h3">Table &amp; Living</span><span class="label">→</span></a></li>
+        <li><a href="collection.html?cat=objects" data-cat="objects"><span class="h3">Objects</span><span class="label">→</span></a></li>
+        <li><a href="collection.html?cat=planters" data-cat="planters"><span class="h3">Planters</span><span class="label">→</span></a></li>
+      </ul>
+      <div class="cats__pane" aria-hidden="true">
+        <div class="ph on" data-pane="furniture"><svg viewBox="0 0 200 200" preserveAspectRatio="xMidYMax meet"><use href="#console"/></svg><span class="tag">Placeholder</span></div>
+        <div class="ph ph--ink" data-pane="living"><svg viewBox="0 0 200 200" preserveAspectRatio="xMidYMax meet"><use href="#tray"/></svg><span class="tag">Placeholder</span></div>
+        <div class="ph ph--paper" data-pane="objects"><svg viewBox="0 0 200 200" preserveAspectRatio="xMidYMax meet"><use href="#vase"/></svg><span class="tag">Placeholder</span></div>
+        <div class="ph ph--navy" data-pane="planters"><svg viewBox="0 0 200 200" preserveAspectRatio="xMidYMax meet"><use href="#plinth"/></svg><span class="tag">Placeholder</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5 · The collection -->
+  <section class="coll" id="collection" aria-labelledby="coll-h">
+    <div class="ph ph--navy" role="img" aria-label="Placeholder for collection photograph">
+      <svg viewBox="0 0 1600 900" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
+        <rect y="780" width="1600" height="120" fill="#1D2E49"/>
+        <g stroke-linejoin="round" stroke-width="8">
+        <path d="M1020 440l150 88v176l-150 76-150-76V528z" fill="var(--sand)" stroke="var(--sand)"/>
+        <path d="M1240 780V500l24-30h122l24 30v280z" fill="#CFC3B4" stroke="#CFC3B4"/>
+        <path d="M1264 470h122l24 30h-170z" fill="var(--white)" stroke="var(--white)"/>
+        <path d="M760 780v-72l14-18h152l14 18v72z" fill="#B9AD9E" stroke="#B9AD9E"/>
+        </g>
+      </svg>
+      <span class="tag">Placeholder · collection photograph</span>
+    </div>
+    <div class="coll__copy reveal">
+      <span class="label">The Collection · name is a placeholder</span>
+      <h2 class="h2" id="coll-h">Edition 01</h2>
+      <p>Collection introduction copy to come. Collections are managed in Shopify and each can carry its own imagery and story.</p>
+      <a class="link" href="#">Discover the edition</a>
+    </div>
+  </section>
+
+  <!-- 6 · The Edit -->
+  <section class="sec wrap" id="edit" aria-labelledby="edit-h">
+    <div class="sec__head reveal"><h2 class="label" id="edit-h">The Edit</h2><a class="link" href="edit.html">All stories</a></div>
+    <div class="grid edit">
+      <article class="story-card s1 reveal"><a href="article.html">
+        <div class="ph"><svg viewBox="0 0 200 200" preserveAspectRatio="xMidYMax meet" aria-hidden="true"><use href="#arch"/></svg><span class="tag">Placeholder · interior</span></div>
+        <div class="meta label muted"><span>Interiors</span><span>Sample story</span></div>
+        <h3 class="h3">A headline for a design story sits here</h3>
+      </a></article>
+      <article class="story-card s2 reveal"><a href="article.html">
+        <div class="ph ph--paper"><svg viewBox="0 0 200 200" preserveAspectRatio="xMidYMax meet" aria-hidden="true"><use href="#plinth"/></svg><span class="tag">Placeholder · material</span></div>
+        <div class="meta label muted"><span>Materials</span><span>Sample story</span></div>
+        <h3 class="h3">Notes on a single surface</h3>
+      </a></article>
+      <article class="story-card s3 reveal"><a href="article.html">
+        <div class="ph ph--ink"><svg viewBox="0 0 200 200" preserveAspectRatio="xMidYMax meet" aria-hidden="true"><use href="#stool"/></svg><span class="tag">Placeholder · craft</span></div>
+        <div class="meta label muted"><span>Craftsmanship</span><span>Sample story</span></div>
+        <h3 class="h3">How an object is made</h3>
+      </a></article>
+    </div>
+  </section>
+
+  <span id="about"></span>
+</main>
+
+<!-- 7 · Footer -->
+<footer class="ftr">
+  <div class="grid ftr__grid">
+    <div class="news">
+      <h2 class="h3">New objects, first.</h2>
+      <form data-news>
+        <label class="sr" for="em">Email address</label>
+        <input id="em" type="email" placeholder="Email address" autocomplete="email" required>
+        <button class="label" type="submit">Subscribe</button>
+      </form>
+    </div>
+    <div class="fcol"><span class="label">Support</span><ul><li><a href="#">Contact</a></li><li><a href="#">Care</a></li><li><a href="#">FAQ</a></li></ul></div>
+    <div class="fcol"><span class="label">Shipping</span><ul><li><a href="#">Delivery</a></li><li><a href="#">Made to order</a></li><li><a href="#">Returns</a></li></ul></div>
+    <div class="fcol"><span class="label">Policies</span><ul><li><a href="#">Terms</a></li><li><a href="#">Privacy</a></li><li><a href="#">Refunds</a></li></ul></div>
+    <div class="fcol"><span class="label">Follow</span><ul><li><a href="#">Instagram</a></li><li><a href="#">Pinterest</a></li></ul></div>
+  </div>
+  <div class="ftr__base">
+    <img class="ftr__logo" src="assets/objekt-wordmark.svg" alt="OBJEKT" width="410" height="90">
+    <small>Contact details, social handles and policy copy to be supplied. © OBJEKT</small>
+  </div>
+</footer>
+
+<script src="js/proto.js"></script>
+</body>
+</html>

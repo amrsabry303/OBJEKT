@@ -1,0 +1,51 @@
+{%- comment -%}
+  JSON-LD for the site (home), stories and breadcrumbs. Products have their own in sections/main-product.liquid.
+  No logo and no social profiles are claimed: neither has been supplied (Google does not accept an SVG logo).
+{%- endcomment -%}
+{%- if template.name == 'index' -%}
+{%- capture search_target -%}{{ shop.url }}{{ routes.search_url }}?q={% raw %}{search_term_string}{% endraw %}{%- endcapture -%}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    { "@type": "Organization", "@id": {{ shop.url | append: '/#organization' | json }}, "name": {{ shop.name | json }}, "url": {{ shop.url | json }} },
+    { "@type": "WebSite", "@id": {{ shop.url | append: '/#website' | json }}, "url": {{ shop.url | json }}, "name": {{ shop.name | json }}, "inLanguage": {{ request.locale.iso_code | json }},
+      "publisher": { "@id": {{ shop.url | append: '/#organization' | json }} },
+      "potentialAction": { "@type": "SearchAction", "target": {{ search_target | json }}, "query-input": "required name=search_term_string" } }
+  ]
+}
+</script>
+{%- elsif template.name == 'article' -%}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": {{ article.title | json }},
+  "datePublished": {{ article.published_at | date: '%Y-%m-%dT%H:%M:%S%:z' | json }},
+  "dateModified": {{ article.updated_at | default: article.published_at | date: '%Y-%m-%dT%H:%M:%S%:z' | json }},
+  "mainEntityOfPage": {{ shop.url | append: article.url | json }},
+  {%- if article.image -%}"image": {{ article.image | image_url: width: 1600 | prepend: 'https:' | json }},{%- endif -%}
+  {%- if article.author != blank -%}"author": { "@type": "Person", "name": {{ article.author | json }} },{%- endif -%}
+  "publisher": { "@type": "Organization", "name": {{ shop.name | json }} }
+}
+</script>
+{%- endif -%}
+{%- if template.name == 'product' or template.name == 'collection' or template.name == 'article' -%}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": {{ 'general.home_crumb' | t | json }}, "item": {{ shop.url | json }} }
+    {%- if template.name == 'collection' -%}
+      , { "@type": "ListItem", "position": 2, "name": {{ collection.title | json }} }
+    {%- elsif template.name == 'product' -%}
+      {%- if collection -%}, { "@type": "ListItem", "position": 2, "name": {{ collection.title | json }}, "item": {{ shop.url | append: collection.url | json }} }, { "@type": "ListItem", "position": 3, "name": {{ product.title | json }} }
+      {%- else -%}, { "@type": "ListItem", "position": 2, "name": {{ product.title | json }} }{%- endif -%}
+    {%- else -%}
+      , { "@type": "ListItem", "position": 2, "name": {{ blog.title | json }}, "item": {{ shop.url | append: blog.url | json }} }, { "@type": "ListItem", "position": 3, "name": {{ article.title | json }} }
+    {%- endif -%}
+  ]
+}
+</script>
+{%- endif -%}

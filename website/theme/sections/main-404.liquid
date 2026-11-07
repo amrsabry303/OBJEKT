@@ -1,0 +1,12 @@
+{{ 'collection.css' | asset_url | stylesheet_tag }}
+{{ 'editorial.css' | asset_url | stylesheet_tag }}
+<header class="ahead wrap">
+  <div class="ahead__shape">{% render 'shape', name: 'hourglass' %}</div>
+  <p class="label muted">404</p>
+  <h1 class="atitle">{{ 'not_found.title' | t }}</h1>
+  <p class="statement">{{ 'not_found.text' | t }}</p>
+  <p><a class="link" href="{{ routes.all_products_collection_url }}">{{ 'cart.continue' | t }}</a> <a class="link" href="{{ routes.root_url }}">{{ 'general.home_crumb' | t }}</a></p>
+</header>
+{% schema %}
+{ "name": "Page not found", "settings": [] }
+{% endschema %}

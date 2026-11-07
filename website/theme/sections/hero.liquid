@@ -1,0 +1,30 @@
+{{ 'home.css' | asset_url | stylesheet_tag }}
+<section class="hero" aria-labelledby="hero-h">
+  <div class="hero__img{% unless section.settings.image %} ph{% endunless %}">
+    {%- if section.settings.image -%}
+      {{ section.settings.image | image_url: width: 2400 | image_tag: loading: 'eager', fetchpriority: 'high', widths: '800, 1200, 1600, 2000, 2400', sizes: '100vw', alt: section.settings.image.alt, class: 'hero__photo' }}
+    {%- else -%}
+      {% render 'shape', name: 'table' %}
+      <span class="tag">{{ 'home.image_to_come' | t }}</span>
+    {%- endif -%}
+  </div>
+  <div class="hero__copy">
+    {%- if section.settings.label != blank -%}<span class="label">{{ section.settings.label }}</span>{%- endif -%}
+    <h1 class="h1" id="hero-h">{{ section.settings.heading | escape | newline_to_br }}</h1>
+    {%- if section.settings.link_label != blank -%}<a class="link" href="{{ section.settings.link_url | default: routes.all_products_collection_url }}">{{ section.settings.link_label }}</a>{%- endif -%}
+  </div>
+</section>
+<style>.hero__photo { width: 100%; height: 100%; object-fit: cover; }</style>
+{% schema %}
+{
+  "name": "Hero",
+  "settings": [
+    { "type": "image_picker", "id": "image", "label": "Image", "info": "Leave room for the text at the bottom of the image, in both English and Arabic." },
+    { "type": "text", "id": "label", "label": "Small label" },
+    { "type": "textarea", "id": "heading", "label": "Heading", "default": "Objekts\nof Character." },
+    { "type": "text", "id": "link_label", "label": "Link text", "default": "Explore the Collection" },
+    { "type": "url", "id": "link_url", "label": "Link" }
+  ],
+  "presets": [{ "name": "Hero" }]
+}
+{% endschema %}

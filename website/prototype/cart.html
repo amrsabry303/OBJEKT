@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Your bag — OBJEKT (prototype)</title>
+<meta name="description" content="Bag page visual prototype with sample data.">
+<meta name="theme-color" content="#F7F5F1">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/tokens.css">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/home.css">
+<link rel="stylesheet" href="css/product.css">
+<link rel="stylesheet" href="css/cart.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<!-- Placeholder object forms. Flat, geometric, deliberately not photography. -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="vase" viewBox="0 0 200 200" stroke-linejoin="round" stroke-width="3"><path d="M84 34h32v24l34 34v78l-14 20H64l-14-20V92l34-34z" fill="var(--obj)" stroke="var(--obj)"/><path d="M84 34h32v8H84z" fill="var(--obj-top)" stroke="var(--obj-top)"/></symbol>
+  <symbol id="arch" viewBox="0 0 200 200" stroke-linejoin="round" stroke-width="3"><path d="M44 190V100l50-38 62 40v88z" fill="var(--obj)" stroke="var(--obj)"/><path d="M76 190v-72l22-16 26 18v70z" fill="var(--obj-top)" stroke="var(--obj-top)"/></symbol>
+  <symbol id="stool" viewBox="0 0 200 200" stroke-linejoin="round" stroke-width="3"><path d="M56 190v-80l14-14h60l14 14v80z" fill="var(--obj)" stroke="var(--obj)"/><path d="M70 96h60l14 14H56z" fill="var(--obj-top)" stroke="var(--obj-top)"/></symbol>
+  <symbol id="plinth" viewBox="0 0 200 200" stroke-linejoin="round" stroke-width="3"><path d="M68 190v-44h64v44z" fill="var(--obj)" stroke="var(--obj)"/><path d="M100 70l36 22v40l-36 14-36-14V92z" fill="var(--obj-top)" stroke="var(--obj-top)"/></symbol>
+  <symbol id="lamp" viewBox="0 0 200 200" stroke-linejoin="round" stroke-width="3"><path d="M97 80h6v104h-6z" fill="var(--obj)" stroke="var(--obj)"/><path d="M60 82l24-40h32l24 40z" fill="var(--obj-top)" stroke="var(--obj-top)"/><path d="M68 190l6-8h52l6 8z" fill="var(--obj)" stroke="var(--obj)"/></symbol>
+  <symbol id="tray" viewBox="0 0 200 200" stroke-linejoin="round" stroke-width="3"><path d="M22 182l8-14h140l8 14z" fill="var(--obj)" stroke="var(--obj)"/><path d="M50 168l10-26h28l10 26z" fill="var(--obj-top)" stroke="var(--obj-top)"/><path d="M114 168l8-16h22l8 16z" fill="var(--obj-top)" stroke="var(--obj-top)"/></symbol>
+  <symbol id="console" viewBox="0 0 200 200" stroke-linejoin="round" stroke-width="3"><path d="M18 104l8-8h148l8 8v12H18z" fill="var(--obj)" stroke="var(--obj)"/><path d="M34 116h12l-6 74H30z" fill="var(--obj)" stroke="var(--obj)"/><path d="M154 116h12l4 74h-10z" fill="var(--obj)" stroke="var(--obj)"/><path d="M82 104V78l10-8h16l10 8v26z" fill="var(--obj-top)" stroke="var(--obj-top)"/></symbol>
+</svg>
+
+<div class="proto-bar" role="note">Visual prototype · placeholder imagery and sample data · not for sale</div>
+
+<header class="hdr">
+  <div class="hdr__in wrap">
+    <button class="menu-btn label" data-menu-open aria-expanded="false" aria-controls="menu">Menu</button>
+    <nav aria-label="Primary">
+      <ul>
+        <li class="has-panel"><a class="label" href="collection.html">Shop</a>
+          <div class="panel" id="shop-panel">
+            <div class="panel__in wrap">
+              <div class="panel__col"><p class="label muted">Shop</p><ul>
+                <li><a href="collection.html?cat=furniture">Furniture</a></li>
+                <li><a href="collection.html?cat=living">Table &amp; Living</a></li>
+                <li><a href="collection.html?cat=objects">Objects</a></li>
+                <li><a href="collection.html?cat=planters">Planters</a></li>
+              </ul></div>
+              <a class="panel__feat" href="product.html"><div class="ph ph--paper"><svg viewBox="0 0 200 200" preserveAspectRatio="xMidYMax meet" aria-hidden="true"><use href="#stool"/></svg><span class="tag">Placeholder · featured object</span></div><span class="label">Drum side table</span></a>
+            </div>
+          </div>
+        </li>
+        <li><a class="label" href="index.html#collection">Collections</a></li>
+        <li><a class="label" href="edit.html">The Edit</a></li>
+        <li><a class="label" href="about.html">About</a></li>
+      </ul>
+    </nav>
+    <a class="wordmark" href="index.html" aria-label="OBJEKT home"><img src="assets/objekt-wordmark.svg" alt="" width="100" height="22"></a>
+    <div class="hdr__tools">
+      <a class="label tool-desktop" href="#">Search</a>
+      <a class="label tool-desktop" href="#">Account</a>
+      <a class="label" href="cart.html">Bag (<span data-bag>0</span>)</a>
+    </div>
+  </div>
+</header>
+
+<dialog id="menu" class="menu" aria-label="Menu">
+  <div class="menu__top wrap">
+    <a class="wordmark" href="index.html" aria-label="OBJEKT home"><img src="assets/objekt-wordmark.svg" alt="" width="100" height="22"></a>
+    <button class="label" data-menu-close>Close</button>
+  </div>
+  <div class="menu__body">
+    <details>
+      <summary>Shop</summary>
+      <ul>
+        <li><a href="collection.html?cat=furniture">Furniture</a></li>
+        <li><a href="collection.html?cat=living">Table &amp; Living</a></li>
+        <li><a href="collection.html?cat=objects">Objects</a></li>
+        <li><a href="collection.html?cat=planters">Planters</a></li>
+      </ul>
+    </details>
+    <a href="index.html#collection">Collections</a>
+    <a href="edit.html">The Edit</a>
+    <a href="about.html">About</a>
+  </div>
+  <div class="menu__foot label"><a href="#">Search</a><a href="#">Account</a><a href="cart.html">Bag (<span data-bag>0</span>)</a></div>
+</dialog>
+
+<main id="main">
+  <div class="cart wrap" id="cart">
+    <header class="cart__head">
+      <nav class="crumbs label" aria-label="Breadcrumb"><a href="index.html">Home</a><span aria-hidden="true">/</span><span aria-current="page">Bag</span></nav>
+      <h1 class="h2">Your bag <span class="muted" id="cart-count"></span></h1>
+    </header>
+
+    <div class="cart__empty" id="empty" hidden>
+      <p class="lead">Your bag is empty.</p>
+      <p><a class="link" href="collection.html">Continue shopping</a></p>
+      <p><button class="link" id="load-sample" type="button">Load a sample bag (prototype only)</button></p>
+    </div>
+
+    <div class="cart__grid" id="grid">
+      <div class="cart__lines" id="lines"></div>
+
+      <aside class="cart__summary" aria-label="Order summary">
+        <fieldset class="pref" id="pref" hidden>
+          <legend class="label">Delivery</legend>
+          <p class="muted pref__intro">Your bag has ready pieces and made-to-order pieces. How would you like them delivered?</p>
+          <label class="pref__opt"><input type="radio" name="pref" value="together"><span class="pref__t">Ship together</span><span class="pref__d" id="pref-together"></span></label>
+          <label class="pref__opt"><input type="radio" name="pref" value="separate"><span class="pref__t">Ship separately</span><span class="pref__d" id="pref-separate"></span></label>
+          <p class="muted pref__fee">Delivery fee for separate shipments: to be confirmed by OBJEKT.</p>
+        </fieldset>
+        <p class="deliv" id="deliv" hidden></p>
+
+        <dl class="sum">
+          <div><dt>Subtotal</dt><dd id="sub"></dd></div>
+          <div><dt>Delivery</dt><dd class="muted">Calculated at checkout</dd></div>
+        </dl>
+        <div class="dep" id="dep" hidden>
+          <p class="label">Made to order</p>
+          <p id="dep-text"></p>
+        </div>
+        <button class="btn" id="checkout" type="button">Checkout</button>
+        <p class="status label muted" id="msg" role="status"></p>
+
+        <details class="devdata">
+          <summary class="label muted">Prototype data (what the theme saves)</summary>
+          <pre id="devdata"></pre>
+        </details>
+      </aside>
+    </div>
+  </div>
+</main>
+
+<div class="sticky-buy" id="sticky" hidden>
+  <div><p class="label muted">Subtotal</p><p class="price" id="sticky-total"></p></div>
+  <button class="btn" id="sticky-checkout" type="button">Checkout</button>
+</div>
+
+<!-- 7 · Footer -->
+<footer class="ftr">
+  <div class="grid ftr__grid">
+    <div class="news">
+      <h2 class="h3">New objects, first.</h2>
+      <form data-news>
+        <label class="sr" for="em">Email address</label>
+        <input id="em" type="email" placeholder="Email address" autocomplete="email" required>
+        <button class="label" type="submit">Subscribe</button>
+      </form>
+    </div>
+    <div class="fcol"><span class="label">Support</span><ul><li><a href="#">Contact</a></li><li><a href="#">Care</a></li><li><a href="#">FAQ</a></li></ul></div>
+    <div class="fcol"><span class="label">Shipping</span><ul><li><a href="#">Delivery</a></li><li><a href="#">Made to order</a></li><li><a href="#">Returns</a></li></ul></div>
+    <div class="fcol"><span class="label">Policies</span><ul><li><a href="#">Terms</a></li><li><a href="#">Privacy</a></li><li><a href="#">Refunds</a></li></ul></div>
+    <div class="fcol"><span class="label">Follow</span><ul><li><a href="#">Instagram</a></li><li><a href="#">Pinterest</a></li></ul></div>
+  </div>
+  <div class="ftr__base">
+    <img class="ftr__logo" src="assets/objekt-wordmark.svg" alt="OBJEKT" width="410" height="90">
+    <small>Contact details, social handles and policy copy to be supplied. © OBJEKT</small>
+  </div>
+</footer>
+
+<script src="js/proto.js"></script>
+<script src="js/cart.js"></script>
+</body>
+</html>

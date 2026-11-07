@@ -1,0 +1,8 @@
+{%- comment -%} Display text for a filter value. Accepts: value. The raw fulfilment values become the theme's own availability words (translatable). {%- endcomment -%}
+{%- if value.param_name contains 'fulfilment' -%}
+  {%- case value.value -%}
+    {%- when 'ready' -%}{{ 'availability.ready' | t }}
+    {%- when 'made_to_order' -%}{{ 'availability.mto' | t }}
+    {%- else -%}{{ value.label }}
+  {%- endcase -%}
+{%- else -%}{{ value.label }}{%- endif -%}

@@ -1,0 +1,28 @@
+{{ 'home.css' | asset_url | stylesheet_tag }}
+<section class="story" aria-labelledby="story-h-{{ section.id }}">
+  <div class="ph">
+    {%- if section.settings.image -%}{{ section.settings.image | image_url: width: 1400 | image_tag: loading: 'lazy', widths: '600, 900, 1200, 1400', sizes: '(max-width: 760px) 100vw, 54vw', alt: section.settings.image.alt }}{%- else -%}<span class="tag">{{ 'home.image_to_come' | t }}</span>{%- endif -%}
+  </div>
+  <div class="story__copy">
+    {%- if section.settings.label != blank -%}<span class="label">{{ section.settings.label }}</span>{%- else -%}<span></span>{%- endif -%}
+    <div>
+      <h2 class="h2" id="story-h-{{ section.id }}" style="margin-block-end: 28px">{{ section.settings.heading }}</h2>
+      {%- if section.settings.text != blank -%}<div class="lead">{{ section.settings.text }}</div>{%- endif -%}
+    </div>
+    {%- if section.settings.link_label != blank and section.settings.link_url != blank -%}<a class="link" href="{{ section.settings.link_url }}">{{ section.settings.link_label }}</a>{%- else -%}<span></span>{%- endif -%}
+  </div>
+</section>
+{% schema %}
+{
+  "name": "Editorial split",
+  "settings": [
+    { "type": "image_picker", "id": "image", "label": "Image" },
+    { "type": "text", "id": "label", "label": "Small label", "default": "Form · Material · Surface" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Made to be looked at, then lived with." },
+    { "type": "richtext", "id": "text", "label": "Text" },
+    { "type": "text", "id": "link_label", "label": "Link text" },
+    { "type": "url", "id": "link_url", "label": "Link" }
+  ],
+  "presets": [{ "name": "Editorial split" }]
+}
+{% endschema %}

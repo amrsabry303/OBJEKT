@@ -1,0 +1,15 @@
+.DS_Store
+node_modules/
+# fonts are not licensed: never commit them
+*.otf
+*.ttf
+*.woff
+*.woff2
+website/prototype/fonts/
+# large originals stay in Drive
+venture/images/
+references/
+transcripts/
+handover/
+*.zip
+.env*

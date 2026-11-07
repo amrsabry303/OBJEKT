@@ -1,0 +1,19 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-about",
+      "blocks": {
+        "p1": { "type": "principle", "settings": { "text": "Sculptural presence" } },
+        "p2": { "type": "principle", "settings": { "text": "Material honesty" } },
+        "p3": { "type": "principle", "settings": { "text": "Thoughtful proportions" } },
+        "p4": { "type": "principle", "settings": { "text": "Expressive character" } },
+        "s1": { "type": "story", "settings": { "title": "Design philosophy" } },
+        "s2": { "type": "story", "settings": { "title": "Process" } },
+        "s3": { "type": "story", "settings": { "title": "Craftsmanship" } },
+        "s4": { "type": "story", "settings": { "title": "Our approach to contemporary objekts" } }
+      },
+      "block_order": ["p1", "p2", "p3", "p4", "s1", "s2", "s3", "s4"]
+    }
+  },
+  "order": ["main"]
+}

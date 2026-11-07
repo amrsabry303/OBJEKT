@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Edit — OBJEKT (prototype)</title>
+<meta name="description" content="The Edit: editorial index, visual prototype with sample stories.">
+<meta name="theme-color" content="#F7F5F1">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/tokens.css">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/home.css">
+<link rel="stylesheet" href="css/product.css">
+<link rel="stylesheet" href="css/editorial.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<!-- Placeholder object forms. Flat, geometric, deliberately not photography. -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="vase" viewBox="0 0 200 200" stroke-linejoin="round" stroke-width="3"><path d="M84 34h32v24l34 34v78l-14 20H64l-14-20V92l34-34z" fill="var(--obj)" stroke="var(--obj)"/><path d="M84 34h32v8H84z" fill="var(--obj-top)" stroke="var(--obj-top)"/></symbol>
+  <symbol id="arch" viewBox="0 0 200 200" stroke-linejoin="round" stroke-width="3"><path d="M44 190V100l50-38 62 40v88z" fill="var(--obj)" stroke="var(--obj)"/><path d="M76 190v-72l22-16 26 18v70z" fill="var(--obj-top)" stroke="var(--obj-top)"/></symbol>
+  <symbol id="stool" viewBox="0 0 200 200" stroke-linejoin="round" stroke-width="3"><path d="M56 190v-80l14-14h60l14 14v80z" fill="var(--obj)" stroke="var(--obj)"/><path d="M70 96h60l14 14H56z" fill="var(--obj-top)" stroke="var(--obj-top)"/></symbol>
+  <symbol id="plinth" viewBox="0 0 200 200" stroke-linejoin="round" stroke-width="3"><path d="M68 190v-44h64v44z" fill="var(--obj)" stroke="var(--obj)"/><path d="M100 70l36 22v40l-36 14-36-14V92z" fill="var(--obj-top)" stroke="var(--obj-top)"/></symbol>
+  <symbol id="lamp" viewBox="0 0 200 200" stroke-linejoin="round" stroke-width="3"><path d="M97 80h6v104h-6z" fill="var(--obj)" stroke="var(--obj)"/><path d="M60 82l24-40h32l24 40z" fill="var(--obj-top)" stroke="var(--obj-top)"/><path d="M68 190l6-8h52l6 8z" fill="var(--obj)" stroke="var(--obj)"/></symbol>
+  <symbol id="tray" viewBox="0 0 200 200" stroke-linejoin="round" stroke-width="3"><path d="M22 182l8-14h140l8 14z" fill="var(--obj)" stroke="var(--obj)"/><path d="M50 168l10-26h28l10 26z" fill="var(--obj-top)" stroke="var(--obj-top)"/><path d="M114 168l8-16h22l8 16z" fill="var(--obj-top)" stroke="var(--obj-top)"/></symbol>
+  <symbol id="console" viewBox="0 0 200 200" stroke-linejoin="round" stroke-width="3"><path d="M18 104l8-8h148l8 8v12H18z" fill="var(--obj)" stroke="var(--obj)"/><path d="M34 116h12l-6 74H30z" fill="var(--obj)" stroke="var(--obj)"/><path d="M154 116h12l4 74h-10z" fill="var(--obj)" stroke="var(--obj)"/><path d="M82 104V78l10-8h16l10 8v26z" fill="var(--obj-top)" stroke="var(--obj-top)"/></symbol>
+</svg>
+
+<div class="proto-bar" role="note">Visual prototype · placeholder imagery and sample data · not for sale</div>
+
+<header class="hdr">
+  <div class="hdr__in wrap">
+    <button class="menu-btn label" data-menu-open aria-expanded="false" aria-controls="menu">Menu</button>
+    <nav aria-label="Primary">
+      <ul>
+        <li class="has-panel"><a class="label" href="collection.html">Shop</a>
+          <div class="panel" id="shop-panel">
+            <div class="panel__in wrap">
+              <div class="panel__col"><p class="label muted">Shop</p><ul>
+                <li><a href="collection.html?cat=furniture">Furniture</a></li>
+                <li><a href="collection.html?cat=living">Table &amp; Living</a></li>
+                <li><a href="collection.html?cat=objects">Objects</a></li>
+                <li><a href="collection.html?cat=planters">Planters</a></li>
+              </ul></div>
+              <a class="panel__feat" href="product.html"><div class="ph ph--paper"><svg viewBox="0 0 200 200" preserveAspectRatio="xMidYMax meet" aria-hidden="true"><use href="#stool"/></svg><span class="tag">Placeholder · featured object</span></div><span class="label">Drum side table</span></a>
+            </div>
+          </div>
+        </li>
+        <li><a class="label" href="index.html#collection">Collections</a></li>
+        <li><a class="label" href="edit.html" aria-current="page">The Edit</a></li>
+        <li><a class="label" href="about.html">About</a></li>
+      </ul>
+    </nav>
+    <a class="wordmark" href="index.html" aria-label="OBJEKT home"><img src="assets/objekt-wordmark.svg" alt="" width="100" height="22"></a>
+    <div class="hdr__tools">
+      <a class="label tool-desktop" href="#">Search</a>
+      <a class="label tool-desktop" href="#">Account</a>
+      <a class="label" href="cart.html">Bag (<span data-bag>0</span>)</a>
+    </div>
+  </div>
+</header>
+
+<dialog id="menu" class="menu" aria-label="Menu">
+  <div class="menu__top wrap">
+    <a class="wordmark" href="index.html" aria-label="OBJEKT home"><img src="assets/objekt-wordmark.svg" alt="" width="100" height="22"></a>
+    <button class="label" data-menu-close>Close</button>
+  </div>
+  <div class="menu__body">
+    <details>
+      <summary>Shop</summary>
+      <ul>
+        <li><a href="collection.html?cat=furniture">Furniture</a></li>
+        <li><a href="collection.html?cat=living">Table &amp; Living</a></li>
+        <li><a href="collection.html?cat=objects">Objects</a></li>
+        <li><a href="collection.html?cat=planters">Planters</a></li>
+      </ul>
+    </details>
+    <a href="index.html#collection">Collections</a>
+    <a href="edit.html">The Edit</a>
+    <a href="about.html">About</a>
+  </div>
+  <div class="menu__foot label"><a href="#">Search</a><a href="#">Account</a><a href="cart.html">Bag (<span data-bag>0</span>)</a></div>
+</dialog>
+
+<main id="main">
+  <header class="ehead wrap">
+    <nav class="crumbs label" aria-label="Breadcrumb"><a href="index.html">Home</a><span aria-hidden="true">/</span><span aria-current="page">The Edit</span></nav>
+    <div class="ehead__row">
+      <h1 class="h1 etitle">The <br>Edit</h1>
+      <div class="eintro">
+        <p class="lead">Design stories, materials, craftsmanship, interiors, objects, interviews and collaborations. Placeholder introduction, to be written with OBJEKT.</p>
+        <p class="label muted">Sample stories · not real articles</p>
+      </div>
+    </div>
+    <nav class="topics" aria-label="Topics" id="topics">
+      <a class="label" href="edit.html" data-topic="all" aria-current="true">All</a>
+      <a class="label" href="edit.html?topic=design">Design stories</a>
+      <a class="label" href="edit.html?topic=materials">Materials</a>
+      <a class="label" href="edit.html?topic=craft">Craftsmanship</a>
+      <a class="label" href="edit.html?topic=interiors">Interiors</a>
+      <a class="label" href="edit.html?topic=objects">Objects</a>
+      <a class="label" href="edit.html?topic=interviews">Interviews</a>
+      <a class="label" href="edit.html?topic=collaborations">Collaborations</a>
+    </nav>
+  </header>
+
+  <section class="wrap egrid-wrap" aria-label="Stories">
+    <div class="egrid" id="egrid">
+      <article class="es" data-topic="design"><a href="article.html"><div class="ph"><svg viewBox="0 0 200 200" preserveAspectRatio="xMidYMax meet" aria-hidden="true"><use href="#arch"/></svg><span class="tag">Placeholder · interior</span></div><p class="label muted meta"><span>Design stories</span><span>Sample story</span></p><h2 class="h3">A headline for a design story sits here</h2></a></article>
+      <article class="es" data-topic="materials"><a href="article.html"><div class="ph ph--paper"><svg viewBox="0 0 200 200" preserveAspectRatio="xMidYMax meet" aria-hidden="true"><use href="#plinth"/></svg><span class="tag">Placeholder · material</span></div><p class="label muted meta"><span>Materials</span><span>Sample story</span></p><h2 class="h3">Notes on a single surface</h2></a></article>
+      <article class="es" data-topic="craft"><a href="article.html"><div class="ph ph--ink"><svg viewBox="0 0 200 200" preserveAspectRatio="xMidYMax meet" aria-hidden="true"><use href="#stool"/></svg><span class="tag">Placeholder · craft</span></div><p class="label muted meta"><span>Craftsmanship</span><span>Sample story</span></p><h2 class="h3">How an object is made</h2></a></article>
+      <article class="es" data-topic="interiors"><a href="article.html"><div class="ph"><svg viewBox="0 0 200 200" preserveAspectRatio="xMidYMax meet" aria-hidden="true"><use href="#console"/></svg><span class="tag">Placeholder · interior</span></div><p class="label muted meta"><span>Interiors</span><span>Sample story</span></p><h2 class="h3">A room, photographed</h2></a></article>
+      <article class="es" data-topic="objects"><a href="article.html"><div class="ph ph--paper"><svg viewBox="0 0 200 200" preserveAspectRatio="xMidYMax meet" aria-hidden="true"><use href="#vase"/></svg><span class="tag">Placeholder · object</span></div><p class="label muted meta"><span>Objects</span><span>Sample story</span></p><h2 class="h3">One object, looked at closely</h2></a></article>
+      <article class="es" data-topic="interviews"><a href="article.html"><div class="ph"><svg viewBox="0 0 200 200" preserveAspectRatio="xMidYMax meet" aria-hidden="true"><use href="#plinth"/></svg><span class="tag">Placeholder · portrait</span></div><p class="label muted meta"><span>Interviews</span><span>Sample story</span></p><h2 class="h3">In conversation</h2></a></article>
+      <article class="es" data-topic="collaborations"><a href="article.html"><div class="ph ph--ink"><svg viewBox="0 0 200 200" preserveAspectRatio="xMidYMax meet" aria-hidden="true"><use href="#tray"/></svg><span class="tag">Placeholder · collaboration</span></div><p class="label muted meta"><span>Collaborations</span><span>Sample story</span></p><h2 class="h3">A collaboration, in outline</h2></a></article>
+    </div>
+    <p class="eempty" id="eempty" hidden>No stories in this topic yet.</p>
+  </section>
+</main>
+
+<!-- 7 · Footer -->
+<footer class="ftr">
+  <div class="grid ftr__grid">
+    <div class="news">
+      <h2 class="h3">New objects, first.</h2>
+      <form data-news>
+        <label class="sr" for="em">Email address</label>
+        <input id="em" type="email" placeholder="Email address" autocomplete="email" required>
+        <button class="label" type="submit">Subscribe</button>
+      </form>
+    </div>
+    <div class="fcol"><span class="label">Support</span><ul><li><a href="#">Contact</a></li><li><a href="#">Care</a></li><li><a href="#">FAQ</a></li></ul></div>
+    <div class="fcol"><span class="label">Shipping</span><ul><li><a href="#">Delivery</a></li><li><a href="#">Made to order</a></li><li><a href="#">Returns</a></li></ul></div>
+    <div class="fcol"><span class="label">Policies</span><ul><li><a href="#">Terms</a></li><li><a href="#">Privacy</a></li><li><a href="#">Refunds</a></li></ul></div>
+    <div class="fcol"><span class="label">Follow</span><ul><li><a href="#">Instagram</a></li><li><a href="#">Pinterest</a></li></ul></div>
+  </div>
+  <div class="ftr__base">
+    <img class="ftr__logo" src="assets/objekt-wordmark.svg" alt="OBJEKT" width="410" height="90">
+    <small>Contact details, social handles and policy copy to be supplied. © OBJEKT</small>
+  </div>
+</footer>
+
+<script src="js/proto.js"></script>
+<script src="js/edit.js"></script>
+</body>
+</html>

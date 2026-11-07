@@ -1,0 +1,30 @@
+{{ 'card.css' | asset_url | stylesheet_tag }}
+{{ 'home.css' | asset_url | stylesheet_tag }}
+{%- assign source = section.settings.collection -%}
+<section class="sec wrap" id="selected" aria-labelledby="sel-h">
+  <div class="sec__head">
+    <h2 class="label" id="sel-h">{{ section.settings.heading }}</h2>
+    {%- if source != blank and source.products_count > 0 -%}<a class="link" href="{{ source.url }}">{{ 'home.view_all' | t }}</a>{%- endif -%}
+  </div>
+  {%- if source != blank and source.products.size > 0 -%}
+    <p class="legend label muted"><span class="dot" aria-hidden="true"></span>{{ 'availability.ready' | t }}<span class="dot dot--mto" aria-hidden="true"></span>{{ 'availability.mto' | t }}</p>
+    <div class="grid sel">
+      {%- for product in source.products limit: section.settings.limit -%}
+        <div class="o{{ forloop.index }}">{% render 'product-card', product: product %}</div>
+      {%- endfor -%}
+    </div>
+  {%- else -%}
+    <p class="muted">{{ 'home.no_products' | t }}</p>
+  {%- endif -%}
+</section>
+{% schema %}
+{
+  "name": "Selected objekts",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Selected Objekts" },
+    { "type": "collection", "id": "collection", "label": "Collection" },
+    { "type": "range", "id": "limit", "label": "Number of objekts", "min": 3, "max": 8, "step": 1, "default": 5 }
+  ],
+  "presets": [{ "name": "Selected objekts" }]
+}
+{% endschema %}

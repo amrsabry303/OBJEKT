@@ -1,0 +1,149 @@
+{
+  "general": {
+    "skip_to_content": "Skip to content",
+    "primary_nav": "Primary",
+    "home": "home",
+    "search": "Search",
+    "bag": "Bag",
+    "language": "Language",
+    "footer_tagline": "Contemporary furniture and objekts.",
+    "menu": "Menu",
+    "close": "Close",
+    "account": "Account",
+    "view_all": "View all",
+    "email": "Email address",
+    "subscribe": "Subscribe",
+    "subscribed": "Thank you. You are on the list.",
+    "home_crumb": "Home"
+  },
+  "availability": {
+    "ready": "Ready to deliver",
+    "more_made_to_order": "Other options made to order",
+    "weeks_one": {
+      "one": "{{ count }} week",
+      "other": "{{ count }} weeks"
+    },
+    "weeks_range": "{{ min }}–{{ max }} weeks",
+    "mto": "Made to order",
+    "out": "Sold out",
+    "to_make": "to make",
+    "delivery": "Delivery in",
+    "days_one": {
+      "one": "{{ count }} day",
+      "other": "{{ count }} days"
+    },
+    "days_range": "{{ min }}–{{ max }} days",
+    "delivery_after": "Then delivery in"
+  },
+  "collection": {
+    "breadcrumb": "Breadcrumb",
+    "filter": "Filter",
+    "sort": "Sort",
+    "results": {
+      "zero": "No objekts",
+      "one": "{{ count }} objekt",
+      "other": "{{ count }} objekts"
+    },
+    "show": {
+      "zero": "Show no objekts",
+      "one": "Show {{ count }} objekt",
+      "other": "Show {{ count }} objekts"
+    },
+    "products": "Products",
+    "active_filters": "Active filters",
+    "remove": "remove filter",
+    "clear_all": "Clear all",
+    "empty": "No objekts in this collection yet.",
+    "empty_filtered": "No objekts match these filters.",
+    "from": "From",
+    "to": "To",
+    "no_image": "Image to come",
+    "pagination": "Pagination",
+    "previous": "Previous",
+    "next": "Next",
+    "list_title": "Collections"
+  },
+  "product": {
+    "images": "Product images",
+    "ref": "Ref.",
+    "tag_meta": "Polycraft · Est. 2026",
+    "add_ready": "Add to bag",
+    "add_mto": "Order this piece",
+    "add_short": "Add to bag",
+    "in_good_company": "In Good Company",
+    "acc": {
+      "story": "The Story",
+      "materials_craft": "Materials & Craftsmanship",
+      "dimensions": "Dimensions",
+      "care": "Care Instructions"
+    },
+    "selected": "selected",
+    "added": "Added to bag",
+    "add_error": "Could not add to bag. Please try again."
+  },
+  "cart": {
+    "title": "Your bag",
+    "title_short": "Bag",
+    "empty": "Your bag is empty.",
+    "continue": "Continue shopping",
+    "quantity_of": "Quantity of {{ name }}",
+    "decrease": "Decrease quantity of {{ name }}",
+    "increase": "Increase quantity of {{ name }}",
+    "remove": "Remove",
+    "remove_item": "Remove {{ name }}",
+    "summary": "Order summary",
+    "delivery": "Delivery",
+    "pref_intro": "Your bag has ready pieces and made-to-order pieces. How would you like them delivered?",
+    "together": "Ship together",
+    "together_desc": "Everything ships when your made-to-order pieces are ready, in about",
+    "separate": "Ship separately",
+    "separate_ready": "Ready pieces ship in",
+    "separate_mto": "Made-to-order pieces ship in about",
+    "est_ready": "Estimated delivery in",
+    "est_mto": "Made after you order. Estimated production",
+    "subtotal": "Subtotal",
+    "at_checkout": "Calculated at checkout",
+    "checkout": "Checkout",
+    "update": "Update bag",
+    "saved": "Delivery choice saved",
+    "error": "Could not update the bag. Please try again."
+  },
+  "home": {
+    "image_to_come": "Image to come",
+    "view_all": "View all",
+    "all_stories": "All stories",
+    "no_products": "Objekts will appear here once a collection with products is chosen."
+  },
+  "edit": {
+    "topics": "Topics",
+    "all": "All",
+    "stories": "Stories",
+    "empty": "No stories yet.",
+    "topic": "Topic",
+    "objects_in_story": "Objekts in this story",
+    "see_objects": "See the objekts",
+    "next_story": "Next story"
+  },
+  "search": {
+    "title": "Search",
+    "label": "Search the store",
+    "placeholder": "Search objekts",
+    "submit": "Search",
+    "results_for": {
+      "zero": "No results for “{{ terms }}”",
+      "one": "{{ count }} result for “{{ terms }}”",
+      "other": "{{ count }} results for “{{ terms }}”"
+    },
+    "no_results": "Nothing matches your search."
+  },
+  "not_found": {
+    "title": "Page not found",
+    "text": "The page you are looking for is not here."
+  },
+  "password": {
+    "label": "Store password",
+    "submit": "Enter",
+    "error": "Incorrect password.",
+    "owner": "Store owner login"
+  }
+}

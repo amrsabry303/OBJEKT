@@ -1,0 +1,43 @@
+{%- comment -%}
+  One group of bag lines. Accepts: group ('ready' or 'mto').
+  Kind per line: the line property _fulfilment written at add time; if absent, the variant's own custom.fulfilment (anything but ready is made to order, D-023).
+{%- endcomment -%}
+<ul>
+  {%- for item in cart.items -%}
+    {%- assign kind = item.properties._fulfilment -%}
+    {%- if kind == blank -%}
+      {%- if item.variant.metafields.custom.fulfilment.value == 'ready' -%}{%- assign kind = 'ready' -%}{%- else -%}{%- assign kind = 'mto' -%}{%- endif -%}
+    {%- endif -%}
+    {%- if kind != group -%}{%- continue -%}{%- endif -%}
+    {%- assign who = item.product.title -%}
+    {%- unless item.product.has_only_default_variant -%}{%- assign who = who | append: ' · ' | append: item.variant.title -%}{%- endunless -%}
+    <li class="line" data-line="{{ forloop.index }}">
+      <a class="line__img" href="{{ item.url }}" tabindex="-1" aria-hidden="true">
+        {%- if item.image -%}{{ item.image | image_url: width: 300 | image_tag: loading: 'lazy', widths: '120, 240, 300', sizes: '112px', alt: '' }}{%- else -%}<span class="tag">{{ 'collection.no_image' | t }}</span>{%- endif -%}
+      </a>
+      <div class="line__main">
+        <a class="name" href="{{ item.url }}">{{ item.product.title }}</a>
+        {%- unless item.product.has_only_default_variant -%}<p class="muted">{{ item.variant.title }}</p>{%- endunless -%}
+        {%- assign ref = item.product.metafields.custom.reference.value -%}
+        {%- if ref != blank -%}<p class="label muted">{{ 'product.ref' | t }} <bdi dir="ltr">{{ ref }}</bdi></p>{%- endif -%}
+        {% render 'availability', product: item.product, variant: item.variant %}
+        {%- for property in item.properties -%}
+          {%- assign first_char = property.first | slice: 0, 1 -%}
+          {%- if first_char != '_' and property.last != blank -%}<p class="note">{{ property.first }}: {{ property.last }}</p>{%- endif -%}
+        {%- endfor -%}
+        <div class="line__ctl">
+          <div class="qty" role="group" aria-label="{{ 'cart.quantity_of' | t: name: who }}">
+            <button type="button" data-act="dec" aria-label="{{ 'cart.decrease' | t: name: who }}">−</button>
+            <input type="number" name="updates[{{ item.key }}]" value="{{ item.quantity }}" min="0" inputmode="numeric" aria-label="{{ 'cart.quantity_of' | t: name: who }}" dir="ltr">
+            <button type="button" data-act="inc" aria-label="{{ 'cart.increase' | t: name: who }}">+</button>
+          </div>
+          <a class="link" href="{{ item.url_to_remove }}" data-act="rm" aria-label="{{ 'cart.remove_item' | t: name: who }}">{{ 'cart.remove' | t }}</a>
+        </div>
+      </div>
+      <p class="line__price">
+        {%- if item.quantity > 1 -%}<span class="note">{{ item.quantity }} × <bdi>{{ item.final_price | money }}</bdi></span><br>{%- endif -%}
+        <bdi>{{ item.final_line_price | money }}</bdi>
+      </p>
+    </li>
+  {%- endfor -%}
+</ul>

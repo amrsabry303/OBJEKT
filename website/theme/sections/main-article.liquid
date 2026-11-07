@@ -1,0 +1,34 @@
+{{ 'card.css' | asset_url | stylesheet_tag }}
+{{ 'editorial.css' | asset_url | stylesheet_tag }}
+<article class="art">
+  <header class="art__head wrap">
+    <nav class="crumbs label" aria-label="{{ 'collection.breadcrumb' | t }}"><a href="{{ routes.root_url }}">{{ 'general.home_crumb' | t }}</a><span aria-hidden="true">/</span><a href="{{ blog.url }}">{{ blog.title }}</a><span aria-hidden="true">/</span><span aria-current="page">{{ article.title }}</span></nav>
+    <p class="label muted art__topic">{% if article.tags.size > 0 %}{{ article.tags.first }} · {% endif %}{{ article.published_at | time_tag: format: 'abbreviated_date' }}</p>
+    <h1 class="art__title">{{ article.title }}</h1>
+    {%- if article.excerpt != blank -%}<div class="lead art__lead">{{ article.excerpt }}</div>{%- endif -%}
+  </header>
+  {%- if article.image -%}
+    <div class="aband">{{ article.image | image_url: width: 2000 | image_tag: loading: 'eager', widths: '800, 1200, 1600, 2000', sizes: '100vw', alt: article.image.alt | default: '' }}</div>
+  {%- endif -%}
+  <div class="abody wrap">
+    <aside class="aside">
+      {%- if article.tags.size > 0 -%}<p class="label muted">{{ 'edit.topic' | t }}</p><p>{{ article.tags | join: ', ' }}</p>{%- endif -%}
+      {%- assign objects = article.metafields.custom.objects.value -%}
+      {%- if objects.size > 0 -%}<p class="label muted">{{ 'edit.objects_in_story' | t }}</p><p><a class="link" href="#objects">{{ 'edit.see_objects' | t }}</a></p>{%- endif -%}
+    </aside>
+    <div class="prose">{{ article.content }}</div>
+  </div>
+</article>
+{%- if objects.size > 0 -%}
+  <section class="sec wrap" id="objects" aria-labelledby="obj-h">
+    <div class="sec__head"><h2 class="label" id="obj-h">{{ 'edit.objects_in_story' | t }}</h2></div>
+    <div class="igc">{%- for p in objects limit: 3 -%}{% render 'product-card', product: p %}{%- endfor -%}</div>
+  </section>
+{%- endif -%}
+{%- assign next = blog.next_article -%}
+{%- if next -%}
+  <nav class="nextstory wrap" aria-label="{{ 'edit.next_story' | t }}"><a href="{{ next.url }}"><span class="label muted">{{ 'edit.next_story' | t }}</span><span class="h3">{{ next.title }}</span></a></nav>
+{%- endif -%}
+{% schema %}
+{ "name": "Story", "settings": [] }
+{% endschema %}

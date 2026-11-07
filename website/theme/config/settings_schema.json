@@ -1,0 +1,15 @@
+[
+  { "name": "theme_info", "theme_name": "OBJEKT", "theme_version": "0.1.0", "theme_author": "OBJEKT", "theme_documentation_url": "https://objekt.example", "theme_support_url": "https://objekt.example" },
+  { "name": "Social sharing", "settings": [
+    { "type": "image_picker", "id": "share_image", "label": "Default share image", "info": "Used when a page has no image of its own. About 1200 x 630 px." }
+  ] },
+  { "name": "Colours", "settings": [
+    { "type": "color", "id": "color_navy", "label": "Navy (brand)", "default": "#263A5A" },
+    { "type": "color", "id": "color_midnight", "label": "Midnight navy (brand guide)", "info": "Value read from the guidelines PDF colour card; confirm with the designer.", "default": "#122948" },
+    { "type": "color", "id": "color_bronze", "label": "Bronze (brand guide)", "info": "Value read from the guidelines PDF colour card; confirm with the designer. Decoration only, not text.", "default": "#9B6835" },
+    { "type": "color", "id": "color_sand", "label": "Sand (brand)", "default": "#E2D9CF" },
+    { "type": "color", "id": "color_paper", "label": "Page ground", "info": "Brand guidelines: sand is the foundation. Image fields and hovers use a lighter tint of sand and white.", "default": "#E2D9CF" },
+    { "type": "color", "id": "color_white", "label": "White", "default": "#FCFBF9" },
+    { "type": "color", "id": "color_ink", "label": "Body text", "info": "Brand guidelines set text in navy.", "default": "#263A5A" }
+  ] }
+]

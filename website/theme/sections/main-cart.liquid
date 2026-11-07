@@ -1,0 +1,123 @@
+{{ 'card.css' | asset_url | stylesheet_tag }}
+{{ 'product.css' | asset_url | stylesheet_tag }}
+{{ 'cart.css' | asset_url | stylesheet_tag }}
+{%- comment -%} Estimates come from the lines' own data: the largest minimum and the largest maximum. Nothing is shown when data is missing. {%- endcomment -%}
+{%- assign ready_n = 0 -%}{%- assign mto_n = 0 -%}{%- assign mto_total = 0 -%}
+{%- assign rd_min = 0 -%}{%- assign rd_max = 0 -%}{%- assign mw_min = 0 -%}{%- assign mw_max = 0 -%}
+{%- for item in cart.items -%}
+  {%- assign kind = item.properties._fulfilment -%}
+  {%- if kind == blank -%}
+    {%- if item.variant.metafields.custom.fulfilment.value == 'ready' -%}{%- assign kind = 'ready' -%}{%- else -%}{%- assign kind = 'mto' -%}{%- endif -%}
+  {%- endif -%}
+  {%- if kind == 'ready' -%}
+    {%- assign ready_n = ready_n | plus: 1 -%}
+    {%- assign dmin = item.variant.metafields.custom.delivery_days_min.value | default: 0 -%}
+    {%- assign dmax = item.variant.metafields.custom.delivery_days_max.value | default: 0 -%}
+    {%- if dmin > rd_min -%}{%- assign rd_min = dmin -%}{%- endif -%}
+    {%- if dmax > rd_max -%}{%- assign rd_max = dmax -%}{%- endif -%}
+  {%- else -%}
+    {%- assign mto_n = mto_n | plus: 1 -%}
+    {%- assign mto_total = mto_total | plus: item.final_line_price -%}
+    {%- assign parts = item.properties._lead_time_weeks | split: '-' -%}
+    {%- assign wmin = parts.first | plus: 0 -%}
+    {%- assign wmax = parts.last | plus: 0 -%}
+    {%- if wmin > mw_min -%}{%- assign mw_min = wmin -%}{%- endif -%}
+    {%- if wmax > mw_max -%}{%- assign mw_max = wmax -%}{%- endif -%}
+  {%- endif -%}
+{%- endfor -%}
+{%- assign mixed = false -%}
+{%- if ready_n > 0 and mto_n > 0 -%}{%- assign mixed = true -%}{%- endif -%}
+{%- assign pref = cart.attributes.delivery_preference | default: 'together' -%}
+
+<div id="cart-root" data-section-id="{{ section.id }}" data-count="{{ cart.item_count }}" data-error="{{ 'cart.error' | t }}" data-saved="{{ 'cart.saved' | t }}">
+  <div class="cart wrap" id="cart">
+    <header class="cart__head">
+      <nav class="crumbs label" aria-label="{{ 'collection.breadcrumb' | t }}"><a href="{{ routes.root_url }}">{{ 'general.home_crumb' | t }}</a><span aria-hidden="true">/</span><span aria-current="page">{{ 'cart.title_short' | t }}</span></nav>
+      <h1 class="h2">{{ 'cart.title' | t }}{% if cart.item_count > 0 %} <span class="muted">({{ cart.item_count }})</span>{% endif %}</h1>
+    </header>
+
+    {%- if cart.item_count == 0 -%}
+      <div class="cart__empty">
+        {% render 'shape', name: 'bowl' %}
+        <p class="lead">{{ 'cart.empty' | t }}</p>
+        <a class="link" href="{{ routes.all_products_collection_url }}">{{ 'cart.continue' | t }}</a>
+      </div>
+    {%- else -%}
+      <form class="cart__grid" id="cart-form" action="{{ routes.cart_url }}" method="post" novalidate>
+        <div class="cart__lines">
+          {%- if ready_n > 0 -%}
+            <section class="group" aria-labelledby="g-ready">
+              <h2 class="label" id="g-ready"><span class="dot" aria-hidden="true"></span>{{ 'availability.ready' | t }}</h2>
+              {% render 'cart-lines', group: 'ready' %}
+            </section>
+          {%- endif -%}
+          {%- if mto_n > 0 -%}
+            <section class="group" aria-labelledby="g-mto">
+              <h2 class="label" id="g-mto"><span class="dot dot--mto" aria-hidden="true"></span>{{ 'availability.mto' | t }}</h2>
+              {% render 'cart-lines', group: 'mto' %}
+            </section>
+          {%- endif -%}
+        </div>
+
+        <aside class="cart__summary" aria-label="{{ 'cart.summary' | t }}">
+          {%- if mixed -%}
+            <fieldset class="pref">
+              <legend class="label">{{ 'cart.delivery' | t }}</legend>
+              <p class="muted pref__intro">{{ 'cart.pref_intro' | t }}</p>
+              <label class="pref__opt">
+                <input type="radio" name="attributes[delivery_preference]" value="together"{% if pref == 'together' %} checked{% endif %}>
+                <span class="pref__t">{{ 'cart.together' | t }}</span>
+                {%- if mw_max > 0 -%}<span class="pref__d">{{ 'cart.together_desc' | t }} {% if mw_min == mw_max or mw_min == 0 %}{{ 'availability.weeks_one' | t: count: mw_max }}{% else %}{{ 'availability.weeks_range' | t: min: mw_min, max: mw_max }}{% endif %}</span>{%- endif -%}
+              </label>
+              <label class="pref__opt">
+                <input type="radio" name="attributes[delivery_preference]" value="separate"{% if pref == 'separate' %} checked{% endif %}>
+                <span class="pref__t">{{ 'cart.separate' | t }}</span>
+                {%- if rd_max > 0 or mw_max > 0 -%}
+                  <span class="pref__d">
+                    {%- if rd_max > 0 -%}{{ 'cart.separate_ready' | t }} {% if rd_min == rd_max or rd_min == 0 %}{{ 'availability.days_one' | t: count: rd_max }}{% else %}{{ 'availability.days_range' | t: min: rd_min, max: rd_max }}{% endif %}. {% endif -%}
+                    {%- if mw_max > 0 -%}{{ 'cart.separate_mto' | t }} {% if mw_min == mw_max or mw_min == 0 %}{{ 'availability.weeks_one' | t: count: mw_max }}{% else %}{{ 'availability.weeks_range' | t: min: mw_min, max: mw_max }}{% endif %}.{% endif -%}
+                  </span>
+                {%- endif -%}
+              </label>
+              {%- if section.settings.separate_fee_note != blank -%}<p class="muted pref__fee">{{ section.settings.separate_fee_note }}</p>{%- endif -%}
+            </fieldset>
+          {%- else -%}
+            <input type="hidden" name="attributes[delivery_preference]" value="">
+            {%- if ready_n > 0 and rd_max > 0 -%}
+              <p class="deliv">{{ 'cart.est_ready' | t }} {% if rd_min == rd_max or rd_min == 0 %}{{ 'availability.days_one' | t: count: rd_max }}{% else %}{{ 'availability.days_range' | t: min: rd_min, max: rd_max }}{% endif %}.</p>
+            {%- elsif mto_n > 0 and mw_max > 0 -%}
+              <p class="deliv">{{ 'cart.est_mto' | t }} {% if mw_min == mw_max or mw_min == 0 %}{{ 'availability.weeks_one' | t: count: mw_max }}{% else %}{{ 'availability.weeks_range' | t: min: mw_min, max: mw_max }}{% endif %}.</p>
+            {%- endif -%}
+          {%- endif -%}
+
+          <dl class="sum">
+            <div><dt>{{ 'cart.subtotal' | t }}</dt><dd><bdi>{{ cart.total_price | money }}</bdi></dd></div>
+            <div><dt>{{ 'cart.delivery' | t }}</dt><dd class="muted">{{ 'cart.at_checkout' | t }}</dd></div>
+          </dl>
+          {%- if mto_n > 0 and section.settings.deposit_note != blank -%}
+            <div class="dep"><p class="label">{{ 'availability.mto' | t }}</p><p>{{ section.settings.deposit_note }}</p></div>
+          {%- endif -%}
+          <div id="cart-checkout">
+            <button class="btn" type="submit" name="checkout">{{ 'cart.checkout' | t }}</button>
+            <button class="link cart__update" type="submit" name="update">{{ 'cart.update' | t }}</button>
+            <p class="status label muted" id="msg" role="status"></p>
+          </div>
+        </aside>
+      </form>
+      <div class="sticky-buy" id="sticky-checkout" hidden>
+        <div><p class="label muted">{{ 'cart.subtotal' | t }}</p><p class="price"><bdi>{{ cart.total_price | money }}</bdi></p></div>
+        <button class="btn" type="submit" name="checkout" form="cart-form">{{ 'cart.checkout' | t }}</button>
+      </div>
+    {%- endif -%}
+  </div>
+</div>
+<script src="{{ 'cart.js' | asset_url }}" defer></script>
+{% schema %}
+{
+  "name": "Bag",
+  "settings": [
+    { "type": "textarea", "id": "deposit_note", "label": "Deposit note", "info": "Shown when the bag has made-to-order pieces. Leave empty until the deposit terms are confirmed." },
+    { "type": "textarea", "id": "separate_fee_note", "label": "Separate shipments note", "info": "For example the delivery fee for separate shipments. Leave empty until decided." }
+  ]
+}
+{% endschema %}

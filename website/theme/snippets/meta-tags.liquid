@@ -1,0 +1,36 @@
+{%- comment -%}
+  Robots rules, Open Graph and Twitter tags. Nothing here is invented: title, description and image come from the page, the store preferences or the optional share image in theme settings.
+{%- endcomment -%}
+{%- assign noindex = false -%}
+{%- case template.name -%}
+  {%- when 'cart', 'search', 'customers/account', 'customers/login', 'customers/register', 'customers/order', 'customers/addresses', 'customers/reset_password', 'customers/activate_account' -%}{%- assign noindex = true -%}
+  {%- when 'collection' -%}
+    {%- if collection.sort_by != blank or collection.products_count != collection.all_products_count -%}{%- assign noindex = true -%}{%- endif -%}
+    {%- for filter in collection.filters -%}
+      {%- if filter.active_values.size > 0 -%}{%- assign noindex = true -%}{%- endif -%}
+      {%- if filter.type == 'price_range' and filter.min_value.value != blank or filter.type == 'price_range' and filter.max_value.value != blank -%}{%- assign noindex = true -%}{%- endif -%}
+    {%- endfor -%}
+{%- endcase -%}
+{%- if noindex -%}<meta name="robots" content="noindex, follow">{%- endif -%}
+{%- assign og_title = page_title | default: shop.name -%}
+{%- assign og_type = 'website' -%}
+{%- if template.name == 'product' -%}{%- assign og_type = 'product' -%}{%- elsif template.name == 'article' -%}{%- assign og_type = 'article' -%}{%- endif -%}
+<meta property="og:site_name" content="{{ shop.name | escape }}">
+<meta property="og:url" content="{{ canonical_url }}">
+<meta property="og:type" content="{{ og_type }}">
+<meta property="og:title" content="{{ og_title | escape }}">
+<meta property="og:locale" content="{{ request.locale.iso_code }}">
+{%- if description != blank -%}<meta property="og:description" content="{{ description | escape }}">{%- endif -%}
+{%- assign og_image = page_image | default: settings.share_image -%}
+{%- if og_image != blank -%}
+  <meta property="og:image" content="https:{{ og_image | image_url: width: 1200 }}">
+  <meta property="og:image:width" content="{{ og_image.width }}">
+  <meta property="og:image:height" content="{{ og_image.height }}">
+{%- endif -%}
+{%- if template.name == 'product' -%}
+  <meta property="og:price:amount" content="{{ product.selected_or_first_available_variant.price | money_without_currency | strip_html | escape }}">
+  <meta property="og:price:currency" content="{{ cart.currency.iso_code }}">
+{%- endif -%}
+<meta name="twitter:card" content="{% if og_image != blank %}summary_large_image{% else %}summary{% endif %}">
+<meta name="twitter:title" content="{{ og_title | escape }}">
+{%- if description != blank -%}<meta name="twitter:description" content="{{ description | escape }}">{%- endif -%}

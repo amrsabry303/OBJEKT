@@ -1,0 +1,28 @@
+{%- comment -%} schema.org Product, one Offer per variant. Availability uses the same rule as availability.liquid. MadeToOrder is not yet checked in Google's Rich Results test. {%- endcomment -%}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": {{ product.title | json }},
+  "url": {{ shop.url | append: product.url | json }},
+  "sku": {{ product.selected_or_first_available_variant.sku | json }},
+  "brand": { "@type": "Brand", "name": {{ shop.name | json }} },
+  {%- if product.featured_image -%}"image": {{ product.featured_image | image_url: width: 1200 | prepend: 'https:' | json }},{%- endif -%}
+  {%- if product.description != blank -%}"description": {{ product.description | strip_html | strip | json }},{%- endif -%}
+  "offers": [
+    {%- for v in product.variants -%}
+      {%- if v.available -%}
+        {%- if v.metafields.custom.fulfilment.value == 'ready' -%}{%- assign av = 'https://schema.org/InStock' -%}{%- else -%}{%- assign av = 'https://schema.org/MadeToOrder' -%}{%- endif -%}
+      {%- else -%}{%- assign av = 'https://schema.org/OutOfStock' -%}{%- endif -%}
+      {
+        "@type": "Offer",
+        "sku": {{ v.sku | json }},
+        "price": {{ v.price | divided_by: 100.0 | json }},
+        "priceCurrency": {{ cart.currency.iso_code | json }},
+        "availability": {{ av | json }},
+        "url": {{ shop.url | append: v.url | json }}
+      }{% unless forloop.last %},{% endunless %}
+    {%- endfor -%}
+  ]
+}
+</script>

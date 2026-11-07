@@ -1,0 +1,40 @@
+/* OBJEKT design tokens. Maps 1:1 to Shopify settings_schema.json (see docs/DESIGN_SYSTEM.md). */
+@font-face { font-family: "PP Mori"; font-weight: 300; font-style: normal; font-display: swap; src: local("PP Mori Extralight"), url("../fonts/PPMori-Extralight.otf") format("opentype"); }
+@font-face { font-family: "PP Mori"; font-weight: 400 500; font-style: normal; font-display: swap; src: local("PP Mori Regular"), url("../fonts/PPMori-Regular.otf") format("opentype"); }
+@font-face { font-family: "PP Mori"; font-weight: 600 700; font-style: normal; font-display: swap; src: local("PP Mori SemiBold"), url("../fonts/PPMori-SemiBold.otf") format("opentype"); }
+
+:root {
+  /* Brand — exact */
+  --navy: #263A5A;
+  --sand: #E2D9CF;
+  /* Supporting neutrals — subordinate */
+  --paper: #F7F5F1;
+  --white: #FCFBF9;
+  --ink: #252525;
+  --grey: #B4AEA7;          /* decoration and hairlines only; fails AA as text */
+  --grey-text: #5F5A54;     /* derived darker warm grey for secondary text: 6.27:1 on paper, 4.89:1 on sand */
+
+  /* PP Mori: local review only (files gitignored, free-for-personal-use). Web licence pending, see DECISIONS D-013. */
+  --font-sans: "PP Mori", "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+  /* Type scale (fluid) */
+  --fs-label: 0.75rem;                            /* 12px uppercase labels (was 11px; audit A-05) */
+  --fs-small: 0.8125rem;
+  --fs-body: 0.9375rem;
+  --fs-lead: clamp(1.125rem, 1.4vw, 1.375rem);
+  --fs-h3: clamp(1.375rem, 2vw, 1.875rem);
+  --fs-h2: clamp(2rem, 4.2vw, 4rem);
+  --fs-h1: clamp(3rem, 9vw, 9.5rem);
+
+  /* Space */
+  --gutter: clamp(14px, 1.6vw, 24px);
+  --margin: clamp(20px, 4vw, 56px);
+  --section: clamp(72px, 11vw, 168px);
+
+  /* Motion */
+  --ease: cubic-bezier(.2, .6, .2, 1);
+  --t-fast: 160ms;
+  --t-base: 420ms;
+
+  --header-h: 64px;
+}

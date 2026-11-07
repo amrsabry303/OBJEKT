@@ -1,0 +1,48 @@
+{{ 'editorial.css' | asset_url | stylesheet_tag }}
+{%- paginate blog.articles by 12 -%}
+<header class="ehead wrap">
+  <nav class="crumbs label" aria-label="{{ 'collection.breadcrumb' | t }}"><a href="{{ routes.root_url }}">{{ 'general.home_crumb' | t }}</a><span aria-hidden="true">/</span><span aria-current="page">{{ blog.title }}</span></nav>
+  <div class="ehead__row">
+    <h1 class="etitle">{{ blog.title }}</h1>
+    <div class="eintro">{%- if section.settings.intro != blank -%}<p class="lead">{{ section.settings.intro }}</p>{%- endif -%}</div>
+  </div>
+  {%- if blog.all_tags.size > 0 -%}
+    <nav class="topics" aria-label="{{ 'edit.topics' | t }}">
+      <a class="label" href="{{ blog.url }}"{% unless current_tags %} aria-current="true"{% endunless %}>{{ 'edit.all' | t }}</a>
+      {%- for tag in blog.all_tags -%}
+        <a class="label" href="{{ blog.url }}/tagged/{{ tag | handleize }}"{% if current_tags contains tag %} aria-current="true"{% endif %}>{{ tag }}</a>
+      {%- endfor -%}
+    </nav>
+  {%- endif -%}
+</header>
+<section class="wrap egrid-wrap" aria-label="{{ 'edit.stories' | t }}">
+  {%- if blog.articles.size > 0 -%}
+    <div class="egrid">
+      {%- for article in blog.articles -%}
+        <article class="es">
+          <a href="{{ article.url }}">
+            <div class="ph">{%- if article.image -%}{{ article.image | image_url: width: 1000 | image_tag: loading: 'lazy', widths: '500, 800, 1000', sizes: '(max-width: 880px) 100vw, 50vw', alt: article.image.alt | default: '' }}{%- else -%}<span class="tag">{{ 'home.image_to_come' | t }}</span>{%- endif -%}</div>
+            <div class="meta label muted">{% if article.tags.size > 0 %}<span>{{ article.tags.first }}</span>{% endif %}<span>{{ article.published_at | time_tag: format: 'abbreviated_date' }}</span></div>
+            <h2>{{ article.title }}</h2>
+          </a>
+        </article>
+      {%- endfor -%}
+    </div>
+    {%- if paginate.pages > 1 -%}
+      <nav class="pager label" aria-label="{{ 'collection.pagination' | t }}">
+        {%- if paginate.previous -%}<a href="{{ paginate.previous.url }}" rel="prev">{{ 'collection.previous' | t }}</a>{%- else -%}<span></span>{%- endif -%}
+        <span class="muted">{{ paginate.current_page }} / {{ paginate.pages }}</span>
+        {%- if paginate.next -%}<a href="{{ paginate.next.url }}" rel="next">{{ 'collection.next' | t }}</a>{%- else -%}<span></span>{%- endif -%}
+      </nav>
+    {%- endif -%}
+  {%- else -%}
+    <p class="eempty">{{ 'edit.empty' | t }}</p>
+  {%- endif -%}
+</section>
+{%- endpaginate -%}
+{% schema %}
+{
+  "name": "The Edit",
+  "settings": [{ "type": "textarea", "id": "intro", "label": "Introduction" }]
+}
+{% endschema %}
