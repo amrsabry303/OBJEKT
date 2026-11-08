@@ -153,6 +153,81 @@ These are the 49 items flagged Launch in the workspace, sorted into the four cat
 | OBJ-174 | Tabletop Planters | Planters | Planter, steel cylinder on cone foot | Cone Planter حوض مخروطي |
 | OBJ-107 | Cutlery and Dining Accessories | (none yet) | (name to come) |  |
 
+### 3d. Pre-filled facts per product (8 Nov 2026, daily content session)
+
+Only facts already recorded in the repo, the production book or the product sheet. Colours use the eight names in `brand/COLOURS-FINISHES.md`; "(proposed)" means the book marks them as a proposal, not a decision. Process "(guess)" is not confirmed by Polycraft. **Titles, prices, costs, sizes, lead times, materials, descriptions and copy are left blank on purpose.** The approximate sizes in the book and the import template are not set sizes and are not copied here. Covers the recommended day-1 list (in and on hold) from `plan/day1-product-list.md`; Sabry decides the final list.
+
+| OBJ | Category · type | Process | Colours | Finish | Drawing | Images | Title | Price (EGP) | Size | Lead time |
+|---|---|---|---|---|---|---|---|---|---|---|
+| OBJ-002 | Furniture · Coffee Tables | Metal (guess) | Oxblood, Ink | Mirror on the metal segment, coated parts Matte (proposed) | Approved REV 5 (27 Oct), in Drive | None (reference photo only) |  |  |  |  |
+| OBJ-003 | Furniture · Coffee Tables | Metal, curved or technical (guess) | Bone, Clay, Carbon (proposed) | Powder coating, Matte (proposed) | Not ready | 7 AI renders (finals Oxblood v6c, Bone v6) |  |  |  |  |
+| OBJ-015 (on hold) | Furniture · Chairs and Lounge Seating | Metal | Chocolate (brown) | powder coating, matte; leather cushions (to be confirmed) | Ready, approved 1 Nov (rev 1), in Drive | None (reference photo only) |  |  |  |  |
+| OBJ-020 | Furniture · Coffee Tables | Metal |  | Brushed (proposed) | Not ready | None (reference photo only) |  |  |  |  |
+| OBJ-038 | Furniture · Side Tables and Bedside Tables | Metal (guess) | Carbon, Oxblood | Mirror on the metal segment, coated parts Matte (proposed) | REV 4 sent to Production, in Drive | None (reference photo only) |  |  |  |  |
+| OBJ-049 (on hold) | Furniture · Stools and Benches | Metal, curved or technical (guess) |  |  | Not ready (not in book) | None (reference photo only) |  |  |  |  |
+| OBJ-137 | Furniture · Coffee Tables | Metal, curved or technical (guess) | Objekt Green, Carbon, Oxblood (proposed) | Duco, Gloss (proposed) | Not ready | 6 AI renders (first versions) |  |  |  |  |
+| OBJ-142 | Furniture · Side Tables and Bedside Tables | Printed pattern, then moulded (guess) | Bone, Oxblood (proposed) | Duco, Gloss (proposed) | Not ready | None (reference photo only) |  |  |  |  |
+| OBJ-152 | Furniture · Side Tables and Bedside Tables | Printed pattern, then moulded | Ink, Oxblood, Carbon, Bone | Duco, Gloss (proposed) | Ready (in folder) | None (reference photo only) |  |  |  |  |
+| OBJ-156 | Furniture · Side Tables and Bedside Tables | Printed pattern, then moulded | Clay, Ink, Putty (proposed) | Duco, Matte (proposed) | Not ready | None (reference photo only) |  |  |  |  |
+| OBJ-165 | Furniture · Stools and Benches | Metal (guess) | Oxblood, Carbon, Putty (proposed) | Powder coating, Matte (proposed) | Not ready | None (reference photo only) |  |  |  |  |
+| OBJ-166 | Furniture · Pedestals and plinths | Metal (guess) | Carbon matte (powder coating), or brushed stainless |  | Ready (in folder) | 11 AI renders (v5, v6 best) |  |  |  |  |
+| OBJ-167 | Furniture · Pedestals and plinths | Metal, curved or technical (guess) | Oxblood, Objekt Green, Ink, Chocolate, Bone | Powder coating, Matte (proposed) | Ready (in folder) | 3 AI renders |  |  |  |  |
+| OBJ-001 | Table & Living · Trays | Metal (guess) |  | Mirror (proposed) | Production has it; not in our folder | None (reference photo only) |  |  |  |  |
+| OBJ-094 | Table & Living · Bowls and Baskets | 3D printed | Bone (proposed) | Duco, Gloss (proposed) | Not ready | None (reference photo only) |  |  |  |  |
+| OBJ-095 | Table & Living · Bowls and Baskets | 3D printed (guess) | Objekt Green, Bone, Putty (proposed) | Duco, Matte (proposed) | Not ready | None (reference photo only) |  |  |  |  |
+| OBJ-103 | Table & Living · Coasters and Trivets | 3D printed | Putty, Carbon, Bone (proposed) | Duco, Gloss (proposed) | Not ready | None (reference photo only) |  |  |  |  |
+| OBJ-104 | Table & Living · Coasters and Trivets | Printed pattern, then moulded (guess) | Bone (proposed) | Duco, Gloss (proposed) | Not ready | None (reference photo only) |  |  |  |  |
+| OBJ-115 | Table & Living · Trays | Metal (guess) |  | Brushed (proposed) | Not ready | None (reference photo only) |  |  |  |  |
+| OBJ-148 (on hold) | Table & Living · Trays | Metal, curved or technical (guess) |  | Mirror (proposed) | Not ready | None (reference photo only) |  |  |  |  |
+| OBJ-169 | Table & Living · Bowls and Baskets | Metal (guess) |  | Mirror (proposed) | Ready, rev 2 approved 2 Nov | 4 AI renders (v3, v2 best) |  |  |  |  |
+| OBJ-171 | Table & Living · Tissue and Paper Holders | Metal (guess) | Putty, Carbon, Bone (proposed) | Powder coating, Matte (proposed) | Not ready | None (reference photo only) |  |  |  |  |
+| OBJ-004 | Objects · Candleholders and Candle Vessels | Printed pattern, then moulded (guess) | Oxblood, Clay, Bone (proposed) | Duco, Gloss (proposed) | Not ready | None (reference photo only) |  |  |  |  |
+| OBJ-099 | Objects · Candleholders and Candle Vessels | Printed pattern, then moulded | Objekt Green, Bone, Putty (proposed) | Duco, Matte (proposed) | Not ready | 5 AI renders (on the store draft) |  |  |  |  |
+| OBJ-100 | Objects · Candleholders and Candle Vessels | Metal (guess) |  | Brushed (proposed) | Not ready | None (reference photo only) |  |  |  |  |
+| OBJ-125 | Objects · Statement Sculptures | Metal |  | Mirror (proposed) | Not ready | None (reference photo only) |  |  |  |  |
+| OBJ-132 | Objects · Wall Art and Photo Displays | Metal |  | Brushed (proposed) | Not ready | None (reference photo only) |  |  |  |  |
+| OBJ-145 | Objects · Decorative Sculptures | Printed pattern, then moulded (guess) | Ink, Oxblood, Bone (proposed) | Duco, Gloss (proposed) | Not ready | None (reference photo only) |  |  |  |  |
+| OBJ-147 | Objects · Vases | Printed pattern, then moulded (guess) | Oxblood, Bone (proposed) | Duco, Gloss (proposed) | Not ready | None (reference photo only) |  |  |  |  |
+| OBJ-149 | Objects · Ashtrays and Incense Holders | Metal (guess) | Carbon (proposed) | Powder coating, Matte (proposed) | Not ready | None (reference photo only) |  |  |  |  |
+| OBJ-151 | Objects · Ashtrays and Incense Holders | Printed pattern, then moulded | Putty, Bone, Objekt Green (proposed) | Duco, Matte (proposed) | Not ready | None (reference photo only) |  |  |  |  |
+| OBJ-159 (on hold) | Objects · Shelves and Display Storage | Metal |  | Brushed (proposed) | Not ready | None (reference photo only) |  |  |  |  |
+| OBJ-164 | Objects · Shelves and Display Storage | Metal (guess) |  | Brushed (proposed) | Not ready | None (reference photo only) |  |  |  |  |
+| OBJ-172 | Objects · Statement Sculptures | Metal, curved or technical (guess) |  | Mirror (proposed) | Not ready | None (reference photo only) |  |  |  |  |
+| OBJ-175 | Objects · Shelves and Display Storage | Metal (guess) | Carbon, Putty, Bone (proposed) | Powder coating, Matte (proposed) | Not ready | None (reference photo only) |  |  |  |  |
+| OBJ-176 | Objects · Shelves and Display Storage | Metal (guess) | Bone, Clay, Ink, Objekt Green (proposed) | Powder coating, Matte (proposed) | Not ready | None (reference photo only) |  |  |  |  |
+| OBJ-068 | Planters · Floor Planters | Metal | Carbon, Putty, Chocolate (proposed) | Powder coating, Matte (proposed) | Not ready | None (reference photo only) |  |  |  |  |
+| OBJ-069 | Planters · Floor Planters | Printed pattern, then moulded (guess) | Bone, Putty, Clay (proposed) | Duco, Matte (proposed) | Not ready | None (reference photo only) |  |  |  |  |
+| OBJ-072 | Planters · Floor Planters | Metal, curved or technical (guess) |  | Mirror (proposed) | Not ready | None (reference photo only) |  |  |  |  |
+| OBJ-075 | Planters · Floor Planters | Metal (guess) |  | Brushed (proposed) | Not ready | None (reference photo only) |  |  |  |  |
+| OBJ-080 | Planters · Planter Screens | Metal (guess) | Ink, Objekt Green, Clay (proposed) | Powder coating, Matte (proposed) | Not ready | None (reference photo only) |  |  |  |  |
+| OBJ-085 | Planters · Tabletop Planters | 3D printed (guess) | Clay, Bone, Objekt Green (proposed) | Duco, Matte (proposed) | Not ready | None (reference photo only) |  |  |  |  |
+| OBJ-154 | Planters · Tabletop Planters | Printed pattern, then moulded (guess) | Clay, Bone, Objekt Green (proposed) | Duco, Gloss (proposed) | Not ready | None (reference photo only) |  |  |  |  |
+| OBJ-155 | Planters · Tabletop Planters | 3D printed | Clay, Objekt Green, Bone (proposed) | Duco, Matte (proposed) | Not ready | None (reference photo only) |  |  |  |  |
+| OBJ-173 | Planters · Tabletop Planters | Metal (guess) |  | Mirror (proposed) | Not ready | None (reference photo only) |  |  |  |  |
+
+**Who must answer** (applies to every product above unless already filled):
+
+- **Sabry:** product title (English and Arabic), price incl. 14% VAT, colours actually offered, approval of the drawing, whether AI renders may go on the site, description and copy approval.
+- **Polycraft (Youssef / Ahmed):** confirm the process, final dimensions and weight, materials, cost, lead time in weeks, whether it can be made as drawn, mirror-polish capacity.
+
+**Per-product extras:**
+
+- OBJ-001: Polycraft: send the design file (Production has it, our folder does not).
+- OBJ-002: Sabry: confirm Oxblood and Ink as the colours, and the mirror segment.
+- OBJ-003: Polycraft: prototype was in painting; send photos. Book colours (Bone, Clay, Carbon) differ from the render finals (Oxblood, Bone): Sabry to pick.
+- OBJ-015: Sabry: are the leather cushions day-1 (upholstery) or wave 2? Polycraft: who makes the cushions.
+- OBJ-049: Sabry: still on the list? Not in the production book.
+- OBJ-099: Polycraft: printed prototype exists; cost and lead time. Sabry: book colours (Objekt Green, Bone, Putty) differ from the store renders (Oxblood, Ink, Objekt Green, Putty).
+- OBJ-125: Polycraft: 1500 mm mirror sculpture; confirm capacity. Sheet tags it "Special project".
+- OBJ-137: Polycraft: prototype built; send photos, cost, lead time.
+- OBJ-147: Polycraft: launch board notes it may need ceramic or glass; confirm the material.
+- OBJ-148: Sabry: reference is a named retail product; approve an own design or drop.
+- OBJ-159: Sabry: reference is a named designer's piece; approve an own design or drop.
+- OBJ-166: Sabry: variant heights differ between sources (book: 850 / 1000 mm; import template: 700 / 1000 mm). Polycraft: confirm.
+- OBJ-172: Polycraft: large mirror-polished piece; confirm it fits the polishers' queue.
+- OBJ-175: Sabry: list the panel options (modular) so the variants can be set.
+- OBJ-176: Sabry: confirm the four colours (book: Bone, Clay, Ink, Objekt Green).
+
 ## 4. Categories, product types and tags
 
 The customer menu has four categories only, in this order; each needs an English and Arabic title and a one-line description. Everything else (room, process, finish, colour, price) is a filter inside them, not a category. Lighting is wave 2 and joins Objects later; a fifth category "Wall" (shelves, wall art, mirrors) may split off from Objects when lighting launches or the list passes 60.

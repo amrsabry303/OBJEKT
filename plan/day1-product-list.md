@@ -1,0 +1,95 @@
+# objekt day-1 product list: reconciliation and recommendation (8 Nov 2026)
+
+Prepared by the daily "Content and product list" session. **A recommendation; Sabry decides.** Working titles are the OBJ code until Sabry names a product (no name is approved).
+
+## Sources and how they disagree
+
+| Source | Date | Count | Notes |
+|---|---|---|---|
+| Plan: `plan/website-categories-prompt.md` | after 30 Oct | 46 | The newest agreed list: Furniture 14, Table & Living 9, Objects 14, Planters 9. |
+| Production book (Google Slides, read only) | 1–2 Nov | 45 | Same as the plan minus OBJ-049. Holds process, stage, colours, finish and design-file status per product. |
+| Shopify store (as recorded in CONTENT_TO_SUPPLY 3c and HANDOVER, not re-read: no store access this run) | 30 Oct | 49 drafts + OBJ-099 | Built from the older workspace "Launch" flags. 15 drafts are not on the plan; 11 plan products have no draft. |
+| Product sheet (Google Sheet, read only) | rows dated 5–6 Oct | 49 "Launch" | Same old flags as the store; stale. Costed/Priced columns are 0 everywhere (OBJ-142 shows 2 costed). |
+| Import template `plan/shopify-import-template.csv` | | 18 products | A subset with candidate names (not approved) and approximate sizes marked "to confirm". |
+
+Plan products with **no store draft** (would need new drafts, website session, with approval): OBJ-012, 015, 020, 068, 094, 103, 132, 152, 155, 156, 159. OBJ-099 exists separately (created 2 Nov).
+
+Store drafts **not on the plan** (recommend archive or leave as drafts; never published): OBJ-035, 039, 052, 074, 086, 090, 093, 107, 112, 141, 146, 150, 168, 170, 174.
+
+## Recommendation in one line
+
+Launch the plan's 46 minus OBJ-012 (sofa, wave 2): **41 in, 4 on hold** (OBJ-015, 049, 148, 159), so 41 to 45 products, inside the 40–60 target. In: Furniture 11, Table & Living 8, Objects 13, Planters 9.
+
+Process mix of the 41 (mostly first guesses from the book): Metal 20, Curved metal 5, Print then mould 11, Printed direct 5. Target scaled to ~41: about 20 metal (curved at most 7), about 12 moulded, 3–7 printed direct. Close; printed direct is at the top of its band.
+
+Mirror-finish pieces (in or on hold, proposed finish): OBJ-001, OBJ-002, OBJ-038, OBJ-072, OBJ-125, OBJ-148, OBJ-169, OBJ-172, OBJ-173. Rule 5 caps these once the polishers are counted; nobody has counted them yet.
+
+**The hard fact:** with content freeze on Thu 12 Nov, only 7 of the 41 have a drawing ready or with Production (OBJ-001, 002, 038, 152, 166, 167, 169), only 6 products have any image (all AI renders), and no product has a cost, price or lead time. A full 41 cannot have real data by 12 Nov. See the decision line in STATUS.md.
+
+## The table
+
+Process "(guess)" = first guess in the book or workspace, not confirmed by Polycraft. Image status counts AI renders only; every product also has a reference photo, which is not a product image.
+
+| OBJ | Working title | Category | Product type | What it is (book/plan) | Process | Drawing | Images | Rec. | Reason | In |
+|---|---|---|---|---|---|---|---|---|---|---|
+| OBJ-002 | OBJ-002 | Furniture | Coffee Tables | Coffee table, four-part round, folded metal | Metal (guess) | Approved REV 5 (27 Oct), in Drive | None (reference photo only) | **IN** | On the 46-product plan and in the production book. | plan + book + store |
+| OBJ-003 | OBJ-003 | Furniture | Coffee Tables | Coffee table, round top with half-disc legs and tabs | Metal, curved or technical (guess) | Not ready | 7 AI renders (finals Oxblood v6c, Bone v6) | **IN** | On the 46-product plan and in the production book. | plan + book + store |
+| OBJ-020 | OBJ-020 | Furniture | Coffee Tables | Coffee Tables ref 4 | Metal | Not ready | None (reference photo only) | **IN** | On the 46-product plan and in the production book. | plan + book |
+| OBJ-038 | OBJ-038 | Furniture | Side Tables and Bedside Tables | Side Tables and Bedside Tables ref 2 | Metal (guess) | REV 4 sent to Production, in Drive | None (reference photo only) | **IN** | On the 46-product plan and in the production book. | plan + book + store |
+| OBJ-137 | OBJ-137 | Furniture | Coffee Tables | Coffee table, round glass top with wave-tube base | Metal, curved or technical (guess) | Not ready | 6 AI renders (first versions) | **IN** | On the 46-product plan and in the production book. | plan + book + store |
+| OBJ-142 | OBJ-142 | Furniture | Side Tables and Bedside Tables | Side table, stacked pebble | Printed pattern, then moulded (guess) | Not ready | None (reference photo only) | **IN** | On the 46-product plan and in the production book. | plan + book + store |
+| OBJ-152 | OBJ-152 | Furniture | Side Tables and Bedside Tables | Side table, two-form lacquer pair | Printed pattern, then moulded | Ready (in folder) | None (reference photo only) | **IN** | On the 46-product plan and in the production book. | plan + book |
+| OBJ-156 | OBJ-156 | Furniture | Side Tables and Bedside Tables | Side table pair, stacked-disc tops | Printed pattern, then moulded | Not ready | None (reference photo only) | **IN** | On the 46-product plan and in the production book. | plan + book |
+| OBJ-165 | OBJ-165 | Furniture | Stools and Benches | Bench, folded plate, rounded corners | Metal (guess) | Not ready | None (reference photo only) | **IN** | On the 46-product plan and in the production book. | plan + book + store |
+| OBJ-166 | OBJ-166 | Furniture | Pedestals and plinths | Plinth, brushed steel box, two heights | Metal (guess) | Ready (in folder) | 11 AI renders (v5, v6 best) | **IN** | On the 46-product plan and in the production book. | plan + book + store |
+| OBJ-167 | OBJ-167 | Furniture | Pedestals and plinths | Pedestal, black faceted twist | Metal, curved or technical (guess) | Ready (in folder) | 3 AI renders | **IN** | On the 46-product plan and in the production book. | plan + book + store |
+| OBJ-001 | OBJ-001 | Table & Living | Trays | Tray, mirror polish, folded corners | Metal (guess) | Production has it; not in our folder | None (reference photo only) | **IN** | On the 46-product plan and in the production book. | plan + book + store |
+| OBJ-094 | OBJ-094 | Table & Living | Bowls and Baskets | Bowls and Baskets ref 5 | 3D printed | Not ready | None (reference photo only) | **IN** | On the 46-product plan and in the production book. | plan + book |
+| OBJ-095 | OBJ-095 | Table & Living | Bowls and Baskets | Bowls and Baskets ref 6 | 3D printed (guess) | Not ready | None (reference photo only) | **IN** | On the 46-product plan and in the production book. | plan + book + store |
+| OBJ-103 | OBJ-103 | Table & Living | Coasters and Trivets | Coasters and Trivets ref 1 | 3D printed | Not ready | None (reference photo only) | **IN** | On the 46-product plan and in the production book. | plan + book |
+| OBJ-104 | OBJ-104 | Table & Living | Coasters and Trivets | Coasters and Trivets ref 2 | Printed pattern, then moulded (guess) | Not ready | None (reference photo only) | **IN** | On the 46-product plan and in the production book. | plan + book + store |
+| OBJ-115 | OBJ-115 | Table & Living | Trays | Trays ref 1 | Metal (guess) | Not ready | None (reference photo only) | **IN** | On the 46-product plan and in the production book. | plan + book + store |
+| OBJ-169 | OBJ-169 | Table & Living | Bowls and Baskets | Bowl, folded steel pyramid on cross stand | Metal (guess) | Ready, rev 2 approved 2 Nov | 4 AI renders (v3, v2 best) | **IN** | On the 46-product plan and in the production book. | plan + book + store |
+| OBJ-171 | OBJ-171 | Table & Living | Tissue and Paper Holders | Tissue holder, L-shaped block, three positions | Metal (guess) | Not ready | None (reference photo only) | **IN** | On the 46-product plan and in the production book. | plan + book + store |
+| OBJ-004 | OBJ-004 | Objects | Candleholders and Candle Vessels | Candleholder family, lacquered turned forms | Printed pattern, then moulded (guess) | Not ready | None (reference photo only) | **IN** | On the 46-product plan and in the production book. | plan + book + store |
+| OBJ-099 | OBJ-099 | Objects | Candleholders and Candle Vessels | Candleholder set, turned forms | Printed pattern, then moulded | Not ready | 5 AI renders (on the store draft) | **IN** | On the 46-product plan and in the production book. | plan + book + store |
+| OBJ-100 | OBJ-100 | Objects | Candleholders and Candle Vessels | Candleholders and Candle Vessels ref 5 | Metal (guess) | Not ready | None (reference photo only) | **IN** | On the 46-product plan and in the production book. | plan + book + store |
+| OBJ-125 | OBJ-125 | Objects | Statement Sculptures | Statement Sculptures ref 5 | Metal | Not ready | None (reference photo only) | **IN** | On the 46-product plan and in the production book. | plan + book + store |
+| OBJ-132 | OBJ-132 | Objects | Wall Art and Photo Displays | Wall Art and Photo Displays ref 1 | Metal | Not ready | None (reference photo only) | **IN** | On the 46-product plan and in the production book. | plan + book |
+| OBJ-145 | OBJ-145 | Objects | Decorative Sculptures | Totems, stacked bowls and spheres, two sizes | Printed pattern, then moulded (guess) | Not ready | None (reference photo only) | **IN** | On the 46-product plan and in the production book. | plan + book + store |
+| OBJ-147 | OBJ-147 | Objects | Vases | Vase, double bulb | Printed pattern, then moulded (guess) | Not ready | None (reference photo only) | **IN** | On the 46-product plan and in the production book. | plan + book + store |
+| OBJ-149 | OBJ-149 | Objects | Ashtrays and Incense Holders | Blackened steel ashtray, interlocking plates | Metal (guess) | Not ready | None (reference photo only) | **IN** | On the 46-product plan and in the production book. | plan + book + store |
+| OBJ-151 | OBJ-151 | Objects | Ashtrays and Incense Holders | Incense holder, stacked ovals | Printed pattern, then moulded | Not ready | None (reference photo only) | **IN** | On the 46-product plan and in the production book. | plan + book + store |
+| OBJ-164 | OBJ-164 | Objects | Shelves and Display Storage | Corner shelf pair, triangular | Metal (guess) | Not ready | None (reference photo only) | **IN** | On the 46-product plan and in the production book. | plan + book + store |
+| OBJ-172 | OBJ-172 | Objects | Statement Sculptures | Sculpture, faceted mirror-polished steel | Metal, curved or technical (guess) | Not ready | None (reference photo only) | **IN** | On the 46-product plan and in the production book. | plan + book + store |
+| OBJ-175 | OBJ-175 | Objects | Shelves and Display Storage | Wall shelf panels, half-disc shelves in cut circles | Metal (guess) | Not ready | None (reference photo only) | **IN** | On the 46-product plan and in the production book. | plan + book + store |
+| OBJ-176 | OBJ-176 | Objects | Shelves and Display Storage | Wall shelves, half-disc, colour set | Metal (guess) | Not ready | None (reference photo only) | **IN** | On the 46-product plan and in the production book. | plan + book + store |
+| OBJ-068 | OBJ-068 | Planters | Floor Planters | Floor Planters ref 1 | Metal | Not ready | None (reference photo only) | **IN** | On the 46-product plan and in the production book. | plan + book |
+| OBJ-069 | OBJ-069 | Planters | Floor Planters | Floor Planters ref 2 | Printed pattern, then moulded (guess) | Not ready | None (reference photo only) | **IN** | On the 46-product plan and in the production book. | plan + book + store |
+| OBJ-072 | OBJ-072 | Planters | Floor Planters | Floor Planters ref 5 | Metal, curved or technical (guess) | Not ready | None (reference photo only) | **IN** | On the 46-product plan and in the production book. | plan + book + store |
+| OBJ-075 | OBJ-075 | Planters | Floor Planters | Floor Planters ref 8 | Metal (guess) | Not ready | None (reference photo only) | **IN** | On the 46-product plan and in the production book. | plan + book + store |
+| OBJ-080 | OBJ-080 | Planters | Planter Screens | Planter Screens ref 1 | Metal (guess) | Not ready | None (reference photo only) | **IN** | On the 46-product plan and in the production book. | plan + book + store |
+| OBJ-085 | OBJ-085 | Planters | Tabletop Planters | Tabletop Planters ref 2 | 3D printed (guess) | Not ready | None (reference photo only) | **IN** | On the 46-product plan and in the production book. | plan + book + store |
+| OBJ-154 | OBJ-154 | Planters | Tabletop Planters | Planter, stacked lacquer pods | Printed pattern, then moulded (guess) | Not ready | None (reference photo only) | **IN** | On the 46-product plan and in the production book. | plan + book + store |
+| OBJ-155 | OBJ-155 | Planters | Tabletop Planters | Planter, fluted base with flared rim | 3D printed | Not ready | None (reference photo only) | **IN** | On the 46-product plan and in the production book. | plan + book |
+| OBJ-173 | OBJ-173 | Planters | Tabletop Planters | Planter, mirror-polished cube | Metal (guess) | Not ready | None (reference photo only) | **IN** | On the 46-product plan and in the production book. | plan + book + store |
+| OBJ-015 | OBJ-015 | Furniture | Chairs and Lounge Seating | Chairs and Lounge Seating ref 5 | Metal | Ready, approved 1 Nov (rev 1), in Drive | None (reference photo only) | **HOLD** | Chair with leather cushions (to be confirmed). In only if the cushions are not upholstery work for day 1; otherwise wave 2. | plan + book |
+| OBJ-049 | OBJ-049 | Furniture | Stools and Benches | Stools and Benches ref 2 | Metal, curved or technical (guess) | Not ready (not in book) | None (reference photo only) | **HOLD** | In the plan and the store, but missing from the production book (45). Confirm it is still on the list. | plan + store |
+| OBJ-148 | OBJ-148 | Table & Living | Trays | Wavy organic trays, mirror polish and ribbed | Metal, curved or technical (guess) | Not ready | None (reference photo only) | **HOLD** | Reference is a named retail product (Mosha Home Wavey tray). Needs its own design before it can be listed. | plan + book + store |
+| OBJ-159 | OBJ-159 | Objects | Shelves and Display Storage | Tall shelf, aluminium side plates with circular cut-outs | Metal | Not ready | None (reference photo only) | **HOLD** | Reference is a named designer's piece (jeremylechatelier, Hublot collection). Needs its own design before it can be listed. | plan + book |
+| OBJ-012 | OBJ-012 | Furniture | Chairs and Lounge Seating | Chairs and Lounge Seating ref 2 | not tagged yet (guess) | Ready, approved 1 Nov (rev 1) | None (reference photo only) | **OUT** | Upholstered modular sofa; the book calls it a wave-2 candidate and upholstery waits for wave 2 (plan rule 4). | plan + book |
+| OBJ-039 | OBJ-039 | Furniture | Side Tables and Bedside Tables | Side Tables and Bedside Tables ref 3 | Metal (guess) | Not ready (not in book) | None (reference photo only) | **OUT** | Store draft only; dropped from the 46-product plan and not in the production book. | store |
+| OBJ-052 | OBJ-052 | Furniture | Stools and Benches | Stools and Benches ref 5 | Metal, curved or technical (guess) | Not ready (not in book) | None (reference photo only) | **OUT** | Store draft only; dropped from the 46-product plan and not in the production book. | store |
+| OBJ-090 | OBJ-090 | Table & Living | Bowls and Baskets | Bowls and Baskets ref 1 | 3D printed (guess) | Not ready (not in book) | None (reference photo only) | **OUT** | Store draft only; dropped from the 46-product plan and not in the production book. | store |
+| OBJ-093 | OBJ-093 | Table & Living | Bowls and Baskets | Bowls and Baskets ref 4 | 3D printed (guess) | Not ready (not in book) | None (reference photo only) | **OUT** | Store draft only; dropped from the 46-product plan and not in the production book. | store |
+| OBJ-112 | OBJ-112 | Table & Living | Tissue and Paper Holders | Tissue and Paper Holders ref 1 | Metal (guess) | Not ready (not in book) | None (reference photo only) | **OUT** | Store draft only; dropped from the 46-product plan and not in the production book. | store |
+| OBJ-170 | OBJ-170 | Table & Living | Bowls and Baskets | Bowl, folded steel dish with lifted corners | Metal (guess) | Not ready (not in book) | None (reference photo only) | **OUT** | Store draft only; dropped from the plan and the book; naming skill holds it back from launch. | store |
+| OBJ-035 | OBJ-035 | Objects | Shelves and Display Storage | Shelves and Display Storage ref 5 | Metal (guess) | Not ready (not in book) | None (reference photo only) | **OUT** | Store draft only; dropped from the 46-product plan and not in the production book. | store |
+| OBJ-141 | OBJ-141 | Objects | Vases | Vase set, bottle forms | Printed pattern, then moulded (guess) | Not ready (not in book) | None (reference photo only) | **OUT** | Store draft only; dropped from the plan and the book; naming skill holds it back from launch. | store |
+| OBJ-146 | OBJ-146 | Objects | Candleholders and Candle Vessels | Candleholder, blue cone on steel cylinder | Metal (guess) | Not ready (not in book) | None (reference photo only) | **OUT** | Store draft only; dropped from the plan and the book; naming skill holds it back from launch. | store |
+| OBJ-150 | OBJ-150 | Objects | Ashtrays and Incense Holders | Ashtray set, chrome with coloured enamel interior | Metal, curved or technical (guess) | Not ready (not in book) | None (reference photo only) | **OUT** | Store draft only; dropped from the 46-product plan and not in the production book. | store |
+| OBJ-168 | OBJ-168 | Objects | Vases | Slot vase, tall square tower with round holes | Metal (guess) | Not ready (not in book) | None (reference photo only) | **OUT** | Store draft only; dropped from the plan and the book; naming skill holds it back from launch. | store |
+| OBJ-074 | OBJ-074 | Planters | Floor Planters | Floor Planters ref 7 | Printed pattern, then moulded (guess) | Not ready (not in book) | None (reference photo only) | **OUT** | Store draft only; dropped from the 46-product plan and not in the production book. | store |
+| OBJ-086 | OBJ-086 | Planters | Tabletop Planters | Tabletop Planters ref 3 | 3D printed (guess) | Not ready (not in book) | None (reference photo only) | **OUT** | Store draft only; dropped from the 46-product plan and not in the production book. | store |
+| OBJ-174 | OBJ-174 | Planters | Tabletop Planters | Planter, steel cylinder on cone foot | Metal, curved or technical (guess) | Not ready (not in book) | None (reference photo only) | **OUT** | Store draft only; dropped from the plan and the book; naming skill holds it back from launch. | store |
+| OBJ-107 | OBJ-107 | (none yet) | Cutlery and Dining Accessories | Cutlery and Dining Accessories ref 1 | Metal (guess) | Not ready (not in book) | None (reference photo only) | **OUT** | Store draft only; cutlery has no website category (plan: later). | store |
