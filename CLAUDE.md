@@ -18,7 +18,7 @@ Sabry and Youssef Gaber (owner of the Polycraft factory, Cairo) are building a h
 - Fonts (Galak Round, PP Mori) and the logo lettering are **not licensed for public or commercial use**. Never commit font files.
 - Nothing public, sent, uploaded, published or paid without Sabry's clear yes. Never touch the live store's products, prices, orders, checkout or payments without approval. Never handle passwords or keys.
 - Write the brand word as objekt / objekts in visible text.
-- This repo holds objekt and Polycraft only. Dough work lives in `dough-internal`.
+- This repo holds objekt and Polycraft only. Dough internal docs live in omrmhd5/bake-dough under `docs/internal/`.
 
 ## Layout
 | Folder | What |
