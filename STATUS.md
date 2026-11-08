@@ -12,6 +12,7 @@ Three daily sessions work on this repo, one section each. Each session updates *
 - [content] 15 store drafts not on the plan (OBJ-035, 039, 052, 074, 086, 090, 093, 107, 112, 141, 146, 150, 168, 170, 174) · archive / keep as drafts · rec: keep as drafts, never activate; website session archives only on your yes.
 - [content] May AI renders go on the public site as product images until photos exist?
 - [website] Sign in to Paymob so test mode can be set up.
+- [website] Use the 30 Oct suggested wording in CONTENT_TO_SUPPLY (About statement and two sections, site title, meta descriptions, category one-liners) as-is, and add The Edit and About to the `objekt-main` menu? · yes / edit · rec: yes (Arabic still needs the translator).
 - [website] Fill sections 5, 6 and 8 of CONTENT_TO_SUPPLY.md (delivery, returns, payment, policies) before the 12 Nov freeze, or say which may stay out at launch.
 - [all] Licences: PP Mori (web), Galak Round, logo lettering (Raftwork). No public launch without them.
 
@@ -27,6 +28,10 @@ Three daily sessions work on this repo, one section each. Each session updates *
 ## Drawings and files
 
 ## Website (Shopify)
+### 8 Nov 2026 (Sun, third run)
+- Ran: pulled main (94fd23d); `npm ci`; `theme check` 48 files, no offenses. Store confirmed OBJEKT / hs1a1c-ut. No store writes.
+- Store re-read: counts unchanged (53 products, 16 active, 3 `[TEST]`, 13 `preview-active`, 13 active with `placeholder-data`). `objekt-main` = Shop › Furniture, Table & Living, Objekts, Planters. Footer menu = Search only. Pages About, Contact. Blog `the-edit` holds only the 2 `[TEST]` articles. No policies.
+- Step 1 already done (2nd run). Step 2 Paymob: no sign-in reported, not touched. Step 3: CONTENT_TO_SUPPLY sections 5, 6, 8 (payment, delivery, returns, policies) still empty; About, meta and collection one-liners are only the 30 Oct suggested drafts, not Sabry's approved text, so nothing published. Step 4: Shopify CLI not logged in here (`theme list` waited for login), so no theme push.
 ### 8 Nov 2026 (Sun, second run after Sabry reconnected Shopify)
 - Store confirmed: OBJEKT / hs1a1c-ut. OBJ-099 Oxblood swap done: v2 brand-colour images uploaded, Oxblood variant linked, v1 Oxblood media deleted, read back OK. Not looked at in a browser.
 - Store read: 53 products (16 active, 37 draft), 3 TEST, 13 preview-active, 50 placeholder-data; objekt-main menu still "Shop" only; pages About, Contact.
@@ -38,7 +43,7 @@ Three daily sessions work on this repo, one section each. Each session updates *
 - CONTENT_TO_SUPPLY.md: delivery, returns, payment, policies and collection-intro answers are still empty, so step 3 has no text to use even once the store is back.
 - OBJ-099: the two v2 Oxblood JPEGs are in plan/images/OBJ-099/, ready to upload.
 
-**Pre-launch cleanup checklist (HANDOVER section 8; store counts re-read 8 Nov):**
+**Pre-launch cleanup checklist (HANDOVER section 8; store counts re-read 8 Nov, 3rd run, unchanged):**
 - [x] OBJ-099: v2 Oxblood images in, variant linked, v1 removed (8 Nov)
 - [ ] Delete the 3 `[TEST]` products and 2 `[TEST]` articles
 - [ ] 13 `preview-active` products back to draft, or real data in; drop `placeholder-data` tags only when real
