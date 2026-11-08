@@ -16,6 +16,10 @@ Three daily sessions work on this repo, one section each. Each session updates *
 - [website] Fill sections 5, 6 and 8 of CONTENT_TO_SUPPLY.md (delivery, returns, payment, policies) before the 12 Nov freeze, or say which may stay out at launch.
 - [catalogue] Colours per product: the book's colours are proposals. Confirm the colours each product is sold in (start with the 10 that have drawings or renders) · list per OBJ · rec: confirm in CONTENT_TO_SUPPLY 3d, then I build the colour variants.
 - [catalogue] OBJ-099 colours: store has Oxblood, Ink, Objekt Green, Putty; book has Objekt Green, Bone, Putty · keep store / switch to book · rec: keep store (renders exist for those four).
+- [images] Approve or retake the 3 hero renders sent 8 Nov (AI renders): OBJ-152 Ink v2c, OBJ-002 Oxblood v1c, OBJ-038 Carbon v1c · approve / retake per image · only after approval do other colours and the context shot get made.
+- [images] Hero colours used are the proposed ones from CONTENT_TO_SUPPLY 3d (002 Oxblood matte, 038 Carbon matte, 152 Ink gloss). The "mirror on the metal segment" for 002 and 038 is not shown: which part is mirror? · tell me / leave all-coated · rec: leave all-coated until the drawing says.
+- [images] OBJ-001 reference photo carries a third-party maker mark (NM3), like 148/159 · redesign as our own / render anyway · rec: wait for the Polycraft design file and render from that. Skipped today.
+- [images] Drive upload and production-book stickers for new renders need your yes · yes / not yet · rec: yes once heroes are approved.
 - [all] Licences: PP Mori (web), Galak Round, logo lettering (Raftwork). No public launch without them.
 
 ## Content and product list
@@ -26,6 +30,16 @@ Three daily sessions work on this repo, one section each. Each session updates *
 - Added section 3d to `website/docs/CONTENT_TO_SUPPLY.md`: recorded category, process (marked guess), colours, proposed finish, drawing and image status for the 45 in/hold products, plus who must answer (Sabry / Polycraft). Titles, prices, sizes, lead times, materials and copy left blank.
 - No product copy drafted: Sabry has not approved copy in this file.
 - Next: once the list is approved, a per-product gap list for the products that can make the 12 Nov freeze; check OBJ-166 heights (850 vs 700 mm conflict).
+
+## Product images
+
+### Sun 8 Nov 2026
+- First run. Magnific balance 16,100 at start, **15,840** at end (260 spent: 4 renders × 65). Day-1 list not yet approved, so worked the approved-drawing products, simplest first. Drawings not yet in `venture/drawings/`, so all three came from the reference photo (cropped, own house scene, reference room not copied).
+- OBJ-152 Ink pair: v1 rejected (left table lost its waist), v2 kept; hue drifted to 208°, recoloured to Ink 221° inside a product box mask → v2c.
+- OBJ-002 Oxblood: v1 kept first try; hue 4° → recoloured to 354° inside a solid product silhouette (floor untouched) → v1c.
+- OBJ-038 Carbon: v1 kept first try; plates had a teal cast → neutralised inside a product mask → v1c. Cut-out shape is close to, not identical to, the reference.
+- Files: `plan/images/OBJ-{002,038,152}/` (JPEG, 2000 px). Inventory .md and .csv updated. Nothing uploaded to Drive, stickers not changed.
+- Approvals: none yet. Next: other colours and context shots for approved heroes; then OBJ-015 (hold) or day-1 list products.
 
 ## Drawings and files
 
