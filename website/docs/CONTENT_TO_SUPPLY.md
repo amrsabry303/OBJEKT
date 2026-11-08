@@ -1,0 +1,371 @@
+# OBJEKT website: content to supply
+
+Oct 29, 2026 · @Sabry
+
+## How to use this document
+
+Every placeholder in the website prototype is listed here; type your text in the **Your text** column and leave anything you do not know blank.
+
+- **Facts only.** Do not guess history, makers, materials, sourcing, certifications or production claims. Blank is better than a guess; the site will show nothing rather than an invented line.
+- **Units.** Prices in EGP, lengths in cm, weight in kg, lead times in weeks, delivery in working days.
+- **Voice.** Intelligent, understated, contemporary, human. Short sentences. No superlatives ("finest", "luxurious").
+- **Length guides** in brackets are targets, not limits.
+- **Files, not text:** logo, photographs and licence receipts are listed in sections 1 and 9.
+- **The order does not matter.** Fill what you have; I will list what is still missing before launch.
+
+**Language, tax and date (updated 30 October).** Launch is Friday 20 November 2026, in Egypt first. Every customer-facing text needs **English and Arabic**: in each "Your text" cell write the English first, then the Arabic on the next line. Prices include 14% VAT. Most products are made to order, so the site shows lead time rather than stock; do not enter prices, sizes or lead times until they are set.
+
+**Recommended text filled in (30 October).** Homepage copy, category and product-type names, tag names, 28 product titles, the About statements, The Edit intro and the search-engine text now carry suggested English and Arabic wording. It is a draft for you to edit, not approved copy, and the Arabic needs the translator's sign-off. Left blank on purpose: legal and contact details, payment, deposit, delivery and returns answers, prices, sizes, lead times, the About sections on process and craftsmanship, policies, and "name to come" titles, because they are facts or decisions only you can supply.
+
+## 1. Business and legal basics
+
+These appear in the footer, policies and order emails, and two of them (fonts, logo lettering) block a public launch until confirmed.
+
+| Item | Where it appears | Your text |
+| --- | --- | --- |
+| Legal business name | Footer copyright, policies | OBJEKT&#32; |
+| Contact email | Footer, contact page, order emails |  |
+| Phone or WhatsApp number | Footer, delivery page |  |
+| Showroom or studio address (only if public) | Footer, delivery page |  |
+| Instagram link | Footer |  |
+| Pinterest or other social link | Footer |  |
+| Customer service hours | Support page |  |
+| Do prices include VAT? | Product pages, bag | Yes, prices include 14% VAT. نعم، الأسعار شاملة ضريبة القيمة المضافة 14%. |
+| Domain name | Site address |  |
+| PP Mori web licence: bought? date, traffic tier, receipt saved | Site typeface |  |
+| Logo lettering (named "Raftwork Demo" inside the logo PDF): who made the logo, and do you hold a licence for commercial use, or was it converted to artwork you own? | Header and footer logo |  |
+| Logo files: small header version, horizontal version, favicon (SVG) | Header, footer, browser tab |  |
+
+## 2. Homepage copy
+
+The homepage needs about 12 short texts; the ones marked *drafted by me* are suggestions to replace, not approved wording.
+
+| Where | Now says | Your text | Length |
+| --- | --- | --- | --- |
+| Hero, small label above the headline | "Edition placeholder" |  | Launch collection مجموعة الإطلاق |
+| Hero headline | "Objects of Character." (from your brief) |  | Objects of Character. أشياء بشخصية. |
+| Hero link | "Explore the Collection" (from your brief) |  | Explore the Collection استكشف المجموعة |
+| Selected Objects: which 5 products to feature | five sample products |  | OBJ-002, OBJ-172, OBJ-001, OBJ-147, OBJ-173 (one each from Furniture, Objects, Table & Living, Objects, Planters; swap any whose photographs are not ready) |
+| Editorial split, small label | "Form · Material · Surface" (drafted by me) |  | Form · Material · Surface الشكل · الخامة · السطح |
+| Editorial split, headline | "Made to be looked at, then lived with." (drafted by me) |  | Made to be looked at, then lived with. صُنعت لتُرى، ثم تُعاش. |
+| Editorial split, paragraph | placeholder sentence |  | Every piece begins with a form. The material and the surface are chosen to suit it, and the proportions stay calm. The result is an object that holds a room without raising its voice. تبدأ كل قطعة بشكل. تُختار الخامة والسطح لتناسبه، وتبقى النسب هادئة. والنتيجة قطعة تملأ المكان دون أن ترفع صوتها. |
+| Collection feature, name | "Edition 01" (placeholder) |  | The Launch Collection مجموعة الإطلاق |
+| Collection feature, intro | placeholder sentence |  | The first objekt pieces: furniture, tabletop, objects and planters. أولى قطع objekt: أثاث، وقطع للمائدة، وأشياء، وأحواض نباتات. |
+| Collection feature, link | "Discover the edition" |  | Discover the collection اكتشف المجموعة |
+| The Edit on the homepage: which 3 stories to show | three sample stories |  | story titles |
+| Footer newsletter line | "New objects, first." (drafted by me) |  | New objects, first. الجديد أولاً. |
+| Optional announcement bar (above the header) | none |  | Launching Friday 20 November. الإطلاق يوم الجمعة 20 نوفمبر. |
+
+## 3. Products
+
+Copy the two tables below once per product; the third table lists the 12 sample products in the prototype so you can say which are real.
+
+### 3a. Product details (one copy per product)
+
+| Field | Rules | Your text (English, then Arabic) |
+| --- | --- | --- |
+| Product title | 2 to 4 words; leave blank for "name to come" |  |
+| Reference code | the OBJ code from the workspace; say if the public reference should differ |  |
+| Website category | Furniture, Table & Living, Objects or Planters |  |
+| Product type | the sub-category; one per product; list in section 4 |  |
+| Short description | 2 to 3 sentences, facts only |  |
+| The Story | 60 to 120 words; leave blank if nothing to say |  |
+| Materials & Craftsmanship | 60 to 120 words; only confirmed facts |  |
+| Dimensions | one line each: width, depth, height, diameter, seat height, weight (cm, kg); skip what does not apply |  |
+| Care instructions | short, per material |  |
+| Process tag (pick any) | Metal, Curved metal, Moulded, Printed |  |
+| Finish tag (pick any) | Mirror polish, Brushed, Lacquered, Powder-coated |  |
+| Colour tag (pick any) | Bone, Putty, Carbon, Ink, Oxblood, Clay, Objekt Green |  |
+| Room tag (pick any) | Living, Dining, Bedside, Desk, Entry, Balcony |  |
+| Three "In Good Company" companions | refs of other products |  |
+| Variants | OBJ-166 (two heights), OBJ-176 (four colour versions) and OBJ-175 (modular panels) are one product each with variants; list the options of any other product that has them |  |
+
+### 3b. Finishes and availability (one row per finish, per product)
+
+Availability is decided per finish: the same product can be ready to deliver in one finish and made to order in another.
+
+| Finish name | Material | Colour (Bone, Putty, Carbon, Ink, Oxblood, Clay, Objekt Green) | Price (EGP) | Ready to deliver or made to order | Units in stock (ready only) | Delivery in working days (ready only) | Production lead time in weeks, min to max (made to order only) |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+|  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |
+
+### 3c. Launch products from the objekt workspace (provisional)
+
+These are the 49 items flagged Launch in the workspace, sorted into the four categories: Furniture 11, Table & Living 11, Objects 16, Planters 10, and one item (OBJ-107, cutlery) that fits no category yet. Your target is 14, 9, 14 and 9 (46 products), so the workspace flags and the final list differ. The final list is in website-categories-prompt.md, which I do not have: send it, or correct this table. Names are the workspace's descriptive names only; "name to come" stays blank. Reference photos are not product images.
+
+**Already in the Shopify store (30 October):** these 49 items exist as **drafts** (nothing public), titled with their OBJ code until you approve names. Each has its product type, category tag and collection, reference code, internal notes and a made-to-order default; prices, sizes, lead times and photos are empty. OBJ-107 has no category yet. OBJ-166, OBJ-175 and OBJ-176 are single-variant for now: send their option names (the two heights, the four colours, the panel set) and I will add the variants. If the final list differs, I will adjust the drafts.
+
+**Placeholder values (added 30 October, at your request):** every draft now carries obviously fake data so the theme can be built and tested: description and short description marked "\[PLACEHOLDER\]" with an Arabic "\[نص مؤقت\]" (meaning "temporary text"), dimensions "00 cm", price 9,999.00, lead time 8 to 10 weeks, and guessed room, process and finish filters (taken from the product type and the workspace name). All are tagged placeholder-data. None of it is real; every one of these must be replaced from your content before a product is activated.
+
+**Naming rules used for the titles.** One or two descriptive words plus the product type (Pebble Side Table). Name the silhouette, geometry or construction. Easy to say in English and Arabic. No forced wordplay, no invented Scandinavian names, no repeated design name across unrelated products. Material or finish appears only when it defines the piece, not when it is a selectable variant.
+
+| Code | Product type (workspace) | Website category | Name in the workspace | Your title (English / Arabic) |
+| --- | --- | --- | --- | --- |
+| OBJ-002 | Coffee Tables | Furniture | Coffee table, four-part round, folded metal | Quarter Coffee Table طاولة قهوة كوارتر |
+| OBJ-003 | Coffee Tables | Furniture | Coffee table, round top with half-disc legs and tabs | Half Moon Coffee Table طاولة قهوة نصف قمر |
+| OBJ-137 | Coffee Tables | Furniture | Coffee table, round glass top with wave-tube base | Wave Coffee Table طاولة قهوة موجة |
+| OBJ-166 | Pedestals and plinths | Furniture | Plinth, brushed steel box, two heights | Column Plinth قاعدة عمود |
+| OBJ-167 | Pedestals and plinths | Furniture | Pedestal, black faceted twist | Twist Pedestal قاعدة ملتوية |
+| OBJ-038 | Side Tables and Bedside Tables | Furniture | (name to come) |  |
+| OBJ-039 | Side Tables and Bedside Tables | Furniture | (name to come) |  |
+| OBJ-142 | Side Tables and Bedside Tables | Furniture | Side table, stacked pebble | Pebble Side Table طاولة جانبية حصاة |
+| OBJ-049 | Stools and Benches | Furniture | (name to come) |  |
+| OBJ-052 | Stools and Benches | Furniture | (name to come) |  |
+| OBJ-165 | Stools and Benches | Furniture | Bench, folded plate, rounded corners | Fold Bench مقعد مطوي |
+| OBJ-090 | Bowls and Baskets | Table & Living | (name to come) |  |
+| OBJ-093 | Bowls and Baskets | Table & Living | (name to come) |  |
+| OBJ-095 | Bowls and Baskets | Table & Living | (name to come) |  |
+| OBJ-169 | Bowls and Baskets | Table & Living | Bowl, folded steel pyramid on cross stand | Pyramid Bowl وعاء هرمي |
+| OBJ-170 | Bowls and Baskets | Table & Living | Bowl, folded steel dish with lifted corners | Corner Bowl وعاء الزاوية |
+| OBJ-104 | Coasters and Trivets | Table & Living | (name to come) |  |
+| OBJ-112 | Tissue and Paper Holders | Table & Living | (name to come) |  |
+| OBJ-171 | Tissue and Paper Holders | Table & Living | Tissue holder, L-shaped block, three positions | L-Shape Tissue Holder حامل مناديل شكل L |
+| OBJ-001 | Trays | Table & Living | Tray, mirror polish, folded corners | Folded Tray صينية مطوية |
+| OBJ-115 | Trays | Table & Living | (name to come) |  |
+| OBJ-148 | Trays | Table & Living | Wavy organic trays, mirror polish and ribbed | Ripple Trays صواني ريبل |
+| OBJ-149 | Ashtrays and Incense Holders | Objects | Blackened steel ashtray, interlocking plates | Interlock Ashtray منفضة متداخلة |
+| OBJ-150 | Ashtrays and Incense Holders | Objects | Ashtray set, chrome with coloured enamel interior | Enamel Ashtray Set طقم منافض بالمينا |
+| OBJ-151 | Ashtrays and Incense Holders | Objects | Incense holder, stacked ovals | Oval Stack Incense Holder حامل بخور بيضاوي متراص |
+| OBJ-004 | Candleholders and Candle Vessels | Objects | Candleholder family, lacquered turned forms | Turned Candleholders شمعدانات مخرطة |
+| OBJ-100 | Candleholders and Candle Vessels | Objects | (name to come) |  |
+| OBJ-146 | Candleholders and Candle Vessels | Objects | Candleholder, blue cone on steel cylinder | Cone Candleholder شمعدان مخروطي |
+| OBJ-145 | Decorative Sculptures | Objects | Totems, stacked bowls and spheres, two sizes | Totem Sculpture منحوتة طوطم |
+| OBJ-035 | Shelves and Display Storage | Objects | (name to come) |  |
+| OBJ-164 | Shelves and Display Storage | Objects | Corner shelf pair, triangular | Corner Shelf Pair رفّا زاوية |
+| OBJ-175 | Shelves and Display Storage | Objects | Wall shelf panels, half-disc shelves in cut circles | Half Moon Panels ألواح نصف قمر |
+| OBJ-176 | Shelves and Display Storage | Objects | Wall shelves, half-disc, colour set | Half Moon Shelves رفوف نصف قمر |
+| OBJ-125 | Statement Sculptures | Objects | (name to come) |  |
+| OBJ-172 | Statement Sculptures | Objects | Sculpture, faceted mirror-polished steel | Facet Sculpture منحوتة متعددة الأوجه |
+| OBJ-141 | Vases | Objects | Vase set, bottle forms | Bottle Vases مزهريات زجاجة |
+| OBJ-147 | Vases | Objects | Vase, double bulb | Double Form Vase مزهرية بشكلين |
+| OBJ-168 | Vases | Objects | Slot vase, tall square tower with round holes | Portal Vase مزهرية بوابة |
+| OBJ-069 | Floor Planters | Planters | (name to come) |  |
+| OBJ-072 | Floor Planters | Planters | (name to come) |  |
+| OBJ-074 | Floor Planters | Planters | (name to come) |  |
+| OBJ-075 | Floor Planters | Planters | (name to come) |  |
+| OBJ-080 | Planter Screens | Planters | (name to come) |  |
+| OBJ-085 | Tabletop Planters | Planters | (name to come) |  |
+| OBJ-086 | Tabletop Planters | Planters | (name to come) |  |
+| OBJ-154 | Tabletop Planters | Planters | Planter, stacked lacquer pods | Pod Planter حوض بود |
+| OBJ-173 | Tabletop Planters | Planters | Planter, mirror-polished cube | Mirror Cube Planter حوض نباتات مكعب بتلميع مرآة |
+| OBJ-174 | Tabletop Planters | Planters | Planter, steel cylinder on cone foot | Cone Planter حوض مخروطي |
+| OBJ-107 | Cutlery and Dining Accessories | (none yet) | (name to come) |  |
+
+## 4. Categories, product types and tags
+
+The customer menu has four categories only, in this order; each needs an English and Arabic title and a one-line description. Everything else (room, process, finish, colour, price) is a filter inside them, not a category. Lighting is wave 2 and joins Objects later; a fifth category "Wall" (shelves, wall art, mirrors) may split off from Objects when lighting launches or the list passes 60.
+
+| Category (menu order) | Arabic title | One-line description, English | One-line description, Arabic | Header image? |
+| --- | --- | --- | --- | --- |
+| Furniture | أثاث | Coffee tables, side tables, seating and plinths. | طاولات قهوة وطاولات جانبية ومقاعد وقواعد عرض. |  |
+| Table & Living (may be renamed "Tabletop"; your choice of name) | المائدة والمعيشة | Trays, bowls, coasters and holders for the table and the desk. | صوانٍ وأوعية وقواعد أكواب وحوامل للمائدة والمكتب. |  |
+| Objects | أشياء | Candleholders, vases, incense holders, sculpture and wall pieces. | شمعدانات ومزهريات ومباخر ومنحوتات وقطع للجدار. |  |
+| Planters | أحواض نباتات | Floor and tabletop planters. | أحواض نباتات للأرضية وللطاولات. |  |
+
+**Product types.** Each product has exactly one; it drives the filter inside its category. Add the Arabic name and correct any names that should differ. The workspace's own sub-category names are close but not identical.
+
+| Category | Product type | Arabic name |
+| --- | --- | --- |
+| Furniture | Coffee tables | طاولات قهوة |
+| Furniture | Side and bedside tables | طاولات جانبية وطاولات بجانب السرير |
+| Furniture | Stools and benches | مقاعد بلا ظهر ومقاعد طويلة |
+| Furniture | Pedestals and plinths | قواعد عرض |
+| Furniture | Chairs and lounge seating | كراسي ومقاعد استرخاء |
+| Table & Living | Trays | صواني |
+| Table & Living | Bowls and baskets | أوعية وسلال |
+| Table & Living | Coasters and trivets | قواعد أكواب وحوامل ساخنة |
+| Table & Living | Tissue and paper holders | حوامل مناديل وأوراق |
+| Table & Living | Desk and book (in your structure; no matching item in the workspace Launch list) | المكتب والكتب |
+| Objects | Candleholders | شمعدانات |
+| Objects | Ashtrays and incense holders | منافض سجائر ومباخر |
+| Objects | Vases | مزهريات |
+| Objects | Decorative sculpture | منحوتات زخرفية |
+| Objects | Statement sculpture | منحوتات بارزة |
+| Objects | Shelves | رفوف |
+| Objects | Wall art and photo displays | لوحات جدارية وإطارات صور |
+| Objects | Mirrors | مرايا |
+| Planters | Floor planters | أحواض نباتات أرضية |
+| Planters | Tabletop planters | أحواض نباتات للطاولات |
+| Planters | Planter screens | حواجز نباتات |
+
+**Tags** (filters, not categories). Add the Arabic for each value; and send the objekt colour guide (hex values or the file) so swatches on the site are exact: the prototype uses placeholder swatches.
+
+| Tag group | Values | Arabic |
+| --- | --- | --- |
+| Process | metal, curved metal, moulded, printed | معدن، معدن منحنٍ، مصبوب في قالب، مطبوع ثلاثي الأبعاد |
+| Finish | mirror polish, brushed, lacquered, powder-coated | تلميع مرآة، مصقول بالفرشاة، مطلي بالورنيش، طلاء بودرة |
+| Colour (objekt colour guide) | Bone, Putty, Carbon, Ink, Oxblood, Clay, Objekt Green | Bone عظمي، Putty بوتي، Carbon كربوني، Ink حبري، Oxblood أحمر داكن، Clay طيني، Objekt Green أخضر objekt (اقتراحات للمترجم؛ الأسماء الإنجليزية تبقى بجانبها) |
+| Room | living, dining, bedside, desk, entry, balcony | المعيشة، الطعام، بجانب السرير، المكتب، المدخل، الشرفة |
+
+## 5. Made to order, deposits and payment
+
+These answers set what the site promises customers about made-to-order pieces, so none of them is guessed. Your direction so far: deposits by InstaPay with the customer sending proof of payment, and a customer who orders ready and made-to-order pieces together chooses to ship together or separately.
+
+| Question | Your answer |
+| --- | --- |
+| Deposit amount for a made-to-order piece (percentage of the price, or fixed) |  |
+| How long is an unpaid order held before it lapses (hours) |  |
+| InstaPay: the handle, number or account name customers pay to |  |
+| What must the customer write as the payment reference (suggested: the order number) |  |
+| Where does the customer send proof of payment (upload form on the site, WhatsApp, email) |  |
+| Who checks the payment, and how soon do customers hear back |  |
+| When production starts (suggested: once the deposit is confirmed) |  |
+| When is the balance due, and how is it paid |  |
+| Can a made-to-order order be changed or cancelled? Until when, and what happens to the deposit |  |
+| Are custom sizes or finishes possible ("Configure your piece")? How do customers ask |  |
+| The purchasing terms shown on a made-to-order product page (2 to 4 sentences) |  |
+| Delivery fee when a customer chooses to ship separately: second shipment free, a flat fee in EGP, or not offered |  |
+| Which option is selected by default in the bag: ship together or separately |  |
+| Payment by card or wallet later: do you want to look at an Egyptian payment provider now, or launch with InstaPay only |  |
+
+## 6. Delivery, returns and care
+
+The delivery estimates on product pages come from each product's own data (section 3b); this section is the general rules around them.
+
+| Question | Your answer |
+| --- | --- |
+| Areas you deliver to (cities, governorates, outside Egypt?) |  |
+| Delivery fee by area (EGP) or free above an amount |  |
+| Who delivers, and do you offer assembly or placement in the room |  |
+| Packaging |  |
+| Returns for ready-to-deliver pieces: window in days, condition, who pays |  |
+| Returns for made-to-order pieces |  |
+| What to do if a piece arrives damaged (deadline, photos, contact) |  |
+| After-sales contact |  |
+| "Delivery & Returns" text shown on every product page (80 to 150 words) |  |
+
+**Care by material** (short, one or two lines each)
+
+| Material | Care text |
+| --- | --- |
+| Walnut |  |
+| Oak |  |
+| Stainless Steel |  |
+| Travertine |  |
+| Ceramic |  |
+| Glass |  |
+
+## 7. The Edit and About
+
+The Edit has up to seven placeholder stories and the About page has four sections; none of the sample wording is real, and nothing should state who makes the objects, where, or how unless you confirm it.
+
+**The Edit**
+
+| Item | Your text |
+| --- | --- |
+| Intro under the "The Edit" title (1 to 2 sentences) | Notes on form, material and the rooms objects live in. ملاحظات عن الشكل والخامة والغرف التي تعيش فيها الأشياء. |
+| Topics to keep (now: Design stories, Materials, Craftsmanship, Interiors, Objects, Interviews, Collaborations) | Recommended: keep Design stories, Materials, Interiors and Objects. Hide Craftsmanship, Interviews and Collaborations until a real story exists for each. |
+
+| Story title | Topic | Standfirst (1 to 2 sentences) | Body text (paste here or attach) | Lead photo | Products featured (refs) | Byline (a name, or "OBJEKT") |
+| --- | --- | --- | --- | --- | --- | --- |
+|  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |
+
+**About**
+
+| Section | Now says | Your text |
+| --- | --- | --- |
+| Opening statement | "OBJEKT celebrates everyday objects as pieces of design in their own right." (your brief) | OBJEKT celebrates everyday objects as pieces of design in their own right. تحتفي objekt بالأشياء اليومية بوصفها قطع تصميم قائمة بذاتها. |
+| Four principles | Sculptural presence, Material honesty, Thoughtful proportions, Expressive character (your brief) | Sculptural presence, Material honesty, Thoughtful proportions, Expressive character حضور نحتي، صدق الخامة، نِسَب مدروسة، شخصية معبّرة |
+| Design philosophy | placeholder | We start with the object, not the trend. Fewer, calmer forms that are easy to place and hard to tire of. Furniture, tabletop pieces and planters share one design language, so they sit together without having to match. نبدأ من القطعة لا من الموضة. أشكال أقل وأهدأ، سهلة الوضع ولا تملّها العين. تجمع الأثاث وقطع المائدة وأحواض النباتات لغة تصميم واحدة، فتجتمع دون أن تتطابق. |
+| Process | placeholder |  |
+| Craftsmanship | placeholder |  |
+| Our approach to contemporary objects | placeholder | Contemporary here means current in its habits, not its slogans. Pieces are designed for homes in Egypt and made to order, so each one is a deliberate purchase. We show the finish and lead time before you buy. معاصر هنا تعني أن نهجنا حديث لا شعاراتنا. تُصمّم القطع للبيوت في مصر وتُصنع عند الطلب، فكل شراء قرار متأنٍ. نعرض التشطيب ومدة التجهيز قبل الشراء. |
+
+Each About section: 40 to 60 words. The page rhythm (all four sections alike, or one full-width image and one pull quote) is a design question; see section 10.
+
+## 8. Policies and search-engine text
+
+Shopify provides policy templates, but each one must say what is true for OBJEKT, so they are yours to supply or approve.
+
+| Item | Your text or file |
+| --- | --- |
+| Terms of service |  |
+| Privacy policy |  |
+| Refund policy |  |
+| Shipping policy |  |
+| Site title (up to 60 characters) | objekt \| Objects of Character objekt \| أشياء بشخصية |
+| Homepage description for search results (up to 155 characters) | Furniture, tabletop pieces, objects and planters with sculptural presence. Made to order. Launching 20 November 2026. أثاث وقطع للمائدة وأشياء وأحواض نباتات بحضور نحتي. تُصنع عند الطلب. الإطلاق 20 نوفمبر 2026. |
+| Description for the collection page, The Edit and About (up to 155 characters each) | Collection: The first objekt collection. Browse furniture, tabletop, objects and planters by room, finish and colour. The Edit: Notes on form, material and the rooms objects live in. About: What objekt believes about everyday objects. المجموعة: أولى مجموعات objekt. تصفّح الأثاث وقطع المائدة والأشياء وأحواض النباتات حسب الغرفة والتشطيب واللون. The Edit (المختارات): ملاحظات عن الشكل والخامة والغرف التي تعيش فيها الأشياء. من نحن: ما تؤمن به objekt عن الأشياء اليومية. |
+| Image shown when the site is shared on social media (1200 x 630 px) |  |
+| Cookie banner wording, if you want one |  |
+
+## 9. Photography list
+
+Photography is the hero of the site, so every placeholder image on the prototype is a real shot to be made or supplied; send files at least 2400 px on the long edge, with a one-line description of what each shows (used as the image's text for screen readers).
+
+**Per product at launch: 2 to 3 excellent images.** A studio shot (required), a detail shot (required), and a lifestyle shot where the room setting helps. Material close-ups can follow after launch.
+
+**Per product** (repeat for each finish where the look changes)
+
+| Shot | What it shows | Ratio | Done? |
+| --- | --- | --- | --- |
+| Studio | the whole object on a neutral or lightly textured ground, form and silhouette | 4:5 |  |
+| Lifestyle | the object in a real room, natural light | 4:5 or 3:2 |  |
+| Detail | close-up of a material transition or finish | 4:5 |  |
+| Material | the surface alone | 3:2 |  |
+
+**Site-wide images**
+
+| Where | Style | Ratio | Notes | File or link |
+| --- | --- | --- | --- | --- |
+| Homepage hero | lifestyle, full width | 16:9, plus a 4:5 crop for phones | text sits over the lower left |  |
+| Homepage editorial split | detail or material | 4:5 |  |  |
+| Homepage collection feature | lifestyle | 16:9 | text sits over the lower left |  |
+| Category previews (5) | studio | 4:5 | one per category |  |
+| Collection page image (optional) | lifestyle | 21:7 |  |  |
+| The Edit story leads (up to 7) | any | 16:11 |  |  |
+| Story body images | any | 4:5 pairs or 21:8 wide |  |  |
+| About page (up to 5) | lifestyle | 21:8 and 4:3 |  |  |
+| Shop panel feature image | studio | 4:3 |  |  |
+
+Who will photograph the products, and when? (If real photography is not ready at launch, say so: the site can launch with fewer shots, but never with placeholders.)
+
+## 10. Decisions still open
+
+These are choices, not copy; the first five block theme work or launch.
+
+| Decision | Options | Your answer |
+| --- | --- | --- |
+| Shopify development store | send access, and say which plan |  |
+| Installing Shopify CLI on the build machine | yes or no |  |
+| PP Mori web licence | buy now, or keep the free stand-in font until later (the free files cannot go on a public site) |  |
+| Licence for the logo lettering | confirmed, or ask the designer |  |
+| Payment provider | InstaPay only at launch, or add an Egyptian card or wallet provider |  |
+| Deposit amount and hold time | see section 5 |  |
+| Fee for separate shipments | see section 5 |  |
+| About page rhythm | keep four alike sections, or vary (one full-width image, one pull quote) |  |
+| Shop menu on tablets wider than 880 px | test on a real tablet first; if hover does not work, switch to a button that opens the menu |  |
+
+## 11. Launch on Friday 20 November 2026
+
+The launch date is 21 days away from this document's first version, and the Arabic requirement is new scope; these answers decide what must be ready by then and what can follow.
+
+| Question | Your answer |
+| --- | --- |
+| Is the date fixed, and if the site is not ready, do you delay or launch a smaller version |  |
+| Which pages must be live on day one: Home, the four category pages, product pages, bag and payment, About, The Edit, policies (say yes or no to each) |  |
+| Arabic on every page at launch, or English first with Arabic following (you said every page needs both; confirm this holds for day one) |  |
+| Who writes or approves the Arabic text |  |
+| Arabic typeface for the site (PP Mori may not include Arabic; needs checking, and a licensed Arabic face may be needed) |  |
+| Prices include 14% VAT: show "incl. VAT" on the site, or not | Recommended: yes. Show "incl. 14% VAT" (شامل ضريبة القيمة المضافة 14%) beside every price and in the bag, so the total never changes at checkout. |
+| Order of work if time is short: which product categories go live first |  |
+
+### Option A (everything) chosen on 30 October: what I need, and by when
+
+A means all 46 products and every page, in English and Arabic, on Friday 20 November. I will build to it, but I do not expect it to fit unless the dates below hold; the checkpoints say plainly when it stops being possible so you can choose what to cut.
+
+**Minimum set per product** (all 46 by 12 November; richer fields can follow after launch): title, short description, dimensions, price (including 14% VAT), lead time in weeks, process, finish, colour and room tags, and 2 to 3 excellent photographs (studio first, then detail and/or lifestyle). Each in English and Arabic.
+
+| By | What you deliver | Done? |
+| --- | --- | --- |
+| **Sun 1 Nov** | Shopify development store and its plan; approval to install Shopify CLI; the final 46-product list (website-categories-prompt.md); the name of the Arabic translator; decision on numerals and currency format; deposit amount and hold time; payment decision (InstaPay only at launch?); fee for separate shipments |  |
+| **Thu 5 Nov** | Arabic glossary signed off by the translator (categories, product types, tags, process and finish names); the objekt colour guide values; Arabic typeface decision; English copy for the first 10 products; confirmed photography schedule for all 46; English policies and delivery text |  |
+| **Thu 12 Nov** | **Content freeze:** minimum set for all 46 products in English and Arabic with photographs; category descriptions; About; policies; made-to-order terms; delivery and returns, in both languages |  |
+| **Mon 16 to Tue 17 Nov** | Your review of the site on the dev store, in both languages; the translator's proofread |  |
+| **Thu 19 Nov** | Your written launch approval |  |
+
+**Checkpoints.** If Sun 1 Nov or Thu 5 Nov is missed, I will tell you the same day which part of A can no longer be done, and offer the cut (for example B: fewer products first). Thu 12 Nov is the last date on which A can still be fully bilingual.

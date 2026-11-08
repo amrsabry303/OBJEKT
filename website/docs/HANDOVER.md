@@ -36,7 +36,7 @@ Approval from the founder is needed for: brand direction and final aesthetic, ma
 | Product data and images (founder's working folder) | `~/Desktop/POLYCRAFT/_plan/` on the founder's Mac: `shopify-import-template.csv`, `website-categories-prompt.md`, `images/IMAGE-INVENTORY.csv`, `images/HOUSE-STYLE.md`, `images/OBJ-nnn/` (193 MB of PNG renders, not in the package) |
 | Skills | `.claude/skills/objekt-naming` and `objekt-drawings` (in the package, `skills/`) |
 | Paymob setup guide | `paymob-shopify/SKILL.md` in the package |
-| Claude documents (private to the founder's account) | "OBJEKT website: content to supply" https://claude.ai/artifact/9xLUQrXT4LJuKZrRnJZSVP (intake document for all copy and specs, 10 sections) and "objekt workspace" https://claude.ai/artifact/HysZRbjoMyneXH8Xbiipcn (product workspace and production book). **Ask Sabry to share both** with the new account. |
+| Claude documents (private to the founder's account) | "OBJEKT website: content to supply" https://claude.ai/artifact/9xLUQrXT4LJuKZrRnJZSVP (intake document for all copy and specs, 10 sections) and "objekt workspace" https://claude.ai/artifact/HysZRbjoMyneXH8Xbiipcn (product workspace and production book). Both exported 8 Nov 2026: the intake document is `website/docs/CONTENT_TO_SUPPLY.md`, the workspace page is `venture/artifacts/objekt-workspace_HysZRbjoMyneXH8Xbiipcn.html`. |
 | Drive | each product has a design folder on the founder's Google Drive (links are in the workspace document); AI renders are filed there too |
 
 Note on git: the project now lives in its own private repository, `objekt-polycraft` (D-012 resolved 7 Nov 2026), with a clean history. The website is under `website/`.
