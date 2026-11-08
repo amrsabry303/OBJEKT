@@ -183,3 +183,10 @@
 - Verified by read-back: 5 media, all READY, order Oxblood v2, Ink, Objekt Green, Putty, Oxblood dining v2; featured image is the v2 Oxblood; each variant points to its own image; the new CDN URL returns 200. The v1 originals stay in `plan/images/OBJ-099/`.
 - Not verified: the product page in a browser (colour click shows the new image, gallery order on the unpublished theme).
 - Store state read: 53 products (16 active, 37 draft), 3 `[TEST]`, 13 `preview-active`, 50 `placeholder-data`; `objekt-main` menu still one item "Shop"; pages About and Contact only.
+
+## 2026-11-08 (Shopify catalogue session, first run)
+- Store confirmed with `get-shop-info`: OBJEKT, hs1a1c-ut.myshopify.com, EGP.
+- Store write 1, `colour` metaobjects (`metaobjectUpsert`): hex set from `brand/COLOURS-FINISHES.md` (screen approximations) on bone, putty, carbon, ink, oxblood, clay, objekt-green; new entry **chocolate** (`gid://shopify/Metaobject/661513928928`, Chocolate, #4A2A1B), the eighth official colour, which was missing. Arabic names not added (translation not supplied here).
+- Store write 2, OBJ-099 (`gid://shopify/Product/15538944213216`, `metafieldsSet`): variant `custom.colour` linked for Oxblood (68412757180640), Ink (68412757213408), Objekt Green (68412757246176), Putty (68412757278944); product `custom.colours` = those four. Variant names, prices and images unchanged.
+- Verified by read-back: 8 colour entries with hex; each OBJ-099 variant points to its colour. Not seen in a browser (swatch rendering on the unpublished theme not checked).
+- No product created, activated, deleted or repriced.

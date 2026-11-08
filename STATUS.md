@@ -14,6 +14,8 @@ Three daily sessions work on this repo, one section each. Each session updates *
 - [website] Sign in to Paymob so test mode can be set up.
 - [website] Use the 30 Oct suggested wording in CONTENT_TO_SUPPLY (About statement and two sections, site title, meta descriptions, category one-liners) as-is, and add The Edit and About to the `objekt-main` menu? · yes / edit · rec: yes (Arabic still needs the translator).
 - [website] Fill sections 5, 6 and 8 of CONTENT_TO_SUPPLY.md (delivery, returns, payment, policies) before the 12 Nov freeze, or say which may stay out at launch.
+- [catalogue] Colours per product: the book's colours are proposals. Confirm the colours each product is sold in (start with the 10 that have drawings or renders) · list per OBJ · rec: confirm in CONTENT_TO_SUPPLY 3d, then I build the colour variants.
+- [catalogue] OBJ-099 colours: store has Oxblood, Ink, Objekt Green, Putty; book has Objekt Green, Bone, Putty · keep store / switch to book · rec: keep store (renders exist for those four).
 - [all] Licences: PP Mori (web), Galak Round, logo lettering (Raftwork). No public launch without them.
 
 ## Content and product list
@@ -52,3 +54,55 @@ Three daily sessions work on this repo, one section each. Each session updates *
 - [ ] Paymob: Sabry signs in; then test mode, activate, capture Automatic, test order and refund
 - [ ] QA launch check "no active product with `placeholder-data`, 9999.00 or [PLACEHOLDER]" (fails by design today)
 - [ ] Sabry only: publish theme, remove storefront password, Paymob live. Horizon stays as rollback.
+
+### Shopify catalogue
+<!-- daily catalogue session; dated, newest first, last 3 entries -->
+
+#### Sun 8 Nov 2026 (first run)
+- Ran: `get-shop-info` = OBJEKT / hs1a1c-ut, EGP. Read all 53 products (titles, status, type, tags, collections, variants, metafields), the 4 collections and the `colour` metaobjects.
+- Day-1 list not approved yet, so I worked only on the 33 products that the plan, the production book and the store all agree on. The 8 agreed by plan and book but not in the store (OBJ-020, 068, 094, 103, 132, 152, 155, 156) are **not created**; I create them as drafts the day the list is approved.
+- Structure checked on the 33: titles are OBJ codes, every one is in the right collection for its plan category, type and tags match, `custom.reference` set, fulfilment `made_to_order` with placeholder lead time. No duplicate OBJ codes.
+- Store writes (CHANGELOG 8 Nov): `colour` metaobjects got their hex from `brand/COLOURS-FINISHES.md`, and the missing eighth colour **Chocolate** was added; OBJ-099's four colour variants and product colour list now link to the colour entries. Read back OK. Not seen in a browser.
+- Not written: no prices, sizes, lead times, copy, variants or images. Nothing in CONTENT_TO_SUPPLY or STATUS is supplied by Sabry or Polycraft yet (section 3d is all "proposed" or blank), and no render is approved for the site.
+- Seen: OBJ-148 (on hold, rec. drop) is **active** (`preview-active`) with a reference photo. Website session's revert list covers it.
+- Readiness: **0 of 33 ready to activate.** Placeholders (9999.00, [PLACEHOLDER], 00 cm, `placeholder-data`) left in place on all.
+
+**Readiness (8 Nov; ✓ done, ✗ missing)**
+
+| OBJ | Collection | Named | Copy EN | Copy AR | Price | Lead time | Sizes | Variants | Images | Collection | Metafields | SEO | Placeholders gone | Ready |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| OBJ-002 | Furniture | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✓ | ✗ | ✗ | ✗ | no |
+| OBJ-003 | Furniture | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✓ | ✗ | ✗ | ✗ | no |
+| OBJ-038 | Furniture | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✓ | ✗ | ✗ | ✗ | no |
+| OBJ-137 | Furniture | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✓ | ✗ | ✗ | ✗ | no |
+| OBJ-142 | Furniture | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✓ | ✗ | ✗ | ✗ | no |
+| OBJ-165 | Furniture | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✓ | ✗ | ✗ | ✗ | no |
+| OBJ-166 | Furniture | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✓ | ✗ | ✗ | ✗ | no |
+| OBJ-167 | Furniture | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✓ | ✗ | ✗ | ✗ | no |
+| OBJ-001 | Table & Living | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✓ | ✗ | ✗ | ✗ | no |
+| OBJ-095 | Table & Living | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✓ | ✗ | ✗ | ✗ | no |
+| OBJ-104 | Table & Living | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✓ | ✗ | ✗ | ✗ | no |
+| OBJ-115 | Table & Living | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✓ | ✗ | ✗ | ✗ | no |
+| OBJ-169 | Table & Living | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✓ | ✗ | ✗ | ✗ | no |
+| OBJ-171 | Table & Living | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✓ | ✗ | ✗ | ✗ | no |
+| OBJ-004 | Objekts | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✓ | ✗ | ✗ | ✗ | no |
+| OBJ-099 | Objekts | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | 4 colours, not confirmed | 5 AI renders on store, use not approved | ✓ | ✗ | ✗ | ✗ | no |
+| OBJ-100 | Objekts | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✓ | ✗ | ✗ | ✗ | no |
+| OBJ-125 | Objekts | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✓ | ✗ | ✗ | ✗ | no |
+| OBJ-145 | Objekts | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✓ | ✗ | ✗ | ✗ | no |
+| OBJ-147 | Objekts | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✓ | ✗ | ✗ | ✗ | no |
+| OBJ-149 | Objekts | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✓ | ✗ | ✗ | ✗ | no |
+| OBJ-151 | Objekts | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✓ | ✗ | ✗ | ✗ | no |
+| OBJ-164 | Objekts | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✓ | ✗ | ✗ | ✗ | no |
+| OBJ-172 | Objekts | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✓ | ✗ | ✗ | ✗ | no |
+| OBJ-175 | Objekts | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✓ | ✗ | ✗ | ✗ | no |
+| OBJ-176 | Objekts | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✓ | ✗ | ✗ | ✗ | no |
+| OBJ-069 | Planters | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✓ | ✗ | ✗ | ✗ | no |
+| OBJ-072 | Planters | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✓ | ✗ | ✗ | ✗ | no |
+| OBJ-075 | Planters | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✓ | ✗ | ✗ | ✗ | no |
+| OBJ-080 | Planters | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✓ | ✗ | ✗ | ✗ | no |
+| OBJ-085 | Planters | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✓ | ✗ | ✗ | ✗ | no |
+| OBJ-154 | Planters | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✓ | ✗ | ✗ | ✗ | no |
+| OBJ-173 | Planters | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✓ | ✗ | ✗ | ✗ | no |
+
+What every product lacks: approved name (EN, AR), price incl. VAT, lead time weeks, real dimensions, colours actually offered (then variants), approved images, short description, story, materials, care, SEO title and description. Extra: OBJ-166 heights (850 vs 700 mm), OBJ-175 panel options, OBJ-176 four colours, OBJ-099 colours (store vs book).
