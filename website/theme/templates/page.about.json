@@ -3,17 +3,59 @@
     "main": {
       "type": "main-about",
       "blocks": {
-        "p1": { "type": "principle", "settings": { "text": "Sculptural presence" } },
-        "p2": { "type": "principle", "settings": { "text": "Material honesty" } },
-        "p3": { "type": "principle", "settings": { "text": "Thoughtful proportions" } },
-        "p4": { "type": "principle", "settings": { "text": "Expressive character" } },
-        "s1": { "type": "story", "settings": { "title": "Design philosophy" } },
-        "s2": { "type": "story", "settings": { "title": "Process" } },
-        "s3": { "type": "story", "settings": { "title": "Craftsmanship" } },
-        "s4": { "type": "story", "settings": { "title": "Our approach to contemporary objekts" } }
+        "p1": {
+          "type": "principle",
+          "settings": {
+            "text": "Sculptural presence"
+          }
+        },
+        "p2": {
+          "type": "principle",
+          "settings": {
+            "text": "Material honesty"
+          }
+        },
+        "p3": {
+          "type": "principle",
+          "settings": {
+            "text": "Thoughtful proportions"
+          }
+        },
+        "p4": {
+          "type": "principle",
+          "settings": {
+            "text": "Expressive character"
+          }
+        },
+        "s1": {
+          "type": "story",
+          "settings": {
+            "title": "Design philosophy",
+            "text": "<p>We start with the object, not the trend. Fewer, calmer forms that are easy to place and hard to tire of. Furniture, tabletop pieces and planters share one design language, so they sit together without having to match.</p>"
+          }
+        },
+        "s4": {
+          "type": "story",
+          "settings": {
+            "title": "Our approach to contemporary objekts",
+            "text": "<p>Contemporary here means current in its habits, not its slogans. Pieces are designed for homes in Egypt and made to order, so each one is a deliberate purchase. We show the finish and lead time before you buy.</p>"
+          }
+        }
       },
-      "block_order": ["p1", "p2", "p3", "p4", "s1", "s2", "s3", "s4"]
+      "block_order": [
+        "p1",
+        "p2",
+        "p3",
+        "p4",
+        "s1",
+        "s4"
+      ],
+      "settings": {
+        "statement": "objekt celebrates everyday objects as pieces of design in their own right."
+      }
     }
   },
-  "order": ["main"]
+  "order": [
+    "main"
+  ]
 }

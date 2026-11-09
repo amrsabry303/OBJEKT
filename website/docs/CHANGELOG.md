@@ -190,3 +190,13 @@
 - Store write 2, OBJ-099 (`gid://shopify/Product/15538944213216`, `metafieldsSet`): variant `custom.colour` linked for Oxblood (68412757180640), Ink (68412757213408), Objekt Green (68412757246176), Putty (68412757278944); product `custom.colours` = those four. Variant names, prices and images unchanged.
 - Verified by read-back: 8 colour entries with hex; each OBJ-099 variant points to its colour. Not seen in a browser (swatch rendering on the unpublished theme not checked).
 - No product created, activated, deleted or repriced.
+
+## 2026-11-09 (30 Oct wording approved by Sabry: menu, collection intros, SEO, About)
+- Sabry approved in chat (9 Nov): "use the 30 Oct About, meta and category wording as it is, and add The Edit and About to the main menu". English only; Arabic waits for the translator's sign-off. Brand word written as "objekt" in visible text (repo rule), so the About statement reads "objekt celebrates…" not "OBJEKT celebrates…".
+- Store confirmed with `get-shop-info`: OBJEKT, hs1a1c-ut.myshopify.com.
+- Menu `objekt-main` (`menuUpdate`): Shop (Furniture, Table & Living, Objekts, Planters, unchanged) + **The Edit** (`/blogs/the-edit`) + **About** (`/pages/about`). Footer menu not changed (no approved list).
+- Collection descriptions (`collectionUpdate`), from CONTENT_TO_SUPPLY section 4: Furniture, Table & Living, Objekts, Planters one-liners.
+- SEO (`metafieldsSet`, `global.title_tag` / `global.description_tag`): shop title "objekt | Objects of Character" and homepage description; The Edit blog and About page descriptions (section 8). The "Collection" (all products) description not set: `/collections/all` is not a collection object in this store.
+- Theme file on the **unpublished** theme 189754769632 only (`themeFilesUpsert`, Admin API; CLI not logged in): `templates/page.about.json` gets the opening statement, Design philosophy and Our approach texts. The empty **Process** and **Craftsmanship** blocks were removed (no text supplied); add them back when Sabry supplies text. Repo file updated to match; `theme check` 48 files, no offenses.
+- Verified by read-back (menu, 4 descriptions, 4 metafields, theme file). Not seen in a browser.
+- Known gap: The Edit now sits in the menu but holds only the 2 `[TEST]` articles until real stories exist.

@@ -12,7 +12,7 @@ Three daily sessions work on this repo, one section each. Each session updates *
 - [content] 15 store drafts not on the plan (OBJ-035, 039, 052, 074, 086, 090, 093, 107, 112, 141, 146, 150, 168, 170, 174) · archive / keep as drafts · rec: keep as drafts, never activate; website session archives only on your yes.
 - [content] May AI renders go on the public site as product images until photos exist?
 - [website] Sign in to Paymob so test mode can be set up.
-- [website] Use the 30 Oct suggested wording in CONTENT_TO_SUPPLY (About statement and two sections, site title, meta descriptions, category one-liners) as-is, and add The Edit and About to the `objekt-main` menu? · yes / edit · rec: yes (Arabic still needs the translator).
+- [website] Arabic for the menu, About, collection intros and SEO text: send to the translator, or launch English only? · translator / EN only · rec: translator before 19 Nov.
 - [website] Privacy Policy shows amr@xdough.com as the public contact. Switch to a role address (e.g. hello@ or an objekt address)? · which address · rec: a shared objekt address before launch.
 - [website] Fill sections 5, 6 and 8 of CONTENT_TO_SUPPLY.md (delivery, returns, payment, policies) before the 12 Nov freeze, or say which may stay out at launch.
 - [catalogue] Colours per product: the book's colours are proposals. Confirm the colours each product is sold in (start with the 10 that have drawings or renders) · list per OBJ · rec: confirm in CONTENT_TO_SUPPLY 3d, then I build the colour variants.
@@ -57,7 +57,9 @@ Three daily sessions work on this repo, one section each. Each session updates *
 - Ran: pulled main (2da9a25); `npm ci`; `theme check` 48 files, no offenses. Store confirmed OBJEKT / hs1a1c-ut. No store writes.
 - Store re-read: unchanged (53 products, 16 active, 3 `[TEST]`, 13 `preview-active`, 13 active with `placeholder-data`). Menus, pages (About, Contact) unchanged. Themes: Horizon live, OBJEKT dev 189754769632 unpublished.
 - Correction to 8 Nov: one policy exists, the Shopify-generated Privacy Policy (30 Oct). It lists amr@xdough.com as the public contact address.
-- Blocked: Paymob (no sign-in), menus/pages/policies (no supplied text in CONTENT_TO_SUPPLY or STATUS), theme push (Shopify CLI not logged in here).
+- Blocked: Paymob (no sign-in), delivery page and policies (no supplied text), CLI theme push (not logged in).
+- Later (Sabry said yes in chat to the 30 Oct wording): `objekt-main` now Shop + The Edit + About; 4 collection intros; shop title and homepage, The Edit, About SEO descriptions; About template on the unpublished theme (statement, Design philosophy, Our approach; empty Process and Craftsmanship removed). English only. Read back OK, not seen in a browser. Logged in CHANGELOG.
+- Sabry said "ok" to filling CONTENT_TO_SUPPLY sections 5, 6, 8; waiting for the text.
 ### 8 Nov 2026 (Sun, third run)
 - Ran: pulled main (94fd23d); `npm ci`; `theme check` 48 files, no offenses. Store confirmed OBJEKT / hs1a1c-ut. No store writes.
 - Store re-read: counts unchanged (53 products, 16 active, 3 `[TEST]`, 13 `preview-active`, 13 active with `placeholder-data`). `objekt-main` = Shop › Furniture, Table & Living, Objekts, Planters. Footer menu = Search only. Pages About, Contact. Blog `the-edit` holds only the 2 `[TEST]` articles. No policies.
@@ -72,7 +74,8 @@ Three daily sessions work on this repo, one section each. Each session updates *
 - [ ] Delete the 3 `[TEST]` products and 2 `[TEST]` articles
 - [ ] 13 `preview-active` products back to draft, or real data in; drop `placeholder-data` tags only when real
 - [ ] Remove the 4 reference photos of unknown rights and the 8 placeholder images
-- [ ] Expand `objekt-main` and footer menus; connect the delivery page; add policies (needs Sabry's text)
+- [x] `objekt-main` expanded: Shop, The Edit, About (9 Nov)
+- [ ] Footer menu; connect the delivery page; add policies (needs Sabry's text)
 - [ ] Paymob: Sabry signs in; then test mode, activate, capture Automatic, test order and refund
 - [ ] QA launch check "no active product with `placeholder-data`, 9999.00 or [PLACEHOLDER]" (fails by design today)
 - [ ] Sabry only: publish theme, remove storefront password, Paymob live. Horizon stays as rollback.
