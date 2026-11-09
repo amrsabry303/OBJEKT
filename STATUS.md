@@ -13,6 +13,7 @@ Three daily sessions work on this repo, one section each. Each session updates *
 - [content] May AI renders go on the public site as product images until photos exist?
 - [website] Sign in to Paymob so test mode can be set up.
 - [website] Use the 30 Oct suggested wording in CONTENT_TO_SUPPLY (About statement and two sections, site title, meta descriptions, category one-liners) as-is, and add The Edit and About to the `objekt-main` menu? · yes / edit · rec: yes (Arabic still needs the translator).
+- [website] Privacy Policy shows amr@xdough.com as the public contact. Switch to a role address (e.g. hello@ or an objekt address)? · which address · rec: a shared objekt address before launch.
 - [website] Fill sections 5, 6 and 8 of CONTENT_TO_SUPPLY.md (delivery, returns, payment, policies) before the 12 Nov freeze, or say which may stay out at launch.
 - [catalogue] Colours per product: the book's colours are proposals. Confirm the colours each product is sold in (start with the 10 that have drawings or renders) · list per OBJ · rec: confirm in CONTENT_TO_SUPPLY 3d, then I build the colour variants.
 - [catalogue] OBJ-099 colours: store has Oxblood, Ink, Objekt Green, Putty; book has Objekt Green, Bone, Putty · keep store / switch to book · rec: keep store (renders exist for those four).
@@ -52,6 +53,11 @@ Three daily sessions work on this repo, one section each. Each session updates *
 ## Drawings and files
 
 ## Website (Shopify)
+### 9 Nov 2026 (Mon)
+- Ran: pulled main (2da9a25); `npm ci`; `theme check` 48 files, no offenses. Store confirmed OBJEKT / hs1a1c-ut. No store writes.
+- Store re-read: unchanged (53 products, 16 active, 3 `[TEST]`, 13 `preview-active`, 13 active with `placeholder-data`). Menus, pages (About, Contact) unchanged. Themes: Horizon live, OBJEKT dev 189754769632 unpublished.
+- Correction to 8 Nov: one policy exists, the Shopify-generated Privacy Policy (30 Oct). It lists amr@xdough.com as the public contact address.
+- Blocked: Paymob (no sign-in), menus/pages/policies (no supplied text in CONTENT_TO_SUPPLY or STATUS), theme push (Shopify CLI not logged in here).
 ### 8 Nov 2026 (Sun, third run)
 - Ran: pulled main (94fd23d); `npm ci`; `theme check` 48 files, no offenses. Store confirmed OBJEKT / hs1a1c-ut. No store writes.
 - Store re-read: counts unchanged (53 products, 16 active, 3 `[TEST]`, 13 `preview-active`, 13 active with `placeholder-data`). `objekt-main` = Shop › Furniture, Table & Living, Objekts, Planters. Footer menu = Search only. Pages About, Contact. Blog `the-edit` holds only the 2 `[TEST]` articles. No policies.
@@ -61,13 +67,7 @@ Three daily sessions work on this repo, one section each. Each session updates *
 - Store read: 53 products (16 active, 37 draft), 3 TEST, 13 preview-active, 50 placeholder-data; objekt-main menu still "Shop" only; pages About, Contact.
 - Paymob not touched (waiting for Sabry's sign-in). Menus, delivery page, policies: no supplied text yet. No theme push.
 
-### 8 Nov 2026 (Sun, first run)
-- Ran: repo pulled (up to date at b5ef657); `npm ci` in website/tools; `theme check` 48 files, no offenses.
-- Store not reachable: no Shopify connector in this account, so steps 1 to 3 (OBJ-099 swap, Paymob, menus and pages) not run. No store writes. Shopify CLI login not checked, nothing pushed to theme 189754769632.
-- CONTENT_TO_SUPPLY.md: delivery, returns, payment, policies and collection-intro answers are still empty, so step 3 has no text to use even once the store is back.
-- OBJ-099: the two v2 Oxblood JPEGs are in plan/images/OBJ-099/, ready to upload.
-
-**Pre-launch cleanup checklist (HANDOVER section 8; store counts re-read 8 Nov, 3rd run, unchanged):**
+**Pre-launch cleanup checklist (HANDOVER section 8; store counts re-read 9 Nov, unchanged):**
 - [x] OBJ-099: v2 Oxblood images in, variant linked, v1 removed (8 Nov)
 - [ ] Delete the 3 `[TEST]` products and 2 `[TEST]` articles
 - [ ] 13 `preview-active` products back to draft, or real data in; drop `placeholder-data` tags only when real
