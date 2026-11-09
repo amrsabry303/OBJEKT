@@ -7,7 +7,7 @@ Three daily sessions work on this repo, one section each. Each session updates *
 ## Decisions needed from Sabry
 <!-- one line each: [workstream] question · options · recommendation. Remove when answered. -->
 - [content] Day-1 list: approve the 41 in `plan/day1-product-list.md` (plan 46 minus sofa OBJ-012, with OBJ-015, 049, 148, 159 on hold)? · yes / edit · rec: yes.
-- [content] Freeze is Thu 12 Nov and only ~10 products have a drawing or prototype · (a) all 41 go live, the rest as 'coming soon' drafts later (b) launch only products with real data by 12 Nov, add the rest weekly (c) move the date · rec: (b).
+- [content] Freeze is Thu 12 Nov and only 10 products have a drawing or prototype (shortlist in `plan/day1-product-list.md`) · (a) all 41 go live, the rest as 'coming soon' drafts later (b) launch the shortlist with real data by 12 Nov, add the rest weekly (c) move the date · rec: (b), and send Polycraft the shortlist's size, cost and lead-time questions today.
 - [content] OBJ-148 and OBJ-159 references are named third-party products (Mosha Home tray; jeremylechatelier Hublot shelf) · redesign as our own / drop · rec: drop for day 1.
 - [content] 15 store drafts not on the plan (OBJ-035, 039, 052, 074, 086, 090, 093, 107, 112, 141, 146, 150, 168, 170, 174) · archive / keep as drafts · rec: keep as drafts, never activate; website session archives only on your yes.
 - [content] May AI renders go on the public site as product images until photos exist?
@@ -23,6 +23,14 @@ Three daily sessions work on this repo, one section each. Each session updates *
 - [all] Licences: PP Mori (web), Galak Round, logo lettering (Raftwork). No public launch without them.
 
 ## Content and product list
+
+### Mon 9 Nov 2026
+- Sheet (last edit 26 Oct) and book (last edit 2 Nov) unchanged since the first run; no re-read needed. No decision answered yet, so the 41/4/16 recommendation stands.
+- Updated image status for OBJ-002, 038, 152 (hero AI renders made 8 Nov, pending approval) in the day-1 list and CONTENT_TO_SUPPLY 3d. 9 products now have AI renders; none approved for the site.
+- Added a freeze shortlist to `plan/day1-product-list.md`: 7 products with a drawing (001, 002, 038, 152, 166, 167, 169) and 3 with a prototype (003, 137, 099), each with what Sabry and what Polycraft must answer.
+- OBJ-166 heights: still 850/1000 mm (book) vs 700/1000 mm (template). No other source in the repo settles it; Polycraft must confirm.
+- No copy drafted: not approved in this file.
+- Next: if (b) is chosen, turn the shortlist answers into CONTENT_TO_SUPPLY rows as they arrive; if the list is approved, mark the final in/out.
 
 ### Sun 8 Nov 2026
 - First run. Read the plan (46), the production book (45), the product sheet (stale, 5 Oct flags = the 49 store drafts), the import template (18) and the workspace export. Store not re-read (no Shopify access in this run).

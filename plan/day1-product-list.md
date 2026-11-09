@@ -1,4 +1,4 @@
-# objekt day-1 product list: reconciliation and recommendation (8 Nov 2026)
+# objekt day-1 product list: reconciliation and recommendation (8 Nov 2026, updated 9 Nov)
 
 Prepared by the daily "Content and product list" session. **A recommendation; Sabry decides.** Working titles are the OBJ code until Sabry names a product (no name is approved).
 
@@ -24,7 +24,33 @@ Process mix of the 41 (mostly first guesses from the book): Metal 20, Curved met
 
 Mirror-finish pieces (in or on hold, proposed finish): OBJ-001, OBJ-002, OBJ-038, OBJ-072, OBJ-125, OBJ-148, OBJ-169, OBJ-172, OBJ-173. Rule 5 caps these once the polishers are counted; nobody has counted them yet.
 
-**The hard fact:** with content freeze on Thu 12 Nov, only 7 of the 41 have a drawing ready or with Production (OBJ-001, 002, 038, 152, 166, 167, 169), only 6 products have any image (all AI renders), and no product has a cost, price or lead time. A full 41 cannot have real data by 12 Nov. See the decision line in STATUS.md.
+**The hard fact:** with content freeze on Thu 12 Nov, only 7 of the 41 have a drawing ready or with Production (OBJ-001, 002, 038, 152, 166, 167, 169), only 9 products have any image (all AI renders, none approved for the site), and no product has a cost, price or lead time. A full 41 cannot have real data by 12 Nov. See the decision line in STATUS.md.
+
+## Freeze shortlist: what each product still needs by Thu 12 Nov (9 Nov)
+
+If Sabry picks option (b) in STATUS.md (launch only products with real data, add the rest weekly), these are the only products that can realistically be complete by the freeze: they have a drawing or a prototype. Ten products is below the 40 to 60 target; that is the trade-off of (b). Nothing below is filled in; every cell is a question.
+
+**Tier 1: drawing ready, approved or with Production (7)**
+
+| OBJ | Drawing | Images (all AI renders, none approved) | Sabry must answer | Polycraft must answer |
+|---|---|---|---|---|
+| OBJ-002 | Approved REV 5 (27 Oct) | Hero Oxblood v1c (8 Nov) | Name; price incl. VAT; colours (book: Oxblood, Ink); which part is mirror; approve render | Final size and weight; cost; lead time; mirror-polish slot |
+| OBJ-038 | REV 4 with Production | Hero Carbon v1c (8 Nov) | Name; price; colours (book: Carbon, Oxblood); which part is mirror; approve render | Size; cost; lead time; mirror-polish slot |
+| OBJ-152 | Ready (in folder) | Hero Ink v2c (8 Nov) | Name; price (pair or each?); colours (book: Ink, Oxblood, Carbon, Bone); approve render | Confirm print-then-mould; size; cost; lead time |
+| OBJ-166 | Ready (in folder) | 11 (v5, v6 best) | Name (template candidate not approved); price per height; brushed steel, Carbon, or both | The two heights (book 850/1000 mm, template 700/1000 mm); cost; lead time |
+| OBJ-167 | Ready (in folder) | 3 (Objekt Green, Bone, Oxblood) | Name; price; which of the 5 book colours | Size; cost; lead time |
+| OBJ-169 | Ready, rev 2 (2 Nov) | 4 (v3 product, v2 context) | Name; price; approve render | Size; cost; lead time; mirror-polish slot |
+| OBJ-001 | Production has it, not in our folder | None (reference carries a third-party maker mark) | Name; price | Send the design file; size; cost; lead time; mirror-polish slot |
+
+**Tier 2: prototype or renders, no drawing in our folder (3)**
+
+| OBJ | What exists | Sabry must answer | Polycraft must answer |
+|---|---|---|---|
+| OBJ-003 | Prototype was in painting; 7 renders | Name; price; colours (book Bone, Clay, Carbon vs renders Oxblood, Bone) | Prototype photos; size; cost; lead time |
+| OBJ-137 | Prototype built; 6 renders | Name; price; colours (book: Objekt Green, Carbon, Oxblood) | Prototype photos; size; cost; lead time |
+| OBJ-099 | Printed prototype; 5 renders on the store draft | Name; price; colours (store vs book) | Size; cost; lead time |
+
+On hold with an approved drawing: OBJ-015 (chair). It joins Tier 1 only if the leather cushions are not day-1 upholstery work.
 
 ## The table
 
@@ -32,13 +58,13 @@ Process "(guess)" = first guess in the book or workspace, not confirmed by Polyc
 
 | OBJ | Working title | Category | Product type | What it is (book/plan) | Process | Drawing | Images | Rec. | Reason | In |
 |---|---|---|---|---|---|---|---|---|---|---|
-| OBJ-002 | OBJ-002 | Furniture | Coffee Tables | Coffee table, four-part round, folded metal | Metal (guess) | Approved REV 5 (27 Oct), in Drive | None (reference photo only) | **IN** | On the 46-product plan and in the production book. | plan + book + store |
+| OBJ-002 | OBJ-002 | Furniture | Coffee Tables | Coffee table, four-part round, folded metal | Metal (guess) | Approved REV 5 (27 Oct), in Drive | 1 AI render hero, Oxblood v1c (8 Nov, pending Sabry) | **IN** | On the 46-product plan and in the production book. | plan + book + store |
 | OBJ-003 | OBJ-003 | Furniture | Coffee Tables | Coffee table, round top with half-disc legs and tabs | Metal, curved or technical (guess) | Not ready | 7 AI renders (finals Oxblood v6c, Bone v6) | **IN** | On the 46-product plan and in the production book. | plan + book + store |
 | OBJ-020 | OBJ-020 | Furniture | Coffee Tables | Coffee Tables ref 4 | Metal | Not ready | None (reference photo only) | **IN** | On the 46-product plan and in the production book. | plan + book |
-| OBJ-038 | OBJ-038 | Furniture | Side Tables and Bedside Tables | Side Tables and Bedside Tables ref 2 | Metal (guess) | REV 4 sent to Production, in Drive | None (reference photo only) | **IN** | On the 46-product plan and in the production book. | plan + book + store |
+| OBJ-038 | OBJ-038 | Furniture | Side Tables and Bedside Tables | Side table, cross plates with organic cut-outs | Metal (guess) | REV 4 sent to Production, in Drive | 1 AI render hero, Carbon v1c (8 Nov, pending Sabry) | **IN** | On the 46-product plan and in the production book. | plan + book + store |
 | OBJ-137 | OBJ-137 | Furniture | Coffee Tables | Coffee table, round glass top with wave-tube base | Metal, curved or technical (guess) | Not ready | 6 AI renders (first versions) | **IN** | On the 46-product plan and in the production book. | plan + book + store |
 | OBJ-142 | OBJ-142 | Furniture | Side Tables and Bedside Tables | Side table, stacked pebble | Printed pattern, then moulded (guess) | Not ready | None (reference photo only) | **IN** | On the 46-product plan and in the production book. | plan + book + store |
-| OBJ-152 | OBJ-152 | Furniture | Side Tables and Bedside Tables | Side table, two-form lacquer pair | Printed pattern, then moulded | Ready (in folder) | None (reference photo only) | **IN** | On the 46-product plan and in the production book. | plan + book |
+| OBJ-152 | OBJ-152 | Furniture | Side Tables and Bedside Tables | Side table, two-form lacquer pair | Printed pattern, then moulded | Ready (in folder) | 1 AI render hero, Ink v2c (8 Nov, pending Sabry) | **IN** | On the 46-product plan and in the production book. | plan + book |
 | OBJ-156 | OBJ-156 | Furniture | Side Tables and Bedside Tables | Side table pair, stacked-disc tops | Printed pattern, then moulded | Not ready | None (reference photo only) | **IN** | On the 46-product plan and in the production book. | plan + book |
 | OBJ-165 | OBJ-165 | Furniture | Stools and Benches | Bench, folded plate, rounded corners | Metal (guess) | Not ready | None (reference photo only) | **IN** | On the 46-product plan and in the production book. | plan + book + store |
 | OBJ-166 | OBJ-166 | Furniture | Pedestals and plinths | Plinth, brushed steel box, two heights | Metal (guess) | Ready (in folder) | 11 AI renders (v5, v6 best) | **IN** | On the 46-product plan and in the production book. | plan + book + store |

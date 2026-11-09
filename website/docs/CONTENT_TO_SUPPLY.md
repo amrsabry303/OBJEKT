@@ -153,21 +153,21 @@ These are the 49 items flagged Launch in the workspace, sorted into the four cat
 | OBJ-174 | Tabletop Planters | Planters | Planter, steel cylinder on cone foot | Cone Planter حوض مخروطي |
 | OBJ-107 | Cutlery and Dining Accessories | (none yet) | (name to come) |  |
 
-### 3d. Pre-filled facts per product (8 Nov 2026, daily content session)
+### 3d. Pre-filled facts per product (8 Nov 2026, images updated 9 Nov; daily content session)
 
 Only facts already recorded in the repo, the production book or the product sheet. Colours use the eight names in `brand/COLOURS-FINISHES.md`; "(proposed)" means the book marks them as a proposal, not a decision. Process "(guess)" is not confirmed by Polycraft. **Titles, prices, costs, sizes, lead times, materials, descriptions and copy are left blank on purpose.** The approximate sizes in the book and the import template are not set sizes and are not copied here. Covers the recommended day-1 list (in and on hold) from `plan/day1-product-list.md`; Sabry decides the final list.
 
 | OBJ | Category · type | Process | Colours | Finish | Drawing | Images | Title | Price (EGP) | Size | Lead time |
 |---|---|---|---|---|---|---|---|---|---|---|
-| OBJ-002 | Furniture · Coffee Tables | Metal (guess) | Oxblood, Ink | Mirror on the metal segment, coated parts Matte (proposed) | Approved REV 5 (27 Oct), in Drive | None (reference photo only) |  |  |  |  |
+| OBJ-002 | Furniture · Coffee Tables | Metal (guess) | Oxblood, Ink | Mirror on the metal segment, coated parts Matte (proposed) | Approved REV 5 (27 Oct), in Drive | 1 AI render hero, Oxblood v1c (8 Nov, pending Sabry) |  |  |  |  |
 | OBJ-003 | Furniture · Coffee Tables | Metal, curved or technical (guess) | Bone, Clay, Carbon (proposed) | Powder coating, Matte (proposed) | Not ready | 7 AI renders (finals Oxblood v6c, Bone v6) |  |  |  |  |
 | OBJ-015 (on hold) | Furniture · Chairs and Lounge Seating | Metal | Chocolate (brown) | powder coating, matte; leather cushions (to be confirmed) | Ready, approved 1 Nov (rev 1), in Drive | None (reference photo only) |  |  |  |  |
 | OBJ-020 | Furniture · Coffee Tables | Metal |  | Brushed (proposed) | Not ready | None (reference photo only) |  |  |  |  |
-| OBJ-038 | Furniture · Side Tables and Bedside Tables | Metal (guess) | Carbon, Oxblood | Mirror on the metal segment, coated parts Matte (proposed) | REV 4 sent to Production, in Drive | None (reference photo only) |  |  |  |  |
+| OBJ-038 | Furniture · Side Tables and Bedside Tables | Metal (guess) | Carbon, Oxblood | Mirror on the metal segment, coated parts Matte (proposed) | REV 4 sent to Production, in Drive | 1 AI render hero, Carbon v1c (8 Nov, pending Sabry) |  |  |  |  |
 | OBJ-049 (on hold) | Furniture · Stools and Benches | Metal, curved or technical (guess) |  |  | Not ready (not in book) | None (reference photo only) |  |  |  |  |
 | OBJ-137 | Furniture · Coffee Tables | Metal, curved or technical (guess) | Objekt Green, Carbon, Oxblood (proposed) | Duco, Gloss (proposed) | Not ready | 6 AI renders (first versions) |  |  |  |  |
 | OBJ-142 | Furniture · Side Tables and Bedside Tables | Printed pattern, then moulded (guess) | Bone, Oxblood (proposed) | Duco, Gloss (proposed) | Not ready | None (reference photo only) |  |  |  |  |
-| OBJ-152 | Furniture · Side Tables and Bedside Tables | Printed pattern, then moulded | Ink, Oxblood, Carbon, Bone | Duco, Gloss (proposed) | Ready (in folder) | None (reference photo only) |  |  |  |  |
+| OBJ-152 | Furniture · Side Tables and Bedside Tables | Printed pattern, then moulded | Ink, Oxblood, Carbon, Bone | Duco, Gloss (proposed) | Ready (in folder) | 1 AI render hero, Ink v2c (8 Nov, pending Sabry) |  |  |  |  |
 | OBJ-156 | Furniture · Side Tables and Bedside Tables | Printed pattern, then moulded | Clay, Ink, Putty (proposed) | Duco, Matte (proposed) | Not ready | None (reference photo only) |  |  |  |  |
 | OBJ-165 | Furniture · Stools and Benches | Metal (guess) | Oxblood, Carbon, Putty (proposed) | Powder coating, Matte (proposed) | Not ready | None (reference photo only) |  |  |  |  |
 | OBJ-166 | Furniture · Pedestals and plinths | Metal (guess) | Carbon matte (powder coating), or brushed stainless |  | Ready (in folder) | 11 AI renders (v5, v6 best) |  |  |  |  |
