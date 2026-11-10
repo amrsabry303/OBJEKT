@@ -24,7 +24,7 @@ These appear in the footer, policies and order emails, and two of them (fonts, l
 | Item | Where it appears | Your text |
 | --- | --- | --- |
 | Legal business name | Footer copyright, policies | OBJEKT&#32; |
-| Contact email | Footer, contact page, order emails |  |
+| Contact email | Footer, contact page, order emails | None public for now: list only WhatsApp (Sabry, 10 Nov). |
 | Phone or WhatsApp number | Footer, delivery page | WhatsApp 01000822240 (international form +20 100 082 2240). Also the showroom booking channel (Sabry, 10 Nov). |
 | Showroom or studio address (only if public) | Footer, delivery page | Showroom by appointment. Public wording (Sabry): samples of our work are available in a showroom, booked by appointment; never say "small"; no pickup at checkout. ElBanafseg 2, Unit 28, Apt. 1, Ground Floor, New Cairo, Egypt. Map: https://maps.app.goo.gl/4sjHADFbnw8D7NCo8 . Book by WhatsApp (Sabry, 10 Nov). |
 | Instagram link | Footer |  |
@@ -282,7 +282,7 @@ These answers set what the site promises customers about made-to-order pieces, s
 | --- | --- |
 | Deposit amount for a made-to-order piece (percentage of the price, or fixed) | 50%, collected first, by Paymob or InstaPay. Non-refundable (Sabry, 10 Nov). |
 | How long is an unpaid order held before it lapses (hours) |  |
-| InstaPay: the handle, number or account name customers pay to |  |
+| InstaPay: the handle, number or account name customers pay to | 01000411116 (Sabry, 10 Nov). |
 | What must the customer write as the payment reference (suggested: the order number) |  |
 | Where does the customer send proof of payment (upload form on the site, WhatsApp, email) |  |
 | Who checks the payment, and how soon do customers hear back |  |
@@ -297,7 +297,7 @@ These answers set what the site promises customers about made-to-order pieces, s
 
 **Payment and delivery times (Sabry, 10 Nov)**
 - Ready pieces: paid in full at checkout; delivered in 3–5 business days.
-- Made to order: two lead-time types, 7–14 days or 30–45 days (which products are which: open). 50% deposit first (Paymob or InstaPay, non-refundable), balance on delivery in cash or InstaPay.
+- Made to order: two lead-time types, 7–14 days or 30–45 days, chosen per item when listing. 50% deposit first (Paymob or InstaPay, non-refundable), balance on delivery in cash or InstaPay.
 
 ## 6. Delivery, returns and care
 
@@ -311,7 +311,7 @@ The delivery estimates on product pages come from each product's own data (secti
 | Packaging |  |
 | Returns for ready-to-deliver pieces: window in days, condition, who pays | 48 hours, unused, customer pays return shipping (Sabry, 10 Nov). Legal check flagged. |
 | Returns for made-to-order pieces | Damage or defect only (Sabry, 10 Nov). |
-| What to do if a piece arrives damaged (deadline, photos, contact) |  |
+| What to do if a piece arrives damaged (deadline, photos, contact) | Within 48 hours of delivery, on WhatsApp, with photos (Sabry, 10 Nov). |
 | After-sales contact |  |
 | "Delivery & Returns" text shown on every product page (80 to 150 words) |  |
 
