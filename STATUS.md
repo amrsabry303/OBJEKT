@@ -54,6 +54,7 @@ Three daily sessions work on this repo, one section each. Each session updates *
 
 ## Website (Shopify)
 ### 10 Nov 2026 (Tue)
+- Product sheet for Sabry (private): https://claude.ai/artifact/T2QcmFPN399m2XR8bwyHnB . 61 products with picture; he fills name EN/AR, price, lead time, size, packed weight, colours, finish, materials, description, then "Ready to upload". Claude reads entries (collection `products`) and loads ready ones into Shopify as drafts. Polycraft sheet: `plan/Polycraft-questions_shortlist_2026-11-10.xlsx`.
 - The Edit removed from the main menu (blog kept, empty). OBJ-099 alt text no longer mentions renders.
 - Shipping by order weight: up to 15 kg 118 EGP, over 15 kg 1,200 EGP. Every product needs its real packed weight before going active (all 0 kg now; ask Polycraft). Delivery page updated. Not tested at checkout. Sabry to update the Shipping policy in admin.
 - Policies saved by Sabry and linked in the footer (5). Open: Shipping policy says 118 EGP "for small items", which the store rate and Delivery page do not; small formatting fixes in admin.
