@@ -89,5 +89,5 @@ Bone #E9E4D8, Putty #B9B2A5, Carbon #222222, Ink #1E2A44, Oxblood #5A1F25, Clay 
 - Every image is an AI render, not a photo of a prototype. Replace with real photos when the first pieces exist.
 - Budget: about 65 credits per image; plan one image per product plus a retry allowance of about 40 percent.
 
-## Zara filter (Sabry, 11 Nov 2026)
-After generation, run `python venture/src/image_zara_finish.py <in> <out>` on the chosen image: warmer white balance, highlights brought down to a warm greige (wall about 190), darks left alone, soft warm shadows, monochrome clumped film grain, slight softness. Matched to the Zara Home references Sabry sent (grain 1.9 to 3.4). Product colours hold (OBJ-167 Objekt Green lit facet 58/88/68 before, 68/92/69 after). Check with `--measure`.
+## Zara filter (Sabry, 11 Nov 2026): approved as the finish for studio (colour) shots
+After generation of a studio shot, run `python venture/src/image_zara_finish.py <in> <out>` on the chosen image: warmer white balance, highlights brought down to a warm greige (wall about 190), darks left alone, soft warm shadows, monochrome clumped film grain, slight softness. Matched to the Zara Home references Sabry sent (grain 1.9 to 3.4). Product colours hold (OBJ-167 Objekt Green lit facet 58/88/68 before, 68/92/69 after). Check with `--measure`.
