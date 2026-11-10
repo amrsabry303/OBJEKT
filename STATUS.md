@@ -54,6 +54,7 @@ Three daily sessions work on this repo, one section each. Each session updates *
 
 ## Website (Shopify)
 ### 10 Nov 2026 (Tue)
+- Policies saved by Sabry and linked in the footer (5). Open: Shipping policy says 118 EGP "for small items", which the store rate and Delivery page do not; small formatting fixes in admin.
 - Cleanup done (Sabry's yes): 3 test products and 2 test articles deleted; 13 preview-active products to draft; 4 reference photos and 8 placeholders deleted. Store now 50 products, 0 active, The Edit empty.
 - Delivery & Returns page live (behind password) and in the footer. Policies blocked: connector cannot write them; Sabry pastes `website/docs/drafts/POLICIES_TO_PASTE_2026-11-10.md` in admin (Settings → Policies), incl. privacy contact fix. Lawyer check open on 48 h returns, non-refundable deposit, governing law.
 - Showroom (Sabry's wording): footer column "Showroom" on the unpublished theme and Contact page text with address, map and WhatsApp +20 100 082 2240. No pickup at checkout. Read back OK; not seen in a browser.
@@ -85,7 +86,7 @@ Three daily sessions work on this repo, one section each. Each session updates *
 - [x] Remove the 4 reference photos of unknown rights and the 8 placeholder images (10 Nov)
 - [x] `objekt-main` expanded: Shop, The Edit, About (9 Nov)
 - [x] Shipping MVP: Egypt, Standard delivery 118 EGP (10 Nov)
-- [ ] Footer menu; connect the delivery page; add policies (needs Sabry's text)
+- [x] Footer menu; delivery page; policies (10 Nov)
 - [ ] Paymob: Sabry signs in; then test mode, activate, capture Automatic, test order and refund
 - [ ] QA launch check "no active product with `placeholder-data`, 9999.00 or [PLACEHOLDER]" (fails by design today)
 - [ ] Sabry only: publish theme, remove storefront password, Paymob live. Horizon stays as rollback.

@@ -234,3 +234,8 @@
 - Set the 13 `preview-active` products to DRAFT: OBJ-137, 142, 165, 169, 171, 148, 145, 172, 147, 075, 080, 154, 099. Tags (`preview-active`, `placeholder-data`) left in place.
 - Deleted 12 images (`fileDelete`): 4 reference photos of unknown rights (OBJ-165, 169, 171, 172) and 8 labelled placeholders (OBJ-137, 142, 145, 147, 148, 075, 080, 154). OBJ-099's 5 images untouched.
 - Read back: 50 products, 0 active, 0 `theme-test`, 0 articles; only OBJ-099 has images (5). The storefront now shows no products and The Edit (in the main menu) is empty.
+
+## 2026-11-10 (policies in footer)
+- Sabry pasted Refund, Shipping, Terms of service, Contact information and the privacy contact fix in admin. Read back: all five exist; privacy now gives WhatsApp, no personal email.
+- Menu `footer-policies` (`menuUpdate`): Terms of service, Shipping policy, Refund policy, Privacy policy, Contact information. Read back OK.
+- Differences from the approved draft, as pasted: Shipping policy says "118 EGP per order **for small items**" (store has one flat rate for all orders; Delivery & Returns page has no "small items"); section headings merged into the first sentence (Refund, Shipping); Contact information on one line and "Objekt" capitalised; privacy contact line ends ".." . Not fixed: the connector cannot write policies.
