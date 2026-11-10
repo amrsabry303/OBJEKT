@@ -1,7 +1,7 @@
-# objekt faux books: plan and art direction (draft 5, 10 Nov 2026)
+# objekt faux books: plan and art direction (draft 6, 10 Nov 2026)
 
-Status: proposal for Sabry. Decided so far (10 Nov): title typeface Galak Round; sold as singles and as a set of three; titles to be witty, in the line of "Objekts of Character"; made as a solid block, paper; day 1; a print set of three added (tiger, cow, stripe). Draft 5 changes (Sabry's review): colour audit, lighter type, logo as the signature. Nothing is costed or sent to anyone.
-Direction sheet: `faux-books-direction-sheet_diagram_v5.svg` (PNG copy beside it). It is a flat diagram with stand-in lettering, not a render and not a photo.
+Status: proposal for Sabry. Decided so far (10 Nov): title typeface Galak Round; sold as singles and as a set of three; titles to be witty, in the line of "Objekts of Character"; made as a solid block, paper; day 1; a print set of three added (tiger, cow, stripe). Draft 5 (Sabry's review): colour audit, lighter type, logo as the signature. Draft 6: sizes fixed from Sabry's 10 × 25 × 4.5 cm. Nothing is costed or sent to anyone.
+Direction sheet: `faux-books-direction-sheet_diagram_v6.svg` (PNG copy beside it). It is a flat diagram with stand-in lettering, not a render and not a photo.
 
 ## 01 // the idea
 A small library of decorative volumes that work as colour blocks with type on them. One format, our own titles, the eight objekt colours. Sold one at a time or as a stack of three.
@@ -52,15 +52,15 @@ Honest note: the references are loud (lime, pink, cobalt, orange). The objekt pa
 - Three-line titles: longest line no wider than 70% of the cover. Line gap about 0.4 of the cap height. No line is a single short word, so "NOT A / BOOK", "OBJEKTS OF / CHARACTER", "USELESS / ON PURPOSE". Where three lines are needed, break for shape and keep the lines close in length.
 - Optical edge: round and diagonal letters (O, C, J, T) hang slightly past the left margin so the edge looks straight. Done by eye in the final artwork.
 - Top margin equals left margin.
-- Spine: sentence case, Regular, reads lying flat.
+- Spine: sentence case, Regular, reads bottom to top.
 - The numbers above are starting values. Test: print one S, one M and one L cover at actual size on the chosen stock and judge at arm's length, then adjust.
 
 **Signature (revised, draft 5).** You said the small symbol felt disconnected from the titles. Draft 5 makes the logo the signature and stops using the symbol as decoration.
 - Front: the title and nothing else. No symbol, no volume number.
 - Back: the full objekt logo (symbol over wordmark), centred low, in the lettering colour.
-- Spine, top to bottom: title, volume number, logo. Same position on every volume, so a stack reads as a family and the logo is the one thing every spine shares.
+- Spine, reading bottom to top: logo at the foot, then volume number, then title. Same position on every volume, so a stack reads as a family and the logo is the one thing every spine shares.
 - Always the supplied logo file, never a retyped wordmark.
-- Minimum logo width 25 mm in print (brand rule). On a narrow spine that may not fit. Then the spine takes the symbol alone and the wordmark stays on the back. To check once the spine width is set.
+- Minimum logo width 25 mm in print (brand rule). The full logo laid along the spine at 25 mm is about 16 mm tall, so it fits even the Small spine (35 mm). The full logo, wordmark included, goes on every spine. Resolved.
 - Option, not drawn: a blind-embossed symbol on the front. A paper wrap cannot do this cheaply; ask the maker if you want it priced.
 - Logo colour is the cover's lettering colour, so the guide's one-colour rule holds. Still needs your OK as an addition to the six pairings in the guide.
 
@@ -98,7 +98,25 @@ Honest note: the references are loud (lime, pink, cobalt, orange). The objekt pa
 
 **Material and finish.** Solid block, paper (Sabry, 10 Nov). Read as: a closed block that does not open, wrapped in printed paper, matte. To confirm: is the inside a block of blank pages (looks like a real book from the edge, heavier) or a plain board or foam core with a printed page edge? Colour and lettering print in one pass, so the printer can match the eight colours from the hex values and a sample. Matte only: uncoated stock or matte lamination. No gloss, no metallic, no dust jacket.
 
-**Format.** Three sizes that step down so a stack shows all three spines. Sizes are not set: they depend on the maker's board sizes. To be fixed at sample stage.
+**Format (Sabry gave 10 cm wide, 25 cm long, 4.5 cm deep; I set it as Medium and scaled the others).**
+
+| Size | Width × length × depth | Scale | Volumes |
+|---|---|---|---|
+| L | 12 × 30 × 5.5 cm | 1.2× | 03 Heavy Reading, 04 Judge the Cover, 07 Coffee Table Book, 09 Easy Tiger |
+| M | 10 × 25 × 4.5 cm | Sabry's size | 01 Not a Book, 02 Shelf Life, 10 Holy Cow |
+| S | 8 × 20 × 3.5 cm | 0.8× | 05 Objekts of Character, 06 Useless on Purpose, 08 Design Worth Noticing, 11 Between the Lines |
+
+- Same 1 : 2.5 face on all three, so one layout scales to every size.
+- Lying flat with spines out, a set is 13.5 cm high (5.5 + 4.5 + 3.5) and the spines step 30, 25 and 20 cm long.
+- Why M is yours: the middle size should be the one you specified, so the stack steps both up and down from it. Say if 10 × 25 × 4.5 should be the Large or the Small instead; the rest scales.
+- Not decided: weight, board thickness, wrap stock. These depend on the inside of the block.
+- Drawn to scale on the sheet.
+
+**Front layout on a 10 × 25 face (draft 6 change).** A face 10 cm wide and 25 cm long is narrow, like reference 1 (Sociotype). A title set across it is small: the longest line is limited to about 7 cm, so cap height lands near 8 mm. Run the title along the length, reading bottom to top, and it is about 19 mm cap height on the Medium and reads across a room. Recommended. The sheet shows both.
+- Title block at bottom left, lines stacked left to right, margin 8% of the width on the left and bottom.
+- Size rule: the block fills at most 85% of the width between margins, and the longest line is at most 66% of the length.
+- This replaces the earlier "top left, across" rule. The line-break rules above still apply.
+- Spine and front then read the same way, bottom to top.
 
 **The stack rule.** One dark, one light, one colour. Largest at the bottom.
 
@@ -106,15 +124,14 @@ Honest note: the references are loud (lime, pink, cobalt, orange). The objekt pa
 
 ## 04 // decisions
 
-Decided: solid block in paper · Galak Round titles · singles and a set of three · day 1.
+Decided: solid block in paper · Galak Round titles · singles and a set of three · day 1 · Medium = 10 × 25 × 4.5 cm, Large and Small scaled.
 
 Open:
 1. Inside of the block: blank pages, or board or foam core.
 2. Titles: approve or swap the eleven.
 3. "objekts" lowercase on the front of Vol. 05, or caps like the rest.
 4. Sets: the three fixed sets above, or pick one from each size.
-7. Logo on the spine: wordmark or symbol only, once the spine width is known.
-5. Sizes for L, M and S.
+5. Confirm the Large (12 × 30 × 5.5) and Small (8 × 20 × 3.5) I chose, and that titles run along the length.
 6. Price, and whether stock is made up front or made to order.
 
 ## 05 // blockers
