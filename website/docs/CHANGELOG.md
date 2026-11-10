@@ -239,3 +239,10 @@
 - Sabry pasted Refund, Shipping, Terms of service, Contact information and the privacy contact fix in admin. Read back: all five exist; privacy now gives WhatsApp, no personal email.
 - Menu `footer-policies` (`menuUpdate`): Terms of service, Shipping policy, Refund policy, Privacy policy, Contact information. Read back OK.
 - Differences from the approved draft, as pasted: Shipping policy says "118 EGP per order **for small items**" (store has one flat rate for all orders; Delivery & Returns page has no "small items"); section headings merged into the first sentence (Refund, Shipping); Contact information on one line and "Objekt" capitalised; privacy contact line ends ".." . Not fixed: the connector cannot write policies.
+
+## 2026-11-10 (shipping: small 118, large 1,200, cart pays the higher)
+- Sabry: per-item modifier; 118 EGP small, 1,200 EGP big; cart takes the max.
+- Separate profiles would add up (118 + 1,200), and carrier-calculated rates are not on Basic, so: one profile, weight-based rates, variant weight as the size flag (0 kg small, 1 kg large). Rule in PRODUCT_SCHEMA.md.
+- `deliveryProfileUpdate` (General profile, Egypt): Standard delivery 118 EGP now has cart weight 0–0.5 kg; new **Large item delivery** 1,200 EGP for ≥ 1 kg. Read back OK. All 53 variants are 0 kg today, so all count as small until a product is marked large.
+- Page Delivery & Returns (`pageUpdate`): delivery line now "Small items: 118 EGP per order. Large pieces: 1,200 EGP per order. One fee per order: if your order includes a large piece, the large-piece fee applies." Read back by mutation result only.
+- Not tested at checkout (no payment set up). Shipping policy in admin still says "118 EGP per order for small items" only; Sabry to add the large-piece line.

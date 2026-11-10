@@ -85,3 +85,10 @@ Definitions only; 0 products exist. All in namespace `custom`; all readable by t
 ### Placeholder data in the draft products (30 Oct 2026): remove before launch
 Tag `placeholder-data` marks every affected product (Shopify admin: Products, filter by that tag). Values: price 9999.00; lead time 8 to 10 weeks; description, short description "[PLACEHOLDER] ... [نص مؤقت]"; dimensions "00 cm"; rooms, process and finishes guessed (see CHANGELOG). Not set: colours, story, materials and craft, care, companions, images. **Launch rule:** no product may be activated while it still has the `placeholder-data` tag; the QA checklist now says so.
 
+
+## Shipping size (set per item when listing, Sabry 10 Nov 2026)
+The variant **weight** is the size flag for shipping. It is not the real weight.
+- Small item: weight **0 kg** (default). Standard delivery, 118 EGP.
+- Large item: weight **1 kg** on every variant. Large item delivery, 1,200 EGP.
+- Rates (General profile, Egypt): Standard delivery when cart weight ≤ 0.5 kg; Large item delivery when ≥ 1 kg. So the cart pays one fee, the higher one: any large item makes the order 1,200 EGP.
+- Do not enter real weights in the weight field; it would change the rate. If real weights are needed later, store them in a metafield.
