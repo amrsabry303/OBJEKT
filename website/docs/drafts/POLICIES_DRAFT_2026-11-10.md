@@ -11,9 +11,9 @@ Built only from Sabry's answers of 10 Nov (CONTENT_TO_SUPPLY sections 1, 5, 6). 
 Paid in full at checkout. Delivered in 3–5 business days.
 
 ### Made to order
-Made for you after you order. Each product page shows its lead time: 7–14 days or 30–45 days, counted from the day we confirm your deposit. **[confirm: counted from deposit confirmation]**
+Made for you after you order. Each product page shows its lead time: 7–14 days or 30–45 days, counted from the day we confirm your deposit.
 
-- **Deposit.** 50% at order, by card through checkout or by InstaPay to 01000411116. If you pay by InstaPay, send a screenshot of the receipt on WhatsApp with your order number. Production starts once the deposit is confirmed. **[confirm]**
+- **Deposit.** 50% at order, by card through checkout or by InstaPay to 01000411116. If you pay by InstaPay, send a screenshot of the receipt on WhatsApp with your order number. Production starts once the deposit is confirmed.
 - **Balance.** The remaining 50% is paid on delivery, in cash or by InstaPay.
 - The deposit is non-refundable. **[legal]**
 
