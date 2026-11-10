@@ -1,0 +1,100 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 297" width="420mm" height="297mm"><rect width="420" height="297" fill="#fff"/><text x="12.00" y="15.00" font-size="2.9" text-anchor="start" font-weight="700" fill="#111" font-family="Helvetica, Arial, sans-serif">BILL OF MATERIALS (per bench)</text>
+<text x="408.00" y="15.00" font-size="2.8" text-anchor="end" font-weight="700" fill="#111" font-family="'DejaVu Sans', Arial, sans-serif">قائمة المواد (لكل مقعد)</text>
+<line x1="12.00" y1="16.40" x2="408.00" y2="16.40" stroke="#111" stroke-width="0.25"/>
+<text x="15.00" y="24.00" font-size="2.4" text-anchor="start" font-weight="700" fill="#111" font-family="Helvetica, Arial, sans-serif">ITEM</text>
+<text x="30.00" y="24.00" font-size="2.4" text-anchor="start" font-weight="700" fill="#111" font-family="Helvetica, Arial, sans-serif">DESCRIPTION</text>
+<text x="240.00" y="24.00" font-size="2.4" text-anchor="start" font-weight="700" fill="#111" font-family="Helvetica, Arial, sans-serif">QTY</text>
+<text x="405.00" y="24.00" font-size="2.4" text-anchor="end" font-weight="700" fill="#111" font-family="'DejaVu Sans', Arial, sans-serif">الوصف</text>
+<line x1="12.00" y1="26.70" x2="408.00" y2="26.70" stroke="#bbb" stroke-width="0.12"/>
+<text x="15.00" y="31.50" font-size="2.5" text-anchor="start" font-weight="700" fill="#111" font-family="Helvetica, Arial, sans-serif">1</text>
+<text x="30.00" y="31.50" font-size="2.3" text-anchor="start" font-weight="400" fill="#111" font-family="Helvetica, Arial, sans-serif">Frame, one moulded piece: GRP shell from a mould taken off the printed pattern (proposal)</text>
+<text x="240.00" y="31.50" font-size="2.3" text-anchor="start" font-weight="400" fill="#111" font-family="Helvetica, Arial, sans-serif">1</text>
+<text x="405.00" y="31.50" font-size="2.2" text-anchor="end" font-weight="400" fill="#111" font-family="'DejaVu Sans', Arial, sans-serif">الهيكل قطعة واحدة مصبوبة فايبر جلاس من قالب النموذج المطبوع</text>
+<line x1="12.00" y1="34.20" x2="408.00" y2="34.20" stroke="#bbb" stroke-width="0.12"/>
+<text x="15.00" y="39.00" font-size="2.5" text-anchor="start" font-weight="700" fill="#111" font-family="Helvetica, Arial, sans-serif">2</text>
+<text x="30.00" y="39.00" font-size="2.3" text-anchor="start" font-weight="400" fill="#111" font-family="Helvetica, Arial, sans-serif">Seat cushion 1595 x 488 x 84, foam on a board, fabric covered</text>
+<text x="240.00" y="39.00" font-size="2.3" text-anchor="start" font-weight="400" fill="#111" font-family="Helvetica, Arial, sans-serif">1</text>
+<text x="405.00" y="39.00" font-size="2.2" text-anchor="end" font-weight="400" fill="#111" font-family="'DejaVu Sans', Arial, sans-serif">المرتبة ١٥٩٥ × ٤٨٨ × ٨٤</text>
+<line x1="12.00" y1="41.70" x2="408.00" y2="41.70" stroke="#bbb" stroke-width="0.12"/>
+<text x="15.00" y="46.50" font-size="2.5" text-anchor="start" font-weight="700" fill="#111" font-family="Helvetica, Arial, sans-serif">3</text>
+<text x="30.00" y="46.50" font-size="2.3" text-anchor="start" font-weight="400" fill="#111" font-family="Helvetica, Arial, sans-serif">Cushion base board, plywood 12, 1575 x 468, R71 (proposal)</text>
+<text x="240.00" y="46.50" font-size="2.3" text-anchor="start" font-weight="400" fill="#111" font-family="Helvetica, Arial, sans-serif">1</text>
+<text x="405.00" y="46.50" font-size="2.2" text-anchor="end" font-weight="400" fill="#111" font-family="'DejaVu Sans', Arial, sans-serif">لوح القاعدة أبلكاش ١٢</text>
+<line x1="12.00" y1="49.20" x2="408.00" y2="49.20" stroke="#bbb" stroke-width="0.12"/>
+<text x="15.00" y="54.00" font-size="2.5" text-anchor="start" font-weight="700" fill="#111" font-family="Helvetica, Arial, sans-serif">4</text>
+<text x="30.00" y="54.00" font-size="2.3" text-anchor="start" font-weight="400" fill="#111" font-family="Helvetica, Arial, sans-serif">Internal reinforcement in the end bars and legs (type by Production)</text>
+<text x="240.00" y="54.00" font-size="2.3" text-anchor="start" font-weight="400" fill="#111" font-family="Helvetica, Arial, sans-serif">as needed</text>
+<text x="405.00" y="54.00" font-size="2.2" text-anchor="end" font-weight="400" fill="#111" font-family="'DejaVu Sans', Arial, sans-serif">تقوية داخلية في العوارض والأرجل</text>
+<line x1="12.00" y1="56.70" x2="408.00" y2="56.70" stroke="#bbb" stroke-width="0.12"/>
+<text x="15.00" y="61.50" font-size="2.5" text-anchor="start" font-weight="700" fill="#111" font-family="Helvetica, Arial, sans-serif">5</text>
+<text x="30.00" y="61.50" font-size="2.3" text-anchor="start" font-weight="400" fill="#111" font-family="Helvetica, Arial, sans-serif">Floor glides or felt pads under the four feet (type by Production)</text>
+<text x="240.00" y="61.50" font-size="2.3" text-anchor="start" font-weight="400" fill="#111" font-family="Helvetica, Arial, sans-serif">4</text>
+<text x="405.00" y="61.50" font-size="2.2" text-anchor="end" font-weight="400" fill="#111" font-family="'DejaVu Sans', Arial, sans-serif">قواعد انزلاق أو لباد تحت الأقدام</text>
+<line x1="12.00" y1="64.20" x2="408.00" y2="64.20" stroke="#bbb" stroke-width="0.12"/>
+<text x="15.00" y="69.00" font-size="2.5" text-anchor="start" font-weight="700" fill="#111" font-family="Helvetica, Arial, sans-serif">6</text>
+<text x="30.00" y="69.00" font-size="2.3" text-anchor="start" font-weight="400" fill="#111" font-family="Helvetica, Arial, sans-serif">Pattern only: 8 printed parts, 18 dowels D8 x 44, filler, primer</text>
+<text x="240.00" y="69.00" font-size="2.3" text-anchor="start" font-weight="400" fill="#111" font-family="Helvetica, Arial, sans-serif">1 set</text>
+<text x="405.00" y="69.00" font-size="2.2" text-anchor="end" font-weight="400" fill="#111" font-family="'DejaVu Sans', Arial, sans-serif">للنموذج فقط: ٨ أجزاء مطبوعة و١٨ وتد</text>
+<text x="12.00" y="85.00" font-size="2.9" text-anchor="start" font-weight="700" fill="#111" font-family="Helvetica, Arial, sans-serif">NOTES</text>
+<text x="408.00" y="85.00" font-size="2.8" text-anchor="end" font-weight="700" fill="#111" font-family="'DejaVu Sans', Arial, sans-serif">ملاحظات</text>
+<line x1="12.00" y1="86.40" x2="408.00" y2="86.40" stroke="#111" stroke-width="0.25"/>
+<text x="12.00" y="93.00" font-size="2.6" text-anchor="start" font-weight="700" fill="#111" font-family="Helvetica, Arial, sans-serif">1</text>
+<text x="408.00" y="93.00" font-size="2.6" text-anchor="end" font-weight="700" fill="#111" font-family="Helvetica, Arial, sans-serif">1</text>
+<text x="20.00" y="93.00" font-size="2.25" text-anchor="start" font-weight="400" fill="#111" font-family="Helvetica, Arial, sans-serif">Dimensions in mm. Overall 1829 x 686 x 406 and the cushion 1595 x 488 x 84 R81 are from the supplied tear sheet (Riva bench, Carlyle Collective).</text>
+<text x="400.00" y="96.40" font-size="2.15" text-anchor="end" font-weight="400" fill="#111" font-family="'DejaVu Sans', Arial, sans-serif">الأبعاد بالمليمتر. المقاسات الكلية ومقاسات المرتبة من ورقة المرجع المرفقة.</text>
+<text x="12.00" y="103.50" font-size="2.6" text-anchor="start" font-weight="700" fill="#111" font-family="Helvetica, Arial, sans-serif">2</text>
+<text x="408.00" y="103.50" font-size="2.6" text-anchor="end" font-weight="700" fill="#111" font-family="Helvetica, Arial, sans-serif">2</text>
+<text x="20.00" y="103.50" font-size="2.25" text-anchor="start" font-weight="400" fill="#111" font-family="Helvetica, Arial, sans-serif">Shape and all other sizes are traced from the tear sheet's scaled drawings and photos: approximate, +-10 mm. Production measures and corrects.</text>
+<text x="400.00" y="106.90" font-size="2.15" text-anchor="end" font-weight="400" fill="#111" font-family="'DejaVu Sans', Arial, sans-serif">الشكل وباقي المقاسات مأخوذة تقريبًا من رسومات وصور المرجع ±١٠ مم. الإنتاج يراجع ويصحح.</text>
+<text x="12.00" y="114.00" font-size="2.6" text-anchor="start" font-weight="700" fill="#111" font-family="Helvetica, Arial, sans-serif">3</text>
+<text x="408.00" y="114.00" font-size="2.6" text-anchor="end" font-weight="700" fill="#111" font-family="Helvetica, Arial, sans-serif">3</text>
+<text x="20.00" y="114.00" font-size="2.25" text-anchor="start" font-weight="400" fill="#111" font-family="Helvetica, Arial, sans-serif">Drawn exact to the reference by default (standing rule). The reference is another maker's product; the design is not ours. Sabry to confirm use.</text>
+<text x="400.00" y="117.40" font-size="2.15" text-anchor="end" font-weight="400" fill="#111" font-family="'DejaVu Sans', Arial, sans-serif">مرسوم مطابقًا للمرجع حسب القاعدة. المرجع منتج لمصمم آخر وليس تصميمنا؛ يؤكد سبري الاستخدام.</text>
+<text x="12.00" y="124.50" font-size="2.6" text-anchor="start" font-weight="700" fill="#111" font-family="Helvetica, Arial, sans-serif">4</text>
+<text x="408.00" y="124.50" font-size="2.6" text-anchor="end" font-weight="700" fill="#111" font-family="Helvetica, Arial, sans-serif">4</text>
+<text x="20.00" y="124.50" font-size="2.25" text-anchor="start" font-weight="400" fill="#111" font-family="Helvetica, Arial, sans-serif">Process (proposal): 3D print the frame as a pattern, finish it, take a mould, lay up GRP. Wall, layup, reinforcement and mould split by Production.</text>
+<text x="400.00" y="127.90" font-size="2.15" text-anchor="end" font-weight="400" fill="#111" font-family="'DejaVu Sans', Arial, sans-serif">طريقة التصنيع (مقترح): طباعة النموذج ثم صنع القالب ثم صب الفايبر جلاس. التفاصيل حسب الإنتاج.</text>
+<text x="12.00" y="135.00" font-size="2.6" text-anchor="start" font-weight="700" fill="#111" font-family="Helvetica, Arial, sans-serif">5</text>
+<text x="408.00" y="135.00" font-size="2.6" text-anchor="end" font-weight="700" fill="#111" font-family="Helvetica, Arial, sans-serif">5</text>
+<text x="20.00" y="135.00" font-size="2.25" text-anchor="start" font-weight="400" fill="#111" font-family="Helvetica, Arial, sans-serif">Finish: Chocolate (#4A2A1B, unconfirmed) Duco high gloss, as the reference's deep brown lacquer. Paint system and codes to follow.</text>
+<text x="400.00" y="138.40" font-size="2.15" text-anchor="end" font-weight="400" fill="#111" font-family="'DejaVu Sans', Arial, sans-serif">التشطيب: شوكولاتة دوكو لامع جدًا كالمرجع. نظام الدهان والأكواد لاحقًا.</text>
+<text x="12.00" y="145.50" font-size="2.6" text-anchor="start" font-weight="700" fill="#111" font-family="Helvetica, Arial, sans-serif">6</text>
+<text x="408.00" y="145.50" font-size="2.6" text-anchor="end" font-weight="700" fill="#111" font-family="Helvetica, Arial, sans-serif">6</text>
+<text x="20.00" y="145.50" font-size="2.25" text-anchor="start" font-weight="400" fill="#111" font-family="Helvetica, Arial, sans-serif">Not engineered. No load, stability or strength check has been made. Production to advise on reinforcement before a prototype.</text>
+<text x="400.00" y="148.90" font-size="2.15" text-anchor="end" font-weight="400" fill="#111" font-family="'DejaVu Sans', Arial, sans-serif">غير مُصمَّم هندسيًا. لم يتم فحص التحمل أو الثبات. الإنتاج ينصح بالتقوية قبل النموذج الأولي.</text>
+<text x="12.00" y="156.00" font-size="2.6" text-anchor="start" font-weight="700" fill="#111" font-family="Helvetica, Arial, sans-serif">7</text>
+<text x="408.00" y="156.00" font-size="2.6" text-anchor="end" font-weight="700" fill="#111" font-family="Helvetica, Arial, sans-serif">7</text>
+<text x="20.00" y="156.00" font-size="2.25" text-anchor="start" font-weight="400" fill="#111" font-family="Helvetica, Arial, sans-serif">Files: frame one-piece STL, 8 print-part STLs (Z up, mm), DXF outlines of views and sections, cushion board DXF, model and drawing generators.</text>
+<text x="400.00" y="159.40" font-size="2.15" text-anchor="end" font-weight="400" fill="#111" font-family="'DejaVu Sans', Arial, sans-serif">الملفات: STL للهيكل كاملًا و٨ أجزاء، DXF للمساقط والقطاعات ولوح المرتبة.</text>
+<text x="12.00" y="166.50" font-size="2.6" text-anchor="start" font-weight="700" fill="#111" font-family="Helvetica, Arial, sans-serif">8</text>
+<text x="408.00" y="166.50" font-size="2.6" text-anchor="end" font-weight="700" fill="#111" font-family="Helvetica, Arial, sans-serif">8</text>
+<text x="20.00" y="166.50" font-size="2.25" text-anchor="start" font-weight="400" fill="#111" font-family="Helvetica, Arial, sans-serif">Arabic text is a draft for a technical reader to check before the factory sees it.</text>
+<text x="400.00" y="169.90" font-size="2.15" text-anchor="end" font-weight="400" fill="#111" font-family="'DejaVu Sans', Arial, sans-serif">النص العربي مسودة يراجعها فني قبل إرسالها للمصنع.</text>
+<rect x="5.00" y="5.00" width="410.00" height="287.00" fill="none" stroke="#111" stroke-width="0.7"/>
+<text x="413.00" y="246.00" font-size="2.1" text-anchor="end" font-weight="700" fill="#111" font-family="Helvetica, Arial, sans-serif">Draft. Not approved. Not engineered. Shape and most sizes traced from the reference</text>
+<text x="413.00" y="249.00" font-size="2.0" text-anchor="end" font-weight="700" fill="#111" font-family="'DejaVu Sans', Arial, sans-serif">مسودة. غير معتمدة. الشكل ومعظم المقاسات مأخوذة من المرجع تقريبًا</text>
+<rect x="235.00" y="250.00" width="180.00" height="42.00" fill="none" stroke="#111" stroke-width="0.5"/>
+<line x1="235.00" y1="262.00" x2="415.00" y2="262.00" stroke="#111" stroke-width="0.3"/>
+<line x1="235.00" y1="277.00" x2="415.00" y2="277.00" stroke="#111" stroke-width="0.3"/>
+<line x1="295.00" y1="262.00" x2="295.00" y2="292.00" stroke="#111" stroke-width="0.3"/>
+<line x1="355.00" y1="262.00" x2="355.00" y2="292.00" stroke="#111" stroke-width="0.3"/>
+<text x="238.00" y="255.00" font-size="2.9" text-anchor="start" font-weight="700" fill="#111" font-family="Helvetica, Arial, sans-serif">OBJ-177  BILL OF MATERIALS AND NOTES</text>
+<text x="412.00" y="260.00" font-size="2.9" text-anchor="end" font-weight="700" fill="#111" font-family="'DejaVu Sans', Arial, sans-serif">قائمة المواد والملاحظات</text>
+<text x="238.00" y="260.00" font-size="2.6" text-anchor="start" font-weight="400" fill="#111" font-family="Helvetica, Arial, sans-serif">objekt</text>
+<text x="237.00" y="266.20" font-size="2.0" text-anchor="start" font-weight="400" fill="#555" font-family="'DejaVu Sans', Arial, sans-serif">SIZE · المقاس</text>
+<text x="237.00" y="271.60" font-size="2.3" text-anchor="start" font-weight="400" fill="#111" font-family="Helvetica, Arial, sans-serif">A3 · Sheet 5/5 · REV 0</text>
+<text x="297.00" y="266.20" font-size="2.0" text-anchor="start" font-weight="400" fill="#555" font-family="'DejaVu Sans', Arial, sans-serif">SCALE · المقياس</text>
+<text x="297.00" y="271.60" font-size="2.3" text-anchor="start" font-weight="400" fill="#111" font-family="Helvetica, Arial, sans-serif">as shown · كما هو موضح</text>
+<text x="357.00" y="266.20" font-size="2.0" text-anchor="start" font-weight="400" fill="#555" font-family="'DejaVu Sans', Arial, sans-serif">UNITS · الوحدات</text>
+<text x="357.00" y="271.60" font-size="2.3" text-anchor="start" font-weight="400" fill="#111" font-family="Helvetica, Arial, sans-serif">mm · مم</text>
+<text x="237.00" y="281.20" font-size="2.0" text-anchor="start" font-weight="400" fill="#555" font-family="'DejaVu Sans', Arial, sans-serif">MATERIAL · الخامة</text>
+<text x="237.00" y="286.60" font-size="2.3" text-anchor="start" font-weight="400" fill="#111" font-family="Helvetica, Arial, sans-serif">GRP on a printed pattern</text>
+<text x="297.00" y="281.20" font-size="2.0" text-anchor="start" font-weight="400" fill="#555" font-family="'DejaVu Sans', Arial, sans-serif">FINISH · التشطيب</text>
+<text x="297.00" y="286.60" font-size="2.3" text-anchor="start" font-weight="400" fill="#111" font-family="Helvetica, Arial, sans-serif">Chocolate Duco gloss (tbc)</text>
+<text x="357.00" y="281.20" font-size="2.0" text-anchor="start" font-weight="400" fill="#555" font-family="'DejaVu Sans', Arial, sans-serif">DATE · التاريخ</text>
+<text x="357.00" y="286.60" font-size="2.3" text-anchor="start" font-weight="400" fill="#111" font-family="Helvetica, Arial, sans-serif">10.11.2026</text>
+<text x="237.00" y="289.60" font-size="2.1" text-anchor="start" font-weight="400" fill="#111" font-family="'DejaVu Sans', Arial, sans-serif">فايبر جلاس على نموذج مطبوع</text>
+<text x="297.00" y="289.60" font-size="2.1" text-anchor="start" font-weight="400" fill="#111" font-family="'DejaVu Sans', Arial, sans-serif">شوكولاتة دوكو لامع (يؤكَّد)</text>
+<rect x="330.00" y="236.50" width="85.00" height="6.50" fill="#fff3cd" stroke="#9B6835" stroke-width="0.4"/>
+<text x="372.50" y="239.60" font-size="2.1" text-anchor="middle" font-weight="700" fill="#7a4a12" font-family="Helvetica, Arial, sans-serif">DRAFT, not approved, not engineered</text>
+<text x="372.50" y="242.40" font-size="1.9" text-anchor="middle" font-weight="700" fill="#7a4a12" font-family="'DejaVu Sans', Arial, sans-serif">مسودة، غير معتمدة، غير مُصمَّمة هندسيًا</text></svg>

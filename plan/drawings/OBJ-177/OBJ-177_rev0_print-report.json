@@ -1,0 +1,378 @@
+{
+ "note": "Files are Z-up, mm, origin at the floor centre of the bench. Parts keep their position in the bench, so they line up when loaded together.",
+ "meshes": {
+  "OBJ-177_rev0_frame_one-piece.stl": {
+   "faces": 246310,
+   "watertight": true,
+   "bodies": 1,
+   "max_dev_mm": 0.02,
+   "MB": 12.3,
+   "extent_xyz_mm": [
+    1829.3,
+    686.2,
+    406.4
+   ],
+   "volume_l": 58.94,
+   "bounds": [
+    [
+     -914.7,
+     -343.1,
+     -0.0
+    ],
+    [
+     914.6,
+     343.2,
+     406.4
+    ]
+   ]
+  },
+  "OBJ-177_rev0_print-part-01.stl": {
+   "faces": 62822,
+   "watertight": true,
+   "bodies": 1,
+   "max_dev_mm": 0.01,
+   "MB": 3.1,
+   "extent_xyz_mm": [
+    457.7,
+    343.4,
+    406.4
+   ],
+   "volume_l": 10.94,
+   "bounds": [
+    [
+     -914.6,
+     -0.3,
+     0.0
+    ],
+    [
+     -456.9,
+     343.0,
+     406.4
+    ]
+   ]
+  },
+  "OBJ-177_rev0_print-part-02.stl": {
+   "faces": 62822,
+   "watertight": true,
+   "bodies": 1,
+   "max_dev_mm": 0.01,
+   "MB": 3.1,
+   "extent_xyz_mm": [
+    457.7,
+    343.4,
+    406.3
+   ],
+   "volume_l": 10.94,
+   "bounds": [
+    [
+     -914.6,
+     -343.0,
+     0.0
+    ],
+    [
+     -456.9,
+     0.3,
+     406.4
+    ]
+   ]
+  },
+  "OBJ-177_rev0_print-part-03.stl": {
+   "faces": 34938,
+   "watertight": true,
+   "bodies": 1,
+   "max_dev_mm": 0.0,
+   "MB": 1.7,
+   "extent_xyz_mm": [
+    457.4,
+    296.4,
+    68.2
+   ],
+   "volume_l": 3.78,
+   "bounds": [
+    [
+     -457.3,
+     -0.3,
+     264.1
+    ],
+    [
+     0.1,
+     296.1,
+     332.3
+    ]
+   ]
+  },
+  "OBJ-177_rev0_print-part-04.stl": {
+   "faces": 77640,
+   "watertight": true,
+   "bodies": 1,
+   "max_dev_mm": 0.0,
+   "MB": 3.9,
+   "extent_xyz_mm": [
+    457.4,
+    296.4,
+    68.2
+   ],
+   "volume_l": 3.78,
+   "bounds": [
+    [
+     -457.3,
+     -296.1,
+     264.1
+    ],
+    [
+     0.1,
+     0.3,
+     332.3
+    ]
+   ]
+  },
+  "OBJ-177_rev0_print-part-05.stl": {
+   "faces": 34938,
+   "watertight": true,
+   "bodies": 1,
+   "max_dev_mm": 0.0,
+   "MB": 1.7,
+   "extent_xyz_mm": [
+    457.4,
+    296.4,
+    68.2
+   ],
+   "volume_l": 3.78,
+   "bounds": [
+    [
+     -0.3,
+     -0.3,
+     264.1
+    ],
+    [
+     457.1,
+     296.1,
+     332.3
+    ]
+   ]
+  },
+  "OBJ-177_rev0_print-part-06.stl": {
+   "faces": 34938,
+   "watertight": true,
+   "bodies": 1,
+   "max_dev_mm": 0.0,
+   "MB": 1.7,
+   "extent_xyz_mm": [
+    457.4,
+    296.4,
+    68.2
+   ],
+   "volume_l": 3.78,
+   "bounds": [
+    [
+     -0.3,
+     -296.1,
+     264.1
+    ],
+    [
+     457.1,
+     0.3,
+     332.3
+    ]
+   ]
+  },
+  "OBJ-177_rev0_print-part-07.stl": {
+   "faces": 62598,
+   "watertight": true,
+   "bodies": 1,
+   "max_dev_mm": 0.01,
+   "MB": 3.1,
+   "extent_xyz_mm": [
+    457.9,
+    343.3,
+    406.4
+   ],
+   "volume_l": 10.94,
+   "bounds": [
+    [
+     456.7,
+     -0.3,
+     0.0
+    ],
+    [
+     914.6,
+     343.0,
+     406.4
+    ]
+   ]
+  },
+  "OBJ-177_rev0_print-part-08.stl": {
+   "faces": 62598,
+   "watertight": true,
+   "bodies": 1,
+   "max_dev_mm": 0.02,
+   "MB": 3.1,
+   "extent_xyz_mm": [
+    457.9,
+    343.4,
+    406.3
+   ],
+   "volume_l": 10.94,
+   "bounds": [
+    [
+     456.7,
+     -343.0,
+     0.0
+    ],
+    [
+     914.6,
+     0.3,
+     406.4
+    ]
+   ]
+  }
+ },
+ "dowels_model_coords_y_up": [
+  {
+   "plane": "x",
+   "at_mm": [
+    -457.0,
+    287.5,
+    -267.2
+   ]
+  },
+  {
+   "plane": "x",
+   "at_mm": [
+    -457.0,
+    312.0,
+    -145.5
+   ]
+  },
+  {
+   "plane": "x",
+   "at_mm": [
+    -457.0,
+    287.5,
+    267.2
+   ]
+  },
+  {
+   "plane": "x",
+   "at_mm": [
+    -457.0,
+    312.0,
+    145.5
+   ]
+  },
+  {
+   "plane": "x",
+   "at_mm": [
+    0.0,
+    287.5,
+    -267.2
+   ]
+  },
+  {
+   "plane": "x",
+   "at_mm": [
+    0.0,
+    312.0,
+    -145.5
+   ]
+  },
+  {
+   "plane": "x",
+   "at_mm": [
+    0.0,
+    287.5,
+    267.2
+   ]
+  },
+  {
+   "plane": "x",
+   "at_mm": [
+    0.0,
+    312.0,
+    145.5
+   ]
+  },
+  {
+   "plane": "x",
+   "at_mm": [
+    457.0,
+    287.5,
+    -267.2
+   ]
+  },
+  {
+   "plane": "x",
+   "at_mm": [
+    457.0,
+    312.0,
+    -145.5
+   ]
+  },
+  {
+   "plane": "x",
+   "at_mm": [
+    457.0,
+    287.5,
+    267.2
+   ]
+  },
+  {
+   "plane": "x",
+   "at_mm": [
+    457.0,
+    312.0,
+    145.5
+   ]
+  },
+  {
+   "plane": "z",
+   "at_mm": [
+    -823.5,
+    357.7,
+    0.0
+   ]
+  },
+  {
+   "plane": "z",
+   "at_mm": [
+    823.5,
+    357.7,
+    0.0
+   ]
+  },
+  {
+   "plane": "z",
+   "at_mm": [
+    -680,
+    312.0,
+    0.0
+   ]
+  },
+  {
+   "plane": "z",
+   "at_mm": [
+    -230,
+    312.0,
+    0.0
+   ]
+  },
+  {
+   "plane": "z",
+   "at_mm": [
+    230,
+    312.0,
+    0.0
+   ]
+  },
+  {
+   "plane": "z",
+   "at_mm": [
+    680,
+    312.0,
+    0.0
+   ]
+  }
+ ],
+ "dowel": "D8 x 44 (22 each side of the cut), hole D8.4",
+ "dowels_checked": "18 of 18 sit in solid material and are open in the parts"
+}
