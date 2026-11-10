@@ -246,3 +246,8 @@
 - `deliveryProfileUpdate` (General profile, Egypt): Standard delivery 118 EGP now has cart weight 0–0.5 kg; new **Large item delivery** 1,200 EGP for ≥ 1 kg. Read back OK. All 53 variants are 0 kg today, so all count as small until a product is marked large.
 - Page Delivery & Returns (`pageUpdate`): delivery line now "Small items: 118 EGP per order. Large pieces: 1,200 EGP per order. One fee per order: if your order includes a large piece, the large-piece fee applies." Read back by mutation result only.
 - Not tested at checkout (no payment set up). Shipping policy in admin still says "118 EGP per order for small items" only; Sabry to add the large-piece line.
+
+## 2026-11-10 (shipping by order weight, replaces the size-flag setup above)
+- Sabry: 15 kg or less is 118 EGP; more than 15 kg is 1,200 EGP.
+- `deliveryProfileUpdate`: Standard delivery 118 EGP for cart weight 0–15 kg; second rate renamed **Large order delivery**, 1,200 EGP from 15.01 kg. Read back OK. Weight is now the real packed weight (PRODUCT_SCHEMA updated); all variants are 0 kg today.
+- Delivery & Returns page: "Orders up to 15 kg: 118 EGP. Orders over 15 kg: 1,200 EGP." Not tested at checkout.

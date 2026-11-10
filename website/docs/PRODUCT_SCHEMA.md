@@ -86,9 +86,8 @@ Definitions only; 0 products exist. All in namespace `custom`; all readable by t
 Tag `placeholder-data` marks every affected product (Shopify admin: Products, filter by that tag). Values: price 9999.00; lead time 8 to 10 weeks; description, short description "[PLACEHOLDER] ... [نص مؤقت]"; dimensions "00 cm"; rooms, process and finishes guessed (see CHANGELOG). Not set: colours, story, materials and craft, care, companions, images. **Launch rule:** no product may be activated while it still has the `placeholder-data` tag; the QA checklist now says so.
 
 
-## Shipping size (set per item when listing, Sabry 10 Nov 2026)
-The variant **weight** is the size flag for shipping. It is not the real weight.
-- Small item: weight **0 kg** (default). Standard delivery, 118 EGP.
-- Large item: weight **1 kg** on every variant. Large item delivery, 1,200 EGP.
-- Rates (General profile, Egypt): Standard delivery when cart weight ≤ 0.5 kg; Large item delivery when ≥ 1 kg. So the cart pays one fee, the higher one: any large item makes the order 1,200 EGP.
-- Do not enter real weights in the weight field; it would change the rate. If real weights are needed later, store them in a metafield.
+## Shipping weight (set per item when listing, Sabry 10 Nov 2026)
+Enter each variant's **real packed weight** in kg. Delivery is priced on the order's total weight (General profile, Egypt):
+- Up to 15 kg: **Standard delivery, 118 EGP**.
+- Over 15 kg (rate starts at 15.01 kg): **Large order delivery, 1,200 EGP**.
+- A product left at 0 kg adds nothing, so every product needs its weight before it goes active. Packed weights come from Polycraft.

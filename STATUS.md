@@ -54,7 +54,7 @@ Three daily sessions work on this repo, one section each. Each session updates *
 
 ## Website (Shopify)
 ### 10 Nov 2026 (Tue)
-- Shipping now 118 EGP small / 1,200 EGP large, order pays the higher (weight as size flag: 0 kg small, 1 kg large; see PRODUCT_SCHEMA). Delivery page updated. Not tested at checkout. Sabry to add the large line to the Shipping policy in admin.
+- Shipping by order weight: up to 15 kg 118 EGP, over 15 kg 1,200 EGP. Every product needs its real packed weight before going active (all 0 kg now; ask Polycraft). Delivery page updated. Not tested at checkout. Sabry to update the Shipping policy in admin.
 - Policies saved by Sabry and linked in the footer (5). Open: Shipping policy says 118 EGP "for small items", which the store rate and Delivery page do not; small formatting fixes in admin.
 - Cleanup done (Sabry's yes): 3 test products and 2 test articles deleted; 13 preview-active products to draft; 4 reference photos and 8 placeholders deleted. Store now 50 products, 0 active, The Edit empty.
 - Delivery & Returns page live (behind password) and in the footer. Policies blocked: connector cannot write them; Sabry pastes `website/docs/drafts/POLICIES_TO_PASTE_2026-11-10.md` in admin (Settings → Policies), incl. privacy contact fix. Lawyer check open on 48 h returns, non-refundable deposit, governing law.
