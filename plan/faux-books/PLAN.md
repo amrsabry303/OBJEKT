@@ -1,7 +1,7 @@
-# objekt faux books: plan and art direction (draft 3, 10 Nov 2026)
+# objekt faux books: plan and art direction (draft 4, 10 Nov 2026)
 
-Status: proposal for Sabry. Decided so far (10 Nov): title typeface Galak Round; sold as singles and as a set of three; titles to be witty, in the line of "Objekts of Character"; made as a solid block, paper; day 1. Nothing is costed or sent to anyone.
-Direction sheet: `faux-books-direction-sheet_diagram_v3.svg` (PNG copy beside it). It is a flat diagram with stand-in lettering, not a render and not a photo.
+Status: proposal for Sabry. Decided so far (10 Nov): title typeface Galak Round; sold as singles and as a set of three; titles to be witty, in the line of "Objekts of Character"; made as a solid block, paper; day 1; a print set of three added (tiger, cow, stripe). Nothing is costed or sent to anyone.
+Direction sheet: `faux-books-direction-sheet_diagram_v4.svg` (PNG copy beside it). It is a flat diagram with stand-in lettering, not a render and not a photo.
 
 ## 01 // the idea
 A small library of decorative volumes that work as colour blocks with type on them. One format, our own titles, the eight objekt colours. Sold one at a time or as a stack of three.
@@ -16,7 +16,7 @@ What the five references share, and what we take:
 ## 02 // where it sits
 - Website category: Table & Living. Internal category: Desk and book, which has a day-1 target of 2 and nothing in the library.
 - Process: outside printer and binder. It is not one of the four factory processes, so it sits outside the process mix and cannot carry "Made at Polycraft, Cairo".
-- Count: list it as **two products**, not eight. One product "faux book" with eight colour variants, and one product "set of three". That meets the Desk and book target of 2 and keeps the category under the 10% rule. Next free numbers look like OBJ-177 and OBJ-178; not assigned until you say so.
+- Count: list it as **two products**, not eight. One product "faux book" with eleven variants (eight plain, three print), and one product "set of three" with three variants (plain A, plain B, print). That meets the Desk and book target of 2 and keeps the category under the 10% rule. Next free numbers look like OBJ-177 and OBJ-178; not assigned until you say so.
 - Timing: **day 1** (Sabry, 10 Nov). Launch is Fri 20 Nov, ten days away. See section 06 for what that needs.
 
 ## 03 // art direction
@@ -60,9 +60,23 @@ Honest note: the references are loud (lime, pink, cobalt, orange). The objekt pa
 - Open: the brand word is written lowercase (objekts). Vol. 05 sets it in caps on the front because every front title is caps; the spine keeps it lowercase. Say if you want it lowercase on the front too.
 - English only, per the locked naming decision.
 - "Vol." is a title number, not an edition number. Copies are not numbered (numbered editions belong to Brand 01).
-- Sets of three: one L dark, one M neutral, one S colour. Either fixed sets (for example 03 + 01 + 05 and 07 + 02 + 08) or the customer picks one from each size.
+- Sets of three: one L, one M, one S. Proposed fixed sets: plain A (03 + 01 + 05), plain B (07 + 02 + 08), print (09 + 10 + 11). Ink (04) and Clay (06) are then singles only.
 
-**Material and finish.** Solid block, paper (Sabry, 10 Nov). Read as: a closed block that does not open, wrapped in printed paper, matte. To confirm: is the inside a block of blank pages (looks like a real book from the edge, heavier) or a plain board or foam core with a printed page edge? Colour and lettering are printed in one pass, so the eight colours can be matched by the printer from the hex values and a sample. Matte only: uncoated stock or matte lamination. No gloss, no metallic, no pattern, no dust jacket.
+**The print set (Sabry, 10 Nov).** Three printed volumes beside the eight plain ones, sold as singles and as one set of three.
+
+| Vol. | Title | Print | Colours | Lettering | Size |
+|---|---|---|---|---|---|
+| 09 | EASY / TIGER | tiger stripe | Clay ground, Carbon stripes | Bone | L |
+| 10 | HOLY / COW | cow patch | Bone ground, Carbon patches | Carbon | M |
+| 11 | BETWEEN / THE / LINES | stripe | Bone ground, Ink bands, Ink spine | Ink | S |
+
+- Flat graphic prints, drawn, not photographic fur. Two objekt colours each, so they still sit in the palette.
+- The print keeps clear of the title block so the title reads.
+- The drawings on the sheet are placeholders made in code. The final prints need to be drawn properly.
+- Titles are proposals, like the other eight.
+- Prints stay on these three only. The other eight stay plain.
+
+**Material and finish.** Solid block, paper (Sabry, 10 Nov). Read as: a closed block that does not open, wrapped in printed paper, matte. To confirm: is the inside a block of blank pages (looks like a real book from the edge, heavier) or a plain board or foam core with a printed page edge? Colour and lettering are printed in one pass, so the eight colours can be matched by the printer from the hex values and a sample. Matte only: uncoated stock or matte lamination. No gloss, no metallic, no dust jacket.
 
 **Format.** Three sizes that step down so a stack shows all three spines. Sizes are not set: they depend on the maker's board sizes. To be fixed at sample stage.
 
@@ -76,9 +90,9 @@ Decided: solid block in paper · Galak Round titles · singles and a set of thre
 
 Open:
 1. Inside of the block: blank pages, or board or foam core.
-2. Titles: approve or swap the eight.
+2. Titles: approve or swap the eleven.
 3. "objekts" lowercase on the front of Vol. 05, or caps like the rest.
-4. Sets: two fixed sets, or pick one from each size.
+4. Sets: the three fixed sets above, or pick one from each size.
 5. Sizes for L, M and S.
 6. Price, and whether stock is made up front or made to order.
 
@@ -95,9 +109,9 @@ The store can list the books on day 1 with AI renders, like every other product.
 |---|---|---|
 | Now | Answer the open decisions. Start the font and logo licence. | Sabry |
 | Now | Call a printer and binder: can they do a paper-wrapped solid block in three sizes, matte, eight colours, and how fast | Sabry or Youssef |
-| After sizes are set | Print-ready flats (front, spine, back) for eight volumes | needs the licensed font files, supplied outside git |
+| After sizes are set | Print-ready flats (front, spine, back) for eleven volumes, with the three prints drawn properly | needs the licensed font files, supplied outside git |
 | After the maker says yes | One sample per size. Check colour against the hex, lettering sharpness, corners, how the stack sits | maker, Sabry |
-| Any time | AI renders: eight singles, two set heroes, one context image. Named `ai-render` | Claude, on your go |
+| Any time | AI renders: eleven singles, three set heroes, one context image. Named `ai-render` | Claude, on your go |
 | Before launch | Names (objekt-naming), OBJ numbers, add to the day-1 list and Shopify draft. Nothing live without your yes | Claude drafts, Sabry approves |
 
 If the licence or the maker is not confirmed in time, the honest options are: list as pre-order, or hold to the first drop after launch.
