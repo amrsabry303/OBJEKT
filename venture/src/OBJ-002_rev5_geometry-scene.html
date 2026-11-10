@@ -1,0 +1,43 @@
+<!doctype html><html><body style="margin:0;background:#ddd"><script src="node_modules/three/build/three.min.js"></script>
+<script>
+// OBJ-002 REV 5: four loose quarter segments, D 1000, gap 10, H 350, t 3, flaps along both straight edges stop 30 short of the corner, top tip cut R30.
+const P=new URLSearchParams(location.search); const W=+P.get('w')||1280, H=+P.get('h')||1600; const MASK=P.get('mask');
+const r=new THREE.WebGLRenderer({antialias:true,preserveDrawingBuffer:true}); r.setSize(W,H); r.shadowMap.enabled=true; r.shadowMap.type=THREE.VSMShadowMap; r.outputColorSpace=THREE.SRGBColorSpace; document.body.appendChild(r.domElement);
+const sc=new THREE.Scene(); sc.background=new THREE.Color(MASK?0x000000:0xd9d2c8);
+const R=495, G=5, T=3, HT=350, CUT=30;
+function segment(sx,sz,mat){
+  const g=new THREE.Group();
+  // top: quarter disc in local (u,v) >=0, corner cut by R30 arc
+  const s=new THREE.Shape(); s.moveTo(CUT,0); s.lineTo(R,0); s.absarc(0,0,R,0,Math.PI/2,false); s.lineTo(0,CUT); s.absarc(0,0,CUT,Math.PI/2,0,true);
+  const top=new THREE.Mesh(new THREE.ExtrudeGeometry(s,{depth:T,bevelEnabled:false,curveSegments:96}),mat);
+  top.rotation.x=Math.PI/2; top.position.y=HT; // shape xy -> world x,z ; extrude goes down
+  g.add(top);
+  // flap along u axis (v=0): plate from u=CUT..R, height HT, at v in [0,T]
+  const f1=new THREE.Mesh(new THREE.BoxGeometry(R-CUT,HT-T,T),mat); f1.position.set((R+CUT)/2,(HT-T)/2,T/2); g.add(f1);
+  const f2=new THREE.Mesh(new THREE.BoxGeometry(T,HT-T,R-CUT),mat); f2.position.set(T/2,(HT-T)/2,(R+CUT)/2); g.add(f2);
+  g.traverse(o=>{if(o.isMesh){o.castShadow=o.receiveShadow=true;}});
+  g.scale.set(sx,1,sz); g.position.set(sx*G,2,sz*G);
+  return g;
+}
+const C={oxblood:0x5a1f25, ink:0x1e2a44, grey:0x8c8c8c};
+const way=P.get('way')||'grey';
+const segs=[[1,1],[-1,1],[-1,-1],[1,-1]]; // D front-right first
+segs.forEach(([sx,sz],i)=>{
+  let col=C.grey, metal=false;
+  let m;
+  if(MASK){ m=new THREE.MeshBasicMaterial({color:(MASK==='D'&&i===0)||MASK==='all'?0xffffff:0x000000, side:THREE.DoubleSide}); }
+  else m=new THREE.MeshStandardMaterial({color:col,roughness:0.8,metalness:0.05,side:THREE.DoubleSide});
+  sc.add(segment(sx,sz,m));
+});
+if(!MASK){
+const floor=new THREE.Mesh(new THREE.PlaneGeometry(20000,20000),new THREE.MeshStandardMaterial({color:0xcfcac3,roughness:0.6})); floor.rotation.x=-Math.PI/2; floor.receiveShadow=true; sc.add(floor);
+const wall=new THREE.Mesh(new THREE.PlaneGeometry(20000,8000),new THREE.MeshStandardMaterial({color:0xd9d2c8,roughness:1})); wall.position.set(0,4000,-1800); wall.receiveShadow=true; sc.add(wall);
+sc.add(new THREE.HemisphereLight(0xffffff,0xbdb6ad,2.4));
+const d=new THREE.DirectionalLight(0xffffff,1.0); d.position.set(-2500,2400,1400); d.castShadow=true; d.shadow.mapSize.set(4096,4096);
+Object.assign(d.shadow.camera,{left:-1800,right:1800,top:1800,bottom:-1800,near:10,far:9000}); d.shadow.radius=24; d.shadow.blurSamples=25; sc.add(d);
+} else { const fl=new THREE.Mesh(new THREE.PlaneGeometry(20000,20000),new THREE.MeshBasicMaterial({color:0})); fl.rotation.x=-Math.PI/2; sc.add(fl); }
+const cam=new THREE.PerspectiveCamera(+P.get('fov')||22,W/H,10,30000);
+const ang=(+P.get('az')||25)*Math.PI/180, dist=+P.get('dist')||3600, ch=+P.get('ch')||1200;
+cam.position.set(Math.sin(ang)*dist,ch,Math.cos(ang)*dist); cam.lookAt(0,+P.get('ly')||420,0);
+r.render(sc,cam); document.title='done';
+</script></body></html>
