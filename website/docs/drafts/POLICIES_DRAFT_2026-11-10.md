@@ -1,7 +1,7 @@
 # Delivery & Returns and policies: draft for Sabry's approval
 
 Draft, 10 Nov 2026. Not on the store. English only; Arabic goes to the translator after approval.
-Built only from Sabry's answers of 10 Nov (CONTENT_TO_SUPPLY sections 1, 5, 6). Lines marked **[confirm]** need a yes or a fix. **[legal]** marks points for a lawyer's check before launch.
+Built only from Sabry's answers of 10 Nov (CONTENT_TO_SUPPLY sections 1, 5, 6). All [confirm] points answered by Sabry on 10 Nov. **[legal]** marks points for a lawyer's check before launch.
 
 ---
 
@@ -45,8 +45,7 @@ Same text as "Made to order" (deposit lines), "Returns" and "Damage" above.
 3. **Orders.** An order is confirmed when payment (ready pieces) or the deposit (made-to-order pieces) is received.
 4. **Made to order.** Pieces are made for you after your order. Lead times are shown on each product page. Colours and finishes of handmade pieces may vary slightly from images.
 5. **Payment, delivery, returns.** As set out on the Delivery & Returns page and in the Shipping and Refund policies.
-6. **Images.** Some product images are computer renders, not photographs. **[confirm: needed while AI renders are on the site]**
-7. **Law.** These terms are governed by the laws of Egypt. **[legal]**
+6. **Law.** These terms are governed by the laws of Egypt. **[legal]**
 
 ## 5. Shopify policy: Contact information (new)
 objekt
@@ -61,6 +60,8 @@ The Shopify-generated policy (30 Oct) stays as is, except its last paragraph:
 > New: "…please contact us on WhatsApp at +20 100 082 2240. You can find our other contact details on our contact information policy."
 
 ---
+
+Sabry (10 Nov): never mention computer renders in public text.
 
 ## Legal note
 As far as we know, Egypt's Consumer Protection Law (No. 181 of 2018) gives buyers a 14-day return right, with exceptions such as goods made to the buyer's specification. The 48-hour window for ready pieces and the non-refundable deposit may conflict with it. Not verified: a lawyer should check before 19 Nov.
