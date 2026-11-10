@@ -200,3 +200,10 @@
 - Theme file on the **unpublished** theme 189754769632 only (`themeFilesUpsert`, Admin API; CLI not logged in): `templates/page.about.json` gets the opening statement, Design philosophy and Our approach texts. The empty **Process** and **Craftsmanship** blocks were removed (no text supplied); add them back when Sabry supplies text. Repo file updated to match; `theme check` 48 files, no offenses.
 - Verified by read-back (menu, 4 descriptions, 4 metafields, theme file). Not seen in a browser.
 - Known gap: The Edit now sits in the menu but holds only the 2 `[TEST]` articles until real stories exist.
+
+## 2026-11-10 (footer menu, on Sabry's request)
+- Sabry said in chat (10 Nov): "start the footer menu". Store confirmed with `get-shop-info`: OBJEKT, hs1a1c-ut.myshopify.com.
+- Menus: new `footer-shop` (Furniture, Table & Living, Objekts, Planters) and `footer-policies` (Privacy policy, the only policy that exists) with `menuCreate`; `footer` updated to About, Contact, Search with `menuUpdate`.
+- Theme file on the **unpublished** theme 189754769632 only (`themeFilesUpsert`): `sections/footer-group.json` now has three link columns, Shop (`footer-shop`), Support (`footer`), Policies (`footer-policies`). Repo file updated to match.
+- Verified by read-back (3 menus, theme file). Not seen in a browser. Delivery & Returns and the terms, refund and shipping policies join the footer once written.
+- Facts from Sabry (10 Nov), not yet on the site: shipping is worldwide; every made-to-order piece takes a 50% deposit, collected first; made-to-order lead time 30–45 days.

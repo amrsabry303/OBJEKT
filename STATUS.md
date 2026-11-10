@@ -53,6 +53,10 @@ Three daily sessions work on this repo, one section each. Each session updates *
 ## Drawings and files
 
 ## Website (Shopify)
+### 10 Nov 2026 (Tue)
+- Footer menu done on Sabry's request: Shop (4 categories), Support (About, Contact, Search), Policies (Privacy). Unpublished theme only; read back, not seen in a browser.
+- Sabry answered: shipping worldwide; 50% deposit on every made-to-order piece, collected first; made-to-order lead time 30–45 days. Open questions sent in chat (balance timing, deposit app vs InstaPay, international carrier and rates, duties, currencies, returns).
+- Launch checklist page published (private): https://claude.ai/artifact/JfudpCb2Xe8TsTT4n5Uzwe
 ### 9 Nov 2026 (Mon)
 - Ran: pulled main (2da9a25); `npm ci`; `theme check` 48 files, no offenses. Store confirmed OBJEKT / hs1a1c-ut. No store writes.
 - Store re-read: unchanged (53 products, 16 active, 3 `[TEST]`, 13 `preview-active`, 13 active with `placeholder-data`). Menus, pages (About, Contact) unchanged. Themes: Horizon live, OBJEKT dev 189754769632 unpublished.

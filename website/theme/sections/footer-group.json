@@ -5,10 +5,11 @@
     "footer": {
       "type": "footer",
       "blocks": {
+        "shop": { "type": "links", "settings": { "title": "Shop", "menu": "footer-shop" } },
         "support": { "type": "links", "settings": { "title": "Support", "menu": "footer" } },
-        "policies": { "type": "links", "settings": { "title": "Policies", "menu": "footer" } }
+        "policies": { "type": "links", "settings": { "title": "Policies", "menu": "footer-policies" } }
       },
-      "block_order": ["support", "policies"]
+      "block_order": ["shop", "support", "policies"]
     }
   },
   "order": ["footer"]
