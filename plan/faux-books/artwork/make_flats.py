@@ -32,7 +32,7 @@ VOLS = [
  (1,['NOT A','BOOK'],'Bone','Objekt Green','crop',['NOT A','BOOK'],None),
  (2,['SHELF','LIFE'],'Putty','Chocolate','vert',['SHELF','LIFE'],None),
  (3,['HEAVY','READING'],'Carbon','Bone','fill',['HEAVY','READING'],None),
- (4,['JUDGE','THE','COVER'],'Ink','Putty','over',['JUDGE THE','COVER'],None),
+ (4,['JUDGE','THE','COVER'],'Ink','Putty','fill',['JUDGE THE','COVER'],None),
  (5,['OBJEKTS OF','CHARACTER'],'Oxblood','Bone','fill',['OBJEKTS OF','CHARACTER'],None),
  (6,['USELESS','ON PURPOSE'],'Clay','Bone','vert',['USELESS','ON PURPOSE'],None),
  (7,['COFFEE','TABLE','BOOK'],'Chocolate','Putty','fill',['COFFEE TABLE','BOOK'],None),
@@ -112,12 +112,12 @@ def front_layout(kind, lines, ink_, n=0):
             for j,l in enumerate(lines): items.append((fx+m+cap+j*step, H-m+ink(l)[0]*s, s, -90, l))
         elif kind == 'crop':
             small, big = lines[:-1], lines[-1]
-            sb = 1.22*avail/iwid(big); capb = sb*CAP; ss = 0.34*sb; caps = ss*CAP; stp = caps*1.3
+            sb = (W-m)/(iwid(big) - 0.2*ink(big[-1])[1]); capb = sb*CAP; ss = 0.34*sb; caps = ss*CAP; stp = caps*1.3   # the trim cuts the last letter at about 80%
             for j,l in enumerate(small): items.append((fx+m-ink(l)[0]*ss, m+caps+j*stp, ss, 0, l))
-            items.append((fx+m-ink(big)[0]*sb, H + 0.26*capb, sb, 0, big))
+            items.append((fx+m-ink(big)[0]*sb, H + 0.08*capb, sb, 0, big))   # only the foot of the word is cut by the bottom trim
         elif kind == 'bands':
-            hb = H/6; s = avail/max(iwid(l) for l in lines); cap = s*CAP
-            for j,l in enumerate(lines): items.append((fx+m-ink(l)[0]*s, j*hb + (hb+cap)/2, s, 0, l))
+            hb = H/12; s = avail/max(iwid(l) for l in lines); cap = s*CAP
+            for j,l in enumerate(lines): items.append((fx+m-ink(l)[0]*s, (2*j+1)*hb + cap/2, s, 0, l))
         return items
     if kind in ('fill','over'):
         over = 1.0 if kind == 'fill' else 1.14
@@ -143,37 +143,39 @@ def build(vol):
     lw = LOGO_W; lh = lw*501/786; logo_x = (W-lw)/2; logo_y = H - BOT - lh
     cxs = sx + D/2; k = SYM_W/308; ty = H - BOT; ys = ty - SYM_W - GAP
     scap = SP*CAP; sstep = scap*1.32; bh = scap + sstep; x1 = cxs - bh/2 + scap
-    def lettering(fill, clip=None):
+    def lettering(fill, clip=None, front=True):
         g = []
-        for (x,y,s,rot,l) in items: g.append(text(x,y,s,l,fill,rot,extra='big'))
+        for (x,y,s,rot,l) in (items if front else []): g.append(text(x,y,s,l,fill,rot,extra='big'))
         g.append(f'<path transform="translate({logo_x:.1f} {logo_y:.1f}) scale({lw/786:.5f})" fill="{fill}" fill-rule="evenodd" d="{logo_d}"/>')
         g.append(f'<path transform="translate({cxs-SYM_H/2:.2f} {ty:.1f}) rotate(-90) scale({k:.5f}) translate(-238 0)" fill="{fill}" fill-rule="evenodd" d="{sym_d}"/>')
         for j,l in enumerate(slines): g.append(text(x1+j*sstep, ys + (ink(l)[0]*SP if n != 10 else 0), SP, l, fill, -90))
         s_ = '\n'.join(g)
         return f'<g clip-path="url(#{clip})">{s_}</g>' if clip else s_
     if prt == 'tiger':
-        r = random.Random(n*11+1)
-        o.append(f'<g>')
-        excl = [(cxs-SYM_H/2-2, H-BOT-SYM_W-2, SYM_H+4, SYM_W+4, 4), (logo_x-6, logo_y-6, lw+12, lh+12, 6)]
-        for d in tiger_shapes(r, Wf, H, cxs, H*.062, excl): o.append(f'<path fill="{C["Carbon"]}" d="{d}"/>')
-        o.append('</g>')
+        # realistic coat drawn by make_tiger.py (hair strands, fuzzy stripe edges); the pattern comes from tiger_shapes() above
+        o.append(f'<image href="prints/tiger-hide_v1.png" x="0" y="0" width="{Wf}" height="{H}" preserveAspectRatio="none"/>')
         o.append(lettering(fg))
     elif prt == 'cow':
         o.append(f'<image href="prints/cow-hide_v1.png" x="0" y="0" width="{Wf}" height="{H}" preserveAspectRatio="none"/>')
         o.append(lettering(fg))
     elif prt == 'stripe':
-        # six equal bands (Carbon, Bone, ...). Each title line sits in its own band, light on dark and dark on light.
-        nb = 6; bhh = H/nb
-        for i in range(nb):
-            o.append(f'<rect x="0" y="{i*bhh:.2f}" width="{Wf}" height="{bhh+.02:.2f}" fill="{C["Carbon"] if i % 2 == 0 else C["Bone"]}"/>')
-        for j,(x,y,s_,rot,l) in enumerate(items):
-            o.append(text(x, y, s_, l, C['Bone'] if j % 2 == 0 else C['Carbon'], rot, extra='big'))
-        # back logo in the last band (Bone), Carbon
-        o.append(f'<path transform="translate({logo_x:.1f} {logo_y:.1f}) scale({lw/786:.5f})" fill="{C["Carbon"]}" fill-rule="evenodd" d="{logo_d}"/>')
-        # solid Carbon spine with Bone lettering, so the title reads and the bands meet it on both sides
-        o.append(f'<rect x="{sx}" y="0" width="{D}" height="{H}" fill="{C["Carbon"]}"/>')
-        o.append(f'<path transform="translate({cxs-SYM_H/2:.2f} {ty:.1f}) rotate(-90) scale({k:.5f}) translate(-238 0)" fill="{C["Bone"]}" fill-rule="evenodd" d="{sym_d}"/>')
-        for j,l in enumerate(slines): o.append(text(x1+j*sstep, ys + ink(l)[0]*SP, SP, l, C['Bone'], -90))
+        # twelve thin bands (Carbon, Bone, ...) across back, spine and front. Eleven equal bands run to y = 225 and a taller one
+        # finishes the foot, so the band edge falls between the back logo's symbol and its wordmark.
+        bh = 225/11; edges = [i*bh for i in range(12)] + [H]
+        dark = ''.join(f'<rect x="0" y="{edges[i]:.2f}" width="{Wf}" height="{edges[i+1]-edges[i]+.02:.2f}"/>' for i in range(12) if i % 2 == 0)
+        light = ''.join(f'<rect x="0" y="{edges[i]:.2f}" width="{Wf}" height="{edges[i+1]-edges[i]+.02:.2f}"/>' for i in range(12) if i % 2 == 1)
+        o.append(f'<defs><clipPath id="sd{n}">{dark}</clipPath><clipPath id="sl{n}">{light}</clipPath></defs>')
+        o.append(f'<rect width="{Wf}" height="{H}" fill="{C["Bone"]}"/>')
+        o.append(f'<g clip-path="url(#sd{n})"><rect width="{Wf}" height="{H}" fill="{C["Carbon"]}"/></g>')
+        # title: one line per band, light on dark and dark on light, letter-spaced out to the full width
+        m = 11; avail = W - 2*m; cap = .86*bh; s_ = cap/CAP
+        extra = (avail - iwid('BETWEEN')*s_)/(len('BETWEEN')-1)
+        ls = s_*TRK + extra
+        for j,l in enumerate(lines):
+            col = C['Bone'] if j % 2 == 0 else C['Carbon']
+            o.append(f'<text x="{fx+m-ink(l)[0]*s_:.2f}" y="{j*bh + (bh+cap)/2:.2f}" {FT} font-size="{s_:.2f}" font-weight="500" letter-spacing="{ls:.2f}" fill="{col}">{l}</text>')
+        # back logo and spine (symbol and title): Bone where they cross a dark band, Carbon where they cross a light one
+        o.append(lettering(C['Bone'], f'sd{n}', front=False)); o.append(lettering(C['Carbon'], f'sl{n}', front=False))
     else:
         o.append(lettering(fg))
     for x in (sx, sx+D):
