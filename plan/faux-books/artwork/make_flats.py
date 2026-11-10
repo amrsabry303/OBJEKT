@@ -41,6 +41,8 @@ VOLS = [
  (10,['HOLY','COW'],'Bone','Bone','fill',['HOLY','COW'],'cow'),
  (11,['BETWEEN','THE','LINES'],'Bone','Carbon','bands',['BETWEEN','THE LINES'],'stripe'),
 ]
+import os
+NUMS = {int(x) for x in os.environ.get('SPINE_NUMS','').split(',') if x}   # volumes that carry the spine number (proposal)
 def slug(lines): return '-'.join(lines).lower().replace(' ','-')
 SP = min((D-9)/(CAP*2.35), (H-BOT-SYM_W-GAP-BOT)/max(tw(l,1,.02) for v in VOLS for l in v[5]))   # one spine size for all
 
@@ -149,6 +151,10 @@ def build(vol):
         g.append(f'<path transform="translate({logo_x:.1f} {logo_y:.1f}) scale({lw/786:.5f})" fill="{fill}" fill-rule="evenodd" d="{logo_d}"/>')
         g.append(f'<path transform="translate({cxs-SYM_H/2:.2f} {ty:.1f}) rotate(-90) scale({k:.5f}) translate(-238 0)" fill="{fill}" fill-rule="evenodd" d="{sym_d}"/>')
         for j,l in enumerate(slines): g.append(text(x1+j*sstep, ys + (ink(l)[0]*SP if n != 10 else 0), SP, l, fill, -90))
+        if n in NUMS:
+            # volume number at the head of the spine: same type size, tracked wide, 14 mm from the head, same baseline as a one-line title
+            nx = cxs + SP*CAP/2
+            g.append(f'<text transform="translate({nx:.2f} {BOT:.2f}) rotate(-90)" {FT} font-size="{SP:.2f}" font-weight="500" letter-spacing="{SP*.18:.2f}" text-anchor="end" fill="{fill}">{n:02d}</text>')
         s_ = '\n'.join(g)
         return f'<g clip-path="url(#{clip})">{s_}</g>' if clip else s_
     if prt == 'tiger':

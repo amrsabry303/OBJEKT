@@ -292,3 +292,11 @@ Sabry's notes on the draft 20 flats, all applied. Holy Cow untouched.
 - **04 JUDGE THE COVER:** now the fill layout, so all three lines sit fully inside the frame (the longest line ends on the right margin). The overflow layout is no longer used.
 - **09 EASY TIGER, realistic:** same approach as the cow. The V-line stripe pattern (unchanged) is drawn as a coat: about 330,000 hair strands, fuzzy stripe edges with hairs crossing the boundary, slow tonal variation in the Clay ground, and brown-black stripes. File `artwork/prints/tiger-hide_v1.png`, made by `artwork/make_tiger.py`. Spine title and icon still sit on a plain area. Generated, not scanned, so a designer should check it. Printed colour untested.
 - Contrast: Bone on the tiger's Clay ground is 4.1 : 1 as before. The stripe tone is now a dark brown-black, not pure Carbon, but still 12 : 1 or better against Bone.
+
+## 13 // spine numbering, proposal on one volume (10 Nov)
+Sabry asked for numbers on the spines "for aesthetics", shown on one volume first for approval. Shown on Vol. 03 HEAVY READING only (`artwork/FB-03_heavy-reading_flat_proposal-spine-number_v1.svg`, `renders/FB-03_heavy-reading_3d-mockup_proposal-spine-number_v1.jpg`). Nothing else changed; the other ten volumes have no number yet.
+- Number "03", two digits, at the head of the spine, 14 mm from the head edge, same type size and weight as the spine title, tracked wide (18%), in the lettering colour, reading the same way as the title. Baseline matches a one-line title, so it sits centred on the spine.
+- Order on the spine, top to bottom: number, gap, title, symbol. The number and title are 86 mm apart on this volume. On the longest titles (DESIGN WORTH, COFFEE TABLE) the gap is smaller; checked before rollout.
+- Numbers run 01 to 11 as in the volume list. They are series numbers, not edition numbers (copies are not numbered).
+- If approved, applied to all eleven by running `SPINE_NUMS=1,2,3,4,5,6,7,8,9,10,11 python3 make_flats.py <repo root>`. On the striped 11 the number is two-tone like the rest of the spine.
+- Alternatives not drawn: number at the foot beside the symbol; number in the Clay accent; a "No." prefix.
