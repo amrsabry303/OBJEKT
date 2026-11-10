@@ -251,3 +251,8 @@
 - Sabry: 15 kg or less is 118 EGP; more than 15 kg is 1,200 EGP.
 - `deliveryProfileUpdate`: Standard delivery 118 EGP for cart weight 0–15 kg; second rate renamed **Large order delivery**, 1,200 EGP from 15.01 kg. Read back OK. Weight is now the real packed weight (PRODUCT_SCHEMA updated); all variants are 0 kg today.
 - Delivery & Returns page: "Orders up to 15 kg: 118 EGP. Orders over 15 kg: 1,200 EGP." Not tested at checkout.
+
+## 2026-11-10 (The Edit hidden; OBJ-099 alt text)
+- Sabry said yes to both.
+- Menu `objekt-main` (`menuUpdate`): The Edit removed; now Shop (4 categories) + About. Blog `the-edit` kept (empty); add it back with the first real story. Read back OK.
+- OBJ-099 image alt text (`fileUpdate`, 5 images): "AI render, not a photo of a made piece" removed (Sabry: never mention renders in public text). Now "OBJ-099 candleholder set in Oxblood / Ink / Objekt Green / Putty" and "...in Oxblood on a dining table in low sun". File names unchanged (`ai-render` kept, internal). Read back OK.
