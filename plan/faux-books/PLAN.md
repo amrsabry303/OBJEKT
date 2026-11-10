@@ -1,6 +1,6 @@
-# objekt faux books: plan and art direction (draft 19, 10 Nov 2026)
+# objekt faux books: plan and art direction (draft 20, 10 Nov 2026)
 
-Status: proposal for Sabry. Decided so far (10 Nov): title typeface Galak Round; sold as singles and as a set of three; titles to be witty, in the line of "Objekts of Character"; made as a solid block, paper; day 1; a print set of three added (tiger, cow, stripe). Draft 5 (Sabry's review): colour audit, lighter type, logo as the signature. Draft 6: sizes fixed from Sabry's 10 × 25 × 4.5 cm. Draft 7: depth is 4.5 cm on all three (Sabry: 5.5 cm was not logical). Draft 8: width and length reset to real-book proportions (Sabry: the sizes would not look real). Draft 9: spine text in capitals (Sabry); first design flats drawn for all eleven volumes. Draft 10: spine redesigned (larger, reads along a stack, symbol only, fixed logo positions). Draft 11: prints wrap onto the spine (Sabry). Draft 12: tiger redrawn as a realistic pattern from a reference photo (Sabry). Draft 13: first renders of all eleven volumes and three sets. Draft 14: renders v2 with paper texture and soft shadows (Sabry). Draft 15: sets aligned (Sabry). Draft 16: one AI test render (FB-08). Draft 17: renders v4 with woven bookcloth texture; AI couch test (Sabry). Draft 18: couch comp with exact lettering overlaid (Sabry). Draft 19: one size, 3.8 cm deep; bigger playful type; real cow hide; bold stripes (Sabry). Nothing is costed or sent to anyone.
+Status: proposal for Sabry. Decided so far (10 Nov): title typeface Galak Round; sold as singles and as a set of three; titles to be witty, in the line of "Objekts of Character"; made as a solid block, paper; day 1; a print set of three added (tiger, cow, stripe). Draft 5 (Sabry's review): colour audit, lighter type, logo as the signature. Draft 6: sizes fixed from Sabry's 10 × 25 × 4.5 cm. Draft 7: depth is 4.5 cm on all three (Sabry: 5.5 cm was not logical). Draft 8: width and length reset to real-book proportions (Sabry: the sizes would not look real). Draft 9: spine text in capitals (Sabry); first design flats drawn for all eleven volumes. Draft 10: spine redesigned (larger, reads along a stack, symbol only, fixed logo positions). Draft 11: prints wrap onto the spine (Sabry). Draft 12: tiger redrawn as a realistic pattern from a reference photo (Sabry). Draft 13: first renders of all eleven volumes and three sets. Draft 14: renders v2 with paper texture and soft shadows (Sabry). Draft 15: sets aligned (Sabry). Draft 16: one AI test render (FB-08). Draft 17: renders v4 with woven bookcloth texture; AI couch test (Sabry). Draft 18: couch comp with exact lettering overlaid (Sabry). Draft 19: one size, 3.8 cm deep; bigger playful type; real cow hide; bold stripes (Sabry). Draft 20: text alignment and colour audit, rectified; Holy Cow kept as approved (Sabry). Nothing is costed or sent to anyone.
 Direction sheet: `faux-books-direction-sheet_diagram_v8.svg` (PNG copy beside it). It is a flat diagram with stand-in lettering, not a render and not a photo.
 
 ## 01 // the idea
@@ -89,7 +89,7 @@ Honest note: the references are loud (lime, pink, cobalt, orange). The objekt pa
 |---|---|---|---|---|
 | 09 | EASY / TIGER | tiger coat, V line down the spine | Clay ground, Carbon stripes | Bone |
 | 10 | HOLY / COW | real cow hide, hair strands | Chocolate and Oxblood browns on Bone | Bone |
-| 11 | BETWEEN / THE / LINES | bold bands, like Sabry's reference 5 | Carbon and Bone, 12 bands | Clay |
+| 11 | BETWEEN / THE / LINES | bold bands, like Sabry's reference 5 | Carbon and Bone, 6 bands | Bone on Carbon, Carbon on Bone |
 
 - Flat graphic prints, drawn, not photographic fur. Two objekt colours each, so they stay in the palette.
 - The print keeps clear of the title so the title reads.
@@ -107,13 +107,13 @@ Honest note: the references are loud (lime, pink, cobalt, orange). The objekt pa
 **Type (draft 19): bigger, playful, allowed to overflow.** Sabry: play the text more, enlarge it, overflow is fine. References: the vertical Heaven Mayhem title, the stacked serif of The Book of Really Good Things, the cropped script of La Paz. Rules:
 - The longest line of a front title runs to the full width of the cover, with tight tracking and tight leading. Four layouts, chosen per title: **fill** (all lines one size, longest line edge to edge), **overflow** (about 14% wider than the cover, so the last letters are cropped by the trim), **vertical** (the title runs up the cover, as on Heaven Mayhem), **crop** (small first lines, then one giant word whose bottom is cut by the trim).
 - Spine type is larger: about 17 mm type, 12 mm cap height, two lines, one size on every volume.
-- Assignment: 01 NOT A BOOK crop; 02 SHELF LIFE vertical; 03 HEAVY READING fill; 04 JUDGE THE COVER overflow; 05 OBJEKTS OF CHARACTER fill; 06 USELESS ON PURPOSE vertical; 07 COFFEE TABLE BOOK fill; 08 DESIGN WORTH NOTICING crop; 09 EASY TIGER fill; 10 HOLY COW fill; 11 BETWEEN THE LINES fill over stripes.
+- Assignment: 01 NOT A BOOK crop; 02 SHELF LIFE vertical; 03 HEAVY READING fill; 04 JUDGE THE COVER overflow; 05 OBJEKTS OF CHARACTER fill; 06 USELESS ON PURPOSE vertical; 07 COFFEE TABLE BOOK fill; 08 DESIGN WORTH NOTICING crop; 09 EASY TIGER fill; 10 HOLY COW fill; 11 BETWEEN THE LINES bands (one line per band).
 - Cropped lettering is a design choice, so on 01, 04 and 08 part of a word is cut off on purpose. Say if any title should stay whole.
 - Several reference books use Didone serifs. The brand rule is still Galak Round. Not changed; raised for a decision if you want a serif cut for some titles.
 
 **Real cow hide (draft 19).** Sabry: use real cow print like reference 4 (Inner Monologue). The print is now drawn as hide: about 330,000 fine hair strands along a flow field, so the patch edges are fuzzy where brown and white hairs cross, as on a real hide. Colours stay in the palette: Chocolate and Oxblood browns on Bone. It wraps back, spine and front, with the brown held under the title, the spine and the back logo so the Bone lettering reads. File: `artwork/prints/cow-hide_v1.png` (made by `artwork/make_cow.py`). It is a generated image, not scanned from a real hide.
 
-**Stripes (draft 19).** Sabry: striped like reference 5 (Elements of Style). Twelve equal bands, Carbon and Bone, wide and bold, running across the book and over the spine. The reference letters in gold; there is no gold in the palette, so the lettering is Clay, the warm accent. It crosses the bands, as in the reference. A knockout version (Bone on the dark bands, Carbon on the light ones) was tried and was hard to read.
+**Stripes (draft 20).** Sabry: striped like reference 5 (Elements of Style). Six equal bands, Carbon and Bone, wide and bold, running across the back and front. Each title line sits in its own band, Bone on the dark bands and Carbon on the light ones, so every line has full contrast (12.5 : 1). The spine is solid Carbon with Bone lettering, and the bands meet it on both sides. The back logo sits in the bottom band, in Carbon. The first version (12 bands, Clay lettering across them) was dropped: Clay on Carbon is only 3.0 : 1 and the lettering fought the bands. The reference letters in gold; there is no gold in the palette.
 
 **The stack rule (draft 19).** One dark, one light, one colour, all the same size, spines flush.
 
@@ -245,7 +245,42 @@ Sabry: overlay the exact spine artwork, and the first comp looked photoshopped. 
 
 ## 10 // draft 19 artwork and renders (10 Nov)
 - Flats: `artwork/FB-nn_..._flat_design-draft_v4.svg` and `artwork/faux-books-flats_contact-sheet_v4.png`, made by `artwork/make_flats.py` (the old generator is `make_flats_v1_archive.py`; v1 to v3 files are superseded).
-- Renders: `renders/FB-nn_..._3d-mockup_v5.jpg`, three set images at v5, `renders/faux-books-renders_contact-sheet_v5.jpg`. 3D mockups with the woven cloth texture from v4, now at the new size and depth.
+- Renders: `renders/FB-nn_..._3d-mockup_v6.jpg`, three set images at v6, `renders/faux-books-renders_contact-sheet_v6.jpg` (v5 is the version before the audit). 3D mockups with the woven cloth texture from v4, now at the new size and depth.
 - Not redone: the sofa comp (`renders/ai-test/`). It was built for the old three-size set with the old lettering, so it is out of date. Say if you want it redone with the new set.
 - Cow hide and tiger are generated images, so they need a designer's eye before print. Printed colour of the cow browns against the palette is untested.
 - Lettering is the Inter stand-in. Galak Round is wider and rounder, so the full-width fits and cropping points will change once the real font is in.
+
+## 11 // audit of text alignment and colour (draft 20, 10 Nov)
+Sabry asked for an audit of text alignment and colour, with fixes. Holy Cow (10) is approved as it was and was left alone.
+
+**Alignment: what was wrong.** Titles were positioned by the font's advance box, not by the inked letter. Side-bearings differ by letter (N, B, H, L, E, R and U start 0.065 of the type size inside the box, T only 0.02, W 0.005), and on type this large that is millimetres. Measured on the draft 19 flats, from real inked pixels:
+- Left edges inside one title were ragged by up to 3 mm: 09 EASY started 3.7 mm in, TIGER 1.1 mm; 01 NOT A 1.6 mm, BOOK 4.6 mm; 07 TABLE 0.9 mm, BOOK 2.8 mm; 11 BETWEEN 2.2 mm, THE 0.7 mm.
+- Every title started 0.1 to 4.6 mm inside its 11 mm margin.
+- The longest line missed the right margin by up to 2 mm (03 READING 1.1 mm short, 07 COFFEE 0.8 mm).
+- Vertical titles started up to 2.3 mm apart (02 SHELF at 2.7 mm, LIFE at 5.0 mm).
+- Spine titles had the same bearing error against the symbol.
+
+**Alignment: the fix.** Every line is now placed by its measured ink edge. Result, re-measured: every ink start sits exactly on the margin (0.0 mm error on all titles, fronts and vertical), and the longest line of each fill title ends within 0.1 mm of the right margin. Spine title lines now start together at the symbol gap. Cropping on 01, 04 and 08 is unchanged and intentional.
+
+**Colour: audit.** WCAG contrast from the hex values in `brand/COLOURS-FINISHES.md`:
+
+| Vol. | Cover | Lettering | Contrast | Status |
+|---|---|---|---|---|
+| 01 | Bone | Objekt Green | 5.6 : 1 | pass |
+| 02 | Putty | Chocolate | 6.1 : 1 | pass |
+| 03 | Carbon | Bone | 12.5 : 1 | pass |
+| 04 | Ink | Putty | 6.8 : 1 | pass |
+| 05 | Oxblood | Bone | 10.0 : 1 | pass |
+| 06 | Clay | Bone | 4.1 : 1 | large type only |
+| 07 | Chocolate | Putty | 6.1 : 1 | pass |
+| 08 | Objekt Green | Bone | 5.6 : 1 | pass |
+| 09 | Clay and Carbon stripes | Bone | 4.1 : 1 on Clay, 12.5 : 1 on Carbon | large type only |
+| 10 | brown hide on Bone | Bone | on dark brown, tuned by eye | approved |
+| 11 | Carbon and Bone bands | Bone / Carbon | 12.5 : 1 | fixed |
+
+- Fixed: Vol. 11, where Clay on Carbon was 3.0 : 1.
+- Watch: Clay (06 and 09) with Bone is 4.1 : 1. Fine for the big front type, marginal for the 12 mm spine type. The Clay cover is the one to check first on a printed sample; if it reads weak, the choices are a darker Clay or Carbon lettering (worse, 3.0 : 1).
+- Every colour on every volume is one of the eight palette colours. The cow hide mixes browns and cream inside that range.
+- Logo and symbol colour follow the lettering on every volume (Carbon on the light 11 band).
+
+Scripts: `artwork/make_flats.py` (ink measurement in `ink()`), `renders/src/`.
