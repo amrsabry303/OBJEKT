@@ -25,7 +25,7 @@ We deliver within Egypt. Standard delivery is 118 EGP per order. We contact you 
 - **Made-to-order pieces.** Not returnable, except for damage or a defect.
 
 ### Damage
-If a piece arrives damaged, tell us within 48 hours of delivery on WhatsApp, with photos. What happens next: **[confirm: repair, replace or refund]**
+If a piece arrives damaged, tell us within 48 hours of delivery on WhatsApp, with photos. You choose what happens next: repair, replacement or refund.
 
 ### Contact
 WhatsApp +20 100 082 2240.
