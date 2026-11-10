@@ -57,3 +57,4 @@ Source: the production book (45 product slides), Drive and the Magnific history.
 
 ## Not filed
 Six other sculpture renders in the Magnific history (baby elephant calf, falcon, abstract geometric) are not matched to a launch product. Renders from other projects and are not touched.
+- OBJ-177 Bench, moulded frame with cone legs (added 10 Nov, launch). No product images yet. Model views (not renders of a made piece) in plan/drawings/OBJ-177/; reference tear sheet photos only.
