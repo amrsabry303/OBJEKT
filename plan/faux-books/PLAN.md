@@ -1,6 +1,6 @@
-# objekt faux books: plan and art direction (draft 18, 10 Nov 2026)
+# objekt faux books: plan and art direction (draft 19, 10 Nov 2026)
 
-Status: proposal for Sabry. Decided so far (10 Nov): title typeface Galak Round; sold as singles and as a set of three; titles to be witty, in the line of "Objekts of Character"; made as a solid block, paper; day 1; a print set of three added (tiger, cow, stripe). Draft 5 (Sabry's review): colour audit, lighter type, logo as the signature. Draft 6: sizes fixed from Sabry's 10 × 25 × 4.5 cm. Draft 7: depth is 4.5 cm on all three (Sabry: 5.5 cm was not logical). Draft 8: width and length reset to real-book proportions (Sabry: the sizes would not look real). Draft 9: spine text in capitals (Sabry); first design flats drawn for all eleven volumes. Draft 10: spine redesigned (larger, reads along a stack, symbol only, fixed logo positions). Draft 11: prints wrap onto the spine (Sabry). Draft 12: tiger redrawn as a realistic pattern from a reference photo (Sabry). Draft 13: first renders of all eleven volumes and three sets. Draft 14: renders v2 with paper texture and soft shadows (Sabry). Draft 15: sets aligned (Sabry). Draft 16: one AI test render (FB-08). Draft 17: renders v4 with woven bookcloth texture; AI couch test (Sabry). Draft 18: couch comp with exact lettering overlaid (Sabry). Nothing is costed or sent to anyone.
+Status: proposal for Sabry. Decided so far (10 Nov): title typeface Galak Round; sold as singles and as a set of three; titles to be witty, in the line of "Objekts of Character"; made as a solid block, paper; day 1; a print set of three added (tiger, cow, stripe). Draft 5 (Sabry's review): colour audit, lighter type, logo as the signature. Draft 6: sizes fixed from Sabry's 10 × 25 × 4.5 cm. Draft 7: depth is 4.5 cm on all three (Sabry: 5.5 cm was not logical). Draft 8: width and length reset to real-book proportions (Sabry: the sizes would not look real). Draft 9: spine text in capitals (Sabry); first design flats drawn for all eleven volumes. Draft 10: spine redesigned (larger, reads along a stack, symbol only, fixed logo positions). Draft 11: prints wrap onto the spine (Sabry). Draft 12: tiger redrawn as a realistic pattern from a reference photo (Sabry). Draft 13: first renders of all eleven volumes and three sets. Draft 14: renders v2 with paper texture and soft shadows (Sabry). Draft 15: sets aligned (Sabry). Draft 16: one AI test render (FB-08). Draft 17: renders v4 with woven bookcloth texture; AI couch test (Sabry). Draft 18: couch comp with exact lettering overlaid (Sabry). Draft 19: one size, 3.8 cm deep; bigger playful type; real cow hide; bold stripes (Sabry). Nothing is costed or sent to anyone.
 Direction sheet: `faux-books-direction-sheet_diagram_v8.svg` (PNG copy beside it). It is a flat diagram with stand-in lettering, not a render and not a photo.
 
 ## 01 // the idea
@@ -23,16 +23,16 @@ What the five references share, and what we take:
 
 **Colour.** Cover and lettering both come from `brand/COLOURS-FINISHES.md`. No ninth colour.
 
-| Vol. | Cover | Lettering | Contrast | Size |
-|---|---|---|---|---|
-| 01 | Bone | Objekt Green | 5.6 : 1 | M |
-| 02 | Putty | Chocolate | 6.1 : 1 | M |
-| 03 | Carbon | Bone | 12.5 : 1 | L |
-| 04 | Ink | Putty | 6.8 : 1 | L |
-| 05 | Oxblood | Bone | 10.0 : 1 | S |
-| 06 | Clay | Bone | 4.1 : 1 | S |
-| 07 | Chocolate | Putty | 6.1 : 1 | L |
-| 08 | Objekt Green | Bone | 5.6 : 1 | S |
+| Vol. | Cover | Lettering | Contrast |
+|---|---|---|---|
+| 01 | Bone | Objekt Green | 5.6 : 1 |
+| 02 | Putty | Chocolate | 6.1 : 1 |
+| 03 | Carbon | Bone | 12.5 : 1 |
+| 04 | Ink | Putty | 6.8 : 1 |
+| 05 | Oxblood | Bone | 10.0 : 1 |
+| 06 | Clay | Bone | 4.1 : 1 |
+| 07 | Chocolate | Putty | 6.1 : 1 |
+| 08 | Objekt Green | Bone | 5.6 : 1 |
 
 **Colour audit (draft 5).** Contrast computed from the hex values with the WCAG formula. Screen values only: confirm on printed samples.
 - Draft 4 failed twice. Oxblood with Clay lettering and Clay with Oxblood lettering were both 2.4 : 1, too low to read at a glance. Both now use Bone.
@@ -85,11 +85,11 @@ Honest note: the references are loud (lime, pink, cobalt, orange). The objekt pa
 
 **The print set (Sabry, 10 Nov).** Three printed volumes beside the eight plain ones, sold as singles and as one set of three.
 
-| Vol. | Title | Print | Colours | Lettering | Size |
-|---|---|---|---|---|---|
-| 09 | EASY / TIGER | tiger stripe | Clay ground, Carbon stripes | Bone | L |
-| 10 | HOLY / COW | cow patch | Bone ground, Chocolate patches | Chocolate | M |
-| 11 | BETWEEN / THE / LINES | stripe | Bone ground, Objekt Green bands and spine | Objekt Green | S |
+| Vol. | Title | Print | Colours | Lettering |
+|---|---|---|---|---|
+| 09 | EASY / TIGER | tiger coat, V line down the spine | Clay ground, Carbon stripes | Bone |
+| 10 | HOLY / COW | real cow hide, hair strands | Chocolate and Oxblood browns on Bone | Bone |
+| 11 | BETWEEN / THE / LINES | bold bands, like Sabry's reference 5 | Carbon and Bone, 12 bands | Clay |
 
 - Flat graphic prints, drawn, not photographic fur. Two objekt colours each, so they stay in the palette.
 - The print keeps clear of the title so the title reads.
@@ -98,37 +98,22 @@ Honest note: the references are loud (lime, pink, cobalt, orange). The objekt pa
 
 **Material and finish.** Solid block, paper (Sabry, 10 Nov). Read as: a closed block that does not open, wrapped in printed paper, matte. To confirm: is the inside a block of blank pages (looks like a real book from the edge, heavier) or a plain board or foam core with a printed page edge? Colour and lettering print in one pass, so the printer can match the eight colours from the hex values and a sample. Matte only: uncoated stock or matte lamination. No gloss, no metallic, no dust jacket.
 
-**Format (draft 8, checked against real books).** Sabry's 10 × 25 × 4.5 cm would not look real. The reason is the face: 10 × 25 is a 1 : 2.5 strip, a ruler or a clutch box. Real books are 1 : 1.25 to 1 : 1.45. The 25 cm length and 4.5 cm depth are real, so I kept them and changed the width.
+**Format (draft 19): one size for every volume.** Sabry, 10 Nov: all books one size, the Medium. Depth 3.8 cm.
+- **18 × 25 × 3.8 cm** for all eleven. Face ratio 1 : 1.39, within the real range (the decor set it was matched to is 25 × 18.5 × 3.8 cm, [Walmart listing](https://www.walmart.com/ip/17325767393)). Earlier drafts had Large and Small; they are dropped.
+- A set of three is now three of the same size, spines flush, stacked. The stack is 11.4 cm high. The size steps of earlier drafts are gone, so a set reads by colour and title, not by size.
+- Spine 38 mm, down from 45 mm. The 20 mm symbol still fits; the 40 mm back logo is unchanged.
+- Weight, board thickness and wrap stock still undecided: they depend on the inside of the block. A solid 18 × 25 × 3.8 cm block is about 1.7 L, against 3.1 L for the old Large, so it is lighter to ship. Not measured or costed.
 
-What real books measure (retailer listings, not publisher spec sheets; they differ by a few mm):
+**Type (draft 19): bigger, playful, allowed to overflow.** Sabry: play the text more, enlarge it, overflow is fine. References: the vertical Heaven Mayhem title, the stacked serif of The Book of Really Good Things, the cropped script of La Paz. Rules:
+- The longest line of a front title runs to the full width of the cover, with tight tracking and tight leading. Four layouts, chosen per title: **fill** (all lines one size, longest line edge to edge), **overflow** (about 14% wider than the cover, so the last letters are cropped by the trim), **vertical** (the title runs up the cover, as on Heaven Mayhem), **crop** (small first lines, then one giant word whose bottom is cut by the trim).
+- Spine type is larger: about 17 mm type, 12 mm cap height, two lines, one size on every volume.
+- Assignment: 01 NOT A BOOK crop; 02 SHELF LIFE vertical; 03 HEAVY READING fill; 04 JUDGE THE COVER overflow; 05 OBJEKTS OF CHARACTER fill; 06 USELESS ON PURPOSE vertical; 07 COFFEE TABLE BOOK fill; 08 DESIGN WORTH NOTICING crop; 09 EASY TIGER fill; 10 HOLY COW fill; 11 BETWEEN THE LINES fill over stripes.
+- Cropped lettering is a design choice, so on 01, 04 and 08 part of a word is cut off on purpose. Say if any title should stay whole.
+- Several reference books use Didone serifs. The brand rule is still Galak Round. Not changed; raised for a decision if you want a serif cut for some titles.
 
-| Book | Width × height × depth | Face ratio |
-|---|---|---|
-| [Ralph Lauren, Rizzoli, anniversary edition](https://new.completebook.com/book/9780847861118) | about 23.7 × 30.5 × 4.6 cm (9.3 × 12 × 1.8 in), about 3 kg | 1 : 1.29 |
-| [Dieter Rams, Phaidon](https://piperpress.com.au/products/dieter-rams-as-little-design-as-possible) | about 21.1 × 27.7 × 4 cm, about 2 kg ([Soda Books](https://sodabooks.com/publications/product-design/dieter-rams/), [Finnish Design Shop](https://www.finnishdesignshop.com/en-ch/product/dieter-rams-as-little-design-as-possible)) | 1 : 1.31 |
-| [Taschen, Design of the 20th Century, small edition](https://www.cocoli.com/en/at/produkte/design-des-20-jahrhunderts-good) | about 14 × 19.5 cm, spine up to 4.5 cm in one listing | 1 : 1.39 |
-| [Decor faux book set, three sizes (Walmart listing)](https://www.walmart.com/ip/17325767393) | 22 × 15 × 4.5, 25 × 18.5 × 3.8, 27 × 17 × 4 cm | 1 : 1.47, 1 : 1.35, 1 : 1.59 |
-| Coffee table books in general ([listing](https://storables.com/furniture/living-room-furniture/what-size-are-coffee-table-books)) | 9 × 12 up to 13 × 17 in (23 × 30 up to 33 × 43 cm) | about 1 : 1.3 |
+**Real cow hide (draft 19).** Sabry: use real cow print like reference 4 (Inner Monologue). The print is now drawn as hide: about 330,000 fine hair strands along a flow field, so the patch edges are fuzzy where brown and white hairs cross, as on a real hide. Colours stay in the palette: Chocolate and Oxblood browns on Bone. It wraps back, spine and front, with the brown held under the title, the spine and the back logo so the Bone lettering reads. File: `artwork/prints/cow-hide_v1.png` (made by `artwork/make_cow.py`). It is a generated image, not scanned from a real hide.
 
-- Real thickness runs about 3.8 to 5 cm for books and decor sets. 4.5 cm is right.
-- Weak sources: the decor figures come from marketplace listings and some give set sizes, not single books. The Taschen size has outliers (20 × 15 × 4.8). Confirm with the maker's templates before any print file.
-
-| Size | Width × length × depth | Face ratio | Real match |
-|---|---|---|---|
-| L | 23 × 30 × 4.5 cm | 1 : 1.30 | Ralph Lauren, coffee table book |
-| **M** | **18 × 25 × 4.5 cm** | 1 : 1.39 | decor set (25 × 18.5), keeps Sabry's 25 cm length and 4.5 cm depth |
-| S | 14 × 20 × 4.5 cm | 1 : 1.43 | Taschen small edition |
-
-- Width steps 5, 4 cm and length steps 5, 5 cm, so a stack shows three clear steps.
-- Depth is 4.5 cm on all three (Sabry, draft 7). One block thickness and one spine width for the maker. Lying flat, a set is 13.5 cm high.
-- Weight: real large books weigh 2 to 3 kg. A solid block of blank pages at 23 × 30 × 4.5 cm would be about the same, which is heavy to ship across Egypt. For the Large, the board or foam core inside is the better option. Not measured or costed.
-- Kept as an option, not recommended: the original 10 × 25 slim format. It reads as a clutch or a mailer box (like reference 1), not a book.
-- Drawn to scale on the sheet.
-
-**Front layout (draft 8).** With a 18 cm face the title goes back across, top left, as on most of the references. The along-the-length layout from draft 6 was only needed for the narrow 10 cm face; it stays on the sheet as an option.
-- Title block at top left, margin 8% of the width on the left and top.
-- Size rule: longest line at most 70% of the width. Cap height on the Medium is about 12 mm.
-- The line-break rules above apply.
+**Stripes (draft 19).** Sabry: striped like reference 5 (Elements of Style). Twelve equal bands, Carbon and Bone, wide and bold, running across the book and over the spine. The reference letters in gold; there is no gold in the palette, so the lettering is Clay, the warm accent. It crosses the bands, as in the reference. A knockout version (Bone on the dark bands, Carbon on the light ones) was tried and was hard to read.
 
 **The stack rule (draft 19).** One dark, one light, one colour, all the same size, spines flush.
 
