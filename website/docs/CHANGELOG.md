@@ -219,3 +219,10 @@
 - Theme, **unpublished** 189754769632 only (`themeFilesUpsert`): `sections/footer.liquid` gets a "Text column" block type (title + rich text, CSS in the section's own stylesheet); `sections/footer-group.json` adds a fourth column, Showroom: "Samples of our work are on view in our showroom in New Cairo, by appointment." + "Book on WhatsApp" (wa.me/201000822240). `theme check` 48 files, no offenses. Read back: footer.liquid checksum matches the repo; footer-group.json content matches.
 - Page Contact (`pageUpdate`, body): showroom line, address, Google Maps link, WhatsApp +20 100 082 2240. The page is store data, so it also shows under the live Horizon theme (storefront still password-protected). Read back OK.
 - Not seen in a browser. Arabic versions wait for the translator.
+
+## 2026-11-10 (Delivery & Returns and policies, Sabry: "go")
+- Draft approved by Sabry in chat (`website/docs/drafts/POLICIES_DRAFT_2026-11-10.md`). Published as written; lawyer check on 48-hour returns, non-refundable deposit and governing law still open.
+- Page **Delivery & Returns** created (`pageCreate`, handle `delivery-returns`, published). Read back OK.
+- Menu `footer` (`menuUpdate`): About, Contact, **Delivery & Returns**, Search. Read back OK.
+- **Not done:** Shipping, Refund, Terms of service, Contact information policies and the privacy contact fix. `shopPolicyUpdate` refused: the connector lacks the `write_legal_policies` scope. Paste-ready texts in `website/docs/drafts/POLICIES_TO_PASTE_2026-11-10.md` for Sabry to paste in admin; then add them to `footer-policies`.
+- Not seen in a browser.
