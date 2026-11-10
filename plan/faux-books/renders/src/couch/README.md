@@ -1,0 +1,2 @@
+# Couch comp: exact lettering on the AI scene
+`overlay2.py` (uses helpers from `overlay.py`) takes the AI sofa image, finds the three book surfaces by hand-picked corner points, erases the AI's wrong lettering, grades each surface to the exact brand colour, and sets the exact lettering from the design flats on top, keeping the photo's own cloth, shading and shadows. Run from a folder that holds `couch_ai.png` and `r3d/` (textures and meta). Slow (about two minutes, large median filters). Corner points are specific to that one AI image.
