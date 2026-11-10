@@ -26,7 +26,7 @@ These appear in the footer, policies and order emails, and two of them (fonts, l
 | Legal business name | Footer copyright, policies | OBJEKT&#32; |
 | Contact email | Footer, contact page, order emails |  |
 | Phone or WhatsApp number | Footer, delivery page |  |
-| Showroom or studio address (only if public) | Footer, delivery page |  |
+| Showroom or studio address (only if public) | Footer, delivery page | Small showroom, by appointment only (Sabry, 10 Nov). Street address: Sabry to send. Booking channel: open. |
 | Instagram link | Footer |  |
 | Pinterest or other social link | Footer |  |
 | Customer service hours | Support page |  |
