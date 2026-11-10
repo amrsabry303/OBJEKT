@@ -43,7 +43,7 @@ Same text as "Made to order" (deposit lines), "Returns" and "Damage" above.
 1. **Who we are.** This store is run by objekt, New Cairo, Egypt. Contact: WhatsApp +20 100 082 2240.
 2. **Prices.** In Egyptian pounds (EGP), including 14% VAT. Delivery is added at checkout.
 3. **Orders.** An order is confirmed when payment (ready pieces) or the deposit (made-to-order pieces) is received.
-4. **Made to order.** Pieces are made for you after your order. Lead times are shown on each product page. Colours and finishes of handmade pieces may vary slightly from images. **[confirm]**
+4. **Made to order.** Pieces are made for you after your order. Lead times are shown on each product page. Colours and finishes of handmade pieces may vary slightly from images.
 5. **Payment, delivery, returns.** As set out on the Delivery & Returns page and in the Shipping and Refund policies.
 6. **Images.** Some product images are computer renders, not photographs. **[confirm: needed while AI renders are on the site]**
 7. **Law.** These terms are governed by the laws of Egypt. **[legal]**
