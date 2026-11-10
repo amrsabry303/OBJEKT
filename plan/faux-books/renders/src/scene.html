@@ -17,32 +17,49 @@ function noiseCanvas(size, base, amp, seed=1){
 async function bookTextures(m){
   const img = await loadImg(`tex/tex_${String(m.n).padStart(2,'0')}.png`);
   const pw = img.width/(2*m.Wmm+m.Dmm); // px per mm
-  const crop = (x0,wmm) => { const c = document.createElement('canvas'); c.width = Math.round(wmm*pw); c.height = img.height; c.getContext('2d').drawImage(img, x0*pw, 0, wmm*pw, img.height, 0, 0, c.width, c.height); return c; };
+  const wv = weaveCanvas(); const crop = (x0,wmm) => { const c = document.createElement('canvas'); c.width = Math.round(wmm*pw); c.height = img.height; const g = c.getContext('2d'); g.drawImage(img, x0*pw, 0, wmm*pw, img.height, 0, 0, c.width, c.height);
+    const pat = g.createPattern(wv,'repeat'); const sc = (0.7*pw)/8; pat.setTransform(new DOMMatrix().scale(sc,sc)); g.globalCompositeOperation = 'overlay'; g.globalAlpha = .55; g.fillStyle = pat; g.fillRect(0,0,c.width,c.height); g.globalAlpha = 1; g.globalCompositeOperation = 'source-over'; return c; };
   return { back: tex(crop(0,m.Wmm)), spine: tex(crop(m.Wmm,m.Dmm)), front: tex(crop(m.Wmm+m.Dmm,m.Wmm)) };
 }
-function paperBump(){
-  const c = document.createElement('canvas'); c.width = c.height = 512; const g = c.getContext('2d'); g.fillStyle = '#808080'; g.fillRect(0,0,512,512);
-  let s = 7; const rnd = () => (s = (s*16807)%2147483647)/2147483647;
-  for (let i=0;i<14000;i++){ const x=rnd()*512,y=rnd()*512,a=rnd()*6.28,l=2+rnd()*9; g.strokeStyle = `rgba(${rnd()<.5?255:0},${rnd()<.5?255:0},${rnd()<.5?255:0},${.05+rnd()*.12})`; g.lineWidth = .6+rnd()*.8; g.beginPath(); g.moveTo(x,y); g.lineTo(x+Math.cos(a)*l,y+Math.sin(a)*l); g.stroke(); }
-  for (let i=0;i<30000;i++){ const k = rnd()<.5?0:255; g.fillStyle = `rgba(${k},${k},${k},${.04+rnd()*.08})`; g.fillRect(rnd()*512,rnd()*512,1,1); }
-  const t = new THREE.CanvasTexture(c); t.wrapS = t.wrapT = THREE.RepeatWrapping; t.anisotropy = 8; return t; }
+function weaveCanvas(){
+  const cell = 8, n = 32, S = cell*n; const c = document.createElement('canvas'); c.width = c.height = S; const g = c.getContext('2d');
+  let s = 17; const rnd = () => (s = (s*16807)%2147483647)/2147483647;
+  g.fillStyle = '#808080'; g.fillRect(0,0,S,S);
+  const rowB = Array.from({length:n}, () => (rnd()-.5)*34 + (rnd()<.08 ? 26*(rnd()-.4) : 0));   // per-thread brightness, a few slubs
+  const colB = Array.from({length:n}, () => (rnd()-.5)*34 + (rnd()<.08 ? 26*(rnd()-.4) : 0));
+  for (let j=0;j<n;j++) for (let i=0;i<n;i++){
+    const x=i*cell, y=j*cell, weft = (i+j)%2===0;
+    const grd = weft ? g.createLinearGradient(0,y,0,y+cell) : g.createLinearGradient(x,0,x+cell,0);
+    const base = 128 + (weft?rowB[j]:colB[i]) + (rnd()-.5)*14;
+    const hi = Math.min(255,base+34), lo = Math.max(0,base-44);
+    grd.addColorStop(0,`rgb(${lo},${lo},${lo})`); grd.addColorStop(.5,`rgb(${hi},${hi},${hi})`); grd.addColorStop(1,`rgb(${lo},${lo},${lo})`);
+    g.fillStyle = grd; g.fillRect(x,y,cell,cell);
+  }
+  for (let i=0;i<5000;i++){ const k = rnd()<.5?0:255; g.fillStyle = `rgba(${k},${k},${k},${.03+rnd()*.06})`; g.fillRect(rnd()*S,rnd()*S,1+rnd()*2,1); }
+  return c;
+}
+function paperBump(){ const t = new THREE.CanvasTexture(weaveCanvas()); t.wrapS = t.wrapT = THREE.RepeatWrapping; t.anisotropy = 8; return t; }
+function grooveTex(){ const c = document.createElement('canvas'); c.width = 64; c.height = 4; const g = c.getContext('2d'); const gr = g.createLinearGradient(0,0,64,0);
+  gr.addColorStop(0,'rgba(0,0,0,0)'); gr.addColorStop(.30,'rgba(0,0,0,.10)'); gr.addColorStop(.44,'rgba(0,0,0,.34)'); gr.addColorStop(.56,'rgba(255,255,255,.16)'); gr.addColorStop(.78,'rgba(255,255,255,.06)'); gr.addColorStop(1,'rgba(255,255,255,0)');
+  g.fillStyle = gr; g.fillRect(0,0,64,4); return new THREE.CanvasTexture(c); }
 let PB = null;
-const bumpFor = (wcm,hcm) => { const t = PB.clone(); t.needsUpdate = true; t.repeat.set(wcm/3.2, hcm/3.2); return t; };
+const bumpFor = (wcm,hcm) => { const t = PB.clone(); t.needsUpdate = true; t.repeat.set(wcm/2.24, hcm/2.24); return t; };
 function softRect(w,d,blur,alpha){ const S=256, pad=blur*2; const c = document.createElement('canvas'); c.width = c.height = S; const g = c.getContext('2d'); g.filter = `blur(${blur}px)`; g.fillStyle = `rgba(0,0,0,${alpha})`; const fw = S*(w/(w+pad)), fd = S*(d/(d+pad)); g.fillRect((S-fw)/2,(S-fd)/2,fw,fd);
   const m = new THREE.Mesh(new THREE.PlaneGeometry(w+pad*S*0+ (w+pad) - w, d+ (d+pad) - d), new THREE.MeshBasicMaterial({map:new THREE.CanvasTexture(c), transparent:true, depthWrite:false})); m.geometry = new THREE.PlaneGeometry(w+pad, d+pad); m.rotation.x = -Math.PI/2; return m; }
-function pagesTex(){ const c = document.createElement('canvas'); c.width = c.height = 512; const g = c.getContext('2d'); g.fillStyle = '#ECE7DB'; g.fillRect(0,0,512,512);
-  for (let y=0;y<512;y+=3){ g.fillStyle = `rgba(90,80,60,${.05+.05*Math.random()})`; g.fillRect(0,y,512,1); } const t = tex(c); t.wrapS = t.wrapT = THREE.RepeatWrapping; return t; }
+function pagesTex(){ const c = document.createElement('canvas'); c.width = c.height = 512; const g = c.getContext('2d'); g.fillStyle = '#F6F4EE'; g.fillRect(0,0,512,512);
+  for (let y=0;y<512;y+=3){ g.fillStyle = `rgba(110,104,90,${.07+.07*Math.random()})`; g.fillRect(0,y,512,1); } const t = tex(c); t.wrapS = t.wrapT = THREE.RepeatWrapping; return t; }
 function makeBook(m, T, pages){
   const W=m.W,H=m.H,D=m.D,t=.3; const g = new THREE.Group();
-  const cov = new THREE.MeshStandardMaterial({color:m.cover, roughness:.95, metalness:0, bumpMap:bumpFor(W,H), bumpScale:1.6});
-  const face = (map,w=W,h=H) => new THREE.MeshStandardMaterial({map, roughness:.93, metalness:0, bumpMap:bumpFor(w,h), bumpScale:1.6});
+  const cov = new THREE.MeshStandardMaterial({color:m.cover, roughness:.95, metalness:0, bumpMap:bumpFor(W,H), bumpScale:2.2});
+  const face = (map,w=W,h=H) => new THREE.MeshStandardMaterial({map, roughness:.93, metalness:0, bumpMap:bumpFor(w,h), bumpScale:2.2});
   const pg = new THREE.MeshStandardMaterial({map:pages, roughness:.95});
   const add = (geo, mats, x,y,z) => { const me = new THREE.Mesh(geo, mats); me.position.set(x,y,z); me.castShadow = me.receiveShadow = true; g.add(me); return me; };
-  add(new RoundedBoxGeometry(W,H,t,3,.07), [cov,cov,cov,cov,cov,face(T.back)], 0,0,-D/2+t/2);
-  add(new RoundedBoxGeometry(W,H,t,3,.07), [cov,cov,cov,cov,face(T.front),cov], 0,0,D/2-t/2);
+  add(new RoundedBoxGeometry(W,H,t,3,.12), [cov,cov,cov,cov,cov,face(T.back)], 0,0,-D/2+t/2);
+  add(new RoundedBoxGeometry(W,H,t,3,.12), [cov,cov,cov,cov,face(T.front),cov], 0,0,D/2-t/2);
   const st = T.spine.clone(); st.needsUpdate = true; st.repeat.set((D-2*t)/D,1); st.offset.set(t/D,0);
   add(new RoundedBoxGeometry(t,H,D-2*t,3,.06), [cov,face(st,D,H),cov,cov,cov,cov], -W/2+t/2,0,0);
-  const pw = W-t-.25; add(new RoundedBoxGeometry(pw,H-.7,D-2*t,2,.04), [pg,pg,pg,pg,pg,pg], (t-.25)/2,0,0);
+  const pw = W-t-.38; add(new RoundedBoxGeometry(pw,H-.8,D-2*t,2,.03), [pg,pg,pg,pg,pg,pg], (t-.38)/2,0,0);
+  { const gt = grooveTex(); const gm = new THREE.MeshBasicMaterial({map:gt, transparent:true, depthWrite:false}); const f = new THREE.Mesh(new THREE.PlaneGeometry(.55,H-.3), gm); f.position.set(-W/2+1.15,0,D/2+.004); g.add(f); const bk = new THREE.Mesh(new THREE.PlaneGeometry(.55,H-.3), gm); bk.position.set(-W/2+1.15,0,-D/2-.004); bk.rotation.y = Math.PI; g.add(bk); }
   return g;
 }
 function vase(h, r, mat){ const pts=[]; const prof=[[0,0],[.55,0],[.8,.12],[.95,.4],[.8,.7],[.5,.9],[.38,1],[.42,1.06],[.3,1.06],[0,1.0]]; // lathe profile
@@ -62,7 +79,7 @@ window.renderScene = async (cfg) => {
   // low window sun through a window opening
   const target = new THREE.Vector3(0, 14, -8); const dir = new THREE.Vector3(...(cfg.sun||[.8,.42,.5])).normalize();
   const sun = new THREE.DirectionalLight(0xfff3e2, 1.3); sun.position.copy(target).addScaledVector(dir, 220); sun.target.position.copy(target); scene.add(sun, sun.target);
-  sun.castShadow = true; sun.shadow.mapSize.set(2048,2048); sun.shadow.blurSamples = 25; const sc = sun.shadow.camera; sc.left=-130; sc.right=130; sc.top=130; sc.bottom=-130; sc.near=10; sc.far=500; sun.shadow.bias = -.0006; sun.shadow.radius = 6;
+  sun.castShadow = true; sun.shadow.mapSize.set(2048,2048); sun.shadow.blurSamples = 25; const sc = sun.shadow.camera; sc.left=-130; sc.right=130; sc.top=130; sc.bottom=-130; sc.near=10; sc.far=500; sun.shadow.bias = -.0006; sun.shadow.radius = 11;
   const shape = new THREE.Shape(); shape.moveTo(-400,-400); shape.lineTo(400,-400); shape.lineTo(400,400); shape.lineTo(-400,400); shape.closePath();
   const ww = cfg.win||[120,150], hole = new THREE.Path(); hole.moveTo(-ww[0]/2,-ww[1]/2); hole.lineTo(ww[0]/2,-ww[1]/2); hole.lineTo(ww[0]/2,ww[1]/2); hole.lineTo(-ww[0]/2,ww[1]/2); hole.closePath(); shape.holes.push(hole);
   const bar = new THREE.Mesh(new THREE.BoxGeometry(2.4,ww[1],3), new THREE.MeshBasicMaterial({colorWrite:false})); const bar2 = new THREE.Mesh(new THREE.BoxGeometry(ww[0],2.4,3), new THREE.MeshBasicMaterial({colorWrite:false}));

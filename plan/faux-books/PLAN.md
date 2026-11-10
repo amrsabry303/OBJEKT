@@ -1,6 +1,6 @@
-# objekt faux books: plan and art direction (draft 16, 10 Nov 2026)
+# objekt faux books: plan and art direction (draft 17, 10 Nov 2026)
 
-Status: proposal for Sabry. Decided so far (10 Nov): title typeface Galak Round; sold as singles and as a set of three; titles to be witty, in the line of "Objekts of Character"; made as a solid block, paper; day 1; a print set of three added (tiger, cow, stripe). Draft 5 (Sabry's review): colour audit, lighter type, logo as the signature. Draft 6: sizes fixed from Sabry's 10 × 25 × 4.5 cm. Draft 7: depth is 4.5 cm on all three (Sabry: 5.5 cm was not logical). Draft 8: width and length reset to real-book proportions (Sabry: the sizes would not look real). Draft 9: spine text in capitals (Sabry); first design flats drawn for all eleven volumes. Draft 10: spine redesigned (larger, reads along a stack, symbol only, fixed logo positions). Draft 11: prints wrap onto the spine (Sabry). Draft 12: tiger redrawn as a realistic pattern from a reference photo (Sabry). Draft 13: first renders of all eleven volumes and three sets. Draft 14: renders v2 with paper texture and soft shadows (Sabry). Draft 15: sets aligned (Sabry). Draft 16: one AI test render (FB-08). Nothing is costed or sent to anyone.
+Status: proposal for Sabry. Decided so far (10 Nov): title typeface Galak Round; sold as singles and as a set of three; titles to be witty, in the line of "Objekts of Character"; made as a solid block, paper; day 1; a print set of three added (tiger, cow, stripe). Draft 5 (Sabry's review): colour audit, lighter type, logo as the signature. Draft 6: sizes fixed from Sabry's 10 × 25 × 4.5 cm. Draft 7: depth is 4.5 cm on all three (Sabry: 5.5 cm was not logical). Draft 8: width and length reset to real-book proportions (Sabry: the sizes would not look real). Draft 9: spine text in capitals (Sabry); first design flats drawn for all eleven volumes. Draft 10: spine redesigned (larger, reads along a stack, symbol only, fixed logo positions). Draft 11: prints wrap onto the spine (Sabry). Draft 12: tiger redrawn as a realistic pattern from a reference photo (Sabry). Draft 13: first renders of all eleven volumes and three sets. Draft 14: renders v2 with paper texture and soft shadows (Sabry). Draft 15: sets aligned (Sabry). Draft 16: one AI test render (FB-08). Draft 17: renders v4 with woven bookcloth texture; AI couch test (Sabry). Nothing is costed or sent to anyone.
 Direction sheet: `faux-books-direction-sheet_diagram_v8.svg` (PNG copy beside it). It is a flat diagram with stand-in lettering, not a render and not a photo.
 
 ## 01 // the idea
@@ -231,3 +231,21 @@ Sabry asked for one render to check an AI pass. I ran the FB-08 mockup through I
 - Good: the lettering and logo on the front and spine came back unchanged, letter for letter. The photographic feel is much stronger: real paper grain, plaster and limestone, believable light.
 - Bad: a blurred smudge sits on the lower half of the front cover (a rectangular patch of different green with soft edges). The cover colour drifted, and the spine went much darker than the brand green. The grain is heavy and reads closer to rough card than fine printed paper. The framing shifted slightly and the vase grew.
 - Verdict: not usable as is. It needs a retry or two (80 credits each) and a colour check against `brand/COLOURS-FINISHES.md`. Do not use it as product proof.
+
+### Renders v4: texture matched to the reference photos (10 Nov)
+Sabry: the AI test did not look real and the texture should match the reference images. Looking closely at references 4 and 5: they are woven linen bookcloth, matte, with a visible fine weave; a bright white page block recessed under overhanging boards; and a hinge groove about 1 cm from the spine. Printed lettering sits on the weave. v4 (`FB-nn_..._3d-mockup_v4.jpg`, `faux-books-renders_contact-sheet_v4.jpg`, sets at v4) now has:
+- A woven plain-weave texture on every cover and spine, both as relief and as a tone overlay that also breaks up the printed ink, as on cloth.
+- Page block bright white with fine page lines, recessed from the boards at head, foot and fore-edge.
+- The hinge groove on the front and back covers, and rounder board edges.
+- Softer sun shadows. Brand colours still within a few points of the hex values.
+Limits: the weave is a generic plain weave at an exaggerated scale (about 0.7 mm thread pitch), so at thumbnail size it can read as a grid. Not scanned from a real cloth.
+
+Material decision this raises: the references are cloth, but the plan says paper wrap. The real equivalent is a cloth-effect (linen-embossed) printed paper over a solid block, or real bookcloth with the lettering printed or foil stamped on it. Real cloth costs more and needs a binder. For the maker brief: ask for both options. Not decided.
+
+### AI couch comp (Sabry, 10 Nov)
+Sabry asked to show set A on the sofa from the references. I used reference 4 (the sofa photo, `4.jpg`) and a second Ideogram 4.5 precise edit (80 credits) with the set A mockup as the design reference. File: `renders/ai-test/FB-set-A_couch-comp_ai-render_test_v1.jpg`. AI render, not a photo.
+- Good: much closer to a real photograph, since the sofa, floor and light are from a real photo. Woven cloth, white page block, believable shadows, and Oxblood reads true.
+- Bad: the spine lettering is wrong. The middle spine reads "NA A BOOK", the bottom spine has a stray "PIF" beside HEAVY READING, and the logo marks are altered. The old brand name "(PA)PIERRE" is left on the middle book's spine, which must never appear. The middle book came out cream-yellow rather than Bone.
+- The photo and the sofa belong to another brand (the books in it are by (PA)PIERRE). Reference only: this comp is for internal review and must not be published or used as product proof.
+- Total AI spend so far: 160 credits (two edits).
+- Next step if wanted: retry with stricter wording, or composite my exact spine artwork over the AI's spines (cheaper, exact lettering). Not done.
