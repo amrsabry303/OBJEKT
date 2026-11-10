@@ -21,7 +21,7 @@ Made for you after you order. Each product page shows its lead time: 7–14 days
 We deliver within Egypt. Standard delivery is 118 EGP per order. We contact you on WhatsApp to arrange the day. **[confirm]**
 
 ### Returns
-- **Ready pieces.** Returnable within 48 hours of delivery, unused. Return delivery is paid by you. **[legal: see note]** Refunds are made by the same method you paid with, within **[confirm: number of days]** of receiving the piece back.
+- **Ready pieces.** Returnable within 48 hours of delivery, unused. Return delivery is paid by you. **[legal: see note]** Refunds are made by the same method you paid with, within 7 days of receiving the piece back.
 - **Made-to-order pieces.** Not returnable, except for damage or a defect.
 
 ### Damage
