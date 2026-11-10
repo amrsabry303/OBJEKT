@@ -22,12 +22,18 @@ function segment(sx,sz,mat){
 const C={oxblood:0x5a1f25, ink:0x1e2a44, grey:0x8c8c8c};
 const way=P.get('way')||'grey';
 const segs=[[1,1],[-1,1],[-1,-1],[1,-1]]; // D front-right first
+const ARR=P.get('arr'); const FREE=P.get('free');
+const PIECES=[[-60,320,135],[250,80,90],[-40,-250,90],[-640,-120,180]]; const MOVES={
+  // quadrant index -> [dx,dz,rotYdeg]; arrangement like Sabry's reference: one segment pulled far left and turned, the rest spread
+  0:[60,90,0], 1:[-40,80,0], 2:[-900,-120,35], 3:[70,-60,0] };
 segs.forEach(([sx,sz],i)=>{
   let col=C.grey, metal=false;
   let m;
   if(MASK){ m=new THREE.MeshBasicMaterial({color:(MASK==='D'&&i===0)||MASK==='all'?0xffffff:0x000000, side:THREE.DoubleSide}); }
   else m=new THREE.MeshStandardMaterial({color:col,roughness:0.8,metalness:0.05,side:THREE.DoubleSide});
-  sc.add(segment(sx,sz,m));
+  const g=segment(sx,sz,m);
+  if(FREE){ const g2=segment(1,1,m); g2.position.set(0,2,0); const piv=new THREE.Group(); piv.add(g2); const [x,z,yd]=PIECES[i]; piv.position.set(x,0,z); piv.rotation.y=yd*Math.PI/180; sc.add(piv); return; }
+  if(ARR){ const [dx,dz,rd]=MOVES[i]; const piv=new THREE.Group(); piv.add(g); piv.position.set(dx,0,dz); piv.rotation.y=rd*Math.PI/180; sc.add(piv); } else sc.add(g);
 });
 if(!MASK){
 const floor=new THREE.Mesh(new THREE.PlaneGeometry(20000,20000),new THREE.MeshStandardMaterial({color:0xcfcac3,roughness:0.6})); floor.rotation.x=-Math.PI/2; floor.receiveShadow=true; sc.add(floor);
