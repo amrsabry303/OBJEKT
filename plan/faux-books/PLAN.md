@@ -178,7 +178,7 @@ Not tested: everything. This is a paper plan and one diagram.
    - Spine title: starts 10 mm after the symbol, so the symbol leads the title in a stack.
    - Back logo (symbol and wordmark): 40 mm wide, centred on the back, 14 mm from the foot. The same size and the same distance from the foot on the Small, Medium and Large. Before it was 28% of the width.
    - Everything is measured from the foot, so the same fixed numbers work for any size.
-5. **Checks.** Symbol on its own is below nothing in the guide: the 25 mm minimum applies to the logo, and the symbol is the stated fallback below that. 20 mm is a symbol-only size. Still needs your OK as part of the logo-colour decision.
+5. **Brand check.** `brand/BRAND.md` sets a 25 mm minimum for the full logo and says to use the symbol alone below that. The spine symbol is 20 mm, so it is within the symbol-only use. The logo colour on product colours still needs your OK.
 
 ## 08 // artwork (draft 2, 10 Nov)
 Design flats for all eleven volumes are in `plan/faux-books/artwork/`: one SVG per volume (`FB-nn_title_flat_design-draft_v2.svg`) and `faux-books-flats_contact-sheet_v2.png`, which also shows the three sets lying flat. Each flat is back, spine and front at finished size in mm, drawn by `make_flats.py` (run `python3 make_flats.py <repo root>`). The v1 files are the superseded draft 9 version.
