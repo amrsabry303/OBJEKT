@@ -226,3 +226,11 @@
 - Menu `footer` (`menuUpdate`): About, Contact, **Delivery & Returns**, Search. Read back OK.
 - **Not done:** Shipping, Refund, Terms of service, Contact information policies and the privacy contact fix. `shopPolicyUpdate` refused: the connector lacks the `write_legal_policies` scope. Paste-ready texts in `website/docs/drafts/POLICIES_TO_PASTE_2026-11-10.md` for Sabry to paste in admin; then add them to `footer-policies`.
 - Not seen in a browser.
+
+## 2026-11-10 (pre-launch store cleanup, Sabry: "do that please")
+- Store confirmed OBJEKT / hs1a1c-ut. Targets listed and checked against HANDOVER section 8 before any change.
+- Deleted 2 articles in `the-edit` (`articleDelete`): "[TEST] Sample story", "[TEST] Second story". The Edit is now empty.
+- Deleted 3 test products tagged `theme-test` (`productDelete`): "TEST A ready", "TEST B made to order", "TEST C mixed".
+- Set the 13 `preview-active` products to DRAFT: OBJ-137, 142, 165, 169, 171, 148, 145, 172, 147, 075, 080, 154, 099. Tags (`preview-active`, `placeholder-data`) left in place.
+- Deleted 12 images (`fileDelete`): 4 reference photos of unknown rights (OBJ-165, 169, 171, 172) and 8 labelled placeholders (OBJ-137, 142, 145, 147, 148, 075, 080, 154). OBJ-099's 5 images untouched.
+- Read back: 50 products, 0 active, 0 `theme-test`, 0 articles; only OBJ-099 has images (5). The storefront now shows no products and The Edit (in the main menu) is empty.

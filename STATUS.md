@@ -54,6 +54,7 @@ Three daily sessions work on this repo, one section each. Each session updates *
 
 ## Website (Shopify)
 ### 10 Nov 2026 (Tue)
+- Cleanup done (Sabry's yes): 3 test products and 2 test articles deleted; 13 preview-active products to draft; 4 reference photos and 8 placeholders deleted. Store now 50 products, 0 active, The Edit empty.
 - Delivery & Returns page live (behind password) and in the footer. Policies blocked: connector cannot write them; Sabry pastes `website/docs/drafts/POLICIES_TO_PASTE_2026-11-10.md` in admin (Settings → Policies), incl. privacy contact fix. Lawyer check open on 48 h returns, non-refundable deposit, governing law.
 - Showroom (Sabry's wording): footer column "Showroom" on the unpublished theme and Contact page text with address, map and WhatsApp +20 100 082 2240. No pickup at checkout. Read back OK; not seen in a browser.
 - Shipping MVP (Sabry's yes): Egypt only, one flat rate **Standard delivery 118 EGP** (renamed from "قياسي", price unchanged). Read back OK; checkout not tested. Parked: international zones (Egypt, Gulf, Europe, UK, USA and Canada, Rest of world), currencies, markets, size classes, customs. Free shipping over 70,000 dropped for now.
@@ -79,9 +80,9 @@ Three daily sessions work on this repo, one section each. Each session updates *
 
 **Pre-launch cleanup checklist (HANDOVER section 8; store counts re-read 9 Nov, unchanged):**
 - [x] OBJ-099: v2 Oxblood images in, variant linked, v1 removed (8 Nov)
-- [ ] Delete the 3 `[TEST]` products and 2 `[TEST]` articles
-- [ ] 13 `preview-active` products back to draft, or real data in; drop `placeholder-data` tags only when real
-- [ ] Remove the 4 reference photos of unknown rights and the 8 placeholder images
+- [x] Delete the 3 `[TEST]` products and 2 `[TEST]` articles (10 Nov)
+- [x] 13 `preview-active` products back to draft, or real data in; drop `placeholder-data` tags only when real (10 Nov)
+- [x] Remove the 4 reference photos of unknown rights and the 8 placeholder images (10 Nov)
 - [x] `objekt-main` expanded: Shop, The Edit, About (9 Nov)
 - [x] Shipping MVP: Egypt, Standard delivery 118 EGP (10 Nov)
 - [ ] Footer menu; connect the delivery page; add policies (needs Sabry's text)
