@@ -1,0 +1,28 @@
+<!doctype html><html><body style="margin:0"><script src="node_modules/three/build/three.min.js"></script>
+<script>
+// OBJ-166 REV 0: square box 220x220, 3 mm, body 995 or 845 + four feet Ø16x5 at 22 from each edge. Overall 1000 / 850.
+const P=new URLSearchParams(location.search); const W=+P.get('w')||1280, H=+P.get('h')||1600;
+const r=new THREE.WebGLRenderer({antialias:true,preserveDrawingBuffer:true}); r.setSize(W,H); r.shadowMap.enabled=true; r.shadowMap.type=THREE.VSMShadowMap; r.outputColorSpace=THREE.SRGBColorSpace; document.body.appendChild(r.domElement);
+const sc=new THREE.Scene(); sc.background=new THREE.Color(0xd9d2c8);
+const S=220, FH=5, FD=16, FI=22;
+function plinth(total,mat){
+  const g=new THREE.Group(); const bh=total-FH;
+  const b=new THREE.Mesh(new THREE.BoxGeometry(S,bh,S),mat); b.position.y=FH+bh/2; g.add(b);
+  const fm=new THREE.MeshStandardMaterial({color:0x6a6a6a,roughness:0.5,metalness:0.3});
+  [[1,1],[1,-1],[-1,1],[-1,-1]].forEach(([a,c])=>{const f=new THREE.Mesh(new THREE.CylinderGeometry(FD/2,FD/2,FH,32),fm); f.position.set(a*(S/2-FI),FH/2,c*(S/2-FI)); g.add(f);});
+  g.traverse(o=>{if(o.isMesh){o.castShadow=o.receiveShadow=true;}}); return g;
+}
+const mat=new THREE.MeshStandardMaterial({color:0x8c8c8c,roughness:0.75,metalness:0.05});
+const mode=P.get('mode')||'pair';
+if(mode==='pair'){ const a=plinth(1000,mat); const GX=+P.get('gx')||150; a.position.set(-GX,0,0); sc.add(a); const b=plinth(850,mat); b.position.set(GX,0,+P.get('bz')||0); b.rotation.y=0; sc.add(b);} 
+else { const a=plinth(+mode,mat); sc.add(a);}
+const floor=new THREE.Mesh(new THREE.PlaneGeometry(20000,20000),new THREE.MeshStandardMaterial({color:0xcfcac3,roughness:0.6})); floor.rotation.x=-Math.PI/2; floor.receiveShadow=true; sc.add(floor);
+const wall=new THREE.Mesh(new THREE.PlaneGeometry(20000,8000),new THREE.MeshStandardMaterial({color:0xd9d2c8,roughness:1})); wall.position.set(0,4000,-900); wall.receiveShadow=true; sc.add(wall);
+sc.add(new THREE.HemisphereLight(0xffffff,0xbdb6ad,2.4));
+const d=new THREE.DirectionalLight(0xffffff,1.0); d.position.set(-2500,2400,1400); d.castShadow=true; d.shadow.mapSize.set(4096,4096);
+Object.assign(d.shadow.camera,{left:-1800,right:1800,top:1800,bottom:-1800,near:10,far:9000}); d.shadow.radius=24; d.shadow.blurSamples=25; sc.add(d);
+const cam=new THREE.PerspectiveCamera(+P.get('fov')||22,W/H,10,30000);
+const ang=(+P.get('az')||30)*Math.PI/180, dist=+P.get('dist')||4200, ch=+P.get('ch')||900;
+cam.position.set(Math.sin(ang)*dist,ch,Math.cos(ang)*dist); cam.lookAt(0,+P.get('ly')||480,0);
+r.render(sc,cam); document.title='done';
+</script></body></html>
