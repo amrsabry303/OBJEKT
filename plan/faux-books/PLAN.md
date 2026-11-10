@@ -1,6 +1,6 @@
-# objekt faux books: plan and art direction (draft 10, 10 Nov 2026)
+# objekt faux books: plan and art direction (draft 11, 10 Nov 2026)
 
-Status: proposal for Sabry. Decided so far (10 Nov): title typeface Galak Round; sold as singles and as a set of three; titles to be witty, in the line of "Objekts of Character"; made as a solid block, paper; day 1; a print set of three added (tiger, cow, stripe). Draft 5 (Sabry's review): colour audit, lighter type, logo as the signature. Draft 6: sizes fixed from Sabry's 10 × 25 × 4.5 cm. Draft 7: depth is 4.5 cm on all three (Sabry: 5.5 cm was not logical). Draft 8: width and length reset to real-book proportions (Sabry: the sizes would not look real). Draft 9: spine text in capitals (Sabry); first design flats drawn for all eleven volumes. Draft 10: spine redesigned (larger, reads along a stack, symbol only, fixed logo positions). Nothing is costed or sent to anyone.
+Status: proposal for Sabry. Decided so far (10 Nov): title typeface Galak Round; sold as singles and as a set of three; titles to be witty, in the line of "Objekts of Character"; made as a solid block, paper; day 1; a print set of three added (tiger, cow, stripe). Draft 5 (Sabry's review): colour audit, lighter type, logo as the signature. Draft 6: sizes fixed from Sabry's 10 × 25 × 4.5 cm. Draft 7: depth is 4.5 cm on all three (Sabry: 5.5 cm was not logical). Draft 8: width and length reset to real-book proportions (Sabry: the sizes would not look real). Draft 9: spine text in capitals (Sabry); first design flats drawn for all eleven volumes. Draft 10: spine redesigned (larger, reads along a stack, symbol only, fixed logo positions). Draft 11: prints wrap onto the spine (Sabry). Nothing is costed or sent to anyone.
 Direction sheet: `faux-books-direction-sheet_diagram_v8.svg` (PNG copy beside it). It is a flat diagram with stand-in lettering, not a render and not a photo.
 
 ## 01 // the idea
@@ -180,13 +180,16 @@ Not tested: everything. This is a paper plan and one diagram.
    - Everything is measured from the foot, so the same fixed numbers work for any size.
 5. **Brand check.** `brand/BRAND.md` sets a 25 mm minimum for the full logo and says to use the symbol alone below that. The spine symbol is 20 mm, so it is within the symbol-only use. The logo colour on product colours still needs your OK.
 
-## 08 // artwork (draft 2, 10 Nov)
-Design flats for all eleven volumes are in `plan/faux-books/artwork/`: one SVG per volume (`FB-nn_title_flat_design-draft_v2.svg`) and `faux-books-flats_contact-sheet_v2.png`, which also shows the three sets lying flat. Each flat is back, spine and front at finished size in mm, drawn by `make_flats.py` (run `python3 make_flats.py <repo root>`). The v1 files are the superseded draft 9 version.
+## 08 // artwork (draft 3, 10 Nov)
+Design flats for all eleven volumes are in `plan/faux-books/artwork/`: one SVG per volume (`FB-nn_title_flat_design-draft_v3.svg`) and `faux-books-flats_contact-sheet_v3.png`, which also shows the three sets lying flat. Each flat is back, spine and front at finished size in mm, drawn by `make_flats.py` (run `python3 make_flats.py <repo root>`). The v1 and v2 files are superseded versions.
 
 What is in them:
 - Front: title at top left, all caps, one size per title, longest line 70% of the width.
 - Back and spine: per section 07.
-- Prints (09, 10, 11) are on the front and back only. The spine stays plain so its title reads.
+- Prints (09, 10, 11) wrap round the spine as well as the front and back, so the print shows on a stack. The spine carries the icon only, never the wordmark.
+  - Tiger: stripes continue across the spine, narrower there (about 14 mm pitch), and run behind the title. Bone on Carbon and Bone on Clay both read. The area round the spine icon is kept clear.
+  - Cow: patches continue across the fold. The back logo, the front title and the spine title and icon each have a clear zone, and two or three patches sit in the free head end of the spine.
+  - Stripe: the bands run into a solid Objekt Green spine with Bone lettering, so the stripe wraps without crossing the title.
 - Dashed lines show the folds. They are not part of the artwork.
 
 What they are not:
