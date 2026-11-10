@@ -1,0 +1,314 @@
+{
+ "source": "Sabry's model b0c0bf78-bench_3d_model.glb, cushion removed, scaled to the tear sheet",
+ "scale_xyz": [
+  1.0,
+  0.8656,
+  0.9491
+ ],
+ "files": {
+  "OBJ-177_rev1_frame_one-piece.stl": {
+   "extent_xyz_mm": [
+    1829.0,
+    686.0,
+    389.0
+   ],
+   "watertight": true,
+   "bodies": 1,
+   "volume_l": 67.57,
+   "MB": 27.8
+  },
+  "OBJ-177_rev1_print-part-01.stl": {
+   "extent_xyz_mm": [
+    457.5,
+    342.7,
+    388.4
+   ],
+   "watertight": true,
+   "bodies": 1,
+   "volume_l": 13.47,
+   "MB": 6.0
+  },
+  "OBJ-177_rev1_print-part-02.stl": {
+   "extent_xyz_mm": [
+    457.0,
+    343.0,
+    388.9
+   ],
+   "watertight": true,
+   "bodies": 1,
+   "volume_l": 13.51,
+   "MB": 6.0
+  },
+  "OBJ-177_rev1_print-part-03.stl": {
+   "extent_xyz_mm": [
+    457.0,
+    281.2,
+    72.2
+   ],
+   "watertight": true,
+   "bodies": 1,
+   "volume_l": 3.58,
+   "MB": 1.1
+  },
+  "OBJ-177_rev1_print-part-04.stl": {
+   "extent_xyz_mm": [
+    457.0,
+    281.4,
+    72.3
+   ],
+   "watertight": true,
+   "bodies": 1,
+   "volume_l": 3.59,
+   "MB": 1.2
+  },
+  "OBJ-177_rev1_print-part-05.stl": {
+   "extent_xyz_mm": [
+    457.0,
+    278.1,
+    69.1
+   ],
+   "watertight": true,
+   "bodies": 1,
+   "volume_l": 3.44,
+   "MB": 1.1
+  },
+  "OBJ-177_rev1_print-part-06.stl": {
+   "extent_xyz_mm": [
+    457.0,
+    277.6,
+    69.0
+   ],
+   "watertight": true,
+   "bodies": 1,
+   "volume_l": 3.43,
+   "MB": 1.2
+  },
+  "OBJ-177_rev1_print-part-07.stl": {
+   "extent_xyz_mm": [
+    457.5,
+    343.0,
+    388.7
+   ],
+   "watertight": true,
+   "bodies": 1,
+   "volume_l": 13.28,
+   "MB": 6.0
+  },
+  "OBJ-177_rev1_print-part-08.stl": {
+   "extent_xyz_mm": [
+    457.2,
+    342.7,
+    388.7
+   ],
+   "watertight": true,
+   "bodies": 1,
+   "volume_l": 13.22,
+   "MB": 6.0
+  },
+  "OBJ-177_rev1_frame_no-cushion.glb": {
+   "MB": 10.0,
+   "units": "m, Y-up"
+  }
+ },
+ "dowels": [
+  {
+   "axis": "x",
+   "at_mm_yup": [
+    -457,
+    290.0,
+    -239.2
+   ],
+   "diameter": 8.0,
+   "length": 44,
+   "hole": 8.4
+  },
+  {
+   "axis": "x",
+   "at_mm_yup": [
+    -457,
+    314,
+    -130.0
+   ],
+   "diameter": 6.0,
+   "length": 44,
+   "hole": 6.4
+  },
+  {
+   "axis": "x",
+   "at_mm_yup": [
+    -457,
+    290.0,
+    239.2
+   ],
+   "diameter": 8.0,
+   "length": 44,
+   "hole": 8.4
+  },
+  {
+   "axis": "x",
+   "at_mm_yup": [
+    -457,
+    314,
+    130.0
+   ],
+   "diameter": 6.0,
+   "length": 44,
+   "hole": 6.4
+  },
+  {
+   "axis": "x",
+   "at_mm_yup": [
+    0,
+    290.0,
+    -239.2
+   ],
+   "diameter": 8.0,
+   "length": 44,
+   "hole": 8.4
+  },
+  {
+   "axis": "x",
+   "at_mm_yup": [
+    0,
+    314,
+    -130.0
+   ],
+   "diameter": 6.0,
+   "length": 44,
+   "hole": 6.4
+  },
+  {
+   "axis": "x",
+   "at_mm_yup": [
+    0,
+    290.0,
+    239.2
+   ],
+   "diameter": 8.0,
+   "length": 44,
+   "hole": 8.4
+  },
+  {
+   "axis": "x",
+   "at_mm_yup": [
+    0,
+    314,
+    130.0
+   ],
+   "diameter": 6.0,
+   "length": 44,
+   "hole": 6.4
+  },
+  {
+   "axis": "x",
+   "at_mm_yup": [
+    457,
+    290.0,
+    -239.2
+   ],
+   "diameter": 8.0,
+   "length": 44,
+   "hole": 8.4
+  },
+  {
+   "axis": "x",
+   "at_mm_yup": [
+    457,
+    314,
+    -130.0
+   ],
+   "diameter": 6.0,
+   "length": 44,
+   "hole": 6.4
+  },
+  {
+   "axis": "x",
+   "at_mm_yup": [
+    457,
+    290.0,
+    239.2
+   ],
+   "diameter": 8.0,
+   "length": 44,
+   "hole": 8.4
+  },
+  {
+   "axis": "x",
+   "at_mm_yup": [
+    457,
+    314,
+    130.0
+   ],
+   "diameter": 6.0,
+   "length": 44,
+   "hole": 6.4
+  },
+  {
+   "axis": "z",
+   "at_mm_yup": [
+    -803.0,
+    322.9,
+    0.0
+   ],
+   "diameter": 8.0,
+   "length": 44,
+   "hole": 8.4
+  },
+  {
+   "axis": "z",
+   "at_mm_yup": [
+    803.0,
+    322.9,
+    0.0
+   ],
+   "diameter": 8.0,
+   "length": 44,
+   "hole": 8.4
+  },
+  {
+   "axis": "z",
+   "at_mm_yup": [
+    -680,
+    314,
+    0.0
+   ],
+   "diameter": 6.0,
+   "length": 44,
+   "hole": 6.4
+  },
+  {
+   "axis": "z",
+   "at_mm_yup": [
+    -230,
+    314,
+    0.0
+   ],
+   "diameter": 6.0,
+   "length": 44,
+   "hole": 6.4
+  },
+  {
+   "axis": "z",
+   "at_mm_yup": [
+    230,
+    314,
+    0.0
+   ],
+   "diameter": 6.0,
+   "length": 44,
+   "hole": 6.4
+  },
+  {
+   "axis": "z",
+   "at_mm_yup": [
+    680,
+    314,
+    0.0
+   ],
+   "diameter": 6.0,
+   "length": 44,
+   "hole": 6.4
+  }
+ ],
+ "dowels_checked": "18 of 18 in solid material"
+}
