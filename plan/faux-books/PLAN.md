@@ -1,7 +1,7 @@
-# objekt faux books: plan and art direction (draft 7, 10 Nov 2026)
+# objekt faux books: plan and art direction (draft 8, 10 Nov 2026)
 
-Status: proposal for Sabry. Decided so far (10 Nov): title typeface Galak Round; sold as singles and as a set of three; titles to be witty, in the line of "Objekts of Character"; made as a solid block, paper; day 1; a print set of three added (tiger, cow, stripe). Draft 5 (Sabry's review): colour audit, lighter type, logo as the signature. Draft 6: sizes fixed from Sabry's 10 × 25 × 4.5 cm. Draft 7: depth is 4.5 cm on all three (Sabry: 5.5 cm was not logical). Nothing is costed or sent to anyone.
-Direction sheet: `faux-books-direction-sheet_diagram_v7.svg` (PNG copy beside it). It is a flat diagram with stand-in lettering, not a render and not a photo.
+Status: proposal for Sabry. Decided so far (10 Nov): title typeface Galak Round; sold as singles and as a set of three; titles to be witty, in the line of "Objekts of Character"; made as a solid block, paper; day 1; a print set of three added (tiger, cow, stripe). Draft 5 (Sabry's review): colour audit, lighter type, logo as the signature. Draft 6: sizes fixed from Sabry's 10 × 25 × 4.5 cm. Draft 7: depth is 4.5 cm on all three (Sabry: 5.5 cm was not logical). Draft 8: width and length reset to real-book proportions (Sabry: the sizes would not look real). Nothing is costed or sent to anyone.
+Direction sheet: `faux-books-direction-sheet_diagram_v8.svg` (PNG copy beside it). It is a flat diagram with stand-in lettering, not a render and not a photo.
 
 ## 01 // the idea
 A small library of decorative volumes that work as colour blocks with type on them. One format, our own titles, the eight objekt colours. Sold one at a time or as a stack of three.
@@ -98,25 +98,37 @@ Honest note: the references are loud (lime, pink, cobalt, orange). The objekt pa
 
 **Material and finish.** Solid block, paper (Sabry, 10 Nov). Read as: a closed block that does not open, wrapped in printed paper, matte. To confirm: is the inside a block of blank pages (looks like a real book from the edge, heavier) or a plain board or foam core with a printed page edge? Colour and lettering print in one pass, so the printer can match the eight colours from the hex values and a sample. Matte only: uncoated stock or matte lamination. No gloss, no metallic, no dust jacket.
 
-**Format (Sabry gave 10 cm wide, 25 cm long, 4.5 cm deep; I set it as Medium and scaled width and length for the others).**
+**Format (draft 8, checked against real books).** Sabry's 10 × 25 × 4.5 cm would not look real. The reason is the face: 10 × 25 is a 1 : 2.5 strip, a ruler or a clutch box. Real books are 1 : 1.25 to 1 : 1.45. The 25 cm length and 4.5 cm depth are real, so I kept them and changed the width.
 
-| Size | Width × length × depth | Scale | Volumes |
+What real books measure (retailer listings, not publisher spec sheets; they differ by a few mm):
+
+| Book | Width × height × depth | Face ratio |
+|---|---|---|
+| [Ralph Lauren, Rizzoli, anniversary edition](https://new.completebook.com/book/9780847861118) | about 23.7 × 30.5 × 4.6 cm (9.3 × 12 × 1.8 in), about 3 kg | 1 : 1.29 |
+| [Dieter Rams, Phaidon](https://piperpress.com.au/products/dieter-rams-as-little-design-as-possible) | about 21.1 × 27.7 × 4 cm, about 2 kg ([Soda Books](https://sodabooks.com/publications/product-design/dieter-rams/), [Finnish Design Shop](https://www.finnishdesignshop.com/en-ch/product/dieter-rams-as-little-design-as-possible)) | 1 : 1.31 |
+| [Taschen, Design of the 20th Century, small edition](https://www.cocoli.com/en/at/produkte/design-des-20-jahrhunderts-good) | about 14 × 19.5 cm, spine up to 4.5 cm in one listing | 1 : 1.39 |
+| [Decor faux book set, three sizes (Walmart listing)](https://www.walmart.com/ip/17325767393) | 22 × 15 × 4.5, 25 × 18.5 × 3.8, 27 × 17 × 4 cm | 1 : 1.47, 1 : 1.35, 1 : 1.59 |
+| Coffee table books in general ([listing](https://storables.com/furniture/living-room-furniture/what-size-are-coffee-table-books)) | 9 × 12 up to 13 × 17 in (23 × 30 up to 33 × 43 cm) | about 1 : 1.3 |
+
+- Real thickness runs about 3.8 to 5 cm for books and decor sets. 4.5 cm is right.
+- Weak sources: the decor figures come from marketplace listings and some give set sizes, not single books. The Taschen size has outliers (20 × 15 × 4.8). Confirm with the maker's templates before any print file.
+
+| Size | Width × length × depth | Face ratio | Real match |
 |---|---|---|---|
-| L | 12 × 30 × 4.5 cm | 1.2× width and length | 03 Heavy Reading, 04 Judge the Cover, 07 Coffee Table Book, 09 Easy Tiger |
-| M | 10 × 25 × 4.5 cm | Sabry's size | 01 Not a Book, 02 Shelf Life, 10 Holy Cow |
-| S | 8 × 20 × 4.5 cm | 0.8× width and length | 05 Objekts of Character, 06 Useless on Purpose, 08 Design Worth Noticing, 11 Between the Lines |
+| L | 23 × 30 × 4.5 cm | 1 : 1.30 | Ralph Lauren, coffee table book |
+| **M** | **18 × 25 × 4.5 cm** | 1 : 1.39 | decor set (25 × 18.5), keeps Sabry's 25 cm length and 4.5 cm depth |
+| S | 14 × 20 × 4.5 cm | 1 : 1.43 | Taschen small edition |
 
-- Same 1 : 2.5 face on all three, so one layout scales to every size. Depth does not scale: all three are 4.5 cm, as a real set of books is, so one block thickness and one spine width for the maker and for the logo.
-- Lying flat with spines out, a set is 13.5 cm high (3 × 4.5) and the spines step 30, 25 and 20 cm long.
-- Why M is yours: the middle size should be the one you specified, so the stack steps both up and down from it. Say if 10 × 25 × 4.5 should be the Large or the Small instead; the rest scales.
-- Not decided: weight, board thickness, wrap stock. These depend on the inside of the block.
+- Width steps 5, 4 cm and length steps 5, 5 cm, so a stack shows three clear steps.
+- Depth is 4.5 cm on all three (Sabry, draft 7). One block thickness and one spine width for the maker. Lying flat, a set is 13.5 cm high.
+- Weight: real large books weigh 2 to 3 kg. A solid block of blank pages at 23 × 30 × 4.5 cm would be about the same, which is heavy to ship across Egypt. For the Large, the board or foam core inside is the better option. Not measured or costed.
+- Kept as an option, not recommended: the original 10 × 25 slim format. It reads as a clutch or a mailer box (like reference 1), not a book.
 - Drawn to scale on the sheet.
 
-**Front layout on a 10 × 25 face (draft 6 change).** A face 10 cm wide and 25 cm long is narrow, like reference 1 (Sociotype). A title set across it is small: the longest line is limited to about 7 cm, so cap height lands near 8 mm. Run the title along the length, reading bottom to top, and it is about 19 mm cap height on the Medium and reads across a room. Recommended. The sheet shows both.
-- Title block at bottom left, lines stacked left to right, margin 8% of the width on the left and bottom.
-- Size rule: the block fills at most 85% of the width between margins, and the longest line is at most 66% of the length.
-- This replaces the earlier "top left, across" rule. The line-break rules above still apply.
-- Spine and front then read the same way, bottom to top.
+**Front layout (draft 8).** With a 18 cm face the title goes back across, top left, as on most of the references. The along-the-length layout from draft 6 was only needed for the narrow 10 cm face; it stays on the sheet as an option.
+- Title block at top left, margin 8% of the width on the left and top.
+- Size rule: longest line at most 70% of the width. Cap height on the Medium is about 12 mm.
+- The line-break rules above apply.
 
 **The stack rule.** One dark, one light, one colour. Largest at the bottom.
 
@@ -124,14 +136,14 @@ Honest note: the references are loud (lime, pink, cobalt, orange). The objekt pa
 
 ## 04 // decisions
 
-Decided: solid block in paper · Galak Round titles · singles and a set of three · day 1 · Medium = 10 × 25 × 4.5 cm, Large and Small scaled.
+Decided: solid block in paper · Galak Round titles · singles and a set of three · day 1 · sizes from real books: M 18 × 25 × 4.5 cm, L 23 × 30 × 4.5 cm, S 14 × 20 × 4.5 cm.
 
 Open:
 1. Inside of the block: blank pages, or board or foam core.
 2. Titles: approve or swap the eleven.
 3. "objekts" lowercase on the front of Vol. 05, or caps like the rest.
 4. Sets: the three fixed sets above, or pick one from each size.
-5. Confirm the Large (12 × 30 × 4.5) and Small (8 × 20 × 4.5) I chose, and that titles run along the length.
+5. Confirm the three sizes above, in particular Medium width 18 cm instead of 10 cm.
 6. Price, and whether stock is made up front or made to order.
 
 ## 05 // blockers
