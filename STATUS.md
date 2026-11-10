@@ -20,7 +20,7 @@ Three daily sessions work on this repo, one section each. Each session updates *
 - [images] Approve or retake the 3 hero renders sent 8 Nov (AI renders): OBJ-152 Ink v2c, OBJ-002 Oxblood v1c, OBJ-038 Carbon v1c · approve / retake per image · only after approval do other colours and the context shot get made.
 - [images] Hero colours used are the proposed ones from CONTENT_TO_SUPPLY 3d (002 Oxblood matte, 038 Carbon matte, 152 Ink gloss). The "mirror on the metal segment" for 002 and 038 is not shown: which part is mirror? · tell me / leave all-coated · rec: leave all-coated until the drawing says.
 - [images] OBJ-001 reference photo carries a third-party maker mark (NM3), like 148/159 · redesign as our own / render anyway · rec: wait for the Polycraft design file and render from that. Skipped today.
-- [images] Drive upload and production-book stickers for new renders need your yes · yes / not yet · rec: yes once heroes are approved.
+- [images] Production-book stickers for new renders need your yes · yes / not yet · rec: yes once heroes are approved. (Drive upload of the 8 Nov renders done 10 Nov on Sabry's yes.)
 - [all] Licences: PP Mori (web), Galak Round, logo lettering (Raftwork). No public launch without them.
 
 ## Content and product list
@@ -54,6 +54,7 @@ Three daily sessions work on this repo, one section each. Each session updates *
 
 ## Website (Shopify)
 ### 10 Nov 2026 (Tue)
+- Drive (Sabry's yes): 8 Nov renders uploaded to Drive `images/` in new folders OBJ-002, OBJ-038, OBJ-152 (7 JPEGs; OBJ-152 v1 prefixed `superseded_`). Sizes match the repo copies. Heroes still not approved.
 - Product sheet for Sabry (private): https://claude.ai/artifact/T2QcmFPN399m2XR8bwyHnB . 61 products with picture; he fills name EN/AR, price, lead time, size, packed weight, colours, finish, materials, description, then "Ready to upload". Claude reads entries (collection `products`) and loads ready ones into Shopify as drafts. Polycraft sheet: `plan/Polycraft-questions_shortlist_2026-11-10.xlsx`.
 - The Edit removed from the main menu (blog kept, empty). OBJ-099 alt text no longer mentions renders.
 - Shipping by order weight: up to 15 kg 118 EGP, over 15 kg 1,200 EGP. Every product needs its real packed weight before going active (all 0 kg now; ask Polycraft). Delivery page updated. Not tested at checkout. Sabry to update the Shipping policy in admin.
