@@ -489,7 +489,7 @@ $SKPOLY
   9
 $TDCREATE
  40
-2461355.715462963
+2461355.8705555554
   9
 $TDUCREATE
  40
@@ -497,7 +497,7 @@ $TDUCREATE
   9
 $TDUPDATE
  40
-2461355.715462963
+2461355.8705555554
   9
 $TDUUPDATE
  40
@@ -929,11 +929,11 @@ $PSTYLEMODE
   9
 $FINGERPRINTGUID
   2
-{C4286A3B-59A7-4C6A-B622-F2D0F79B45BA}
+{51FC8195-B162-4142-B255-64529416CFEF}
   9
 $VERSIONGUID
   2
-{EC697B49-D661-4CC6-BF02-B4DC843F11EC}
+{4EC3C07A-0CD0-4341-B301-1329D79C3EBE}
   9
 $EXTNAMES
 290
@@ -1323,9 +1323,9 @@ ISM
   0
 CLASS
   1
-LAYOUT
+ACDBPLACEHOLDER
   2
-AcDbLayout
+AcDbPlaceHolder
   3
 ObjectDBX Classes
  90
@@ -1339,9 +1339,9 @@ ObjectDBX Classes
   0
 CLASS
   1
-ACDBPLACEHOLDER
+LAYOUT
   2
-AcDbPlaceHolder
+AcDbLayout
   3
 ObjectDBX Classes
  90
@@ -4575,7 +4575,7 @@ AcDbText
  40
 8.0
   1
-OBJ-164 rev 1 10 Nov 2026. DRAFT, not engineered. mm. Sizes estimated from the reference except overall and cushion sizes.
+OBJ-177 rev 1 10 Nov 2026. DRAFT, not engineered. mm. Sizes estimated from the reference except overall and cushion sizes.
  11
 0.0
  21
@@ -5587,7 +5587,7 @@ DictionaryVariables
 280
 0
   1
-1.4.5 @ 2026-11-10T17:10:16.610879+00:00
+1.4.5 @ 2026-11-10T20:53:36.649564+00:00
   0
 DICTIONARYVAR
   5
@@ -5599,7 +5599,7 @@ DictionaryVariables
 280
 0
   1
-1.4.5 @ 2026-11-10T17:10:16.614754+00:00
+1.4.5 @ 2026-11-10T20:53:36.652865+00:00
   0
 ENDSEC
   0

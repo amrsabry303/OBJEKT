@@ -1,9 +1,9 @@
-"""OBJ-164 bench, rev 1: drawing set (A3, EN/AR), DXF profiles and 3D print files.
+"""OBJ-177 bench, rev 1: drawing set (A3, EN/AR), DXF profiles and 3D print files.
 
-Run:  python3 make_obj164_rev1.py            (from this folder)
+Run:  python3 make_obj177_rev1.py            (from this folder)
 Needs: numpy pillow scikit-image trimesh manifold3d fast-simplification ezdxf pymupdf,
        and node with playwright + chromium for the SVG to PDF step.
-Output: venture/drawings/OBJ-164/
+Output: venture/drawings/OBJ-177/
 
 Moulded product (print the pattern, then mould): no flat patterns, no cutting layout.
 Overall and cushion sizes come from the supplied tear sheet. Everything else is
@@ -16,13 +16,13 @@ from PIL import Image
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
-import obj164_model as M
+import obj177_model as M
 
 ROOT = os.path.abspath(os.path.join(HERE, "..", "..", ".."))
-OUT = os.path.join(ROOT, "venture", "drawings", "OBJ-164")
+OUT = os.path.join(ROOT, "venture", "drawings", "OBJ-177")
 PRINT = os.path.join(OUT, "print")
-CACHE = os.environ.get("OBJ164_CACHE", os.path.join(HERE, "_cache_obj164"))
-PID, REV, DATE = "OBJ-164", "1", "10 Nov 2026"
+CACHE = os.environ.get("OBJ177_CACHE", os.path.join(HERE, "_cache_obj177"))
+PID, REV, DATE = "OBJ-177", "1", "10 Nov 2026"
 PRE = f"{PID}_rev{REV}_"
 STAMP_EN = "DRAFT, not approved, not engineered"
 STAMP_AR = "مسودة، غير معتمدة، بدون مراجعة هندسية"
@@ -561,7 +561,7 @@ def main():
     with Pool(4) as p:
         p.map(render_view, list(VIEWS), chunksize=1)
     ipath = os.path.join(CACHE, "info.json")
-    if os.path.exists(ipath) and not os.environ.get("OBJ164_REMESH"):
+    if os.path.exists(ipath) and not os.environ.get("OBJ177_REMESH"):
         info = json.load(open(ipath))
     else:
         info = build_meshes(); json.dump(info, open(ipath, "w"), indent=1)
@@ -575,8 +575,8 @@ def main():
     write_dxf("section_BB_centreline", {"PROFILE": (OUTL["secB"], 7), "CUSHION": (OUTL["secB_cushion"], 3)}, note)
     write_dxf("section_CC_legs", {"PROFILE": (OUTL["secC"], 7)}, note)
     logo = "data:image/svg+xml;base64," + base64.b64encode(open(os.path.join(ROOT, "brand", "objekt-logo.svg"), "rb").read()).decode()
-    ref1 = img_uri(os.path.join(ROOT, "images", "OBJ-164.jpg"), 700)
-    ref2 = img_uri(os.path.join(OUT, "reference", "OBJ-164_reference_low-angle.jpg"), 700)
+    ref1 = img_uri(os.path.join(ROOT, "images", "OBJ-177.jpg"), 700)
+    ref2 = img_uri(os.path.join(OUT, "reference", "OBJ-177_reference_low-angle.jpg"), 700)
     sheets = build_sheets(m, info, logo, ref1, ref2)
     svgs = []
     for i, (name, svg) in enumerate(sheets):

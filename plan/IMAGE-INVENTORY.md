@@ -55,5 +55,15 @@ Source: the production book (45 product slides), Drive and the Magnific history.
 - OBJ-175 Wall shelf panels, half-disc shelves (design file: NOT READY)
 - OBJ-176 Wall shelves, half-disc, colour set (design file: NOT READY)
 
+## Reference library additions (10 Nov 2026)
+
+Added by Sabry's instruction. Reference photos only: not our pieces, mixed or unknown rights, never proof of capability. Numbers OBJ-177 to OBJ-179 are the next free ones after OBJ-176; the objekt workspace was not readable from this session, so check there for clashes. None of the three is on the day-1 list or the 46-product plan yet.
+
+| Product | File | What | Colour and size given by Sabry |
+|---|---|---|---|
+| OBJ-177 Bench, glossy moulded frame with cone legs and loose cushion | `images/OBJ-177.jpg` | Riva bench tear sheet (Carlyle Collective). Draft drawing set and 3D print files: `venture/drawings/OBJ-177/`. | Frame Chocolate (unconfirmed), olive green seat, from the photos. Overall 1829 x 686 x 406 mm from the tear sheet. |
+| OBJ-178 Lounge chair, S-curl upholstered form with loose cushion | `images/OBJ-178.jpg` (showroom photo, shown in olive-taupe fabric with a green cushion) | Upholstered chair. | Two options: Chocolate brown with ivory piping; Olive with off-white piping. Size not given. |
+| OBJ-179 Lounge chair, folding tufted ribbon form with loose cushion | `images/OBJ-179.jpg` (showroom, tan leather), `OBJ-179_2.jpg`, `OBJ-179_3.jpg` (studio views, orange leather) | Upholstered chair on a dark metal base, tufted panels. | Dark chocolate brown leather. 240 W x 105 D x 75 H cm, as given. Colour in the photos is not the one to make. |
+
 ## Not filed
 Six other sculpture renders in the Magnific history (baby elephant calf, falcon, abstract geometric) are not matched to a launch product. Renders from other projects and are not touched.

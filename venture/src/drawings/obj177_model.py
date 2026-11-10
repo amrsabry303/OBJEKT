@@ -1,4 +1,4 @@
-"""OBJ-164 bench, rev 1: geometry (signed distance field), mesh and ray-traced views.
+"""OBJ-177 bench, rev 1: geometry (signed distance field), mesh and ray-traced views.
 
 Units mm. x = length, y = depth, z = height, origin at floor centre.
 Sizes: overall and cushion sizes are from the supplied tear sheet (Riva bench);
