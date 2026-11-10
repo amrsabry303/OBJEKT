@@ -1,6 +1,6 @@
-# objekt faux books: plan and art direction (draft 14, 10 Nov 2026)
+# objekt faux books: plan and art direction (draft 15, 10 Nov 2026)
 
-Status: proposal for Sabry. Decided so far (10 Nov): title typeface Galak Round; sold as singles and as a set of three; titles to be witty, in the line of "Objekts of Character"; made as a solid block, paper; day 1; a print set of three added (tiger, cow, stripe). Draft 5 (Sabry's review): colour audit, lighter type, logo as the signature. Draft 6: sizes fixed from Sabry's 10 × 25 × 4.5 cm. Draft 7: depth is 4.5 cm on all three (Sabry: 5.5 cm was not logical). Draft 8: width and length reset to real-book proportions (Sabry: the sizes would not look real). Draft 9: spine text in capitals (Sabry); first design flats drawn for all eleven volumes. Draft 10: spine redesigned (larger, reads along a stack, symbol only, fixed logo positions). Draft 11: prints wrap onto the spine (Sabry). Draft 12: tiger redrawn as a realistic pattern from a reference photo (Sabry). Draft 13: first renders of all eleven volumes and three sets. Draft 14: renders v2 with paper texture and soft shadows (Sabry). Nothing is costed or sent to anyone.
+Status: proposal for Sabry. Decided so far (10 Nov): title typeface Galak Round; sold as singles and as a set of three; titles to be witty, in the line of "Objekts of Character"; made as a solid block, paper; day 1; a print set of three added (tiger, cow, stripe). Draft 5 (Sabry's review): colour audit, lighter type, logo as the signature. Draft 6: sizes fixed from Sabry's 10 × 25 × 4.5 cm. Draft 7: depth is 4.5 cm on all three (Sabry: 5.5 cm was not logical). Draft 8: width and length reset to real-book proportions (Sabry: the sizes would not look real). Draft 9: spine text in capitals (Sabry); first design flats drawn for all eleven volumes. Draft 10: spine redesigned (larger, reads along a stack, symbol only, fixed logo positions). Draft 11: prints wrap onto the spine (Sabry). Draft 12: tiger redrawn as a realistic pattern from a reference photo (Sabry). Draft 13: first renders of all eleven volumes and three sets. Draft 14: renders v2 with paper texture and soft shadows (Sabry). Draft 15: sets aligned (Sabry). Nothing is costed or sent to anyone.
 Direction sheet: `faux-books-direction-sheet_diagram_v8.svg` (PNG copy beside it). It is a flat diagram with stand-in lettering, not a render and not a photo.
 
 ## 01 // the idea
@@ -200,12 +200,12 @@ What they are not:
 - Not tested at actual size on paper. Print one proof of each size before anything else.
 
 ## 09 // renders (draft 2, 10 Nov)
-Renders of all eleven volumes and the three sets are in `plan/faux-books/renders/`: `FB-nn_title_3d-mockup_v2.jpg` (1600 × 2000, 4:5), three set images (`FB-set-A`, `FB-set-B`, `FB-set-print`) and `faux-books-renders_contact-sheet_v2.jpg`. The v1 files are the superseded first pass.
+Renders of all eleven volumes and the three sets are in `plan/faux-books/renders/`: `FB-nn_title_3d-mockup_v2.jpg` (1600 × 2000, 4:5), three set images (`FB-set-A`, `FB-set-B`, `FB-set-print`) and `faux-books-renders_contact-sheet_v2.jpg`. The v1 files are the superseded first pass. The three set images are at v3 (aligned); the single books stay at v2.
 
 What they are:
 - 3D mockups built from the design flats, not AI renders and not photos. I used 3D instead of an AI image model because the type, logo and print placement have to stay exact; an image model redraws lettering.
 - Scene follows `plan/HOUSE-STYLE.md`: plaster wall, a low window sun with a hard-edged light and shadow, a limestone-tone plinth, one clay vase as the only prop (a plain earth tone, never a brand colour).
-- Singles stand at a three-quarter angle so the front and the spine show. Sets lie flat, spines out, head to the right, large at the bottom.
+- Singles stand at a three-quarter angle so the front and the spine show. Sets lie flat, spines out, head to the right, large at the bottom, aligned: spines flush on the same front plane and each book centred on the one below (v1 and v2 had a small stagger).
 - Cover colours were checked against the brand hex values by sampling pixels: Clay, Objekt Green and Carbon land within a few points. Bone reads slightly warm under the sun. Putty and Bone are close and read as one family.
 
 What v2 adds over v1 (Sabry: more realistic, paper texture, soft shadows):
