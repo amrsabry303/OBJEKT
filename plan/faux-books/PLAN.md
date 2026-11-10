@@ -1,7 +1,7 @@
-# objekt faux books: plan and art direction (draft 6, 10 Nov 2026)
+# objekt faux books: plan and art direction (draft 7, 10 Nov 2026)
 
-Status: proposal for Sabry. Decided so far (10 Nov): title typeface Galak Round; sold as singles and as a set of three; titles to be witty, in the line of "Objekts of Character"; made as a solid block, paper; day 1; a print set of three added (tiger, cow, stripe). Draft 5 (Sabry's review): colour audit, lighter type, logo as the signature. Draft 6: sizes fixed from Sabry's 10 × 25 × 4.5 cm. Nothing is costed or sent to anyone.
-Direction sheet: `faux-books-direction-sheet_diagram_v6.svg` (PNG copy beside it). It is a flat diagram with stand-in lettering, not a render and not a photo.
+Status: proposal for Sabry. Decided so far (10 Nov): title typeface Galak Round; sold as singles and as a set of three; titles to be witty, in the line of "Objekts of Character"; made as a solid block, paper; day 1; a print set of three added (tiger, cow, stripe). Draft 5 (Sabry's review): colour audit, lighter type, logo as the signature. Draft 6: sizes fixed from Sabry's 10 × 25 × 4.5 cm. Draft 7: depth is 4.5 cm on all three (Sabry: 5.5 cm was not logical). Nothing is costed or sent to anyone.
+Direction sheet: `faux-books-direction-sheet_diagram_v7.svg` (PNG copy beside it). It is a flat diagram with stand-in lettering, not a render and not a photo.
 
 ## 01 // the idea
 A small library of decorative volumes that work as colour blocks with type on them. One format, our own titles, the eight objekt colours. Sold one at a time or as a stack of three.
@@ -60,7 +60,7 @@ Honest note: the references are loud (lime, pink, cobalt, orange). The objekt pa
 - Back: the full objekt logo (symbol over wordmark), centred low, in the lettering colour.
 - Spine, reading bottom to top: logo at the foot, then volume number, then title. Same position on every volume, so a stack reads as a family and the logo is the one thing every spine shares.
 - Always the supplied logo file, never a retyped wordmark.
-- Minimum logo width 25 mm in print (brand rule). The full logo laid along the spine at 25 mm is about 16 mm tall, so it fits even the Small spine (35 mm). The full logo, wordmark included, goes on every spine. Resolved.
+- Minimum logo width 25 mm in print (brand rule). The full logo laid along the spine at 25 mm is about 16 mm tall, so it fits the 45 mm spine, the same on all three sizes. The full logo, wordmark included, goes on every spine. Resolved.
 - Option, not drawn: a blind-embossed symbol on the front. A paper wrap cannot do this cheaply; ask the maker if you want it priced.
 - Logo colour is the cover's lettering colour, so the guide's one-colour rule holds. Still needs your OK as an addition to the six pairings in the guide.
 
@@ -98,16 +98,16 @@ Honest note: the references are loud (lime, pink, cobalt, orange). The objekt pa
 
 **Material and finish.** Solid block, paper (Sabry, 10 Nov). Read as: a closed block that does not open, wrapped in printed paper, matte. To confirm: is the inside a block of blank pages (looks like a real book from the edge, heavier) or a plain board or foam core with a printed page edge? Colour and lettering print in one pass, so the printer can match the eight colours from the hex values and a sample. Matte only: uncoated stock or matte lamination. No gloss, no metallic, no dust jacket.
 
-**Format (Sabry gave 10 cm wide, 25 cm long, 4.5 cm deep; I set it as Medium and scaled the others).**
+**Format (Sabry gave 10 cm wide, 25 cm long, 4.5 cm deep; I set it as Medium and scaled width and length for the others).**
 
 | Size | Width × length × depth | Scale | Volumes |
 |---|---|---|---|
-| L | 12 × 30 × 5.5 cm | 1.2× | 03 Heavy Reading, 04 Judge the Cover, 07 Coffee Table Book, 09 Easy Tiger |
+| L | 12 × 30 × 4.5 cm | 1.2× width and length | 03 Heavy Reading, 04 Judge the Cover, 07 Coffee Table Book, 09 Easy Tiger |
 | M | 10 × 25 × 4.5 cm | Sabry's size | 01 Not a Book, 02 Shelf Life, 10 Holy Cow |
-| S | 8 × 20 × 3.5 cm | 0.8× | 05 Objekts of Character, 06 Useless on Purpose, 08 Design Worth Noticing, 11 Between the Lines |
+| S | 8 × 20 × 4.5 cm | 0.8× width and length | 05 Objekts of Character, 06 Useless on Purpose, 08 Design Worth Noticing, 11 Between the Lines |
 
-- Same 1 : 2.5 face on all three, so one layout scales to every size.
-- Lying flat with spines out, a set is 13.5 cm high (5.5 + 4.5 + 3.5) and the spines step 30, 25 and 20 cm long.
+- Same 1 : 2.5 face on all three, so one layout scales to every size. Depth does not scale: all three are 4.5 cm, as a real set of books is, so one block thickness and one spine width for the maker and for the logo.
+- Lying flat with spines out, a set is 13.5 cm high (3 × 4.5) and the spines step 30, 25 and 20 cm long.
 - Why M is yours: the middle size should be the one you specified, so the stack steps both up and down from it. Say if 10 × 25 × 4.5 should be the Large or the Small instead; the rest scales.
 - Not decided: weight, board thickness, wrap stock. These depend on the inside of the block.
 - Drawn to scale on the sheet.
@@ -131,7 +131,7 @@ Open:
 2. Titles: approve or swap the eleven.
 3. "objekts" lowercase on the front of Vol. 05, or caps like the rest.
 4. Sets: the three fixed sets above, or pick one from each size.
-5. Confirm the Large (12 × 30 × 5.5) and Small (8 × 20 × 3.5) I chose, and that titles run along the length.
+5. Confirm the Large (12 × 30 × 4.5) and Small (8 × 20 × 4.5) I chose, and that titles run along the length.
 6. Price, and whether stock is made up front or made to order.
 
 ## 05 // blockers
