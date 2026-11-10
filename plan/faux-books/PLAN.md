@@ -1,6 +1,6 @@
-# objekt faux books: plan and art direction (draft 9, 10 Nov 2026)
+# objekt faux books: plan and art direction (draft 10, 10 Nov 2026)
 
-Status: proposal for Sabry. Decided so far (10 Nov): title typeface Galak Round; sold as singles and as a set of three; titles to be witty, in the line of "Objekts of Character"; made as a solid block, paper; day 1; a print set of three added (tiger, cow, stripe). Draft 5 (Sabry's review): colour audit, lighter type, logo as the signature. Draft 6: sizes fixed from Sabry's 10 × 25 × 4.5 cm. Draft 7: depth is 4.5 cm on all three (Sabry: 5.5 cm was not logical). Draft 8: width and length reset to real-book proportions (Sabry: the sizes would not look real). Draft 9: spine text in capitals (Sabry); first design flats drawn for all eleven volumes. Nothing is costed or sent to anyone.
+Status: proposal for Sabry. Decided so far (10 Nov): title typeface Galak Round; sold as singles and as a set of three; titles to be witty, in the line of "Objekts of Character"; made as a solid block, paper; day 1; a print set of three added (tiger, cow, stripe). Draft 5 (Sabry's review): colour audit, lighter type, logo as the signature. Draft 6: sizes fixed from Sabry's 10 × 25 × 4.5 cm. Draft 7: depth is 4.5 cm on all three (Sabry: 5.5 cm was not logical). Draft 8: width and length reset to real-book proportions (Sabry: the sizes would not look real). Draft 9: spine text in capitals (Sabry); first design flats drawn for all eleven volumes. Draft 10: spine redesigned (larger, reads along a stack, symbol only, fixed logo positions). Nothing is costed or sent to anyone.
 Direction sheet: `faux-books-direction-sheet_diagram_v8.svg` (PNG copy beside it). It is a flat diagram with stand-in lettering, not a render and not a photo.
 
 ## 01 // the idea
@@ -52,7 +52,7 @@ Honest note: the references are loud (lime, pink, cobalt, orange). The objekt pa
 - Three-line titles: longest line no wider than 70% of the cover. Line gap about 0.4 of the cap height. No line is a single short word, so "NOT A / BOOK", "OBJEKTS OF / CHARACTER", "USELESS / ON PURPOSE". Where three lines are needed, break for shape and keep the lines close in length.
 - Optical edge: round and diagonal letters (O, C, J, T) hang slightly past the left margin so the edge looks straight. Done by eye in the final artwork.
 - Top margin equals left margin.
-- Spine: ALL CAPS, Regular, reads bottom to top. Tracking about 5%, open, because small caps need more air. One size for every spine of the same book size, set by the longest title (OBJEKTS OF CHARACTER).
+- Spine: ALL CAPS, Regular, tracking about 5%. One size on every volume (about 16 mm type, 12 mm cap height, twice draft 9), up to two lines, line gap 0.4 of the cap height. Size is set by the longest line on the shortest book (DESIGN WORTH on the 20 cm Small) and by the 45 mm spine width.
 - The numbers above are starting values. Test: print one S, one M and one L cover at actual size on the chosen stock and judge at arm's length, then adjust.
 
 **Signature (revised, draft 5).** You said the small symbol felt disconnected from the titles. Draft 5 makes the logo the signature and stops using the symbol as decoration.
@@ -168,19 +168,30 @@ If the licence or the maker is not confirmed in time, the honest options are: li
 
 Not tested: everything. This is a paper plan and one diagram.
 
-## 07 // artwork (draft 1, 10 Nov)
-First design flats for all eleven volumes are in `plan/faux-books/artwork/`: one SVG per volume (`FB-nn_title_flat_design-draft_v1.svg`) and `faux-books-flats_contact-sheet_v1.png`. Each flat is back, spine and front at finished size in mm, drawn by `make_flats.py` (run `python3 make_flats.py <repo root>` to regenerate).
+## 07 // spine and logo system (draft 10, Sabry's notes)
+
+1. **Larger spine type.** The spine is 45 mm deep on every size, so one size fits all: about 16 mm type, 12 mm cap height, up to two lines. Draft 9 was half that. It is sized to the longest line on the shortest book, and the same size goes on the Large and Medium so stacks match.
+2. **Reads along a stack.** Lying flat with spines out and the head to the right, a book's spine reads left to right, so a stack reads like a stack of labels. Standing on a shelf it reads bottom to top, the UK and European way. Spine titles are broken into two lines to suit the 45 mm depth: NOT A / BOOK, JUDGE THE / COVER, COFFEE TABLE / BOOK, DESIGN WORTH / NOTICING, BETWEEN / THE LINES. Fronts keep their own breaks.
+3. **Symbol only on the spine.** The wordmark and the volume number are gone from the spine. The wordmark stays on the back, with the symbol. The volume number is now internal only (FB-nn). Say if you want it back on the spine.
+4. **Fixed logo positions on every size.**
+   - Spine symbol: 20 mm wide, 14 mm from the foot, centred across the spine.
+   - Spine title: starts 10 mm after the symbol, so the symbol leads the title in a stack.
+   - Back logo (symbol and wordmark): 40 mm wide, centred on the back, 14 mm from the foot. The same size and the same distance from the foot on the Small, Medium and Large. Before it was 28% of the width.
+   - Everything is measured from the foot, so the same fixed numbers work for any size.
+5. **Checks.** Symbol on its own is below nothing in the guide: the 25 mm minimum applies to the logo, and the symbol is the stated fallback below that. 20 mm is a symbol-only size. Still needs your OK as part of the logo-colour decision.
+
+## 08 // artwork (draft 2, 10 Nov)
+Design flats for all eleven volumes are in `plan/faux-books/artwork/`: one SVG per volume (`FB-nn_title_flat_design-draft_v2.svg`) and `faux-books-flats_contact-sheet_v2.png`, which also shows the three sets lying flat. Each flat is back, spine and front at finished size in mm, drawn by `make_flats.py` (run `python3 make_flats.py <repo root>`). The v1 files are the superseded draft 9 version.
 
 What is in them:
 - Front: title at top left, all caps, one size per title, longest line 70% of the width.
-- Back: the full objekt logo (supplied file, not retyped), centred low, in the lettering colour, 28% of the width.
-- Spine (45 mm): all caps title, volume number and logo, reading bottom to top, logo at the foot at 25 mm wide.
+- Back and spine: per section 07.
 - Prints (09, 10, 11) are on the front and back only. The spine stays plain so its title reads.
 - Dashed lines show the folds. They are not part of the artwork.
 
 What they are not:
 - Not print-ready. No bleed, no wrap allowance, no board turn-in: the maker's template is not known.
-- Lettering is Inter. Galak Round is not licensed, and the real face is rounder and wider, so every line breaks and sizes must be rechecked once the font file is supplied (kept outside git).
+- Lettering is Inter. Galak Round is not licensed, and the real face is rounder and wider, so every line breaks and sizes must be rechecked once the font file is supplied (kept outside git). A wider face may force the spine type smaller; the longest line is only a few mm from the limit.
 - The tiger, cow and stripe drawings are made in code and are placeholders. The tiger stripes cluster at the top and bottom edges and leave the middle empty, which needs a designer's eye.
-- The spine type is small (about 7 to 10 mm). Test at actual size on a printed proof.
 - Colours are screen values from `brand/COLOURS-FINISHES.md`. Confirm against printed samples.
+- Not tested at actual size on paper. Print one proof of each size before anything else.

@@ -15,9 +15,17 @@ def tw(txt, size, track): return sum(MF.getlength(c) for c in txt)/100*size + le
 FT = 'font-family="Galak Round, Inter Display, Inter, Helvetica, Arial, sans-serif"'
 SZ = {'L':(230,300),'M':(180,250),'S':(140,200)}
 D = 45
-def _avail(size):
-    H = SZ[size][1]; ms = 14
-    return (H - ms - 25 - 8 - 2*5.0*.75 - 10 - 5.0) - ms
+sym_d = re.search(r' d="([^"]+)"', open(root + '/brand/objekt-symbol.svg').read()).group(1)
+BOT = 14          # distance from the foot edge to the logo, every size
+SYM_W = 20        # spine symbol width
+SYM_H = SYM_W*223/308
+GAP = 10          # symbol to title
+LOGO_W = 40       # back logo width, every size
+SPINE_LINES = {1:['NOT A','BOOK'],2:['SHELF','LIFE'],3:['HEAVY','READING'],4:['JUDGE THE','COVER'],5:['OBJEKTS OF','CHARACTER'],
+ 6:['USELESS','ON PURPOSE'],7:['COFFEE TABLE','BOOK'],8:['DESIGN WORTH','NOTICING'],9:['EASY','TIGER'],10:['HOLY','COW'],11:['BETWEEN','THE LINES']}
+# one spine type size for every volume: set by the longest spine line on the shortest book (S, 200 mm) and by the 45 mm spine width
+SP_AVAIL = SZ['S'][1] - (BOT + SYM_W + GAP) - BOT
+SP = min(SP_AVAIL/max(tw(l,1,.05) for ls in SPINE_LINES.values() for l in ls), (D-16)/(CAP*2.4))
 # n, title lines, cover, lettering, size, print
 VOLS = [
  (1,['NOT A','BOOK'],'Bone','Objekt Green','M',None),
@@ -32,9 +40,6 @@ VOLS = [
  (10,['HOLY','COW'],'Bone','Chocolate','M','cow'),
  (11,['BETWEEN','THE','LINES'],'Bone','Objekt Green','S','stripe'),
 ]
-SPINE_SIZE = {}
-for _sz in SZ:
-    SPINE_SIZE[_sz] = min([D*.22] + [_avail(_sz)/tw(' '.join(v[1]),1,.05) for v in VOLS if v[4]==_sz])
 def slug(lines): return '-'.join(lines).lower().replace(' ','-')
 
 def build(vol):
@@ -54,8 +59,8 @@ def build(vol):
     title_h = cap + (len(lines)-1)*step
     title_rect = (tx-4, m-4, .70*W+8, title_h+8)       # x,y,w,h in flat coords
     # back logo
-    lw = W*.28; lh = lw*501/786
-    logo_x = bx + (W-lw)/2; logo_y = H - m - lh
+    lw = LOGO_W; lh = lw*501/786
+    logo_x = bx + (W-lw)/2; logo_y = H - BOT - lh
     logo_rect = (logo_x-6, logo_y-6, lw+12, lh+12)
     # prints on back and front only
     def panel(px, kind, seed):
@@ -105,18 +110,17 @@ def build(vol):
         o.append(f'<text x="{tx:.1f}" y="{m+cap+j*step:.1f}" {FT} font-size="{s:.2f}" font-weight="500" letter-spacing="{s*.02:.2f}" fill="{fg}">{l}</text>')
     # back logo
     o.append(f'<path transform="translate({logo_x:.1f} {logo_y:.1f}) scale({lw/786:.5f})" fill="{fg}" fill-rule="evenodd" d="{logo_d}"/>')
-    # spine, all caps, reads bottom to top: logo, number, title
-    cx = sx + D/2; ms = 14
-    slw = 25; slh = slw*501/786
-    ly = H - ms
-    o.append(f'<path transform="translate({cx-slh/2:.2f} {ly:.1f}) rotate(-90) scale({slw/786:.5f})" fill="{fg}" fill-rule="evenodd" d="{logo_d}"/>')
-    ns = 5.0; ny = ly - slw - 8
-    o.append(f'<text transform="translate({cx+ns*CAP/2:.2f} {ny:.1f}) rotate(-90)" {FT} font-size="{ns}" font-weight="500" letter-spacing="{ns*.12:.2f}" fill="{fg}">{n:02d}</text>')
-    ty = ny - 2*ns*.75 - 10
-    ttl = ' '.join(lines)
-    avail = ty - ms
-    ss = SPINE_SIZE[size]
-    o.append(f'<text transform="translate({cx+ss*CAP/2:.2f} {ty:.1f}) rotate(-90)" {FT} font-size="{ss:.2f}" font-weight="500" letter-spacing="{ss*.05:.2f}" fill="{fg}">{ttl}</text>')
+    # spine: symbol at the foot, title in caps above it, reading bottom to top (reads left to right when the book lies head right)
+    cx = sx + D/2
+    k = SYM_W/308
+    ty = H - BOT
+    o.append(f'<path transform="translate({cx-SYM_H/2:.2f} {ty:.1f}) rotate(-90) scale({k:.5f}) translate(-238 0)" fill="{fg}" fill-rule="evenodd" d="{sym_d}"/>')
+    ys = ty - SYM_W - GAP
+    scap = SP*CAP; sstep = scap*1.4; bh = scap + sstep
+    x1 = cx - bh/2 + scap
+    for j, l in enumerate(SPINE_LINES[n]):
+        o.append(f'<text transform="translate({x1+j*sstep:.2f} {ys:.1f}) rotate(-90)" {FT} font-size="{SP:.2f}" font-weight="500" letter-spacing="{SP*.05:.2f}" fill="{fg}">{l}</text>')
+    ss = SP
     # fold lines
     for x in (sx, sx+D):
         o.append(f'<line x1="{x}" y1="0" x2="{x}" y2="{H}" stroke="#000" stroke-opacity=".25" stroke-width=".4" stroke-dasharray="3 2"/>')
@@ -130,7 +134,7 @@ def single(vol):
     svg = (f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {Wf+2*pad} {H+2*pad+14}" width="{(Wf+2*pad)*3}" height="{(H+2*pad+14)*3}">'
            f'<rect width="100%" height="100%" fill="#E1D9CF"/><g transform="translate({pad} {pad})">{body}</g>'
            f'<text x="{pad}" y="{H+pad+10}" font-family="Inter, Helvetica, Arial, sans-serif" font-size="4.2" fill="#25395A">{cap}</text></svg>')
-    fn = f'FB-{n:02d}_{slug(lines)}_flat_design-draft_v1.svg'
+    fn = f'FB-{n:02d}_{slug(lines)}_flat_design-draft_v2.svg'
     open(f'{out}/{fn}', 'w').write(svg)
     return fn
 files = [single(v) for v in VOLS]
@@ -140,9 +144,9 @@ rows = [[1,2],[3,4],[5,6,8],[7,9],[10,11]]
 W0 = 1600; y = 220
 o = [f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W0} 2700" width="{W0}" height="2700"><rect width="100%" height="100%" fill="#E1D9CF"/>']
 F = 'font-family="Inter, Helvetica, Arial, sans-serif"'
-o.append(f'<text x="80" y="90" {F} font-size="30" font-weight="500" fill="#25395A">01 // faux books: flats, back · spine · front, draft 1</text>')
-o.append(f'<text x="80" y="158" {F} font-size="19" fill="#25395A">Prints are placeholders. Not print-ready: no bleed, because the maker\'s template is not known.</text>')
-o.append(f'<text x="80" y="130" {F} font-size="19" fill="#25395A">Finished size, to scale (1 mm = {Ks} px). Spine title in caps, one size per book size. Stand-in lettering (Inter) for Galak Round, not licensed.</text>')
+o.append(f'<text x="80" y="90" {F} font-size="30" font-weight="500" fill="#25395A">01 // faux books: flats, back · spine · front, draft 2</text>')
+o.append(f'<text x="80" y="158" {F} font-size="19" fill="#25395A">Lettering is Inter, a stand-in for Galak Round (not licensed). Prints are placeholders. Not print-ready: no bleed.</text>')
+o.append(f'<text x="80" y="130" {F} font-size="19" fill="#25395A">Finished size, to scale (1 mm = {Ks} px). Spine: symbol and caps title, one size, reads along a stack.</text>')
 byn = {v[0]: v for v in VOLS}
 for row in rows:
     x = 80; rh = 0
@@ -154,8 +158,23 @@ for row in rows:
         o.append(f'<text x="{x}" y="{y+H*Ks+26}" {F} font-size="17" font-weight="500" fill="#25395A">{lab}</text><text x="{x}" y="{y+H*Ks+48}" {F} font-size="15" fill="#25395A">{lab2}</text>')
         x += Wf*Ks + gap; rh = max(rh, H*Ks)
     y += rh + 90
+def spine_view(v):
+    body, Wf, H, _ = build(v); W = SZ[v[4]][0]
+    return (f'<g transform="translate(-{W},0)"><clipPath id="sv{v[0]}"><rect x="{W}" y="0" width="{D}" height="{H}"/></clipPath>'
+            f'<g clip-path="url(#sv{v[0]})">{body}</g></g>'), H
+y += 30
+o.append(f'<text x="80" y="{y}" {F} font-size="30" font-weight="500" fill="#25395A">02 // lying stacks, spines out, head to the right</text>')
+y += 40
+for si, (lab, ids) in enumerate([('Plain set A',[3,1,5]),('Plain set B',[7,2,8]),('Print set',[9,10,11])]):
+    sx0 = 80 + si*(300*Ks + 90); yy = y + 3*(D*Ks+2)
+    for n in ids:
+        yy -= D*Ks + 2
+        g, H = spine_view(byn[n]); off = (300 - H)/2*Ks + (6 if n in (1,10) else 0)
+        o.append(f'<g transform="translate({sx0+off:.1f} {yy:.1f}) scale({Ks}) translate({H},0) rotate(90)">{g}</g>')
+    o.append(f'<text x="{sx0}" y="{y+3*(D*Ks+2)+30}" {F} font-size="17" fill="#25395A">{lab}</text>')
+y += 3*(D*Ks+2) + 60
 o.append('</svg>')
 H0 = int(y + 20)
 sheet = '\n'.join(o).replace('2700', str(H0))
-open(f'{out}/faux-books-flats_contact-sheet_v1.svg', 'w').write(sheet)
+open(f'{out}/faux-books-flats_contact-sheet_v2.svg', 'w').write(sheet)
 print(files, H0)
