@@ -130,7 +130,7 @@ What real books measure (retailer listings, not publisher spec sheets; they diff
 - Size rule: longest line at most 70% of the width. Cap height on the Medium is about 12 mm.
 - The line-break rules above apply.
 
-**The stack rule.** One dark, one light, one colour. Largest at the bottom.
+**The stack rule (draft 19).** One dark, one light, one colour, all the same size, spines flush.
 
 **Images.** AI renders in the house style (`plan/HOUSE-STYLE.md`): low window sun, plaster, a stack on one of our tables or plinths. Named `ai-render`. Real photos replace them when samples exist.
 
@@ -257,3 +257,10 @@ Sabry: overlay the exact spine artwork, and the first comp looked photoshopped. 
 - Now correct and exact: OBJEKTS OF CHARACTER on the cover, NOT A BOOK and HEAVY READING on the spines, with the real logo. The stray "PIF" and the "(PA)PIERRE" name are gone.
 - Known limits: the three books are the same length in the AI image, so the 30, 25 and 20 cm steps of the real set are not shown (the spine colour is extended at the head end). The lettering is the Inter stand-in. The cream book is still slightly warmer than Bone. A few pixels of old lettering may remain on the black spine. The sofa and floor are from another brand's photo, so this is an internal comp, not for publishing or product proof.
 - For a true-to-size set on this sofa, the way is to remove the AI books and place the 3D set into the photo with matched light. Not done.
+
+## 10 // draft 19 artwork and renders (10 Nov)
+- Flats: `artwork/FB-nn_..._flat_design-draft_v4.svg` and `artwork/faux-books-flats_contact-sheet_v4.png`, made by `artwork/make_flats.py` (the old generator is `make_flats_v1_archive.py`; v1 to v3 files are superseded).
+- Renders: `renders/FB-nn_..._3d-mockup_v5.jpg`, three set images at v5, `renders/faux-books-renders_contact-sheet_v5.jpg`. 3D mockups with the woven cloth texture from v4, now at the new size and depth.
+- Not redone: the sofa comp (`renders/ai-test/`). It was built for the old three-size set with the old lettering, so it is out of date. Say if you want it redone with the new set.
+- Cow hide and tiger are generated images, so they need a designer's eye before print. Printed colour of the cow browns against the palette is untested.
+- Lettering is the Inter stand-in. Galak Round is wider and rounder, so the full-width fits and cropping points will change once the real font is in.
