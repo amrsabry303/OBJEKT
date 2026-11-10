@@ -13,7 +13,7 @@ Paid in full at checkout. Delivered in 3–5 business days.
 ### Made to order
 Made for you after you order. Each product page shows its lead time: 7–14 days or 30–45 days, counted from the day we confirm your deposit. **[confirm: counted from deposit confirmation]**
 
-- **Deposit.** 50% at order, by card through checkout or by InstaPay to 01000411116. If you pay by InstaPay, send the receipt on WhatsApp with your order number. Production starts once the deposit is confirmed. **[confirm]**
+- **Deposit.** 50% at order, by card through checkout or by InstaPay to 01000411116. If you pay by InstaPay, send a screenshot of the receipt on WhatsApp with your order number. Production starts once the deposit is confirmed. **[confirm]**
 - **Balance.** The remaining 50% is paid on delivery, in cash or by InstaPay.
 - The deposit is non-refundable. **[legal]**
 
@@ -21,7 +21,7 @@ Made for you after you order. Each product page shows its lead time: 7–14 days
 We deliver within Egypt. Standard delivery is 118 EGP per order. We contact you on WhatsApp to arrange the day. **[confirm]**
 
 ### Returns
-- **Ready pieces.** Returnable within 48 hours of delivery, unused. Return delivery is paid by you. **[legal: see note]** Refund method and timing: **[confirm: e.g. same method as payment, within N days]**
+- **Ready pieces.** Returnable within 48 hours of delivery, unused. Return delivery is paid by you. **[legal: see note]** Refunds are made by the same method you paid with, within **[confirm: number of days]** of receiving the piece back.
 - **Made-to-order pieces.** Not returnable, except for damage or a defect.
 
 ### Damage
