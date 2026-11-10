@@ -38,3 +38,5 @@ Brand direction and final aesthetic, major UX changes, positioning, pricing and 
 
 ## Current state
 7 Nov 2026: the theme is built and pushed to an unpublished theme (`189754769632`); Horizon is still live. Brand Guidelines V1 applied (D-026), OBJ-099 added, Paymob card app installed but not signed in. Launch target Fri 20 Nov 2026 is at risk. **Read `docs/HANDOVER.md` first**: access, commands, store state, open decisions and the pre-launch cleanup list.
+
+10 Nov 2026: **Claude Code takes over. Read `docs/HANDOFF_2026-11-10.md` first** (footer done, Sabry's shipping, deposit and lead-time answers, the shipping plan, open questions, next tasks).
