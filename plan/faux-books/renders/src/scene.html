@@ -1,7 +1,8 @@
 <!doctype html><html><body style="margin:0;background:#E1D9CF">
-<script type="importmap">{"imports":{"three":"./node_modules/three/build/three.module.js"}}</script>
+<script type="importmap">{"imports":{"three":"./node_modules/three/build/three.module.js","three/addons/":"./node_modules/three/examples/jsm/"}}</script>
 <script type="module">
 import * as THREE from 'three';
+import { RoundedBoxGeometry } from 'three/addons/geometries/RoundedBoxGeometry.js';
 const META = await (await fetch('meta.json')).json();
 const loadImg = src => new Promise(r => { const i = new Image(); i.onload = () => r(i); i.src = src; });
 function tex(canvas, aniso=8){ const t = new THREE.CanvasTexture(canvas); t.colorSpace = THREE.SRGBColorSpace; t.anisotropy = aniso; return t; }
@@ -9,7 +10,7 @@ function noiseCanvas(size, base, amp, seed=1){
   const c = document.createElement('canvas'); c.width = c.height = size; const g = c.getContext('2d');
   g.fillStyle = base; g.fillRect(0,0,size,size);
   let s = seed; const rnd = () => (s = (s*16807)%2147483647)/2147483647;
-  for (let i=0;i<9000;i++){ { const k = rnd()<.5?60:255; g.fillStyle = `rgba(${k},${k-4},${k-10},${amp*rnd()})`; } const r = 1+rnd()*6; g.fillRect(rnd()*size, rnd()*size, r, r); }
+  for (let i=0;i<26000;i++){ { const k = rnd()<.5?60:255; g.fillStyle = `rgba(${k},${k-4},${k-10},${amp*rnd()})`; } const r = 1+rnd()*2.2; g.fillRect(rnd()*size, rnd()*size, r, r); }
   for (let i=0;i<30;i++){ const cx=rnd()*size, cy=rnd()*size, rr=size*(.1+rnd()*.25); const grd = g.createRadialGradient(cx,cy,0,cx,cy,rr); const k=rnd()<.5?90:255; grd.addColorStop(0,`rgba(${k},${k-6},${k-14},${.05+rnd()*.05})`); grd.addColorStop(1,`rgba(${k},${k-6},${k-14},0)`); g.fillStyle=grd; g.fillRect(0,0,size,size); }
   return c;
 }
@@ -19,19 +20,29 @@ async function bookTextures(m){
   const crop = (x0,wmm) => { const c = document.createElement('canvas'); c.width = Math.round(wmm*pw); c.height = img.height; c.getContext('2d').drawImage(img, x0*pw, 0, wmm*pw, img.height, 0, 0, c.width, c.height); return c; };
   return { back: tex(crop(0,m.Wmm)), spine: tex(crop(m.Wmm,m.Dmm)), front: tex(crop(m.Wmm+m.Dmm,m.Wmm)) };
 }
+function paperBump(){
+  const c = document.createElement('canvas'); c.width = c.height = 512; const g = c.getContext('2d'); g.fillStyle = '#808080'; g.fillRect(0,0,512,512);
+  let s = 7; const rnd = () => (s = (s*16807)%2147483647)/2147483647;
+  for (let i=0;i<14000;i++){ const x=rnd()*512,y=rnd()*512,a=rnd()*6.28,l=2+rnd()*9; g.strokeStyle = `rgba(${rnd()<.5?255:0},${rnd()<.5?255:0},${rnd()<.5?255:0},${.05+rnd()*.12})`; g.lineWidth = .6+rnd()*.8; g.beginPath(); g.moveTo(x,y); g.lineTo(x+Math.cos(a)*l,y+Math.sin(a)*l); g.stroke(); }
+  for (let i=0;i<30000;i++){ const k = rnd()<.5?0:255; g.fillStyle = `rgba(${k},${k},${k},${.04+rnd()*.08})`; g.fillRect(rnd()*512,rnd()*512,1,1); }
+  const t = new THREE.CanvasTexture(c); t.wrapS = t.wrapT = THREE.RepeatWrapping; t.anisotropy = 8; return t; }
+let PB = null;
+const bumpFor = (wcm,hcm) => { const t = PB.clone(); t.needsUpdate = true; t.repeat.set(wcm/3.2, hcm/3.2); return t; };
+function softRect(w,d,blur,alpha){ const S=256, pad=blur*2; const c = document.createElement('canvas'); c.width = c.height = S; const g = c.getContext('2d'); g.filter = `blur(${blur}px)`; g.fillStyle = `rgba(0,0,0,${alpha})`; const fw = S*(w/(w+pad)), fd = S*(d/(d+pad)); g.fillRect((S-fw)/2,(S-fd)/2,fw,fd);
+  const m = new THREE.Mesh(new THREE.PlaneGeometry(w+pad*S*0+ (w+pad) - w, d+ (d+pad) - d), new THREE.MeshBasicMaterial({map:new THREE.CanvasTexture(c), transparent:true, depthWrite:false})); m.geometry = new THREE.PlaneGeometry(w+pad, d+pad); m.rotation.x = -Math.PI/2; return m; }
 function pagesTex(){ const c = document.createElement('canvas'); c.width = c.height = 512; const g = c.getContext('2d'); g.fillStyle = '#ECE7DB'; g.fillRect(0,0,512,512);
   for (let y=0;y<512;y+=3){ g.fillStyle = `rgba(90,80,60,${.05+.05*Math.random()})`; g.fillRect(0,y,512,1); } const t = tex(c); t.wrapS = t.wrapT = THREE.RepeatWrapping; return t; }
 function makeBook(m, T, pages){
   const W=m.W,H=m.H,D=m.D,t=.3; const g = new THREE.Group();
-  const cov = new THREE.MeshStandardMaterial({color:m.cover, roughness:.92, metalness:0});
-  const face = (map) => new THREE.MeshStandardMaterial({map, roughness:.9, metalness:0});
+  const cov = new THREE.MeshStandardMaterial({color:m.cover, roughness:.95, metalness:0, bumpMap:bumpFor(W,H), bumpScale:1.6});
+  const face = (map,w=W,h=H) => new THREE.MeshStandardMaterial({map, roughness:.93, metalness:0, bumpMap:bumpFor(w,h), bumpScale:1.6});
   const pg = new THREE.MeshStandardMaterial({map:pages, roughness:.95});
   const add = (geo, mats, x,y,z) => { const me = new THREE.Mesh(geo, mats); me.position.set(x,y,z); me.castShadow = me.receiveShadow = true; g.add(me); return me; };
-  add(new THREE.BoxGeometry(W,H,t), [cov,cov,cov,cov,cov,face(T.back)], 0,0,-D/2+t/2);
-  add(new THREE.BoxGeometry(W,H,t), [cov,cov,cov,cov,face(T.front),cov], 0,0,D/2-t/2);
+  add(new RoundedBoxGeometry(W,H,t,3,.07), [cov,cov,cov,cov,cov,face(T.back)], 0,0,-D/2+t/2);
+  add(new RoundedBoxGeometry(W,H,t,3,.07), [cov,cov,cov,cov,face(T.front),cov], 0,0,D/2-t/2);
   const st = T.spine.clone(); st.needsUpdate = true; st.repeat.set((D-2*t)/D,1); st.offset.set(t/D,0);
-  add(new THREE.BoxGeometry(t,H,D-2*t), [cov,face(st),cov,cov,cov,cov], -W/2+t/2,0,0);
-  const pw = W-t-.25; add(new THREE.BoxGeometry(pw,H-.7,D-2*t), [pg,pg,pg,pg,pg,pg], (t-.25)/2,0,0);
+  add(new RoundedBoxGeometry(t,H,D-2*t,3,.06), [cov,face(st,D,H),cov,cov,cov,cov], -W/2+t/2,0,0);
+  const pw = W-t-.25; add(new RoundedBoxGeometry(pw,H-.7,D-2*t,2,.04), [pg,pg,pg,pg,pg,pg], (t-.25)/2,0,0);
   return g;
 }
 function vase(h, r, mat){ const pts=[]; const prof=[[0,0],[.55,0],[.8,.12],[.95,.4],[.8,.7],[.5,.9],[.38,1],[.42,1.06],[.3,1.06],[0,1.0]]; // lathe profile
@@ -39,7 +50,7 @@ function vase(h, r, mat){ const pts=[]; const prof=[[0,0],[.55,0],[.8,.12],[.95,
 window.renderScene = async (cfg) => {
   const SC = cfg.s||1, W = 1600*SC, H = 2000*SC; document.body.innerHTML = '';
   const renderer = new THREE.WebGLRenderer({antialias:true, preserveDrawingBuffer:true}); renderer.setSize(W,H); renderer.setPixelRatio(1);
-  renderer.shadowMap.enabled = true; renderer.shadowMap.type = THREE.PCFSoftShadowMap; renderer.toneMapping = THREE.NoToneMapping; renderer.toneMappingExposure = 1;
+  renderer.shadowMap.enabled = true; renderer.shadowMap.type = THREE.VSMShadowMap; renderer.toneMapping = THREE.NoToneMapping; renderer.toneMappingExposure = 1;
   renderer.outputColorSpace = THREE.SRGBColorSpace; document.body.appendChild(renderer.domElement);
   const scene = new THREE.Scene(); scene.background = new THREE.Color('#E1D9CF');
   // plaster
@@ -51,7 +62,7 @@ window.renderScene = async (cfg) => {
   // low window sun through a window opening
   const target = new THREE.Vector3(0, 14, -8); const dir = new THREE.Vector3(...(cfg.sun||[.8,.42,.5])).normalize();
   const sun = new THREE.DirectionalLight(0xfff3e2, 1.3); sun.position.copy(target).addScaledVector(dir, 220); sun.target.position.copy(target); scene.add(sun, sun.target);
-  sun.castShadow = true; sun.shadow.mapSize.set(4096,4096); const sc = sun.shadow.camera; sc.left=-130; sc.right=130; sc.top=130; sc.bottom=-130; sc.near=10; sc.far=500; sun.shadow.bias = -.0004; sun.shadow.radius = 1.6;
+  sun.castShadow = true; sun.shadow.mapSize.set(2048,2048); sun.shadow.blurSamples = 25; const sc = sun.shadow.camera; sc.left=-130; sc.right=130; sc.top=130; sc.bottom=-130; sc.near=10; sc.far=500; sun.shadow.bias = -.0006; sun.shadow.radius = 6;
   const shape = new THREE.Shape(); shape.moveTo(-400,-400); shape.lineTo(400,-400); shape.lineTo(400,400); shape.lineTo(-400,400); shape.closePath();
   const ww = cfg.win||[120,150], hole = new THREE.Path(); hole.moveTo(-ww[0]/2,-ww[1]/2); hole.lineTo(ww[0]/2,-ww[1]/2); hole.lineTo(ww[0]/2,ww[1]/2); hole.lineTo(-ww[0]/2,ww[1]/2); hole.closePath(); shape.holes.push(hole);
   const bar = new THREE.Mesh(new THREE.BoxGeometry(2.4,ww[1],3), new THREE.MeshBasicMaterial({colorWrite:false})); const bar2 = new THREE.Mesh(new THREE.BoxGeometry(ww[0],2.4,3), new THREE.MeshBasicMaterial({colorWrite:false}));
@@ -63,11 +74,12 @@ window.renderScene = async (cfg) => {
   const pl = cfg.plinth||[34,20,34]; const plinth = new THREE.Mesh(new THREE.BoxGeometry(...pl), stone); plinth.position.y = pl[1]/2; plinth.castShadow = plinth.receiveShadow = true; scene.add(plinth);
   const top = pl[1];
   const clay = new THREE.MeshStandardMaterial({map:tex(noiseCanvas(512,'#B49479',.14,5)), roughness:.97});
-  const pages = pagesTex();
+  const pages = pagesTex(); PB = PB || paperBump();
   const items = cfg.items; const group = new THREE.Group(); group.position.y = top; scene.add(group);
   if (cfg.kind === 'single'){
     const m = META[items[0]-1]; const b = makeBook(m, await bookTextures(m), pages); b.position.y = m.H/2; b.position.x = -2; b.rotation.y = THREE.MathUtils.degToRad(cfg.yaw ?? 32); group.add(b);
-    const v = vase(cfg.vaseH||16, 4.6, clay); v.position.set(cfg.vasePos?.[0] ?? 12, 0, cfg.vasePos?.[1] ?? -9); group.add(v);
+    b.userData.cs = 1; { const cs = softRect(m.W+1.4, m.D+1.4, 22, .5); cs.position.set(0,-m.H/2+.05,0); b.add(cs); }
+    const v = vase(cfg.vaseH||16, 4.6, clay); v.position.set(cfg.vasePos?.[0] ?? 12, 0, cfg.vasePos?.[1] ?? -9); group.add(v); { const cs = softRect(11,11,24,.5); cs.position.set(v.position.x,.05,v.position.z); group.add(cs); }
   } else {
     let y = 0; const Z0 = 6;
     for (let i=0;i<items.length;i++){
@@ -79,10 +91,15 @@ window.renderScene = async (cfg) => {
       b.rotation.y = 0; y += m.D + .02; 
       b.userData.top = y;
     }
-    const v = vase(cfg.vaseH||15, 4.4, clay); v.position.set(cfg.vasePos?.[0] ?? 17, 0, cfg.vasePos?.[1] ?? -4); group.add(v);
+    { const m0 = META[items[0]-1]; const cs = softRect(m0.H+3, m0.W+3, 26, .55); cs.position.set(cfg.cx||0,.05,6-m0.W/2); group.add(cs); }
+    const v = vase(cfg.vaseH||15, 4.4, clay); v.position.set(cfg.vasePos?.[0] ?? 17, 0, cfg.vasePos?.[1] ?? -4); group.add(v); { const cs = softRect(11,11,24,.5); cs.position.set(v.position.x,.05,v.position.z); group.add(cs); }
   }
   const cam = new THREE.PerspectiveCamera(cfg.fov||26, W/H, 1, 1000); cam.position.set(...(cfg.cam||[-30,40,110])); cam.lookAt(...(cfg.look||[0,28,0])); 
-  renderer.render(scene, cam); return renderer.domElement.toDataURL('image/png');
+  renderer.render(scene, cam);
+  const out = document.createElement('canvas'); out.width = W; out.height = H; const g = out.getContext('2d'); g.drawImage(renderer.domElement,0,0);
+  const id = g.getImageData(0,0,W,H), d = id.data; let sd = 11; const rn = () => (sd = (sd*16807)%2147483647)/2147483647;
+  for (let y=0;y<H;y++) for (let x=0;x<W;x++){ const i=(y*W+x)*4; const dx=(x/W-.5), dy=(y/H-.5); const vg = 1-.22*Math.pow(Math.hypot(dx*1.1,dy*.9)*1.6,2.2); const n=(rn()+rn()+rn()-1.5)*7; d[i]=Math.max(0,Math.min(255,d[i]*vg+n)); d[i+1]=Math.max(0,Math.min(255,d[i+1]*vg+n)); d[i+2]=Math.max(0,Math.min(255,d[i+2]*vg+n)); }
+  g.putImageData(id,0,0); return out.toDataURL('image/png');
 };
 window.ready = true;
 </script></body></html>

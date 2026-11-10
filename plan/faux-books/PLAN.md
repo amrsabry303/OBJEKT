@@ -1,6 +1,6 @@
-# objekt faux books: plan and art direction (draft 13, 10 Nov 2026)
+# objekt faux books: plan and art direction (draft 14, 10 Nov 2026)
 
-Status: proposal for Sabry. Decided so far (10 Nov): title typeface Galak Round; sold as singles and as a set of three; titles to be witty, in the line of "Objekts of Character"; made as a solid block, paper; day 1; a print set of three added (tiger, cow, stripe). Draft 5 (Sabry's review): colour audit, lighter type, logo as the signature. Draft 6: sizes fixed from Sabry's 10 × 25 × 4.5 cm. Draft 7: depth is 4.5 cm on all three (Sabry: 5.5 cm was not logical). Draft 8: width and length reset to real-book proportions (Sabry: the sizes would not look real). Draft 9: spine text in capitals (Sabry); first design flats drawn for all eleven volumes. Draft 10: spine redesigned (larger, reads along a stack, symbol only, fixed logo positions). Draft 11: prints wrap onto the spine (Sabry). Draft 12: tiger redrawn as a realistic pattern from a reference photo (Sabry). Draft 13: first renders of all eleven volumes and three sets. Nothing is costed or sent to anyone.
+Status: proposal for Sabry. Decided so far (10 Nov): title typeface Galak Round; sold as singles and as a set of three; titles to be witty, in the line of "Objekts of Character"; made as a solid block, paper; day 1; a print set of three added (tiger, cow, stripe). Draft 5 (Sabry's review): colour audit, lighter type, logo as the signature. Draft 6: sizes fixed from Sabry's 10 × 25 × 4.5 cm. Draft 7: depth is 4.5 cm on all three (Sabry: 5.5 cm was not logical). Draft 8: width and length reset to real-book proportions (Sabry: the sizes would not look real). Draft 9: spine text in capitals (Sabry); first design flats drawn for all eleven volumes. Draft 10: spine redesigned (larger, reads along a stack, symbol only, fixed logo positions). Draft 11: prints wrap onto the spine (Sabry). Draft 12: tiger redrawn as a realistic pattern from a reference photo (Sabry). Draft 13: first renders of all eleven volumes and three sets. Draft 14: renders v2 with paper texture and soft shadows (Sabry). Nothing is costed or sent to anyone.
 Direction sheet: `faux-books-direction-sheet_diagram_v8.svg` (PNG copy beside it). It is a flat diagram with stand-in lettering, not a render and not a photo.
 
 ## 01 // the idea
@@ -199,8 +199,8 @@ What they are not:
 - Colours are screen values from `brand/COLOURS-FINISHES.md`. Confirm against printed samples.
 - Not tested at actual size on paper. Print one proof of each size before anything else.
 
-## 09 // renders (draft 1, 10 Nov)
-First renders of all eleven volumes and the three sets are in `plan/faux-books/renders/`: `FB-nn_title_3d-mockup_v1.jpg` (1600 × 2000, 4:5), three set images (`FB-set-A`, `FB-set-B`, `FB-set-print`) and `faux-books-renders_contact-sheet_v1.jpg`.
+## 09 // renders (draft 2, 10 Nov)
+Renders of all eleven volumes and the three sets are in `plan/faux-books/renders/`: `FB-nn_title_3d-mockup_v2.jpg` (1600 × 2000, 4:5), three set images (`FB-set-A`, `FB-set-B`, `FB-set-print`) and `faux-books-renders_contact-sheet_v2.jpg`. The v1 files are the superseded first pass.
 
 What they are:
 - 3D mockups built from the design flats, not AI renders and not photos. I used 3D instead of an AI image model because the type, logo and print placement have to stay exact; an image model redraws lettering.
@@ -208,8 +208,15 @@ What they are:
 - Singles stand at a three-quarter angle so the front and the spine show. Sets lie flat, spines out, head to the right, large at the bottom.
 - Cover colours were checked against the brand hex values by sampling pixels: Clay, Objekt Green and Carbon land within a few points. Bone reads slightly warm under the sun. Putty and Bone are close and read as one family.
 
+What v2 adds over v1 (Sabry: more realistic, paper texture, soft shadows):
+- Paper texture: a fine fibre bump on every cover, spine and edge. The raking sun picks it up, so the matte paper reads as paper. Strength is a guess, not matched to a real stock.
+- Soft shadows: the sun shadow is now blurred, and each book and the vase has a soft contact shadow where it meets the plinth.
+- Rounded board edges instead of sharp box corners, so the edges catch light.
+- A little film grain and a slight vignette, as `plan/HOUSE-STYLE.md` asks.
+- Brand colours rechecked by sampling: Clay and Objekt Green are still within a few points of the hex values.
+
 What they are not:
-- Not product photography. Surfaces are clean CG: no paper grain, no board edge wear, no real page block, flat colour. A real sample photo replaces them.
+- Not product photography. Still CG: no board edge wear, no real page block, no printing artefacts. The paper grain is a generic texture, not scanned from the real stock. A real sample photo replaces these.
 - The lettering is the Inter stand-in, not Galak Round.
 - The cow patches and the stripe are still the placeholder prints.
 - Page edges are a plain texture. Whether the block has real pages inside is not decided.
