@@ -5,6 +5,16 @@ One look for every AI render, so no scene experiments per product. Source: websi
 OBJ-003 Oxblood v2 and OBJ-166 v4 stainless, which Sabry saw. Reviewed against these, not against the brand guide:
 the guide has no photography section.
 
+## Editorial look, 10 Nov 2026 (Sabry: "the AI photos look so AI"; references from @soosatelier, mood only, never copy)
+Five references (a walnut shelf with books, a dark turned side table, a leaning oak mirror, two glazed planters with a tree, a black floor lamp). What makes them read as photographs:
+- **Light:** one warm window light from the side; the wall visibly falls off into shade away from the light; soft-edged warm light on surfaces; shadows soft but present. Not evenly lit.
+- **Colour grade:** warm, slightly desaturated, creamy highlights, deep but soft blacks, a faint film cast. Low contrast in the highlights.
+- **Grain:** visible film grain (Portra 400 look), strongest on plain walls.
+- **Surfaces:** limewash or plaster walls with real texture and small marks; concrete, sisal or linen floors; visible wood grain and patina.
+- **Camera:** straight-on, eye level, long lens (85 to 100 mm), deep focus (f/8), product large in the frame, portrait 4:5, wall-floor line visible low in the frame.
+- **Styling:** few, chosen props (books, one bowl, one plant), or none; an object may be cut by the frame edge.
+- Prompt words: "editorial interior photograph, shot on medium-format film camera, 90 mm lens at f/8, Kodak Portra 400, visible fine film grain, warm late-afternoon window light from the left, wall falling off into soft shade on the right, limewash plaster wall with subtle texture, warm muted colour grade, straight-on eye-level view". After generation, the camera-finish pass (grain, tone curve, slight vignette, softening) can be added locally.
+
 ## Rule, 10 Nov 2026 (Sabry): the approved drawing decides the shape, never the reference photo
 When a product has an approved drawing, the render must match the drawing, not the reference photo it was traced from (OBJ-038: the reference flower and proportions differ from REV 4; three renders made from the photo were superseded).
 Method that works (OBJ-038 v4 and family v2c, 10 Nov):
