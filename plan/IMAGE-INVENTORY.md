@@ -13,7 +13,7 @@ Source: the production book (45 product slides), Drive and the Magnific history.
 | OBJ-167 Pedestal, black faceted twist | 3 | Objekt Green, Bone, Oxblood (sunlight and vase, v1) | all three |
 | OBJ-169 Bowl, folded steel pyramid on cross stand | 4 | Mirror stainless. v1 pair (from my drawing geometry, stand wrong, superseded) + v3 product shot and v2 context shot (grapes on limestone console) made from the reference photo. A fifth file copied the reference photo scene and is not filed. | v3 product, v2 context |
 | OBJ-002 Coffee table, four-part round, folded metal | 2 | Oxblood matte (proposed colour) sunlight product shot from the reference photo, 8 Nov; v1c recoloured to brand #5A1F25 | Oxblood v1c (pending Sabry) |
-| OBJ-038 Side table, cross plates with organic cut-outs | 5 | Carbon matte sunlight v1/v1c (8 Nov, superseded: looked AI). New house style (10 Nov): Carbon studio-daylight v2 (three-quarter), v3 (reference angle, square-on), family shot Oxblood + Carbon + Brushed stainless v1 | v3 and family v1 (Sabry approved the look 10 Nov) |
+| OBJ-038 Side table, cross plates with organic cut-outs | 7 | Carbon sunlight v1/v1c (8 Nov). From the reference photo, superseded 10 Nov (did not follow REV 4): Carbon studio-daylight v2, v3, family v1. **From REV 4 geometry (10 Nov):** Carbon v4; family Oxblood + Carbon + Brushed stainless v2c (Oxblood recoloured in mask) | Carbon v4, family v2c (pending Sabry) |
 | OBJ-152 Side table, two-form lacquer pair | 3 | Ink gloss (proposed colour) sunlight pair shot from the reference photo, 8 Nov; v1 superseded (shape), v2c hue-corrected to #1E2A44 | Ink v2c (pending Sabry) |
 
 ## Products with no render yet (36)

@@ -5,6 +5,14 @@ One look for every AI render, so no scene experiments per product. Source: websi
 OBJ-003 Oxblood v2 and OBJ-166 v4 stainless, which Sabry saw. Reviewed against these, not against the brand guide:
 the guide has no photography section.
 
+## Rule, 10 Nov 2026 (Sabry): the approved drawing decides the shape, never the reference photo
+When a product has an approved drawing, the render must match the drawing, not the reference photo it was traced from (OBJ-038: the reference flower and proportions differ from REV 4; three renders made from the photo were superseded).
+Method that works (OBJ-038 v4 and family v2c, 10 Nov):
+1. Take the outlines from the drawing's SVG (real mm), build the piece in 3D (three.js scene in `venture/src/`, e.g. `OBJ-038_rev4_geometry-scene.html`), plain grey, soft light, camera at the angle you want. Check it against the drawing views.
+2. Upload the grey render and run `ideogram-4-5` with `preciseEdit` (80 credits): "Keep the <object> exactly as it is: same shape, outline, cut-outs, seams, corners, feet, proportions, position and camera angle. Do not change or add any part. Turn this into a real professional interior product photograph. <finish with hex>. <wall, floor>. <soft daylight, no hard sun>. No props. No text."
+3. Check colour against the hex; if a paint drifts (Oxblood came out berry), recolour inside a mask rendered from the same 3D scene.
+4. Finishes come from the drawing's colourways. If Sabry asks for another finish (brushed instead of the drawing's Mirror), render it and flag the difference.
+
 ## Revision, 10 Nov 2026 (Sabry): look like a real photograph, not AI. This overrides the 2 Nov revision below.
 Sabry: most renders look AI. He sent five references that look real (mood only, never copy them): a book on a shag rug with a hand in frame; a travertine, brushed-steel and leather stool on a seamless grey sweep; three cut-out side tables in red, black and white in a room with a plaster arch (this is the OBJ-038 reference); a pale green three-leaf table on a grey sweep; ash-wood vase, candleholder and tray set with dried flowers and lit candles on white. What they share:
 - **Light: soft, large, directional daylight**, like a big window or a softbox from one side. Gentle gradient on the wall, soft-edged contact shadows under the object. **No hard sun patches, no light beams, no long dramatic cast shadows** (these read as AI; they replace the 2 Nov "low window sun" rule).
