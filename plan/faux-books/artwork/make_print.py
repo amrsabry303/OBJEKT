@@ -142,6 +142,8 @@ def front_layout(kind, lines, ink_, n=0):
 def build(vol):
     n, lines, cover, inkc, kind, slines, prt = vol
     bg, fg = C[cover], C[inkc]; o = []
+    band_h = (H-25)/11      # stripe band height (Vol. 11)
+    TB = min(range(0,10), key=lambda t: (abs((t+1.5)*band_h - H/2), t))   # first band of the title block: the block of three bands sits as near the middle as the grid allows
     o.append(f'<clipPath id="flat{n}"><rect x="{-B}" y="{-B}" width="{Wf+2*B}" height="{H+2*B}"/></clipPath><g clip-path="url(#flat{n})">')
     o.append(f'<rect x="{-B}" y="{-B}" width="{Wf+2*B}" height="{H+2*B}" fill="{bg}"/>')
     items = front_layout(kind, lines, inkc, n)
@@ -157,7 +159,8 @@ def build(vol):
         if n in NUMS:
             # volume number at the head of the spine: same type size, tracked wide, 14 mm from the head, same baseline as a one-line title
             nx = cxs + SP*CAP/2
-            g.append(f'<text transform="translate({nx:.2f} {BOT:.2f}) rotate(-90)" {FT} font-size="{SP:.2f}" font-weight="500" letter-spacing="{SP*.18:.2f}" text-anchor="end" fill="{fill}">{n:02d}</text>')
+            ny0 = BOT if n != 11 else band_h + (band_h - tw('11',SP,.18))/2     # Vol. 11: centred in the second band (a light one) so it never straddles a band edge
+            g.append(f'<text transform="translate({nx:.2f} {ny0:.2f}) rotate(-90)" {FT} font-size="{SP:.2f}" font-weight="500" letter-spacing="{SP*.18:.2f}" text-anchor="end" fill="{fill}">{n:02d}</text>')
         s_ = '\n'.join(g)
         return f'<g clip-path="url(#{clip})">{s_}</g>' if clip else s_
     if prt == 'tiger':
@@ -181,8 +184,8 @@ def build(vol):
         extra = (avail - iwid('BETWEEN')*s_)/(len('BETWEEN')-1)
         ls = s_*TRK + extra
         for j,l in enumerate(lines):
-            col = C['Bone'] if j % 2 == 0 else C['Carbon']
-            o.append(f'<text x="{fx+m-ink(l)[0]*s_:.2f}" y="{j*bh + (bh+cap)/2:.2f}" {FT} font-size="{s_:.2f}" font-weight="500" letter-spacing="{ls:.2f}" fill="{col}">{l}</text>')
+            col = C['Bone'] if (TB+j) % 2 == 0 else C['Carbon']      # light on dark bands, dark on light bands
+            o.append(f'<text x="{fx+m-ink(l)[0]*s_:.2f}" y="{(TB+j)*bh + (bh+cap)/2:.2f}" {FT} font-size="{s_:.2f}" font-weight="500" letter-spacing="{ls:.2f}" fill="{col}">{l}</text>')
         # back logo and spine (symbol and title): Bone where they cross a dark band, Carbon where they cross a light one
         o.append(lettering(C['Bone'], f'sd{n}', front=False)); o.append(lettering(C['Carbon'], f'sl{n}', front=False))
     else:
