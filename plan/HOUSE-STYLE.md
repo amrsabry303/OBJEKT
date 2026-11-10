@@ -1,4 +1,4 @@
-# objekt product images: house style (revised 10 Nov 2026, draft for Sabry)
+# objekt product images: house style (revised 11 Nov 2026 with Sabry's notes)
 
 How we make product images in Magnific until real photographs exist. One current rule set; older
 rules are summarised under "History" at the end. Every image is an AI render: name files `ai-render`,
@@ -9,12 +9,12 @@ never call them photos in public text, and replace them with real photos when pi
 | # | Image | Look | When |
 |---|---|---|---|
 | 1 | One studio shot per colour or finish (the gallery) | Clean studio (section 3) | Always |
-| 2 | One editorial mood shot | Editorial (section 4), one colour | Always |
+| 2 | One or more editorial shots | Editorial (section 4), one colour each | Always |
 | 3 | One in-use or in-place shot | Real setting (section 5) | Furniture, planters, outdoor and large pieces; optional for small objects |
 | 4 | Family shot (two or three colours together) | Clean studio | When the product sells in several colours |
 
 All colour shots of a product come from **one** generated image, recoloured, so shape, light and angle match.
-Portrait 4:5 for gallery shots; 3:2 for in-use shots that show the room.
+Portrait 4:5 for gallery shots; 2:3 or 4:5 for editorial; 3:2 for in-use shots that show a wide room. Every image gets the camera finish (section 7).
 
 ## 2. Shape first: what decides the geometry
 
@@ -30,18 +30,23 @@ The reference photo shows mood and detail; it never overrides the drawing or the
 ## 3. Clean studio look (gallery shots)
 
 - Light: soft, large, directional daylight from one side (a big window or softbox). Gentle gradient on the backdrop, soft contact shadow under every foot. No sun patches, no light beams, no long dramatic shadows.
-- Backdrop: seamless warm off-white or pale warm grey sweep, matte, no visible horizon, no props.
-- Camera: eye level or slightly above, 70 to 90 mm look, straight verticals, whole object in frame, slightly off-centre with headroom.
+- Backdrop: seamless warm greige or warm off-white sweep, matte, no visible horizon, no props. Never pure white or cold grey: the references never go above about 235 in the highlights and are always warm.
+- Camera: choose the angle that shows the object best (low for a bench or table, close and high for a tray, straight-on for a wall piece). 70 to 90 mm look, straight verticals, whole object in frame. **All colour variants of one product use the same angle and framing** (they come from one image).
 - Materials read true: powder coat matte with fine texture; brushed steel with fine lines along the stated direction; Duco gloss with crisp reflections; mirror (see rule below).
 - **Mirror finish:** a mirror on a plain backdrop reads as white paint. Ask for "large black studio flags and softboxes reflected in the planes, some faces near-black, some bright, crisp reflection edges". (OBJ-172 plain shot v1 failed, v2 fixed; Sabry still preferred the studio shot with a room in the reflections.)
 
-## 4. Editorial mood shot
+## 4. Editorial shot (mood)
 
-- One warm window light from the left; the wall falls off into soft shade on the right; shadows soft but present.
-- Limewash or plaster wall with real texture; sisal, linen, honed limestone or polished concrete underfoot.
-- Medium-format film look: 90 mm, f/8, Kodak Portra 400 colour, fine grain, warm slightly desaturated grade.
-- One or two chosen props that show use and are smaller than the product (a stoneware vase on the shorter plinth, a spider plant in the planter, a book). Neutral colours. Say "smaller than the top" or the prop comes out too big.
-- After generation, run `venture/src/image_film_finish.py` (grain, tone curve, slight vignette) on mood shots only.
+Not one fixed scene. Choose the environment, light and composition that suit the piece: a dark sofa and a
+pale rug with a slice of low sun, a quiet corner with a pedestal and a vase, a doorway looking into a
+furnished living room, a calm bedroom, a garden or terrace. What keeps them objekt (from Sabry's references, 11 Nov):
+- **Restrained palette:** warm neutrals (greige, sand, cream, taupe, brown), one darker anchor (charcoal sofa, dark wood), no loud colours except the product's own.
+- **Real interiors are allowed:** a fully furnished room can still look minimal: few objects, each one chosen, plenty of quiet wall. Props are natural, not counted: books, a stone, a ceramic vase, a throw, a lamp. They support the product and never compete with it.
+- **Natural light with direction:** soft window light, or a single soft-edged slice of sun across the floor (reference 1). Shadows warm, never blue.
+- **The product is the clear subject:** largest object in focus, or framed through a doorway; it may be cut by the frame edge when that helps the composition.
+- **Composition varies:** close crop on the product, product in the corner of a room, view through a door. Portrait 2:3 or 4:5.
+- **Camera:** the best angle for the piece (not fixed at eye level); natural lens, no wide-angle distortion.
+- Always finished with the camera finish (section 7).
 
 ## 5. In-use or in-place shot
 
@@ -62,33 +67,53 @@ The reference photo shows mood and detail; it never overrides the drawing or the
 
 **Editing a finished image** (`preciseEdit` on the chosen output): change background, add a prop, fix grounding, fix the mirror look. The product stays as it is.
 
-## 7. Checks before an image is shown to Sabry
+## 7. Camera finish: grain and tone (every image)
+
+Measured on Sabry's five references (11 Nov). This is what makes them read as photographs, and it is what our
+renders lack (our studio shots measured: almost no grain, near-white highlights, neutral or blue shadows):
+
+| | References | Our raw renders |
+|---|---|---|
+| Grain on plain walls (high-pass, 0-255) | 1.9 to 3.4 | 0.4 to 1.1 |
+| Grain type | monochrome, clumped 2-3 px at 2000 px tall, strongest in the mid-tones | none or fine colour noise |
+| Brightest tones (99th pct) | 199 to 238, cream | 234, neutral white |
+| Darkest tones (1st pct) | 11 to 28, soft | 15 to 38 |
+| Shadows | warm brown (R above B by 9 to 31) | neutral or blue |
+| Saturation | 0.14 to 0.27, warm | 0.05 to 0.15 |
+
+How to apply:
+1. In the prompt: warm greige surroundings, warm light, deep but soft shadows; no pure white backdrop.
+2. After generation, always run `venture/src/image_film_finish.py <in> <out> studio` (gallery) or `editorial` (mood and in-use). It rolls the whites off to cream, lifts the blacks slightly, warms shadows and highlights, softens a touch and adds monochrome clumped grain at the reference strength. It does not change saturation, so product colours stay on their hex.
+3. Check with `python image_film_finish.py --measure <file>`: every value should read ok. If blacks or saturation are out, the generation is too flat or too cold: regenerate with a darker anchor or warmer setting rather than forcing it in the finish.
+
+## 8. Checks before an image is shown to Sabry
 
 1. Shape against the drawing or model: outline, part counts, feet, cut-outs, seams. Overlay or side-by-side if in doubt.
 2. Proportions: height-to-width ratio and heights of a set (OBJ-166: 1000 and 850 must read as different; one mood result shortened the 850 and was rejected).
-3. Colour against the hex, sampled from the image. Drift is common: Oxblood went berry and was fixed locally (hue shift 315-12 deg to 354 deg, saturation x0.8, value x0.86-0.88, inside a mask from the 3D scene).
+3. Colour against the hex, sampled from the image (after the finish). Drift is common: Oxblood went berry and was fixed locally (hue shift 315-12 deg to 354 deg, saturation x0.8, value x0.86-0.88, inside a mask from the 3D scene).
 4. Contact shadow under every foot; base not buried by a rug or grass more than a few mm.
 5. No holes, artefacts or smudges (OBJ-172 garden B had a white blob; check the floor and corners).
 6. Scale in context shots.
-7. Then save, upload, log in `plan/IMAGE-INVENTORY.md` as "Pending Sabry".
+7. Camera finish applied and `--measure` reads ok.
+8. Then save, upload, log in `plan/IMAGE-INVENTORY.md` as "Pending Sabry".
 
-## 8. Colours and finishes
+## 9. Colours and finishes
 
 Only from `brand/COLOURS-FINISHES.md`: Bone #E9E4D8, Putty #B9B2A5, Carbon #222222, Ink #1E2A44, Oxblood #5A1F25, Clay #A8553A, Chocolate #4A2A1B, Objekt Green #37613F. Finishes: powder coat or Duco, matte or gloss; exposed metal brushed or mirror. Finishes come from the drawing's colourways; if Sabry asks for another, render it and flag the difference.
 
-## 9. Files, approval and cost
+## 10. Files, approval and cost
 
 - Local: `plan/images/OBJ-nnn/OBJ-nnn_ai-render_<colour>_<scene>_<source>_vN.jpg` (source: `rev5-geometry`, `no-drawing`, `model`). Geometry renders in `geometry/`. Keep superseded files with `superseded_`, rejected ones with `rejected_`.
 - Drive: the product's folder in the images folder (create `OBJ-nnn` if missing). Uploads from here are limited to about 3 MB per file.
 - Approval: Sabry approves in chat; mark the inventory line "Approved by Sabry <date>". Only approved images go to the store, and only with his yes.
 - Cost per product, typical: geometry studio 160 (2 tries) + recolours 80 each + mood 160 + in-use 130 to 160. Plan about 600 to 800 credits per product with three colours. Check the balance before a batch.
 
-## 10. Do not
+## 11. Do not
 
 - Generate shape from the reference photo when a drawing or model exists.
 - Pass two image references to `preciseEdit`.
-- Use hard sun patches, light beams or dramatic shadows in studio shots.
-- Put brand-coloured props in a shot, or more than two props.
+- Use hard sun patches, light beams or dramatic shadows in studio (gallery) shots. A soft slice of sun is fine in editorial shots.
+- Let props compete with the product (loud colours, bigger or busier than the piece).
 - Draw foot or fixing markers on geometry models (they come out as dark dots); model the real feet instead.
 - Write prices, sizes or claims on images. No text in images.
 - Mention AI or renders in public copy (Sabry, 10 Nov).
@@ -97,4 +122,5 @@ Only from `brand/COLOURS-FINISHES.md`: Bone #E9E4D8, Putty #B9B2A5, Carbon #2222
 
 - 2 Nov: one look for all: pale sand plaster wall and floor (#E1D9CF), no props, nano banana from the reference photo. Then the same day: hard low window sun, sunlit patches and props in use. Replaced on 10 Nov because both read as AI.
 - 10 Nov: Sabry: "the AI photos look so AI"; references from @soosatelier (editorial) and five product photos (studio). Decision: clean studio for colour shots, one editorial mood shot. Rule: the approved drawing decides the shape (OBJ-038 renders from the photo did not match REV 4).
+- 11 Nov (Sabry): no fixed eye-level camera (best angle per object, same angle across colours); no prop limit (restrained but natural, furnished rooms allowed); editorial not locked to limewash and film grain (varied settings sharing the objekt identity). Grain and tone measured on his five references and built into the camera finish for every image.
 - 10 Nov: methods proven on OBJ-038, OBJ-002 (REV 5), OBJ-099, OBJ-166 (REV 0), OBJ-173 (no drawing, cube), OBJ-172 (no drawing, complex; villa context from Sabry's photo).
