@@ -280,20 +280,24 @@ These answers set what the site promises customers about made-to-order pieces, s
 
 | Question | Your answer |
 | --- | --- |
-| Deposit amount for a made-to-order piece (percentage of the price, or fixed) |  |
+| Deposit amount for a made-to-order piece (percentage of the price, or fixed) | 50%, collected first, by Paymob or InstaPay. Non-refundable (Sabry, 10 Nov). |
 | How long is an unpaid order held before it lapses (hours) |  |
 | InstaPay: the handle, number or account name customers pay to |  |
 | What must the customer write as the payment reference (suggested: the order number) |  |
 | Where does the customer send proof of payment (upload form on the site, WhatsApp, email) |  |
 | Who checks the payment, and how soon do customers hear back |  |
 | When production starts (suggested: once the deposit is confirmed) |  |
-| When is the balance due, and how is it paid |  |
-| Can a made-to-order order be changed or cancelled? Until when, and what happens to the deposit |  |
+| When is the balance due, and how is it paid | On delivery, cash or InstaPay (Sabry, 10 Nov). |
+| Can a made-to-order order be changed or cancelled? Until when, and what happens to the deposit | Deposit is non-refundable (Sabry, 10 Nov). Change window: open. |
 | Are custom sizes or finishes possible ("Configure your piece")? How do customers ask |  |
 | The purchasing terms shown on a made-to-order product page (2 to 4 sentences) |  |
 | Delivery fee when a customer chooses to ship separately: second shipment free, a flat fee in EGP, or not offered |  |
 | Which option is selected by default in the bag: ship together or separately |  |
 | Payment by card or wallet later: do you want to look at an Egyptian payment provider now, or launch with InstaPay only |  |
+
+**Payment and delivery times (Sabry, 10 Nov)**
+- Ready pieces: paid in full at checkout; delivered in 3–5 business days.
+- Made to order: two lead-time types, 7–14 days or 30–45 days (which products are which: open). 50% deposit first (Paymob or InstaPay, non-refundable), balance on delivery in cash or InstaPay.
 
 ## 6. Delivery, returns and care
 
@@ -301,12 +305,12 @@ The delivery estimates on product pages come from each product's own data (secti
 
 | Question | Your answer |
 | --- | --- |
-| Areas you deliver to (cities, governorates, outside Egypt?) |  |
-| Delivery fee by area (EGP) or free above an amount |  |
+| Areas you deliver to (cities, governorates, outside Egypt?) | Launch: Egypt only. Worldwide later (zones parked) (Sabry, 10 Nov). |
+| Delivery fee by area (EGP) or free above an amount | Egypt flat 118 EGP, "Standard delivery". No free-shipping threshold at launch (Sabry, 10 Nov). |
 | Who delivers, and do you offer assembly or placement in the room |  |
 | Packaging |  |
-| Returns for ready-to-deliver pieces: window in days, condition, who pays |  |
-| Returns for made-to-order pieces |  |
+| Returns for ready-to-deliver pieces: window in days, condition, who pays | 48 hours, unused, customer pays return shipping (Sabry, 10 Nov). Legal check flagged. |
+| Returns for made-to-order pieces | Damage or defect only (Sabry, 10 Nov). |
 | What to do if a piece arrives damaged (deadline, photos, contact) |  |
 | After-sales contact |  |
 | "Delivery & Returns" text shown on every product page (80 to 150 words) |  |
