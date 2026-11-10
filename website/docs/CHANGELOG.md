@@ -207,3 +207,9 @@
 - Theme file on the **unpublished** theme 189754769632 only (`themeFilesUpsert`): `sections/footer-group.json` now has three link columns, Shop (`footer-shop`), Support (`footer`), Policies (`footer-policies`). Repo file updated to match.
 - Verified by read-back (3 menus, theme file). Not seen in a browser. Delivery & Returns and the terms, refund and shipping policies join the footer once written.
 - Facts from Sabry (10 Nov), not yet on the site: shipping is worldwide; every made-to-order piece takes a 50% deposit, collected first; made-to-order lead time 30–45 days.
+
+## 2026-11-10 (shipping MVP, Egypt only)
+- Sabry (10 Nov): start with an MVP; international zones, currencies, markets, size classes and customs parked; free shipping over 70,000 dropped for now ("forget that"); keep the Egypt rate at 118 EGP and name it "Standard delivery".
+- Store confirmed with `get-shop-info`: OBJEKT, hs1a1c-ut.myshopify.com, EGP.
+- `deliveryProfileUpdate` on "General profile" (default, 57 variants), zone Domestic (EG): rate "قياسي" renamed **Standard delivery**. Price unchanged, 118.00 EGP, no conditions. No other profile, zone, market or discount created.
+- Verified by read-back. Checkout rate not tested (no payment set up yet).
