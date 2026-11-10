@@ -1,6 +1,6 @@
-# objekt faux books: plan and art direction (draft 11, 10 Nov 2026)
+# objekt faux books: plan and art direction (draft 12, 10 Nov 2026)
 
-Status: proposal for Sabry. Decided so far (10 Nov): title typeface Galak Round; sold as singles and as a set of three; titles to be witty, in the line of "Objekts of Character"; made as a solid block, paper; day 1; a print set of three added (tiger, cow, stripe). Draft 5 (Sabry's review): colour audit, lighter type, logo as the signature. Draft 6: sizes fixed from Sabry's 10 × 25 × 4.5 cm. Draft 7: depth is 4.5 cm on all three (Sabry: 5.5 cm was not logical). Draft 8: width and length reset to real-book proportions (Sabry: the sizes would not look real). Draft 9: spine text in capitals (Sabry); first design flats drawn for all eleven volumes. Draft 10: spine redesigned (larger, reads along a stack, symbol only, fixed logo positions). Draft 11: prints wrap onto the spine (Sabry). Nothing is costed or sent to anyone.
+Status: proposal for Sabry. Decided so far (10 Nov): title typeface Galak Round; sold as singles and as a set of three; titles to be witty, in the line of "Objekts of Character"; made as a solid block, paper; day 1; a print set of three added (tiger, cow, stripe). Draft 5 (Sabry's review): colour audit, lighter type, logo as the signature. Draft 6: sizes fixed from Sabry's 10 × 25 × 4.5 cm. Draft 7: depth is 4.5 cm on all three (Sabry: 5.5 cm was not logical). Draft 8: width and length reset to real-book proportions (Sabry: the sizes would not look real). Draft 9: spine text in capitals (Sabry); first design flats drawn for all eleven volumes. Draft 10: spine redesigned (larger, reads along a stack, symbol only, fixed logo positions). Draft 11: prints wrap onto the spine (Sabry). Draft 12: tiger redrawn as a realistic pattern from a reference photo (Sabry). Nothing is costed or sent to anyone.
 Direction sheet: `faux-books-direction-sheet_diagram_v8.svg` (PNG copy beside it). It is a flat diagram with stand-in lettering, not a render and not a photo.
 
 ## 01 // the idea
@@ -187,7 +187,7 @@ What is in them:
 - Front: title at top left, all caps, one size per title, longest line 70% of the width.
 - Back and spine: per section 07.
 - Prints (09, 10, 11) wrap round the spine as well as the front and back, so the print shows on a stack. The spine carries the icon only, never the wordmark.
-  - Tiger: stripes continue across the spine, narrower there (about 14 mm pitch), and run behind the title. Bone on Carbon and Bone on Clay both read. The area round the spine icon is kept clear.
+  - Tiger (redrawn, draft 12): built the way a real tiger's coat is marked, from the reference photo Sabry sent (structure only, nothing traced: that photo is another brand's product, so it is a mood reference, not a source). The V line of the pattern runs down the spine, and the stripes sweep out over the back and front in V shapes pointing down. Each stripe is long and wavy, thick near the spine and tapering to a point, with ragged edges, and short broken dashes sit between them. Stripes stop short of the front title, the back logo and the spine icon, so those stay clear. The spine title sits over the stripes: Bone on Carbon and on Clay both read, but test it on a proof. Carbon on Clay as before; Chocolate on Clay is a softer option, closer to the dark brown in the photo (2.5 : 1 against 3.0 : 1).
   - Cow: patches continue across the fold. The back logo, the front title and the spine title and icon each have a clear zone, and two or three patches sit in the free head end of the spine.
   - Stripe: the bands run into a solid Objekt Green spine with Bone lettering, so the stripe wraps without crossing the title.
 - Dashed lines show the folds. They are not part of the artwork.
@@ -195,6 +195,6 @@ What is in them:
 What they are not:
 - Not print-ready. No bleed, no wrap allowance, no board turn-in: the maker's template is not known.
 - Lettering is Inter. Galak Round is not licensed, and the real face is rounder and wider, so every line breaks and sizes must be rechecked once the font file is supplied (kept outside git). A wider face may force the spine type smaller; the longest line is only a few mm from the limit.
-- The tiger, cow and stripe drawings are made in code and are placeholders. The tiger stripes cluster at the top and bottom edges and leave the middle empty, which needs a designer's eye.
+- The tiger, cow and stripe drawings are made in code and are placeholders. The tiger is now close to a real coat pattern, but a designer should still tune it by eye. The cow patches are plain blobs and need the same attention.
 - Colours are screen values from `brand/COLOURS-FINISHES.md`. Confirm against printed samples.
 - Not tested at actual size on paper. Print one proof of each size before anything else.

@@ -42,6 +42,76 @@ VOLS = [
 ]
 def slug(lines): return '-'.join(lines).lower().replace(' ','-')
 
+def smooth_noise(r, n, k=5):
+    v = [r.uniform(-1,1) for _ in range(n+2*k+2)]
+    out = [sum(v[i:i+2*k+1])/(2*k+1) for i in range(n+1)]
+    m = max(1e-6, max(abs(x) for x in out))
+    return [x/m for x in out]
+
+def tiger_shapes(r, Wf, H, ax, p, excl):
+    """Stripes sweep out from the spine line (ax) in V shapes: thick at the middle, tapering to the tips,
+    ragged edges, wavy, with short broken dashes between them. excl = rectangles to keep clear."""
+    def blocked(x, y):
+        for (rx, ry, rw, rh, pad) in excl:
+            if rx-pad <= x <= rx+rw+pad and ry-pad <= y <= ry+rh+pad: return True
+        return False
+    def arm(y0, sign, tan, lmax, wob):
+        pts = []; u = 0.0
+        a1, f1, p1, a2, f2, p2 = wob
+        while u <= lmax:
+            x = ax + sign*u
+            if x < -4 or x > Wf+4: break
+            y = y0 - tan*u*(1 - .16*u/max(lmax,1)) + a1*math.sin(u/f1+p1) + a2*math.sin(u/f2+p2)
+            if y < -12 or y > H+12: break
+            if u > 3 and blocked(x, y): break
+            pts.append((x, y)); u += 2.0
+        return pts
+    def outline(cl, ws, nz):
+        L = len(cl); left = []; right = []
+        for i,(x,y) in enumerate(cl):
+            a = cl[max(i-1,0)]; b = cl[min(i+1,L-1)]
+            dx, dy = b[0]-a[0], b[1]-a[1]; d = math.hypot(dx,dy) or 1
+            nx, ny = -dy/d, dx/d
+            wl = ws[i]/2*(1 + .30*nz[(i*2)%len(nz)]); wr = ws[i]/2*(1 + .30*nz[(i*2+1)%len(nz)])
+            left.append((x+nx*wl, y+ny*wl)); right.append((x-nx*wr, y-ny*wr))
+        poly = left + right[::-1]
+        return 'M' + ' L'.join(f'{x:.1f} {y:.1f}' for x,y in poly) + 'Z'
+    out = []
+    y0 = -.18*H
+    while y0 < 1.3*H:
+        wmax = p*r.uniform(.3,.6)
+        tl, tr = [math.tan(math.radians(r.uniform(17,33))) for _ in (0,1)]
+        wob = lambda: (r.uniform(1,3.2), r.uniform(10,18), r.uniform(0,6.28), r.uniform(.4,1.3), r.uniform(3,6), r.uniform(0,6.28))
+        wl, wr = wob(), wob()
+        La = arm(y0, -1, tl, Wf*r.uniform(.45,1.1), wl); Ra = arm(y0, 1, tr, Wf*r.uniform(.45,1.1), wr)
+        if len(La) + len(Ra) > 14:
+            cl = La[::-1] + Ra[1:]; ws = []
+            na, nb = len(La), len(Ra)
+            for i in range(len(cl)):
+                if i < na: u = (na-1-i)/max(na-1,1)
+                else: u = (i-na+1)/max(nb-1,1)
+                ws.append(wmax*max(0.0, 1-min(u,1.0)**1.4)**.85)
+            nz = smooth_noise(r, len(cl)*2+2, 2)
+            out.append(outline(cl, ws, nz))
+        y0 += p*r.uniform(.75,1.3)
+    # broken dashes between the main stripes
+    for _ in range(int(Wf*H/ (p*p) * .09)):
+        cx = r.uniform(0, Wf); cy = r.uniform(0, H)
+        if blocked(cx, cy): continue
+        sign = 1 if cx > ax else -1
+        ang = math.radians(r.uniform(14,34)); Ld = r.uniform(.8,2.8)*p
+        cl = []; u = 0
+        a1, f1, p1 = r.uniform(.5,1.8), r.uniform(8,14), r.uniform(0,6.28)
+        while u <= Ld:
+            x = cx + sign*u*math.cos(ang); y = cy - u*math.sin(ang) + a1*math.sin(u/f1+p1)
+            if blocked(x, y): break
+            cl.append((x, y)); u += 1.6
+        if len(cl) > 6:
+            wm = p*r.uniform(.12,.28)
+            ws = [wm*max(0.0, math.sin(math.pi*i/(len(cl)-1)))**.8 for i in range(len(cl))]
+            out.append(outline(cl, ws, smooth_noise(r, len(cl)*2+2, 2)))
+    return out
+
 def build(vol):
     n, lines, cover, ink, size, prt = vol
     W, H = SZ[size]
@@ -76,28 +146,9 @@ def build(vol):
         r = random.Random(n*11+1)
         o.append(f'<clipPath id="w{n}"><rect x="0" y="0" width="{Wf}" height="{H}"/></clipPath><g clip-path="url(#w{n})">')
         if prt == 'tiger':
-            pitch = W*.115; k = int(Wf/pitch)+1
-            for i in range(k):
-                for side in (0, 1):
-                    x = (i + .5 + (.5 if side else 0) + r.uniform(-.12,.12))*pitch
-                    th = pitch*r.uniform(.28,.42); ln = H*r.uniform(.2,.42); sag = r.uniform(-.5,.5)*pitch
-                    on_spine = (sx - th) <= x <= (sx + D + th)
-                    if on_spine: continue
-                    y0, yl = (0, ln) if side == 0 else (H, H-ln)
-                    if not on_spine and (hits(x-th/2-abs(sag), min(y0,yl), th+2*abs(sag), abs(ln), title_rect, 6) or hits(x-th/2-abs(sag), min(y0,yl), th+2*abs(sag), abs(ln), logo_rect, 6)): continue
-                    ym = (y0+yl)/2
-                    o.append(f'<path fill="{C["Carbon"]}" d="M{x-th/2:.1f} {y0:.1f} Q{x-th/2+sag*.4:.1f} {ym:.1f} {x+sag:.1f} {yl:.1f} Q{x+th/2+sag*.6:.1f} {ym:.1f} {x+th/2:.1f} {y0:.1f}Z"/>')
-            # narrower stripes on the spine so the print visibly wraps round it
-            sp_pitch = D/3.2
-            for i in range(4):
-                for side in (0, 1):
-                    x = sx + (i + .5 + (.5 if side else 0) + r.uniform(-.1,.1))*sp_pitch
-                    if x > sx + D - 2: continue
-                    th = sp_pitch*r.uniform(.3,.45); ln = H*r.uniform(.18,.4); sag = r.uniform(-.4,.4)*sp_pitch
-                    y0, yl = (0, ln) if side == 0 else (H, H-ln)
-                    if side == 1 and hits(x-th/2-abs(sag), H-ln, th+2*abs(sag), ln, (cxs-SYM_H/2-2, H-BOT-SYM_W-2, SYM_H+4, SYM_W+4), 3): continue
-                    ym = (y0+yl)/2
-                    o.append(f'<path fill="{C["Carbon"]}" d="M{x-th/2:.1f} {y0:.1f} Q{x-th/2+sag*.4:.1f} {ym:.1f} {x+sag:.1f} {yl:.1f} Q{x+th/2+sag*.6:.1f} {ym:.1f} {x+th/2:.1f} {y0:.1f}Z"/>')
+            excl = [(*title_rect, 6), (*logo_rect, 6), (cxs-SYM_H/2-2, H-BOT-SYM_W-2, SYM_H+4, SYM_W+4, 4)]
+            for d in tiger_shapes(r, Wf, H, cxs, H*.062, excl):
+                o.append(f'<path fill="{C["Carbon"]}" d="{d}"/>')
         else:
             placed = []; tries = 0
             while len(placed) < 9 and tries < 800:
