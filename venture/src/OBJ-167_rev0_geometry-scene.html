@@ -1,0 +1,26 @@
+<!doctype html><html><body style="margin:0"><script src="node_modules/three/build/three.min.js"></script>
+<script>
+// OBJ-167 REV 0 (approved 1 Nov): square antiprism. Base square 300 at floor, top square 300 turned 45 deg at 1000, 8 flat triangles.
+const P=new URLSearchParams(location.search); const W=1280,H=1600;
+const r=new THREE.WebGLRenderer({antialias:true,preserveDrawingBuffer:true}); r.setSize(W,H); r.shadowMap.enabled=true; r.shadowMap.type=THREE.VSMShadowMap; r.outputColorSpace=THREE.SRGBColorSpace; document.body.appendChild(r.domElement);
+const sc=new THREE.Scene(); sc.background=new THREE.Color(0xd6cfc5);
+const s=150, t=150*Math.SQRT2, Ht=1000;
+const B=[[ s,0, s],[-s,0, s],[-s,0,-s],[ s,0,-s]];
+const T=[[ t,Ht,0],[0,Ht, t],[-t,Ht,0],[0,Ht,-t]];
+const tris=[];
+for(let i=0;i<4;i++){ const b0=B[i],b1=B[(i+1)%4]; // base edge b0-b1 rises to the top corner between them
+  const tc=T[(i+1)%4]; tris.push([b0,b1,tc]); }
+for(let i=0;i<4;i++){ const t0=T[i],t1=T[(i+1)%4]; const bc=B[i]; tris.push([t1,t0,bc]); }
+tris.push([B[0],B[2],B[1]],[B[0],B[3],B[2]],[T[0],T[1],T[2]],[T[0],T[2],T[3]]);
+const pos=[]; tris.forEach(tr=>tr.forEach(v=>pos.push(...v)));
+const g=new THREE.BufferGeometry(); g.setAttribute('position',new THREE.Float32BufferAttribute(pos,3)); g.computeVertexNormals();
+const m=new THREE.Mesh(g,new THREE.MeshStandardMaterial({color:0x8c8c8c,roughness:0.7,flatShading:true,side:THREE.DoubleSide})); m.castShadow=true; m.receiveShadow=true; m.rotation.y=(+P.get('rot')||0)*Math.PI/180; sc.add(m);
+const fl=new THREE.Mesh(new THREE.PlaneGeometry(20000,20000),new THREE.MeshStandardMaterial({color:0xcbc4ba,roughness:0.9})); fl.rotation.x=-Math.PI/2; fl.receiveShadow=true; sc.add(fl);
+const wall=new THREE.Mesh(new THREE.PlaneGeometry(20000,8000),new THREE.MeshStandardMaterial({color:0xd6cfc5,roughness:1})); wall.position.set(0,4000,-700); wall.receiveShadow=true; sc.add(wall);
+sc.add(new THREE.HemisphereLight(0xffffff,0xa59d92,1.7));
+const d=new THREE.DirectionalLight(0xffffff,1.6); d.position.set(-2200,2000,1500); d.castShadow=true; d.shadow.mapSize.set(4096,4096); Object.assign(d.shadow.camera,{left:-1500,right:1500,top:1500,bottom:-1500,near:10,far:9000}); d.shadow.radius=18; d.shadow.blurSamples=25; sc.add(d);
+const cam=new THREE.PerspectiveCamera(+P.get('fov')||24,W/H,10,30000);
+const az=(+P.get('az')||25)*Math.PI/180, dist=+P.get('dist')||3600, ch=+P.get('ch')||700;
+cam.position.set(Math.sin(az)*dist,ch,Math.cos(az)*dist); cam.lookAt(0,+P.get('ly')||500,0);
+r.render(sc,cam); document.title='done';
+</script></body></html>

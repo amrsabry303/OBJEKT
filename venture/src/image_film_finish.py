@@ -53,7 +53,10 @@ def finish(src, out, preset="editorial", seed=7):
     h, w, _ = a.shape
     # 1. tone: soft shoulder to a cream white, slightly lifted warm black
     a = P["black"] + a * (P["white"] - P["black"])          # cream white; black lifted only slightly
-    a = a + 0.04 * np.sin(np.pi * a) * (a < 0.5)            # open the low mids a little
+    lum = a.mean(2, keepdims=True)
+    # open the low mids a little; driven by brightness and added equally to all channels so hue never shifts
+    # (a per-channel lift turned warm walls green in bands: bug found on OBJ-167, 11 Nov)
+    a = a + 0.04 * np.sin(np.pi * lum) * (lum < 0.5)
     lum = a.mean(2, keepdims=True)
     sh_w = np.clip(1 - lum / 0.45, 0, 1)                    # shadow weight
     hi_w = np.clip((lum - 0.6) / 0.4, 0, 1)                 # highlight weight

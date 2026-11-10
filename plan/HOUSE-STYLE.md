@@ -61,7 +61,7 @@ furnished living room, a calm bedroom, a garden or terrace. What keeps them obje
 1. Upload ONLY the grey geometry render. A second reference makes the model copy that reference's proportions (OBJ-002 arranged v1 failed this way).
 2. Prompt: "Turn this into a real product photograph. Keep the <object> exactly as it is: same size, proportions, <parts and counts>, position and camera angle. <finish with colour name and hex, texture>. <section 3, 4 or 5 setting>. No props, no text."
 3. Pick the result that keeps feet, edges and counts; zoom in on the base before choosing.
-4. Recolour: run a second `preciseEdit` on the chosen image: "Change only the finish of the <object> to <colour hex, texture>. Keep everything else exactly the same." One recolour per colour.
+4. Other colours: generate each one from the same grey geometry with the same prompt, only the colour line changed (OBJ-167, 11 Nov). Recolouring a finished image works only from a light or mid colour; from a dark base (Oxblood) the edit left the shaded facets red and a pink halo on the backdrop, and local fixes looked artificial. Bone recoloured cleanly from Oxblood. Pick, per colour, the result whose backdrop best matches the set.
 
 **Method B, reference first** (`imagen-nano-banana-2-1`, 65 credits, count 2): tight crop of the product alone, prompt with 3 to 5 plain facts about shape and part counts, "only one <object>", finish, setting. Use for complex shapes with no drawing or model.
 
@@ -84,7 +84,7 @@ renders lack (our studio shots measured: almost no grain, near-white highlights,
 How to apply:
 1. In the prompt: warm greige surroundings, warm light, deep but soft shadows; no pure white backdrop.
 2. After generation, always run `venture/src/image_film_finish.py <in> <out> studio` (gallery) or `editorial` (mood and in-use). It rolls the whites off to cream, lifts the blacks slightly, warms shadows and highlights, softens a touch and adds monochrome clumped grain at the reference strength. It does not change saturation, so product colours stay on their hex.
-3. Check with `python image_film_finish.py --measure <file>`: every value should read ok. If blacks or saturation are out, the generation is too flat or too cold: regenerate with a darker anchor or warmer setting rather than forcing it in the finish.
+3. Check with `python image_film_finish.py --measure <file>`: grain must read ok on every image. Blacks, saturation and shadow tint are measured on the whole frame, so a pale product (Bone), a navy product (Ink) or a soft room can read OUT for the product's own colour; judge those on the backdrop. If blacks or saturation are out, the generation is too flat or too cold: regenerate with a darker anchor or warmer setting rather than forcing it in the finish.
 
 ## 8. Checks before an image is shown to Sabry
 
@@ -122,5 +122,6 @@ Only from `brand/COLOURS-FINISHES.md`: Bone #E9E4D8, Putty #B9B2A5, Carbon #2222
 
 - 2 Nov: one look for all: pale sand plaster wall and floor (#E1D9CF), no props, nano banana from the reference photo. Then the same day: hard low window sun, sunlit patches and props in use. Replaced on 10 Nov because both read as AI.
 - 10 Nov: Sabry: "the AI photos look so AI"; references from @soosatelier (editorial) and five product photos (studio). Decision: clean studio for colour shots, one editorial mood shot. Rule: the approved drawing decides the shape (OBJ-038 renders from the photo did not match REV 4).
+- 11 Nov: OBJ-167 trial: the finish had a per-channel tone bug that turned warm walls green in bands; fixed (brightness-driven).
 - 11 Nov (Sabry): no fixed eye-level camera (best angle per object, same angle across colours); no prop limit (restrained but natural, furnished rooms allowed); editorial not locked to limewash and film grain (varied settings sharing the objekt identity). Grain and tone measured on his five references and built into the camera finish for every image.
 - 10 Nov: methods proven on OBJ-038, OBJ-002 (REV 5), OBJ-099, OBJ-166 (REV 0), OBJ-173 (no drawing, cube), OBJ-172 (no drawing, complex; villa context from Sabry's photo).
