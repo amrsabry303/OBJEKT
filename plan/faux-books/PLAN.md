@@ -1,14 +1,14 @@
-# objekt faux books: plan and art direction (draft 4, 10 Nov 2026)
+# objekt faux books: plan and art direction (draft 5, 10 Nov 2026)
 
-Status: proposal for Sabry. Decided so far (10 Nov): title typeface Galak Round; sold as singles and as a set of three; titles to be witty, in the line of "Objekts of Character"; made as a solid block, paper; day 1; a print set of three added (tiger, cow, stripe). Nothing is costed or sent to anyone.
-Direction sheet: `faux-books-direction-sheet_diagram_v4.svg` (PNG copy beside it). It is a flat diagram with stand-in lettering, not a render and not a photo.
+Status: proposal for Sabry. Decided so far (10 Nov): title typeface Galak Round; sold as singles and as a set of three; titles to be witty, in the line of "Objekts of Character"; made as a solid block, paper; day 1; a print set of three added (tiger, cow, stripe). Draft 5 changes (Sabry's review): colour audit, lighter type, logo as the signature. Nothing is costed or sent to anyone.
+Direction sheet: `faux-books-direction-sheet_diagram_v5.svg` (PNG copy beside it). It is a flat diagram with stand-in lettering, not a render and not a photo.
 
 ## 01 // the idea
 A small library of decorative volumes that work as colour blocks with type on them. One format, our own titles, the eight objekt colours. Sold one at a time or as a stack of three.
 
 What the five references share, and what we take:
 - One flat colour per book, matte. We take this, in paper instead of cloth.
-- One big title block in a bold sans, and almost nothing else. We take this.
+- One big title block and almost nothing else. We take this, in a lighter weight than the references.
 - A series: the same title in several colours, stacked in threes. We take this.
 - What we do not take: real titles and brand names (Dieter Rams, Taschen, Ralph Lauren, From The Archive, Heaven Mayhem, Sociotype). Those are other people's marks. Our books carry objekt titles only.
 - The mixed-serif shelf (reference 3) is the commodity version. We stay away from it: no fake publishers, no gold foil, no mixed fonts.
@@ -23,64 +23,84 @@ What the five references share, and what we take:
 
 **Colour.** Cover and lettering both come from `brand/COLOURS-FINISHES.md`. No ninth colour.
 
-| Cover | Lettering | Role in a stack |
-|---|---|---|
-| Bone | Carbon | neutral |
-| Putty | Carbon | neutral |
-| Carbon | Bone | dark |
-| Ink | Bone | dark |
-| Chocolate | Putty | dark |
-| Oxblood | Clay | colour |
-| Clay | Oxblood | colour |
-| Objekt Green | Bone | colour (signature) |
-
-Honest note: the references are loud (lime, pink, cobalt, orange). The objekt palette is quieter and darker, so our stack will read warmer and more grown-up. Oxblood, Clay and Objekt Green carry the colour.
-
-**Type.**
-- Front: one title block, top left, three lines, all caps, set large. Brand rule says titles are Galak Round caps, so that is the proposal. It also keeps us from looking like a copy of the grotesque used on the references.
-- Spine: title in sentence case at the head, objekt symbol at the foot, same position on every volume so stacked spines line up.
-- Front foot: symbol left, volume number right, small.
-- Back: blank, or one small line of text. Proposed wording to decide later.
-- Logo: the supplied symbol file only (the wordmark is too small to use on a spine under the 25 mm minimum). Symbol takes the lettering colour.
-
-**Titles (draft 2, Sabry chooses).** One title per colour, so eight volumes. Each volume has one fixed size, which keeps it to eight products and makes every set of three step down.
-
-| Vol. | Title | Cover | Lettering | Size |
+| Vol. | Cover | Lettering | Contrast | Size |
 |---|---|---|---|---|
-| 01 | NOT / A / BOOK | Bone | Carbon | M |
-| 02 | SHELF / LIFE | Putty | Carbon | M |
-| 03 | HEAVY / READING | Carbon | Bone | L |
-| 04 | JUDGE / THE / COVER | Ink | Bone | L |
-| 05 | OBJEKTS / OF / CHARACTER | Oxblood | Clay | S |
-| 06 | USELESS / ON / PURPOSE | Clay | Oxblood | S |
-| 07 | COFFEE / TABLE / BOOK | Chocolate | Putty | L |
-| 08 | DESIGN / WORTH / NOTICING | Objekt Green | Bone | S |
+| 01 | Bone | Objekt Green | 5.6 : 1 | M |
+| 02 | Putty | Chocolate | 6.1 : 1 | M |
+| 03 | Carbon | Bone | 12.5 : 1 | L |
+| 04 | Ink | Putty | 6.8 : 1 | L |
+| 05 | Oxblood | Bone | 10.0 : 1 | S |
+| 06 | Clay | Bone | 4.1 : 1 | S |
+| 07 | Chocolate | Putty | 6.1 : 1 | L |
+| 08 | Objekt Green | Bone | 5.6 : 1 | S |
 
-- Spares: NOTHING / TO / READ · MADE / TO BE / LOOKED AT · THINGS / WITH / PRESENCE · STILL / LIFE · FORM / HAS / OPINIONS · VOLUME / OF / NOTHING · BETWEEN / FUNCTION AND / EXPRESSION.
-- Open: the brand word is written lowercase (objekts). Vol. 05 sets it in caps on the front because every front title is caps; the spine keeps it lowercase. Say if you want it lowercase on the front too.
+**Colour audit (draft 5).** Contrast computed from the hex values with the WCAG formula. Screen values only: confirm on printed samples.
+- Draft 4 failed twice. Oxblood with Clay lettering and Clay with Oxblood lettering were both 2.4 : 1, too low to read at a glance. Both now use Bone.
+- Clay with Bone is 4.1 : 1. Fine for large title type, the weakest pair on the sheet. If a printed sample reads weak, keep Clay for the print set only.
+- Carbon, Ink, Oxblood and Chocolate sit between 1.0 and 1.3 : 1 against each other. On a shelf they read as one dark mass, and in a stack two touching darks lose their edge. Rule: a set never has two of them. Ink is the weakest of the four, so it is a single only.
+- Bone and Putty are only 1.7 : 1 apart. Never side by side in a stack without something between. Bone lettering on Putty is 1.7 : 1: never.
+- Draft 4 had Carbon lettering on Bone and Putty. Changed to Objekt Green on Bone and Chocolate on Putty: same legibility, more colour, less like black-on-white stationery.
+- Print set: cow patches changed from Carbon to Chocolate on Bone (10.1 : 1), softer and in the palette's own warmth. Stripe changed from Ink to Objekt Green, so the signature colour appears in the print set. Tiger stays Carbon on Clay (3.0 : 1, decorative only; the title sits on a cleared area).
+- Sets: A = Carbon, Bone, Oxblood. B = Chocolate, Putty, Objekt Green. Print = Clay, Bone, Objekt Green. Each has one dark, one light, one colour.
+
+Honest note: the references are loud (lime, pink, cobalt, orange). The objekt palette is quieter and darker, so our stacks read warmer and more grown-up. Oxblood, Clay and Objekt Green carry the colour.
+
+**Type (revised, draft 5).** You said the stand-in felt very bold and compact, and the spacing needs testing at actual size. Draft 4 was Inter ExtraBold at tight tracking: not Galak Round, and heavier than it. Draft 5 sets Regular with open tracking. Still not tested in the real face (not licensed, not in git).
+- Weight: Regular, never bold. Caps for titles, per the brand guide.
+- Tracking: open by about 2% (draft 4 was about -2%).
+- One size for every line of a title. Never shrink a line to fit.
+- Three-line titles: longest line no wider than 70% of the cover. Line gap about 0.4 of the cap height. No line is a single short word, so "NOT A / BOOK", "OBJEKTS OF / CHARACTER", "USELESS / ON PURPOSE". Where three lines are needed, break for shape and keep the lines close in length.
+- Optical edge: round and diagonal letters (O, C, J, T) hang slightly past the left margin so the edge looks straight. Done by eye in the final artwork.
+- Top margin equals left margin.
+- Spine: sentence case, Regular, reads lying flat.
+- The numbers above are starting values. Test: print one S, one M and one L cover at actual size on the chosen stock and judge at arm's length, then adjust.
+
+**Signature (revised, draft 5).** You said the small symbol felt disconnected from the titles. Draft 5 makes the logo the signature and stops using the symbol as decoration.
+- Front: the title and nothing else. No symbol, no volume number.
+- Back: the full objekt logo (symbol over wordmark), centred low, in the lettering colour.
+- Spine, top to bottom: title, volume number, logo. Same position on every volume, so a stack reads as a family and the logo is the one thing every spine shares.
+- Always the supplied logo file, never a retyped wordmark.
+- Minimum logo width 25 mm in print (brand rule). On a narrow spine that may not fit. Then the spine takes the symbol alone and the wordmark stays on the back. To check once the spine width is set.
+- Option, not drawn: a blind-embossed symbol on the front. A paper wrap cannot do this cheaply; ask the maker if you want it priced.
+- Logo colour is the cover's lettering colour, so the guide's one-colour rule holds. Still needs your OK as an addition to the six pairings in the guide.
+
+**Titles (Sabry chooses).** Eight plain volumes, one title per colour. Each volume has one fixed size, so every set of three steps down. Line breaks as set on the sheet.
+
+| Vol. | Title |
+|---|---|
+| 01 | NOT A / BOOK |
+| 02 | SHELF / LIFE |
+| 03 | HEAVY / READING |
+| 04 | JUDGE / THE / COVER |
+| 05 | OBJEKTS OF / CHARACTER |
+| 06 | USELESS / ON PURPOSE |
+| 07 | COFFEE / TABLE / BOOK |
+| 08 | DESIGN / WORTH / NOTICING |
+
+- Spares: NOTHING TO / READ · MADE TO BE / LOOKED AT · THINGS WITH / PRESENCE · STILL / LIFE · FORM HAS / OPINIONS · VOLUME OF / NOTHING · BETWEEN / FUNCTION AND / EXPRESSION.
+- The brand word is written lowercase (objekts). Vol. 05 sets it in caps on the front because every front title is caps; the spine keeps it lowercase. Say if you want it lowercase on the front.
 - English only, per the locked naming decision.
 - "Vol." is a title number, not an edition number. Copies are not numbered (numbered editions belong to Brand 01).
-- Sets of three: one L, one M, one S. Proposed fixed sets: plain A (03 + 01 + 05), plain B (07 + 02 + 08), print (09 + 10 + 11). Ink (04) and Clay (06) are then singles only.
+- Sets of three: one L, one M, one S. Proposed fixed sets: plain A (03 + 01 + 05), plain B (07 + 02 + 08), print (09 + 10 + 11). Ink (04) and Clay (06) are singles only.
 
 **The print set (Sabry, 10 Nov).** Three printed volumes beside the eight plain ones, sold as singles and as one set of three.
 
 | Vol. | Title | Print | Colours | Lettering | Size |
 |---|---|---|---|---|---|
 | 09 | EASY / TIGER | tiger stripe | Clay ground, Carbon stripes | Bone | L |
-| 10 | HOLY / COW | cow patch | Bone ground, Carbon patches | Carbon | M |
-| 11 | BETWEEN / THE / LINES | stripe | Bone ground, Ink bands, Ink spine | Ink | S |
+| 10 | HOLY / COW | cow patch | Bone ground, Chocolate patches | Chocolate | M |
+| 11 | BETWEEN / THE / LINES | stripe | Bone ground, Objekt Green bands and spine | Objekt Green | S |
 
-- Flat graphic prints, drawn, not photographic fur. Two objekt colours each, so they still sit in the palette.
-- The print keeps clear of the title block so the title reads.
-- The drawings on the sheet are placeholders made in code. The final prints need to be drawn properly.
-- Titles are proposals, like the other eight.
+- Flat graphic prints, drawn, not photographic fur. Two objekt colours each, so they stay in the palette.
+- The print keeps clear of the title so the title reads.
+- The drawings on the sheet are placeholders made in code. Final prints need to be drawn properly.
 - Prints stay on these three only. The other eight stay plain.
 
-**Material and finish.** Solid block, paper (Sabry, 10 Nov). Read as: a closed block that does not open, wrapped in printed paper, matte. To confirm: is the inside a block of blank pages (looks like a real book from the edge, heavier) or a plain board or foam core with a printed page edge? Colour and lettering are printed in one pass, so the eight colours can be matched by the printer from the hex values and a sample. Matte only: uncoated stock or matte lamination. No gloss, no metallic, no dust jacket.
+**Material and finish.** Solid block, paper (Sabry, 10 Nov). Read as: a closed block that does not open, wrapped in printed paper, matte. To confirm: is the inside a block of blank pages (looks like a real book from the edge, heavier) or a plain board or foam core with a printed page edge? Colour and lettering print in one pass, so the printer can match the eight colours from the hex values and a sample. Matte only: uncoated stock or matte lamination. No gloss, no metallic, no dust jacket.
 
 **Format.** Three sizes that step down so a stack shows all three spines. Sizes are not set: they depend on the maker's board sizes. To be fixed at sample stage.
 
-**The stack rule.** One dark, one neutral, one colour. Largest at the bottom.
+**The stack rule.** One dark, one light, one colour. Largest at the bottom.
 
 **Images.** AI renders in the house style (`plan/HOUSE-STYLE.md`): low window sun, plaster, a stack on one of our tables or plinths. Named `ai-render`. Real photos replace them when samples exist.
 
@@ -93,6 +113,7 @@ Open:
 2. Titles: approve or swap the eleven.
 3. "objekts" lowercase on the front of Vol. 05, or caps like the rest.
 4. Sets: the three fixed sets above, or pick one from each size.
+7. Logo on the spine: wordmark or symbol only, once the spine width is known.
 5. Sizes for L, M and S.
 6. Price, and whether stock is made up front or made to order.
 
