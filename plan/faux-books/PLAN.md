@@ -1,6 +1,6 @@
-# objekt faux books: plan and art direction (draft 15, 10 Nov 2026)
+# objekt faux books: plan and art direction (draft 16, 10 Nov 2026)
 
-Status: proposal for Sabry. Decided so far (10 Nov): title typeface Galak Round; sold as singles and as a set of three; titles to be witty, in the line of "Objekts of Character"; made as a solid block, paper; day 1; a print set of three added (tiger, cow, stripe). Draft 5 (Sabry's review): colour audit, lighter type, logo as the signature. Draft 6: sizes fixed from Sabry's 10 × 25 × 4.5 cm. Draft 7: depth is 4.5 cm on all three (Sabry: 5.5 cm was not logical). Draft 8: width and length reset to real-book proportions (Sabry: the sizes would not look real). Draft 9: spine text in capitals (Sabry); first design flats drawn for all eleven volumes. Draft 10: spine redesigned (larger, reads along a stack, symbol only, fixed logo positions). Draft 11: prints wrap onto the spine (Sabry). Draft 12: tiger redrawn as a realistic pattern from a reference photo (Sabry). Draft 13: first renders of all eleven volumes and three sets. Draft 14: renders v2 with paper texture and soft shadows (Sabry). Draft 15: sets aligned (Sabry). Nothing is costed or sent to anyone.
+Status: proposal for Sabry. Decided so far (10 Nov): title typeface Galak Round; sold as singles and as a set of three; titles to be witty, in the line of "Objekts of Character"; made as a solid block, paper; day 1; a print set of three added (tiger, cow, stripe). Draft 5 (Sabry's review): colour audit, lighter type, logo as the signature. Draft 6: sizes fixed from Sabry's 10 × 25 × 4.5 cm. Draft 7: depth is 4.5 cm on all three (Sabry: 5.5 cm was not logical). Draft 8: width and length reset to real-book proportions (Sabry: the sizes would not look real). Draft 9: spine text in capitals (Sabry); first design flats drawn for all eleven volumes. Draft 10: spine redesigned (larger, reads along a stack, symbol only, fixed logo positions). Draft 11: prints wrap onto the spine (Sabry). Draft 12: tiger redrawn as a realistic pattern from a reference photo (Sabry). Draft 13: first renders of all eleven volumes and three sets. Draft 14: renders v2 with paper texture and soft shadows (Sabry). Draft 15: sets aligned (Sabry). Draft 16: one AI test render (FB-08). Nothing is costed or sent to anyone.
 Direction sheet: `faux-books-direction-sheet_diagram_v8.svg` (PNG copy beside it). It is a flat diagram with stand-in lettering, not a render and not a photo.
 
 ## 01 // the idea
@@ -225,3 +225,9 @@ What they are not:
 - Nothing has been uploaded to the store, Drive or anywhere else.
 
 Source for regenerating them is in `renders/src/`.
+
+### AI test render (FB-08, 10 Nov)
+Sabry asked for one render to check an AI pass. I ran the FB-08 mockup through Ideogram 4.5 precise edit (80 credits, one image, Personal project in Magnific; the mockup was uploaded there for this). File: `renders/ai-test/FB-08_design-worth-noticing_ai-render_test_v1.jpg`. This is an AI render, not a photo.
+- Good: the lettering and logo on the front and spine came back unchanged, letter for letter. The photographic feel is much stronger: real paper grain, plaster and limestone, believable light.
+- Bad: a blurred smudge sits on the lower half of the front cover (a rectangular patch of different green with soft edges). The cover colour drifted, and the spine went much darker than the brand green. The grain is heavy and reads closer to rough card than fine printed paper. The framing shifted slightly and the vase grew.
+- Verdict: not usable as is. It needs a retry or two (80 credits each) and a colour check against `brand/COLOURS-FINISHES.md`. Do not use it as product proof.
