@@ -13,3 +13,7 @@ transcripts/
 handover/
 *.zip
 .env*
+# STL files are large; they ship inside OBJ-nnn_revN_print-files.zip and are rebuilt by the generator
+venture/drawings/*/print/*.stl
+venture/src/drawings/_cache_*/
+__pycache__/
