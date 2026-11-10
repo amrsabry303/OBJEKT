@@ -213,3 +213,9 @@
 - Store confirmed with `get-shop-info`: OBJEKT, hs1a1c-ut.myshopify.com, EGP.
 - `deliveryProfileUpdate` on "General profile" (default, 57 variants), zone Domestic (EG): rate "قياسي" renamed **Standard delivery**. Price unchanged, 118.00 EGP, no conditions. No other profile, zone, market or discount created.
 - Verified by read-back. Checkout rate not tested (no payment set up yet).
+
+## 2026-11-10 (showroom and WhatsApp)
+- Sabry (10 Nov): showroom by appointment at ElBanafseg 2, Unit 28, Apt. 1, Ground Floor, New Cairo; WhatsApp 01000822240. Wording: samples of our work in a showroom, by appointment; never "small"; no pickup at checkout.
+- Theme, **unpublished** 189754769632 only (`themeFilesUpsert`): `sections/footer.liquid` gets a "Text column" block type (title + rich text, CSS in the section's own stylesheet); `sections/footer-group.json` adds a fourth column, Showroom: "Samples of our work are on view in our showroom in New Cairo, by appointment." + "Book on WhatsApp" (wa.me/201000822240). `theme check` 48 files, no offenses. Read back: footer.liquid checksum matches the repo; footer-group.json content matches.
+- Page Contact (`pageUpdate`, body): showroom line, address, Google Maps link, WhatsApp +20 100 082 2240. The page is store data, so it also shows under the live Horizon theme (storefront still password-protected). Read back OK.
+- Not seen in a browser. Arabic versions wait for the translator.

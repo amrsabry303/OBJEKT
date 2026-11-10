@@ -26,7 +26,7 @@ These appear in the footer, policies and order emails, and two of them (fonts, l
 | Legal business name | Footer copyright, policies | OBJEKT&#32; |
 | Contact email | Footer, contact page, order emails |  |
 | Phone or WhatsApp number | Footer, delivery page | WhatsApp 01000822240 (international form +20 100 082 2240). Also the showroom booking channel (Sabry, 10 Nov). |
-| Showroom or studio address (only if public) | Footer, delivery page | Small showroom, by appointment only. ElBanafseg 2, Unit 28, Apt. 1, Ground Floor, New Cairo, Egypt. Map: https://maps.app.goo.gl/4sjHADFbnw8D7NCo8 . Book by WhatsApp (Sabry, 10 Nov). |
+| Showroom or studio address (only if public) | Footer, delivery page | Showroom by appointment. Public wording (Sabry): samples of our work are available in a showroom, booked by appointment; never say "small"; no pickup at checkout. ElBanafseg 2, Unit 28, Apt. 1, Ground Floor, New Cairo, Egypt. Map: https://maps.app.goo.gl/4sjHADFbnw8D7NCo8 . Book by WhatsApp (Sabry, 10 Nov). |
 | Instagram link | Footer |  |
 | Pinterest or other social link | Footer |  |
 | Customer service hours | Support page |  |

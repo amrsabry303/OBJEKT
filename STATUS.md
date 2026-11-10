@@ -54,6 +54,7 @@ Three daily sessions work on this repo, one section each. Each session updates *
 
 ## Website (Shopify)
 ### 10 Nov 2026 (Tue)
+- Showroom (Sabry's wording): footer column "Showroom" on the unpublished theme and Contact page text with address, map and WhatsApp +20 100 082 2240. No pickup at checkout. Read back OK; not seen in a browser.
 - Shipping MVP (Sabry's yes): Egypt only, one flat rate **Standard delivery 118 EGP** (renamed from "قياسي", price unchanged). Read back OK; checkout not tested. Parked: international zones (Egypt, Gulf, Europe, UK, USA and Canada, Rest of world), currencies, markets, size classes, customs. Free shipping over 70,000 dropped for now.
 - Footer menu done on Sabry's request: Shop (4 categories), Support (About, Contact, Search), Policies (Privacy). Unpublished theme only; read back, not seen in a browser.
 - Sabry answered: shipping worldwide; 50% deposit on every made-to-order piece, collected first; made-to-order lead time 30–45 days. Open questions sent in chat (balance timing, deposit app vs InstaPay, international carrier and rates, duties, currencies, returns).
