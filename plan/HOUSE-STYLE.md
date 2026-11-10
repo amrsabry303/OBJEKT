@@ -5,6 +5,11 @@ One look for every AI render, so no scene experiments per product. Source: websi
 OBJ-003 Oxblood v2 and OBJ-166 v4 stainless, which Sabry saw. Reviewed against these, not against the brand guide:
 the guide has no photography section.
 
+## Decision, 10 Nov 2026 (Sabry): which look where
+- **Colour shots (one per colour, the product gallery):** clean studio look (revision of 10 Nov below): soft daylight, quiet backdrop, product clear, all colours from one image so they match.
+- **One mood shot per product:** editorial look (below), in one colour, as the first or last image in the gallery and for collections and social.
+- Shape always from the approved drawing when one exists (rule below).
+
 ## Editorial look, 10 Nov 2026 (Sabry: "the AI photos look so AI"; references from @soosatelier, mood only, never copy)
 Five references (a walnut shelf with books, a dark turned side table, a leaning oak mirror, two glazed planters with a tree, a black floor lamp). What makes them read as photographs:
 - **Light:** one warm window light from the side; the wall visibly falls off into shade away from the light; soft-edged warm light on surfaces; shadows soft but present. Not evenly lit.
