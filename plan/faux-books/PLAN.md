@@ -1,7 +1,7 @@
-# objekt faux books: plan and art direction (draft 1, 10 Nov 2026)
+# objekt faux books: plan and art direction (draft 2, 10 Nov 2026)
 
-Status: proposal for Sabry. Nothing here is decided, costed or sent to anyone.
-Direction sheet: `faux-books-direction-sheet_diagram_v1.svg` (PNG copy beside it). It is a flat diagram with stand-in lettering, not a render and not a photo.
+Status: proposal for Sabry. Decided so far (10 Nov): title typeface Galak Round; sold as singles and as a set of three; titles to be witty, in the line of "Objekts of Character". Nothing is costed or sent to anyone.
+Direction sheet: `faux-books-direction-sheet_diagram_v2.svg` (PNG copy beside it). It is a flat diagram with stand-in lettering, not a render and not a photo.
 
 ## 01 // the idea
 A small library of decorative volumes that work as colour blocks with type on them. One format, our own titles, the eight objekt colours. Sold one at a time or as a stack of three.
@@ -42,12 +42,24 @@ Honest note: the references are loud (lime, pink, cobalt, orange). The objekt pa
 - Back: blank, or one small line of text. Proposed wording to decide later.
 - Logo: the supplied symbol file only (the wordmark is too small to use on a spine under the 25 mm minimum). Symbol takes the lettering colour.
 
-**Titles (proposals, Sabry chooses).** Both come from the brand guide, so nothing is invented:
-- Vol. 01: DESIGN / WORTH / NOTICING
-- Vol. 02: BETWEEN / FUNCTION AND / EXPRESSION
-- Start with two titles across eight colours. Add titles later instead of colours.
+**Titles (draft 2, Sabry chooses).** One title per colour, so eight volumes. Each volume has one fixed size, which keeps it to eight products and makes every set of three step down.
+
+| Vol. | Title | Cloth | Lettering | Size |
+|---|---|---|---|---|
+| 01 | NOT / A / BOOK | Bone | Carbon | M |
+| 02 | SHELF / LIFE | Putty | Carbon | M |
+| 03 | HEAVY / READING | Carbon | Bone | L |
+| 04 | JUDGE / THE / COVER | Ink | Bone | L |
+| 05 | OBJEKTS / OF / CHARACTER | Oxblood | Clay | S |
+| 06 | USELESS / ON / PURPOSE | Clay | Oxblood | S |
+| 07 | COFFEE / TABLE / BOOK | Chocolate | Putty | L |
+| 08 | DESIGN / WORTH / NOTICING | Objekt Green | Bone | S |
+
+- Spares: NOTHING / TO / READ · MADE / TO BE / LOOKED AT · THINGS / WITH / PRESENCE · STILL / LIFE · FORM / HAS / OPINIONS · VOLUME / OF / NOTHING · BETWEEN / FUNCTION AND / EXPRESSION.
+- Open: the brand word is written lowercase (objekts). Vol. 05 sets it in caps on the front because every front title is caps; the spine keeps it lowercase. Say if you want it lowercase on the front too.
 - English only, per the locked naming decision.
 - "Vol." is a title number, not an edition number. Copies are not numbered (numbered editions belong to Brand 01).
+- Sets of three: one L dark, one M neutral, one S colour. Either fixed sets (for example 03 + 01 + 05 and 07 + 02 + 08) or the customer picks one from each size.
 
 **Material and finish.** Plain woven bookcloth, matte. Lettering matte too: screen print, or blind deboss with matte foil. No gloss, no metallic, no pattern, no dust jacket.
 
@@ -63,10 +75,10 @@ Honest note: the references are loud (lime, pink, cobalt, orange). The objekt pa
    - A. Cloth-bound book box (hollow, lid opens, holds remotes and keys). Closest to the references, and useful. Needs an outside box maker or binder. I do not know if Polycraft can do any of it, so "Made at Polycraft, Cairo" may not apply.
    - B. Cloth-bound solid block. Decor only. Likely the simplest to make. Same supplier question.
    - C. Steel volume: folded sheet, powder coated in the eight colours, title printed or laser cut. Made at Polycraft with the easiest process (straight cut and fold), and nobody else sells it. It is a different look from your references, harder and colder.
-2. **Titles.** The two above, or others.
-3. **Title typeface.** Galak Round (brand rule) or PP Mori (closer to the references).
+2. **Titles.** Approve or swap the eight in the table.
+3. **Title typeface.** Decided: Galak Round.
 4. **Day 1 or wave 2.**
-5. **Sold as** singles, a set of three, or both.
+5. **Sold as.** Decided: singles and a set of three. Open: fixed sets or pick-your-own.
 
 ## 05 // blockers
 - **Font and logo licence.** Galak Round, PP Mori and the logo lettering are not licensed for public or commercial use. Lettering on a product we sell is commercial use. Nothing can be produced until this is cleared.
@@ -76,7 +88,7 @@ Honest note: the references are loud (lime, pink, cobalt, orange). The objekt pa
 - **Cost, price, size, weight, lead time.** All unknown. Nothing here is costed.
 
 ## 06 // steps
-1. Sabry answers the five decisions.
+1. Sabry answers the open decisions (1, 2, 4).
 2. Clear the font and logo licence.
 3. Print-ready artwork: front, spine and back flats per size, in the licensed fonts.
 4. Find a maker (A or B) or brief Polycraft (C). Get cloth swatches against the eight colours.
