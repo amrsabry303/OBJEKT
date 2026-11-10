@@ -91,3 +91,6 @@ Enter each variant's **real packed weight** in kg. Delivery is priced on the ord
 - Up to 15 kg: **Standard delivery, 118 EGP**.
 - Over 15 kg (rate starts at 15.01 kg): **Large order delivery, 1,200 EGP**.
 - A product left at 0 kg adds nothing, so every product needs its weight before it goes active. Packed weights come from Polycraft.
+
+## Lead time in days (Sabry, 10 Nov 2026)
+Variant metafields `custom.lead_time_days_min` / `custom.lead_time_days_max` (integer). Made to order is 7–14 or 30–45 days, counted from the deposit. The theme shows days; the old `lead_time_weeks_*` fields are only a fallback (converted ×7) and should be left empty for new products. Ready pieces use `delivery_days_min/max` (3–5).

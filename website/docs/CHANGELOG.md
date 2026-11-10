@@ -256,3 +256,7 @@
 - Sabry said yes to both.
 - Menu `objekt-main` (`menuUpdate`): The Edit removed; now Shop (4 categories) + About. Blog `the-edit` kept (empty); add it back with the first real story. Read back OK.
 - OBJ-099 image alt text (`fileUpdate`, 5 images): "AI render, not a photo of a made piece" removed (Sabry: never mention renders in public text). Now "OBJ-099 candleholder set in Oxblood / Ink / Objekt Green / Putty" and "...in Oxblood on a dining table in low sun". File names unchanged (`ai-render` kept, internal). Read back OK.
+
+## 2026-11-10 (lead time shown in days)
+- Store: variant metafield definitions `custom.lead_time_days_min` and `custom.lead_time_days_max` (integer, min 0) created.
+- Theme, **unpublished** 189754769632 only (`themeFilesUpsert`): `snippets/availability.liquid` reads days (weeks ×7 as fallback), shows "N–M days", line property `_lead_time_days`; `sections/main-cart.liquid` reads `_lead_time_days` (old `_lead_time_weeks` ×7) and shows days. `theme check` 48 files, no offenses. Checksums match the repo. Not seen in a browser.
