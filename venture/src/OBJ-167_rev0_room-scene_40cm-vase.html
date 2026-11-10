@@ -1,0 +1,32 @@
+<!doctype html><html><body style="margin:0"><script src="node_modules/three/build/three.min.js"></script>
+<script>
+// OBJ-167 REV 0 antiprism (300 sq, 1000 h) + 400 h mirror vase (dia 200, estimate) in a room corner with a 2100 door for scale.
+const P=new URLSearchParams(location.search); const W=1280,H=1600; const MASK=P.get('mask');
+const r=new THREE.WebGLRenderer({antialias:true,preserveDrawingBuffer:true}); r.setSize(W,H); r.shadowMap.enabled=true; r.shadowMap.type=THREE.VSMShadowMap; r.outputColorSpace=THREE.SRGBColorSpace; document.body.appendChild(r.domElement);
+const sc=new THREE.Scene(); sc.background=new THREE.Color(MASK?0:0xd6cfc5);
+const mat=(c,ro,extra)=>MASK?new THREE.MeshBasicMaterial({color:0,side:THREE.DoubleSide}):new THREE.MeshStandardMaterial(Object.assign({color:c,roughness:ro,side:THREE.DoubleSide},extra||{}));
+const s=150, t=150*Math.SQRT2, Ht=1000;
+const B=[[ s,0, s],[-s,0, s],[-s,0,-s],[ s,0,-s]], T=[[ t,Ht,0],[0,Ht, t],[-t,Ht,0],[0,Ht,-t]]; const tris=[];
+for(let i=0;i<4;i++){ tris.push([B[i],B[(i+1)%4],T[(i+1)%4]]); tris.push([T[(i+1)%4],T[i],B[i]]); }
+tris.push([B[0],B[2],B[1]],[B[0],B[3],B[2]],[T[0],T[1],T[2]],[T[0],T[2],T[3]]);
+const pos=[]; tris.forEach(tr=>tr.forEach(v=>pos.push(...v)));
+const g=new THREE.BufferGeometry(); g.setAttribute('position',new THREE.Float32BufferAttribute(pos,3)); g.computeVertexNormals();
+const ped=new THREE.Mesh(g,MASK?new THREE.MeshBasicMaterial({color:0xffffff,side:THREE.DoubleSide}):new THREE.MeshStandardMaterial({color:0x8c8c8c,roughness:0.7,flatShading:true,side:THREE.DoubleSide})); ped.castShadow=true; ped.receiveShadow=true; sc.add(ped);
+// vase: 400 high, radius 100, rounded base
+const prof=[]; for(let k=0;k<=8;k++){const a=k/8*Math.PI/2; prof.push(new THREE.Vector2(60+40*Math.sin(a),40-40*Math.cos(a)));} prof.unshift(new THREE.Vector2(0,0)); prof.push(new THREE.Vector2(100,400));
+const vase=new THREE.Mesh(new THREE.LatheGeometry(prof,64),mat(0xe8e8e8,0.15,{metalness:0.6})); vase.position.y=Ht; vase.castShadow=true; sc.add(vase);
+const fl=new THREE.Mesh(new THREE.PlaneGeometry(20000,20000),mat(0xb9a891,0.9)); fl.rotation.x=-Math.PI/2; fl.receiveShadow=true; sc.add(fl);
+const wall=new THREE.Mesh(new THREE.PlaneGeometry(20000,8000),mat(0xd6cfc5,1)); wall.position.set(0,4000,-450); wall.receiveShadow=true; sc.add(wall);
+// left wall pier coming forward
+const pier=new THREE.Mesh(new THREE.BoxGeometry(400,4000,1800),mat(0xe0dad2,1)); pier.position.set(-900,2000,450); pier.receiveShadow=true; pier.castShadow=true; sc.add(pier);
+// door on the right: 900 wide, 2100 high, slightly proud panels + frame
+const door=new THREE.Mesh(new THREE.BoxGeometry(900,2100,40),mat(0x7d7462,0.8)); door.position.set(1350,1050,-430); door.receiveShadow=true; sc.add(door);
+const frm=new THREE.Mesh(new THREE.BoxGeometry(1060,2180,30),mat(0x8a8170,0.8)); frm.position.set(1350,1090,-440); sc.add(frm);
+const skirt=new THREE.Mesh(new THREE.BoxGeometry(1600,90,20),mat(0xcfc8bd,1)); skirt.position.set(-50,45,-440); sc.add(skirt);
+sc.add(new THREE.HemisphereLight(0xffffff,0xa59d92,1.5));
+const d=new THREE.DirectionalLight(0xfff4e6,1.5); d.position.set(-3000,2200,1200); d.castShadow=true; d.shadow.mapSize.set(4096,4096); Object.assign(d.shadow.camera,{left:-3000,right:3000,top:3000,bottom:-3000,near:10,far:12000}); d.shadow.radius=14; d.shadow.blurSamples=25; sc.add(d);
+const cam=new THREE.PerspectiveCamera(+P.get('fov')||30,W/H,10,40000);
+const az=(+P.get('az')||0)*Math.PI/180, dist=+P.get('dist')||4500, ch=+P.get('ch')||1350;
+cam.position.set((+P.get('lx')||0)+Math.sin(az)*dist,ch,Math.cos(az)*dist); cam.lookAt(+P.get('lx')||0,+P.get('ly')||1000,0);
+r.render(sc,cam); document.title='done';
+</script></body></html>
