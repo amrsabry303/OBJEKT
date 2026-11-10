@@ -54,6 +54,7 @@ Three daily sessions work on this repo, one section each. Each session updates *
 
 ## Website (Shopify)
 ### 10 Nov 2026 (Tue)
+- Lead time now shown in days (new variant fields `custom.lead_time_days_min/max`; theme updated on the unpublished theme). Arabic translation pack: `plan/Arabic-translation-pack_2026-11-10.xlsx` (not sent to a translator). Product sheet shows renders for 002, 003, 038, 099, 137, 152, 166 (167, 169 too large to fetch from Drive). Browser QA blocked: the theme preview redirects to the storefront password page.
 - Drive (Sabry's yes): 8 Nov renders uploaded to Drive `images/` in new folders OBJ-002, OBJ-038, OBJ-152 (7 JPEGs; OBJ-152 v1 prefixed `superseded_`). Sizes match the repo copies. Heroes still not approved.
 - Product sheet for Sabry (private): https://claude.ai/artifact/T2QcmFPN399m2XR8bwyHnB . 61 products with picture; he fills name EN/AR, price, lead time, size, packed weight, colours, finish, materials, description, then "Ready to upload". Claude reads entries (collection `products`) and loads ready ones into Shopify as drafts. Polycraft sheet: `plan/Polycraft-questions_shortlist_2026-11-10.xlsx`.
 - The Edit removed from the main menu (blog kept, empty). OBJ-099 alt text no longer mentions renders.
