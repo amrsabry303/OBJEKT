@@ -51,7 +51,7 @@ Source: the production book (45 product slides), Drive and the Magnific history.
 - OBJ-165 Bench, folded plate, rounded corners (design file: NOT READY)
 - OBJ-171 Tissue holder, L-shaped block, three positions (design file: NOT READY)
 - OBJ-172 Sculpture, faceted mirror-polished steel (design file: NOT READY)
-- OBJ-173 Planter, mirror-polished cube (design file: NOT READY)
+- OBJ-173 Planter, mirror-polished cube (design file: NOT READY). 10 Nov: mirror studio v1 and editorial mood v1 made from a plain 150 mm cube geometry (size from the template, approximate; no drawing yet) with a spider plant as in the reference. Pending Sabry. Drive images/OBJ-173.
 - OBJ-175 Wall shelf panels, half-disc shelves (design file: NOT READY)
 - OBJ-176 Wall shelves, half-disc, colour set (design file: NOT READY)
 
