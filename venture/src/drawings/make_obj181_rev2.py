@@ -243,11 +243,13 @@ def nest_layout():
     """key -> list of (sheet, x, y, vertical), lower-left corners in mm on assumed 2500 x 1250 sheets; 10 mm margin, 30 mm spacing."""
     return {
         "P5_leg_band": [(1, 10, 10, False), (1, 10, 625, False)],
-        "P1_top_plate": [(1, 1290, 10, False)], "P2_bottom_plate": [(1, 1290, 490, False)],
-        "P3_side_band": [(1, 1290, 970, False), (2, 10, 10, False)],
-        "P4_end_band": [(2, 10, 205, False), (2, 450, 205, False)],
-        "P6_leg_cap": [(2, 10, 400, False), (2, 380, 400, False)],
+        "P3_side_band": [(1, 1335, 10, False), (2, 10, 970, False)],
+        "P4_end_band": [(1, 1335, 205, False), (1, 1775, 205, False)],
+        "P6_leg_cap": [(1, 1335, 400, False), (1, 1710, 400, False)],
+        "P1_top_plate": [(2, 10, 10, False)], "P2_bottom_plate": [(2, 10, 490, False)],
     }
+
+
 
 
 def part_pts(kind, data, x, y, vert):
@@ -422,7 +424,7 @@ def build(logo, ref):
                 b += H.txt(nx + cxm * ns, ny + (1250 - cym) * ns + 1, key.split("_")[0], 2.0, "middle", fill="#333")
         b += H.hdim(nx, nx + 2500 * ns, ny + 1250 * ns + 6, "2500", size=1.8)
     b += H.txt(20, 242, f"Total cutting length {cl['total'] / 1000:.1f} m on two assumed sheets. Part spacing 30 mm, edge margin 10 mm (assumed).", 2.3, bold=True)
-    b += H.txt(20, 248, "Sheet 2 is about half empty: a larger sheet (for example 1500 x 3000) may do it on one. Sheet size and nesting are Production's.", 2.0, fill="#555")
+    b += H.txt(20, 248, "Sheet 2 is about half empty and sheet 1 has room: a larger sheet (for example 1500 x 3000) may do it on one. Sheet size and nesting are Production's.", 2.0, fill="#555")
     sheets.append(("assembly-cutting", sheet(3, 4, "Assembly and cutting layout", "التركيب وتوزيع القص", "1:12 / 1:20", b, logo)))
 
     # ---- sheet 4: BOM and notes
