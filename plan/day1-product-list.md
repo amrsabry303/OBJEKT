@@ -150,3 +150,11 @@ Sabry asked for them on day 1 (10 Nov). They are not part of the 41 / 4 / 16 tal
 Counting (Sabry decided 11 Nov): **2 website products**, a "Faux book" with design × size variants and a "Set of three" (OBJ-189: 3 fixed sets × 3 sizes). Desk and book stays at its target of 2 and under the 10% category cap (rule 1 in `plan/objekt-assortment-targets.md`). OBJ-178 to 188 stay as design and production records, each with its own Drive folder (created 11 Nov, empty), and are rows in the Google product sheet.
 
 What blocks them for 20 Nov: no printer or binder identified, no sample, no price, no lead time, font and logo licence, and no wrap allowance in the print files. Without a maker they can only be listed as pre-order.
+
+## Added 11 Nov 2026: OBJ-190 side table (Sabry: "register it for launch")
+
+| OBJ | Code | Website category | Subcategory | Name | Process | Design file | Images | Day 1 | Note | Source |
+|---|---|---|---|---|---|---|---|---|---|---|
+| OBJ-190 | OBJ-190 | Furniture | Side Tables and Bedside Tables | Side table, 8-sided faceted top on two legs, brushed stainless (no name approved) | Sheet metal, folded and welded boxes (inferred from the photos; Production to confirm) | Ready (in folder): drawing set rev 0 approved by Sabry 11 Nov 2026, Production review pending, not engineered | None (reference photos only) | **IN** | Overall 55 x 55 x 45 cm (H x W x D) from Sabry; other sizes estimated from three photos. Number provisional until Sabry confirms. Not costed, no price, no lead time. | Sabry, 11 Nov |
+
+Not part of the 41 / 4 / 16 tally above. It brings the in-list total to 42 if the list is approved as it stands; Sabry decides.
