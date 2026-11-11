@@ -15,3 +15,10 @@
 .dot--mto { background: none; border: 1.25px solid var(--navy); }
 .dot--out { background: none; border: 1.25px solid var(--grey-text); position: relative; }
 .dot--out::after { content: ""; position: absolute; inset-inline: -1px; top: 50%; height: 1.25px; background: var(--grey-text); transform: rotate(-45deg); }
+
+.obj { position: relative; }
+.quick { margin-block-start: 10px; }
+.obj a.quick { display: block; }
+.quick__btn { display: block; width: 100%; padding: 10px 12px; border: 1px solid var(--navy); background: none; color: var(--navy); font: inherit; font-size: 12px; letter-spacing: .1em; text-transform: uppercase; text-align: center; cursor: pointer; }
+.quick__btn:hover, .quick__btn:focus-visible { background: var(--navy); color: var(--sand, #E2D9CF); }
+.quick__btn[disabled] { opacity: .5; cursor: default; }

@@ -42,6 +42,8 @@
     "delivery_after": "ثم التسليم خلال"
   },
   "collection": {
+    "quick_add": "إضافة سريعة",
+    "choose_options": "اختر الخيارات",
     "breadcrumb": "مسار التنقل",
     "filter": "تصفية",
     "sort": "ترتيب",

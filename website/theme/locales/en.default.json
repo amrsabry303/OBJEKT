@@ -36,6 +36,8 @@
     "delivery_after": "Then delivery in"
   },
   "collection": {
+    "quick_add": "Quick add",
+    "choose_options": "Choose options",
     "breadcrumb": "Breadcrumb",
     "filter": "Filter",
     "sort": "Sort",
