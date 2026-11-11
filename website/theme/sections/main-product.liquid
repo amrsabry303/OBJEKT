@@ -42,22 +42,53 @@
         {%- form 'product', product, id: 'product-form', novalidate: 'novalidate' -%}
           <input type="hidden" name="id" value="{{ current.id }}">
           <p class="price" aria-live="off">{{ current.price | money_without_trailing_zeros }}</p>
+          {%- comment -%} Options: colour or finish as picture tiles (the variant's own image), then the rest (size) as text boxes. Each tile links to the variant that keeps the other selected options. {%- endcomment -%}
           {%- if product.has_only_default_variant == false -%}
-            <fieldset class="finish">
-              <legend class="label">{{ product.options.first }} <span class="muted">· {{ current.title }}</span></legend>
-              <ul class="finish__list">
-                {%- for v in product.variants -%}
-                  <li>
-                    <a class="opt{% unless v.available %} is-out{% endunless %}" href="{{ product.url }}?variant={{ v.id }}" data-variant-id="{{ v.id }}" data-media-id="{{ v.featured_media.id }}"{% if v.id == current.id %} aria-current="true"{% endif %}>
-                      {%- assign sw = v.metafields.custom.colour.value.hex.value -%}
-                      <span class="sw"{% if sw != blank %} style="--c: {{ sw }}"{% else %} style="--c: var(--sand)"{% endif %} aria-hidden="true"></span>
-                      <span class="nm"{% if v.id == current.id %} data-selected="{{ 'product.selected' | t }}"{% endif %}>{{ v.title }}</span>
-                      <span class="st">{% render 'availability', product: product, variant: v %}</span>
-                    </a>
-                  </li>
-                {%- endfor -%}
-              </ul>
-            </fieldset>
+            {%- assign opt_n = product.options.size -%}
+            {%- for pass in (1..2) -%}
+              {%- for option in product.options_with_values -%}
+                {%- assign oi = forloop.index0 -%}
+                {%- assign oname = option.name | downcase -%}
+                {%- assign is_col = false -%}
+                {%- if oname == 'finish' or oname == 'color' or oname == 'colour' -%}{%- assign is_col = true -%}{%- endif -%}
+                {%- if pass == 1 and is_col == false -%}{%- continue -%}{%- endif -%}
+                {%- if pass == 2 and is_col -%}{%- continue -%}{%- endif -%}
+                <fieldset class="optset">
+                  <legend class="label">{% if oname == 'size' %}{% if request.locale.iso_code == 'ar' %}اختر المقاس{% else %}Select size{% endif %}{% else %}{{ option.name }}{% endif %} <span class="muted">· {{ current.options[oi] }}</span></legend>
+                  <ul class="ot__list{% if is_col %} ot__list--img{% endif %}">
+                    {%- for val in option.values -%}
+                      {%- assign tv_id = 0 -%}{%- assign fb_id = 0 -%}
+                      {%- for v in product.variants -%}
+                        {%- if v.options[oi] == val -%}
+                          {%- if fb_id == 0 -%}{%- assign fb_id = v.id -%}{%- endif -%}
+                          {%- assign ok = true -%}
+                          {%- for j in (0..2) -%}{%- if j != oi and j < opt_n and v.options[j] != current.options[j] -%}{%- assign ok = false -%}{%- endif -%}{%- endfor -%}
+                          {%- if ok and tv_id == 0 -%}{%- assign tv_id = v.id -%}{%- endif -%}
+                        {%- endif -%}
+                      {%- endfor -%}
+                      {%- if tv_id == 0 -%}{%- assign tv_id = fb_id -%}{%- endif -%}
+                      {%- assign tv = product.variants | where: 'id', tv_id | first -%}
+                      {%- assign is_sel = false -%}{%- if current.options[oi] == val -%}{%- assign is_sel = true -%}{%- endif -%}
+                      <li>
+                        <a class="opt ot{% if is_col %} ot--img{% else %} ot--box{% endif %}{% unless tv.available %} is-out{% endunless %}" href="{{ product.url }}?variant={{ tv.id }}" data-variant-id="{{ tv.id }}" data-media-id="{{ tv.featured_media.id }}"{% if is_sel %} aria-current="true"{% endif %} title="{{ val | escape }}">
+                          {%- if is_col -%}
+                            {%- if tv.featured_media -%}
+                              {{ tv.featured_media | image_url: width: 240 | image_tag: loading: 'lazy', widths: '120, 240', sizes: '72px', alt: '' }}
+                            {%- else -%}
+                              {%- assign sw = tv.metafields.custom.colour.value.hex.value -%}
+                              <span class="sw" style="--c: {% if sw != blank %}{{ sw }}{% else %}var(--sand){% endif %}" aria-hidden="true"></span>
+                            {%- endif -%}
+                            <span class="sr">{{ val }}</span>
+                          {%- else -%}
+                            <span>{{ val }}</span>
+                          {%- endif -%}
+                        </a>
+                      </li>
+                    {%- endfor -%}
+                  </ul>
+                </fieldset>
+              {%- endfor -%}
+            {%- endfor -%}
           {%- endif -%}
           {% render 'availability', product: product, variant: current, mode: 'buy' %}
           <div class="sticky-buy" id="sticky-buy" hidden>
@@ -118,6 +149,20 @@
   .share { display: inline-flex; align-items: center; gap: 8px; background: none; border: 0; padding: 8px; margin: -8px; color: var(--navy); cursor: pointer; }
   .share:hover { opacity: .65; }
   .share__msg { font-size: 11px; }
+
+  /* Option tiles: colour and finish as pictures, size as boxes */
+  .optset { border: 0; margin: 0 0 24px; padding: 0; min-width: 0; }
+  .optset legend { padding: 0 0 12px; }
+  .ot__list { display: flex; flex-wrap: wrap; gap: 8px; list-style: none; margin: 0; padding: 0; }
+  .opt.ot { display: block; position: relative; min-height: 0; padding: 0; border: 1px solid color-mix(in srgb, var(--navy) 22%, transparent); background: none; }
+  .opt.ot:hover { background: none; border-color: var(--navy); }
+  .opt.ot[aria-current="true"] { background: none; border-color: var(--navy); box-shadow: inset 0 0 0 1px var(--navy); }
+  .opt.ot--img { width: 72px; aspect-ratio: 4 / 5; overflow: hidden; background: var(--field); }
+  .opt.ot--img img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .opt.ot--img .sw { position: absolute; inset: 0; width: auto; height: auto; clip-path: none; background: var(--c); }
+  .opt.ot--box { display: flex; align-items: center; justify-content: center; min-width: 88px; min-height: 52px; padding: 0 18px; font-size: var(--fs-small); }
+  .opt.ot.is-out { border-style: dashed; color: var(--grey-text); }
+  .opt.ot.is-out::after { content: ""; position: absolute; inset: 0; background: linear-gradient(to top right, transparent calc(50% - .75px), color-mix(in srgb, var(--navy) 40%, transparent) 50%, transparent calc(50% + .75px)); }
 </style>
 <script>
   (function () {
