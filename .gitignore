@@ -13,3 +13,4 @@ transcripts/
 handover/
 *.zip
 .env*
+__pycache__/
