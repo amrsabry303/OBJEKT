@@ -266,3 +266,4 @@
 - Theme: new `sections/main-custom-request.liquid` (statement, numbered steps, app-block slot for the form, editor note listing the fields, fallback link) and `templates/page.custom-request.json` (three placeholder steps). `theme check` 50 files, no offenses.
 - Pushed to the **unpublished** theme 189754769632 (`themeFilesUpsert`, 2 files, no user errors).
 - Not done (needs Sabry): install the form app, build the form in it, create the page "Custom request" with this template, add it to a menu. Not seen in a browser.
+- Sabry chose the free plan of Powerful Contact Form Builder (11 Nov). Store: page "Custom request" (`pageCreate`, handle `custom-request`, template `custom-request`, published; store is password protected). Read back OK. App install pending Sabry; not in any menu yet.
