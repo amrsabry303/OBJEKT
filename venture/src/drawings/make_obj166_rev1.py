@@ -1,9 +1,9 @@
-"""OBJ-166 plinth, square box, two heights: drawing set rev 1 (A3, EN/AR) + DXF.  DRAFT, not approved.
+"""OBJ-166 plinth, square box, two heights: drawing set rev 1 (A3, EN/AR) + DXF.  APPROVED by Sabry 11 Nov 2026, production review pending.
 
 Rev 1 (11 Nov 2026), Sabry: the short version is now 700 high (rev 0 had 850), and the finishes are brushed stainless or mirror
 polish (rev 0 had Carbon matte or brushed stainless). Footprint 220 x 220 is Sabry's, unchanged. The build is unchanged from rev 0:
 one 3 mm blank folded into a square tube with a butt seam, a top and a bottom plate, four turned feet. Rev 0 (approved 1 Nov 2026,
-1000 and 850 high) is in the Drive folder and is superseded by this revision once Sabry approves it.
+1000 and 850 high) is in the Drive folder and is superseded by this revision (approved).
 
 Run: python3 make_obj166_rev1.py     Needs: numpy ezdxf pymupdf pillow, node + playwright.   Output: venture/drawings/OBJ-166/
 """
@@ -18,10 +18,10 @@ ROOT = os.path.abspath(os.path.join(HERE, "..", "..", ".."))
 OUT = os.path.join(ROOT, "venture", "drawings", "OBJ-166")
 PID, REV, DATE = "OBJ-166", "1", "11 Nov 2026"
 PRE = f"{PID}_rev{REV}_"
-APPROVED = False
+APPROVED = True                          # Sabry approved rev 1 on 11 Nov 2026
 if APPROVED:
-    STAMP_EN = "Approved by Sabry. Production review pending. Not engineered"
-    STAMP_AR = "معتمد من صبري. مراجعة الإنتاج قيد الانتظار. بدون مراجعة هندسية"
+    STAMP_EN = "Approved by Sabry 11 Nov 2026. Production review pending. Not engineered"
+    STAMP_AR = "معتمد من صبري ١١ نوفمبر ٢٠٢٦. مراجعة الإنتاج قيد الانتظار. بدون مراجعة هندسية"
 else:
     STAMP_EN, STAMP_AR = H.STAMP_EN, H.STAMP_AR
 STAMP_COL = "#1d6b3a" if APPROVED else "#b3261e"
@@ -92,7 +92,7 @@ def write_dxf():
     for tag, h in SIZES:
         for key, name, qty, kind, data in parts(h):
             d = new(); put(d.modelspace(), key, h, 0, 0)
-            d.modelspace().add_text(f"{PID} rev {REV} {int(h)} high, {key} x{qty}. mm. 3 mm sheet (proposed). DRAFT.", dxfattribs={"layer": "NOTE", "height": 8}).set_placement((0, -30))
+            d.modelspace().add_text(f"{PID} rev {REV} {int(h)} high, {key} x{qty}. mm. 3 mm sheet (proposed). APPROVED by Sabry 11 Nov 2026, production review pending.", dxfattribs={"layer": "NOTE", "height": 8}).set_placement((0, -30))
             d.saveas(os.path.join(OUT, PRE + f"{int(h)}_{key}.dxf"))
         d = new(); d.layers.add("SHEET", color=1); m = d.modelspace()
         m.add_lwpolyline([(0, 0), (2500, 0), (2500, 1250), (0, 1250)], close=True, dxfattribs={"layer": "SHEET"})
@@ -253,7 +253,7 @@ def build(logo, ref):
             ["6", ("Finish", "التشطيب"), "-", ("Brush finish, or mirror polish, per unit", "تصنفير أو تلميع مرآة"), "-"]]
     b += H.table(20, 40, [10, 40, 12, 100, 60], rows, 7.4, 2.0)
     notes = [("Dimensions in mm. General tolerance ±1, to be confirmed by Production.", "الأبعاد بالمليمتر. التفاوت العام ±١، يؤكده قسم الإنتاج."),
-             ("Rev 1 is a DRAFT. Sizes from Sabry (11 Nov 2026): width and depth 220; overall height 1000 or 700, floor to top, feet included.", "المراجعة ١ مسودة. المقاسات من صبري: العرض والعمق ٢٢٠، الارتفاع ١٠٠٠ أو ٧٠٠ من الأرض مع الأقدام."),
+             ("Rev 1, approved by Sabry 11 Nov 2026. Sizes from Sabry: width and depth 220; overall height 1000 or 700, floor to top, feet included.", "المراجعة ١ معتمدة من صبري ١١ نوفمبر ٢٠٢٦. المقاسات من صبري: العرض والعمق ٢٢٠، الارتفاع ١٠٠٠ أو ٧٠٠ من الأرض مع الأقدام."),
              ("One product, two heights and two finishes: four variants (sheet 1). Same body, only the blank length changes: 995 or 695.", "منتج واحد بارتفاعين وتشطيبين: أربعة أنواع. نفس الجسم، يتغير طول الشريحة فقط."),
              ("Body: one blank folded on three bends into a square tube, the fourth corner a butt seam welded and ground flush. Bend values: inside radius 3, K 0.4 (rev 0).", "الجسم: شريحة واحدة بثلاث ثنيات وأنبوب مربع، والركن الرابع وصلة ملحومة ومنعمة."),
              ("Plates sit inside the tube ends, flush, welded all round. On stainless the weld and grinding marks are re-brushed or re-polished.", "الألواح داخل طرفي الأنبوب ومحاذية وملحومة، وتُعاد معالجة آثار اللحام."),
