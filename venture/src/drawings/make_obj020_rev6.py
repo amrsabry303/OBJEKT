@@ -1,14 +1,14 @@
-"""OBJ-020 coffee table (library item 'Coffee Tables ref 4'), rev 5: drawing set (A3, EN/AR) + DXF.
+"""OBJ-020 coffee table (library item 'Coffee Tables ref 4'), rev 6: drawing set (A3, EN/AR) + DXF.
 
-Rev 5 (11 Nov 2026): the legs now have the same V end as the table. The top outline is MEASURED from the 3/4 photo
-(8 corners traced and fitted to a plan, error under 2 px): a front and a back crease in the middle of the long faces and a
-shallow V point at each end. Each leg is a block whose outer end is the same V, its two V faces in line with the table's V faces
-(points 0, 1, 2 on the left and 4, 5, 6 on the right of Sabry's trace), and a flat inner end.
-Revs 2, 3 and 4 were wrong and are superseded. Overall 1000 x 600 x 300 mm are Sabry's; everything else is estimated.
+Rev 6 (11 Nov 2026): the legs are moved 50 mm inside, not flush with the end points (Sabry, from the front photo).
+Each leg keeps the same V end as the table, its V faces parallel to the table's V faces and stepped 50 mm inside them.
+The top outline is MEASURED from the 3/4 photo (8 corners traced and fitted to a plan, error under 2 px): a front and a back
+crease in the middle of the long faces and a shallow V point at each end.
+Revs 2 to 5 were wrong or not approved and are superseded. Overall 1000 x 600 x 300 mm are Sabry's; everything else is estimated.
 
 Proposed build: 3 mm sheet, hollow box and hollow legs. Production decides everything about joints and finish.
 
-Run: python3 make_obj020_rev5.py     Needs: numpy ezdxf pymupdf pillow, node + playwright.
+Run: python3 make_obj020_rev6.py     Needs: numpy ezdxf pymupdf pillow, node + playwright.
 Output: venture/drawings/OBJ-020/
 """
 import base64, math, os, subprocess, sys
@@ -19,9 +19,9 @@ import make_obj177_rev1 as H          # drawing helpers only (txt, bi, line, hdi
 
 ROOT = os.path.abspath(os.path.join(HERE, "..", "..", ".."))
 OUT = os.path.join(ROOT, "venture", "drawings", "OBJ-020")
-PID, REV, DATE = "OBJ-020", "5", "11 Nov 2026"
+PID, REV, DATE = "OBJ-020", "6", "11 Nov 2026"
 PRE = f"{PID}_rev{REV}_"
-APPROVED = False                         # Sabry approved rev 5 on 11 Nov 2026
+APPROVED = False                         # not approved
 if APPROVED:
     STAMP_EN = "Approved by Sabry 11 Nov 2026. Production review pending. Not engineered"
     STAMP_AR = "معتمد من صبري ١١ نوفمبر ٢٠٢٦. مراجعة الإنتاج قيد الانتظار. بدون مراجعة هندسية"
@@ -46,11 +46,11 @@ T = 3.0                                 # sheet thickness (proposed; Production 
 # top outline, counter-clockwise from the front-left corner, y = 0 at the front. Fitted to the photo, rounded.
 # Symmetric about x = 500 and about y = 300: two creases (front, back) and a shallow V point at each end.
 BOX_POLY = [(500, 0), (955, 50), (1000, 300), (955, 550), (500, 600), (45, 550), (0, 300), (45, 50)]
-# legs: each leg has the same V end as the table. The V faces lie ON the table's V faces (flush), from the point
-# out to y = 110 and y = 490; the leg then runs straight in to a flat inner end at x = 190. ESTIMATED size.
+# legs: each leg has the same V end as the table, stepped INS mm inside it (V faces parallel to the table's V faces),
+# then runs straight in to a flat inner end. ESTIMATED size and position (from the front photo, inset about 50 mm).
+INS = 50.0
 _VX = 45.0 * (300 - 110) / 250.0                         # x of the V corners on the table's V edge (34.2)
-LEG_L = [(0, 300), (_VX, 110), (190, 110), (190, 490), (_VX, 490)]
-LEG_L = [(0, 300), (_VX, 490), (190, 490), (190, 110), (_VX, 110)] if False else LEG_L
+LEG_L = [(INS, 300), (INS + _VX, 110), (INS + 190, 110), (INS + 190, 490), (INS + _VX, 490)]
 LEG_L = ccw(LEG_L)
 LEG_R = ccw([(1000 - x, y) for x, y in LEG_L])
 
@@ -178,7 +178,7 @@ def draw_iso(ox, oy, s, lift=0.0):
 def draw_front(ox, oy, s):
     """Front elevation, looking along +y; oy = floor line."""
     svg = ""
-    for x0, x1, lines in ((0, 190, (_VX,)), (810, 1000, (1000 - _VX,))):
+    for x0, x1, lines in ((INS, INS + 190, (INS + _VX,)), (810 - INS, 1000 - INS, (1000 - INS - _VX,))):
         svg += poly_svg([(x0, 0), (x1, 0), (x1, LEGH), (x0, LEGH)], ox, oy, s, BRZ_MID)
         for xx in lines:
             svg += H.line(ox + xx * s, oy, ox + xx * s, oy - LEGH * s, 0.2)
@@ -366,7 +366,7 @@ def build(logo, ref):
     b += f'<path d="M{" L".join(f"{x:.2f},{y:.2f}" for x, y in P)} Z" fill="#ece8df" stroke="{INK}" stroke-width="0.4"/>'
     b += H.hdim(xb, xb + wB * s7, 48 + hB * s7 + 6, f"{wB:.0f}", size=1.9)
     b += H.vdim(xb + wB * s7 + 4, 48, 48 + hB * s7, f"{hB:.0f}", size=1.9)
-    b += H.txt(xb, 48 + hB * s7 + 14, "V end like the table; flat inner end", 1.8, fill="#555")
+    b += H.txt(xb, 48 + hB * s7 + 14, "V end like the table, 50 in; flat inner end", 1.8, fill="#555")
     def band(xp, yp, label_en, label_ar, w, h, folds):
         r = ""
         r += H.bi(xp - 2, yp - 11, label_en, label_ar, 2.1, bold=True)
@@ -389,7 +389,7 @@ def build(logo, ref):
             [("Overall W x D x H (given)", "العرض × العمق × الارتفاع (معطى)"), f"{L:.0f} x {D:.0f} x {HT:.0f}"],
             [("Box height / leg height (est.)", "ارتفاع الصندوق / الرجل (تقدير)"), f"{BOXH:.0f} / {LEGH:.0f}"],
             [("Leg block (est., 2 mirrored)", "كتلة الرجل (تقدير، ٢ متناظرتان)"), "190 x 380, V end"],
-            [("Leg V faces vs table V faces", "أوجه V للرجل مع أوجه V للطاولة"), "in line"],
+            [("Leg set in from the table points", "بعد الرجل عن رأس الطاولة"), "50"],
             [("Sheet thickness (proposed)", "سماكة الصاج (مقترحة)"), f"{T:.0f}"]]
     b += H.table(300, 60, [58, 52], rows, 6.2, 1.9)
     sheets.append(("parts", sheet(2, 4, "Parts: flat patterns", "القطع: الأشكال المسطحة", "1:7", b, logo)))
@@ -402,7 +402,7 @@ def build(logo, ref):
     steps = [("Laser cut P1 to P6 from 3 mm sheet. Fold P3 and P4 (1 fold each) and P5 (5 folds) at the blue lines.", "قص الليزر للقطع من ل١ إلى ل٦ من صاج ٣ مم. ثني ل٣ ول٤ (ثنية لكل منهما) ول٥ (٥ ثنيات) عند الخطوط الزرقاء."),
              ("Weld each leg: the band closes at its seam, then its cap plate on top. The two legs are mirror images.", "لحام كل رجل: يُقفل الشريط عند وصلته ثم غطاؤه العلوي. الرجلان متناظرتان."),
              ("Build the box: bottom plate, the 2 side bands and 2 end bands round it, then the top plate.", "تجميع الصندوق: اللوح السفلي، الشريطان الجانبيان والشريطان الطرفيان حوله، ثم اللوح العلوي."),
-             ("Fix each leg under its end point, its V faces in line with the table's V faces (dashed outlines on the plan).", "تثبيت كل رجل أسفل رأس الطرف بحيث تتوافق أوجه V مع أوجه V للطاولة (الخطوط المتقطعة)."),
+             ("Fix each leg under its end, 50 in from the point, its V faces parallel to the table's V faces (dashed outlines on the plan).", "تثبيت كل رجل أسفل الطرف على بعد ٥٠ من الرأس بحيث تتوازى أوجه V مع أوجه V للطاولة (الخطوط المتقطعة)."),
              ("Dress the seams, then finish: brushed top, bronze sides and legs. Glides if wanted.", "تنعيم الوصلات ثم التشطيب: سطح مصنفر وجوانب وأرجل برونزية. قواعد أرضية إن لزم.")]
     for i, (en, ar) in enumerate(steps):
         yy = 44 + i * 17
@@ -440,10 +440,10 @@ def build(logo, ref):
     b += H.table(20, 40, [10, 40, 12, 100, 52, 48], rows, 7.4, 2.0)
     notes = [
         ("Overall 1000 W x 600 D x 300 H (100 x 60 x 30 cm) are Sabry's sizes (11 Nov 2026). Everything else is estimated from two photos.", "المقاسات الكلية ١٠٠٠ × ٦٠٠ × ٣٠٠ (١٠٠ × ٦٠ × ٣٠ سم) من صبري (١١ نوفمبر ٢٠٢٦). الباقي تقدير من صورتين."),
-        ("Rev 5: legs with the same V end as the table. The top outline is measured from the 3/4 photo (8 corners traced and fitted). Revs 2, 3 and 4 were wrong and are superseded.", "المراجعة ٥: أرجل بنفس رأس V للطاولة. شكل السطح مقاس من الصورة. المراجعات ٢ و٣ و٤ كانت خاطئة وأُلغيت."),
+        ("Rev 6: legs moved 50 inside the table points. The top outline is measured from the 3/4 photo (8 corners traced and fitted). Revs 2 to 5 are superseded.", "المراجعة ٦: الأرجل مزاحة ٥٠ للداخل عن رأسي الطاولة. شكل السطح مقاس من الصورة. المراجعات ٢ إلى ٥ أُلغيت."),
         ("Reference: library item 'Coffee Tables ref 4', photos 2 and 3. Drawn exact to the reference by Sabry's standing rule.", "المرجع: عنصر المكتبة، الصورتان ٢ و٣. مرسوم مطابقاً للمرجع حسب قاعدة صبري."),
         ("Top outline: 8 sides, symmetric about both centre lines. Four long faces (two with a crease in the middle, 50 deep) and a shallow V point at each end (corners at 45 in, points at x = 0 and 1000).", "شكل السطح: ٨ أضلاع، متناظر حول المحورين. أربعة أوجه طويلة (في منتصف الأمامي والخلفي ثنية بعمق ٥٠) وطرفان على شكل رأس مدبب (الزوايا ٤٥ للداخل)."),
-        (f"Box height {BOXH:.0f} and leg height {LEGH:.0f} are estimates. Each leg has the same V end as the table, its V faces in line with the table's V faces, then runs straight in to a flat inner end: 190 x 380, mirrored (estimate).", f"ارتفاع الصندوق {ar_num(f'{BOXH:.0f}')} والرجل {ar_num(f'{LEGH:.0f}')} تقديريان. لكل رجل نفس رأس V للطاولة بأوجه متوافقة معها ثم نهاية داخلية مستقيمة: ١٩٠ × ٣٨٠، متناظرتان (تقدير)."),
+        (f"Box height {BOXH:.0f} and leg height {LEGH:.0f} are estimates. Each leg has the same V end as the table, its V faces parallel to the table's V faces and stepped 50 inside them (not flush, from the front photo), then runs straight in to a flat inner end: 190 x 380, mirrored (estimate).", f"ارتفاع الصندوق {ar_num(f'{BOXH:.0f}')} والرجل {ar_num(f'{LEGH:.0f}')} تقديريان. لكل رجل نفس رأس V للطاولة بأوجه موازية لها ومزاحة ٥٠ للداخل (غير متطابقة، من الصورة الأمامية) ثم نهاية داخلية مستقيمة: ١٩٠ × ٣٨٠، متناظرتان (تقدير)."),
         ("Build proposed in 3 mm sheet: hollow box and hollow legs, crisp corners as in the photos. Production decides folds, welds and seams.", "التنفيذ المقترح من صاج ٣ مم: صندوق ورجلان مجوفان بزوايا حادة. الإنتاج يقرر الثني واللحام والوصلات."),
         ("Finish as the photos: brushed silver top, bronze-brown satin sides and legs. Material and method are Production's. Hex is a screen guess.", "التشطيب كما في الصور: سطح فضي مصنفر وجوانب وأرجل برونزية. الخامة والطريقة للإنتاج. الرمز تقدير من الشاشة."),
         ("Leg underside is left open on the drawing. Closing it, bracing and weight are Production's. No structural claim is made.", "أسفل الرجل مفتوح في الرسم. التقفيل والتدعيم والوزن للإنتاج. لا توجد ادعاءات إنشائية."),
