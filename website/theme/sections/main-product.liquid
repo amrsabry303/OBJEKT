@@ -53,6 +53,7 @@
                 {%- if oname == 'finish' or oname == 'color' or oname == 'colour' -%}{%- assign is_col = true -%}{%- endif -%}
                 {%- if pass == 1 and is_col == false -%}{%- continue -%}{%- endif -%}
                 {%- if pass == 2 and is_col -%}{%- continue -%}{%- endif -%}
+                {%- if option.values.size < 2 -%}{%- continue -%}{%- endif -%}
                 <fieldset class="optset">
                   <legend class="label">{% if oname == 'size' %}{% if request.locale.iso_code == 'ar' %}اختر المقاس{% else %}Select size{% endif %}{% else %}{{ option.name }}{% endif %} <span class="muted">· {{ current.options[oi] }}</span></legend>
                   <ul class="ot__list{% if is_col %} ot__list--img{% endif %}">
