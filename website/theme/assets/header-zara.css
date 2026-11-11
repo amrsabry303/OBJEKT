@@ -1,0 +1,49 @@
+/* Header and side pane in the style of Zara Home: burger and wordmark left, one persistent search field, tools right; the menu is a pane that slides in under the header */
+.hdr__in { grid-template-columns: 1fr minmax(220px, 420px) 1fr; column-gap: clamp(16px, 3vw, 48px); }
+.hdr__lead { display: flex; align-items: center; gap: clamp(12px, 1.6vw, 24px); min-width: 0; }
+.hdr .menu-btn { display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; margin-inline-start: -10px; }
+.burger { position: relative; width: 22px; height: 14px; display: block; }
+.burger i { position: absolute; inset-inline: 0; height: 1px; background: currentColor; transition: transform var(--t-base) var(--ease), opacity var(--t-fast), top var(--t-base) var(--ease); }
+.burger i:nth-child(1) { top: 0; }
+.burger i:nth-child(2) { top: 6px; }
+.burger i:nth-child(3) { top: 13px; }
+.menu-btn[aria-expanded="true"] .burger i:nth-child(1) { top: 6px; transform: rotate(45deg); }
+.menu-btn[aria-expanded="true"] .burger i:nth-child(2) { opacity: 0; }
+.menu-btn[aria-expanded="true"] .burger i:nth-child(3) { top: 6px; transform: rotate(-45deg); }
+
+.hdr__search { display: flex; align-items: center; gap: 8px; height: 44px; border-block-end: 1px solid var(--navy); min-width: 0; }
+.hdr__search input { flex: 1; min-width: 0; height: 100%; background: none; border: 0; padding: 0; font: inherit; font-size: var(--fs-label); font-weight: 500; letter-spacing: .12em; text-transform: uppercase; color: var(--navy); border-radius: 0; -webkit-appearance: none; appearance: none; }
+.hdr__search input::placeholder { color: var(--navy); opacity: 1; }
+.hdr__search input:focus-visible { outline: none; }
+.hdr__search:focus-within { outline: 2px solid var(--navy); outline-offset: 4px; }
+.hdr__search input::-webkit-search-cancel-button { display: none; }
+.hdr__search button { display: inline-flex; align-items: center; justify-content: center; width: 32px; height: 32px; color: var(--navy); }
+
+/* Side pane */
+.menu { position: fixed; inset-block: var(--header-h) 0; inset-inline: 0 auto; width: min(380px, 100%); height: auto; max-width: 100%; max-height: none; margin: 0; border: 0; border-inline-end: 1px solid color-mix(in srgb, var(--navy) 14%, transparent); background: var(--paper); color: var(--navy); overflow-y: auto; z-index: 19; }
+.menu[open] { animation: paneIn var(--t-base) var(--ease); }
+@keyframes paneIn { from { opacity: 0; transform: translateX(-16px); } to { opacity: 1; transform: none; } }
+[dir="rtl"] .menu[open] { animation-name: paneInRtl; }
+@keyframes paneInRtl { from { opacity: 0; transform: translateX(16px); } to { opacity: 1; transform: none; } }
+.menu__body { display: block; padding: clamp(24px, 4vh, 40px) var(--margin) 32px; }
+.menu__group { margin: 0 0 clamp(20px, 3.5vh, 32px); }
+.menu__group:last-child { margin-block-end: 0; }
+.menu__group > li > a, .menu__group > li > details > summary { display: flex; align-items: center; justify-content: flex-start; gap: .3em; min-height: 44px; font-family: var(--font-sans); font-size: var(--fs-body); font-weight: 400; line-height: 1.2; letter-spacing: .06em; text-transform: uppercase; color: var(--navy); cursor: pointer; list-style: none; padding: 0; }
+.menu__group > li > details > summary { justify-content: space-between; }
+.menu__group summary::-webkit-details-marker { display: none; }
+.menu__group > li > a:hover, .menu__group > li > details > summary:hover { opacity: .6; }
+.menu__group summary::after { content: ""; width: 7px; height: 7px; border-inline-end: 1px solid currentColor; border-block-end: 1px solid currentColor; transform: rotate(-45deg); margin-inline-end: 6px; transition: transform var(--t-fast); }
+[dir="rtl"] .menu__group summary::after { transform: rotate(135deg); }
+.menu__group details[open] > summary::after { transform: rotate(45deg); }
+.menu__group details ul { padding: 0 0 10px 16px; }
+.menu__group details li a { display: flex; align-items: center; min-height: 40px; font-size: var(--fs-small); }
+.menu__group .sm a { font-size: var(--fs-small); min-height: 40px; }
+.menu a[aria-current="page"] { text-decoration: underline; text-underline-offset: 6px; text-decoration-thickness: 1px; }
+
+/* Phones: the search field drops to a second row so it stays on screen */
+@media (max-width: 880px) {
+  :root { --header-h: 112px; }
+  .hdr__in { height: auto; grid-template-columns: 1fr auto; grid-template-rows: 60px 44px; column-gap: 16px; row-gap: 0; padding-block-end: 8px; }
+  .hdr__search { grid-column: 1 / -1; grid-row: 2; }
+  .menu { width: 100%; border-inline-end: 0; }
+}

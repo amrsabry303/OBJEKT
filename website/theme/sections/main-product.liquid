@@ -1,5 +1,6 @@
 {{ 'card.css' | asset_url | stylesheet_tag }}
 {{ 'product.css' | asset_url | stylesheet_tag }}
+{{ 'look.css' | asset_url | stylesheet_tag }}
 {%- assign current = product.selected_or_first_available_variant -%}
 {%- assign ref = product.metafields.custom.reference.value | default: product.variants.first.sku -%}
 <div id="product-root" data-section-id="{{ section.id }}" data-product-url="{{ product.url }}" data-added="{{ 'product.added' | t }}" data-error="{{ 'product.add_error' | t }}">
@@ -25,7 +26,13 @@
     </div>
 
     <div class="info">
-      {%- if product.type != blank -%}<p class="label muted">{{ product.type }}</p>{%- endif -%}
+      <div class="info__top">
+        {%- if product.type != blank -%}<p class="label muted">{{ product.type }}</p>{%- else -%}<span></span>{%- endif -%}
+        <button type="button" class="share" id="share-btn" aria-label="Share" data-title="{{ product.title | escape }}" data-copied="Link copied">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 15V3.5M8 7l4-4 4 4M6 11H4.5v9.5h15V11H18"/></svg>
+          <span class="share__msg label" role="status" aria-live="polite"></span>
+        </button>
+      </div>
       <h1 class="h2 title">{{ product.title }}</h1>
       {%- if ref != blank -%}<p class="ref label muted">{{ 'product.ref' | t }} <bdi dir="ltr">{{ ref }}</bdi></p>{%- endif -%}
       {%- assign lede = product.metafields.custom.short_description.value -%}
@@ -41,7 +48,7 @@
               <ul class="finish__list">
                 {%- for v in product.variants -%}
                   <li>
-                    <a class="opt{% unless v.available %} is-out{% endunless %}" href="{{ product.url }}?variant={{ v.id }}" data-variant-id="{{ v.id }}"{% if v.id == current.id %} aria-current="true"{% endif %}>
+                    <a class="opt{% unless v.available %} is-out{% endunless %}" href="{{ product.url }}?variant={{ v.id }}" data-variant-id="{{ v.id }}" data-media-id="{{ v.featured_media.id }}"{% if v.id == current.id %} aria-current="true"{% endif %}>
                       {%- assign sw = v.metafields.custom.colour.value.hex.value -%}
                       <span class="sw"{% if sw != blank %} style="--c: {{ sw }}"{% else %} style="--c: var(--sand)"{% endif %} aria-hidden="true"></span>
                       <span class="nm"{% if v.id == current.id %} data-selected="{{ 'product.selected' | t }}"{% endif %}>{{ v.title }}</span>
@@ -83,16 +90,48 @@
     </div>
   </div>
 
+  {%- comment -%} Complete the look: hand-picked companions (custom.complementary) when set, otherwise other products in the shop {%- endcomment -%}
   {%- assign companions = product.metafields.custom.complementary.value -%}
   {%- if companions.size > 0 -%}
-    <section class="sec wrap" aria-labelledby="igc-h">
-      <h2 class="label" id="igc-h">{{ 'product.in_good_company' | t }}</h2>
-      <div class="igc">
-        {%- for p in companions limit: 3 -%}{% render 'product-card', product: p %}{%- endfor -%}
-      </div>
+    {%- assign look = companions -%}
+  {%- else -%}
+    {%- assign look = collections['all'].products -%}
+  {%- endif -%}
+  {%- assign look_n = 0 -%}
+  {%- capture look_html -%}
+    {%- for p in look -%}
+      {%- if p.id != product.id and look_n < 6 -%}
+        {% render 'product-card', product: p %}
+        {%- assign look_n = look_n | plus: 1 -%}
+      {%- endif -%}
+    {%- endfor -%}
+  {%- endcapture -%}
+  {%- if look_n > 0 -%}
+    <section class="look wrap" aria-labelledby="igc-h">
+      <h2 class="label look__h" id="igc-h">Complete the look</h2>
+      <div class="igc">{{ look_html }}</div>
     </section>
   {%- endif -%}
 </div>
+<style>
+  .info__top { display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 36px; }
+  .share { display: inline-flex; align-items: center; gap: 8px; background: none; border: 0; padding: 8px; margin: -8px; color: var(--navy); cursor: pointer; }
+  .share:hover { opacity: .65; }
+  .share__msg { font-size: 11px; }
+</style>
+<script>
+  (function () {
+    var b = document.getElementById('share-btn'); if (!b) return;
+    var msg = b.querySelector('.share__msg');
+    function told(t) { msg.textContent = t; setTimeout(function () { msg.textContent = ''; }, 2200); }
+    b.addEventListener('click', function () {
+      var url = location.href;
+      if (navigator.share) { navigator.share({ title: b.dataset.title, url: url }).catch(function () {}); return; }
+      if (navigator.clipboard && navigator.clipboard.writeText) { navigator.clipboard.writeText(url).then(function () { told(b.dataset.copied); }, function () { told(url); }); }
+      else { told(url); }
+    });
+  })();
+</script>
 {% render 'product-jsonld', product: product %}
 <script src="{{ 'product.js' | asset_url }}" defer></script>
 {% schema %}

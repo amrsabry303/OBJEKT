@@ -18,9 +18,16 @@
   {%- else -%}
     {%- assign mto_n = mto_n | plus: 1 -%}
     {%- assign mto_total = mto_total | plus: item.final_line_price -%}
-    {%- assign parts = item.properties._lead_time_weeks | split: '-' -%}
-    {%- assign wmin = parts.first | plus: 0 -%}
-    {%- assign wmax = parts.last | plus: 0 -%}
+    {%- comment -%} Lead time in days; carts made before the switch carry weeks, converted to days. {%- endcomment -%}
+    {%- if item.properties._lead_time_days != blank -%}
+      {%- assign parts = item.properties._lead_time_days | split: '-' -%}
+      {%- assign wmin = parts.first | plus: 0 -%}
+      {%- assign wmax = parts.last | plus: 0 -%}
+    {%- else -%}
+      {%- assign parts = item.properties._lead_time_weeks | split: '-' -%}
+      {%- assign wmin = parts.first | plus: 0 | times: 7 -%}
+      {%- assign wmax = parts.last | plus: 0 | times: 7 -%}
+    {%- endif -%}
     {%- if wmin > mw_min -%}{%- assign mw_min = wmin -%}{%- endif -%}
     {%- if wmax > mw_max -%}{%- assign mw_max = wmax -%}{%- endif -%}
   {%- endif -%}
@@ -67,7 +74,7 @@
               <label class="pref__opt">
                 <input type="radio" name="attributes[delivery_preference]" value="together"{% if pref == 'together' %} checked{% endif %}>
                 <span class="pref__t">{{ 'cart.together' | t }}</span>
-                {%- if mw_max > 0 -%}<span class="pref__d">{{ 'cart.together_desc' | t }} {% if mw_min == mw_max or mw_min == 0 %}{{ 'availability.weeks_one' | t: count: mw_max }}{% else %}{{ 'availability.weeks_range' | t: min: mw_min, max: mw_max }}{% endif %}</span>{%- endif -%}
+                {%- if mw_max > 0 -%}<span class="pref__d">{{ 'cart.together_desc' | t }} {% if mw_min == mw_max or mw_min == 0 %}{{ 'availability.days_one' | t: count: mw_max }}{% else %}{{ 'availability.days_range' | t: min: mw_min, max: mw_max }}{% endif %}</span>{%- endif -%}
               </label>
               <label class="pref__opt">
                 <input type="radio" name="attributes[delivery_preference]" value="separate"{% if pref == 'separate' %} checked{% endif %}>
@@ -75,7 +82,7 @@
                 {%- if rd_max > 0 or mw_max > 0 -%}
                   <span class="pref__d">
                     {%- if rd_max > 0 -%}{{ 'cart.separate_ready' | t }} {% if rd_min == rd_max or rd_min == 0 %}{{ 'availability.days_one' | t: count: rd_max }}{% else %}{{ 'availability.days_range' | t: min: rd_min, max: rd_max }}{% endif %}. {% endif -%}
-                    {%- if mw_max > 0 -%}{{ 'cart.separate_mto' | t }} {% if mw_min == mw_max or mw_min == 0 %}{{ 'availability.weeks_one' | t: count: mw_max }}{% else %}{{ 'availability.weeks_range' | t: min: mw_min, max: mw_max }}{% endif %}.{% endif -%}
+                    {%- if mw_max > 0 -%}{{ 'cart.separate_mto' | t }} {% if mw_min == mw_max or mw_min == 0 %}{{ 'availability.days_one' | t: count: mw_max }}{% else %}{{ 'availability.days_range' | t: min: mw_min, max: mw_max }}{% endif %}.{% endif -%}
                   </span>
                 {%- endif -%}
               </label>
@@ -86,7 +93,7 @@
             {%- if ready_n > 0 and rd_max > 0 -%}
               <p class="deliv">{{ 'cart.est_ready' | t }} {% if rd_min == rd_max or rd_min == 0 %}{{ 'availability.days_one' | t: count: rd_max }}{% else %}{{ 'availability.days_range' | t: min: rd_min, max: rd_max }}{% endif %}.</p>
             {%- elsif mto_n > 0 and mw_max > 0 -%}
-              <p class="deliv">{{ 'cart.est_mto' | t }} {% if mw_min == mw_max or mw_min == 0 %}{{ 'availability.weeks_one' | t: count: mw_max }}{% else %}{{ 'availability.weeks_range' | t: min: mw_min, max: mw_max }}{% endif %}.</p>
+              <p class="deliv">{{ 'cart.est_mto' | t }} {% if mw_min == mw_max or mw_min == 0 %}{{ 'availability.days_one' | t: count: mw_max }}{% else %}{{ 'availability.days_range' | t: min: mw_min, max: mw_max }}{% endif %}.</p>
             {%- endif -%}
           {%- endif -%}
 

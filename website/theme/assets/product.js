@@ -20,14 +20,62 @@
     });
   }
 
-  // Gallery follows the variant: variant media is found by the image the server renders first for it
+  // Desktop gallery: one large framed image with a thumbnail strip beside it (CSS shows it from 881px up).
+  // Small screens keep the swipe strip. Without this script every image simply shows.
   var mediaByVariant = {};
+  function setActive(mediaId) {
+    var gal = $('gallery'); if (!gal || !gal.classList.contains('zh')) return;
+    var on = null;
+    gal.querySelectorAll('.g[data-media-id]').forEach(function (g) {
+      var is = g.dataset.mediaId === String(mediaId);
+      g.classList.toggle('is-on', is); if (is) on = g;
+    });
+    if (!on) return;
+    var img = on.querySelector('img'); if (img) { img.loading = 'eager'; img.removeAttribute('fetchpriority'); }
+    gal.querySelectorAll('.th').forEach(function (t) {
+      var is = t.dataset.mediaId === String(mediaId);
+      t.classList.toggle('is-on', is); if (is) t.setAttribute('aria-current', 'true'); else t.removeAttribute('aria-current');
+    });
+  }
+  safe(function () {
+    var gal = $('gallery'); if (!gal) return;
+    var tiles = gal.querySelectorAll('.g[data-media-id]'); if (tiles.length < 2) return;
+    var strip = document.createElement('div'); strip.className = 'th-strip';
+    tiles.forEach(function (g, i) {
+      var src = (g.querySelector('img') || {}).src || '';
+      var b = document.createElement('button'); b.type = 'button'; b.className = 'th'; b.dataset.mediaId = g.dataset.mediaId;
+      b.setAttribute('aria-label', (i + 1) + ' / ' + tiles.length);
+      var im = document.createElement('img'); im.src = src.replace(/width=\d+/, 'width=240'); im.alt = ''; im.loading = 'lazy';
+      b.appendChild(im); strip.appendChild(b);
+    });
+    gal.insertBefore(strip, gal.firstChild);
+    strip.addEventListener('click', function (e) { var t = e.target.closest && e.target.closest('.th'); if (t) setActive(t.dataset.mediaId); });
+    gal.classList.add('zh');
+    setActive(tiles[0].dataset.mediaId);
+  });
+  function mapMedia() {
+    root.querySelectorAll('a.opt[data-media-id]').forEach(function (a) {
+      if (a.dataset.mediaId) mediaByVariant[a.dataset.variantId] = a.dataset.mediaId;
+    });
+  }
+  mapMedia();
   function showVariantMedia(id) {
+    mapMedia();
     var m = mediaByVariant[id];
     if (!m) return;
-    var g = document.querySelector('.gallery [data-media-id="' + m + '"]');
-    if (g && g.scrollIntoView && matchMedia('(max-width: 880px)').matches) g.scrollIntoView({ block: 'nearest', inline: 'start', behavior: 'smooth' });
+    var gal = $('gallery');
+    var g = gal && gal.querySelector('.g[data-media-id="' + m + '"]');
+    if (!g) return;
+    setActive(m);
+    if (matchMedia('(max-width: 880px)').matches && g.scrollIntoView) {
+      var calm = matchMedia('(prefers-reduced-motion: reduce)').matches;
+      g.scrollIntoView({ block: 'nearest', inline: 'start', behavior: calm ? 'auto' : 'smooth' });
+    }
   }
+  safe(function () {
+    var cur = root.querySelector('a.opt[aria-current="true"]');
+    if (cur) { var m = mediaByVariant[cur.dataset.variantId]; if (m) setActive(m); }
+  });
 
   // Variant switch: Shopify renders the buy box (rules stay in Liquid)
   function swap(variantId, push) {
@@ -40,7 +88,7 @@
         if (!fresh) throw new Error('no buy box');
         box.innerHTML = fresh.innerHTML;
         safe(function () { var u = new URL(location.href); u.searchParams.set('variant', variantId); history.replaceState(null, '', u); });
-        initSticky(); showVariantMedia(variantId);
+        initSticky(); safe(function () { showVariantMedia(variantId); });
         var cur = box.querySelector('.opt[aria-current="true"]'); if (cur) cur.focus();
       })
       .catch(function () { location.href = productUrl + '?variant=' + variantId; })

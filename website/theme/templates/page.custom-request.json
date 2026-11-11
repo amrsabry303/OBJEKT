@@ -1,0 +1,62 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-custom-request",
+      "blocks": {
+        "powerful_form_builder_app_block_mTWkj3": {
+          "type": "shopify://apps/powerful-form-builder/blocks/app-block/e4bcb1eb-35b2-42e6-bc37-bfe0e1542c9d",
+          "settings": {
+            "shortcode": "<div class=\"globo-formbuilder\" data-id=\"MTcxNTEw\"></div>"
+          }
+        },
+        "s1": {
+          "type": "step",
+          "settings": {
+            "title": "Share your idea",
+            "text": "Upload an image and tell us the size and colour."
+          }
+        },
+        "s2": {
+          "type": "step",
+          "settings": {
+            "title": "We review it",
+            "text": "Our studio checks what can be made and may ask a few questions."
+          }
+        },
+        "s3": {
+          "type": "step",
+          "settings": {
+            "title": "Receive your quote",
+            "text": "You get a quote with a link to confirm and pay."
+          }
+        }
+      },
+      "block_order": [
+        "powerful_form_builder_app_block_mTWkj3",
+        "s1",
+        "s2",
+        "s3"
+      ],
+      "settings": {
+        "statement": "A piece in your size or colour, or an idea of your own. Tell us what you have in mind.",
+        "steps_heading": "How it works",
+        "form_heading": "Your request",
+        "form_text": "<p>Share an image, the size and colour you want, and any notes. We review each request and reply with a quote.</p>",
+        "fallback_label": "Contact us",
+        "fallback_url": ""
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

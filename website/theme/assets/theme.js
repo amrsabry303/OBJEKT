@@ -1,28 +1,30 @@
 (function () {
   function safe(fn) { try { fn(); } catch (e) { /* one failing step must not stop the rest */ } }
-  // Mobile menu: native <dialog> gives focus trap and Esc
+  // Side pane: a native <dialog> opened without a backdrop so the header stays usable.
+  // Desktop with a mouse: opens when the pointer rests on the burger, closes shortly after it leaves.
+  // Everywhere: click toggles; Esc and a click outside close it.
   safe(function () {
     var dlg = document.getElementById('menu');
-    var open = document.querySelector('[data-menu-open]');
-    var close = document.querySelector('[data-menu-close]');
-    if (!dlg || !open || !dlg.showModal) return;
-    open.addEventListener('click', function () { dlg.showModal(); open.setAttribute('aria-expanded', 'true'); });
-    function shut() { dlg.close(); }
-    if (close) close.addEventListener('click', shut);
-    dlg.addEventListener('close', function () { open.setAttribute('aria-expanded', 'false'); open.focus(); });
-  });
-  // Header panel: Esc closes it however it was opened (WCAG 1.4.13)
-  safe(function () {
-    document.querySelectorAll('.has-panel').forEach(function (li) {
-      function undismiss() { li.classList.remove('dismiss'); }
-      li.addEventListener('mouseleave', undismiss);
-      li.addEventListener('focusout', function (e) { if (!li.contains(e.relatedTarget)) undismiss(); });
-      document.addEventListener('keydown', function (e) {
-        if (e.key !== 'Escape' || !(li.matches(':hover') || li.contains(document.activeElement))) return;
-        li.classList.add('dismiss');
-        var a = li.querySelector(':scope > a');
-        if (a && li.contains(document.activeElement)) a.focus();
-      });
+    var btn = document.querySelector('[data-menu-toggle]');
+    if (!dlg || !btn || !dlg.show) return;
+    var hover = matchMedia('(hover: hover) and (min-width: 881px)'), timer;
+    function open(focus) {
+      dlg.show(); btn.setAttribute('aria-expanded', 'true');
+      if (focus) { var first = dlg.querySelector('a, summary'); if (first) first.focus({ preventScroll: true }); }
+    }
+    function later() { clearTimeout(timer); timer = setTimeout(function () { if (dlg.open) dlg.close(); }, 280); }
+    function keep() { clearTimeout(timer); }
+    dlg.addEventListener('close', function () { btn.setAttribute('aria-expanded', 'false'); });
+    btn.addEventListener('click', function () { keep(); if (dlg.open) dlg.close(); else open(true); });
+    btn.addEventListener('mouseenter', function () { if (!hover.matches) return; keep(); if (!dlg.open) open(false); });
+    btn.addEventListener('mouseleave', function () { if (hover.matches) later(); });
+    dlg.addEventListener('mouseenter', function () { if (hover.matches) keep(); });
+    dlg.addEventListener('mouseleave', function () { if (hover.matches) later(); });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && dlg.open) { dlg.close(); btn.focus(); }
+    });
+    document.addEventListener('click', function (e) {
+      if (dlg.open && !dlg.contains(e.target) && !btn.contains(e.target)) dlg.close();
     });
   });
 

@@ -20,8 +20,13 @@
       {%- assign ready_count = ready_count | plus: 1 -%}
     {%- else -%}
       {%- assign mto_count = mto_count | plus: 1 -%}
-      {%- assign vmin = v.metafields.custom.lead_time_weeks_min.value | default: 0 -%}
-      {%- assign vmax = v.metafields.custom.lead_time_weeks_max.value | default: 0 -%}
+      {%- comment -%} Lead time in days (custom.lead_time_days_min/max); old week fields are a fallback, converted to days. {%- endcomment -%}
+      {%- assign vmin = v.metafields.custom.lead_time_days_min.value | default: 0 -%}
+      {%- assign vmax = v.metafields.custom.lead_time_days_max.value | default: 0 -%}
+      {%- if vmax == 0 -%}
+        {%- assign vmin = v.metafields.custom.lead_time_weeks_min.value | default: 0 | times: 7 -%}
+        {%- assign vmax = v.metafields.custom.lead_time_weeks_max.value | default: 0 | times: 7 -%}
+      {%- endif -%}
       {%- if wk_min == 0 or vmin < wk_min and vmin > 0 -%}{%- assign wk_min = vmin -%}{%- endif -%}
       {%- if vmax > wk_max -%}{%- assign wk_max = vmax -%}{%- endif -%}
     {%- endif -%}
@@ -35,7 +40,7 @@
   <div class="avail-box" data-state="{{ key }}" aria-live="polite" aria-atomic="true">
     <p class="avail-state label"><span class="dot{% if key == 'mto' %} dot--mto{% elsif key == 'out' %} dot--out{% endif %}" aria-hidden="true"></span>{% if key == 'ready' %}{{ 'availability.ready' | t }}{% elsif key == 'mto' %}{{ 'availability.mto' | t }}{% else %}{{ 'availability.out' | t }}{% endif %}</p>
     {%- if key == 'mto' and wk_max > 0 -%}
-      <p class="avail-line">{% if wk_min == wk_max %}{{ 'availability.weeks_one' | t: count: wk_max }}{% else %}{{ 'availability.weeks_range' | t: min: wk_min, max: wk_max }}{% endif %} {{ 'availability.to_make' | t }}</p>
+      <p class="avail-line">{% if wk_min == wk_max %}{{ 'availability.days_one' | t: count: wk_max }}{% else %}{{ 'availability.days_range' | t: min: wk_min, max: wk_max }}{% endif %} {{ 'availability.to_make' | t }}</p>
     {%- endif -%}
     {%- if key != 'out' and d_max > 0 -%}
       <p class="avail-line muted">{% if key == 'mto' %}{{ 'availability.delivery_after' | t }}{% else %}{{ 'availability.delivery' | t }}{% endif %} {% if d_min == d_max or d_min == 0 %}{{ 'availability.days_one' | t: count: d_max }}{% else %}{{ 'availability.days_range' | t: min: d_min, max: d_max }}{% endif %}</p>
@@ -46,7 +51,7 @@
       <button class="btn" type="button" disabled>{{ 'availability.out' | t }}</button>
     {%- else -%}
       <input type="hidden" name="properties[_fulfilment]" value="{{ key }}">
-      {%- if key == 'mto' and wk_max > 0 -%}<input type="hidden" name="properties[_lead_time_weeks]" value="{% if wk_min == wk_max %}{{ wk_max }}{% else %}{{ wk_min }}-{{ wk_max }}{% endif %}">{%- endif -%}
+      {%- if key == 'mto' and wk_max > 0 -%}<input type="hidden" name="properties[_lead_time_days]" value="{% if wk_min == wk_max %}{{ wk_max }}{% else %}{{ wk_min }}-{{ wk_max }}{% endif %}">{%- endif -%}
       <button class="btn{% if key == 'mto' %} btn--mto{% endif %}" type="submit" name="add" data-add>{% if key == 'mto' %}{{ 'product.add_mto' | t }}{% else %}{{ 'product.add_ready' | t }}{% endif %}</button>
     {%- endif -%}
     <p class="status label muted" id="status" role="status"></p>
@@ -58,7 +63,7 @@
     {%- elsif mto_count > 0 -%}
       <span class="dot dot--mto" aria-hidden="true"></span>
       <span>{{ 'availability.mto' | t }}
-        {%- if wk_max > 0 -%}<span class="sub">{% if wk_min == wk_max %}{{ 'availability.weeks_one' | t: count: wk_max }}{% else %}{{ 'availability.weeks_range' | t: min: wk_min, max: wk_max }}{% endif %}</span>{%- endif -%}
+        {%- if wk_max > 0 -%}<span class="sub">{% if wk_min == wk_max %}{{ 'availability.days_one' | t: count: wk_max }}{% else %}{{ 'availability.days_range' | t: min: wk_min, max: wk_max }}{% endif %}</span>{%- endif -%}
       </span>
     {%- else -%}
       <span class="dot dot--out" aria-hidden="true"></span><span>{{ 'availability.out' | t }}</span>
