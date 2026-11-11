@@ -36,7 +36,7 @@
     {%- for block in apps -%}{% render block %}{%- endfor -%}
     {%- if apps.size == 0 -%}
       {%- if request.design_mode -%}
-        <p class="creq-empty">Add the form app's block here (Add block → Apps). Fields to set in the app: name, email, phone, country and city, image upload, product or reference link, width × depth × height with unit, colour, quantity, comments.</p>
+        <p class="creq-empty">Add the form app's block here (Add block → Apps). Fields to set in the app: name, email, phone, image upload, product or reference link, width × depth × height (cm), colour (free text), quantity, comments.</p>
       {%- elsif section.settings.fallback_url != blank -%}
         <a class="link" href="{{ section.settings.fallback_url }}">{{ section.settings.fallback_label }}</a>
       {%- endif -%}

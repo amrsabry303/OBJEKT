@@ -267,3 +267,4 @@
 - Pushed to the **unpublished** theme 189754769632 (`themeFilesUpsert`, 2 files, no user errors).
 - Not done (needs Sabry): install the form app, build the form in it, create the page "Custom request" with this template, add it to a menu. Not seen in a browser.
 - Sabry chose the free plan of Powerful Contact Form Builder (11 Nov). Store: page "Custom request" (`pageCreate`, handle `custom-request`, template `custom-request`, published; store is password protected). Read back OK. App install pending Sabry; not in any menu yet.
+- Powerful Form Builder installed by Sabry (read back in `appInstallations`). Sabry: no country/city field; colour is free text. Editor note in `sections/main-custom-request.liquid` updated and pushed to the unpublished theme (`themeFilesUpsert`, no user errors); `theme check` clean. Form not built yet: the app's editor runs only inside Sabry's signed-in admin, which this cloud session cannot reach.
