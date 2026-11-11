@@ -1,11 +1,14 @@
-"""OBJ-003 coffee table, rev 1: drawing set (A3, EN/AR) + DXF, scaled to 800 mm wide.
+"""OBJ-003 coffee table, rev 2: drawing set (A3, EN/AR) + DXF, 800 mm wide, 35 to 40 cm high.
+
+Rev 2: discs are untrimmed egg shapes (ellipses, no flat foot) and the table is taller.
+Overall height comes from the OBJ003_H environment variable (mm), default 375.
 
 Source numbers: Sabry's model ratios (workspace record, 2 Nov 2026): top diameter 130.06,
 top height 40.00, disc total height 46.39 (cap 6.40 above the top). Scaled so the top is 800 mm.
 Everything else (top thickness, disc width and shape, disc position and orientation) is an
 ESTIMATE from the reference photo and is labelled as such on the sheets.
 
-Run: python3 make_obj003_rev1.py     Needs: numpy ezdxf pymupdf pillow, node + playwright.
+Run: python3 make_obj003_rev2.py     Needs: numpy ezdxf pymupdf pillow, node + playwright.
 Output: venture/drawings/OBJ-003/
 """
 import base64, math, os, subprocess, sys
@@ -16,7 +19,7 @@ import make_obj177_rev1 as H          # drawing helpers only (txt, bi, line, hdi
 
 ROOT = os.path.abspath(os.path.join(HERE, "..", "..", ".."))
 OUT = os.path.join(ROOT, "venture", "drawings", "OBJ-003")
-PID, REV, DATE = "OBJ-003", "1", "11 Nov 2026"
+PID, REV, DATE = "OBJ-003", "2", "11 Nov 2026"
 PRE = f"{PID}_rev{REV}_"
 STAMP_EN, STAMP_AR = H.STAMP_EN, H.STAMP_AR
 INK = H.INK
@@ -24,27 +27,32 @@ INK = H.INK
 # ---------------------------------------------------------------- geometry (mm)
 K = 800.0 / 130.06                       # model units to mm
 DIA = 800.0
-TOP_Z = 40.00 * K                        # top surface above floor        246.0
-H_DISC = 46.39 * K                       # disc total height              285.4
-CAP = H_DISC - TOP_Z                     # cap above the top              39.4
+H_DISC = float(os.environ.get("OBJ003_H", "375"))   # overall height incl. caps (Sabry: 350 to 400)
+CAP = 6.40 * K                           # cap above the top, kept from Sabry's model ratio   39.4
+TOP_Z = H_DISC - CAP                     # top surface above floor
 T = 3.0                                  # plate thickness (proposed, Production decides)
 Z_UNDER = TOP_Z - T
-D_CIRC = 300.0                           # ESTIMATE: circle diameter of the disc
-RC = D_CIRC / 2
-ZC = H_DISC - RC                         # circle centre height           135.4
-FOOT = 2 * math.sqrt(RC ** 2 - ZC ** 2)  # flat foot width                129.1
+W_DISC = 300.0                           # ESTIMATE: disc width (egg shape, no flat foot)
+A_E = W_DISC / 2                         # ellipse half width
+B_E = H_DISC / 2                         # ellipse half height
+ZC = B_E                                 # ellipse centre height; the bottom touches the floor at one point
 RHO = 235.0                              # ESTIMATE: disc centre radius from table centre
 ANG = [90.0, 210.0, 330.0]               # discs at 120 deg
-SLOT_L = 2 * math.sqrt(RC ** 2 - (Z_UNDER - ZC) ** 2)     # slot length = disc width at underside of top
-CAP_W = 2 * math.sqrt(RC ** 2 - (TOP_Z - ZC) ** 2)        # cap width at the top surface
-ARC_HALF = math.degrees(math.acos(ZC / RC))               # half angle of the foot cut, from the downward vertical
+def chord(z):
+    """Disc width at height z (ellipse)."""
+    return 2 * A_E * math.sqrt(max(0.0, 1 - ((z - ZC) / B_E) ** 2))
 
 
-def disc_profile(n=120):
-    """(s, z): s across the disc width from its centre line, z up from the floor. Closed, flat foot at z=0."""
-    a0 = math.radians(-90 + ARC_HALF)
-    a1 = math.radians(270 - ARC_HALF)
-    pts = [(RC * math.cos(a0 + (a1 - a0) * i / n), ZC + RC * math.sin(a0 + (a1 - a0) * i / n)) for i in range(n + 1)]
+SLOT_L = chord(Z_UNDER)                  # slot length = disc width at the underside of the top
+CAP_W = chord(TOP_Z)                     # cap width at the top surface
+
+
+def disc_profile(n=160):
+    """(s, z): s across the disc width from its centre line, z up from the floor. Closed ellipse, bottom at z=0."""
+    pts = []
+    for i in range(n):
+        t = 2 * math.pi * i / n
+        pts.append((A_E * math.sin(t), ZC - B_E * math.cos(t)))
     return pts
 
 
@@ -179,11 +187,8 @@ def write_dxf():
             P = [(cx + RHO * c + u * c - v * s_, cy + RHO * s_ + u * s_ + v * c) for u, v in pts]
             msp.add_lwpolyline(P, close=True, dxfattribs={"layer": "CUT"})
     def disc_into(msp, x0, y0):
-        """disc with its flat foot on y0, centre at x0 + RC."""
-        cx, cy = x0 + RC, y0 + ZC
-        msp.add_arc((cx, cy), RC, -90 + ARC_HALF, 270 - ARC_HALF, dxfattribs={"layer": "CUT"})
-        h = FOOT / 2
-        msp.add_line((cx - h, y0), (cx + h, y0), dxfattribs={"layer": "CUT"})
+        """egg-shaped disc with its lowest point on y0, centre at x0 + A_E."""
+        msp.add_ellipse((x0 + A_E, y0 + B_E), major_axis=(0, B_E, 0), ratio=A_E / B_E, dxfattribs={"layer": "CUT"})
     files = []
     d = new(); top_into(d.modelspace(), 0, 0); p = os.path.join(OUT, PRE + "top.dxf"); d.saveas(p); files.append(p)
     d = new(); disc_into(d.modelspace(), 0, 0); p = os.path.join(OUT, PRE + "disc_x3.dxf"); d.saveas(p); files.append(p)
@@ -196,10 +201,14 @@ def write_dxf():
     return files
 
 
+def ellipse_perimeter(a, b):
+    h = ((a - b) / (a + b)) ** 2
+    return math.pi * (a + b) * (1 + 3 * h / (10 + math.sqrt(4 - 3 * h)))
+
+
 def cut_lengths():
     top = math.pi * DIA + 3 * 2 * (SLOT_L + T)
-    ang = 360 - 2 * ARC_HALF
-    disc = math.pi * D_CIRC * ang / 360 + FOOT
+    disc = ellipse_perimeter(A_E, B_E)
     return top, disc, top + 3 * disc
 
 
@@ -217,9 +226,9 @@ def build(logo, ref):
     b += H.hdim(ox - h, ox + h, oy + 8, f"{DIA:.0f}")
     b += H.vdim(ox + h + 6, oy - H_DISC * s, oy, f"{H_DISC:.0f}")
     b += H.vdim(ox - h - 6, oy - TOP_Z * s, oy, f"{TOP_Z:.0f}", side=-1)
-    b += H.txt(ox + h + 12, oy - TOP_Z * s - 2, f"cap {CAP:.0f}", 2.1)
-    b += H.balloon(ox - 50, oy - 56, "1", ox - 30, oy - TOP_Z * s)
-    b += H.balloon(ox + 52, oy - 56, "2", ox + 36, oy - 20)
+    b += H.txt(ox + h + 9, oy - H_DISC * s + 1.5, f"cap {CAP:.0f}", 2.0)
+    b += H.balloon(ox + h + 36, oy - TOP_Z * s + 12, "1", ox + h - 8, oy - TOP_Z * s)
+    b += H.balloon(ox + h + 36, oy - 22, "2", ox + 46, oy - 22)
     b += H.bi(20, 126, "PLAN  1:6", "المسقط الأفقي", 2.8, bold=True)
     px, py = 95, 193
     b += f'<circle cx="{px}" cy="{py}" r="{h:.2f}" fill="#f2f2f2" stroke="{INK}" stroke-width="0.3"/>'
@@ -249,7 +258,7 @@ def build(logo, ref):
     b += H.txt(205, 241, "Powder coat, matte, to be confirmed. Hex is a screen", 1.9, fill="#555")
     b += H.txt(205, 244.5, "approximation. CAPCI code to follow.", 1.9, fill="#555")
     b += H.bi(20, 276, "1 Top plate   2 Disc (3 off)", "١ لوح السطح   ٢ قرص (٣ قطع)", 2.4)
-    b += H.bi(110, 276, "Overall 800 is Sabry's size (11 Nov 2026). Heights follow his model ratios.", "القطر ٨٠٠ بطلب صبري. الارتفاعات حسب نسب نموذجه.", 2.2)
+    b += H.bi(110, 276, "Width 800 and height 350 to 400 are Sabry's sizes. Drawn at 375 overall.", "القطر ٨٠٠ بطلب صبري. الارتفاعات حسب نسب نموذجه.", 2.2)
     sheets.append(("views", sheet(1, 4, "Views and overall sizes, 800 wide", "المساقط والمقاسات، عرض ٨٠٠", "1:6", b, logo)))
     s = 0.2
 
@@ -270,9 +279,9 @@ def build(logo, ref):
     b += H.txt(20, 231, f"{SLOT_L:.1f} long x {T:.1f} wide, centred at radius {RHO:.0f} on the", 2.3)
     b += H.txt(20, 236.5, "radial line (est.). Length = disc width at the underside of the top.", 2.3)
     b += H.txt(20, 242, "Clearance for the weld or fit is Production's.", 2.3)
-    b += H.bi(205, 34, "DISC  1:2   (3 off)", "القرص (٣ قطع)", 2.8, bold=True)
-    s2 = 0.5
-    dx0, dy0 = 305, 190                      # foot line on the sheet, disc centre x
+    b += H.bi(205, 34, "DISC  1:2.5   (3 off)", "القرص (٣ قطع)", 2.8, bold=True)
+    s2 = 0.4
+    dx0, dy0 = 305, 208                      # foot line on the sheet, disc centre x
     prof = disc_profile()
     d = "M" + " L".join(f"{dx0 + sv * s2:.2f},{dy0 - z * s2:.2f}" for sv, z in prof) + " Z"
     b += f'<path d="{d}" fill="#ececec" stroke="{INK}" stroke-width="0.4"/>'
@@ -280,22 +289,21 @@ def build(logo, ref):
     b += H.line(dx0 - 85, dy0 - TOP_Z * s2, dx0 + 85, dy0 - TOP_Z * s2, 0.12, "#b3261e", "4 1.5")
     b += H.txt(dx0 + 87, dy0 - TOP_Z * s2 - 0.6, f"top {TOP_Z:.0f}", 1.9, fill="#b3261e")
     b += H.txt(dx0 + 87, dy0 - Z_UNDER * s2 + 3.2, f"under {Z_UNDER:.0f}", 1.9, fill="#b3261e")
-    b += H.hdim(dx0 - RC * s2, dx0 + RC * s2, dy0 + 10, f"Ø{D_CIRC:.0f} est.")
-    b += H.hdim(dx0 - FOOT / 2 * s2, dx0 + FOOT / 2 * s2, dy0 - 6, f"{FOOT:.0f}", size=2.1)
-    b += H.vdim(dx0 - RC * s2 - 6, dy0 - H_DISC * s2, dy0, f"{H_DISC:.1f}", side=-1)
+    b += H.hdim(dx0 - A_E * s2, dx0 + A_E * s2, dy0 + 8, f"{W_DISC:.0f} wide est.")
+    b += H.vdim(dx0 - A_E * s2 - 6, dy0 - H_DISC * s2, dy0, f"{H_DISC:.1f}", side=-1)
     b += H.hdim(dx0 - SLOT_L / 2 * s2, dx0 + SLOT_L / 2 * s2, dy0 - Z_UNDER * s2 - 8, f"{SLOT_L:.1f}", size=2.1)
     b += H.hdim(dx0 - CAP_W / 2 * s2, dx0 + CAP_W / 2 * s2, dy0 - H_DISC * s2 - 8, f"cap {CAP_W:.0f}", size=2.1)
-    b += H.vdim(dx0 + RC * s2 + 6, dy0 - H_DISC * s2, dy0 - TOP_Z * s2, f"{CAP:.1f}", size=2.1)
-    b += H.bi(205, 192, "A circle with a flat foot. The disc seats in its slot where it is", "دائرة بقاعدة مسطحة. يستقر القرص في فتحته حيث يساوي عرضه طول الفتحة.", 2.0)
-    b += H.txt(205, 198, "as wide as the slot, so the top rests on the disc.", 2.0)
+    b += H.vdim(dx0 + A_E * s2 + 6, dy0 - H_DISC * s2, dy0 - TOP_Z * s2, f"{CAP:.1f}", size=2.1)
+    b += H.bi(262, 226, "An egg shape, no flat foot. The disc seats in its slot where", "شكل بيضاوي بلا قاعدة مسطحة. يستقر القرص في فتحته حيث يساوي عرضه الفتحة.", 2.0)
+    b += H.txt(262, 232, "it is as wide as the slot, so the top rests on the disc.", 2.0)
     rows = [[("DATA", "بيانات"), ""],
             [("Top Ø / height of top surface", "قطر السطح / ارتفاعه"), f"{DIA:.0f} / {TOP_Z:.1f}"],
             [("Disc height (total) / cap above top", "ارتفاع القرص / البارز"), f"{H_DISC:.1f} / {CAP:.1f}"],
             [("Plate thickness (proposed)", "سماكة اللوح (مقترحة)"), f"{T:.0f}"],
             [("Cut length: top / disc", "طول القص: سطح / قرص"), f"{topL / 1000:.2f} m / {discL / 1000:.2f} m"],
-            [("Scale from Sabry's model", "المقياس من نموذج صبري"), f"x {K:.3f}"]]
-    b += H.table(150, 214, [64, 36], rows, 5.6, 2.0)
-    sheets.append(("parts", sheet(2, 4, "Parts: top plate and disc", "القطع: لوح السطح والقرص", "1:5 / 1:2", b, logo)))
+            [("Overall height (to confirm, 350-400)", "الارتفاع الكلي (للتأكيد)"), f"{H_DISC:.0f}"]]
+    b += H.table(124, 214, [64, 36], rows, 5.6, 2.0)
+    sheets.append(("parts", sheet(2, 4, "Parts: top plate and disc", "القطع: لوح السطح والقرص", "1:5 / 1:2.5", b, logo)))
 
     # ---- sheet 3: assembly and cutting
     b = ""
@@ -321,7 +329,7 @@ def build(logo, ref):
     for i in range(3):
         x0 = 850 + i * 330
         pr = disc_profile()
-        d = "M" + " L".join(f"{nx + (x0 + RC + sv) * ns:.2f},{ny + 1250 * ns - (20 + z) * ns:.2f}" for sv, z in pr) + " Z"
+        d = "M" + " L".join(f"{nx + (x0 + A_E + sv) * ns:.2f},{ny + 1250 * ns - (20 + z) * ns:.2f}" for sv, z in pr) + " Z"
         b += f'<path d="{d}" fill="#e6e6e6" stroke="{INK}" stroke-width="0.3"/>'
     b += H.hdim(nx, nx + 2500 * ns, ny + 1250 * ns + 6, "2500", size=2.1)
     b += H.vdim(nx + 2500 * ns + 4, ny, ny + 1250 * ns, "1250", size=2.1)
@@ -334,13 +342,13 @@ def build(logo, ref):
     b += H.bi(20, 34, "BILL OF MATERIALS", "قائمة المكونات", 2.8, bold=True)
     rows = [[("Item", "بند"), ("Part", "الجزء"), ("Qty", "العدد"), ("Material / process", "الخامة / الطريقة"), ("Size", "المقاس"), ("Finish", "التشطيب")],
             ["1", ("Top plate", "لوح السطح"), "1", ("Steel sheet 3, laser cut, 3 slots (proposed)", "صاج ٣ مم قص ليزر، ٣ فتحات (مقترح)"), f"Ø{DIA:.0f} x {T:.0f}", ("Powder coat, matte, to confirm", "بودرة مطفي، للتأكيد")],
-            ["2", ("Disc", "قرص"), "3", ("Steel sheet 3, laser cut (proposed)", "صاج ٣ مم قص ليزر (مقترح)"), f"{D_CIRC:.0f} x {H_DISC:.1f} x {T:.0f} est.", ("Powder coat, matte, to confirm", "بودرة مطفي، للتأكيد")],
+            ["2", ("Disc", "قرص"), "3", ("Steel sheet 3, laser cut (proposed)", "صاج ٣ مم قص ليزر (مقترح)"), f"{W_DISC:.0f} x {H_DISC:.0f} x {T:.0f} est.", ("Powder coat, matte, to confirm", "بودرة مطفي، للتأكيد")],
             ["3", ("Floor glides", "قواعد أرضية"), "3", ("Not in the reference. Production to propose", "ليست في المرجع. يقترحها الإنتاج"), "to follow", "-"]]
     b += H.table(20, 40, [12, 40, 14, 120, 68, 132], rows, 8.6, 2.2)
     notes = [
-        ("Overall width 800 is Sabry's size (11 Nov 2026). The earlier book size (Ø900 x 380) is replaced.", "القطر الكلي ٨٠٠ بطلب صبري. يحل محل مقاس الكتاب السابق."),
-        ("Heights come from Sabry's model ratios (top 40.00, disc 46.39 on a top of 130.06), scaled by 6.151.", "الارتفاعات من نسب نموذج صبري ومضروبة في ٦٫١٥١."),
-        ("ESTIMATED from the reference photo: disc width and shape (circle Ø300, flat foot), disc position (radius 235), disc direction (radial) and top thickness.", "تقديرية من صورة المرجع: عرض القرص وشكله وموضعه واتجاهه وسماكة السطح."),
+        ("Overall width 800 and height 350 to 400 are Sabry's sizes (11 Nov 2026). Drawn at 375 overall; change it to the final number.", "القطر الكلي ٨٠٠ بطلب صبري. يحل محل مقاس الكتاب السابق."),
+        ("The cap above the top is kept at 39.4, from Sabry's model ratio (6.40 on a top of 130.06). The rest of the height is disc below the top.", "الارتفاعات من نسب نموذج صبري ومضروبة في ٦٫١٥١."),
+        ("ESTIMATED from the reference photo: disc width and shape (egg shape 300 wide, no flat foot), disc position (radius 235), disc direction (radial) and top thickness.", "تقديرية من صورة المرجع: عرض القرص وشكله وموضعه واتجاهه وسماكة السطح."),
         ("Sabry's own cut sheet and model were not available for this revision. Replace the estimates when they are.", "لم يتوفر ملف القص ونموذج صبري لهذه المراجعة. تُستبدل التقديرات عند توفره."),
         ("The photo shows half-disc caps; Sabry's model has full discs passing through slots. This drawing follows his model.", "الصورة تُظهر أنصاف أقراص، ونموذج صبري أقراص كاملة من فتحات. الرسم يتبع نموذجه."),
         ("A prototype exists (built, in painting, 27 Oct). Check this drawing against it before Production relies on it.", "يوجد نموذج أولي (مبني، قيد الدهان). تُراجع اللوحة عليه قبل الاعتماد."),
@@ -382,7 +390,7 @@ await b.close();})();""")
     doc.save(os.path.join(OUT, PRE + "drawings.pdf"), deflate=True, garbage=4); doc.close()
     write_dxf()
     t, d_, tot = cut_lengths()
-    print(f"K={K:.4f} top_z={TOP_Z:.2f} H={H_DISC:.2f} cap={CAP:.2f} zc={ZC:.2f} foot={FOOT:.1f} slot={SLOT_L:.1f} capw={CAP_W:.1f} cut top={t:.0f} disc={d_:.0f} total={tot:.0f}")
+    print(f"K={K:.4f} top_z={TOP_Z:.2f} H={H_DISC:.2f} cap={CAP:.2f} zc={ZC:.2f} slot={SLOT_L:.1f} capw={CAP_W:.1f} cut top={t:.0f} disc={d_:.0f} total={tot:.0f}")
 
 
 if __name__ == "__main__":
