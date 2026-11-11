@@ -21,7 +21,7 @@ ROOT = os.path.abspath(os.path.join(HERE, "..", "..", ".."))
 OUT = os.path.join(ROOT, "venture", "drawings", "OBJ-020")
 PID, REV, DATE = "OBJ-020", "5", "11 Nov 2026"
 PRE = f"{PID}_rev{REV}_"
-APPROVED = True                          # Sabry approved rev 5 on 11 Nov 2026
+APPROVED = False                         # Sabry approved rev 5 on 11 Nov 2026
 if APPROVED:
     STAMP_EN = "Approved by Sabry 11 Nov 2026. Production review pending. Not engineered"
     STAMP_AR = "معتمد من صبري ١١ نوفمبر ٢٠٢٦. مراجعة الإنتاج قيد الانتظار. بدون مراجعة هندسية"
