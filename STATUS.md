@@ -144,6 +144,6 @@ What every product lacks: approved name (EN, AR), price incl. VAT, lead time wee
 ### 11 Nov 2026
 - 11 designs in 3 sizes (S 14 × 20 × 2.0, M 18 × 25 × 2.8, L 23 × 30 × 3.5 cm), 33 print PDFs with bleed and marks, 3D mockups at size M. Spec: `plan/faux-books/PLAN.md`. Added to `plan/day1-product-list.md`, `plan/IMAGE-INVENTORY.md` and `.csv`, the objekt Product Sheet artifact, CLAUDE.md and IMPORT.md.
 - Not in the print files: wrap allowance, final lettering (Inter stand-in until the fonts are licensed). No maker yet.
-- Repo clean-up: draft artwork, 8 superseded render sets and an AI couch comp (built on another brand's photo) removed; `plan/` went from 112 MB to 55 MB. Reference photos kept in `plan/faux-books/references/` as reference only.
+- Repo clean-up: draft artwork, 8 superseded render sets and an AI couch comp (built on another brand's photo) removed; `plan/` went from 112 MB to 55 MB. Reference photos added as `images/OBJ-178` to `188` (reference only), following the repo convention.
 - Google product sheet: Products tab columns Full image and Design files were restyled as buttons on 11 Nov (labels renamed); the books are not in it.
 - Next: Sabry's answers above; then Drive folders and the sheet rows, and a maker brief.

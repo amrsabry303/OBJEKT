@@ -41,7 +41,7 @@ Sets of three (same size, spines flush, stacked): A = 03 + 01 + 05, B = 07 + 02 
 ## Files
 - `print/`: print PDFs for all 33 combinations (back, spine, front, 3 mm bleed, crop and fold marks), SVG sources, 305 dpi textures, previews, README with the checklist. Generator: `print/src/make_print.py <repo root> <S|M|L>`, then `node print/src/make_print_pdf.js <repo root>`.
 - `renders/`: 3D mockups at size M (the 11 designs and the 3 sets) built from the same files, not AI renders, not photos. Pipeline in `renders/src/`.
-- `references/`: the reference photos behind the prints and the type. Other brands' books: reference only, never shown to customers.
+- Reference photos: `images/OBJ-178.jpg` to `OBJ-188.jpg` (repo convention). They are other brands' books, kept as reference only, never shown to customers. Which photo stands behind which design: 09 tiger coat, 10 cow hide, 11 striped spines, 01 and 08 cropped title, the rest stacked and vertical titles.
 
 ## Not decided or not done
 1. **Maker.** No printer or binder. Needs: wrap and turn-in allowance, bleed, real spine thickness for 2.0 / 2.8 / 3.5 cm, block (blank pages or board), price, lead time. Print files include no wrap allowance.
