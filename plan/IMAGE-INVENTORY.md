@@ -81,3 +81,5 @@ Added by Sabry's instruction. Reference photos only: not our pieces, mixed or un
 
 ## Not filed
 Six other sculpture renders in the Magnific history (baby elephant calf, falcon, abstract geometric) are not matched to a launch product. Renders from other projects and are not touched.
+
+**OBJ-167 finishes (11 Nov 2026), Sabry:** the pedestal will be made in Bone, Mirror and Carbon (black). Three AI renders, same studio and camera, `plan/images/OBJ-167/OBJ-167_ai-render_{bone,carbon,mirror}-studio_v1.jpg` (bone is the 10 Nov Magnific render; carbon and mirror made 11 Nov from it, 130 credits). Not approved, not uploaded. Shape follows the Magnific geometry render, not a drawing; there is no OBJ-167 drawing yet.
