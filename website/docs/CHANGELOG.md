@@ -269,3 +269,17 @@
 - Shipping profile read: General, Egypt, Standard delivery 118 EGP (0–15 kg), Large order delivery 1,200 EGP (from 15.01 kg). Checkout not tested.
 - QA launch check "no active product with placeholders" now passes (0 active).
 - Not done: Paymob (no sign-in reported), CLI theme push (not logged in), browser QA (preview redirects to the password page).
+
+## 2026-11-11 (daily Shopify catalogue run: 8 missing day-1 drafts created)
+- Store confirmed with `get-shop-info`: OBJEKT, hs1a1c-ut.myshopify.com, EGP. Read all 50 products first: all draft, no duplicate OBJ codes.
+- Created 8 products as **DRAFT** with `productSet`, built like the 30 Oct drafts (title and handle = OBJ code, vendor objekt, product type, tags category + type + OBJ code + `placeholder-data`, SKU = OBJ code, `custom.reference`, placeholder description, short description and dimensions, `custom.internal_notes`, one Default Title variant at 9999.00, inventory untracked, policy continue, variant `custom.fulfilment = made_to_order`). These are the 8 products the plan and the production book both list as IN (plan/day1-product-list.md) that were not in the store:
+  - OBJ-020 `gid://shopify/Product/15575383245024` (Furniture, Coffee Tables)
+  - OBJ-152 `gid://shopify/Product/15575401562336` (Furniture, Side Tables and Bedside Tables)
+  - OBJ-156 `gid://shopify/Product/15575402741984` (Furniture, Side Tables and Bedside Tables)
+  - OBJ-094 `gid://shopify/Product/15575400087776` (Table & Living, Bowls and Baskets)
+  - OBJ-103 `gid://shopify/Product/15575400546528` (Table & Living, Coasters and Trivets)
+  - OBJ-132 `gid://shopify/Product/15575400972512` (Objekts, Wall Art and Photo Displays; handle `objects`)
+  - OBJ-068 `gid://shopify/Product/15575399596256` (Planters, Floor Planters)
+  - OBJ-155 `gid://shopify/Product/15575402086624` (Planters, Tabletop Planters)
+- `custom.process` from the day-1 list process column (metal / printed / moulded; the list marks most as guesses) and `custom.finishes` from the proposed finish in CONTENT_TO_SUPPLY 3d (brushed, powder-coated, lacquered for Duco). Both are placeholders, covered by the `placeholder-data` tag. `custom.rooms` not set. No lead time set (per PRODUCT_SCHEMA, new products leave the week fields empty; the days fields wait for Polycraft's 7–14 or 30–45 per product). No colours, variants, images, price or weight.
+- Read back: 58 products, 58 draft, 0 active; OBJ-020 fields checked field by field. Not seen in a browser. Note: `resourcePublicationsCount` is 0 for the new drafts and for the existing ones (e.g. OBJ-173), so none is on the Online Store channel yet; activation alone may not show them.

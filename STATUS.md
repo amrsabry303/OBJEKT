@@ -18,6 +18,7 @@ Three daily sessions work on this repo, one section each. Each session updates *
 - [website] Branch `claude/handoff-section-7-shipping-umz7rf` still holds 10 Nov non-website work not on main (OBJ-167/003 renders, Arabic pack, Polycraft sheet). Website part now on main · merge rest / leave · rec: merge after the repo is private.
 - [website] Arabic for the menu, About, collection intros and SEO text: send to the translator, or launch English only? · translator / EN only · rec: translator before 19 Nov.
 - [catalogue] Colours per product: the book's colours are proposals. Confirm the colours each product is sold in (start with the 10 that have drawings or renders) · list per OBJ · rec: confirm in CONTENT_TO_SUPPLY 3d, then I build the colour variants.
+- [catalogue] Online Store channel: no product is published to the Online Store channel, so an activated product may not show on the site · I add the channel to the day-1 drafts now (they stay hidden while draft) / you do it at launch · rec: I add it once the day-1 list is approved.
 - [catalogue] OBJ-099 colours: store has Oxblood, Ink, Objekt Green, Putty; book has Objekt Green, Bone, Putty · keep store / switch to book · rec: keep store (renders exist for those four).
 - [images] Approve or retake the 4 hero renders (AI renders): OBJ-152 Ink v2c, OBJ-002 Oxblood v1c, OBJ-038 Carbon v1c (sent 8 Nov, re-sent 11 Nov), OBJ-015 Chocolate v1c (11 Nov) · approve / retake per image · only after approval do other colours and the context shot get made.
 - [images] Repo is public: the 8 Nov renders of 002, 038, 152 are already visible on GitHub; new render files are held back · make the repo private / allow renders in public · rec: private (same as the drawings line).
@@ -111,6 +112,62 @@ Three daily sessions work on this repo, one section each. Each session updates *
 ### Shopify catalogue
 <!-- daily catalogue session; dated, newest first, last 3 entries -->
 
+#### Wed 11 Nov 2026
+- Ran: `get-shop-info` = OBJEKT / hs1a1c-ut, EGP. Read all 50 products (all draft, no duplicate OBJ codes) and the 5 collections. Pulled main (4849649).
+- Nothing new from Sabry or Polycraft per product since 8 Nov (no name, price, size, colour or image approval). Store-wide answers (10 Nov: 50% deposit, 7–14 or 30–45 days per item, shipping by weight) set no per-product value, so no existing product changed.
+- **Store writes (CHANGELOG 11 Nov): created 8 drafts** that the plan and the book both list as IN but were missing: OBJ-020, 152, 156 (Furniture), 094, 103 (Table & Living), 132 (Objekts), 068, 155 (Planters). Same build as the other drafts: OBJ-code title, placeholders, `placeholder-data` tag, made_to_order, right collection. No lead time, colours, variants, images or weight. Read back: 58 products, 0 active.
+- Seen: no product (old or new) is on the Online Store channel (`resourcePublicationsCount` 0). Activating alone may not put them on the site. See decisions.
+- Day-1 list still not approved: the 41 below are the agreed set. The 4 on hold (015, 049, 148, 159) and the 15 off-plan store drafts are not in the table.
+- Readiness: **0 of 41 ready to activate.** Placeholders left in place on all.
+
+**Readiness (11 Nov; ✓ done, ✗ missing)**
+
+| OBJ | Collection | Named | Copy EN | Copy AR | Price | Lead time | Sizes | Variants | Images | Collection | Metafields | SEO | Placeholders gone | Ready |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| OBJ-002 | Furniture | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | hero AI render pending | ✓ | ✗ | ✗ | ✗ | no |
+| OBJ-003 | Furniture | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✓ | ✗ | ✗ | ✗ | no |
+| OBJ-020 (new 11 Nov) | Furniture | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✓ | ✗ | ✗ | ✗ | no |
+| OBJ-038 | Furniture | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | hero AI render pending | ✓ | ✗ | ✗ | ✗ | no |
+| OBJ-137 | Furniture | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✓ | ✗ | ✗ | ✗ | no |
+| OBJ-142 | Furniture | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✓ | ✗ | ✗ | ✗ | no |
+| OBJ-152 (new 11 Nov) | Furniture | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | hero AI render pending | ✓ | ✗ | ✗ | ✗ | no |
+| OBJ-156 (new 11 Nov) | Furniture | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✓ | ✗ | ✗ | ✗ | no |
+| OBJ-165 | Furniture | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✓ | ✗ | ✗ | ✗ | no |
+| OBJ-166 | Furniture | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✓ | ✗ | ✗ | ✗ | no |
+| OBJ-167 | Furniture | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✓ | ✗ | ✗ | ✗ | no |
+| OBJ-001 | Table & Living | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✓ | ✗ | ✗ | ✗ | no |
+| OBJ-094 (new 11 Nov) | Table & Living | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✓ | ✗ | ✗ | ✗ | no |
+| OBJ-095 | Table & Living | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✓ | ✗ | ✗ | ✗ | no |
+| OBJ-103 (new 11 Nov) | Table & Living | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✓ | ✗ | ✗ | ✗ | no |
+| OBJ-104 | Table & Living | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✓ | ✗ | ✗ | ✗ | no |
+| OBJ-115 | Table & Living | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✓ | ✗ | ✗ | ✗ | no |
+| OBJ-169 | Table & Living | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✓ | ✗ | ✗ | ✗ | no |
+| OBJ-171 | Table & Living | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✓ | ✗ | ✗ | ✗ | no |
+| OBJ-004 | Objekts | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✓ | ✗ | ✗ | ✗ | no |
+| OBJ-099 | Objekts | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | 4 colours, not confirmed | 5 AI renders on store, use not approved | ✓ | ✗ | ✗ | ✗ | no |
+| OBJ-100 | Objekts | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✓ | ✗ | ✗ | ✗ | no |
+| OBJ-125 | Objekts | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✓ | ✗ | ✗ | ✗ | no |
+| OBJ-132 (new 11 Nov) | Objekts | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✓ | ✗ | ✗ | ✗ | no |
+| OBJ-145 | Objekts | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✓ | ✗ | ✗ | ✗ | no |
+| OBJ-147 | Objekts | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✓ | ✗ | ✗ | ✗ | no |
+| OBJ-149 | Objekts | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✓ | ✗ | ✗ | ✗ | no |
+| OBJ-151 | Objekts | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✓ | ✗ | ✗ | ✗ | no |
+| OBJ-164 | Objekts | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✓ | ✗ | ✗ | ✗ | no |
+| OBJ-172 | Objekts | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✓ | ✗ | ✗ | ✗ | no |
+| OBJ-175 | Objekts | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✓ | ✗ | ✗ | ✗ | no |
+| OBJ-176 | Objekts | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✓ | ✗ | ✗ | ✗ | no |
+| OBJ-068 (new 11 Nov) | Planters | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✓ | ✗ | ✗ | ✗ | no |
+| OBJ-069 | Planters | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✓ | ✗ | ✗ | ✗ | no |
+| OBJ-072 | Planters | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✓ | ✗ | ✗ | ✗ | no |
+| OBJ-075 | Planters | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✓ | ✗ | ✗ | ✗ | no |
+| OBJ-080 | Planters | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✓ | ✗ | ✗ | ✗ | no |
+| OBJ-085 | Planters | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✓ | ✗ | ✗ | ✗ | no |
+| OBJ-154 | Planters | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✓ | ✗ | ✗ | ✗ | no |
+| OBJ-155 (new 11 Nov) | Planters | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✓ | ✗ | ✗ | ✗ | no |
+| OBJ-173 | Planters | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✓ | ✗ | ✗ | ✗ | no |
+
+What every product lacks: approved name (EN, AR), price incl. VAT, lead time type (7–14 or 30–45 days, Polycraft), real dimensions, packed weight, colours actually offered (then variants), approved images, short description, story, materials, care, SEO title and description. Extra: OBJ-166 heights (850 vs 700 mm), OBJ-175 panel options, OBJ-176 four colours, OBJ-099 colours (store vs book), OBJ-152 and OBJ-156 sold as pair or each.
+
 #### Sun 8 Nov 2026 (first run)
 - Ran: `get-shop-info` = OBJEKT / hs1a1c-ut, EGP. Read all 53 products (titles, status, type, tags, collections, variants, metafields), the 4 collections and the `colour` metaobjects.
 - Day-1 list not approved yet, so I worked only on the 33 products that the plan, the production book and the store all agree on. The 8 agreed by plan and book but not in the store (OBJ-020, 068, 094, 103, 132, 152, 155, 156) are **not created**; I create them as drafts the day the list is approved.
@@ -120,42 +177,4 @@ Three daily sessions work on this repo, one section each. Each session updates *
 - Seen: OBJ-148 (on hold, rec. drop) is **active** (`preview-active`) with a reference photo. Website session's revert list covers it.
 - Readiness: **0 of 33 ready to activate.** Placeholders (9999.00, [PLACEHOLDER], 00 cm, `placeholder-data`) left in place on all.
 
-**Readiness (8 Nov; ✓ done, ✗ missing)**
-
-| OBJ | Collection | Named | Copy EN | Copy AR | Price | Lead time | Sizes | Variants | Images | Collection | Metafields | SEO | Placeholders gone | Ready |
-|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| OBJ-002 | Furniture | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✓ | ✗ | ✗ | ✗ | no |
-| OBJ-003 | Furniture | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✓ | ✗ | ✗ | ✗ | no |
-| OBJ-038 | Furniture | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✓ | ✗ | ✗ | ✗ | no |
-| OBJ-137 | Furniture | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✓ | ✗ | ✗ | ✗ | no |
-| OBJ-142 | Furniture | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✓ | ✗ | ✗ | ✗ | no |
-| OBJ-165 | Furniture | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✓ | ✗ | ✗ | ✗ | no |
-| OBJ-166 | Furniture | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✓ | ✗ | ✗ | ✗ | no |
-| OBJ-167 | Furniture | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✓ | ✗ | ✗ | ✗ | no |
-| OBJ-001 | Table & Living | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✓ | ✗ | ✗ | ✗ | no |
-| OBJ-095 | Table & Living | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✓ | ✗ | ✗ | ✗ | no |
-| OBJ-104 | Table & Living | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✓ | ✗ | ✗ | ✗ | no |
-| OBJ-115 | Table & Living | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✓ | ✗ | ✗ | ✗ | no |
-| OBJ-169 | Table & Living | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✓ | ✗ | ✗ | ✗ | no |
-| OBJ-171 | Table & Living | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✓ | ✗ | ✗ | ✗ | no |
-| OBJ-004 | Objekts | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✓ | ✗ | ✗ | ✗ | no |
-| OBJ-099 | Objekts | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | 4 colours, not confirmed | 5 AI renders on store, use not approved | ✓ | ✗ | ✗ | ✗ | no |
-| OBJ-100 | Objekts | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✓ | ✗ | ✗ | ✗ | no |
-| OBJ-125 | Objekts | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✓ | ✗ | ✗ | ✗ | no |
-| OBJ-145 | Objekts | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✓ | ✗ | ✗ | ✗ | no |
-| OBJ-147 | Objekts | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✓ | ✗ | ✗ | ✗ | no |
-| OBJ-149 | Objekts | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✓ | ✗ | ✗ | ✗ | no |
-| OBJ-151 | Objekts | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✓ | ✗ | ✗ | ✗ | no |
-| OBJ-164 | Objekts | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✓ | ✗ | ✗ | ✗ | no |
-| OBJ-172 | Objekts | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✓ | ✗ | ✗ | ✗ | no |
-| OBJ-175 | Objekts | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✓ | ✗ | ✗ | ✗ | no |
-| OBJ-176 | Objekts | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✓ | ✗ | ✗ | ✗ | no |
-| OBJ-069 | Planters | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✓ | ✗ | ✗ | ✗ | no |
-| OBJ-072 | Planters | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✓ | ✗ | ✗ | ✗ | no |
-| OBJ-075 | Planters | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✓ | ✗ | ✗ | ✗ | no |
-| OBJ-080 | Planters | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✓ | ✗ | ✗ | ✗ | no |
-| OBJ-085 | Planters | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✓ | ✗ | ✗ | ✗ | no |
-| OBJ-154 | Planters | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✓ | ✗ | ✗ | ✗ | no |
-| OBJ-173 | Planters | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✓ | ✗ | ✗ | ✗ | no |
-
-What every product lacks: approved name (EN, AR), price incl. VAT, lead time weeks, real dimensions, colours actually offered (then variants), approved images, short description, story, materials, care, SEO title and description. Extra: OBJ-166 heights (850 vs 700 mm), OBJ-175 panel options, OBJ-176 four colours, OBJ-099 colours (store vs book).
+Readiness table of 8 Nov replaced by the 11 Nov table above (in git history).
