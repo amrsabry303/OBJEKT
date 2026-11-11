@@ -32,6 +32,8 @@ Three daily sessions work on this repo, one section each. Each session updates *
 - [drawings] Drainage for OBJ-173 and OBJ-075 (none shows in the photos) · none / drain hole / loose inner pot · rec: loose inner pot, no hole.
 - [drawings] OBJ-003 real size: your model says top 130.06, height 40 (units not stated); the book says about 900 × 380 · give diameter and height in mm.
 - [all] Licences: PP Mori (web), Galak Round, logo lettering (Raftwork). No public launch without them.
+- [faux books] Who prints them? No printer or binder, no sample, price or lead time, and the print files have no wrap allowance · ask two Cairo printers this week / hold to wave 2 / list as pre-order on 20 Nov · rec: ask this week, list as pre-order only if a maker confirms.
+- [faux books] The 11 Medium print PDFs are in their Drive folders. Upload the S and L versions too, and what goes in the OBJ-189 (set of three) folder? · yes / not yet · rec: S and L when a maker is chosen; for OBJ-189 a short note pointing to the three sets' design folders.
 
 ## Content and product list
 
@@ -178,3 +180,14 @@ What every product lacks: approved name (EN, AR), price incl. VAT, lead time typ
 - Readiness: **0 of 33 ready to activate.** Placeholders (9999.00, [PLACEHOLDER], 00 cm, `placeholder-data`) left in place on all.
 
 Readiness table of 8 Nov replaced by the 11 Nov table above (in git history).
+
+## Faux books (design)
+### 11 Nov 2026
+- 11 designs in 3 sizes (S 14 × 20 × 2.0, M 18 × 25 × 2.8, L 23 × 30 × 3.5 cm), 33 print PDFs with bleed and marks, 3D mockups at size M. Spec: `plan/faux-books/PLAN.md`. Added to `plan/day1-product-list.md`, `plan/IMAGE-INVENTORY.md` and `.csv`, the objekt Product Sheet artifact, CLAUDE.md and IMPORT.md.
+- Not in the print files: wrap allowance, final lettering (Inter stand-in until the fonts are licensed). No maker yet.
+- Repo clean-up: draft artwork, 8 superseded render sets and an AI couch comp (built on another brand's photo) removed; `plan/` went from 112 MB to 55 MB. Reference photos added as `images/OBJ-178` to `188` (reference only), following the repo convention.
+- Google product sheet: Products tab columns Full image and Design files were restyled as buttons on 11 Nov (labels renamed). Sabry approved (11 Nov): 12 empty Drive folders created (OBJ-178 to 189, next to the other design folders) and 12 rows added to Products (rows 134 to 145) and Design folders. The Image and Reference image links read from `main` and work once the faux-books branch is merged (done 11 Nov, see below). The sheet's Taxonomy has no Desk and book subcategory in Table & Living, so the rows use "Desk and Book Accessories", which maps to the old website category "Objects & Lighting".
+- Decided and confirmed by Sabry 11 Nov: the books are sold as 2 website products (Faux book with design × size variants, Set of three); numbers OBJ-178 to 188 (designs) and OBJ-189 (set of three) are confirmed, no longer provisional.
+- Uploaded to Drive on Sabry's yes (11 Nov): the 11 Medium print PDFs, one per design folder OBJ-178 to 188. S and L versions and the OBJ-189 folder are still empty (red in the product sheet).
+- Branch merged to `main` on Sabry's yes (11 Nov, squash).
+- Next: a maker brief (wrap allowance, bleed, spine thickness, price, lead time) and the licence for the fonts.

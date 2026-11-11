@@ -28,7 +28,7 @@ These are standard retail range-planning rules, not drawn from your sales (there
 10. Rebalance monthly from what sells.
 
 ## Categories missing from the library
-- **Desk and book** (bookends, desk organisers, pen and card holders). Part of the Brand 03 definition; none in the library.
+- **Desk and book** (bookends, desk organisers, pen and card holders). Part of the Brand 03 definition. 11 faux book designs were added on 11 Nov 2026 (`plan/faux-books/`); they count as 2 website products, see `plan/day1-product-list.md`. No other items yet.
 - **Pedestals and plinths** (Brand 03 "stools and pedestals"; only stools exist).
 - **Entry organisers** (key trays, hooks, umbrella stands). Cheap to make and sell, and none exist.
 - Worth a look later: console tables (cabinets and sideboards only), room dividers beyond planter screens, outdoor and balcony pieces beyond planters.
