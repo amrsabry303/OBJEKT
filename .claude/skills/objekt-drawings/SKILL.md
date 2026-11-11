@@ -36,6 +36,7 @@ Sabry's standard for how a product goes from an approved design to Production. B
 
 ## Pitfalls seen
 
+- **Product sheet prefill:** after every drawing, update the product's row in the master product sheet with the suggested name and the sizes from the drawing sheet, and say in the reply whether each size is FROM DRAWING, GIVEN BY SABRY or a SUGGESTION (rule in `CLAUDE.md`).
 - **Numbering clash (11 Nov 2026):** two new products were filed as OBJ-181 and OBJ-182 from a local guess, but those numbers were faux books in the master product sheet, and a pack went into the wrong Drive folder. Always take the number from the Products tab of the OBJEKT MASTER PRODUCT SHEET (id in `CLAUDE.md`) before naming files, and confirm the Drive folder belongs to that product before uploading.
 - Arabic text in SVG renders in Chrome headless; right-align Arabic with `text-anchor: end`. Arabic wording is a draft and must be flagged for a technical reader before a factory sees it.
 - Put the Arabic line directly under the English one, or in a mirrored right-hand column; do not run both in one block.
