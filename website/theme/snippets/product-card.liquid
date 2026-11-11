@@ -24,12 +24,16 @@
   {%- assign qv = product.selected_or_first_available_variant -%}
   {%- if product.variants.size == 1 and qv.available -%}
     {%- assign qkey = 'mto' -%}{%- if qv.metafields.custom.fulfilment.value == 'ready' -%}{%- assign qkey = 'ready' -%}{%- endif -%}
-    {%- assign qmin = qv.metafields.custom.lead_time_weeks_min.value | default: 0 -%}
-    {%- assign qmax = qv.metafields.custom.lead_time_weeks_max.value | default: 0 -%}
+    {%- assign qmin = qv.metafields.custom.lead_time_days_min.value | default: 0 -%}
+    {%- assign qmax = qv.metafields.custom.lead_time_days_max.value | default: 0 -%}
+    {%- if qmax == 0 -%}
+      {%- assign qmin = qv.metafields.custom.lead_time_weeks_min.value | default: 0 | times: 7 -%}
+      {%- assign qmax = qv.metafields.custom.lead_time_weeks_max.value | default: 0 | times: 7 -%}
+    {%- endif -%}
     <form class="quick" method="post" action="{{ routes.cart_add_url }}" data-quick data-added="{{ 'product.added' | t }}" data-error="{{ 'product.add_error' | t }}">
       <input type="hidden" name="id" value="{{ qv.id }}">
       <input type="hidden" name="properties[_fulfilment]" value="{{ qkey }}">
-      {%- if qkey == 'mto' and qmax > 0 -%}<input type="hidden" name="properties[_lead_time_weeks]" value="{% if qmin == qmax %}{{ qmax }}{% else %}{{ qmin }}-{{ qmax }}{% endif %}">{%- endif -%}
+      {%- if qkey == 'mto' and qmax > 0 -%}<input type="hidden" name="properties[_lead_time_days]" value="{% if qmin == qmax %}{{ qmax }}{% else %}{{ qmin }}-{{ qmax }}{% endif %}">{%- endif -%}
       <button class="quick__btn" type="submit">{{ 'collection.quick_add' | t }}</button>
       <span class="quick__status sr" role="status"></span>
     </form>
