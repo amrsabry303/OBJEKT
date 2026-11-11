@@ -1,0 +1,83 @@
+{%- comment -%}
+  Custom request page. The form itself comes from a form app (file upload is not possible with Shopify's
+  native contact form), added in the theme editor as an app block. Quotes are sent from the admin as
+  draft-order invoices. Copy lives in settings so it can be edited and translated.
+{%- endcomment -%}
+{{ 'editorial.css' | asset_url | stylesheet_tag }}
+<header class="ahead wrap">
+  <nav class="crumbs label" aria-label="{{ 'collection.breadcrumb' | t }}"><a href="{{ routes.root_url }}">{{ 'general.home_crumb' | t }}</a><span aria-hidden="true">/</span><span aria-current="page">{{ page.title }}</span></nav>
+  <h1 class="atitle">{{ page.title }}</h1>
+  {%- if section.settings.statement != blank -%}<p class="statement">{{ section.settings.statement }}</p>{%- endif -%}
+</header>
+
+{%- assign steps = section.blocks | where: 'type', 'step' -%}
+{%- if steps.size > 0 -%}
+  <section class="wrap creq-steps" aria-labelledby="creq-steps-h">
+    <h2 class="label" id="creq-steps-h">{{ section.settings.steps_heading }}</h2>
+    <ol class="creq-steps__list">
+      {%- for block in steps -%}
+        <li class="creq-step" {{ block.shopify_attributes }}>
+          <span class="label muted"><bdi>{% if forloop.index < 10 %}0{% endif %}{{ forloop.index }}</bdi></span>
+          <h3 class="h3">{{ block.settings.title }}</h3>
+          {%- if block.settings.text != blank -%}<p>{{ block.settings.text }}</p>{%- endif -%}
+        </li>
+      {%- endfor -%}
+    </ol>
+  </section>
+{%- endif -%}
+
+<section class="wrap creq-form" aria-labelledby="creq-form-h">
+  <div class="creq-form__intro">
+    <h2 class="h2" id="creq-form-h">{{ section.settings.form_heading }}</h2>
+    {%- if section.settings.form_text != blank -%}<div class="rich">{{ section.settings.form_text }}</div>{%- endif -%}
+  </div>
+  <div class="creq-form__app">
+    {%- assign apps = section.blocks | where: 'type', '@app' -%}
+    {%- for block in apps -%}{% render block %}{%- endfor -%}
+    {%- if apps.size == 0 -%}
+      {%- if request.design_mode -%}
+        <p class="creq-empty">Add the form app's block here (Add block → Apps). Fields to set in the app: name, email, phone, country and city, image upload, product or reference link, width × depth × height with unit, colour, quantity, comments.</p>
+      {%- elsif section.settings.fallback_url != blank -%}
+        <a class="link" href="{{ section.settings.fallback_url }}">{{ section.settings.fallback_label }}</a>
+      {%- endif -%}
+    {%- endif -%}
+  </div>
+</section>
+
+{%- if page.content != blank -%}<div class="pagebody abody wrap"><div class="prose">{{ page.content }}</div></div>{%- endif -%}
+
+{% stylesheet %}
+  .creq-steps { padding-block: 2rem; }
+  .creq-steps__list { list-style: none; margin: 1rem 0 0; padding: 0; display: grid; gap: 2rem; grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr)); }
+  .creq-step { border-block-start: 1px solid currentColor; padding-block-start: 1rem; }
+  .creq-step .h3 { margin-block: .5rem; }
+  .creq-step p { margin: 0; max-width: 32ch; }
+  .creq-form { display: grid; gap: 2rem; padding-block: 2rem 4rem; grid-template-columns: 1fr; }
+  @media (min-width: 880px) { .creq-form { grid-template-columns: 1fr 2fr; } }
+  .creq-form__app { min-width: 0; }
+  .creq-empty { padding: 1.5rem; border: 1px dashed currentColor; }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "Custom request",
+  "settings": [
+    { "type": "textarea", "id": "statement", "label": "Opening statement", "default": "Placeholder: a piece in your size or colour, or an idea of your own. Tell us what you have in mind." },
+    { "type": "text", "id": "steps_heading", "label": "Steps heading", "default": "How it works" },
+    { "type": "text", "id": "form_heading", "label": "Form heading", "default": "Your request" },
+    { "type": "richtext", "id": "form_text", "label": "Form intro", "default": "<p>Placeholder: share an image, the size and colour you want, and any notes. We review each request and reply with a quote.</p>" },
+    { "type": "text", "id": "fallback_label", "label": "Fallback link text (shown if no form app block)", "default": "Contact us" },
+    { "type": "url", "id": "fallback_url", "label": "Fallback link" }
+  ],
+  "blocks": [
+    { "type": "@app" },
+    {
+      "type": "step", "name": "Step", "limit": 5,
+      "settings": [
+        { "type": "text", "id": "title", "label": "Title", "default": "Step" },
+        { "type": "textarea", "id": "text", "label": "Text" }
+      ]
+    }
+  ]
+}
+{% endschema %}

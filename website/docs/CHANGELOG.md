@@ -260,3 +260,8 @@
 ## 2026-11-10 (lead time shown in days)
 - Store: variant metafield definitions `custom.lead_time_days_min` and `custom.lead_time_days_max` (integer, min 0) created.
 - Theme, **unpublished** 189754769632 only (`themeFilesUpsert`): `snippets/availability.liquid` reads days (weeks ×7 as fallback), shows "N–M days", line property `_lead_time_days`; `sections/main-cart.liquid` reads `_lead_time_days` (old `_lead_time_weeks` ×7) and shows days. `theme check` 48 files, no offenses. Checksums match the repo. Not seen in a browser.
+
+## 2026-11-11 (custom request page, theme only)
+- Sabry asked for a customization request page (image upload, dimensions, colours, comments, quote back). Route: form app with file upload (D-027).
+- Theme: new `sections/main-custom-request.liquid` (statement, numbered steps, app-block slot for the form, editor note listing the fields, fallback link) and `templates/page.custom-request.json` (three placeholder steps). `theme check` 50 files, no offenses.
+- Not done (needs Sabry): install the form app, build the form in it, create the page "Custom request" with this template, add it to a menu. Not seen in a browser.

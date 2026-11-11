@@ -1,0 +1,14 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-custom-request",
+      "blocks": {
+        "s1": { "type": "step", "settings": { "title": "Share your idea", "text": "Placeholder: upload an image and tell us the size, colour and quantity." } },
+        "s2": { "type": "step", "settings": { "title": "We review it", "text": "Placeholder: our studio checks what can be made and may ask a few questions." } },
+        "s3": { "type": "step", "settings": { "title": "Receive your quote", "text": "Placeholder: you get a quote by email with a link to confirm and pay." } }
+      },
+      "block_order": ["s1", "s2", "s3"]
+    }
+  },
+  "order": ["main"]
+}
