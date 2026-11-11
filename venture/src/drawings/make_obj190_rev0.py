@@ -1,4 +1,4 @@
-"""OBJ-190 (provisional number): side table, faceted top on two legs. Production drawing set, REV 0.
+"""OBJ-190: side table, faceted top on two legs. Production drawing set, REV 0.
 Run: python3 make_obj190_rev0.py <repo root>
 Writes A3 sheets (SVG), DXF flat patterns and the nested sheet to venture/drawings/OBJ-190/. PDF is made by make_pdf.js.
 Sizes: overall 550 x 450 x 550 mm are Sabry's. Everything else is TRACED FROM THREE PHOTOS, approximate.
@@ -128,7 +128,7 @@ def frame(n, N, title_en, title_ar, scale):
     X, Y, Wd = 228, 247, 185
     s += rect(X, Y, Wd, 41, .4, fill='#fff')
     s += line(X, Y+9, X+Wd, Y+9, .25) + line(X, Y+20, X+Wd, Y+20, .25) + line(X, Y+31, X+Wd, Y+31, .25) + line(X+92, Y+9, X+92, Y+41, .25)
-    s += bi(X+2, Y+4, f'{PN} (provisional number)  Side table, faceted top on two legs', 'طاولة جانبية بسطح متعدد الأوجه على ساقين', Wd-4, 2.6, 600)
+    s += bi(X+2, Y+4, f'{PN}   Side table, faceted top on two legs', 'طاولة جانبية بسطح متعدد الأوجه على ساقين', Wd-4, 2.6, 600)
     s += bi(X+2, Y+14, f'SIZE  {W} x {D} x {H} mm (overall, Sabry)', 'المقاس الكلي', 88, 2.3) + bi(X+94, Y+14, f'SCALE  {scale}   UNITS  mm', 'المقياس والوحدة', 88, 2.3)
     s += bi(X+2, Y+25, 'MATERIAL  Stainless steel sheet, thickness by Production', 'الخامة: ستانلس ستيل، السماكة من التصنيع', 88, 2.1) + bi(X+94, Y+25, 'FINISH  brushed stainless steel', 'التشطيب: ستانلس ستيل مصقول بالفرشاة', 88, 2.1)
     s += bi(X+2, Y+36, f'DATE  {DATE}      SHEET {n} / {N}', 'التاريخ، الورقة', 88, 2.3) + bi(X+94, Y+36, f'REV  {REV}', 'المراجعة', 88, 2.3)
@@ -308,7 +308,7 @@ notes = [('Overall size 550 x 450 x 550 mm is Sabry\'s. All other sizes are esti
          ('Finish: brushed stainless steel, approved by Sabry. The reference is a warmer bronze-grey brushed metal; the exact tone and brush are Production\'s to match with a sample.', 'التشطيب: ستانلس ستيل مصقول بالفرشاة، معتمد من سبري. المرجع أدفأ لوناً، ويطابقه التصنيع بعينة.'),
          ('Height 550 is the overall height: top block 160 + legs 390. Floor protectors, if fitted, are inside this figure; Production to confirm.', 'الارتفاع الكلي ٥٥٠: الكتلة العلوية ١٦٠ والساقان ٣٩٠.'),
          ('No structural claims, stress figures, costs or prices on this drawing. Not engineered. Arabic wording is a draft for a technical reader.', 'لا ادعاءات إنشائية ولا تكاليف ولا أسعار. الصياغة العربية مسودة.'),
-         (f'{PN} is a provisional product number, not yet confirmed by Sabry.', 'رقم المنتج مؤقت.')]
+         (f'{PN} is the product number, confirmed by Sabry on {DATE}.', 'رقم المنتج معتمد من سبري.')]
 for i, (en, ar) in enumerate(notes):
     yy = 99 + i*13
     b += t(12, yy, f'{i+1}.', 2.4, 600) + t(18, yy, en, 2.3) + t(410, yy+5, ar, 2.3, 400, 'end', extra=' direction="rtl"')

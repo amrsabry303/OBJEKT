@@ -155,6 +155,6 @@ What blocks them for 20 Nov: no printer or binder identified, no sample, no pric
 
 | OBJ | Code | Website category | Subcategory | Name | Process | Design file | Images | Day 1 | Note | Source |
 |---|---|---|---|---|---|---|---|---|---|---|
-| OBJ-190 | OBJ-190 | Furniture | Side Tables and Bedside Tables | Side table, 8-sided faceted top on two legs, brushed stainless (no name approved) | Sheet metal, folded and welded boxes (inferred from the photos; Production to confirm) | Ready (in folder): drawing set rev 0 approved by Sabry 11 Nov 2026, Production review pending, not engineered | None (reference photos only) | **IN** | Overall 55 x 55 x 45 cm (H x W x D) from Sabry; other sizes estimated from three photos. Number provisional until Sabry confirms. Not costed, no price, no lead time. | Sabry, 11 Nov |
+| OBJ-190 | OBJ-190 | Furniture | Side Tables and Bedside Tables | Side table, 8-sided faceted top on two legs, brushed stainless (no name approved) | Sheet metal, folded and welded boxes (inferred from the photos; Production to confirm) | Ready (in folder): drawing set rev 0 approved by Sabry 11 Nov 2026, Production review pending, not engineered | None (reference photos only) | **IN** | Overall 55 x 55 x 45 cm (H x W x D) from Sabry; other sizes estimated from three photos. Number confirmed by Sabry 11 Nov. Not costed, no price, no lead time. | Sabry, 11 Nov |
 
 Not part of the 41 / 4 / 16 tally above. It brings the in-list total to 42 if the list is approved as it stands; Sabry decides.
