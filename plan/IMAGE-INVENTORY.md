@@ -55,15 +55,19 @@ Source: the production book (45 product slides), Drive and the Magnific history.
 - OBJ-175 Wall shelf panels, half-disc shelves (design file: NOT READY)
 - OBJ-176 Wall shelves, half-disc, colour set (design file: NOT READY)
 
-## Reference library additions (10 Nov 2026)
+## Reference library additions (10 to 11 Nov 2026)
 
-Added by Sabry's instruction. Reference photos only: not our pieces, mixed or unknown rights, never proof of capability. Numbers OBJ-177 to OBJ-179 are the next free ones after OBJ-176; the objekt workspace was not readable from this session, so check there for clashes. None of the three is on the day-1 list or the 46-product plan yet.
+Added by Sabry's instruction. Reference photos only: not our pieces, mixed or unknown rights, never proof of capability. Numbers OBJ-177 to OBJ-180 are the next free ones after OBJ-176; the objekt workspace was not readable from this session, so check there for clashes. None of the four is on the day-1 list or the 46-product plan yet.
 
 | Product | File | What | Colour and size given by Sabry |
 |---|---|---|---|
 | OBJ-177 Bench, glossy moulded frame with cone legs and loose cushion | `images/OBJ-177.jpg` | Riva bench tear sheet (Carlyle Collective). Draft drawing set and 3D print files: `venture/drawings/OBJ-177/`. | Frame Chocolate (unconfirmed), olive green seat, from the photos. Overall 1829 x 686 x 406 mm from the tear sheet. |
 | OBJ-178 Lounge chair, S-curl upholstered form with loose cushion | `images/OBJ-178.jpg` (showroom photo, shown in olive-taupe fabric with a green cushion) | Upholstered chair. | Two options: Chocolate brown with ivory piping; Olive with off-white piping. Size not given. |
 | OBJ-179 Lounge chair, folding tufted ribbon form with loose cushion | `images/OBJ-179.jpg` (showroom, tan leather), `OBJ-179_2.jpg`, `OBJ-179_3.jpg` (studio views, orange leather) | Upholstered chair on a dark metal base, tufted panels. | Dark chocolate brown leather. 240 W x 105 D x 75 H cm, as given. Colour in the photos is not the one to make. |
+| OBJ-180 Side table, square slab top on four capsule legs, high gloss | `images/OBJ-180.jpg` (front view), `OBJ-180_2.jpg` (three-quarter view, low resolution, 564 x 846) | Square lacquered slab top resting on four upright capsule-shaped legs with rounded bottoms (two show in the front view). Looks moulded or lacquered, not sheet metal; process not decided. | Colour in the photos is a deep brown-burgundy gloss, between Oxblood and Chocolate; not decided. Size recommended, not given: see the note below. |
+
+
+**OBJ-180 recommended size (my proposal from the photo proportions, not a given size):** 450 W x 450 D x 400 H mm. Slab about 130 thick, legs about 200 across and 270 tall, the legs about 20 apart and about 15 in from the slab edge (15 + 200 + 20 + 200 + 15 = 450). Basis: in the front photo the table is about as tall as it is wide (height 0.86 of the width), the slab is a third of the height, and each leg is about 0.44 of the slab width. At 450 wide that is 390 high, rounded to 400 to match a sofa or bed side table. A larger option is 600 x 600 x 400 as a low coffee table. To confirm with Sabry and Production; no costs or lead times checked.
 
 ## Not filed
 Six other sculpture renders in the Magnific history (baby elephant calf, falcon, abstract geometric) are not matched to a launch product. Renders from other projects and are not touched.
