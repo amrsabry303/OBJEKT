@@ -27,9 +27,9 @@ Y_START, Y_END = YMID-L/2, YMID+L/2        # the two Y plates are centred on it
 SLOTS_Y = [FRONT_OUT-Y_START, FRONT_IN-Y_START, BACK-Y_START]   # slot centres along a Y plate from its end
 SHEET_L, SHEET_W, GAP = 2500, 1250, 10
 dc.CFG.update(PN=PN, TITLE_EN='Ashtray, interlocking plates', TITLE_AR='منفضة سجائر بألواح متقاطعة',
-              SIZE=f'{L:.0f} x {L:.0f} x {H:.0f} mm (estimated)', MAT_EN='MATERIAL  Steel sheet, thickness by Production', MAT_AR='الخامة: صفائح فولاذ، السماكة من التصنيع',
-              FIN_EN='FINISH  to be confirmed', FIN_AR='التشطيب: يؤكد لاحقاً', DATE=DATE, REV=REV,
-              STAMP_EN='DRAFT, not approved, not engineered', STAMP_AR='مسودة، غير معتمدة، غير مهندسة', STAMP_COL='#b3261e')
+              SIZE=f'{L:.0f} x {L:.0f} x {H:.0f} mm (estimated)', MAT_EN='MATERIAL  Stainless steel sheet, thickness by Production', MAT_AR='الخامة: ستانلس ستيل، السماكة من التصنيع',
+              FIN_EN='FINISH  brushed stainless steel', FIN_AR='التشطيب: ستانلس ستيل مصقول بالفرشاة', DATE=DATE, REV=REV,
+              STAMP_EN=f'Approved by Sabry {DATE}. Production review pending. Not engineered', STAMP_AR='معتمد من سبري. مراجعة التصنيع قيد الانتظار. غير مهندس', STAMP_COL='#2f6b45')
 
 def plate_x():   # slots from the top; y up, origin bottom left
     s = [(0, 0), (L, 0), (L, H)]
@@ -116,8 +116,8 @@ b += t(22, 191, 'REFERENCE PHOTO (not ours; the construction is inferred from it
 b += f'<image href="{datauri(REFIMG, 1100)}" x="22" y="198" width="190" height="70.4" preserveAspectRatio="xMidYMid meet"/>' + rect(22, 198, 190, 70.4, .2, HID)
 b += t(22, 272, 'Photo as received. A cigarette (about 84 mm) is the only scale in it.', 2.0) + t(212, 275, 'الصورة كما وردت. السيجارة (حوالي ٨٤ مم) هي المقياس الوحيد.', 2.0, 400, 'end')
 cx = 228
-b += t(cx, 205, 'COLOURWAYS (proposed, Sabry to decide)', 2.5, 600) + t(410, 205, 'ألوان مقترحة', 2.4, 500, 'end')
-rows = [('Blackened steel, as the reference', 'فولاذ مسوّد كالمرجع', '#3a3a3a', 'Not on the objekt finish list: process by Production'), ('Carbon, powder coat, matte  #222222', 'كربون، طلاء بودرة، مطفي', '#222222', 'Powder coat: paint system to be confirmed'), ('Brushed stainless  #A7ACB1', 'ستانلس مصقول بالفرشاة', '#A7ACB1', 'Brushed finish')]
+b += t(cx, 205, 'FINISH (approved by Sabry)', 2.5, 600) + t(410, 205, 'التشطيب (معتمد من سبري)', 2.4, 500, 'end')
+rows = [('Brushed stainless steel  #A7ACB1', 'ستانلس ستيل مصقول بالفرشاة', '#A7ACB1', 'Natural metal, no paint. Brush pattern and polish: Production')]
 for i, (en, ar, hexv, note) in enumerate(rows):
     yy = 212 + i*7
     b += rect(cx, yy-3, 6, 4, .2, INK, hexv) + t(cx+8, yy, en, 2.2) + t(410, yy, ar, 2.2, 400, 'end') + t(cx+8, yy+2.7, note, 1.8, 400, fill=HID)
@@ -205,7 +205,7 @@ sh4 = sheet(4, N, 'CUTTING LAYOUT', 'مخطط القص', '1:10', b)
 # ================= SHEET 5: BOM and notes =================
 b = t(10, 28, 'BILL OF MATERIALS', 2.8, 600) + t(410, 28, 'قائمة المواد', 2.8, 600, 'end') + rect(10, 31, 400, 7, .3, INK, '#e9e5dc')
 for x, s_ in zip([12, 24, 150, 215], ['ITEM', 'PART / الجزء', 'QTY / العدد', 'MATERIAL / الخامة']): b += t(x, 36, s_, 2.3, 600)
-bom = [('1', 'Plate, slots from the top', 'لوح بشقوق من الأعلى', '3', 'Steel sheet'), ('2', 'Plate, slots from the bottom', 'لوح بشقوق من الأسفل', '2', 'Steel sheet'), ('3', 'Tray, one-piece folded blank', 'صينية مثنية', '1', 'Steel sheet'), ('4', 'Feet or pads', 'قطع حماية', 'by Production', 'Bought-in, to be decided')]
+bom = [('1', 'Plate, slots from the top', 'لوح بشقوق من الأعلى', '3', 'Stainless steel sheet'), ('2', 'Plate, slots from the bottom', 'لوح بشقوق من الأسفل', '2', 'Stainless steel sheet'), ('3', 'Tray, one-piece folded blank', 'صينية مثنية', '1', 'Stainless steel sheet'), ('4', 'Feet or pads', 'قطع حماية', 'by Production', 'Bought-in, to be decided')]
 for i, (n_, en, ar, q, m_) in enumerate(bom):
     yy = 44 + i*7
     b += line(10, yy+2.2, 410, yy+2.2, .15, HID) + t(12, yy, n_, 2.4) + t(24, yy, en, 2.4) + t(120, yy, ar, 2.4, 400, 'end') + t(150, yy, q, 2.4) + t(215, yy, m_, 2.4)
@@ -215,7 +215,7 @@ notes = [('No dimensions were supplied. All sizes (220 x 220 x 60 overall) are e
          ('Plate thickness is drawn at 3 mm for the layout only. Material, thickness, bend radius and allowance, tolerances, fit clearance, joints and welding are Production\'s to decide.', 'السماكة ٣ مم للرسم فقط. الخامة والسماكة والثني والسماحيات واللحام يقررها التصنيع.'),
          ('Joint: cross-halving (slots to half the height) is proposed because the product is called interlocking plates. Welded or other joints are Production\'s call.', 'الوصلة المقترحة: تقاطع بنصف الارتفاع. غير ذلك يقرره التصنيع.'),
          ('The reference shows a small clip for resting a cigarette. It is not clear in the photos and is not drawn.', 'يظهر في المرجع مشبك صغير لوضع السيجارة، وهو غير واضح في الصور ولم يُرسم.'),
-         ('The reference is blackened steel. That is not on the objekt finish list: Sabry to decide the finish (blackened as the reference, Carbon powder coat, or brushed stainless).', 'المرجع فولاذ مسوّد وهو خارج قائمة التشطيبات. يقرر سبري التشطيب.'),
+         ('Finish: brushed stainless steel, approved by Sabry. The reference is dark blackened steel; the brush and tone are Production\'s to match with a sample.', 'التشطيب: ستانلس ستيل مصقول بالفرشاة، معتمد من سبري. المرجع فولاذ مسوّد، ويطابقه التصنيع بعينة.'),
          ('No structural claims, stress figures, costs or prices on this drawing. Not engineered. Arabic wording is a draft for a technical reader.', 'لا ادعاءات إنشائية ولا تكاليف ولا أسعار. الصياغة العربية مسودة.')]
 for i, (en, ar) in enumerate(notes):
     yy = 91 + i*13
