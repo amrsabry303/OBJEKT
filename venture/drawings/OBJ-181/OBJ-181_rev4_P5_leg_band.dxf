@@ -489,7 +489,7 @@ $SKPOLY
   9
 $TDCREATE
  40
-2461356.5805555554
+2461356.5812962963
   9
 $TDUCREATE
  40
@@ -497,7 +497,7 @@ $TDUCREATE
   9
 $TDUPDATE
  40
-2461356.5805555554
+2461356.5812962963
   9
 $TDUUPDATE
  40
@@ -929,11 +929,11 @@ $PSTYLEMODE
   9
 $FINGERPRINTGUID
   2
-{36B44666-418D-4952-8FD0-9322B7D6E204}
+{9334AB35-C717-42CA-A627-12F829D4118E}
   9
 $VERSIONGUID
   2
-{44CEBE4F-5417-4243-B4F7-B1616D8D7714}
+{B3C85193-9975-4FA0-A906-9A7C39E58E77}
   9
 $EXTNAMES
 290
@@ -1323,9 +1323,9 @@ ISM
   0
 CLASS
   1
-ACDBPLACEHOLDER
+LAYOUT
   2
-AcDbPlaceHolder
+AcDbLayout
   3
 ObjectDBX Classes
  90
@@ -1339,9 +1339,9 @@ ObjectDBX Classes
   0
 CLASS
   1
-LAYOUT
+ACDBPLACEHOLDER
   2
-AcDbLayout
+AcDbPlaceHolder
   3
 ObjectDBX Classes
  90
@@ -2267,7 +2267,7 @@ AcDbText
  40
 8.0
   1
-OBJ-181 rev 4 P5_leg_band x2. mm. 3 mm sheet (proposed). Shape read from photos, approximate. DRAFT.
+OBJ-181 rev 4 P5_leg_band x2. mm. 3 mm sheet (proposed). Shape read from photos, approximate. Approved by Sabry 11 Nov 2026, production review pending.
  11
 0.0
  21
@@ -3279,7 +3279,7 @@ DictionaryVariables
 280
 0
   1
-1.4.5 @ 2026-11-11T13:56:00.715517+00:00
+1.4.5 @ 2026-11-11T13:57:04.187561+00:00
   0
 DICTIONARYVAR
   5
@@ -3291,7 +3291,7 @@ DictionaryVariables
 280
 0
   1
-1.4.5 @ 2026-11-11T13:56:00.719455+00:00
+1.4.5 @ 2026-11-11T13:57:04.188603+00:00
   0
 ENDSEC
   0
