@@ -1,14 +1,15 @@
-"""OBJ-003 coffee table, rev 2: drawing set (A3, EN/AR) + DXF, 800 mm wide, 35 to 40 cm high.
+"""OBJ-003 coffee table, rev 3: drawing set (A3, EN/AR) + DXF, 800 mm wide, 380 mm high, discs 320 wide.
 
-Rev 2: discs are untrimmed egg shapes (ellipses, no flat foot) and the table is taller.
-Overall height comes from the OBJ003_H environment variable (mm), default 375.
+Rev 2: discs are untrimmed egg shapes (ellipses, no flat foot), taller table.
+Rev 3: Sabry set 380 mm overall height and 320 mm disc width (11 Nov 2026).
+Overall height and disc width can be overridden with OBJ003_H and OBJ003_W (mm).
 
 Source numbers: Sabry's model ratios (workspace record, 2 Nov 2026): top diameter 130.06,
 top height 40.00, disc total height 46.39 (cap 6.40 above the top). Scaled so the top is 800 mm.
 Everything else (top thickness, disc width and shape, disc position and orientation) is an
 ESTIMATE from the reference photo and is labelled as such on the sheets.
 
-Run: python3 make_obj003_rev2.py     Needs: numpy ezdxf pymupdf pillow, node + playwright.
+Run: python3 make_obj003_rev3.py     Needs: numpy ezdxf pymupdf pillow, node + playwright.
 Output: venture/drawings/OBJ-003/
 """
 import base64, math, os, subprocess, sys
@@ -19,7 +20,7 @@ import make_obj177_rev1 as H          # drawing helpers only (txt, bi, line, hdi
 
 ROOT = os.path.abspath(os.path.join(HERE, "..", "..", ".."))
 OUT = os.path.join(ROOT, "venture", "drawings", "OBJ-003")
-PID, REV, DATE = "OBJ-003", "2", "11 Nov 2026"
+PID, REV, DATE = "OBJ-003", "3", "11 Nov 2026"
 PRE = f"{PID}_rev{REV}_"
 STAMP_EN, STAMP_AR = H.STAMP_EN, H.STAMP_AR
 INK = H.INK
@@ -27,16 +28,16 @@ INK = H.INK
 # ---------------------------------------------------------------- geometry (mm)
 K = 800.0 / 130.06                       # model units to mm
 DIA = 800.0
-H_DISC = float(os.environ.get("OBJ003_H", "375"))   # overall height incl. caps (Sabry: 350 to 400)
+H_DISC = float(os.environ.get("OBJ003_H", "380"))   # overall height incl. caps (Sabry, 11 Nov 2026)
 CAP = 6.40 * K                           # cap above the top, kept from Sabry's model ratio   39.4
 TOP_Z = H_DISC - CAP                     # top surface above floor
 T = 3.0                                  # plate thickness (proposed, Production decides)
 Z_UNDER = TOP_Z - T
-W_DISC = 300.0                           # ESTIMATE: disc width (egg shape, no flat foot)
+W_DISC = float(os.environ.get("OBJ003_W", "320"))   # disc width (Sabry, 11 Nov 2026); egg shape, no flat foot
 A_E = W_DISC / 2                         # ellipse half width
 B_E = H_DISC / 2                         # ellipse half height
 ZC = B_E                                 # ellipse centre height; the bottom touches the floor at one point
-RHO = 235.0                              # ESTIMATE: disc centre radius from table centre
+RHO = 230.0                              # ESTIMATE: disc centre radius from table centre (was 235; 320 wide discs would end 5 mm from the rim)
 ANG = [90.0, 210.0, 330.0]               # discs at 120 deg
 def chord(z):
     """Disc width at height z (ellipse)."""
@@ -196,7 +197,7 @@ def write_dxf():
     m.add_lwpolyline([(0, 0), (2500, 0), (2500, 1250), (0, 1250)], close=True, dxfattribs={"layer": "SHEET"})
     top_into(m, 410, 410)
     for i in range(3):
-        disc_into(m, 850 + i * 330, 20)
+        disc_into(m, 850 + i * (W_DISC + 30), 20)
     p = os.path.join(OUT, PRE + "nest_1250x2500.dxf"); d.saveas(p); files.append(p)
     return files
 
@@ -258,7 +259,7 @@ def build(logo, ref):
     b += H.txt(205, 241, "Powder coat, matte, to be confirmed. Hex is a screen", 1.9, fill="#555")
     b += H.txt(205, 244.5, "approximation. CAPCI code to follow.", 1.9, fill="#555")
     b += H.bi(20, 276, "1 Top plate   2 Disc (3 off)", "١ لوح السطح   ٢ قرص (٣ قطع)", 2.4)
-    b += H.bi(110, 276, "Width 800 and height 350 to 400 are Sabry's sizes. Drawn at 375 overall.", "القطر ٨٠٠ بطلب صبري. الارتفاعات حسب نسب نموذجه.", 2.2)
+    b += H.bi(110, 276, "Width 800, overall height 380 and disc width 320 are Sabry's sizes.", "العرض ٨٠٠ والارتفاع الكلي ٣٨٠ وعرض القرص ٣٢٠ بطلب صبري.", 2.2)
     sheets.append(("views", sheet(1, 4, "Views and overall sizes, 800 wide", "المساقط والمقاسات، عرض ٨٠٠", "1:6", b, logo)))
     s = 0.2
 
@@ -301,7 +302,7 @@ def build(logo, ref):
             [("Disc height (total) / cap above top", "ارتفاع القرص / البارز"), f"{H_DISC:.1f} / {CAP:.1f}"],
             [("Plate thickness (proposed)", "سماكة اللوح (مقترحة)"), f"{T:.0f}"],
             [("Cut length: top / disc", "طول القص: سطح / قرص"), f"{topL / 1000:.2f} m / {discL / 1000:.2f} m"],
-            [("Overall height (to confirm, 350-400)", "الارتفاع الكلي (للتأكيد)"), f"{H_DISC:.0f}"]]
+            [("Overall height (Sabry)", "الارتفاع الكلي (صبري)"), f"{H_DISC:.0f}"]]
     b += H.table(124, 214, [64, 36], rows, 5.6, 2.0)
     sheets.append(("parts", sheet(2, 4, "Parts: top plate and disc", "القطع: لوح السطح والقرص", "1:5 / 1:2.5", b, logo)))
 
@@ -327,7 +328,7 @@ def build(logo, ref):
     b += f'<rect x="{nx}" y="{ny}" width="{2500 * ns}" height="{1250 * ns}" fill="#fafafa" stroke="{INK}" stroke-width="0.3"/>'
     b += f'<circle cx="{nx + 410 * ns}" cy="{ny + 1250 * ns - 410 * ns}" r="{DIA / 2 * ns}" fill="#e6e6e6" stroke="{INK}" stroke-width="0.3"/>'
     for i in range(3):
-        x0 = 850 + i * 330
+        x0 = 850 + i * (W_DISC + 30)
         pr = disc_profile()
         d = "M" + " L".join(f"{nx + (x0 + A_E + sv) * ns:.2f},{ny + 1250 * ns - (20 + z) * ns:.2f}" for sv, z in pr) + " Z"
         b += f'<path d="{d}" fill="#e6e6e6" stroke="{INK}" stroke-width="0.3"/>'
@@ -346,9 +347,9 @@ def build(logo, ref):
             ["3", ("Floor glides", "قواعد أرضية"), "3", ("Not in the reference. Production to propose", "ليست في المرجع. يقترحها الإنتاج"), "to follow", "-"]]
     b += H.table(20, 40, [12, 40, 14, 120, 68, 132], rows, 8.6, 2.2)
     notes = [
-        ("Overall width 800 and height 350 to 400 are Sabry's sizes (11 Nov 2026). Drawn at 375 overall; change it to the final number.", "القطر الكلي ٨٠٠ بطلب صبري. يحل محل مقاس الكتاب السابق."),
+        ("Overall width 800, overall height 380 and disc width 320 are Sabry's sizes (11 Nov 2026). The earlier book size (Ø900 x 380) is replaced.", "العرض الكلي ٨٠٠ والارتفاع الكلي ٣٨٠ وعرض القرص ٣٢٠ بطلب صبري (١١ نوفمبر ٢٠٢٦). يحل محل مقاس الكتاب السابق."),
         ("The cap above the top is kept at 39.4, from Sabry's model ratio (6.40 on a top of 130.06). The rest of the height is disc below the top.", "الارتفاعات من نسب نموذج صبري ومضروبة في ٦٫١٥١."),
-        ("ESTIMATED from the reference photo: disc width and shape (egg shape 300 wide, no flat foot), disc position (radius 235), disc direction (radial) and top thickness.", "تقديرية من صورة المرجع: عرض القرص وشكله وموضعه واتجاهه وسماكة السطح."),
+        (f"ESTIMATED from the reference photo: disc shape (egg shape, no flat foot), disc position (radius {RHO:.0f}), disc direction (radial) and top thickness.", "تقديرية من صورة المرجع: شكل القرص (بيضاوي بلا قاعدة مسطحة) وموضعه واتجاهه وسماكة السطح."),
         ("Sabry's own cut sheet and model were not available for this revision. Replace the estimates when they are.", "لم يتوفر ملف القص ونموذج صبري لهذه المراجعة. تُستبدل التقديرات عند توفره."),
         ("The photo shows half-disc caps; Sabry's model has full discs passing through slots. This drawing follows his model.", "الصورة تُظهر أنصاف أقراص، ونموذج صبري أقراص كاملة من فتحات. الرسم يتبع نموذجه."),
         ("A prototype exists (built, in painting, 27 Oct). Check this drawing against it before Production relies on it.", "يوجد نموذج أولي (مبني، قيد الدهان). تُراجع اللوحة عليه قبل الاعتماد."),
