@@ -12,9 +12,11 @@ Three daily sessions work on this repo, one section each. Each session updates *
 - [content] 15 store drafts not on the plan (OBJ-035, 039, 052, 074, 086, 090, 093, 107, 112, 141, 146, 150, 168, 170, 174) · archive / keep as drafts · rec: keep as drafts, never activate; website session archives only on your yes.
 - [content] May AI renders go on the public site as product images until photos exist?
 - [website] Sign in to Paymob so test mode can be set up.
+- [website] Fix 3 small typos in admin policies (Settings → Policies): Shipping "1,200 EGP.." ; Privacy contact ends "2240.</span>." ; Refund and Shipping headings run into the first sentence · connector cannot write policies.
+- [website] Lawyer check on 48-hour returns, non-refundable deposit and governing law (policies are live behind the password) · who checks, by when · rec: before 19 Nov.
+- [website] Browser QA of the unpublished theme: preview redirects to the password page here. Open `?preview_theme_id=189754769632` in your logged-in admin, or log in the Shopify CLI for the next run · rec: CLI login, then I run the QA list by 15 Nov.
+- [website] Branch `claude/handoff-section-7-shipping-umz7rf` still holds 10 Nov non-website work not on main (OBJ-167/003 renders, Arabic pack, Polycraft sheet). Website part now on main · merge rest / leave · rec: merge after the repo is private.
 - [website] Arabic for the menu, About, collection intros and SEO text: send to the translator, or launch English only? · translator / EN only · rec: translator before 19 Nov.
-- [website] Privacy Policy shows amr@xdough.com as the public contact. Switch to a role address (e.g. hello@ or an objekt address)? · which address · rec: a shared objekt address before launch.
-- [website] Fill sections 5, 6 and 8 of CONTENT_TO_SUPPLY.md (delivery, returns, payment, policies) before the 12 Nov freeze, or say which may stay out at launch.
 - [catalogue] Colours per product: the book's colours are proposals. Confirm the colours each product is sold in (start with the 10 that have drawings or renders) · list per OBJ · rec: confirm in CONTENT_TO_SUPPLY 3d, then I build the colour variants.
 - [catalogue] OBJ-099 colours: store has Oxblood, Ink, Objekt Green, Putty; book has Objekt Green, Bone, Putty · keep store / switch to book · rec: keep store (renders exist for those four).
 - [images] Approve or retake the 4 hero renders (AI renders): OBJ-152 Ink v2c, OBJ-002 Oxblood v1c, OBJ-038 Carbon v1c (sent 8 Nov, re-sent 11 Nov), OBJ-015 Chocolate v1c (11 Nov) · approve / retake per image · only after approval do other colours and the context shot get made.
@@ -82,36 +84,28 @@ Three daily sessions work on this repo, one section each. Each session updates *
 - Next: your answers on the 3 drafts; then 100, 164, 176.
 
 ## Website (Shopify)
+### 11 Nov 2026 (Wed)
+- Ran: pulled main (760de90); `npm ci`; `theme check` 48 files, no offenses. Store confirmed OBJEKT / hs1a1c-ut. **No store writes.**
+- Found the 10 Nov website work on an unmerged branch (`claude/handoff-section-7-shipping-umz7rf`). Brought its `website/` files onto main; theme files now match the unpublished theme by checksum. Before this, a push from main would have undone the 10 Nov theme changes.
+- Store re-read matches the 10 Nov log: 50 products, 0 active, no `[TEST]` items; menus, Delivery & Returns page and 5 policies in place. Shipping policy now has the 15 kg / 1,200 EGP line. Three small typos left in admin policies.
+- QA launch check "no active product with placeholders" passes (0 active). Checkout, Paymob, browser QA: not tested (no sign-in, no CLI login, preview behind password).
 ### 10 Nov 2026 (Tue)
-- Footer menu done on Sabry's request: Shop (4 categories), Support (About, Contact, Search), Policies (Privacy). Unpublished theme only; read back, not seen in a browser.
-- Sabry answered: shipping worldwide; 50% deposit on every made-to-order piece, collected first; made-to-order lead time 30–45 days. Open questions sent in chat (balance timing, deposit app vs InstaPay, international carrier and rates, duties, currencies, returns).
-- Launch checklist page published (private): https://claude.ai/artifact/JfudpCb2Xe8TsTT4n5Uzwe
-- Sabry: shipping priced per country and per item size; free shipping on orders above 70,000. Handed over to Claude Code: `website/docs/HANDOFF_2026-11-10.md` (shipping plan in section 5).
+- Cleanup (Sabry's yes): 3 test products and 2 test articles deleted; 13 preview-active products to draft; 4 unknown-rights photos and 8 placeholders deleted.
+- Delivery & Returns page and footer link; Sabry pasted the 5 policies; `footer-policies` lists them. Showroom footer column and Contact page (address, WhatsApp). The Edit hidden from the main menu. OBJ-099 alt text without render mention.
+- Shipping, Egypt only: Standard delivery 118 EGP up to 15 kg, Large order delivery 1,200 EGP over 15 kg. Every product needs its packed weight (all 0 kg now). Lead time shown in days (new variant fields; theme updated). Footer menu: Shop, Support, Policies.
 ### 9 Nov 2026 (Mon)
-- Ran: pulled main (2da9a25); `npm ci`; `theme check` 48 files, no offenses. Store confirmed OBJEKT / hs1a1c-ut. No store writes.
-- Store re-read: unchanged (53 products, 16 active, 3 `[TEST]`, 13 `preview-active`, 13 active with `placeholder-data`). Menus, pages (About, Contact) unchanged. Themes: Horizon live, OBJEKT dev 189754769632 unpublished.
-- Correction to 8 Nov: one policy exists, the Shopify-generated Privacy Policy (30 Oct). It lists amr@xdough.com as the public contact address.
-- Blocked: Paymob (no sign-in), delivery page and policies (no supplied text), CLI theme push (not logged in).
-- Later (Sabry said yes in chat to the 30 Oct wording): `objekt-main` now Shop + The Edit + About; 4 collection intros; shop title and homepage, The Edit, About SEO descriptions; About template on the unpublished theme (statement, Design philosophy, Our approach; empty Process and Craftsmanship removed). English only. Read back OK, not seen in a browser. Logged in CHANGELOG.
-- Sabry said "ok" to filling CONTENT_TO_SUPPLY sections 5, 6, 8; waiting for the text.
-### 8 Nov 2026 (Sun, third run)
-- Ran: pulled main (94fd23d); `npm ci`; `theme check` 48 files, no offenses. Store confirmed OBJEKT / hs1a1c-ut. No store writes.
-- Store re-read: counts unchanged (53 products, 16 active, 3 `[TEST]`, 13 `preview-active`, 13 active with `placeholder-data`). `objekt-main` = Shop › Furniture, Table & Living, Objekts, Planters. Footer menu = Search only. Pages About, Contact. Blog `the-edit` holds only the 2 `[TEST]` articles. No policies.
-- Step 1 already done (2nd run). Step 2 Paymob: no sign-in reported, not touched. Step 3: CONTENT_TO_SUPPLY sections 5, 6, 8 (payment, delivery, returns, policies) still empty; About, meta and collection one-liners are only the 30 Oct suggested drafts, not Sabry's approved text, so nothing published. Step 4: Shopify CLI not logged in here (`theme list` waited for login), so no theme push.
-### 8 Nov 2026 (Sun, second run after Sabry reconnected Shopify)
-- Store confirmed: OBJEKT / hs1a1c-ut. OBJ-099 Oxblood swap done: v2 brand-colour images uploaded, Oxblood variant linked, v1 Oxblood media deleted, read back OK. Not looked at in a browser.
-- Store read: 53 products (16 active, 37 draft), 3 TEST, 13 preview-active, 50 placeholder-data; objekt-main menu still "Shop" only; pages About, Contact.
-- Paymob not touched (waiting for Sabry's sign-in). Menus, delivery page, policies: no supplied text yet. No theme push.
+- `objekt-main` Shop + The Edit + About (The Edit removed 10 Nov); 4 collection intros; shop, homepage, The Edit and About SEO text; About template on the unpublished theme. From Sabry's approved 30 Oct wording. English only.
 
-**Pre-launch cleanup checklist (HANDOVER section 8; store counts re-read 9 Nov, unchanged):**
+**Pre-launch cleanup checklist (HANDOVER section 8; store re-read 11 Nov):**
 - [x] OBJ-099: v2 Oxblood images in, variant linked, v1 removed (8 Nov)
-- [ ] Delete the 3 `[TEST]` products and 2 `[TEST]` articles
-- [ ] 13 `preview-active` products back to draft, or real data in; drop `placeholder-data` tags only when real
-- [ ] Remove the 4 reference photos of unknown rights and the 8 placeholder images
+- [x] Delete the 3 `[TEST]` products and 2 `[TEST]` articles (10 Nov)
+- [x] 13 `preview-active` products back to draft (10 Nov); drop `preview-active` / `placeholder-data` tags only when real data is in
+- [x] Remove the 4 reference photos of unknown rights and the 8 placeholder images (10 Nov)
 - [x] `objekt-main` expanded: Shop, The Edit, About (9 Nov)
-- [ ] Footer menu; connect the delivery page; add policies (needs Sabry's text)
+- [x] Footer menus, Delivery & Returns page, 5 policies (10 Nov). Open: 3 typos in admin policies, lawyer check
+- [ ] Shipping: packed weight on every launch product; checkout rate test (Egypt, under and over 15 kg)
 - [ ] Paymob: Sabry signs in; then test mode, activate, capture Automatic, test order and refund
-- [ ] QA launch check "no active product with `placeholder-data`, 9999.00 or [PLACEHOLDER]" (fails by design today)
+- [x] QA launch check "no active product with `placeholder-data`, 9999.00 or [PLACEHOLDER]" passes (11 Nov, 0 active); re-run on launch day
 - [ ] Sabry only: publish theme, remove storefront password, Paymob live. Horizon stays as rollback.
 
 ### Shopify catalogue

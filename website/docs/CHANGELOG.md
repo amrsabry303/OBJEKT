@@ -207,3 +207,65 @@
 - Theme file on the **unpublished** theme 189754769632 only (`themeFilesUpsert`): `sections/footer-group.json` now has three link columns, Shop (`footer-shop`), Support (`footer`), Policies (`footer-policies`). Repo file updated to match.
 - Verified by read-back (3 menus, theme file). Not seen in a browser. Delivery & Returns and the terms, refund and shipping policies join the footer once written.
 - Facts from Sabry (10 Nov), not yet on the site: shipping is worldwide; every made-to-order piece takes a 50% deposit, collected first; made-to-order lead time 30–45 days.
+
+## 2026-11-10 (shipping MVP, Egypt only)
+- Sabry (10 Nov): start with an MVP; international zones, currencies, markets, size classes and customs parked; free shipping over 70,000 dropped for now ("forget that"); keep the Egypt rate at 118 EGP and name it "Standard delivery".
+- Store confirmed with `get-shop-info`: OBJEKT, hs1a1c-ut.myshopify.com, EGP.
+- `deliveryProfileUpdate` on "General profile" (default, 57 variants), zone Domestic (EG): rate "قياسي" renamed **Standard delivery**. Price unchanged, 118.00 EGP, no conditions. No other profile, zone, market or discount created.
+- Verified by read-back. Checkout rate not tested (no payment set up yet).
+
+## 2026-11-10 (showroom and WhatsApp)
+- Sabry (10 Nov): showroom by appointment at ElBanafseg 2, Unit 28, Apt. 1, Ground Floor, New Cairo; WhatsApp 01000822240. Wording: samples of our work in a showroom, by appointment; never "small"; no pickup at checkout.
+- Theme, **unpublished** 189754769632 only (`themeFilesUpsert`): `sections/footer.liquid` gets a "Text column" block type (title + rich text, CSS in the section's own stylesheet); `sections/footer-group.json` adds a fourth column, Showroom: "Samples of our work are on view in our showroom in New Cairo, by appointment." + "Book on WhatsApp" (wa.me/201000822240). `theme check` 48 files, no offenses. Read back: footer.liquid checksum matches the repo; footer-group.json content matches.
+- Page Contact (`pageUpdate`, body): showroom line, address, Google Maps link, WhatsApp +20 100 082 2240. The page is store data, so it also shows under the live Horizon theme (storefront still password-protected). Read back OK.
+- Not seen in a browser. Arabic versions wait for the translator.
+
+## 2026-11-10 (Delivery & Returns and policies, Sabry: "go")
+- Draft approved by Sabry in chat (`website/docs/drafts/POLICIES_DRAFT_2026-11-10.md`). Published as written; lawyer check on 48-hour returns, non-refundable deposit and governing law still open.
+- Page **Delivery & Returns** created (`pageCreate`, handle `delivery-returns`, published). Read back OK.
+- Menu `footer` (`menuUpdate`): About, Contact, **Delivery & Returns**, Search. Read back OK.
+- **Not done:** Shipping, Refund, Terms of service, Contact information policies and the privacy contact fix. `shopPolicyUpdate` refused: the connector lacks the `write_legal_policies` scope. Paste-ready texts in `website/docs/drafts/POLICIES_TO_PASTE_2026-11-10.md` for Sabry to paste in admin; then add them to `footer-policies`.
+- Not seen in a browser.
+
+## 2026-11-10 (pre-launch store cleanup, Sabry: "do that please")
+- Store confirmed OBJEKT / hs1a1c-ut. Targets listed and checked against HANDOVER section 8 before any change.
+- Deleted 2 articles in `the-edit` (`articleDelete`): "[TEST] Sample story", "[TEST] Second story". The Edit is now empty.
+- Deleted 3 test products tagged `theme-test` (`productDelete`): "TEST A ready", "TEST B made to order", "TEST C mixed".
+- Set the 13 `preview-active` products to DRAFT: OBJ-137, 142, 165, 169, 171, 148, 145, 172, 147, 075, 080, 154, 099. Tags (`preview-active`, `placeholder-data`) left in place.
+- Deleted 12 images (`fileDelete`): 4 reference photos of unknown rights (OBJ-165, 169, 171, 172) and 8 labelled placeholders (OBJ-137, 142, 145, 147, 148, 075, 080, 154). OBJ-099's 5 images untouched.
+- Read back: 50 products, 0 active, 0 `theme-test`, 0 articles; only OBJ-099 has images (5). The storefront now shows no products and The Edit (in the main menu) is empty.
+
+## 2026-11-10 (policies in footer)
+- Sabry pasted Refund, Shipping, Terms of service, Contact information and the privacy contact fix in admin. Read back: all five exist; privacy now gives WhatsApp, no personal email.
+- Menu `footer-policies` (`menuUpdate`): Terms of service, Shipping policy, Refund policy, Privacy policy, Contact information. Read back OK.
+- Differences from the approved draft, as pasted: Shipping policy says "118 EGP per order **for small items**" (store has one flat rate for all orders; Delivery & Returns page has no "small items"); section headings merged into the first sentence (Refund, Shipping); Contact information on one line and "Objekt" capitalised; privacy contact line ends ".." . Not fixed: the connector cannot write policies.
+
+## 2026-11-10 (shipping: small 118, large 1,200, cart pays the higher)
+- Sabry: per-item modifier; 118 EGP small, 1,200 EGP big; cart takes the max.
+- Separate profiles would add up (118 + 1,200), and carrier-calculated rates are not on Basic, so: one profile, weight-based rates, variant weight as the size flag (0 kg small, 1 kg large). Rule in PRODUCT_SCHEMA.md.
+- `deliveryProfileUpdate` (General profile, Egypt): Standard delivery 118 EGP now has cart weight 0–0.5 kg; new **Large item delivery** 1,200 EGP for ≥ 1 kg. Read back OK. All 53 variants are 0 kg today, so all count as small until a product is marked large.
+- Page Delivery & Returns (`pageUpdate`): delivery line now "Small items: 118 EGP per order. Large pieces: 1,200 EGP per order. One fee per order: if your order includes a large piece, the large-piece fee applies." Read back by mutation result only.
+- Not tested at checkout (no payment set up). Shipping policy in admin still says "118 EGP per order for small items" only; Sabry to add the large-piece line.
+
+## 2026-11-10 (shipping by order weight, replaces the size-flag setup above)
+- Sabry: 15 kg or less is 118 EGP; more than 15 kg is 1,200 EGP.
+- `deliveryProfileUpdate`: Standard delivery 118 EGP for cart weight 0–15 kg; second rate renamed **Large order delivery**, 1,200 EGP from 15.01 kg. Read back OK. Weight is now the real packed weight (PRODUCT_SCHEMA updated); all variants are 0 kg today.
+- Delivery & Returns page: "Orders up to 15 kg: 118 EGP. Orders over 15 kg: 1,200 EGP." Not tested at checkout.
+
+## 2026-11-10 (The Edit hidden; OBJ-099 alt text)
+- Sabry said yes to both.
+- Menu `objekt-main` (`menuUpdate`): The Edit removed; now Shop (4 categories) + About. Blog `the-edit` kept (empty); add it back with the first real story. Read back OK.
+- OBJ-099 image alt text (`fileUpdate`, 5 images): "AI render, not a photo of a made piece" removed (Sabry: never mention renders in public text). Now "OBJ-099 candleholder set in Oxblood / Ink / Objekt Green / Putty" and "...in Oxblood on a dining table in low sun". File names unchanged (`ai-render` kept, internal). Read back OK.
+
+## 2026-11-10 (lead time shown in days)
+- Store: variant metafield definitions `custom.lead_time_days_min` and `custom.lead_time_days_max` (integer, min 0) created.
+- Theme, **unpublished** 189754769632 only (`themeFilesUpsert`): `snippets/availability.liquid` reads days (weeks ×7 as fallback), shows "N–M days", line property `_lead_time_days`; `sections/main-cart.liquid` reads `_lead_time_days` (old `_lead_time_weeks` ×7) and shows days. `theme check` 48 files, no offenses. Checksums match the repo. Not seen in a browser.
+
+## 2026-11-11 (daily website run: repo brought in line with the store; no store writes)
+- Store confirmed with `get-shop-info`: OBJEKT, hs1a1c-ut.myshopify.com, EGP. `theme check` 48 files, no offenses.
+- Found: the 10 Nov website work (cleanup, Delivery & Returns, policies, showroom footer, shipping by weight, lead time in days, The Edit hidden) was on branch `claude/handoff-section-7-shipping-umz7rf`, not on `main`. Brought its `website/` files onto `main` (theme files, CHANGELOG, PRODUCT_SCHEMA, policy drafts; CONTENT_TO_SUPPLY merged with the content session's 11 Nov edits, no conflict). Other files on that branch (renders, STATUS lines of other sessions, plan sheets) left alone.
+- Theme check: repo files now match the unpublished theme 189754769632 by MD5 (footer.liquid, main-cart.liquid, availability.liquid, header-group.json, page.about.json); footer-group.json matches in content (Shopify adds an empty `settings`). Before this, a theme push from `main` would have undone the 10 Nov theme changes.
+- Store read: 50 products, 0 active, 0 `[TEST]`, 13 still tagged `preview-active` (all draft), 50 `placeholder-data`; OBJ-099 draft with its 5 images (v2 Oxblood). Menus: `objekt-main` Shop + About; `footer` About, Contact, Delivery & Returns, Search; `footer-policies` 5 links. Pages About, Contact, Delivery & Returns. All 5 policies exist; the Shipping policy now carries the 15 kg / 1,200 EGP line (the 10 Nov "small items" mismatch is fixed). Small typos left in admin: "1,200 EGP.." (Shipping), "+20 100 082 2240.</span>." (Privacy), headings run into the first sentence (Refund, Shipping). Connector cannot write policies.
+- Shipping profile read: General, Egypt, Standard delivery 118 EGP (0–15 kg), Large order delivery 1,200 EGP (from 15.01 kg). Checkout not tested.
+- QA launch check "no active product with placeholders" now passes (0 active).
+- Not done: Paymob (no sign-in reported), CLI theme push (not logged in), browser QA (preview redirects to the password page).
