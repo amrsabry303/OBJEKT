@@ -21,7 +21,14 @@ ROOT = os.path.abspath(os.path.join(HERE, "..", "..", ".."))
 OUT = os.path.join(ROOT, "venture", "drawings", "OBJ-020")
 PID, REV, DATE = "OBJ-020", "5", "11 Nov 2026"
 PRE = f"{PID}_rev{REV}_"
-STAMP_EN, STAMP_AR = H.STAMP_EN, H.STAMP_AR
+APPROVED = True                          # Sabry approved rev 5 on 11 Nov 2026
+if APPROVED:
+    STAMP_EN = "Approved by Sabry 11 Nov 2026. Production review pending. Not engineered"
+    STAMP_AR = "معتمد من صبري ١١ نوفمبر ٢٠٢٦. مراجعة الإنتاج قيد الانتظار. بدون مراجعة هندسية"
+else:
+    STAMP_EN, STAMP_AR = H.STAMP_EN, H.STAMP_AR
+STAMP_COL = "#1d6b3a" if APPROVED else "#b3261e"
+STAMP_BG = "#f0f8f2" if APPROVED else "#fff4f2"
 INK = H.INK
 
 # ---------------------------------------------------------------- geometry (mm)
@@ -205,8 +212,8 @@ def sheet(n, total, t_en, t_ar, scale, body, logo):
     s += H.line(7, 27, 413, 27, 0.25)
     s += body
     bx, by, bw, bh = 263, 253, 150, 37
-    s += f'<rect x="{bx}" y="{by - 11}" width="{bw}" height="11" fill="#fff4f2" stroke="#b3261e" stroke-width="0.4"/>'
-    s += H.txt(bx + 3, by - 6.3, STAMP_EN, 2.9, bold=True, fill="#b3261e") + H.txt(bx + bw - 3, by - 2.2, STAMP_AR, 2.7, "start", False, "#b3261e", ar=True)
+    s += f'<rect x="{bx}" y="{by - 11}" width="{bw}" height="11" fill="{STAMP_BG}" stroke="{STAMP_COL}" stroke-width="0.4"/>'
+    s += H.txt(bx + 3, by - 6.3, STAMP_EN, 2.7, bold=True, fill=STAMP_COL) + H.txt(bx + bw - 3, by - 2.2, STAMP_AR, 2.5, "start", False, STAMP_COL, ar=True)
     s += f'<rect x="{bx}" y="{by}" width="{bw}" height="{bh}" fill="#fff" stroke="{INK}" stroke-width="0.35"/>'
     cells = [("PRODUCT / المنتج", f"{PID} Coffee table (name to follow)", 0, 0, 75), ("SIZE / المقاس", "A3", 75, 0, 25),
              ("SCALE / المقياس", scale, 100, 0, 25), ("UNITS / الوحدات", "mm", 125, 0, 25),
