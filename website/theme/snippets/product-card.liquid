@@ -17,7 +17,7 @@
         <div class="name">{{ product.title }}</div>
         {% render 'availability', product: product %}
       </div>
-      <div class="price">{% if product.price_varies %}{{ 'collection.from' | t }} {% endif %}<bdi>{{ product.price | money }}</bdi></div>
+      <div class="price">{% if product.price_varies %}{{ 'collection.from' | t }} {% endif %}<bdi>{{ product.price | money_without_trailing_zeros }}</bdi></div>
     </div>
   </a>
 </article>

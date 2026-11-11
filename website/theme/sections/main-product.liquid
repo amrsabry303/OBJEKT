@@ -34,7 +34,7 @@
       <div id="buy-box">
         {%- form 'product', product, id: 'product-form', novalidate: 'novalidate' -%}
           <input type="hidden" name="id" value="{{ current.id }}">
-          <p class="price" aria-live="off">{{ current.price | money }}</p>
+          <p class="price" aria-live="off">{{ current.price | money_without_trailing_zeros }}</p>
           {%- if product.has_only_default_variant == false -%}
             <fieldset class="finish">
               <legend class="label">{{ product.options.first }} <span class="muted">· {{ current.title }}</span></legend>
@@ -54,7 +54,7 @@
           {%- endif -%}
           {% render 'availability', product: product, variant: current, mode: 'buy' %}
           <div class="sticky-buy" id="sticky-buy" hidden>
-            <div><p class="label muted">{{ product.title }}</p><p class="price">{{ current.price | money }}</p></div>
+            <div><p class="label muted">{{ product.title }}</p><p class="price">{{ current.price | money_without_trailing_zeros }}</p></div>
             <button class="btn" type="submit" name="add" form="product-form"{% unless current.available %} disabled{% endunless %}>{{ 'product.add_short' | t }}</button>
           </div>
         {%- endform -%}
