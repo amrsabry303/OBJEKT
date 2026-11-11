@@ -1,0 +1,22 @@
+<!doctype html><html><body style="margin:0;background:transparent"><script src="node_modules/three/build/three.min.js"></script>
+<script>
+// OBJ-003 from Sabry's model numbers: top dia 130.06, top surface at 40, discs 46.39 tall (cap 6.39 above top), three discs at 120 deg, tangential.
+// Disc outline (egg, flat foot) and leg radius are read from the approved v6c render, not measured.
+const P=new URLSearchParams(location.search); const W=+P.get('w')||1333,H=+P.get('h')||2000; const MASK=P.get('mask');
+const r=new THREE.WebGLRenderer({antialias:true,alpha:true,preserveDrawingBuffer:true}); r.setSize(W,H); r.setClearColor(0,0); r.shadowMap.enabled=true; r.shadowMap.type=THREE.PCFSoftShadowMap; r.outputColorSpace=THREE.SRGBColorSpace; document.body.appendChild(r.domElement);
+const sc=new THREE.Scene(); if(MASK) sc.background=new THREE.Color(0);
+const M=MASK?new THREE.MeshBasicMaterial({color:0xffffff,side:THREE.DoubleSide}):new THREE.MeshStandardMaterial({color:0x6a2028,roughness:0.75,side:THREE.DoubleSide});
+const tp=new THREE.Mesh(new THREE.CylinderGeometry(65.03,65.03,1.2,128),M); tp.position.y=39.4; tp.castShadow=true; tp.receiveShadow=true; sc.add(tp);
+const sh=new THREE.Shape(); const rx=21, cy=23.2, ry=23.2; const pts=[];
+for(let k=0;k<96;k++){const a=-Math.PI/2+k/96*2*Math.PI; let x=rx*Math.cos(a)*(1-0.06*Math.sin(a)), y=cy+ry*Math.sin(a); if(y<1.2) y=1.2; y-=1.2; if(pts.length&&Math.abs(pts[pts.length-1].x-x)<1e-3&&Math.abs(pts[pts.length-1].y-y)<1e-3) continue; pts.push(new THREE.Vector2(x,y));}
+sh.setFromPoints(pts);
+const dg=new THREE.ExtrudeGeometry(sh,{depth:1.0,bevelEnabled:false,curveSegments:64}); dg.translate(0,0,-0.5);
+const R=50, rot0=(+P.get('rot')||0)*Math.PI/180;
+for(let i=0;i<3;i++){const a=rot0+i*2*Math.PI/3; const d=new THREE.Mesh(dg,M); d.position.set(Math.sin(a)*R,0,Math.cos(a)*R); d.rotation.y=a; d.castShadow=true; d.receiveShadow=true; sc.add(d);}
+if(!MASK){ const fl=new THREE.Mesh(new THREE.PlaneGeometry(2000,2000),new THREE.ShadowMaterial({opacity:0.28})); fl.rotation.x=-Math.PI/2; fl.receiveShadow=true; sc.add(fl);
+ sc.add(new THREE.HemisphereLight(0xfff6ec,0x8a7a6a,1.9)); const d=new THREE.DirectionalLight(0xfff1e0,1.1); d.position.set(-120,220,140); d.castShadow=true; d.shadow.mapSize.set(2048,2048); Object.assign(d.shadow.camera,{left:-150,right:150,top:150,bottom:-150,near:1,far:800}); d.shadow.radius=20; d.shadow.blurSamples=12; sc.add(d);}
+const cam=new THREE.PerspectiveCamera(+P.get('fov')||30,W/H,1,5000);
+const az=(+P.get('az')||0)*Math.PI/180, dist=+P.get('dist')||300, ch=+P.get('ch')||70;
+cam.position.set(Math.sin(az)*dist,ch,Math.cos(az)*dist); cam.lookAt(+P.get('lx')||0,+P.get('ly')||40,0); cam.setViewOffset(W,H,+P.get('ox')||0,+P.get('oy')||0,W,H);
+r.render(sc,cam); document.title='done';
+</script></body></html>
