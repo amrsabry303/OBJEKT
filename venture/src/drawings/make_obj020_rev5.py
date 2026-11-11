@@ -1,13 +1,14 @@
-"""OBJ-020 coffee table (library item 'Coffee Tables ref 4'), rev 4: drawing set (A3, EN/AR) + DXF.
+"""OBJ-020 coffee table (library item 'Coffee Tables ref 4'), rev 5: drawing set (A3, EN/AR) + DXF.
 
-Rev 4 (11 Nov 2026): the top outline is now MEASURED from the 3/4 photo (8 corners traced, fitted to a plan with a homography,
-reprojection error under 2 px). It is an octagon symmetric about both centre lines: a front and a back crease in the middle of the
-long faces, and a shallow V point at each end. The two legs are 4-sided blocks under the two end points.
-Rev 2 and rev 3 were wrong and are superseded. Overall 1000 x 600 x 300 mm are Sabry's; everything else is estimated from the photos.
+Rev 5 (11 Nov 2026): the legs now have the same V end as the table. The top outline is MEASURED from the 3/4 photo
+(8 corners traced and fitted to a plan, error under 2 px): a front and a back crease in the middle of the long faces and a
+shallow V point at each end. Each leg is a block whose outer end is the same V, its two V faces in line with the table's V faces
+(points 0, 1, 2 on the left and 4, 5, 6 on the right of Sabry's trace), and a flat inner end.
+Revs 2, 3 and 4 were wrong and are superseded. Overall 1000 x 600 x 300 mm are Sabry's; everything else is estimated.
 
 Proposed build: 3 mm sheet, hollow box and hollow legs. Production decides everything about joints and finish.
 
-Run: python3 make_obj020_rev4.py     Needs: numpy ezdxf pymupdf pillow, node + playwright.
+Run: python3 make_obj020_rev5.py     Needs: numpy ezdxf pymupdf pillow, node + playwright.
 Output: venture/drawings/OBJ-020/
 """
 import base64, math, os, subprocess, sys
@@ -18,12 +19,19 @@ import make_obj177_rev1 as H          # drawing helpers only (txt, bi, line, hdi
 
 ROOT = os.path.abspath(os.path.join(HERE, "..", "..", ".."))
 OUT = os.path.join(ROOT, "venture", "drawings", "OBJ-020")
-PID, REV, DATE = "OBJ-020", "4", "11 Nov 2026"
+PID, REV, DATE = "OBJ-020", "5", "11 Nov 2026"
 PRE = f"{PID}_rev{REV}_"
 STAMP_EN, STAMP_AR = H.STAMP_EN, H.STAMP_AR
 INK = H.INK
 
 # ---------------------------------------------------------------- geometry (mm)
+
+
+def ccw(poly):
+    a = sum(poly[i][0] * poly[(i + 1) % len(poly)][1] - poly[(i + 1) % len(poly)][0] * poly[i][1] for i in range(len(poly)))
+    return list(poly) if a > 0 else list(poly)[::-1]
+
+
 L, D, HT = 1000.0, 600.0, 300.0         # overall: GIVEN by Sabry (100 x 60 x 30 cm)
 BOXH = 165.0                            # box height, estimated from the photos
 LEGH = HT - BOXH                        # leg height 135
@@ -31,9 +39,13 @@ T = 3.0                                 # sheet thickness (proposed; Production 
 # top outline, counter-clockwise from the front-left corner, y = 0 at the front. Fitted to the photo, rounded.
 # Symmetric about x = 500 and about y = 300: two creases (front, back) and a shallow V point at each end.
 BOX_POLY = [(500, 0), (955, 50), (1000, 300), (955, 550), (500, 600), (45, 550), (0, 300), (45, 50)]
-# legs: 4-sided blocks under the two end points, outer face 25 in from the point so the leg stays inside the top
-LEG_L = [(25, 170), (185, 170), (185, 430), (25, 430)]
-LEG_R = [(815, 170), (975, 170), (975, 430), (815, 430)]
+# legs: each leg has the same V end as the table. The V faces lie ON the table's V faces (flush), from the point
+# out to y = 110 and y = 490; the leg then runs straight in to a flat inner end at x = 190. ESTIMATED size.
+_VX = 45.0 * (300 - 110) / 250.0                         # x of the V corners on the table's V edge (34.2)
+LEG_L = [(0, 300), (_VX, 110), (190, 110), (190, 490), (_VX, 490)]
+LEG_L = [(0, 300), (_VX, 490), (190, 490), (190, 110), (_VX, 110)] if False else LEG_L
+LEG_L = ccw(LEG_L)
+LEG_R = ccw([(1000 - x, y) for x, y in LEG_L])
 
 
 def ar_num(txt):
@@ -54,6 +66,11 @@ def perimeter(poly):
 
 def area_poly(poly):
     return 0.5 * abs(sum(poly[i][0] * poly[(i + 1) % len(poly)][1] - poly[(i + 1) % len(poly)][0] * poly[i][1] for i in range(len(poly))))
+
+
+def ccw(poly):
+    a = sum(poly[i][0] * poly[(i + 1) % len(poly)][1] - poly[(i + 1) % len(poly)][0] * poly[i][1] for i in range(len(poly)))
+    return list(poly) if a > 0 else list(poly)[::-1]
 
 
 def norm(poly):
@@ -77,8 +94,18 @@ def leg_segments(poly, start_mid_edge):
     return segs
 
 
-LEG_SEGS = leg_segments(LEG_L, 1)       # seam in the middle of the inner face
+LEG_SEGS = leg_segments(LEG_L, max(range(len(LEG_L)), key=lambda k: elen(*edges(LEG_L)[k])))   # seam in the middle of the inner face
 LEG_BAND = sum(LEG_SEGS)
+
+
+def leg_turns():
+    pts = LEG_L
+    out = []
+    for i in range(len(pts)):
+        a, b, c = pts[i - 1], pts[i], pts[(i + 1) % len(pts)]
+        d1 = math.atan2(b[1] - a[1], b[0] - a[0]); d2 = math.atan2(c[1] - b[1], c[0] - b[0])
+        out.append(abs((math.degrees(d2 - d1) + 180) % 360 - 180))
+    return out
 
 
 def folds_of(segs):
@@ -144,7 +171,7 @@ def draw_iso(ox, oy, s, lift=0.0):
 def draw_front(ox, oy, s):
     """Front elevation, looking along +y; oy = floor line."""
     svg = ""
-    for x0, x1, lines in ((25, 185, ()), (815, 975, ())):
+    for x0, x1, lines in ((0, 190, (_VX,)), (810, 1000, (1000 - _VX,))):
         svg += poly_svg([(x0, 0), (x1, 0), (x1, LEGH), (x0, LEGH)], ox, oy, s, BRZ_MID)
         for xx in lines:
             svg += H.line(ox + xx * s, oy, ox + xx * s, oy - LEGH * s, 0.2)
@@ -158,7 +185,8 @@ def draw_front(ox, oy, s):
 def draw_end(ox, oy, s):
     """End elevation, looking along -x (from the right-hand end); u = y."""
     svg = ""
-    svg += poly_svg([(170, 0), (430, 0), (430, LEGH), (170, LEGH)], ox, oy, s, BRZ_MID)
+    svg += poly_svg([(110, 0), (490, 0), (490, LEGH), (110, LEGH)], ox, oy, s, BRZ_MID)
+    svg += H.line(ox + 300 * s, oy, ox + 300 * s, oy - LEGH * s, 0.2)
     svg += poly_svg([(0, LEGH), (D, LEGH), (D, HT), (0, HT)], ox, oy, s, BRZ_LIT)
     for yy in (50, 300, 550):
         svg += H.line(ox + yy * s, oy - LEGH * s, ox + yy * s, oy - HT * s, 0.2)
@@ -211,8 +239,8 @@ def nest_layout():
         "P1_top_plate": [(10, 640, False)], "P2_bottom_plate": [(10, 10, False)],
         "P3_side_band": [(1040, 10, True), (1235, 10, True)],
         "P4_end_band": [(1430, 10, True), (1625, 10, True)],
-        "P5_leg_band": [(1820, 10, True), (1985, 10, True)],
-        "P6_leg_cap": [(1430, 590, False), (1620, 590, False)],
+        "P5_leg_band": [(1870, 10, True), (2035, 10, True)],
+        "P6_leg_cap": [(1430, 590, False), (1650, 590, False)],
     }
 
 
@@ -331,7 +359,7 @@ def build(logo, ref):
     b += f'<path d="M{" L".join(f"{x:.2f},{y:.2f}" for x, y in P)} Z" fill="#ece8df" stroke="{INK}" stroke-width="0.4"/>'
     b += H.hdim(xb, xb + wB * s7, 48 + hB * s7 + 6, f"{wB:.0f}", size=1.9)
     b += H.vdim(xb + wB * s7 + 4, 48, 48 + hB * s7, f"{hB:.0f}", size=1.9)
-    b += H.txt(xb, 48 + hB * s7 + 14, "4-sided block", 1.8, fill="#555")
+    b += H.txt(xb, 48 + hB * s7 + 14, "V end like the table; flat inner end", 1.8, fill="#555")
     def band(xp, yp, label_en, label_ar, w, h, folds):
         r = ""
         r += H.bi(xp - 2, yp - 11, label_en, label_ar, 2.1, bold=True)
@@ -345,16 +373,16 @@ def build(logo, ref):
         return r
     b += band(22, 175, "P3 SIDE BAND (2: front and back), 1 fold  1:7", "ل٣ شريط جانبي (٢: أمامي وخلفي)، ثنية واحدة", FRONT_BAND, BOXH, [BOX_E[7]])
     b += band(230, 175, "P4 END BAND (2), 1 fold  1:7", "ل٤ شريط طرفي (٢)، ثنية واحدة", END_BAND, BOXH, [BOX_E[1]])
-    b += band(22, 225, "P5 LEG BAND (2), 4 folds  1:7", "ل٥ شريط الرجل (٢)، ٤ ثنيات", LEG_BAND, LEGH, folds_of(LEG_SEGS))
+    b += band(22, 225, "P5 LEG BAND (2), 5 folds  1:7", "ل٥ شريط الرجل (٢)، ٥ ثنيات", LEG_BAND, LEGH, folds_of(LEG_SEGS))
     ta = math.degrees(math.atan2(50, 455)) * 2
-    b += H.txt(172, 238, "Blue dash-dot = fold. Turn angles: P3 at the crease " + f"{ta:.1f}°;", 1.8, fill="#555")
-    b += H.txt(172, 242, "P4 at the end point " + f"{2 * math.degrees(math.atan2(45, 250)):.1f}°; P5 90° at every corner.", 1.8, fill="#555")
-    b += H.txt(172, 246, "Leg band seam in the middle of the inner face.", 1.8, fill="#555")
+    b += H.txt(190, 238, "Blue dash-dot = fold. Turn angles: P3 at the crease " + f"{ta:.1f}°;", 1.8, fill="#555")
+    b += H.txt(190, 242, "P4 at the end point " + f"{2 * math.degrees(math.atan2(45, 250)):.1f}°; P5 turns " + "°, ".join(f"{t:.0f}" for t in leg_turns()) + "°.", 1.8, fill="#555")
+    b += H.txt(190, 246, "Leg band seam in the middle of the inner face.", 1.8, fill="#555")
     rows = [[("DATA", "بيانات"), ""],
             [("Overall W x D x H (given)", "العرض × العمق × الارتفاع (معطى)"), f"{L:.0f} x {D:.0f} x {HT:.0f}"],
             [("Box height / leg height (est.)", "ارتفاع الصندوق / الرجل (تقدير)"), f"{BOXH:.0f} / {LEGH:.0f}"],
-            [("Leg block (est., 2 mirrored)", "كتلة الرجل (تقدير، ٢ متناظرتان)"), "160 x 260"],
-            [("Leg outer face in from end point", "الوجه الخارجي للرجل عن رأس الطرف"), "25"],
+            [("Leg block (est., 2 mirrored)", "كتلة الرجل (تقدير، ٢ متناظرتان)"), "190 x 380, V end"],
+            [("Leg V faces vs table V faces", "أوجه V للرجل مع أوجه V للطاولة"), "in line"],
             [("Sheet thickness (proposed)", "سماكة الصاج (مقترحة)"), f"{T:.0f}"]]
     b += H.table(300, 60, [58, 52], rows, 6.2, 1.9)
     sheets.append(("parts", sheet(2, 4, "Parts: flat patterns", "القطع: الأشكال المسطحة", "1:7", b, logo)))
@@ -364,10 +392,10 @@ def build(logo, ref):
     b += H.bi(20, 34, "EXPLODED VIEW  1:10", "منظور مفكوك", 2.8, bold=True)
     b += draw_iso(60, 118, 0.1, lift=200.0)
     b += H.bi(215, 34, "PROPOSED SEQUENCE (Production decides)", "تسلسل مقترح (القرار للإنتاج)", 2.8, bold=True)
-    steps = [("Laser cut P1 to P6 from 3 mm sheet. Fold P3 and P4 (1 fold each) and P5 (4 folds) at the blue lines.", "قص الليزر للقطع من ل١ إلى ل٦ من صاج ٣ مم. ثني ل٣ ول٤ (ثنية لكل منهما) ول٥ (٤ ثنيات) عند الخطوط الزرقاء."),
+    steps = [("Laser cut P1 to P6 from 3 mm sheet. Fold P3 and P4 (1 fold each) and P5 (5 folds) at the blue lines.", "قص الليزر للقطع من ل١ إلى ل٦ من صاج ٣ مم. ثني ل٣ ول٤ (ثنية لكل منهما) ول٥ (٥ ثنيات) عند الخطوط الزرقاء."),
              ("Weld each leg: the band closes at its seam, then its cap plate on top. The two legs are mirror images.", "لحام كل رجل: يُقفل الشريط عند وصلته ثم غطاؤه العلوي. الرجلان متناظرتان."),
              ("Build the box: bottom plate, the 2 side bands and 2 end bands round it, then the top plate.", "تجميع الصندوق: اللوح السفلي، الشريطان الجانبيان والشريطان الطرفيان حوله، ثم اللوح العلوي."),
-             ("Fix the legs under the two end points as on the plan (dashed outlines).", "تثبيت الرجلين أسفل رأسي الطرفين كما في المسقط الأفقي (الخطوط المتقطعة)."),
+             ("Fix each leg under its end point, its V faces in line with the table's V faces (dashed outlines on the plan).", "تثبيت كل رجل أسفل رأس الطرف بحيث تتوافق أوجه V مع أوجه V للطاولة (الخطوط المتقطعة)."),
              ("Dress the seams, then finish: brushed top, bronze sides and legs. Glides if wanted.", "تنعيم الوصلات ثم التشطيب: سطح مصنفر وجوانب وأرجل برونزية. قواعد أرضية إن لزم.")]
     for i, (en, ar) in enumerate(steps):
         yy = 44 + i * 17
@@ -399,16 +427,16 @@ def build(logo, ref):
             row("P2", "Bottom plate", "لوح سفلي", 1, "Steel sheet 3, laser cut", "صاج ٣ مم قص ليزر", f"{L:.0f} x {D:.0f}", "-", "-"),
             row("P3", "Side band (front, back)", "شريط جانبي (أمامي، خلفي)", 2, "Steel sheet 3, cut, folded once", "صاج ٣ مم، قص وثني مرة", f"{FRONT_BAND:.1f} x {BOXH:.0f}", "Bronze", "برونزي"),
             row("P4", "End band", "شريط طرفي", 2, "Steel sheet 3, cut, folded once", "صاج ٣ مم، قص وثني مرة", f"{END_BAND:.1f} x {BOXH:.0f}", "Bronze", "برونزي"),
-            row("P5", "Leg band", "شريط الرجل", 2, "Steel sheet 3, cut, folded 4 times", "صاج ٣ مم، قص وثني ٤ مرات", f"{LEG_BAND:.0f} x {LEGH:.0f}", "Bronze", "برونزي"),
-            row("P6", "Leg cap plate", "غطاء الرجل", 2, "Steel sheet 3, laser cut", "صاج ٣ مم قص ليزر", "160 x 260", "Bronze", "برونزي"),
+            row("P5", "Leg band", "شريط الرجل", 2, "Steel sheet 3, cut, folded 5 times", "صاج ٣ مم، قص وثني ٥ مرات", f"{LEG_BAND:.0f} x {LEGH:.0f}", "Bronze", "برونزي"),
+            row("P6", "Leg cap plate", "غطاء الرجل", 2, "Steel sheet 3, laser cut", "صاج ٣ مم قص ليزر", "190 x 380, V end", "Bronze", "برونزي"),
             row("G", "Floor glides", "قواعد أرضية", "-", "Not visible in the photos. Production to propose", "غير ظاهرة في الصور. يقترحها الإنتاج", "to follow", "-", "-")]
     b += H.table(20, 40, [10, 40, 12, 100, 52, 48], rows, 7.4, 2.0)
     notes = [
         ("Overall 1000 W x 600 D x 300 H (100 x 60 x 30 cm) are Sabry's sizes (11 Nov 2026). Everything else is estimated from two photos.", "المقاسات الكلية ١٠٠٠ × ٦٠٠ × ٣٠٠ (١٠٠ × ٦٠ × ٣٠ سم) من صبري (١١ نوفمبر ٢٠٢٦). الباقي تقدير من صورتين."),
-        ("Rev 4: the top outline is measured from the 3/4 photo (8 corners traced and fitted). Revs 2 and 3 were wrong and are superseded.", "المراجعة ٤: شكل السطح مقاس من الصورة (٨ زوايا). المراجعتان ٢ و٣ كانتا خاطئتين وأُلغيتا."),
+        ("Rev 5: legs with the same V end as the table. The top outline is measured from the 3/4 photo (8 corners traced and fitted). Revs 2, 3 and 4 were wrong and are superseded.", "المراجعة ٥: أرجل بنفس رأس V للطاولة. شكل السطح مقاس من الصورة. المراجعات ٢ و٣ و٤ كانت خاطئة وأُلغيت."),
         ("Reference: library item 'Coffee Tables ref 4', photos 2 and 3. Drawn exact to the reference by Sabry's standing rule.", "المرجع: عنصر المكتبة، الصورتان ٢ و٣. مرسوم مطابقاً للمرجع حسب قاعدة صبري."),
         ("Top outline: 8 sides, symmetric about both centre lines. Four long faces (two with a crease in the middle, 50 deep) and a shallow V point at each end (corners at 45 in, points at x = 0 and 1000).", "شكل السطح: ٨ أضلاع، متناظر حول المحورين. أربعة أوجه طويلة (في منتصف الأمامي والخلفي ثنية بعمق ٥٠) وطرفان على شكل رأس مدبب (الزوايا ٤٥ للداخل)."),
-        (f"Box height {BOXH:.0f} and leg height {LEGH:.0f} are estimates. The legs are 4-sided blocks, 160 x 260, mirrored, under the two end points (as Sabry said: points 1 and 5 line up with the legs): sizes estimated.", f"ارتفاع الصندوق {ar_num(f'{BOXH:.0f}')} والرجل {ar_num(f'{LEGH:.0f}')} تقديريان. الرجلان كتلتان رباعيتان ١٦٠ × ٢٦٠ تحت رأسي الطرفين (كما قال صبري): المقاسات تقديرية."),
+        (f"Box height {BOXH:.0f} and leg height {LEGH:.0f} are estimates. Each leg has the same V end as the table, its V faces in line with the table's V faces, then runs straight in to a flat inner end: 190 x 380, mirrored (estimate).", f"ارتفاع الصندوق {ar_num(f'{BOXH:.0f}')} والرجل {ar_num(f'{LEGH:.0f}')} تقديريان. لكل رجل نفس رأس V للطاولة بأوجه متوافقة معها ثم نهاية داخلية مستقيمة: ١٩٠ × ٣٨٠، متناظرتان (تقدير)."),
         ("Build proposed in 3 mm sheet: hollow box and hollow legs, crisp corners as in the photos. Production decides folds, welds and seams.", "التنفيذ المقترح من صاج ٣ مم: صندوق ورجلان مجوفان بزوايا حادة. الإنتاج يقرر الثني واللحام والوصلات."),
         ("Finish as the photos: brushed silver top, bronze-brown satin sides and legs. Material and method are Production's. Hex is a screen guess.", "التشطيب كما في الصور: سطح فضي مصنفر وجوانب وأرجل برونزية. الخامة والطريقة للإنتاج. الرمز تقدير من الشاشة."),
         ("Leg underside is left open on the drawing. Closing it, bracing and weight are Production's. No structural claim is made.", "أسفل الرجل مفتوح في الرسم. التقفيل والتدعيم والوزن للإنتاج. لا توجد ادعاءات إنشائية."),
