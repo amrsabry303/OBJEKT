@@ -55,5 +55,23 @@ Source: the production book (45 product slides), Drive and the Magnific history.
 - OBJ-175 Wall shelf panels, half-disc shelves (design file: NOT READY)
 - OBJ-176 Wall shelves, half-disc, colour set (design file: NOT READY)
 
+## Faux books: 3D mockups (11, 11 Nov 2026)
+
+Built from the print design files, so they are not AI renders and not photos. Three more show the sets of three. Nothing is on Drive; the files are in git. A real photo replaces each mockup once a sample exists.
+
+| Product | Images | Which | Best |
+|---|---|---|---|
+| OBJ-178 NOT A BOOK | 1 | 3D mockup at size M from the design files (not an AI render, not a photo): `plan/faux-books/renders/FB-01_*_3d-mockup_M.jpg` | the one mockup |
+| OBJ-179 SHELF LIFE | 1 | 3D mockup at size M from the design files (not an AI render, not a photo): `plan/faux-books/renders/FB-02_*_3d-mockup_M.jpg` | the one mockup |
+| OBJ-180 HEAVY READING | 1 | 3D mockup at size M from the design files (not an AI render, not a photo): `plan/faux-books/renders/FB-03_*_3d-mockup_M.jpg` | the one mockup |
+| OBJ-181 JUDGE THE COVER | 1 | 3D mockup at size M from the design files (not an AI render, not a photo): `plan/faux-books/renders/FB-04_*_3d-mockup_M.jpg` | the one mockup |
+| OBJ-182 OBJEKTS OF CHARACTER | 1 | 3D mockup at size M from the design files (not an AI render, not a photo): `plan/faux-books/renders/FB-05_*_3d-mockup_M.jpg` | the one mockup |
+| OBJ-183 USELESS ON PURPOSE | 1 | 3D mockup at size M from the design files (not an AI render, not a photo): `plan/faux-books/renders/FB-06_*_3d-mockup_M.jpg` | the one mockup |
+| OBJ-184 COFFEE TABLE BOOK | 1 | 3D mockup at size M from the design files (not an AI render, not a photo): `plan/faux-books/renders/FB-07_*_3d-mockup_M.jpg` | the one mockup |
+| OBJ-185 DESIGN WORTH NOTICING | 1 | 3D mockup at size M from the design files (not an AI render, not a photo): `plan/faux-books/renders/FB-08_*_3d-mockup_M.jpg` | the one mockup |
+| OBJ-186 EASY TIGER | 1 | 3D mockup at size M from the design files (not an AI render, not a photo): `plan/faux-books/renders/FB-09_*_3d-mockup_M.jpg` | the one mockup |
+| OBJ-187 HOLY COW | 1 | 3D mockup at size M from the design files (not an AI render, not a photo): `plan/faux-books/renders/FB-10_*_3d-mockup_M.jpg` | the one mockup |
+| OBJ-188 BETWEEN THE LINES | 1 | 3D mockup at size M from the design files (not an AI render, not a photo): `plan/faux-books/renders/FB-11_*_3d-mockup_M.jpg` | the one mockup |
+
 ## Not filed
 Six other sculpture renders in the Magnific history (baby elephant calf, falcon, abstract geometric) are not matched to a launch product. Renders from other projects and are not touched.

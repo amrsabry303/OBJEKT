@@ -14,7 +14,7 @@ Flat width = 2 × width + spine. The back is on the left, the spine in the middl
 - `S/`, `M/`, `L/`: `FB-nn_title_SIZE_WxHxD_print.pdf` (one page, exact page size), and `svg/` with the same files as SVG.
 - `textures/`: the cow and tiger images, one per size, with bleed, 12 px/mm (305 dpi), JPEG quality 88. The SVGs link to these, so keep the folders together. The PDFs have them embedded.
 - `preview_S.png`, `preview_M.png`, `preview_L.png`: contact sheets.
-- Source: `../artwork/make_print.py` (run `python3 make_print.py <repo root> <S|M|L>`), `../artwork/make_print_pdf.js` (PDFs).
+- Source: `src/make_print.py` (run `python3 src/make_print.py <repo root> <S|M|L>`), `src/make_print_pdf.js` (PDFs: `node src/make_print_pdf.js <repo root>`).
 
 ## Volumes
 01 NOT A BOOK · 02 SHELF LIFE · 03 HEAVY READING · 04 JUDGE THE COVER · 05 OBJEKTS OF CHARACTER · 06 USELESS ON PURPOSE · 07 COFFEE TABLE BOOK · 08 DESIGN WORTH NOTICING · 09 EASY TIGER (tiger print) · 10 HOLY COW (cow hide) · 11 BETWEEN THE LINES (stripes). Spine numbers 01 to 11 on every spine.

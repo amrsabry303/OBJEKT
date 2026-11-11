@@ -26,6 +26,7 @@ Sabry and Youssef Gaber (owner of the Polycraft factory, Cairo) are building a h
 | `venture/` | context, handover, memory notes, plan docs (workflow, design-file standard) |
 | `brand/` | guidelines PDF, logo SVG/PNG, colour and finish docs |
 | `plan/` | assortment targets, Shopify import template, image inventory, house style, OBJ-099 renders (JPEG) |
+| `plan/faux-books/` | faux books: 11 designs in 3 sizes. Spec `PLAN.md`, print PDFs and generator `print/`, 3D mockups `renders/`, reference photos `references/` |
 | `website/` | Shopify theme, docs (decisions, changelog, QA), prototype, tools |
 | `.claude/skills/` | objekt-drawings, objekt-naming, paymob-shopify |
 | `images/` | reference images OBJ-nnn.jpg (161, from the reference book; mixed rights, reference only, never proof of capability) |

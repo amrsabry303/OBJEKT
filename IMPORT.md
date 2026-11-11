@@ -7,6 +7,7 @@ Built 7 Nov 2026 from two handover packages: the website package (`objekt-websit
 - Brand guidelines PDF, logo files, colour and finish docs.
 - Plan files: assortment targets, Shopify import template, categories prompt, image inventory, house style.
 - OBJ-099 renders as JPEG (5 v1 on the site, 2 v2 brand-colour recolours not yet on the site).
+- `plan/faux-books/`: the faux books spec, print PDFs for all 11 designs in 3 sizes with their generator, 3D mockups (size M) and reference photos (other brands, reference only). Draft versions were removed on 11 Nov 2026; they are in git history. About 55 MB, mostly the print PDFs and the 305 dpi cow and tiger textures, which the generator can recreate.
 - Venture context, handover and memory notes (objekt and Polycraft only).
 - `website/docs/CONTENT_TO_SUPPLY.md`: the "OBJEKT website: content to supply" intake document (exported 8 Nov 2026).
 - `venture/artifacts/objekt-workspace_HysZRbjoMyneXH8Xbiipcn.html`: the workspace tracker page (its data is in the Drive export `workspace-db/`).
