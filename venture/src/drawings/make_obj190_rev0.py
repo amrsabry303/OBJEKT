@@ -130,10 +130,10 @@ def frame(n, N, title_en, title_ar, scale):
     s += line(X, Y+9, X+Wd, Y+9, .25) + line(X, Y+20, X+Wd, Y+20, .25) + line(X, Y+31, X+Wd, Y+31, .25) + line(X+92, Y+9, X+92, Y+41, .25)
     s += bi(X+2, Y+4, f'{PN} (provisional number)  Side table, faceted top on two legs', 'طاولة جانبية بسطح متعدد الأوجه على ساقين', Wd-4, 2.6, 600)
     s += bi(X+2, Y+14, f'SIZE  {W} x {D} x {H} mm (overall, Sabry)', 'المقاس الكلي', 88, 2.3) + bi(X+94, Y+14, f'SCALE  {scale}   UNITS  mm', 'المقياس والوحدة', 88, 2.3)
-    s += bi(X+2, Y+25, 'MATERIAL  Stainless steel sheet, thickness by Production', 'الخامة: ستانلس ستيل، السماكة من التصنيع', 88, 2.1) + bi(X+94, Y+25, 'FINISH  brushed (to be confirmed)', 'التشطيب: مصقول بالفرشاة (يؤكد لاحقاً)', 88, 2.1)
+    s += bi(X+2, Y+25, 'MATERIAL  Stainless steel sheet, thickness by Production', 'الخامة: ستانلس ستيل، السماكة من التصنيع', 88, 2.1) + bi(X+94, Y+25, 'FINISH  brushed stainless steel', 'التشطيب: ستانلس ستيل مصقول بالفرشاة', 88, 2.1)
     s += bi(X+2, Y+36, f'DATE  {DATE}      SHEET {n} / {N}', 'التاريخ، الورقة', 88, 2.3) + bi(X+94, Y+36, f'REV  {REV}', 'المراجعة', 88, 2.3)
-    s += rect(X, Y-14, Wd, 12, .5, '#b3261e', '#fff')
-    s += t(X+Wd/2, Y-8.6, 'DRAFT, not approved, not engineered', 3.6, 700, 'middle', '#b3261e') + t(X+Wd/2, Y-3.8, 'مسودة، غير معتمدة، غير مهندسة', 3.4, 700, 'middle', '#b3261e', extra=' direction="rtl"')
+    s += rect(X, Y-14, Wd, 12, .5, '#2f6b45', '#fff')
+    s += t(X+Wd/2, Y-8.6, f'Approved by Sabry {DATE}. Production review pending. Not engineered', 2.9, 700, 'middle', '#2f6b45') + t(X+Wd/2, Y-3.8, 'معتمد من سبري. مراجعة التصنيع قيد الانتظار. غير مهندس', 2.9, 700, 'middle', '#2f6b45')
     s += t(10, 14, title_en, 4.2, 700) + t(410, 14, title_ar, 4.2, 700, 'end', extra=' direction="rtl"')
     return s
 def sheet(n, N, title_en, title_ar, scale, body):
@@ -192,12 +192,12 @@ for i, (key, path, en, ar) in enumerate(PHOTOS):
     b += f'<image href="{datauri(path)}" x="{x}" y="212" width="58" height="58" preserveAspectRatio="xMidYMid slice"/>' + rect(x, 212, 58, 58, .2, HID) + t(x, 273, en, 2, 400) + t(x+58, 275.5, ar, 2, 400, 'end', extra=' direction="rtl"')
 # colourways
 cx = 264
-b += t(cx, 182, 'COLOURWAYS (proposed)', 2.5, 600) + t(410, 182, 'ألوان مقترحة', 2.4, 500, 'end')
-rows = [('Brushed stainless  #A7ACB1', 'ستانلس مصقول بالفرشاة', '#A7ACB1', 'Brushed, proposed default'), ('Mirror stainless  #DCE0E4', 'ستانلس مرآة', '#DCE0E4', 'Mirror finish: few skilled polishers'), ('Painted objekt colour, matte', 'لون أوبجيكت مطلي، مطفي', '#222222', 'Powder coat or Duco: to be confirmed')]
+b += t(cx, 182, 'FINISH (approved by Sabry)', 2.5, 600) + t(410, 182, 'التشطيب (معتمد من سبري)', 2.4, 500, 'end')
+rows = [('Brushed stainless steel  #A7ACB1', 'ستانلس ستيل مصقول بالفرشاة', '#A7ACB1', 'Natural metal, no paint. Brush pattern and polish: Production')]
 for i, (en, ar, hexv, note) in enumerate(rows):
     yy = 188 + i*5.6
     b += rect(cx, yy-3, 6, 4, .2, INK, hexv) + t(cx+8, yy, en, 2.2) + t(410, yy, ar, 2.2, 400, 'end') + t(cx+8, yy+2.6, note, 1.8, 400, fill=HID)
-b += t(10, 284, 'The reference piece is a warm brushed bronze-grey metal. That tone is not on the objekt finish list: Sabry to decide the finish.', 2.1, 400, fill=HID)
+b += t(10, 284, 'Finish: brushed stainless steel (approved by Sabry). The reference is a warmer bronze-grey brushed metal.', 2.1, 400, fill=HID)
 b += t(10, 287.5, 'Sizes other than the overall 550 x 450 x 550 mm are estimated from the photos.  ما عدا المقاسات الكلية فالمقاسات مقدّرة من الصور.', 2.1, 400, fill=HID)
 sh1 = sheet(1, N, 'VIEWS', 'المناظير', '1:5', b)
 
@@ -305,7 +305,7 @@ notes = [('Overall size 550 x 450 x 550 mm is Sabry\'s. All other sizes are esti
          ('The construction (hollow folded and welded boxes: one top block and two legs) is inferred from the photos. Production to confirm.', 'طريقة الصنع (صناديق مجوفة مثنية وملحومة) مستنتجة من الصور. يؤكدها التصنيع.'),
          ('Plan shapes (top: 8 sides, four Vs, one per side; legs: 5 sides, one V each, matching the V of the top above it) are traced from the photos and are approximate. Real sizes or the original CAD are still needed.', 'الأشكال الأفقية تقريبية. نحتاج المقاسات الحقيقية أو ملف التصميم الأصلي.'),
          ('Material, thickness, bend allowance, tolerances, sheet size, joints, welding, plate fit and finish are Production\'s to decide.', 'الخامة والسماكة والسماحيات واللحام والتشطيب يقررها التصنيع.'),
-         ('The reference is a warm brushed bronze-grey metal. Finish to be decided by Sabry: brushed or mirror stainless, or a painted objekt colour.', 'المرجع معدن برونزي رمادي مصقول. التشطيب يقرره سبري.'),
+         ('Finish: brushed stainless steel, approved by Sabry. The reference is a warmer bronze-grey brushed metal; the exact tone and brush are Production\'s to match with a sample.', 'التشطيب: ستانلس ستيل مصقول بالفرشاة، معتمد من سبري. المرجع أدفأ لوناً، ويطابقه التصنيع بعينة.'),
          ('Height 550 is the overall height: top block 160 + legs 390. Floor protectors, if fitted, are inside this figure; Production to confirm.', 'الارتفاع الكلي ٥٥٠: الكتلة العلوية ١٦٠ والساقان ٣٩٠.'),
          ('No structural claims, stress figures, costs or prices on this drawing. Not engineered. Arabic wording is a draft for a technical reader.', 'لا ادعاءات إنشائية ولا تكاليف ولا أسعار. الصياغة العربية مسودة.'),
          (f'{PN} is a provisional product number, not yet confirmed by Sabry.', 'رقم المنتج مؤقت.')]
