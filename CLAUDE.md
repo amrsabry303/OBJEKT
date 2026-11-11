@@ -18,6 +18,7 @@ Sabry and Youssef Gaber (owner of the Polycraft factory, Cairo) are building a h
 - Fonts (Galak Round, PP Mori) and the logo lettering are **not licensed for public or commercial use**. Never commit font files.
 - Nothing public, sent, uploaded, published or paid without Sabry's clear yes. Never touch the live store's products, prices, orders, checkout or payments without approval. Never handle passwords or keys.
 - Write the brand word as objekt / objekts in visible text.
+- **Product numbers (OBJ-nnn).** Never pick a number from memory, from this repo or from a folder listing. Before filing any new product, read the `Products` tab of the OBJEKT MASTER PRODUCT SHEET (Google Sheets id `1Krm6aj9hMFOTouAkw-fFMgDSDL2nklUN4Y2vJtTLqJk`, column A), take the highest number plus one, and check that no Drive folder `OBJ-nnn` exists for it. If the sheet cannot be read, stop and ask Sabry. Never upload to an `OBJ-nnn` Drive folder until the sheet row for that number is the same product. Say which number you took and from where.
 - This repo holds objekt and Polycraft only. Dough internal docs live in omrmhd5/bake-dough under `docs/internal/`.
 
 ## Layout

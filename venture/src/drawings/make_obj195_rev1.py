@@ -1,22 +1,22 @@
-"""OBJ-182 side table (library item, 1 photo), rev 1 APPROVED: drawing set (A3, EN/AR) + DXF.
+"""OBJ-195 side table (library item, 1 photo), rev 1 APPROVED: drawing set (A3, EN/AR) + DXF.
 
 Overall 420 W x 420 D x 550 H mm are Sabry's (42 x 42 x 55 cm). Everything else is estimated from one photo:
 a square box top (420 x 420 x 185) sitting on a smaller square block base (320 x 320 x 365), centred.
 Proposed build: 3 mm sheet, hollow. Production decides everything; moulded or lacquered is also possible.
 
-Run: python3 make_obj182_rev1.py     Needs: numpy ezdxf pymupdf pillow, node + playwright.
-Output: venture/drawings/OBJ-182/
+Run: python3 make_obj195_rev1.py     Needs: numpy ezdxf pymupdf pillow, node + playwright.
+Output: venture/drawings/OBJ-195/
 """
 import base64, math, os, subprocess, sys
 import numpy as np
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
 import make_obj177_rev1 as H
-import make_obj181_rev4 as M          # shared projection and shading helpers only
+import make_obj194_rev4 as M          # shared projection and shading helpers only
 
 ROOT = os.path.abspath(os.path.join(HERE, "..", "..", ".."))
-OUT = os.path.join(ROOT, "venture", "drawings", "OBJ-182")
-PID, REV, DATE = "OBJ-182", "1", "11 Nov 2026"
+OUT = os.path.join(ROOT, "venture", "drawings", "OBJ-195")
+PID, REV, DATE = "OBJ-195", "1", "11 Nov 2026"
 PRE = f"{PID}_rev{REV}_"
 APPROVED = True                          # Sabry approved rev 1 on 11 Nov 2026
 if APPROVED:
@@ -241,7 +241,7 @@ def build(logo, ref):
     b += H.table(20, 40, [10, 40, 12, 100, 52, 48], rows, 7.4, 2.0)
     notes = [
         ("Overall 420 W x 420 D x 550 H (42 x 42 x 55 cm) are Sabry's sizes (11 Nov 2026). Everything else is estimated from one photo.", "المقاسات الكلية ٤٢٠ × ٤٢٠ × ٥٥٠ (٤٢ × ٤٢ × ٥٥ سم) من صبري (١١ نوفمبر ٢٠٢٦). الباقي تقدير من صورة واحدة."),
-        ("Rev 1, approved by Sabry 11 Nov 2026. Reference: library item OBJ-182, one photo (third party, not our piece). Drawn exact to the reference by Sabry's standing rule.", "المراجعة ١ معتمدة من صبري ١١ نوفمبر ٢٠٢٦. المرجع: عنصر المكتبة OBJ-182، صورة واحدة (طرف ثالث). مرسوم مطابقاً للمرجع حسب قاعدة صبري."),
+        ("Rev 1, approved by Sabry 11 Nov 2026. Reference: library item OBJ-195, one photo (third party, not our piece). Drawn exact to the reference by Sabry's standing rule.", "المراجعة ١ معتمدة من صبري ١١ نوفمبر ٢٠٢٦. المرجع: عنصر المكتبة OBJ-195، صورة واحدة (طرف ثالث). مرسوم مطابقاً للمرجع حسب قاعدة صبري."),
         (f"Shape: a square box top {W:.0f} x {D:.0f} x {BOXH:.0f} on a smaller square block {BW:.0f} x {BW:.0f} x {BASEH:.0f}, centred, so the box overhangs {OFF:.0f} each side. Crisp square corners.", f"الشكل: صندوق علوي مربع {ar_num(f'{W:.0f}')} × {ar_num(f'{D:.0f}')} × {ar_num(f'{BOXH:.0f}')} على كتلة مربعة أصغر {ar_num(f'{BW:.0f}')} × {ar_num(f'{BW:.0f}')} × {ar_num(f'{BASEH:.0f}')} بالمنتصف، فيبرز الصندوق {ar_num(f'{OFF:.0f}')} من كل جهة. زوايا حادة."),
         ("The photo shows only the front and one side of the box. The base depth (320) and the centring are assumed, not seen.", "الصورة تُظهر الأمام وجانباً واحداً فقط. عمق القاعدة (٣٢٠) والمنتصف افتراضان وليسا ظاهرين."),
         ("Box height 185 and base 320 wide are estimates measured from the photo; the lamp and sofa in the photo are not part of this product.", "ارتفاع الصندوق ١٨٥ وعرض القاعدة ٣٢٠ تقديران من الصورة؛ المصباح والكنبة ليسا جزءاً من المنتج."),
@@ -262,7 +262,7 @@ def build(logo, ref):
 def main():
     os.makedirs(OUT, exist_ok=True)
     logo = "data:image/svg+xml;base64," + base64.b64encode(open(os.path.join(ROOT, "brand", "objekt-logo.svg"), "rb").read()).decode()
-    ref = H.img_uri(os.path.join(ROOT, "images", "OBJ-182.jpg"), 800)
+    ref = H.img_uri(os.path.join(ROOT, "images", "OBJ-195.jpg"), 800)
     svgs = []
     for i, (name, svg) in enumerate(build(logo, ref)):
         p = os.path.join(OUT, f"{PRE}sheet{i + 1}_{name}.svg"); open(p, "w", encoding="utf-8").write(svg); svgs.append(p)

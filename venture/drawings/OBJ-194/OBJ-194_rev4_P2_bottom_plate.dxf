@@ -489,7 +489,7 @@ $SKPOLY
   9
 $TDCREATE
  40
-2461356.589386574
+2461356.5934606483
   9
 $TDUCREATE
  40
@@ -497,7 +497,7 @@ $TDUCREATE
   9
 $TDUPDATE
  40
-2461356.589386574
+2461356.5934606483
   9
 $TDUUPDATE
  40
@@ -549,7 +549,7 @@ $SPLINESEGS
   9
 $HANDSEED
   5
-3A
+37
   9
 $SURFTAB1
  70
@@ -929,11 +929,11 @@ $PSTYLEMODE
   9
 $FINGERPRINTGUID
   2
-{523C2A9F-9D4A-499D-9298-CEA37E3B5D3D}
+{D4CA1856-2D37-4AEB-BF5B-B3C1132AB544}
   9
 $VERSIONGUID
   2
-{61205D9E-8090-41E7-ACE8-9A07C86EE867}
+{7403C674-0FB1-49F8-B3A9-4102F5EC099E}
   9
 $EXTNAMES
 290
@@ -1773,7 +1773,7 @@ ACAD
   0
 APPID
   5
-37
+34
 330
 3
 100
@@ -1787,7 +1787,7 @@ HATCHBACKGROUNDCOLOR
   0
 APPID
   5
-38
+35
 330
 3
 100
@@ -2107,101 +2107,45 @@ CUT
 100
 AcDbPolyline
  90
-4
+8
  70
 1
  10
-0.0
+600.0
  20
 0.0
  10
-1280.0
+1155.0
  20
-0.0
+30.0
  10
-1280.0
+1200.0
  20
-365.0
+225.0
+ 10
+1155.0
+ 20
+420.0
+ 10
+600.0
+ 20
+450.0
+ 10
+45.0
+ 20
+420.0
  10
 0.0
  20
-365.0
-  0
-LINE
-  5
-33
-330
-17
-100
-AcDbEntity
-  8
-BEND
-100
-AcDbLine
+225.0
  10
-320.0
+45.0
  20
-0.0
- 30
-0.0
- 11
-320.0
- 21
-365.0
- 31
-0.0
-  0
-LINE
-  5
-34
-330
-17
-100
-AcDbEntity
-  8
-BEND
-100
-AcDbLine
- 10
-640.0
- 20
-0.0
- 30
-0.0
- 11
-640.0
- 21
-365.0
- 31
-0.0
-  0
-LINE
-  5
-35
-330
-17
-100
-AcDbEntity
-  8
-BEND
-100
-AcDbLine
- 10
-960.0
- 20
-0.0
- 30
-0.0
- 11
-960.0
- 21
-365.0
- 31
-0.0
+30.0
   0
 TEXT
   5
-36
+33
 330
 17
 100
@@ -2219,7 +2163,7 @@ AcDbText
  40
 8.0
   1
-OBJ-182 rev 1 P4_base_band x1. mm. 3 mm sheet (proposed). Sizes estimated from one photo. APPROVED.
+OBJ-194 rev 4 P2_bottom_plate x1. mm. 3 mm sheet (proposed). Shape read from photos, approximate. Approved by Sabry 11 Nov 2026, production review pending.
  11
 0.0
  21
@@ -3219,7 +3163,7 @@ CREATED_BY_EZDXF
   3
 WRITTEN_BY_EZDXF
 350
-39
+36
   0
 DICTIONARYVAR
   5
@@ -3231,11 +3175,11 @@ DictionaryVariables
 280
 0
   1
-1.4.5 @ 2026-11-11T14:08:43.993225+00:00
+1.4.5 @ 2026-11-11T14:14:35.401223+00:00
   0
 DICTIONARYVAR
   5
-39
+36
 330
 2D
 100
@@ -3243,7 +3187,7 @@ DictionaryVariables
 280
 0
   1
-1.4.5 @ 2026-11-11T14:08:43.994428+00:00
+1.4.5 @ 2026-11-11T14:14:35.402071+00:00
   0
 ENDSEC
   0

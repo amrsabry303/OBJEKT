@@ -489,7 +489,7 @@ $SKPOLY
   9
 $TDCREATE
  40
-2461356.589386574
+2461356.5934606483
   9
 $TDUCREATE
  40
@@ -497,7 +497,7 @@ $TDUCREATE
   9
 $TDUPDATE
  40
-2461356.589386574
+2461356.5934606483
   9
 $TDUUPDATE
  40
@@ -549,7 +549,7 @@ $SPLINESEGS
   9
 $HANDSEED
   5
-3A
+37
   9
 $SURFTAB1
  70
@@ -929,11 +929,11 @@ $PSTYLEMODE
   9
 $FINGERPRINTGUID
   2
-{1C8552A1-1E18-48BC-943C-866E71B8CE36}
+{86D71971-DC50-42C7-8A2D-1D03FFCD2CFF}
   9
 $VERSIONGUID
   2
-{938AA1C3-FA3E-47CF-A574-C56CE5497C59}
+{5AE1F300-D702-41B6-8973-A4419C306C07}
   9
 $EXTNAMES
 290
@@ -1773,7 +1773,7 @@ ACAD
   0
 APPID
   5
-37
+34
 330
 3
 100
@@ -1787,7 +1787,7 @@ HATCHBACKGROUNDCOLOR
   0
 APPID
   5
-38
+35
 330
 3
 100
@@ -2107,101 +2107,33 @@ CUT
 100
 AcDbPolyline
  90
-4
+5
  70
 1
  10
-0.0
+39.0
  20
 0.0
  10
-1680.0
+160.0
  20
 0.0
  10
-1680.0
+160.0
  20
-185.0
+340.0
+ 10
+39.0
+ 20
+340.0
  10
 0.0
  20
-185.0
-  0
-LINE
-  5
-33
-330
-17
-100
-AcDbEntity
-  8
-BEND
-100
-AcDbLine
- 10
-420.0
- 20
-0.0
- 30
-0.0
- 11
-420.0
- 21
-185.0
- 31
-0.0
-  0
-LINE
-  5
-34
-330
-17
-100
-AcDbEntity
-  8
-BEND
-100
-AcDbLine
- 10
-840.0
- 20
-0.0
- 30
-0.0
- 11
-840.0
- 21
-185.0
- 31
-0.0
-  0
-LINE
-  5
-35
-330
-17
-100
-AcDbEntity
-  8
-BEND
-100
-AcDbLine
- 10
-1260.0
- 20
-0.0
- 30
-0.0
- 11
-1260.0
- 21
-185.0
- 31
-0.0
+170.0
   0
 TEXT
   5
-36
+33
 330
 17
 100
@@ -2219,7 +2151,7 @@ AcDbText
  40
 8.0
   1
-OBJ-182 rev 1 P3_box_band x1. mm. 3 mm sheet (proposed). Sizes estimated from one photo. APPROVED.
+OBJ-194 rev 4 P6_leg_cap x2. mm. 3 mm sheet (proposed). Shape read from photos, approximate. Approved by Sabry 11 Nov 2026, production review pending.
  11
 0.0
  21
@@ -3219,7 +3151,7 @@ CREATED_BY_EZDXF
   3
 WRITTEN_BY_EZDXF
 350
-39
+36
   0
 DICTIONARYVAR
   5
@@ -3231,11 +3163,11 @@ DictionaryVariables
 280
 0
   1
-1.4.5 @ 2026-11-11T14:08:43.988002+00:00
+1.4.5 @ 2026-11-11T14:14:35.416573+00:00
   0
 DICTIONARYVAR
   5
-39
+36
 330
 2D
 100
@@ -3243,7 +3175,7 @@ DictionaryVariables
 280
 0
   1
-1.4.5 @ 2026-11-11T14:08:43.989185+00:00
+1.4.5 @ 2026-11-11T14:14:35.417264+00:00
   0
 ENDSEC
   0

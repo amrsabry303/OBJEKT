@@ -36,6 +36,7 @@ Sabry's standard for how a product goes from an approved design to Production. B
 
 ## Pitfalls seen
 
+- **Numbering clash (11 Nov 2026):** two new products were filed as OBJ-181 and OBJ-182 from a local guess, but those numbers were faux books in the master product sheet, and a pack went into the wrong Drive folder. Always take the number from the Products tab of the OBJEKT MASTER PRODUCT SHEET (id in `CLAUDE.md`) before naming files, and confirm the Drive folder belongs to that product before uploading.
 - Arabic text in SVG renders in Chrome headless; right-align Arabic with `text-anchor: end`. Arabic wording is a draft and must be flagged for a technical reader before a factory sees it.
 - Put the Arabic line directly under the English one, or in a mirrored right-hand column; do not run both in one block.
 - A traced outline can contain artefacts where a part hides the shape in the photo (OBJ-038 had a bump at the bottom neck). Smooth it and say so.

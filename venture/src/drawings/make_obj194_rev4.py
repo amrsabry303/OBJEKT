@@ -1,12 +1,12 @@
-"""OBJ-181 console (library item, 4 photos), rev 4 APPROVED: drawing set (A3, EN/AR) + DXF.
+"""OBJ-194 console (library item, 4 photos), rev 4 APPROVED: drawing set (A3, EN/AR) + DXF.
 
 Overall 1200 W x 450 D x 750 H mm are Sabry's (120 x 45 x 75 cm). Everything else is estimated from the three photos.
 Same language as OBJ-020: a thick box top with a shallow crease in the middle of the long faces and a V end, and two block legs
 whose V ends step inside the top's V. Proposed build: 3 mm sheet, hollow box and hollow legs. Production decides everything.
 Moulded or lacquered is also possible: the photos do not say. Drawn as sheet because that is the proposal route used for OBJ-020.
 
-Run: python3 make_obj181_rev4.py     Needs: numpy ezdxf pymupdf pillow, node + playwright.
-Output: venture/drawings/OBJ-181/
+Run: python3 make_obj194_rev4.py     Needs: numpy ezdxf pymupdf pillow, node + playwright.
+Output: venture/drawings/OBJ-194/
 """
 import base64, math, os, subprocess, sys
 import numpy as np
@@ -15,8 +15,8 @@ sys.path.insert(0, HERE)
 import make_obj177_rev1 as H          # drawing helpers only (txt, bi, line, hdim, vdim, table, ...)
 
 ROOT = os.path.abspath(os.path.join(HERE, "..", "..", ".."))
-OUT = os.path.join(ROOT, "venture", "drawings", "OBJ-181")
-PID, REV, DATE = "OBJ-181", "4", "11 Nov 2026"
+OUT = os.path.join(ROOT, "venture", "drawings", "OBJ-194")
+PID, REV, DATE = "OBJ-194", "4", "11 Nov 2026"
 PRE = f"{PID}_rev{REV}_"
 APPROVED = True                          # Sabry approved rev 4 on 11 Nov 2026
 if APPROVED:
@@ -445,7 +445,7 @@ def build(logo, ref):
     notes = [
         ("Overall 1200 W x 450 D x 750 H (120 x 45 x 75 cm) are Sabry's sizes (11 Nov 2026). Everything else is estimated from four photos.", "المقاسات الكلية ١٢٠٠ × ٤٥٠ × ٧٥٠ (١٢٠ × ٤٥ × ٧٥ سم) من صبري (١١ نوفمبر ٢٠٢٦). الباقي تقدير من أربع صور."),
         ("Rev 4, approved by Sabry 11 Nov 2026. Legs narrowed to 160 across (Sabry: revs 1 to 3 at 280, 340 and 220 were too wide; superseded). Same design language as OBJ-020.", "المراجعة ٤ معتمدة من صبري ١١ نوفمبر ٢٠٢٦. عرض الرجل قلّ إلى ١٦٠ (صبري: المراجعات ١ إلى ٣ بعرض ٢٨٠ و٣٤٠ و٢٢٠ كانت واسعة؛ أُلغيت). نفس لغة التصميم لـ OBJ-020."),
-        ("Reference: library item OBJ-181, photos 1 to 4 (third party, not our piece). Drawn exact to the reference by Sabry's standing rule.", "المرجع: عنصر المكتبة OBJ-181، الصور ١ إلى ٤ (طرف ثالث). مرسوم مطابقاً للمرجع حسب قاعدة صبري."),
+        ("Reference: library item OBJ-194, photos 1 to 4 (third party, not our piece). Drawn exact to the reference by Sabry's standing rule.", "المرجع: عنصر المكتبة OBJ-194، الصور ١ إلى ٤ (طرف ثالث). مرسوم مطابقاً للمرجع حسب قاعدة صبري."),
         (f"Top outline: 8 sides. Crease {CR:.0f} deep in the middle of the front and back faces (back assumed like the front), and a V point at each end, corners {VA:.0f} in.", f"شكل السطح: ٨ أضلاع. ثنية بعمق {ar_num(f'{CR:.0f}')} في منتصف الأمامي والخلفي (الخلفي مفترض كالأمامي) وطرف V عند كل نهاية، الزوايا {ar_num(f'{VA:.0f}')} للداخل."),
         (f"Box height {BOXH:.0f} and leg height {LEGH:.0f} are estimates. Each leg: {LW:.0f} wide, {LY1 - LY0:.0f} deep, V end stepped {INS:.0f} inside the table's V, front {LY0:.0f} behind the table front, flat inner end; mirrored (estimate).", f"ارتفاع الصندوق {ar_num(f'{BOXH:.0f}')} والرجل {ar_num(f'{LEGH:.0f}')} تقديريان. الرجل: عرض {ar_num(f'{LW:.0f}')}، عمق {ar_num(f'{LY1 - LY0:.0f}')}، طرف V مزاح {ar_num(f'{INS:.0f}')} داخل V الطاولة، والواجهة خلف حافة الطاولة {ar_num(f'{LY0:.0f}')}؛ متناظرتان (تقدير)."),
         ("Build proposed in 3 mm sheet: hollow box and hollow legs, crisp corners as in the photos. The photos could also be a moulded or lacquered piece: Production decides the process.", "التنفيذ المقترح من صاج ٣ مم: صندوق ورجلان مجوفان بزوايا حادة. قد تكون القطعة مصبوبة أو مطلية: الإنتاج يقرر الطريقة."),
@@ -466,7 +466,7 @@ def build(logo, ref):
 def main():
     os.makedirs(OUT, exist_ok=True)
     logo = "data:image/svg+xml;base64," + base64.b64encode(open(os.path.join(ROOT, "brand", "objekt-logo.svg"), "rb").read()).decode()
-    ref = H.img_uri(os.path.join(ROOT, "images", "OBJ-181.jpg"), 800)
+    ref = H.img_uri(os.path.join(ROOT, "images", "OBJ-194.jpg"), 800)
     svgs = []
     for i, (name, svg) in enumerate(build(logo, ref)):
         p = os.path.join(OUT, f"{PRE}sheet{i + 1}_{name}.svg"); open(p, "w", encoding="utf-8").write(svg); svgs.append(p)

@@ -489,7 +489,7 @@ $SKPOLY
   9
 $TDCREATE
  40
-2461356.5812962963
+2461356.5934722223
   9
 $TDUCREATE
  40
@@ -497,7 +497,7 @@ $TDUCREATE
   9
 $TDUPDATE
  40
-2461356.5812962963
+2461356.5934722223
   9
 $TDUUPDATE
  40
@@ -929,11 +929,11 @@ $PSTYLEMODE
   9
 $FINGERPRINTGUID
   2
-{BD9549E5-1538-4B77-A7DA-E777644B6AF0}
+{17FDAA4E-7072-4AAB-BE9D-E9C3D8310384}
   9
 $VERSIONGUID
   2
-{8B943D7B-8AB2-49D9-A9AD-2A0FD456844E}
+{8B64FBD7-7E29-4F84-81F5-1EB8102589E9}
   9
 $EXTNAMES
 290
@@ -2107,29 +2107,25 @@ CUT
 100
 AcDbPolyline
  90
-5
+4
  70
 1
  10
-39.0
+0.0
  20
 0.0
  10
-160.0
+420.0
  20
 0.0
  10
-160.0
+420.0
  20
-340.0
- 10
-39.0
- 20
-340.0
+420.0
  10
 0.0
  20
-170.0
+420.0
   0
 TEXT
   5
@@ -2151,7 +2147,7 @@ AcDbText
  40
 8.0
   1
-OBJ-181 rev 4 P6_leg_cap x2. mm. 3 mm sheet (proposed). Shape read from photos, approximate. Approved by Sabry 11 Nov 2026, production review pending.
+OBJ-195 rev 1 P2_box_bottom_plate x1. mm. 3 mm sheet (proposed). Sizes estimated from one photo. APPROVED.
  11
 0.0
  21
@@ -3163,7 +3159,7 @@ DictionaryVariables
 280
 0
   1
-1.4.5 @ 2026-11-11T13:57:04.192187+00:00
+1.4.5 @ 2026-11-11T14:14:36.701892+00:00
   0
 DICTIONARYVAR
   5
@@ -3175,7 +3171,7 @@ DictionaryVariables
 280
 0
   1
-1.4.5 @ 2026-11-11T13:57:04.193461+00:00
+1.4.5 @ 2026-11-11T14:14:36.702838+00:00
   0
 ENDSEC
   0
