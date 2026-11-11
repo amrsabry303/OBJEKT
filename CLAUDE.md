@@ -12,7 +12,7 @@ Sabry and Youssef Gaber (owner of the Polycraft factory, Cairo) are building a h
 ## Rules that apply everywhere
 - Sabry decides. Short answers, plain words. Report what you ran and saw; "not tested" is a valid status.
 - Never invent facts: prices, costs, sizes, lead times, history, certifications, production claims. No price in any document is costed.
-- Every product image so far is an AI render, not a photo. Name files `ai-render` and say so.
+- Every product image so far is an AI render, not a photo. Name files `ai-render` and say so. **Never write "AI render" (or similar) on the public site, in alt text, captions, descriptions or any customer-facing text (Sabry, 11 Nov 2026).** The label stays on file names, internal notes and replies to Sabry only.
 - Draw the reference exactly unless Sabry says free or custom.
 - Brand: use the supplied logo files in `brand/`, never a typed or redrawn wordmark. Product colours only from `brand/COLOURS-FINISHES.md`.
 - Fonts (Galak Round, PP Mori) and the logo lettering are **not licensed for public or commercial use**. Never commit font files.
