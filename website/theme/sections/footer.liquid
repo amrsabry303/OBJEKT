@@ -16,9 +16,13 @@
     {%- for block in section.blocks -%}
       <div class="fcol" {{ block.shopify_attributes }}>
         <span class="label">{{ block.settings.title }}</span>
+        {%- if block.type == 'text' -%}
+          <div class="fcol__text">{{ block.settings.text }}</div>
+        {%- else -%}
         <ul>
           {%- for link in linklists[block.settings.menu].links -%}<li><a href="{{ link.url }}">{{ link.title }}</a></li>{%- endfor -%}
         </ul>
+        {%- endif -%}
       </div>
     {%- endfor -%}
   </div>
@@ -36,6 +40,11 @@
     </div>
   </div>
 </footer>
+{% stylesheet %}
+  .fcol__text { font-size: var(--fs-small); }
+  .fcol__text p + p { margin-block-start: 8px; }
+  .fcol__text a { display: inline-flex; align-items: center; min-height: 44px; text-decoration: underline; text-underline-offset: 3px; }
+{% endstylesheet %}
 {% schema %}
 {
   "name": "Footer",
@@ -46,6 +55,13 @@
       "settings": [
         { "type": "text", "id": "title", "label": "Title", "default": "Support" },
         { "type": "link_list", "id": "menu", "label": "Menu" }
+      ]
+    },
+    {
+      "type": "text", "name": "Text column", "limit": 2,
+      "settings": [
+        { "type": "text", "id": "title", "label": "Title", "default": "Showroom" },
+        { "type": "richtext", "id": "text", "label": "Text" }
       ]
     }
   ],

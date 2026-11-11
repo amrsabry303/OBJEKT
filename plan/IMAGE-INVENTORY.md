@@ -1,8 +1,8 @@
-# objekt product images: inventory (2 Nov 2026, updated 8 Nov 2026)
+# objekt product images: inventory (2 Nov 2026, updated 11 Nov 2026)
 
 Source: the production book (45 product slides), Drive and the Magnific history. Every product has its reference photo in the workspace; that is a reference, not a product image. There are no real photographs of finished pieces yet.
 
-## Products with AI renders (9)
+## Products with AI renders (10)
 
 | Product | Renders | Which | Best |
 |---|---|---|---|
@@ -14,14 +14,14 @@ Source: the production book (45 product slides), Drive and the Magnific history.
 | OBJ-169 Bowl, folded steel pyramid on cross stand | 4 | Mirror stainless. v1 pair (from my drawing geometry, stand wrong, superseded) + v3 product shot and v2 context shot (grapes on limestone console) made from the reference photo. A fifth file copied the reference photo scene and is not filed. | v3 product, v2 context |
 | OBJ-002 Coffee table, four-part round, folded metal | 2 | Oxblood matte (proposed colour) sunlight product shot from the reference photo, 8 Nov; v1c recoloured to brand #5A1F25 | Oxblood v1c (pending Sabry) |
 | OBJ-038 Side table, cross plates with organic cut-outs | 2 | Carbon matte (proposed colour) sunlight product shot from the reference photo, 8 Nov; v1c neutralised to #222222 | Carbon v1c (pending Sabry) |
+| OBJ-015 Lounge chair, folded plates with leather cushions (on hold) | 2 | Chocolate matte frame (proposed colour), brown leather, sunlight product shot from the reference photo, 11 Nov; v1c frame recoloured to brand #4A2A1B. Files not in the public repo: in Magnific and sent to Sabry. | Chocolate v1c (pending Sabry) |
 | OBJ-152 Side table, two-form lacquer pair | 3 | Ink gloss (proposed colour) sunlight pair shot from the reference photo, 8 Nov; v1 superseded (shape), v2c hue-corrected to #1E2A44 | Ink v2c (pending Sabry) |
 
-## Products with no render yet (36)
+## Products with no render yet (35)
 
 - OBJ-001 Tray, mirror polish, folded corners (design file: Production has it, not in our folder)
 - OBJ-004 Candleholder family, lacquered turned forms (design file: NOT READY)
 - OBJ-012 Chairs and Lounge Seating ref 2 (design file: READY (in folder))
-- OBJ-015 Chairs and Lounge Seating ref 5 (design file: READY (in folder))
 - OBJ-020 Coffee Tables ref 4 (design file: NOT READY)
 - OBJ-068 Floor Planters ref 1 (design file: NOT READY)
 - OBJ-069 Floor Planters ref 2 (design file: NOT READY)

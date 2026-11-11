@@ -43,7 +43,7 @@ Mark an item only when actually executed; record date, tool/device and result in
 - [ ] Every section has sensible settings, presets, empty states; reorder works
 
 ## Launch
-- [ ] No active product carries `placeholder-data`, 9999.00 or "[PLACEHOLDER]" — **FAILS since 2026-10-30 by design: 12 placeholder drafts (tag `preview-active`) were activated for the preview; revert them to draft before launch; 3 active `[TEST]` products and 2 `[TEST]` articles must also be deleted. It passed earlier the same day (49 drafts, 0 active).**
+- [x] No active product carries `placeholder-data`, 9999.00 or "[PLACEHOLDER]": **passes 11 Nov 2026** (read via Admin API: 50 products, 0 active, 0 `[TEST]`). Re-run on launch day: it fails again if any product is activated with placeholders still in.
 - [ ] PP Mori web licence held and receipt filed (blocks any public publish, D-013)
 - [ ] Rollback plan documented (previous theme kept unpublished)
 - [ ] Founder launch approval
