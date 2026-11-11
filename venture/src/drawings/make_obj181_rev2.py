@@ -1,11 +1,11 @@
-"""OBJ-181 console (library item, 3 photos), rev 1 DRAFT: drawing set (A3, EN/AR) + DXF.
+"""OBJ-181 console (library item, 4 photos), rev 2 DRAFT: drawing set (A3, EN/AR) + DXF.
 
 Overall 1200 W x 450 D x 750 H mm are Sabry's (120 x 45 x 75 cm). Everything else is estimated from the three photos.
 Same language as OBJ-020: a thick box top with a shallow crease in the middle of the long faces and a V end, and two block legs
 whose V ends step inside the top's V. Proposed build: 3 mm sheet, hollow box and hollow legs. Production decides everything.
 Moulded or lacquered is also possible: the photos do not say. Drawn as sheet because that is the proposal route used for OBJ-020.
 
-Run: python3 make_obj181_rev1.py     Needs: numpy ezdxf pymupdf pillow, node + playwright.
+Run: python3 make_obj181_rev2.py     Needs: numpy ezdxf pymupdf pillow, node + playwright.
 Output: venture/drawings/OBJ-181/
 """
 import base64, math, os, subprocess, sys
@@ -16,7 +16,7 @@ import make_obj177_rev1 as H          # drawing helpers only (txt, bi, line, hdi
 
 ROOT = os.path.abspath(os.path.join(HERE, "..", "..", ".."))
 OUT = os.path.join(ROOT, "venture", "drawings", "OBJ-181")
-PID, REV, DATE = "OBJ-181", "1", "11 Nov 2026"
+PID, REV, DATE = "OBJ-181", "2", "11 Nov 2026"
 PRE = f"{PID}_rev{REV}_"
 APPROVED = False
 if APPROVED:
@@ -45,10 +45,10 @@ T = 3.0                                 # sheet thickness (proposed; Production 
 CR, VA = 30.0, 45.0
 BOX_POLY = [(600, 0), (L - VA, CR), (L, D / 2), (L - VA, D - CR), (600, D), (VA, D - CR), (0, D / 2), (VA, CR)]
 # legs: each has the same V end as the table, its V faces parallel to the table's and stepped INS inside, a flat front,
-# back and inner end. ESTIMATED from the 3/4 photo: 280 across, 340 deep, front 55 behind the table front.
+# back and inner end. ESTIMATED from the 3/4 photo: 340 across (Sabry, front photo), 340 deep, front 55 behind the table front.
 INS = 50.0
 LY0, LY1 = 55.0, 395.0                                   # leg front and back (y)
-LW = 280.0                                               # leg width incl. the V end
+LW = 340.0                                               # leg width incl. the V end
 _VX = 39.0                                               # x run of the V face from the point to the corner
 LEG_R = ccw([(L - INS, D / 2), (L - INS - _VX, LY1), (L - INS - LW, LY1), (L - INS - LW, LY0), (L - INS - _VX, LY0)])
 LEG_L = ccw([(L - x, y) for x, y in LEG_R])
@@ -243,10 +243,10 @@ def nest_layout():
     """key -> list of (sheet, x, y, vertical), lower-left corners in mm on assumed 2500 x 1250 sheets; 10 mm margin, 30 mm spacing."""
     return {
         "P5_leg_band": [(1, 10, 10, False), (1, 10, 625, False)],
-        "P1_top_plate": [(1, 1216, 10, False)], "P2_bottom_plate": [(1, 1216, 490, False)],
-        "P3_side_band": [(1, 1216, 970, False), (2, 10, 10, False)],
+        "P1_top_plate": [(1, 1290, 10, False)], "P2_bottom_plate": [(1, 1290, 490, False)],
+        "P3_side_band": [(1, 1290, 970, False), (2, 10, 10, False)],
         "P4_end_band": [(2, 10, 205, False), (2, 450, 205, False)],
-        "P6_leg_cap": [(2, 10, 400, False), (2, 330, 400, False)],
+        "P6_leg_cap": [(2, 10, 400, False), (2, 380, 400, False)],
     }
 
 
@@ -441,9 +441,9 @@ def build(logo, ref):
             row("G", "Floor glides", "قواعد أرضية", "-", "Barely visible in the photos. Production to propose", "بالكاد ظاهرة في الصور. يقترحها الإنتاج", "to follow", "-", "-")]
     b += H.table(20, 40, [10, 40, 12, 100, 52, 48], rows, 7.4, 2.0)
     notes = [
-        ("Overall 1200 W x 450 D x 750 H (120 x 45 x 75 cm) are Sabry's sizes (11 Nov 2026). Everything else is estimated from three photos.", "المقاسات الكلية ١٢٠٠ × ٤٥٠ × ٧٥٠ (١٢٠ × ٤٥ × ٧٥ سم) من صبري (١١ نوفمبر ٢٠٢٦). الباقي تقدير من ثلاث صور."),
-        ("Rev 1 draft, not approved. Same design language as OBJ-020: crease in the long faces, V end, legs stepped inside the V.", "المراجعة ١ مسودة غير معتمدة. نفس لغة التصميم لـ OBJ-020: ثنية في الأوجه الطويلة، طرف V، وأرجل مزاحة داخل الـ V."),
-        ("Reference: library item OBJ-181, photos 1 to 3 (third party, not our piece). Drawn exact to the reference by Sabry's standing rule.", "المرجع: عنصر المكتبة OBJ-181، الصور ١ إلى ٣ (طرف ثالث). مرسوم مطابقاً للمرجع حسب قاعدة صبري."),
+        ("Overall 1200 W x 450 D x 750 H (120 x 45 x 75 cm) are Sabry's sizes (11 Nov 2026). Everything else is estimated from four photos.", "المقاسات الكلية ١٢٠٠ × ٤٥٠ × ٧٥٠ (١٢٠ × ٤٥ × ٧٥ سم) من صبري (١١ نوفمبر ٢٠٢٦). الباقي تقدير من أربع صور."),
+        ("Rev 2 draft, not approved. Legs widened from 280 to 340 across (Sabry, front photo, rev 1 superseded). Same design language as OBJ-020.", "المراجعة ٢ مسودة غير معتمدة. عرض الرجل زاد من ٢٨٠ إلى ٣٤٠ (صبري، الصورة الأمامية؛ المراجعة ١ أُلغيت). نفس لغة التصميم لـ OBJ-020."),
+        ("Reference: library item OBJ-181, photos 1 to 4 (third party, not our piece). Drawn exact to the reference by Sabry's standing rule.", "المرجع: عنصر المكتبة OBJ-181، الصور ١ إلى ٤ (طرف ثالث). مرسوم مطابقاً للمرجع حسب قاعدة صبري."),
         (f"Top outline: 8 sides. Crease {CR:.0f} deep in the middle of the front and back faces (back assumed like the front), and a V point at each end, corners {VA:.0f} in.", f"شكل السطح: ٨ أضلاع. ثنية بعمق {ar_num(f'{CR:.0f}')} في منتصف الأمامي والخلفي (الخلفي مفترض كالأمامي) وطرف V عند كل نهاية، الزوايا {ar_num(f'{VA:.0f}')} للداخل."),
         (f"Box height {BOXH:.0f} and leg height {LEGH:.0f} are estimates. Each leg: {LW:.0f} wide, {LY1 - LY0:.0f} deep, V end stepped {INS:.0f} inside the table's V, front {LY0:.0f} behind the table front, flat inner end; mirrored (estimate).", f"ارتفاع الصندوق {ar_num(f'{BOXH:.0f}')} والرجل {ar_num(f'{LEGH:.0f}')} تقديريان. الرجل: عرض {ar_num(f'{LW:.0f}')}، عمق {ar_num(f'{LY1 - LY0:.0f}')}، طرف V مزاح {ar_num(f'{INS:.0f}')} داخل V الطاولة، والواجهة خلف حافة الطاولة {ar_num(f'{LY0:.0f}')}؛ متناظرتان (تقدير)."),
         ("Build proposed in 3 mm sheet: hollow box and hollow legs, crisp corners as in the photos. The photos could also be a moulded or lacquered piece: Production decides the process.", "التنفيذ المقترح من صاج ٣ مم: صندوق ورجلان مجوفان بزوايا حادة. قد تكون القطعة مصبوبة أو مطلية: الإنتاج يقرر الطريقة."),
