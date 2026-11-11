@@ -264,4 +264,5 @@
 ## 2026-11-11 (custom request page, theme only)
 - Sabry asked for a customization request page (image upload, dimensions, colours, comments, quote back). Route: form app with file upload (D-027).
 - Theme: new `sections/main-custom-request.liquid` (statement, numbered steps, app-block slot for the form, editor note listing the fields, fallback link) and `templates/page.custom-request.json` (three placeholder steps). `theme check` 50 files, no offenses.
+- Pushed to the **unpublished** theme 189754769632 (`themeFilesUpsert`, 2 files, no user errors).
 - Not done (needs Sabry): install the form app, build the form in it, create the page "Custom request" with this template, add it to a menu. Not seen in a browser.
