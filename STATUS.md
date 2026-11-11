@@ -17,7 +17,9 @@ Three daily sessions work on this repo, one section each. Each session updates *
 - [website] Fill sections 5, 6 and 8 of CONTENT_TO_SUPPLY.md (delivery, returns, payment, policies) before the 12 Nov freeze, or say which may stay out at launch.
 - [catalogue] Colours per product: the book's colours are proposals. Confirm the colours each product is sold in (start with the 10 that have drawings or renders) · list per OBJ · rec: confirm in CONTENT_TO_SUPPLY 3d, then I build the colour variants.
 - [catalogue] OBJ-099 colours: store has Oxblood, Ink, Objekt Green, Putty; book has Objekt Green, Bone, Putty · keep store / switch to book · rec: keep store (renders exist for those four).
-- [images] Approve or retake the 3 hero renders sent 8 Nov (AI renders): OBJ-152 Ink v2c, OBJ-002 Oxblood v1c, OBJ-038 Carbon v1c · approve / retake per image · only after approval do other colours and the context shot get made.
+- [images] Approve or retake the 4 hero renders (AI renders): OBJ-152 Ink v2c, OBJ-002 Oxblood v1c, OBJ-038 Carbon v1c (sent 8 Nov, re-sent 11 Nov), OBJ-015 Chocolate v1c (11 Nov) · approve / retake per image · only after approval do other colours and the context shot get made.
+- [images] Repo is public: the 8 Nov renders of 002, 038, 152 are already visible on GitHub; new render files are held back · make the repo private / allow renders in public · rec: private (same as the drawings line).
+- [images] With the day-1 list unapproved, no product with an approved drawing is left without a hero. Next: render day-1 products from their reference photos without an approved drawing? · yes / wait for drawings · rec: yes for the simplest planters and objects, renders marked shape-to-confirm.
 - [images] Hero colours used are the proposed ones from CONTENT_TO_SUPPLY 3d (002 Oxblood matte, 038 Carbon matte, 152 Ink gloss). The "mirror on the metal segment" for 002 and 038 is not shown: which part is mirror? · tell me / leave all-coated · rec: leave all-coated until the drawing says.
 - [images] OBJ-001 reference photo carries a third-party maker mark (NM3), like 148/159 · redesign as our own / render anyway · rec: wait for the Polycraft design file and render from that. Skipped today.
 - [images] Drive upload and production-book stickers for new renders need your yes · yes / not yet · rec: yes once heroes are approved.
@@ -53,6 +55,13 @@ Three daily sessions work on this repo, one section each. Each session updates *
 - Next: once the list is approved, a per-product gap list for the products that can make the 12 Nov freeze; check OBJ-166 heights (850 vs 700 mm conflict).
 
 ## Product images
+
+### Wed 11 Nov 2026
+- Magnific balance **6,530** at start, **6,465** at end (65 spent: 1 render). Note: 15,840 was left after 8 Nov; about 9,300 went to other Magnific work since (OBJ-167 and OBJ-003 room composites, OBJ-173 mood, social mock-ups, a 3D test), not this session.
+- No 8 Nov hero answered yet, so no other colours or context shots. Day-1 list not approved, so worked the approved-drawing list: the only one left with no images is OBJ-015 (on hold). OBJ-012 skipped (recommended out, wave-2 sofa); OBJ-001 still skipped (maker mark).
+- OBJ-015 Chocolate: v1 kept first try (two crossing plates, seat ledge, leather back, seat and lumbar cushions match the photo; own room, not the reference's). Frame drifted olive (hue 27°, sat 0.51) → recoloured to Chocolate #4A2A1B inside a hand-drawn product-only mask, leather and vase excluded → v1c (plate median now 74,41,27 vs 74,42,27). Frame and leather now read close in tone.
+- **Render files not pushed**: the repo is public (same reason as the drawings run). v1 and v1c are in Magnific and were sent to Sabry; only STATUS and the inventory are pushed. Inventory .md and .csv updated. Nothing uploaded to Drive, stickers not changed.
+- Approvals: none yet. Next: on approval, other colours and context shots for the approved heroes; then the 3 drawing drafts (173, 115, 075) once approved, or day-1 list products from the reference photo if Sabry says so.
 
 ### Sun 8 Nov 2026
 - First run. Magnific balance 16,100 at start, **15,840** at end (260 spent: 4 renders × 65). Day-1 list not yet approved, so worked the approved-drawing products, simplest first. Drawings not yet in `venture/drawings/`, so all three came from the reference photo (cropped, own house scene, reference room not copied).
