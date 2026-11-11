@@ -72,7 +72,7 @@ Built from the print design files, so they are not AI renders and not photos. Th
 | OBJ-186 EASY TIGER | 1 | 3D mockup at size M from the design files (not an AI render, not a photo): `plan/faux-books/renders/FB-09_*_3d-mockup_M.jpg` | the one mockup |
 | OBJ-187 HOLY COW | 1 | 3D mockup at size M from the design files (not an AI render, not a photo): `plan/faux-books/renders/FB-10_*_3d-mockup_M.jpg` | the one mockup |
 | OBJ-188 BETWEEN THE LINES | 1 | 3D mockup at size M from the design files (not an AI render, not a photo): `plan/faux-books/renders/FB-11_*_3d-mockup_M.jpg` | the one mockup |
-- OBJ-190 Side table, 8-sided faceted top on two legs, brushed stainless (design file: READY, rev 0 approved 11 Nov; 6 AI renders, local only in `venture/images/OBJ-190/`, pending Sabry: v1 (from photos only), v2 (sunlight and cup, built on a 3D model of the approved drawing) and four moods v3 on the same model (quiet gallery, warm evening, raw concrete, Cairo morning) for Sabry to choose from)
+- OBJ-190 Side table, 8-sided faceted top on two legs, brushed stainless (design file: READY, rev 0 approved 11 Nov; 6 AI renders, local only in `venture/images/OBJ-190/`, pending Sabry: v1 (from photos only), v2 (sunlight and cup, built on a 3D model of the approved drawing) and four moods v3 on the same model (quiet gallery, warm evening, raw concrete, Cairo morning) for Sabry to choose from. **Sabry chose mood 2, warm evening, on 11 Nov** (`OBJ-190_ai-render_brushed-stainless_mood2-warm-evening_v3.png`); not uploaded yet)
 
 ## Not filed
 Six other sculpture renders in the Magnific history (baby elephant calf, falcon, abstract geometric) are not matched to a launch product. Renders from other projects and are not touched.
