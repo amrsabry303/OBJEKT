@@ -41,7 +41,7 @@ Source: the production book (45 product slides), Drive and the Magnific history.
 - OBJ-145 Totems, stacked bowls and spheres, two sizes (design file: NOT READY)
 - OBJ-147 Vase, double bulb (design file: NOT READY)
 - OBJ-148 Wavy organic trays, mirror polish and ribbed (design file: NOT READY)
-- OBJ-149 Blackened steel ashtray, interlocking plates (design file: READY, rev 0 approved 11 Nov, brushed stainless; sizes estimated; 1 AI render, brushed stainless, sunlight, 11 Nov, local only in `venture/images/OBJ-149/`, pending Sabry)
+- OBJ-149 Blackened steel ashtray, interlocking plates (design file: READY, rev 0 approved 11 Nov, brushed stainless; sizes estimated; 2 AI renders (v1 from photos only, v2 built on a 3D model of the approved drawing: use v2; its cigarettes are malformed), brushed stainless, sunlight, 11 Nov, local only in `venture/images/OBJ-149/`, pending Sabry)
 - OBJ-151 Incense holder, stacked ovals (design file: NOT READY)
 - OBJ-154 Planter, stacked lacquer pods (design file: NOT READY)
 - OBJ-155 Planter, fluted base with flared rim (design file: NOT READY)
@@ -72,7 +72,7 @@ Built from the print design files, so they are not AI renders and not photos. Th
 | OBJ-186 EASY TIGER | 1 | 3D mockup at size M from the design files (not an AI render, not a photo): `plan/faux-books/renders/FB-09_*_3d-mockup_M.jpg` | the one mockup |
 | OBJ-187 HOLY COW | 1 | 3D mockup at size M from the design files (not an AI render, not a photo): `plan/faux-books/renders/FB-10_*_3d-mockup_M.jpg` | the one mockup |
 | OBJ-188 BETWEEN THE LINES | 1 | 3D mockup at size M from the design files (not an AI render, not a photo): `plan/faux-books/renders/FB-11_*_3d-mockup_M.jpg` | the one mockup |
-- OBJ-190 Side table, 8-sided faceted top on two legs, brushed stainless (design file: READY, rev 0 approved 11 Nov; 1 AI render, brushed stainless, sunlight and cup, 11 Nov, local only in `venture/images/OBJ-190/`, pending Sabry)
+- OBJ-190 Side table, 8-sided faceted top on two legs, brushed stainless (design file: READY, rev 0 approved 11 Nov; 2 AI renders (v1 from photos only, v2 built on a 3D model of the approved drawing: use v2), brushed stainless, sunlight and cup, 11 Nov, local only in `venture/images/OBJ-190/`, pending Sabry)
 
 ## Not filed
 Six other sculpture renders in the Magnific history (baby elephant calf, falcon, abstract geometric) are not matched to a launch product. Renders from other projects and are not touched.
