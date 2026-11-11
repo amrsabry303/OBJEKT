@@ -14,7 +14,7 @@ Decorative books that are objects, not books: a solid block wrapped in printed m
 Sizes and spines are Sabry's figures (11 Nov). Face ratio 1 : 1.3 to 1 : 1.4, like real books.
 
 ## The 11 designs
-Working titles, proposals until Sabry confirms. Provisional product numbers OBJ-178 to OBJ-188 (FB-nn is the file number). Lettering colour is the second colour. Every colour is one of the eight in `brand/COLOURS-FINISHES.md`.
+Working titles, proposals until Sabry confirms. Provisional product numbers OBJ-178 to OBJ-188 (FB-nn is the file number); the set of three is OBJ-189. Lettering colour is the second colour. Every colour is one of the eight in `brand/COLOURS-FINISHES.md`.
 
 | FB | OBJ | Title | Cover | Lettering | Front layout |
 |---|---|---|---|---|---|
@@ -46,10 +46,10 @@ Sets of three (same size, spines flush, stacked): A = 03 + 01 + 05, B = 07 + 02 
 ## Not decided or not done
 1. **Maker.** No printer or binder. Needs: wrap and turn-in allowance, bleed, real spine thickness for 2.0 / 2.8 / 3.5 cm, block (blank pages or board), price, lead time. Print files include no wrap allowance.
 2. **Font and logo licence** (Galak Round, PP Mori, logo lettering). The same open item as the rest of objekt.
-3. **How many website products.** Proposal: 2 (a "Faux book" with design × size variants, and a "Set of three"), which keeps Desk and book at its target of 2 and under the 10% category cap. Listing all 11 designs as products would make Desk and book about 21% of the list.
+3. **Website products: decided (Sabry, 11 Nov): 2.** A "Faux book" with design × size variants, and a "Set of three" (provisional OBJ-189). This keeps Desk and book at its target of 2 and under the 10% cap. OBJ-178 to 188 stay as design and production records.
 4. **Names.** The 11 titles are working titles, not names approved under the naming rules.
 5. **Logo on product colours** is not one of the guide's six pairings. Needs Sabry's OK.
-6. **Drive design folders** for the 11. The files are only in git so far.
+6. **Drive design folders:** created 11 Nov (OBJ-178 to 189, empty, next to the other design folders) and the books added to the Google product sheet. The print files are still only in git; uploading them to Drive needs Sabry's yes.
 7. **Day-1 reality.** With no maker, sample, price or lead time, the books can only be listed as pre-order on 20 Nov.
 8. **Printed colour, cow and tiger images, small spine type** are untested; print one proof per size first.
 9. Real photos replace the mockups once samples exist.

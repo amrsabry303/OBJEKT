@@ -120,7 +120,7 @@ Process "(guess)" = first guess in the book or workspace, not confirmed by Polyc
 | OBJ-174 | OBJ-174 | Planters | Tabletop Planters | Planter, steel cylinder on cone foot | Metal, curved or technical (guess) | Not ready (not in book) | None (reference photo only) | **OUT** | Store draft only; dropped from the plan and the book; naming skill holds it back from launch. | store |
 | OBJ-107 | OBJ-107 | (none yet) | Cutlery and Dining Accessories | Cutlery and Dining Accessories ref 1 | Metal (guess) | Not ready (not in book) | None (reference photo only) | **OUT** | Store draft only; cutlery has no website category (plan: later). | store |
 
-## Added 11 Nov 2026: faux books (11 designs, provisional OBJ-178 to 188)
+## Added 11 Nov 2026: faux books (11 designs plus 1 set, provisional OBJ-178 to 189)
 
 Sabry asked for them on day 1 (10 Nov). They are not part of the 41 / 4 / 16 tally above. Numbers are provisional until Sabry confirms. Full spec: `plan/faux-books/PLAN.md`. Working titles are proposals.
 
@@ -137,7 +137,8 @@ Sabry asked for them on day 1 (10 Nov). They are not part of the 41 / 4 / 16 tal
 | OBJ-186 | EASY TIGER | Table & Living | Desk and book | Faux book design 09: Clay with tiger coat print, Bone lettering, print (sizes S, M, L) | Outside printer and binder (not a Polycraft process) | Print files made for S, M and L; no maker has seen them | 3D mockup from the design files (not an AI render, not a photo) | **IN** | Sabry 10 Nov: day 1. | faux-books |
 | OBJ-187 | HOLY COW | Table & Living | Desk and book | Faux book design 10: Cow hide print on Bone, Bone lettering, print (sizes S, M, L) | Outside printer and binder (not a Polycraft process) | Print files made for S, M and L; no maker has seen them | 3D mockup from the design files (not an AI render, not a photo) | **IN** | Sabry 10 Nov: day 1. | faux-books |
 | OBJ-188 | BETWEEN THE LINES | Table & Living | Desk and book | Faux book design 11: Bone and Carbon stripes, Bone and Carbon lettering, print (sizes S, M, L) | Outside printer and binder (not a Polycraft process) | Print files made for S, M and L; no maker has seen them | 3D mockup from the design files (not an AI render, not a photo) | **IN** | Sabry 10 Nov: day 1. | faux-books |
+| OBJ-189 | Set of three | Table & Living | Desk and book | Faux books sold as a set of three: plain A (03, 01, 05), plain B (07, 02, 08), print set (09, 10, 11), same size, sizes S, M, L | Outside printer and binder (not a Polycraft process) | Same print files as the designs | 3D mockups of the 3 sets (not AI renders, not photos) | **IN** | Sabry 10 Nov: day 1; 11 Nov: sold as the second website product. | faux-books |
 
-Counting: proposed as **2 website products** (a "Faux book" with design × size variants, and a "Set of three"), so Desk and book stays at its target of 2. As 11 products it would be about 21% of a 52-product list, over the 10% category cap (rule 1 in `plan/objekt-assortment-targets.md`). Sabry decides.
+Counting (Sabry decided 11 Nov): **2 website products**, a "Faux book" with design × size variants and a "Set of three" (provisional OBJ-189: 3 fixed sets × 3 sizes). Desk and book stays at its target of 2 and under the 10% category cap (rule 1 in `plan/objekt-assortment-targets.md`). OBJ-178 to 188 stay as design and production records, each with its own Drive folder (created 11 Nov, empty), and are rows in the Google product sheet.
 
 What blocks them for 20 Nov: no printer or binder identified, no sample, no price, no lead time, font and logo licence, and no wrap allowance in the print files. Without a maker they can only be listed as pre-order.

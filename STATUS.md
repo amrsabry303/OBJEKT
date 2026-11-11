@@ -22,9 +22,9 @@ Three daily sessions work on this repo, one section each. Each session updates *
 - [images] OBJ-001 reference photo carries a third-party maker mark (NM3), like 148/159 · redesign as our own / render anyway · rec: wait for the Polycraft design file and render from that. Skipped today.
 - [images] Drive upload and production-book stickers for new renders need your yes · yes / not yet · rec: yes once heroes are approved.
 - [all] Licences: PP Mori (web), Galak Round, logo lettering (Raftwork). No public launch without them.
-- [faux books] Provisional numbers OBJ-178 to 188 for the 11 designs: confirm. List as 2 website products (Faux book with design × size variants, plus Set of three) or as 11? · 2 / 11 · rec: 2 (11 would put Desk and book at about 21%, over the 10% cap).
+- [faux books] Confirm the provisional numbers: OBJ-178 to 188 for the 11 designs, OBJ-189 for the set of three. (Decided 11 Nov: sold as 2 website products, Faux book and Set of three.)
 - [faux books] Who prints them? No printer or binder, no sample, price or lead time, and the print files have no wrap allowance · ask two Cairo printers this week / hold to wave 2 / list as pre-order on 20 Nov · rec: ask this week, list as pre-order only if a maker confirms.
-- [faux books] Create Drive design folders for the 11 (the files are only in git), and add the books to the Google product sheet? · yes / not yet · rec: yes, once the numbers are confirmed.
+- [faux books] Upload the print PDFs to the 12 new (empty) Drive design folders? Needs your yes because it is an upload · yes / not yet · rec: yes once a maker is chosen, so the same files go to them.
 
 ## Content and product list
 
@@ -145,5 +145,6 @@ What every product lacks: approved name (EN, AR), price incl. VAT, lead time wee
 - 11 designs in 3 sizes (S 14 × 20 × 2.0, M 18 × 25 × 2.8, L 23 × 30 × 3.5 cm), 33 print PDFs with bleed and marks, 3D mockups at size M. Spec: `plan/faux-books/PLAN.md`. Added to `plan/day1-product-list.md`, `plan/IMAGE-INVENTORY.md` and `.csv`, the objekt Product Sheet artifact, CLAUDE.md and IMPORT.md.
 - Not in the print files: wrap allowance, final lettering (Inter stand-in until the fonts are licensed). No maker yet.
 - Repo clean-up: draft artwork, 8 superseded render sets and an AI couch comp (built on another brand's photo) removed; `plan/` went from 112 MB to 55 MB. Reference photos added as `images/OBJ-178` to `188` (reference only), following the repo convention.
-- Google product sheet: Products tab columns Full image and Design files were restyled as buttons on 11 Nov (labels renamed); the books are not in it.
-- Next: Sabry's answers above; then Drive folders and the sheet rows, and a maker brief.
+- Google product sheet: Products tab columns Full image and Design files were restyled as buttons on 11 Nov (labels renamed). Sabry approved (11 Nov): 12 empty Drive folders created (OBJ-178 to 189, next to the other design folders) and 12 rows added to Products (rows 134 to 145) and Design folders. The Image and Reference image links work once this branch is merged to main (they read from `main`). The sheet's Taxonomy has no Desk and book subcategory in Table & Living, so the rows use "Desk and Book Accessories", which maps to the old website category "Objects & Lighting".
+- Decided 11 Nov: the books are sold as 2 website products (Faux book with design × size variants, Set of three).
+- Next: Sabry confirms the numbers; a maker brief; upload of the print files to Drive on his yes.
