@@ -41,7 +41,7 @@ Source: the production book (45 product slides), Drive and the Magnific history.
 - OBJ-145 Totems, stacked bowls and spheres, two sizes (design file: NOT READY)
 - OBJ-147 Vase, double bulb (design file: NOT READY)
 - OBJ-148 Wavy organic trays, mirror polish and ribbed (design file: NOT READY)
-- OBJ-149 Blackened steel ashtray, interlocking plates (design file: NOT READY)
+- OBJ-149 Blackened steel ashtray, interlocking plates (design file: READY, rev 0 approved 11 Nov, brushed stainless; sizes estimated; no images yet)
 - OBJ-151 Incense holder, stacked ovals (design file: NOT READY)
 - OBJ-154 Planter, stacked lacquer pods (design file: NOT READY)
 - OBJ-155 Planter, fluted base with flared rim (design file: NOT READY)
