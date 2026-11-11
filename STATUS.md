@@ -21,6 +21,11 @@ Three daily sessions work on this repo, one section each. Each session updates *
 - [images] Hero colours used are the proposed ones from CONTENT_TO_SUPPLY 3d (002 Oxblood matte, 038 Carbon matte, 152 Ink gloss). The "mirror on the metal segment" for 002 and 038 is not shown: which part is mirror? · tell me / leave all-coated · rec: leave all-coated until the drawing says.
 - [images] OBJ-001 reference photo carries a third-party maker mark (NM3), like 148/159 · redesign as our own / render anyway · rec: wait for the Polycraft design file and render from that. Skipped today.
 - [images] Drive upload and production-book stickers for new renders need your yes · yes / not yet · rec: yes once heroes are approved.
+- [drawings] GitHub repo amrsabry303/objekt is **public**; the import (business plans, partner deck, costs, drawings) and today's drafts could not be pushed · make the repo private / say what may be public · rec: make it private, then the next run pushes.
+- [drawings] Approve or correct the DRAFT sets OBJ-173 (cube planter), OBJ-115 (tray), OBJ-075 (cylinder pair) · write "approved" or the change per product · rec: check sizes first, they are estimates.
+- [drawings] OBJ-075: book says one planter Ø300 × 500; photo shows a pair. Draft is the pair (A Ø300 × 390, B Ø240 × 290 on a foot) · pair / single, sizes · rec: pair.
+- [drawings] Drainage for OBJ-173 and OBJ-075 (none shows in the photos) · none / drain hole / loose inner pot · rec: loose inner pot, no hole.
+- [drawings] OBJ-003 real size: your model says top 130.06, height 40 (units not stated); the book says about 900 × 380 · give diameter and height in mm.
 - [all] Licences: PP Mori (web), Galak Round, logo lettering (Raftwork). No public launch without them.
 
 ## Content and product list
@@ -58,6 +63,14 @@ Three daily sessions work on this repo, one section each. Each session updates *
 - Approvals: none yet. Next: other colours and context shots for approved heroes; then OBJ-015 (hold) or day-1 list products.
 
 ## Drawings and files
+
+### Wed 11 Nov 2026
+- Step 1: 410 files from the Drive export (POLYCRAFT-EXPORT) are in a local commit: `venture/drawings/` (8 products with superseded revs), `venture/src/` (21 generators and tools), `venture/workspace-db/` (115 JSON), `venture/artifacts/` (10 pages), `venture/plan/` (7 PDF, DOCX, XLSX). Sizes checked against Drive, no font files. IMPORT.md ticked.
+- **Not pushed.** The GitHub repo is public, and the push was blocked because it would publish the business plans, partner deck, cost template and drawings. Everything from this run exists only in the run's workspace until the repo is private (or you say what may be public). See decisions.
+- Step 2: day-1 products with no approved drawing: 35 of the 41 (approved: 002, 038, 152, 166, 167, 169; OBJ-001's file sits with Production). Simplest first, sheet metal: 173, 115, 075, then 100, 164, 176, 149, 171, 165, 175, 132, 020, 068, 080, 072, 125, 172. Moulded or printed (own set type): 142, 156, 004, 099, 145, 147, 151, 154, 104, 069, 094, 095, 103, 085, 155. OBJ-003 waits on its real size; OBJ-137 has a prototype.
+- Three DRAFT sets made (5 sheets, SVGs, DXFs, nest; PDFs rendered to PNG and checked, DXFs read back, nests inside the sheet): **OBJ-173** mirror cube planter 150 (one cross blank, 4 welded corners), **OBJ-115** tray 400 × 280 × 45 (one blank, 2 folds, 2 hand slots, no welds), **OBJ-075** floor planter pair, A Ø300 × 390 and B Ø240 × 290 on a foot ring. All sizes estimated, drawn exactly from the reference. New shared helper `venture/src/drawings/objekt_sheet.py` (prints PDFs with Playwright on Linux).
+- No approvals written in this file yet, so no approval routine, Drive upload or sticker change.
+- Next: your answers on the 3 drafts; then 100, 164, 176.
 
 ## Website (Shopify)
 ### 10 Nov 2026 (Tue)
