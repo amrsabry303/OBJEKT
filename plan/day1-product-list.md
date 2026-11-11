@@ -1,4 +1,4 @@
-# objekt day-1 product list: reconciliation and recommendation (8 Nov 2026, updated 9 Nov)
+# objekt day-1 product list: reconciliation and recommendation (8 Nov 2026, updated 9 and 11 Nov)
 
 Prepared by the daily "Content and product list" session. **A recommendation; Sabry decides.** Working titles are the OBJ code until Sabry names a product (no name is approved).
 
@@ -25,6 +25,14 @@ Process mix of the 41 (mostly first guesses from the book): Metal 20, Curved met
 Mirror-finish pieces (in or on hold, proposed finish): OBJ-001, OBJ-002, OBJ-038, OBJ-072, OBJ-125, OBJ-148, OBJ-169, OBJ-172, OBJ-173. Rule 5 caps these once the polishers are counted; nobody has counted them yet.
 
 **The hard fact:** with content freeze on Thu 12 Nov, only 7 of the 41 have a drawing ready or with Production (OBJ-001, 002, 038, 152, 166, 167, 169), only 9 products have any image (all AI renders, none approved for the site), and no product has a cost, price or lead time. A full 41 cannot have real data by 12 Nov. See the decision line in STATUS.md.
+
+## Freeze-eve check (Wed 11 Nov)
+
+Sheet (last edit 26 Oct) and book (last edit 2 Nov) unchanged. No content decision answered yet. New since 9 Nov: Sabry set a store-wide made-to-order lead time of 30–45 days with a 50% deposit (10 Nov). That covers the lead-time line for every product once Polycraft confirms each fits.
+
+**Shortlist readiness tonight: 0 of 10 complete.** Every one of the 10 still lacks name, price, size and approved image. Cost is not a site field but sets the price.
+
+If nothing arrives by the end of Thu 12 Nov, the recommendation is: freeze the list (not the data), keep all products as drafts, and let the shortlist go live product by product between 13 and 19 Nov as each one gets name, price, size and an approved image. Anything not complete by Thu 19 Nov stays a draft at launch. Sabry decides.
 
 ## Freeze shortlist: what each product still needs by Thu 12 Nov (9 Nov)
 

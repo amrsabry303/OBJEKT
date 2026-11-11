@@ -7,7 +7,7 @@ Three daily sessions work on this repo, one section each. Each session updates *
 ## Decisions needed from Sabry
 <!-- one line each: [workstream] question · options · recommendation. Remove when answered. -->
 - [content] Day-1 list: approve the 41 in `plan/day1-product-list.md` (plan 46 minus sofa OBJ-012, with OBJ-015, 049, 148, 159 on hold)? · yes / edit · rec: yes.
-- [content] Freeze is Thu 12 Nov and only 10 products have a drawing or prototype (shortlist in `plan/day1-product-list.md`) · (a) all 41 go live, the rest as 'coming soon' drafts later (b) launch the shortlist with real data by 12 Nov, add the rest weekly (c) move the date · rec: (b), and send Polycraft the shortlist's size, cost and lead-time questions today.
+- [content] Freeze is tomorrow (Thu 12 Nov); 0 of the 10 shortlist products are complete · (a) all 41 go live, the rest as 'coming soon' drafts later (b) freeze the list now, each shortlist product goes live as it gets name, price, size and approved image by 19 Nov, the rest weekly after launch (c) move the date · rec: (b), and send Polycraft the shortlist's size, cost and 30–45-day fit questions today.
 - [content] OBJ-148 and OBJ-159 references are named third-party products (Mosha Home tray; jeremylechatelier Hublot shelf) · redesign as our own / drop · rec: drop for day 1.
 - [content] 15 store drafts not on the plan (OBJ-035, 039, 052, 074, 086, 090, 093, 107, 112, 141, 146, 150, 168, 170, 174) · archive / keep as drafts · rec: keep as drafts, never activate; website session archives only on your yes.
 - [content] May AI renders go on the public site as product images until photos exist?
@@ -24,6 +24,13 @@ Three daily sessions work on this repo, one section each. Each session updates *
 - [all] Licences: PP Mori (web), Galak Round, logo lettering (Raftwork). No public launch without them.
 
 ## Content and product list
+
+### Wed 11 Nov 2026
+- Sheet (26 Oct) and book (2 Nov) unchanged; checked by last-edit date. No content decision answered yet.
+- Recorded Sabry's 10 Nov lead time (30–45 days, made to order, 50% deposit) as a store-wide note in CONTENT_TO_SUPPLY 3d. Per-product lead time left blank until Polycraft confirms each fits.
+- Added a freeze-eve check to `plan/day1-product-list.md`: shortlist 0 of 10 complete; fallback if nothing arrives by 12 Nov.
+- No copy drafted: not approved in this file.
+- Next: on Sabry's answers, mark final in/out and fill the shortlist rows as Polycraft data arrives.
 
 ### Mon 9 Nov 2026
 - Sheet (last edit 26 Oct) and book (last edit 2 Nov) unchanged since the first run; no re-read needed. No decision answered yet, so the 41/4/16 recommendation stands.

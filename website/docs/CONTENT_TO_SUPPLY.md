@@ -153,7 +153,7 @@ These are the 49 items flagged Launch in the workspace, sorted into the four cat
 | OBJ-174 | Tabletop Planters | Planters | Planter, steel cylinder on cone foot | Cone Planter حوض مخروطي |
 | OBJ-107 | Cutlery and Dining Accessories | (none yet) | (name to come) |  |
 
-### 3d. Pre-filled facts per product (8 Nov 2026, images updated 9 Nov; daily content session)
+### 3d. Pre-filled facts per product (8 Nov 2026, images updated 9 Nov, lead-time note 11 Nov; daily content session)
 
 Only facts already recorded in the repo, the production book or the product sheet. Colours use the eight names in `brand/COLOURS-FINISHES.md`; "(proposed)" means the book marks them as a proposal, not a decision. Process "(guess)" is not confirmed by Polycraft. **Titles, prices, costs, sizes, lead times, materials, descriptions and copy are left blank on purpose.** The approximate sizes in the book and the import template are not set sizes and are not copied here. Covers the recommended day-1 list (in and on hold) from `plan/day1-product-list.md`; Sabry decides the final list.
 
@@ -204,6 +204,8 @@ Only facts already recorded in the repo, the production book or the product shee
 | OBJ-154 | Planters · Tabletop Planters | Printed pattern, then moulded (guess) | Clay, Bone, Objekt Green (proposed) | Duco, Gloss (proposed) | Not ready | None (reference photo only) |  |  |  |  |
 | OBJ-155 | Planters · Tabletop Planters | 3D printed | Clay, Objekt Green, Bone (proposed) | Duco, Matte (proposed) | Not ready | None (reference photo only) |  |  |  |  |
 | OBJ-173 | Planters · Tabletop Planters | Metal (guess) |  | Mirror (proposed) | Not ready | None (reference photo only) |  |  |  |  |
+
+**Lead time, store-wide (11 Nov, from Sabry's 10 Nov answer in `website/docs/HANDOFF_2026-11-10.md`):** made-to-order pieces take **30–45 days**, with a 50% deposit collected first. This is a general rule, not a per-product figure, so the Lead time column above stays blank. Open: Polycraft to confirm each product fits 30–45 days (large mirror pieces such as OBJ-125 and OBJ-172 may not); Sabry to say whether the site shows days (rec.) or weeks, since the store fields are in weeks.
 
 **Who must answer** (applies to every product above unless already filled):
 
