@@ -15,25 +15,26 @@ PHOTOS = [('front', '/tmp/claude-0/-home-user-OBJEKT/e5a0d9e6-9e92-52c4-9230-15f
 REV = 0; DATE = '11 Nov 2026'; PN = 'OBJ-190'
 W, D, H = 550, 450, 550           # overall, Sabry
 TOP_T = 160; LEG_H = H - TOP_T    # top block thickness (from photo), leg height
-LEG_X = [(50, 215), (335, 500)]; LEG_Y = (25, 425); LEG_CH = 15
+LEG_X = [(50, 215), (335, 500)]; LEG_Y = (25, 425); TOP_A = 15; LEG_A = 13   # V depth: top (each side), leg (outer face); same angle
 SHEET_L, SHEET_W, GAP = 2500, 1250, 10
 
 # ---- geometry (mm) ----
 def top_poly():
-    """12-sided plan: chamfered corners (cut 70), shallow apex (12) in the middle of each side. Origin at centre. Approximate."""
-    hw, hd, c, a = W/2, D/2, 70, 12
+    """8-sided plan: a rectangle with one shallow V (apex pointing out) in the middle of each of the 4 sides. Origin at centre.
+    Corners at (+-(W/2-A), +-(D/2-A)), apexes at (+-W/2, 0) and (0, +-D/2). Approximate."""
+    hw, hd, a = W/2, D/2, TOP_A
     x1, y1 = hw-a, hd-a
-    return [(-x1, -(y1-c+a)), (-hw, 0), (-x1, (y1-c+a)),
-            (-(hw-c-a), y1), (0, hd), ((hw-c-a), y1),
-            (x1, (y1-c+a)), (hw, 0), (x1, -(y1-c+a)),
-            ((hw-c-a), -y1), (0, -hd), (-(hw-c-a), -y1)]
-def leg_poly():
-    hw, hd, c = (LEG_X[0][1]-LEG_X[0][0])/2, (LEG_Y[1]-LEG_Y[0])/2, LEG_CH
-    return [(-hw, -hd+c), (-hw, hd-c), (-hw+c, hd), (hw-c, hd), (hw, hd-c), (hw, -hd+c), (hw-c, -hd), (-hw+c, -hd)]
+    return [(-hw, 0), (-x1, -y1), (0, -hd), (x1, -y1), (hw, 0), (x1, y1), (0, hd), (-x1, y1)]
+def leg_poly(side=-1):
+    """5-sided plan: a rectangle with one V on the outer face (side -1 = left leg, apex to the left; +1 = right leg), at mid depth,
+    under the matching V of the top. Origin at centre. Approximate."""
+    hw, hd, a = (LEG_X[0][1]-LEG_X[0][0])/2, (LEG_Y[1]-LEG_Y[0])/2, LEG_A
+    p = [(-hw, 0), (-hw+a, -hd), (hw, -hd), (hw, hd), (-hw+a, hd)]
+    return p if side < 0 else [(-x, y) for x, y in p][::-1]
 def edges(p): return [math.dist(p[i], p[(i+1) % len(p)]) for i in range(len(p))]
 def perim(p): return sum(edges(p))
 def bbox(p): xs = [q[0] for q in p]; ys = [q[1] for q in p]; return min(xs), min(ys), max(xs), max(ys)
-TOP, LEG = top_poly(), leg_poly()
+TOP, LEG = top_poly(), leg_poly(-1)
 def strip(poly, h):
     e = edges(poly); L = sum(e); cum = []; s = 0
     for v in e[:-1]: s += v; cum.append(s)
@@ -152,7 +153,8 @@ b += t(22, 25, 'FRONT ELEVATION (looking along the depth)', 2.8, 600) + t(22+110
 # legs
 for x0, x1 in LEG_X:
     b += rect(fx(x0), fz(LEG_H), (x1-x0)*S, LEG_H*S, .4, INK, FILL)
-    b += line(fx(x0+LEG_CH), fz(LEG_H), fx(x0+LEG_CH), fz(0), .15, HID) + line(fx(x1-LEG_CH), fz(LEG_H), fx(x1-LEG_CH), fz(0), .15, HID)
+    xc_ = x0+LEG_A if x0 < W/2 else x1-LEG_A   # corner edge of the V on the front face
+    b += line(fx(xc_), fz(LEG_H), fx(xc_), fz(0), .15, HID)
 b += rect(fx(0), fz(H), W*S, TOP_T*S, .45, INK, '#e7e3da')
 for xv in sorted({round(W/2+p[0]) for p in TOP if p[0] != 0}) + [W//2]:
     b += line(fx(xv), fz(H), fx(xv), fz(LEG_H), .15, HID)
@@ -166,7 +168,7 @@ ox_s = 165
 def sx(y): return ox_s + y*S
 b += t(ox_s-2, 25, 'SIDE ELEVATION (looking along the width)', 2.8, 600) + t(ox_s+92, 29, 'الواجهة الجانبية (بالنظر على امتداد العرض)', 2.6, 500, 'end', extra=' direction="rtl"')
 b += rect(sx(LEG_Y[0]), fz(LEG_H), (LEG_Y[1]-LEG_Y[0])*S, LEG_H*S, .4, INK, FILL)
-for yv in (LEG_Y[0]+LEG_CH, LEG_Y[1]-LEG_CH): b += line(sx(yv), fz(LEG_H), sx(yv), fz(0), .15, HID)
+b += line(sx(D/2), fz(LEG_H), sx(D/2), fz(0), .15, HID)   # V on the outer face, mid depth
 b += rect(sx(0), fz(H), D*S, TOP_T*S, .45, INK, '#e7e3da')
 for yv in sorted({round(D/2+p[1]) for p in TOP if p[1] != 0}) + [D//2]:
     b += line(sx(yv), fz(H), sx(yv), fz(LEG_H), .15, HID)
@@ -178,8 +180,8 @@ ox_p, oy_p = 290, 160
 def px(x): return ox_p + x*S
 def py(y): return oy_p - y*S
 b += t(ox_p-2, 25, 'PLAN', 2.8, 600) + t(ox_p+110, 29, 'المسقط الأفقي', 2.6, 500, 'end', extra=' direction="rtl"')
-for x0, x1 in LEG_X:
-    b += rect(px(x0), py(LEG_Y[1]), (x1-x0)*S, (LEG_Y[1]-LEG_Y[0])*S, .3, HID, 'none', '1.2 .8')
+for sd, (x0, x1) in zip((-1, 1), LEG_X):
+    b += poly([(px((x0+x1)/2+q[0]), py(D/2+q[1])) for q in leg_poly(sd)], .3, HID, 'none', '1.2 .8')
 b += poly([(px(W/2+p[0]), py(D/2+p[1])) for p in TOP], .45, INK, 'rgba(231,227,218,.55)')
 b += dim_h(px(0), px(W), py(0)+7, f'{W}', ext=py(0)) + dim_v(px(0)-6, py(D), py(0), f'{D}', ext=px(0))
 b += t(px(W/2), py(D/2)+1, 'legs shown dashed', 2, 400, 'middle', HID) + t(px(W/2), py(D/2)+4, 'الساقان بخط متقطع', 2, 400, 'middle', HID, extra=' direction="rtl"')
@@ -209,8 +211,8 @@ def draw_strip(x, y, data, label_en, label_ar, balloon_n):
     s += dim_h(x, x+L*S2, y+h*S2+6, f'{L:.0f}', ext=y+h*S2) + dim_v(x-5, y, y+h*S2, f'{h:.0f}', ext=x)
     s += t(x, y-2, label_en, 2.4, 600) + t(x+L*S2, y-2, label_ar, 2.4, 600, 'end', extra=' direction="rtl"') + balloon(x-9, y+h*S2/2, balloon_n)
     return s
-b += draw_strip(30, 36, TS, '1  TOP BLOCK SIDE STRIP, 1 off, 12 folds, one seam', 'حافة الكتلة العلوية، عدد ١، ١٢ ثنية', 1)
-b += draw_strip(30, 100, LS, '3  LEG SIDE STRIP, 2 off, 8 folds, one seam', 'حافة الساق، عدد ٢، ٨ ثنيات', 3)
+b += draw_strip(30, 36, TS, '1  TOP BLOCK SIDE STRIP, 1 off, 8 folds, one seam', 'حافة الكتلة العلوية، عدد ١، ٨ ثنيات', 1)
+b += draw_strip(30, 100, LS, '3  LEG SIDE STRIP, 2 off, 5 folds, one seam', 'حافة الساق، عدد ٢، ٥ ثنيات', 3)
 bl = bbox(LEG); b0 = bbox(TOP)
 # leg cap
 xc, yc = 262, 100
@@ -228,11 +230,11 @@ b += t(dx, dy, 'DATA  face lengths along each strip, mm (in fold order)', 2.4, 6
 def row(y, lab, vals):
     return t(dx, y, lab, 2.1, 600) + t(dx+14, y, ', '.join(f'{v:.0f}' for v in vals), 2.1, 400)
 b += row(dy+5, 'Part 1', edges(TOP)) + row(dy+9.5, 'Part 3', edges(LEG))
-for i, line_ in enumerate(['Parts 2 and 4: the outline is the plan shape; its 12 and 8 sides match the strip faces in order.',
+for i, line_ in enumerate(['Parts 2 and 4: the outline is the plan shape; its 8 and 5 sides match the strip faces in order. Left and right legs are mirror images.',
                            'Strip height: part 1 = 160, part 3 = 390 (outside). Plate and cap thickness, and whether they sit',
                            'inside the strip or on top: Production. Weld seam proposed on a corner fold, ground flush.',
-                           'Plan shapes are traced from three photos and are approximate: corner cut 70 and centre apex 12',
-                           'on each side of the top block; edge chamfer 15 on the legs.']):
+                           'Plan shapes are traced from three photos and are approximate: top block with one V (depth 15) on each of its 4 sides;',
+                           'each leg has one V (depth 13, same angle) on its outer face, under the matching V of the top.']):
     b += t(dx, dy+15+i*3.8, line_, 2.0)
 b += t(224, dy+15, 'الأشكال مستخرجة من ثلاث صور وهي تقريبية.', 2.0, 400, 'end') + t(224, dy+19, 'ارتفاع الشريط ١٦٠ للقطعة ١ و٣٩٠ للقطعة ٣.', 2.0, 400, 'end')
 sh2 = sheet(2, N, 'PART SHEET', 'ورقة القطع', '1:5', b)
@@ -259,7 +261,7 @@ b += t(sx0, 38, 'ASSEMBLY SEQUENCE (proposed)', 2.6, 600) + t(410, 38, 'تسلس
 steps = [('Cut and fold the two leg strips (3) and the top strip (1).', 'قص وثني شريطي الساقين (٣) وشريط الكتلة العلوية (١).'),
          ('Close each leg: weld the seam, weld one cap (4) in each end.', 'إغلاق كل ساق: لحام الوصلة ولحام غطاء (٤) في كل طرف.'),
          ('Close the top block: weld the seam, weld the two plates (2).', 'إغلاق الكتلة العلوية: لحام الوصلة ولحام اللوحين (٢).'),
-         ('Weld the two legs to the underside of the top block at the positions on sheet 1.', 'لحام الساقين أسفل الكتلة العلوية في المواضع المبينة بالورقة ١.'),
+         ('Weld the two legs to the underside of the top block (sheet 1), each leg V under the matching V of the top.', 'لحام الساقين أسفل الكتلة العلوية (الورقة ١)، وزاوية كل ساق تحت الزاوية المقابلة في الأعلى.'),
          ('Grind welds flush, brush or polish, fit floor protectors.', 'صنفرة اللحام، التشطيب، تركيب واقيات الأرضية.')]
 for i, (en, ar) in enumerate(steps):
     yy = 48 + i*17
@@ -300,8 +302,8 @@ for i, (n_, en, ar, q, m_) in enumerate(bom):
     b += line(10, yy+2.2, 410, yy+2.2, .15, HID) + t(12, yy, n_, 2.4) + t(24, yy, en, 2.4) + t(120, yy, ar, 2.4, 400, 'end', extra=' direction="rtl"') + t(150, yy, q, 2.4) + t(215, yy, m_, 2.4)
 b += t(10, 90, 'NOTES', 2.8, 600) + t(410, 90, 'ملاحظات', 2.8, 600, 'end', extra=' direction="rtl"')
 notes = [('Overall size 550 x 450 x 550 mm is Sabry\'s. All other sizes are estimated from three photos of a reference piece (not ours).', 'المقاس الكلي من سبري، وبقية المقاسات مقدّرة من ثلاث صور.'),
-         ('The construction (hollow folded and welded boxes: one top block and two legs) is inferred from the photos. Production to confirm.', 'طريقة الصنع (صناديق مجوفة مثنية ومللحومة) مستنتجة من الصور. يؤكدها التصنيع.'),
-         ('Plan shapes (12-sided top, 8-sided legs) are traced from the photos and are approximate. Real sizes or the original CAD are still needed.', 'الأشكال الأفقية تقريبية. نحتاج المقاسات الحقيقية أو ملف التصميم الأصلي.'),
+         ('The construction (hollow folded and welded boxes: one top block and two legs) is inferred from the photos. Production to confirm.', 'طريقة الصنع (صناديق مجوفة مثنية وملحومة) مستنتجة من الصور. يؤكدها التصنيع.'),
+         ('Plan shapes (top: 8 sides, four Vs, one per side; legs: 5 sides, one V each, matching the V of the top above it) are traced from the photos and are approximate. Real sizes or the original CAD are still needed.', 'الأشكال الأفقية تقريبية. نحتاج المقاسات الحقيقية أو ملف التصميم الأصلي.'),
          ('Material, thickness, bend allowance, tolerances, sheet size, joints, welding, plate fit and finish are Production\'s to decide.', 'الخامة والسماكة والسماحيات واللحام والتشطيب يقررها التصنيع.'),
          ('The reference is a warm brushed bronze-grey metal. Finish to be decided by Sabry: brushed or mirror stainless, or a painted objekt colour.', 'المرجع معدن برونزي رمادي مصقول. التشطيب يقرره سبري.'),
          ('Height 550 is the overall height: top block 160 + legs 390. Floor protectors, if fitted, are inside this figure; Production to confirm.', 'الارتفاع الكلي ٥٥٠: الكتلة العلوية ١٦٠ والساقان ٣٩٠.'),
