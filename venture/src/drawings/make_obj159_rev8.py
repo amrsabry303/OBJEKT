@@ -1,4 +1,4 @@
-"""OBJ-159: tall shelf, six shelves, two stainless side plates with five circular cut-outs each. Production drawing set, REV 8 (DRAFT).
+"""OBJ-159: tall shelf, six shelves, two stainless side plates with five circular cut-outs each. Production drawing set, REV 8 (APPROVED by Sabry 12 Nov 2026, Production review pending, not engineered).
 Run: python3 make_obj159_rev8.py <repo root>   then: NODE_PATH=<playwright> node make_pdf.js <dir> OBJ-159 8
 Reference: images/OBJ-159.jpg is a third-party piece (jeremylechatelier, Hublot). Used for the IDEA only. This is objekt's OWN design.
 REV 8 (12 Nov): Sabry: the gap between the bottom circle and the plate bottom edge must match the gap above the top circle; move the shelves down. Bottom shelf underside now 25 above the floor, mirroring the top shelf (top face 25 below the plate top). Pitch 359.6, circles unchanged (dia 250, centred in the bays).
@@ -204,8 +204,9 @@ def frame(n, title_en, title_ar, scale):
     s += bi(X+2, Y+14, f'SIZE  74 x 34 x 14 in  ({OH:.1f} x {OW:.1f} x {OD:.1f} mm)', 'المقاس الكلي (سبري)', 88, 2.2) + bi(X+94, Y+14, f'SCALE  {scale}   UNITS  mm', 'المقياس والوحدة', 88, 2.2)
     s += bi(X+2, Y+25, f'MATERIAL  Stainless sheet, plates {TP} mm, shelves {TS} mm', 'الخامة: ستانلس، لوحان ٤ مم، أرفف ٣ مم', 88, 1.9) + bi(X+94, Y+25, 'FINISH  brushed stainless steel', 'التشطيب: ستانلس مصقول بالفرشاة', 88, 2.0)
     s += bi(X+2, Y+36, f'DATE  {DATE}      SHEET {n} / {N}', 'التاريخ، الورقة', 88, 2.2) + bi(X+94, Y+36, f'REV  {REV}', 'المراجعة', 88, 2.2)
-    s += rect(X, Y-14, Wd, 12, .5, RED, '#fff')
-    s += t(X+Wd/2, Y-8.6, 'DRAFT, not approved, not engineered', 2.9, 700, 'middle', RED) + t(X+Wd/2, Y-3.8, 'مسودة، غير معتمدة، غير مهندسة', 2.9, 700, 'middle', RED)
+    OKC = '#2f6b45'
+    s += rect(X, Y-14, Wd, 12, .5, OKC, '#fff')
+    s += t(X+Wd/2, Y-8.6, 'Approved by Sabry 12 Nov 2026. Production review pending. Not engineered', 2.25, 700, 'middle', OKC) + t(X+Wd/2, Y-3.8, 'اعتمده سبري ١٢ نوفمبر ٢٠٢٦. مراجعة التصنيع قيد الانتظار. غير مهندسة', 2.25, 700, 'middle', OKC)
     return s + t(10, 14, title_en, 4.2, 700) + ar(410, 14, title_ar, 4.2, 700)
 def sheet(n, te, ta, sc, body):
     return f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 297" width="420mm" height="297mm"><rect width="420" height="297" fill="#fff"/>{frame(n, te, ta, sc)}{body}</svg>'
