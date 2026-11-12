@@ -17,7 +17,7 @@ ZMAX = H - LINER_D - 60          # no hole above this height (soil zone + 60 mm 
 FLAT_W = 4*B                     # developed width, nominal outside dims (bend allowance by Production)
 BASE = B - 2*T                   # base plate 156 x 156
 # holes: (id, face A..D, diameter, centre height above base, centre x on the face = centred)
-HOLES = [(1, 'A', 95, 440), (2, 'A', 65, 290), (3, 'B', 105, 360), (4, 'C', 80, 230), (5, 'D', 70, 100)]
+HOLES = [(1, 'A', 90, 440), (2, 'A', 90, 290), (3, 'B', 90, 360), (4, 'C', 90, 230), (5, 'D', 90, 100)]   # all one size (Sabry 12 Nov)
 FACES = {'A': 'Front / الأمامي', 'B': 'Right / الأيمن', 'C': 'Back / الخلفي', 'D': 'Left / الأيسر'}
 FX = {'A': 80, 'B': 240, 'C': 400, 'D': 560}   # face centre on the flat pattern
 for h in HOLES:
@@ -152,7 +152,7 @@ for i, r_ in enumerate(rows):
     yy = dy+5+i*4.2
     b += line(dx, yy+1.3, 410, yy+1.3, .12, HID)
     for xx, v in zip((dx, dx+12, dx+26, dx+48, dx+78), r_): b += t(xx, yy, v, 2.1, 600 if i == 0 else 400)
-notes = [f'Holes: Ø65 to Ø105, five in all, on faces A (2), B, C and D. None above {ZMAX} mm: that zone is the liner and soil.',
+notes = [f'Holes: five, all Ø90, on faces A (2), B, C and D. None above {ZMAX} mm: that zone is the liner and soil.',
          'Hole edges: deburred and brushed. At least 25 mm from every fold; at least 40 mm from the base.',
          'Base plate 156 x 156 = 160 - 2 x 2. How it joins the body (inside, welded) is Production\'s.',
          'Open top. The liner hangs on the rim; rim support and liner size are not drawn (Production).']
@@ -228,7 +228,7 @@ for i, (n_, en, ar, q, m_) in enumerate(bom):
     yy = 44 + i*7
     b += line(10, yy+2.2, 410, yy+2.2, .15, HID) + t(12, yy, n_, 2.4) + t(24, yy, en, 2.4) + t(140, yy, ar, 2.4, 400, 'end', extra=AR) + t(150, yy, q, 2.4) + t(215, yy, m_, 2.4)
 b += t(10, 80, 'NOTES', 2.8, 600) + t(410, 80, 'ملاحظات', 2.8, 600, 'end', extra=AR)
-nts = [('Height 800 mm is Sabry\'s (12 Nov). Width 160, sheet 2 mm, hole sizes and heights, liner depth 220 are proposals, not costed. Production to confirm.', 'الارتفاع ٨٠٠ مم من سبري. باقي المقاسات مقترحة ويؤكدها التصنيع.'),
+nts = [('Height 800 mm is Sabry\'s (12 Nov). Width 160, sheet 2 mm, hole size (all Ø90) and heights, liner depth 220 are proposals, not costed. Production to confirm.', 'الارتفاع ٨٠٠ مم من سبري. باقي المقاسات مقترحة ويؤكدها التصنيع.'),
        ('Reference: a photo of a third-party piece (maker unknown): square tube, flat top, five round holes on several faces. Drawn as objekt\'s own design with our own hole layout.', 'المرجع صورة لقطعة من صانع آخر مجهول. مرسومة كتصميم خاص بأوبجيكت.'),
        ('Planter (Sabry, 12 Nov). Holes below the liner leak if soil sits there, so no hole is above 520 mm and the liner is loose, closed bottom, no drain hole. Plants and water stay in the liner.', 'جاردينيرا: لا فتحات فوق ٥٢٠ مم، والبطانة سائبة بقاع مغلق بدون صرف.'),
        ('Finish: brushed stainless, no paint (objekt guide: exposed metal, brushed). Production to say how to brush the weld seam and the hole edges.', 'التشطيب: ستانلس مبروش بدون دهان. التصنيع يحدد تبريش اللحام.'),
