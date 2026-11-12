@@ -155,6 +155,8 @@ These are the 49 items flagged Launch in the workspace, sorted into the four cat
 
 ### 3d. Pre-filled facts per product (8 Nov 2026, images updated 9 Nov, lead-time note 11 Nov; daily content session)
 
+**12 Nov:** for the 10 live products and the candidates OBJ-194 and OBJ-149, section 3e below replaces these rows.
+
 Only facts already recorded in the repo, the production book or the product sheet. Colours use the eight names in `brand/COLOURS-FINISHES.md`; "(proposed)" means the book marks them as a proposal, not a decision. Process "(guess)" is not confirmed by Polycraft. **Titles, prices, costs, sizes, lead times, materials, descriptions and copy are left blank on purpose.** The approximate sizes in the book and the import template are not set sizes and are not copied here. Covers the recommended day-1 list (in and on hold) from `plan/day1-product-list.md`; Sabry decides the final list.
 
 | OBJ | Category · type | Process | Colours | Finish | Drawing | Images | Title | Price (EGP) | Size | Lead time |
@@ -229,6 +231,29 @@ Only facts already recorded in the repo, the production book or the product shee
 - OBJ-172: Polycraft: large mirror-polished piece; confirm it fits the polishers' queue.
 - OBJ-175: Sabry: list the panel options (modular) so the variants can be set.
 - OBJ-176: Sabry: confirm the four colours (book: Bone, Clay, Ink, Objekt Green).
+
+### 3e. Live and candidate products: recorded facts and gaps (12 Nov 2026, daily content session)
+
+Facts only as recorded in the store listing (read only), the product sheet, the production book or the repo, with the source. Nothing here is costed. Blank = not recorded anywhere; the "Who must answer" column says who. Colours use the names in `brand/COLOURS-FINISHES.md`. Section 3d still holds the other products.
+
+| OBJ | Title on store | Price (EGP) | Size (W × D × H) | Finish / colours | Lead time | Source | Missing (who must answer) |
+|---|---|---|---|---|---|---|---|
+| OBJ-020 | SLAB Coffee Table | 28,000 | 1000 × 600 × 300 mm | Brushed stainless | 14–20 days | Store note: Sabry 11 Nov; size from sheet / drawing rev 6 | Arabic title and copy (Sabry); packed weight (Polycraft) |
+| OBJ-166 | BLOK Plinth | 7,000 (70 cm), 9,000 (100 cm) | 220 × 220 × 700 / 1000 mm | Brushed or mirror stainless | | Store note: Sabry 11 Nov; drawing rev 1 | Lead time (Sabry / Polycraft); approved mirror image at sold heights (Sabry); weight (Polycraft); Arabic (Sabry) |
+| OBJ-167 + OBJ-196 | TORSO Pedestal | 16,000 (100 cm, all finishes); 4,000 (55 cm Bone, Carbon), 6,000 (55 cm Mirror) | 300 × 300 × 1000 / 550 mm (estimates on the drawing) | Bone, Carbon, Mirror stainless | 14–30 days (given for the large size) | Store note: Sabry 11–12 Nov | Lead time for the small size (Sabry); 300 vs 260 side (Polycraft); weight (Polycraft); Arabic (Sabry) |
+| OBJ-190 | OCTA Side Table | 13,000 | 550 × 450 × 550 mm | Brushed stainless | | Sheet (Sabry 11 Nov) and store | Lead time (Sabry / Polycraft); collection (catalogue session, on Sabry's yes); weight; Arabic |
+| OBJ-195 | CAIRN Side Table | 12,000 | 420 × 420 × 550 mm | Brushed stainless | 7–14 days (sheet), not on the listing | Sheet (Sabry 11 Nov) and store | Lead time onto the listing; collection; drawing rev 2 for the finish (drawings session); weight; Arabic |
+| OBJ-197 | SPAN Coffee Table | 12,000 | 1100 × 550 × 380 mm (380 estimated) | Brushed stainless | | Store note: Sabry 12 Nov; book | Lead time (Sabry); height (Polycraft); collection; weight; Arabic |
+| OBJ-198 | INGOT Coffee Table | 16,000 | 1000 × 550 × 370 mm | Brushed stainless | 14–30 days | Store note: Sabry 12 Nov; book | Collection; weight; Arabic |
+| OBJ-169 | PYRA Bowl | 1,200 | 424 × 424 × 190 mm, "approximate, to confirm" (store) | Mirror polish | 3–5 days (store; source not recorded) | Store | Confirm the 3–5 days and the size (Sabry / Polycraft); weight; Arabic |
+| OBJ-172 | ARRIS Sculpture | 18,000 | | Mirror polish | | Store | **Size, lead time, drawing** (Polycraft); confirm mirror capacity (Polycraft); weight; Arabic |
+| OBJ-099 | ROTA Candleholders | 1,800 | | Oxblood, Chocolate, Objekt Green, Putty (store; the book proposed Objekt Green, Bone, Putty) | | Store | Size and lead time (Polycraft); weight; Arabic |
+| OBJ-194 (candidate) | none (sheet suggests FACET Console) | | 1200 × 450 × 750 mm (given by Sabry; parts estimated) | Satin taupe-brown, to confirm | | Sheet, drawing rev 4 | Name, price, colour, image approval (Sabry); process, lead time (Polycraft) |
+| OBJ-149 (candidate) | none (sheet suggests TAB Ashtray) | | Two versions: about 220 × 220 × 60 (sheet, rev 0 approved 11 Nov) or 140 × 140 × 38 (book; 12 Nov draft) | Brushed stainless (sheet); book proposed Carbon matte | | Sheet, book, drawings session | Which drawing (Sabry); then name, price (Sabry); lead time (Polycraft) |
+
+For OBJ-002, 038, 152, 173, 075, 115 and 164 the 3d rows above still apply; each needs name, price and approved image from Sabry, and size, lead time and weight from Polycraft.
+
+**Every live product also lacks:** Arabic title and copy (Sabry or translator; drafts must be marked "draft, needs a native reader"), packed weight (Polycraft; shipping is by weight), and a trademark check on the names marked "suggestion" (Sabry). Store housekeeping seen, for the catalogue session on Sabry's yes: PYRA, ARRIS and ROTA still carry the `preview-active` tag and old internal notes ("names not approved", "price ... placeholders").
 
 ## 4. Categories, product types and tags
 

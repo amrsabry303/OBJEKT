@@ -6,11 +6,13 @@ Three daily sessions work on this repo, one section each. Each session updates *
 
 ## Decisions needed from Sabry
 <!-- one line each: [workstream] question · options · recommendation. Remove when answered. -->
-- [content] Day-1 list: approve the 41 in `plan/day1-product-list.md` (plan 46 minus sofa OBJ-012, with OBJ-015, 049, 148, 159 on hold)? · yes / edit · rec: yes.
-- [content] Freeze is tomorrow (Thu 12 Nov); 0 of the 10 shortlist products are complete · (a) all 41 go live, the rest as 'coming soon' drafts later (b) freeze the list now, each shortlist product goes live as it gets name, price, size and approved image by 19 Nov, the rest weekly after launch (c) move the date · rec: (b), and send Polycraft the shortlist's size, cost and 30–45-day fit questions today.
-- [content] OBJ-148 and OBJ-159 references are named third-party products (Mosha Home tray; jeremylechatelier Hublot shelf) · redesign as our own / drop · rec: drop for day 1.
-- [content] 15 store drafts not on the plan (OBJ-035, 039, 052, 074, 086, 090, 093, 107, 112, 141, 146, 150, 168, 170, 174) · archive / keep as drafts · rec: keep as drafts, never activate; website session archives only on your yes.
-- [content] May AI renders go on the public site as product images until photos exist?
+- [content] Freeze list (12 Nov): the 10 live products + 9 that may still join by 19 Nov if each gets name, price and approved image (OBJ-002, 038, 152, 194, 149, 173, 075, 115, 164); all other drafts go live weekly after launch. Table: `plan/day1-product-list.md` · yes / edit · rec: yes. Note: 0 planters live, only 2 pieces under 2,000 EGP.
+- [content] 4 live products are in no collection, so they do not show on the Furniture page: OCTA (190), CAIRN (195), SPAN (197), INGOT (198) · catalogue session adds them to Furniture / you do it · rec: catalogue session, on your yes.
+- [content] ARRIS (172) is live with no drawing, size or lead time; PYRA (169) shows 3–5 days and "approximate" sizes with no recorded source · ask Polycraft today / put ARRIS back to draft until sized · rec: ask Polycraft today; draft ARRIS if no size by Tue 17 Nov.
+- [content] OBJ-149 has two drawings: sheet says rev 0 approved 11 Nov (about 220 × 220 × 60, brushed); the drawings session made a different DRAFT 12 Nov (140 × 140 × 38, book size) · keep 11 Nov / keep 12 Nov · rec: keep your approved 11 Nov one, drop the draft.
+- [content] Branch `claude/zen-newton-irxvlr` holds the 11–12 Nov records for 020, 166, 167, 194, 197, 198 (not on main) · merge / leave · rec: merge once the repo is private.
+- [content] OBJ-148 and OBJ-159 references are named third-party products · redesign as our own / drop · rec: drop for day 1.
+- [content] 15 store drafts not on the plan (OBJ-035, 039, 052, 074, 086, 090, 093, 107, 112, 141, 146, 150, 168, 170, 174) · archive / keep as drafts · rec: keep as drafts, never activate.
 - [website] Sign in to Paymob so test mode can be set up.
 - [website] Fix 3 small typos in admin policies (Settings → Policies): Shipping "1,200 EGP.." ; Privacy contact ends "2240.</span>." ; Refund and Shipping headings run into the first sentence · connector cannot write policies.
 - [website] Lawyer check on 48-hour returns, non-refundable deposit and governing law (policies are live behind the password) · who checks, by when · rec: before 19 Nov.
@@ -41,6 +43,14 @@ Three daily sessions work on this repo, one section each. Each session updates *
 
 ## Content and product list
 
+### Thu 12 Nov 2026 (freeze day)
+- Read: store (read only; 67 products, **10 active**, 57 draft), product sheet and production book (both edited 11 Nov, so re-read in full), branch `claude/zen-newton-irxvlr` (not on main). No copy approval in this file, so no copy drafted.
+- Found: Sabry named, priced and activated 10 products on 11–12 Nov: SLAB (020), BLOK (166), TORSO (167, with OBJ-196 as its 55 cm size), OCTA (190), CAIRN (195), SPAN (197), INGOT (198), PYRA (169), ARRIS (172), ROTA (099). The book added OBJ-196, 197, 198; the sheet added 191–195 and an approved OBJ-149 drawing that differs from the 12 Nov draft.
+- Wrote the freeze-day table at the top of `plan/day1-product-list.md` (every OBJ id: title, category, process, drawing, images, in/out, reason). Recommendation: 10 live + 9 candidates, the rest after launch.
+- Added section 3e to `website/docs/CONTENT_TO_SUPPLY.md`: price, size, finish and lead time for the live products exactly as recorded, with source, and a who-must-answer column. Gaps on every live product: Arabic, packed weight, name trademark check; lead time missing on BLOK, OCTA, SPAN, ARRIS, ROTA (CAIRN's is in the sheet only).
+- Not done: no store, sheet, book or Drive writes. Decisions replaced: the 41-product approval and the (a)/(b)/(c) choice (overtaken by what went live), and the AI-render question (renders are on the live listings).
+- Next: fill 3e as answers arrive; move candidates to live in the table when Sabry activates them.
+
 ### Wed 11 Nov 2026
 - Sheet (26 Oct) and book (2 Nov) unchanged; checked by last-edit date. No content decision answered yet.
 - Recorded Sabry's 10 Nov lead time (30–45 days, made to order, 50% deposit) as a store-wide note in CONTENT_TO_SUPPLY 3d. Per-product lead time left blank until Polycraft confirms each fits.
@@ -55,13 +65,6 @@ Three daily sessions work on this repo, one section each. Each session updates *
 - OBJ-166 heights: still 850/1000 mm (book) vs 700/1000 mm (template). No other source in the repo settles it; Polycraft must confirm.
 - No copy drafted: not approved in this file.
 - Next: if (b) is chosen, turn the shortlist answers into CONTENT_TO_SUPPLY rows as they arrive; if the list is approved, mark the final in/out.
-
-### Sun 8 Nov 2026
-- First run. Read the plan (46), the production book (45), the product sheet (stale, 5 Oct flags = the 49 store drafts), the import template (18) and the workspace export. Store not re-read (no Shopify access in this run).
-- Wrote `plan/day1-product-list.md`: one table of all 61 OBJ ids across the sources with category, type, process, drawing, images and in/out. Recommendation: 41 in, 4 on hold, 16 out.
-- Added section 3d to `website/docs/CONTENT_TO_SUPPLY.md`: recorded category, process (marked guess), colours, proposed finish, drawing and image status for the 45 in/hold products, plus who must answer (Sabry / Polycraft). Titles, prices, sizes, lead times, materials and copy left blank.
-- No product copy drafted: Sabry has not approved copy in this file.
-- Next: once the list is approved, a per-product gap list for the products that can make the 12 Nov freeze; check OBJ-166 heights (850 vs 700 mm conflict).
 
 ## Product images
 

@@ -1,8 +1,52 @@
-# objekt day-1 product list: reconciliation and recommendation (8 Nov 2026, updated 9 and 11 Nov)
+# objekt day-1 product list: reconciliation and recommendation (8 Nov 2026, updated 9, 11 and 12 Nov)
 
-Prepared by the daily "Content and product list" session. **A recommendation; Sabry decides.** Working titles are the OBJ code until Sabry names a product (no name is approved).
+Prepared by the daily "Content and product list" session. **A recommendation; Sabry decides.** Working titles are the OBJ code until Sabry names a product. Since 11 Nov the live products carry the store titles Sabry put on them (the store notes call SPAN and INGOT approved, the others suggestions not yet trademark-checked).
 
-## Sources and how they disagree
+## Freeze day (Thu 12 Nov 2026): the list as it stands
+
+Read this section first; the sections below are the 8–11 Nov reconciliation, kept for history.
+
+**What changed since 11 Nov.** Sabry has been going product by product (option (b) in practice). The store now has **10 active products** (11 OBJ ids; OBJ-196 is the small size of TORSO), each named and priced by him on 11–12 Nov. Sources read today: the store (read only, 67 products: 10 active, 57 draft), the product sheet (edited 11 Nov: rows for 149, 190, 191–195 changed or added), the production book (edited 11 Nov: OBJ-196, 197, 198 added; index still says 45) and the unmerged branch `claude/zen-newton-irxvlr` (11–12 Nov records for 020, 166, 167, 194, 197, 198). Store values below are what is on the store, with the source its own notes give. Prices and lead times are Sabry's, none is costed.
+
+**Recommendation (Sabry decides):** freeze the list as **10 live + up to 9 that can still join by Thu 19 Nov** if each gets a name, price and approved image. Everything else stays a draft and goes live weekly after launch. That is 10–19 products, below the 40–60 target; the live set is 7 furniture, 1 Table & Living, 2 Objekts, **0 Planters**, and only 2 pieces under 2,000 EGP (rules 2, 7, 8 in `plan/objekt-assortment-targets.md`). The quickest way to close that gap is the small sheet-metal drafts already drawn (149, 173, 075, 115, 164).
+
+| OBJ | Working title | Category · type | Process | Drawing | Images (all AI renders) | In / out | Reason |
+|---|---|---|---|---|---|---|---|
+| OBJ-020 | SLAB Coffee Table (store title) | Furniture · Coffee Tables | Metal, brushed stainless | Rev 6, approved 11 Nov (store note) | 3 on the listing; lifestyle pair supplied and approved by Sabry 11 Nov | **IN, live** | Active 11 Nov, 28,000 EGP, 14–20 days (Sabry). |
+| OBJ-166 | BLOK Plinth (store title) | Furniture · Pedestals and plinths | Metal (guess) | Rev 1 approved 11 Nov (700 and 1000 high) | 3 on the listing; no approved mirror image at the sold heights | **IN, live** | Active 11 Nov, 7,000 / 9,000 EGP (Sabry). Lead time not given. |
+| OBJ-167 | TORSO Pedestal (store title) | Furniture · Pedestals and plinths | Metal, curved or technical (guess) | Rev 0 approved 1 Nov | 8 on the listing, approved 11 Nov | **IN, live** | Active 11 Nov, 16,000 EGP, 14–30 days (Sabry). |
+| OBJ-196 | TORSO Pedestal, Small (55 cm) | Furniture · Pedestals and plinths | Metal, curved or technical (guess) | Rev 0 approved 11 Nov | 4 in the book; on the TORSO listing | **IN, as a TORSO size** | Variant of OBJ-167, not its own product: 4,000 EGP (Bone, Carbon), 6,000 (Mirror). Own lead time not given. |
+| OBJ-190 | OCTA Side Table (store title) | Furniture · Side Tables and Bedside Tables | Sheet metal, folded and welded (inferred) | Rev 0 approved 11 Nov, Production review pending | 2 on the listing | **IN, live** | Active 11 Nov, 13,000 EGP. Lead time not given. **Not in any collection.** |
+| OBJ-195 | CAIRN Side Table (store title) | Furniture · Side Tables and Bedside Tables | Not decided (store tag: metal) | Rev 1 approved 11 Nov; rev 2 pending (finish changed to brushed) | 2 on the listing | **IN, live** | Active 11 Nov, 12,000 EGP, 7–14 days (sheet, Sabry). **Not in any collection**; lead time not on the listing. |
+| OBJ-197 | SPAN Coffee Table (store title) | Furniture · Coffee Tables | Sheet metal, laser cut and folded (book) | Rev 0 approved 12 Nov | 2 on the listing, approved 12 Nov | **IN, live** | Active 12 Nov, 12,000 EGP. Lead time not given; height 380 estimated. **Not in any collection.** |
+| OBJ-198 | INGOT Coffee Table (store title) | Furniture · Coffee Tables | Sheet metal, laser cut and welded (book) | Rev 1 approved 12 Nov | 2 on the listing, approved 12 Nov | **IN, live** | Active 12 Nov, 16,000 EGP, 14–30 days (Sabry). **Not in any collection.** |
+| OBJ-169 | PYRA Bowl (store title) | Table & Living · Bowls and Baskets | Metal (guess) | Rev 2 approved 2 Nov | 3 on the listing | **IN, live** | Active 11 Nov, 1,200 EGP. Listing says 3–5 days and "approximate, to confirm" sizes: source of both not recorded. |
+| OBJ-172 | ARRIS Sculpture (store title) | Objekts · Statement Sculptures | Metal, curved or technical (guess) | **Not ready** (book) | 3 on the listing | **IN, live** | Active 11 Nov, 18,000 EGP. **No drawing, no size, no lead time** on the listing. |
+| OBJ-099 | ROTA Candleholders (store title) | Objekts · Candleholders and Candle Vessels | Printed pattern, then moulded | Not ready; printed prototype exists | 5 on the listing | **IN, live** | Active 11 Nov, 1,800 EGP, Oxblood, Chocolate, Objekt Green, Putty. No size, no lead time; internal note still says "placeholders". |
+| OBJ-002 | OBJ-002 | Furniture · Coffee Tables | Metal (guess) | Approved REV 5 (27 Oct) | Hero Oxblood v1c, pending Sabry | **Candidate** | Drawing done; needs name, price, image approval, mirror question. |
+| OBJ-038 | OBJ-038 | Furniture · Side Tables and Bedside Tables | Metal (guess) | REV 4 with Production | Hero Carbon v1c, pending Sabry | **Candidate** | Same as 002. |
+| OBJ-152 | OBJ-152 | Furniture · Side Tables and Bedside Tables | Printed pattern, then moulded | Ready (in folder) | Hero Ink v2c, pending Sabry | **Candidate** | Needs name, price (pair or each), image approval. |
+| OBJ-194 | FACET Console (suggested name, sheet) | Furniture · Side Tables and Bedside Tables (sheet; a console) | Not decided | Rev 4 approved 11 Nov, Production review pending | 2 plain renders 12 Nov, not approved | **Candidate** | Drawing approved; needs name, price, colour (satin taupe to confirm), image approval. Not in the book. |
+| OBJ-149 | OBJ-149 (sheet suggests TAB Ashtray) | Objekts · Ashtrays and Incense Holders | Metal (guess) | **Two versions:** sheet says rev 0 approved 11 Nov (about 220 × 220 × 60, brushed); drawings session made a DRAFT 12 Nov (140 × 140 × 38) | None | **Candidate** | Small piece. Settle which drawing is the one first. |
+| OBJ-173 | OBJ-173 | Planters · Tabletop Planters | Metal (guess) | DRAFT 11 Nov, waiting for approval | None | **Candidate** | Only route to a planter on day 1. |
+| OBJ-075 | OBJ-075 | Planters · Floor Planters | Metal (guess) | DRAFT 11 Nov (pair), waiting for approval | None | **Candidate** | Second planter; pair vs single open. |
+| OBJ-115 | OBJ-115 | Table & Living · Trays | Metal (guess) | DRAFT 11 Nov, waiting for approval | None | **Candidate** | Small piece, one fold blank. |
+| OBJ-164 | OBJ-164 | Objekts · Shelves and Display Storage | Metal (guess) | DRAFT 12 Nov, waiting for approval (size open) | None | Candidate, lower | Size and wall fixing open. |
+| OBJ-003 | OBJ-003 | Furniture · Coffee Tables | Metal, curved or technical (guess) | Not ready; prototype in painting | 7 renders | After launch unless Polycraft sends size and photos this week | No drawing; real size unknown. |
+| OBJ-137 | OBJ-137 | Furniture · Coffee Tables | Metal, curved or technical (guess) | Not ready; prototype built | 6 renders (first versions) | After launch, same | No drawing. |
+| OBJ-001 | OBJ-001 | Table & Living · Trays | Metal (guess) | Production has it, not in our folder | None | After launch | Reference carries a third-party maker mark. |
+| OBJ-178–189 | Faux book / Set of three (2 products) | Table & Living · Desk and book | Outside printer | Print files made | 3D mockups | Hold | No maker, sample, price or lead time; font licence. Pre-order only if a maker confirms. |
+| OBJ-004, 068, 069, 072, 080, 085, 094, 095, 103, 104, 125, 132, 142, 145, 147, 151, 154, 155, 156, 165, 171, 175 | OBJ code | As in the table below | As below | Not ready | None | **After launch** (stay draft) | On the plan and in the book, but no drawing. |
+| OBJ-100, 176 | OBJ code | Objekts | Metal (guess) | Not ready | None | After launch | Recognisable third-party designs; redesign first. |
+| OBJ-193 | PILL Side Table (suggested) | Furniture · Side Tables (sheet: Library only) | Not decided | None; STL in Drive, not opened | None | After launch | No drawing, process open. |
+| OBJ-015 | OBJ-015 | Furniture · Chairs | Metal + leather cushions | Approved 1 Nov | Hero Chocolate v1c, pending | Hold | Cushions are upholstery (wave 2) unless Sabry says otherwise. |
+| OBJ-012, 191, 192, 177 | OBJ code / CURL, TUFT (sheet) | Seating | Upholstered or outsourced | 012 approved; others none or draft | None | **Out** (wave 2) | Upholstery waits for wave 2; 191, 192 are SUBJEKT candidates; 177 has no sheet row. |
+| OBJ-148, 159, 049 | OBJ code | | | Not ready | None | **Out** | 148, 159: named third-party products. 049: not in the book. |
+| OBJ-035, 039, 052, 074, 086, 090, 093, 107, 112, 141, 146, 150, 168, 170, 174 | OBJ code | | | Not ready | None | **Out** (stay draft, never activate) | Off the plan and the book. |
+
+Open conflicts found today: OBJ-149 has two different drawings (above). The book's index says 45 products but now has 48 product slides; OBJ-190, 194, 195 are not in the book. OBJ-198's book title INGOT is also the sheet's suggested name for OBJ-023 (library only), harmless unless 023 is ever made. The 11–12 Nov records for 020, 166, 167, 194, 197 and 198 are only on the unmerged branch `claude/zen-newton-irxvlr`, not on `main`.
+
+## Sources and how they disagree (8 Nov; superseded by the freeze-day section above)
 
 | Source | Date | Count | Notes |
 |---|---|---|---|
