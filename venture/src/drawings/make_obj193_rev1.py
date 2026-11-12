@@ -13,15 +13,15 @@ PHOTO = ROOT + '/images/OBJ-193.jpg'
 REV = 1; DATE = '12 Nov 2026'; PN = 'OBJ-193'
 L, W, H = 1100, 800, 350
 WALL = 4                          # GRP laminate wall, proposal
-R = 125                  # corner radius = leg radius: the legs sit flush at the corners, concentric with the arcs (Sabry, 12 Nov)
+R = 190                  # corner radius = leg radius: the legs sit flush at the corners, concentric with the arcs (Sabry, 12 Nov)
 SLAB = 110; SKIRT_H = 100; REV_H = 10; REV_IN = 6
-LEG_D, LEG_H, PAD = 250, 240, 10
+LEG_D, LEG_H, PAD = 380, 240, 10
 SHELL_H = LEG_H - PAD
 INSET = 0                                                   # leg surface flush with the slab edge
 LX = [INSET + LEG_D/2, L - INSET - LEG_D/2]
 LY = [INSET + LEG_D/2, W - INSET - LEG_D/2]
 CAP_D = LEG_D - 2*WALL; CAP_T = 6                          # bottom cap, 6 mm GRP disc
-PCD = 140; HOLE = 9; MP = 160                              # bolt circle, bolt hole, bonded pad 160 x 160
+PCD = 200; HOLE = 9; MP = 230                              # bolt circle, bolt hole, bonded pad 160 x 160
 ZS0 = LEG_H; ZS1 = H
 P3W, P3H, R3 = L-2*REV_IN, W-2*REV_IN, R-REV_IN
 def holes_bolt(): return [(PCD/2*math.cos(math.radians(a)), PCD/2*math.sin(math.radians(a))) for a in (45, 135, 225, 315)]
@@ -124,9 +124,9 @@ b += dim_v(fx(L)+8, fz(H), fz(ZS0), f'{SLAB}', ext=fx(L)) + dim_v(fx(L)+8, fz(ZS
 b += t(fx(L/2), fz(H)+SKIRT_H*S/2+1, 'upper shell, skirt 100 high', 2.1, 400, 'middle', '#fff') 
 b += t(fx(L/2), fz(ZS0+REV_H)-.4+REV_H*S+2.8, '', 2)
 b += t(fx(L/2)+0, fz(ZS0)+3.6+REV_H*S-5.4, '', 2)
-b += t(fx(400), fz(ZS0)+4.2, 'lower shell, 10 high, set back 6 (joint = shadow line)', 1.9, 400, fill=DIM)
+b += t(fx(L/2), fz(ZS0)+4.2, 'lower shell, 10 high,', 1.9, 400, 'middle', DIM) + t(fx(L/2), fz(ZS0)+6.8, 'set back 6 (shadow line)', 1.9, 400, 'middle', DIM)
 b += balloon(fx(L/2), fz(H)-5, 1) + balloon(fx(LX[0]), fz(120), 3) + balloon(fx(LX[1])+3, fz(PAD/2)+0.6, 6)
-b += t(fx(L/2), fz(130), 'back legs hidden, same positions', 1.9, 400, 'middle', HID)
+b += t(fx(L/2), fz(130), 'back legs hidden,', 1.9, 400, 'middle', HID) + t(fx(L/2), fz(130)+2.6, 'same positions', 1.9, 400, 'middle', HID)
 # side elevation
 ox_s = 235
 def sx(y): return ox_s + y*S
@@ -196,9 +196,9 @@ b += t(xl, yl-9, '3  LEG CUP, half-profile 1:4, 4 off', 2.4, 600) + t(410, yl-9,
 b += poly([(lxp(x), lyp(y)) for x, y in LEGP], .4, INK, '#9a7f86') + line(lxp(0), lyp(0)-2, lxp(0), lyp(SHELL_H)-2, .15, HID, '3 1 .6 1')
 b += dim_v(lxp(LEG_D/2)+5, lyp(SHELL_H), lyp(0), f'{SHELL_H}', ext=lxp(LEG_D/2)) + dim_h(lxp(0), lxp(LEG_D/2), lyp(0)+6, f'R{LEG_D//2}', ext=lyp(0))
 b += t(lxp(0)+2, lyp(0)+13, f'wall {WALL}; top closed (integral); DXF x = radius, y = height', 1.9)
-xc, yc = 343, 150
+xc, yc = 360, 150
 b += t(xc, yc-9, '4  BOTTOM CAP', 2.4, 600) + balloon(xc-7, yc+2, 4)
-b += poly([(xc+x*.5, yc+(CAP_T-y)*.5) for x, y in CAPP], .4, INK, '#bbb') + dim_h(xc, xc+CAP_D/2*.5, yc+8, f'R{CAP_D//2}', ext=yc+CAP_T*.5) + t(xc, yc+13, f'{CAP_T} thick, 4 off; half-profile 1:2', 1.9)
+b += poly([(xc+x*.25, yc+(CAP_T-y)*.25) for x, y in CAPP], .4, INK, '#bbb') + dim_h(xc, xc+CAP_D/2*.25, yc+8, f'R{CAP_D//2}', ext=yc+CAP_T*.25) + t(xc, yc+13, f'{CAP_T} thick, 4 off; half-profile 1:4', 1.9)
 b += t(xc, yc+17, 'centre insert M10, 3 x M5 fixings', 1.9)
 dx, dy = 22, 148
 b += t(dx, dy, 'DATA  mm', 2.4, 600) + t(224, dy, 'بيانات', 2.4, 600, 'end', extra=AR)
@@ -267,7 +267,7 @@ for i, (en, ar) in enumerate(steps):
     yy = 44 + i*10.5
     b += balloon(sx0+3, yy-1, i+1) + t(sx0+9, yy, en, 2.0) + t(410, yy+4, ar, 2.0, 400, 'end', extra=AR)
 # section through a leg
-SC2 = .36; cxs = 327; z0y = 224
+SC2 = .26; cxs = 327; z0y = 224
 def zs(z): return z0y - z*SC2
 b += t(sx0, 114, 'SECTION THROUGH A LEG (schematic, wall thicknesses exaggerated)', 2.2, 600) + t(410, 118, 'مقطع في الرجل (تخطيطي، السماكات مبالغ فيها)', 2.1, 500, 'end', extra=AR)
 b += rect(cxs-LEG_D*SC2/2, zs(LEG_H), 1.3, SHELL_H*SC2, .3, INK, '#9a7f86') + rect(cxs+LEG_D*SC2/2-1.3, zs(LEG_H), 1.3, SHELL_H*SC2, .3, INK, '#9a7f86')          # shell walls
@@ -310,16 +310,16 @@ b += mould_cell(x0b, y0, 'MOULD B: lower shell (2), female, edge section 1:2', '
 # C: leg cup, split mould
 x0c, y0c = 22, 135
 b += t(x0c, y0c-8, 'MOULD C: leg cup (3), split in two halves, 1:5', 2.4, 600) + t(x0c+190, y0c-8, 'القالب ج: الرجل، نصفان', 2.3, 600, 'end', extra=AR)
-S5_ = .2
-b += rect(x0c, y0c, 80, 52, .4, INK, '#cfcac0') + rect(x0c+15, y0c+3, LEG_D*S5_, SHELL_H*S5_, .3, INK, '#fff') + line(x0c+15+LEG_D*S5_/2, y0c-3, x0c+15+LEG_D*S5_/2, y0c+55, .25, '#b3261e', '3 1 .6 1')
-b += t(x0c+90, y0c+8, 'One mould, four legs. Parting line', 1.9) + t(x0c+90, y0c+11.5, f'down the side: it shows on a gloss', 1.9) + t(x0c+90, y0c+15, 'leg and must be faired out.', 1.9)
-b += t(x0c+90, y0c+22, 'Closed top moulded in the cup. Open', 1.9) + t(x0c+90, y0c+25.5, 'bottom for bolting from inside.', 1.9)
+S5_ = .15
+b += rect(x0c, y0c, 90, 46, .4, INK, '#cfcac0') + rect(x0c+16, y0c+3, LEG_D*S5_, SHELL_H*S5_, .3, INK, '#fff') + line(x0c+16+LEG_D*S5_/2, y0c-3, x0c+16+LEG_D*S5_/2, y0c+49, .25, '#b3261e', '3 1 .6 1')
+b += t(x0c+100, y0c+8, 'One mould, four legs. Parting line', 1.9) + t(x0c+100, y0c+11.5, f'down the side: it shows on a gloss', 1.9) + t(x0c+100, y0c+15, 'leg and must be faired out.', 1.9)
+b += t(x0c+100, y0c+22, 'Closed top moulded in the cup. Open', 1.9) + t(x0c+100, y0c+25.5, 'bottom for bolting from inside.', 1.9)
 b += t(x0c+190, y0c+40, 'خط الفصل على جانب الرجل ويحتاج تسوية.', 1.9, 400, 'end', extra=AR)
 # D: cap
 x0d, y0d = 225, 135
 b += t(x0d, y0d-8, 'MOULD D: bottom cap (4) and bonded pad (5)', 2.4, 600) + t(x0d+185, y0d-8, 'القالب د: الغطاء السفلي واللوح', 2.3, 600, 'end', extra=AR)
-b += f'<circle cx="{x0d+26:.2f}" cy="{y0d+30:.2f}" r="{CAP_D*S5_/2:.2f}" fill="#cfcac0" stroke="{INK}" stroke-width=".4"/>' + rect(x0d+60, y0d+10, MP*S5_, MP*S5_, .4, INK, '#cfcac0')
-b += t(x0d+100, y0d+12, 'Flat discs and pads: cut from a moulded flat', 1.9) + t(x0d+100, y0d+15.5, 'sheet or a shallow mould. Production decides.', 1.9)
+b += f'<circle cx="{x0d+30:.2f}" cy="{y0d+32:.2f}" r="{CAP_D*S5_/2:.2f}" fill="#cfcac0" stroke="{INK}" stroke-width=".4"/>' + rect(x0d+68, y0d+14, MP*S5_, MP*S5_, .4, INK, '#cfcac0')
+b += t(x0d+112, y0d+12, 'Flat discs and pads: cut from a moulded flat', 1.9) + t(x0d+112, y0d+15.5, 'sheet or a shallow mould. Production decides.', 1.9)
 # patterns
 b += t(22, 207, 'PATTERNS', 2.5, 600) + t(410, 207, 'النماذج', 2.5, 600, 'end', extra=AR)
 for i, ln in enumerate(['Pattern per mould, made by large-format 3D printing in sections or CNC foam, then faired, primed and polished. The pattern surface sets the gloss of the finished part.',
