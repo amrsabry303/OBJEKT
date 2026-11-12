@@ -24,7 +24,7 @@ Mark an item only when actually executed; record date, tool/device and result in
 
 ## Commerce
 - [ ] Checkout completes with the chosen gateway in test mode
-- [ ] EGP formatting; taxes/shipping as configured
+- [~] EGP formatting; taxes/shipping as configured — **12 Nov, Playwright on the public store: bag shows LE 1,200, checkout E£1,200.00, Egypt address form; PayPal only payment; shipping rate not seen (no address entered); all weights 0 kg so 1,200 EGP rate cannot trigger**
 - [ ] Deposit flow (if adopted) works end to end
 - [ ] Order shows made-to-order data to fulfilment staff
 
@@ -43,9 +43,9 @@ Mark an item only when actually executed; record date, tool/device and result in
 - [ ] Every section has sensible settings, presets, empty states; reorder works
 
 ## Launch
-- [x] No active product carries `placeholder-data`, 9999.00 or "[PLACEHOLDER]": **passes 11 Nov 2026** (read via Admin API: 50 products, 0 active, 0 `[TEST]`). Re-run on launch day: it fails again if any product is activated with placeholders still in.
+- [x] No active product carries `placeholder-data`, 9999.00 or "[PLACEHOLDER]": **passes 12 Nov 2026** (Admin API: 10 active, none carries them; public pages show no placeholder text). Re-run on launch day: it fails again if any product is activated with placeholders still in.
 - [ ] PP Mori web licence held and receipt filed (blocks any public publish, D-013)
-- [ ] Rollback plan documented (previous theme kept unpublished)
+- [~] Rollback plan documented (previous theme kept unpublished) — **12 Nov: Horizon unpublished and intact; live theme not yet in git**
 - [ ] Founder launch approval
 
 ## Defect report format
