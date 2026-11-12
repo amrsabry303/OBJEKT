@@ -1,4 +1,4 @@
-"""OBJ-164: corner shelf, triangular, sold as a pair. Production drawing set, REV 0 (DRAFT).
+"""OBJ-164: corner shelf, triangular, sold as a pair. Production drawing set, REV 0 (approved by Sabry 12 Nov 2026).
 Run: python3 make_obj164_rev0.py <repo root>   Then make_pdf.js for the PDF.
 Size 220 x 220 mm legs is Sabry's (production-book caption "2pc 22x22CM"). Everything else (2 mm stainless, 10 mm folded front edge,
 150 mm gusset, 15 mm wall flanges, 4 screws per shelf, pair) is a PROPOSAL, not costed, Production to confirm.
@@ -95,7 +95,7 @@ def datauri(path, w=360):
     return 'data:image/jpeg;base64,' + base64.b64encode(b.getvalue()).decode()
 
 
-STAMP = 'DRAFT, not approved, not engineered'; STAMP_AR = 'مسودة، غير معتمدة، غير مهندسة'
+STAMP = 'Approved by Sabry 12 Nov 2026. Production review pending. Not engineered'; STAMP_AR = 'معتمد من سبري ١٢ نوفمبر ٢٠٢٦. بانتظار مراجعة التصنيع. غير مهندس'
 AR = ' direction="rtl"'
 def frame(n, N, title_en, title_ar, scale):
     s = rect(5, 5, 410, 287, .5) + rect(7, 7, 406, 283, .2)
@@ -106,8 +106,8 @@ def frame(n, N, title_en, title_ar, scale):
     s += bi(X+2, Y+14, f'SIZE  {LEG} x {LEG} x {OH} mm each', 'المقاس لكل رف', 88, 2.1) + bi(X+94, Y+14, f'SCALE  {scale}   UNITS  mm', 'المقياس والوحدة', 88, 2.3)
     s += bi(X+2, Y+25, 'MATERIAL  Stainless sheet 2 mm (proposal)', 'الخامة: ستانلس ٢ مم (مقترح)', 88, 2.1) + bi(X+94, Y+25, 'FINISH  Brushed (proposal)', 'التشطيب: مبشور (مقترح)', 88, 2.1)
     s += bi(X+2, Y+36, f'DATE  {DATE}      SHEET {n} / {N}', 'التاريخ، الورقة', 88, 2.3) + bi(X+94, Y+36, f'REV  {REV}', 'المراجعة', 88, 2.3)
-    s += rect(X, Y-14, Wd, 12, .5, '#b3261e', '#fff')
-    s += t(X+Wd/2, Y-8.6, STAMP, 2.9, 700, 'middle', '#b3261e') + t(X+Wd/2, Y-3.8, STAMP_AR, 2.9, 700, 'middle', '#b3261e')
+    s += rect(X, Y-14, Wd, 12, .5, '#2f6b45', '#fff')
+    s += t(X+Wd/2, Y-8.6, STAMP, 2.5, 700, 'middle', '#2f6b45') + t(X+Wd/2, Y-3.8, STAMP_AR, 2.5, 700, 'middle', '#2f6b45')
     s += t(10, 14, title_en, 4.2, 700) + t(410, 14, title_ar, 4.2, 700, 'end', extra=' direction="rtl"')
     return s
 def sheet(n, N, title_en, title_ar, scale, body):
