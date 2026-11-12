@@ -191,7 +191,7 @@ Only facts already recorded in the repo, the production book or the product shee
 | OBJ-147 | Objects · Vases | Printed pattern, then moulded (guess) | Oxblood, Bone (proposed) | Duco, Gloss (proposed) | Not ready | None (reference photo only) |  |  |  |  |
 | OBJ-149 | Objects · Ashtrays and Incense Holders | Metal (guess) | Carbon (proposed) | Powder coating, Matte (proposed) | Not ready | None (reference photo only) |  |  |  |  |
 | OBJ-151 | Objects · Ashtrays and Incense Holders | Printed pattern, then moulded | Putty, Bone, Objekt Green (proposed) | Duco, Matte (proposed) | Not ready | None (reference photo only) |  |  |  |  |
-| OBJ-159 (on hold) | Objects · Shelves and Display Storage | Metal |  | Brushed (proposed) | Not ready | None (reference photo only) |  |  |  |  |
+| OBJ-159 (on hold; own redesign proposed 12 Nov, awaiting Sabry) | Objects · Shelves and Display Storage (or Furniture, asked) | Sheet metal, folded stainless (proposal) | Brushed stainless, as OBJ-190 (proposal) | Brushed (proposed) | Not ready | None (reference photo only) |  |  |  |  |
 | OBJ-164 | Objects · Shelves and Display Storage | Metal (guess) |  | Brushed (proposed) | Not ready | None (reference photo only) |  |  |  |  |
 | OBJ-172 | Objects · Statement Sculptures | Metal, curved or technical (guess) |  | Mirror (proposed) | Not ready | None (reference photo only) |  |  |  |  |
 | OBJ-175 | Objects · Shelves and Display Storage | Metal (guess) | Carbon, Putty, Bone (proposed) | Powder coating, Matte (proposed) | Not ready | None (reference photo only) |  |  |  |  |
@@ -225,7 +225,7 @@ Only facts already recorded in the repo, the production book or the product shee
 - OBJ-137: Polycraft: prototype built; send photos, cost, lead time.
 - OBJ-147: Polycraft: launch board notes it may need ceramic or glass; confirm the material.
 - OBJ-148: Sabry: reference is a named retail product; approve an own design or drop.
-- OBJ-159: Sabry: reference is a named designer's piece; approve an own design or drop.
+- OBJ-159: Sabry: reference is a named designer's piece. Own redesign proposed 12 Nov (about 1800 x 800 x 350 mm, stainless, stadium cut-outs; proposal, not costed, Production to confirm); approve or change. Category: Objects or Furniture?
 - OBJ-166: Sabry: variant heights differ between sources (book: 850 / 1000 mm; import template: 700 / 1000 mm). Polycraft: confirm.
 - OBJ-191: Sabry: real dimensions (tray, notch, plate thickness, glass spacing) and finish; the reference is a third-party maker's reel, draw as our own.
 - OBJ-192: Sabry: approve the drawing (size 900 x 300 x 450, 2 mm steel, loose liner and no drain hole, 4 rubber swivel casters with 2 locking are proposals); Production: confirm. Reference is a low-resolution render of unknown source, drawn as our own.- OBJ-172: Polycraft: large mirror-polished piece; confirm it fits the polishers' queue.
