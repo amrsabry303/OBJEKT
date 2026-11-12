@@ -26,11 +26,15 @@ Three daily sessions work on this repo, one section each. Each session updates *
 - [images] Hero colours used are the proposed ones from CONTENT_TO_SUPPLY 3d (002 Oxblood matte, 038 Carbon matte, 152 Ink gloss). The "mirror on the metal segment" for 002 and 038 is not shown: which part is mirror? · tell me / leave all-coated · rec: leave all-coated until the drawing says.
 - [images] OBJ-001 reference photo carries a third-party maker mark (NM3), like 148/159 · redesign as our own / render anyway · rec: wait for the Polycraft design file and render from that. Skipped today.
 - [images] Drive upload and production-book stickers for new renders need your yes · yes / not yet · rec: yes once heroes are approved.
-- [drawings] GitHub repo amrsabry303/objekt is **public**; the import (business plans, partner deck, costs, drawings) and today's drafts could not be pushed · make the repo private / say what may be public · rec: make it private, then the next run pushes.
-- [drawings] Approve or correct the DRAFT sets OBJ-173 (cube planter), OBJ-115 (tray), OBJ-075 (cylinder pair) · write "approved" or the change per product · rec: check sizes first, they are estimates.
+- [drawings] GitHub repo is still **public** (checked 12 Nov). The import, the 11 Nov drafts and today's drafts are not pushed; 11 Nov's local work was lost with that run's workspace, so each run now sends its files to you as a zip · make the repo private / say what may be public (OBJ-190's drawings are already public on main) · rec: private, then the next run re-imports from Drive and pushes.
+- [drawings] Approve or correct the DRAFT sets OBJ-173 (cube planter), OBJ-115 (tray), OBJ-075 (cylinder pair), sent 11 Nov · write "approved" or the change per product · rec: check sizes first, they are estimates. Their generators were lost; on approval I redraw from the sent PDFs.
 - [drawings] OBJ-075: book says one planter Ø300 × 500; photo shows a pair. Draft is the pair (A Ø300 × 390, B Ø240 × 290 on a foot) · pair / single, sizes · rec: pair.
 - [drawings] Drainage for OBJ-173 and OBJ-075 (none shows in the photos) · none / drain hole / loose inner pot · rec: loose inner pot, no hole.
 - [drawings] OBJ-003 real size: your model says top 130.06, height 40 (units not stated); the book says about 900 × 380 · give diameter and height in mm.
+- [drawings] Approve or correct the DRAFT sets OBJ-164 (corner shelf pair) and OBJ-149 (ashtray), sent 12 Nov · write "approved" or the change · rec: settle the two size lines below first.
+- [drawings] OBJ-164 size: the reference photo's caption says 22 × 22 cm (drawn: top 220 × 220, drop 200 estimated); the book says about 250 × 250 × 60 · 220 / 250 / your size, and the drop · rec: 220 as the reference, drop from a sample.
+- [drawings] OBJ-164 wall fixing: none shows in the photo · Production proposes a hidden fixing / keyhole slots in the top / adhesive · rec: Production proposes, you approve before the sample.
+- [drawings] OBJ-100 candleholder reference carries another maker's engraved mark ("IT'S NOT OVER YET"), like 001, 148 and 159 · redesign as our own / drop / draw anyway · rec: drop for day 1. Not drawn. OBJ-176 (half-disc shelves) is also a recognisable designer piece with several versions: same question · rec: redesign as our own after launch.
 - [all] Licences: PP Mori (web), Galak Round, logo lettering (Raftwork). No public launch without them.
 - [faux books] Who prints them? No printer or binder, no sample, price or lead time, and the print files have no wrap allowance · ask two Cairo printers this week / hold to wave 2 / list as pre-order on 20 Nov · rec: ask this week, list as pre-order only if a maker confirms.
 - [faux books] The 11 Medium print PDFs are in their Drive folders. Upload the S and L versions too, and what goes in the OBJ-189 (set of three) folder? · yes / not yet · rec: S and L when a maker is chosen; for OBJ-189 a short note pointing to the three sets' design folders.
@@ -77,6 +81,16 @@ Three daily sessions work on this repo, one section each. Each session updates *
 - Approvals: none yet. Next: other colours and context shots for approved heroes; then OBJ-015 (hold) or day-1 list products.
 
 ## Drawings and files
+
+### Thu 12 Nov 2026
+- Checked: repo still public (GitHub search API: visibility public), no "approved" for any drawing in this file. So no import push, no approval routine, no Drive upload, no sticker change.
+- Found: the 11 Nov import (410 files), the 3 drafts' generators and `objekt_sheet.py` never reached GitHub and were lost with that run's workspace. Step 1 not redone today: it cannot be pushed while the repo is public. The Drive export still holds everything.
+- Two DRAFT sets made (5 A3 sheets each, EN/AR, SVGs, DXFs, nest; every PDF page rendered to PNG and looked at; DXFs read back, parts inside the sheet, 10 mm gaps; "DRAFT" present in the PDF text):
+  - **OBJ-164** corner shelf pair: one kite blank, one fold (front face down to the wall corner). Top 220 × 220 from the reference caption, drop 200 estimated; fold 127.9° from flat; cut 1,035 mm per shelf. Book size (250 × 250 × 60) conflicts: see decisions.
+  - **OBJ-149** ashtray: four 140 × 38 plates in a # with halving slots (4 × 19), a separate U-tray 95 × 95 × 34, R12 inside. 140 × 140 × 38 from the book; the rest estimated from the photos.
+- Skipped: OBJ-100 (another maker's engraved mark on the reference) and OBJ-176 (recognisable designer piece). Rebuilt the shared helper as `venture/src/drawings/objekt_sheet.py`.
+- Not pushed (public repo): drawings and generators were sent to Sabry as a zip in the run's message. Only this STATUS update is pushed.
+- Next: your answers on the 5 open drafts; then OBJ-171, 165, 175 (no reference image in `images/`; I take it from the production book slide).
 
 ### Wed 11 Nov 2026
 - **OBJ-190 side table (Sabry, 11 Nov):** drawn from his 3 photos and 55 x 55 x 45 cm, redrawn after his correction (top has 4 Vs = 8 sides; each leg one V matching the top), approved by Sabry the same day, finish brushed stainless, number confirmed. Set: `venture/drawings/OBJ-190/` (PDF, 5 SVG, 4 part DXFs, nest DXF), generator `venture/src/drawings/make_obj190_rev0.py`. Uploaded to a new Drive folder OBJ-190 on his yes; added to the Google product sheet (Products row 146, Design folders) and the day-1 list. Next: Production review; ask him for real dimensions or the CAD.
