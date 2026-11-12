@@ -71,7 +71,7 @@ pot = bpy.context.active_object
 pot.name = "pot_position_only"
 bpy.ops.object.shade_smooth()
 
-bpy.ops.mesh.primitive_cylinder_add(vertices=96, radius=(POT_TOP/2-2)*S, depth=1*S, location=(0,0,(W-T-3)*S))
+bpy.ops.mesh.primitive_cylinder_add(vertices=96, radius=(POT_TOP/2-2)*S, depth=1*S, location=(0,0,(W-T+0.4)*S))
 soil=bpy.context.active_object; soil.name='soil'
 # materials
 def mat(name, color, metallic=0.0, rough=0.6, aniso=0.0):
