@@ -201,7 +201,7 @@ Only facts already recorded in the repo, the production book or the product shee
 | OBJ-068 | Planters · Floor Planters | Metal | Carbon, Putty, Chocolate (proposed) | Powder coating, Matte (proposed) | Not ready | None (reference photo only) |  |  |  |  |
 | OBJ-069 | Planters · Floor Planters | Printed pattern, then moulded (guess) | Bone, Putty, Clay (proposed) | Duco, Matte (proposed) | Not ready | None (reference photo only) |  |  |  |  |
 | OBJ-072 | Planters · Floor Planters | Metal, curved or technical (guess) |  | Mirror (proposed) | Not ready | None (reference photo only) |  |  |  |  |
-| OBJ-075 | Planters · Floor Planters | Sheet metal, rolled 304 (proposed) |  | Brushed (proposed), mirror optional | Drawing rev 1 DRAFT, not approved | None yet (reference photo only) |  |  |  |  |
+| OBJ-075 | Planters · Floor Planters | Sheet metal, rolled 304 (proposed) |  | Brushed (proposed), mirror optional | Drawing rev 1 approved (Sabry, 12 Nov), Production review pending | None yet (reference photo only) |  |  |  |  |
 | OBJ-080 | Planters · Planter Screens | Metal (guess) | Ink, Objekt Green, Clay (proposed) | Powder coating, Matte (proposed) | Not ready | None (reference photo only) |  |  |  |  |
 | OBJ-085 | Planters · Tabletop Planters | 3D printed (guess) | Clay, Bone, Objekt Green (proposed) | Duco, Matte (proposed) | Not ready | None (reference photo only) |  |  |  |  |
 | OBJ-154 | Planters · Tabletop Planters | Printed pattern, then moulded (guess) | Clay, Bone, Objekt Green (proposed) | Duco, Gloss (proposed) | Not ready | None (reference photo only) |  |  |  |  |

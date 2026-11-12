@@ -1,4 +1,4 @@
-"""OBJ-075: floor planter, ONE design in THREE sizes (S, M, L). Production drawing set, REV 1 (DRAFT).
+"""OBJ-075: floor planter, ONE design in THREE sizes (S, M, L). Production drawing set, REV 1 (approved by Sabry 12 Nov 2026).
 Run: python3 make_obj075_rev1.py <repo root>   then: NODE_PATH=<playwright> node make_pdf.js <dir> OBJ-075 1
 Reference: images/OBJ-075_ref-sabry-12nov.jpg (two polished stainless cylinder planters, maker unknown, reference only).
 Rev 0 (11 Nov) was a pair, A D300 x 390 and B D240 x 290; replaced by Sabry's 12 Nov brief: one pot in three sizes.
@@ -96,8 +96,8 @@ def frame(n, title_en, title_ar, scale):
     s += bi(X+2, Y+14, 'SIZE  D300x360 / D400x500 / D520x650', 'المقاسات (مقترحة)', 88, 2.1) + bi(X+94, Y+14, f'SCALE  {scale}   UNITS  mm', 'المقياس والوحدة', 88, 2.3)
     s += bi(X+2, Y+25, 'MATERIAL  304 stainless sheet 2 mm, proposed', 'الخامة: ستانلس ٣٠٤، ٢ مم مقترح', 88, 2.0) + bi(X+94, Y+25, 'FINISH  brushed (mirror optional)', 'التشطيب: فرشاة، مرآة اختياري', 88, 2.0)
     s += bi(X+2, Y+36, f'DATE  {DATE}      SHEET {n} / {N}', 'التاريخ، الورقة', 88, 2.3) + bi(X+94, Y+36, f'REV  {REV}', 'المراجعة', 88, 2.3)
-    s += rect(X, Y-14, Wd, 12, .5, RED, '#fff')
-    s += t(X+Wd/2, Y-8.6, 'DRAFT, not approved, not engineered', 2.9, 700, 'middle', RED) + t(X+Wd/2, Y-3.8, 'مسودة، غير معتمدة، غير مهندسة', 2.9, 700, 'middle', RED)
+    s += rect(X, Y-14, Wd, 12, .5, '#2f6b45', '#fff')
+    s += t(X+Wd/2, Y-8.6, 'Approved by Sabry 12 Nov 2026. Production review pending.', 2.5, 700, 'middle', '#2f6b45') + t(X+Wd/2, Y-4.2, 'Not engineered. معتمد من سبري، مراجعة التصنيع قيد الانتظار', 2.5, 700, 'middle', '#2f6b45')
     return s + t(10, 14, title_en, 4.2, 700) + ar(410, 14, title_ar, 4.2, 700)
 def sheet(n, te, ta, sc, body):
     return f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 297" width="420mm" height="297mm"><rect width="420" height="297" fill="#fff"/>{frame(n, te, ta, sc)}{body}</svg>'
