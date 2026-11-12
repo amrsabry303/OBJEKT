@@ -80,3 +80,4 @@ Built from the print design files, so they are not AI renders and not photos. Th
 ## Not filed
 Six other sculpture renders in the Magnific history (baby elephant calf, falcon, abstract geometric) are not matched to a launch product. Renders from other projects and are not touched.
 - OBJ-168 Planter, tall square column with round holes (design file: DRAFT rev 0 made 12 Nov, awaiting Sabry's approval; 160 x 160 x 800 mm, brushed stainless, 2 mm, five holes: proposal; no renders; reference photo is a third-party maker's, see images/OBJ-168.jpg, not committed)
+- OBJ-196 Plant stand, flat round base disc, two offset plates, round top disc and shelf (design file: DRAFT rev 0 made 12 Nov, awaiting Sabry's approval; disc Ø300, height 400, brushed stainless 2 mm: proposal; no renders; reference photos are third-party, see images/OBJ-196.jpg)
