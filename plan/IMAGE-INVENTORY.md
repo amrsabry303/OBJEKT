@@ -26,7 +26,7 @@ Source: the production book (45 product slides), Drive and the Magnific history.
 - OBJ-068 Floor Planters ref 1 (design file: NOT READY)
 - OBJ-069 Floor Planters ref 2 (design file: NOT READY)
 - OBJ-072 Floor Planters ref 5 (design file: NOT READY)
-- OBJ-075 Floor Planters ref 8 (design file: NOT READY)
+- OBJ-075 Floor planter, round, 3 sizes S M L (design file: DRAFT rev 1, 12 Nov, not approved; renders wait for it)
 - OBJ-080 Planter Screens ref 1 (design file: NOT READY)
 - OBJ-085 Tabletop Planters ref 2 (design file: NOT READY)
 - OBJ-094 Bowls and Baskets ref 5 (design file: NOT READY)
