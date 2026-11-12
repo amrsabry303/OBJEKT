@@ -290,3 +290,7 @@
 - Public site checked with Playwright (1440 and 375 px): home, Furniture, all products, SLAB, TORSO, Custom request, Delivery & Returns return 200, no horizontal scroll, no placeholder text. Checkout reached with PYRA in the bag, no details entered, no order: Egypt only, PayPal the only payment method, EGP.
 - Live product data that affects the site: all variants 0 kg (every order gets Standard delivery 118 EGP); no variant lead-time days on SLAB, BLOK, SPAN, TORSO (buy box shows "Made to order" with no days).
 - Repo theme is behind the live theme: 23 files differ, 4 not in git. List in `docs/LIVE_THEME_2026-11-12.md`. Not pulled (needs CLI login). No theme push.
+
+## 2026-11-12 (daily Shopify catalogue run: read only, no store writes)
+- Store confirmed with `get-shop-info`: OBJEKT, hs1a1c-ut.myshopify.com, EGP. Read 62 products (10 active, 52 draft, 52 `placeholder-data`), the 5 collections, variant weights and lead-time days, metafields, alt text and Arabic translations.
+- No store writes: the open fixes are on active products and wait for Sabry's yes (STATUS, decisions); no draft received supplied data.

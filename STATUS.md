@@ -21,9 +21,10 @@ Three daily sessions work on this repo, one section each. Each session updates *
 - [website] Lawyer check on 48-hour returns, non-refundable deposit and governing law: the policies are now public · who checks, by when · rec: this week.
 - [website] Branch `claude/handoff-section-7-shipping-umz7rf` still holds 10 Nov non-website work not on main (OBJ-167/003 renders, Arabic pack, Polycraft sheet). Website part now on main · merge rest / leave · rec: merge after the repo is private.
 - [website] Arabic for the menu, About, collection intros and SEO text: send to the translator, or launch English only? · translator / EN only · rec: translator before 19 Nov.
-- [catalogue] Colours per product: the book's colours are proposals. Confirm the colours each product is sold in (start with the 10 that have drawings or renders) · list per OBJ · rec: confirm in CONTENT_TO_SUPPLY 3d, then I build the colour variants.
-- [catalogue] Online Store channel: no product is published to the Online Store channel, so an activated product may not show on the site · I add the channel to the day-1 drafts now (they stay hidden while draft) / you do it at launch · rec: I add it once the day-1 list is approved.
-- [catalogue] OBJ-099 colours: store has Oxblood, Ink, Objekt Green, Putty; book has Objekt Green, Bone, Putty · keep store / switch to book · rec: keep store (renders exist for those four).
+- [catalogue] Fix the live listings from your own notes, on your yes: lead-time days SLAB 14–20 and TORSO 14–30 (both sizes, or give Small its own), `made_to_order` on BLOK's 4 variants; plus the 4 collection joins in the content line above · yes / no · rec: yes today, the buy box shows no days on SLAB and TORSO.
+- [catalogue] Lead time for BLOK and SPAN, and where PYRA 3–5, ARRIS 14–30 and OCTA 7–14 days came from (not in any note) · give days / confirm · rec: answer with the weights from Polycraft.
+- [catalogue] SEO title and description are empty on all 10 live products · I draft them in Dough voice from the approved copy for your review / you write them · rec: I draft, nothing goes on the store until you say yes.
+- [catalogue] Online Store channel: the 10 live products are on it; the 9 candidate drafts are not · I add it when each candidate is approved / you do it on activation · rec: I add it on approval.
 - [images] **Magnific credits 195 of 20,000 (12 Nov).** Image runs are stopped until topped up. At ~65 per render, the 4 hero follow-ups plus the 9 freeze candidates need roughly 3,000–4,000 · top up / buy extra credits / pause images · rec: top up before Sat 14 Nov so heroes can be finished by 19 Nov.
 - [images] Approve or retake the 4 hero renders (AI renders): OBJ-152 Ink v2c, OBJ-002 Oxblood v1c, OBJ-038 Carbon v1c (sent 8 Nov, re-sent 11 Nov), OBJ-015 Chocolate v1c (11 Nov) · approve / retake per image · only after approval do other colours and the context shot get made.
 - [images] Repo is public: the 8 Nov renders of 002, 038, 152 are already visible on GitHub; new render files are held back · make the repo private / allow renders in public · rec: private (same as the drawings line).
@@ -146,72 +147,51 @@ Three daily sessions work on this repo, one section each. Each session updates *
 ### Shopify catalogue
 <!-- daily catalogue session; dated, newest first, last 3 entries -->
 
+#### Thu 12 Nov 2026 (freeze day)
+- Ran: `get-shop-info` = OBJEKT / hs1a1c-ut, EGP. Pulled main (22234fb). Read all 62 products (variants, weights, lead-time days, collections, channel count, metafields, media alt, Arabic translations) and the 5 collections.
+- Found: Sabry activated **10 products** on 11–12 Nov himself (SLAB 020, BLOK 166, TORSO 167 + 196, OCTA 190, CAIRN 195, SPAN 197, INGOT 198, PYRA 169, ARRIS 172, ROTA 099). All 10 are on the Online Store channel. 52 drafts, all tagged `placeholder-data`. No duplicate OBJ codes. OBJ-099 colours settled by Sabry (Oxblood, Chocolate, Objekt Green, Putty, linked to the colour entries).
+- **No store writes.** Every gap left on the live products needs Sabry's yes (CLAUDE.md: no live-product changes without approval), and no draft got a supplied value (no name, price, size, colour or approved image for any candidate). Day-1 list not approved.
+- Gaps on the 10 live products, read from the store: all variants **0 kg**; **no Arabic** on any; **SEO title and description empty** on all; care and materials text empty on all. Lead-time days missing on SLAB (14–20 in its note), TORSO (14–30 in its note), BLOK and SPAN (none given). BLOK's 4 variants have no `fulfilment` value. CAIRN, OCTA, SPAN, INGOT in no collection. ARRIS and ROTA have no size; ARRIS shows 14–30 days and OCTA 7–14 days with no source recorded in the repo.
+- Alt text: none of the live images says "AI render". That follows Sabry's 10 Nov rule (never mention renders in public text), which replaces this task's alt-text line; left as is.
+- Readiness: **0 of 19 complete** (10 live, 9 candidates). Placeholders left on all drafts.
+
+**Readiness (12 Nov; ✓ done, ~ partly, ✗ missing).** Live = active now. "Complete" needs all 12 checks.
+
+| OBJ | Title | Named | Copy EN | Copy AR | Price | Lead time | Sizes | Variants | Images | Collection | Metafields | SEO | Placeholders gone | Complete |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| OBJ-020 | SLAB (live) | ✓ | ✓ | ✗ | ✓ | ✗ note only | ✓ | ✓ | ✓ | ✓ Furniture | ~ no care, 0 kg | ✗ | ✓ | no |
+| OBJ-166 | BLOK (live) | ✓ | ✓ | ✗ | ✓ | ✗ | ✓ | ✓ | ~ no mirror at sold heights | ✓ Furniture | ✗ no fulfilment, 0 kg | ✗ | ✓ | no |
+| OBJ-167 + 196 | TORSO (live) | ✓ | ✓ | ✗ | ✓ | ✗ note only | ~ estimates | ✓ | ✓ | ✓ Furniture | ~ no care, 0 kg | ✗ | ✓ | no |
+| OBJ-190 | OCTA (live) | ✓ | ✓ | ✗ | ✓ | ~ 7–14, source? | ✓ | ✓ | ✓ | ✗ | ~ no care, 0 kg | ✗ | ✓ | no |
+| OBJ-195 | CAIRN (live) | ✓ | ✓ | ✗ | ✓ | ✓ 7–14 | ✓ | ✓ | ✓ | ✗ | ~ no care, 0 kg | ✗ | ✓ | no |
+| OBJ-197 | SPAN (live) | ✓ | ✓ | ✗ | ✓ | ✗ | ~ height est. | ✓ | ✓ | ✗ | ~ no care, 0 kg | ✗ | ✓ | no |
+| OBJ-198 | INGOT (live) | ✓ | ✓ | ✗ | ✓ | ✓ 14–30 | ✓ | ✓ | ✓ | ✗ | ~ no care, 0 kg | ✗ | ✓ | no |
+| OBJ-169 | PYRA (live) | ✓ | ✓ | ✗ | ✓ | ~ 3–5, source? | ~ approximate | ✓ | ✓ | ✓ T&L | ~ no care, 0 kg | ✗ | ✓ | no |
+| OBJ-172 | ARRIS (live) | ✓ | ✓ | ✗ | ✓ | ~ 14–30, source? | ✗ | ✓ | ✓ | ✓ Objekts | ✗ no size, 0 kg | ✗ | ✓ | no |
+| OBJ-099 | ROTA (live) | ✓ | ✓ | ✗ | ✓ | ✓ 7–14 | ✗ | ✓ 4 colours | ✓ | ✓ Objekts | ✗ no size, 0 kg | ✗ | ✓ | no |
+| OBJ-002 | draft | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | hero pending | ✓ Furniture | ✗ | ✗ | ✗ | no |
+| OBJ-038 | draft | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | hero pending | ✓ Furniture | ✗ | ✗ | ✗ | no |
+| OBJ-152 | draft | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | hero pending | ✓ Furniture | ✗ | ✗ | ✗ | no |
+| OBJ-194 | no draft yet | ✗ | ✗ | ✗ | ✗ | ✗ | ✓ 1200 × 450 × 750 | ✗ | 2 renders, not approved | – | ✗ | ✗ | – | no |
+| OBJ-149 | draft | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ two drawings | ✗ | ✗ | ✓ Objekts | ✗ | ✗ | ✗ | no |
+| OBJ-173 | draft | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✓ Planters | ✗ | ✗ | ✗ | no |
+| OBJ-075 | draft | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✓ Planters | ✗ | ✗ | ✗ | no |
+| OBJ-115 | draft | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✓ T&L | ✗ | ✗ | ✗ | no |
+| OBJ-164 | draft | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✓ Objekts | ✗ | ✗ | ✗ | no |
+
+The other 43 drafts (after-launch, on hold or off-plan) are unchanged since the 11 Nov table (git history): 0 ready, placeholders in place. OBJ-194 gets a draft (FACET is only a suggestion, so titled OBJ-194) once Sabry puts it on the list.
+
+What the live products still need, by who: **Polycraft** packed weight per variant (all 10), ARRIS size, ROTA size, SPAN height, TORSO side 300 vs 260; **Sabry** lead time for BLOK, SPAN and TORSO Small, the source of PYRA 3–5 / ARRIS 14–30 / OCTA 7–14 days, Arabic title and copy (or translator), SEO title and description (or say "write drafts"), care text.
+
 #### Wed 11 Nov 2026
 - Ran: `get-shop-info` = OBJEKT / hs1a1c-ut, EGP. Read all 50 products (all draft, no duplicate OBJ codes) and the 5 collections. Pulled main (4849649).
-- Nothing new from Sabry or Polycraft per product since 8 Nov (no name, price, size, colour or image approval). Store-wide answers (10 Nov: 50% deposit, 7–14 or 30–45 days per item, shipping by weight) set no per-product value, so no existing product changed.
-- **Store writes (CHANGELOG 11 Nov): created 8 drafts** that the plan and the book both list as IN but were missing: OBJ-020, 152, 156 (Furniture), 094, 103 (Table & Living), 132 (Objekts), 068, 155 (Planters). Same build as the other drafts: OBJ-code title, placeholders, `placeholder-data` tag, made_to_order, right collection. No lead time, colours, variants, images or weight. Read back: 58 products, 0 active.
-- Seen: no product (old or new) is on the Online Store channel (`resourcePublicationsCount` 0). Activating alone may not put them on the site. See decisions.
-- Day-1 list still not approved: the 41 below are the agreed set. The 4 on hold (015, 049, 148, 159) and the 15 off-plan store drafts are not in the table.
-- Readiness: **0 of 41 ready to activate.** Placeholders left in place on all.
-
-**Readiness (11 Nov; ✓ done, ✗ missing)**
-
-| OBJ | Collection | Named | Copy EN | Copy AR | Price | Lead time | Sizes | Variants | Images | Collection | Metafields | SEO | Placeholders gone | Ready |
-|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| OBJ-002 | Furniture | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | hero AI render pending | ✓ | ✗ | ✗ | ✗ | no |
-| OBJ-003 | Furniture | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✓ | ✗ | ✗ | ✗ | no |
-| OBJ-020 (new 11 Nov) | Furniture | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✓ | ✗ | ✗ | ✗ | no |
-| OBJ-038 | Furniture | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | hero AI render pending | ✓ | ✗ | ✗ | ✗ | no |
-| OBJ-137 | Furniture | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✓ | ✗ | ✗ | ✗ | no |
-| OBJ-142 | Furniture | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✓ | ✗ | ✗ | ✗ | no |
-| OBJ-152 (new 11 Nov) | Furniture | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | hero AI render pending | ✓ | ✗ | ✗ | ✗ | no |
-| OBJ-156 (new 11 Nov) | Furniture | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✓ | ✗ | ✗ | ✗ | no |
-| OBJ-165 | Furniture | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✓ | ✗ | ✗ | ✗ | no |
-| OBJ-166 | Furniture | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✓ | ✗ | ✗ | ✗ | no |
-| OBJ-167 | Furniture | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✓ | ✗ | ✗ | ✗ | no |
-| OBJ-001 | Table & Living | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✓ | ✗ | ✗ | ✗ | no |
-| OBJ-094 (new 11 Nov) | Table & Living | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✓ | ✗ | ✗ | ✗ | no |
-| OBJ-095 | Table & Living | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✓ | ✗ | ✗ | ✗ | no |
-| OBJ-103 (new 11 Nov) | Table & Living | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✓ | ✗ | ✗ | ✗ | no |
-| OBJ-104 | Table & Living | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✓ | ✗ | ✗ | ✗ | no |
-| OBJ-115 | Table & Living | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✓ | ✗ | ✗ | ✗ | no |
-| OBJ-169 | Table & Living | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✓ | ✗ | ✗ | ✗ | no |
-| OBJ-171 | Table & Living | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✓ | ✗ | ✗ | ✗ | no |
-| OBJ-004 | Objekts | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✓ | ✗ | ✗ | ✗ | no |
-| OBJ-099 | Objekts | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | 4 colours, not confirmed | 5 AI renders on store, use not approved | ✓ | ✗ | ✗ | ✗ | no |
-| OBJ-100 | Objekts | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✓ | ✗ | ✗ | ✗ | no |
-| OBJ-125 | Objekts | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✓ | ✗ | ✗ | ✗ | no |
-| OBJ-132 (new 11 Nov) | Objekts | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✓ | ✗ | ✗ | ✗ | no |
-| OBJ-145 | Objekts | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✓ | ✗ | ✗ | ✗ | no |
-| OBJ-147 | Objekts | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✓ | ✗ | ✗ | ✗ | no |
-| OBJ-149 | Objekts | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✓ | ✗ | ✗ | ✗ | no |
-| OBJ-151 | Objekts | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✓ | ✗ | ✗ | ✗ | no |
-| OBJ-164 | Objekts | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✓ | ✗ | ✗ | ✗ | no |
-| OBJ-172 | Objekts | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✓ | ✗ | ✗ | ✗ | no |
-| OBJ-175 | Objekts | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✓ | ✗ | ✗ | ✗ | no |
-| OBJ-176 | Objekts | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✓ | ✗ | ✗ | ✗ | no |
-| OBJ-068 (new 11 Nov) | Planters | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✓ | ✗ | ✗ | ✗ | no |
-| OBJ-069 | Planters | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✓ | ✗ | ✗ | ✗ | no |
-| OBJ-072 | Planters | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✓ | ✗ | ✗ | ✗ | no |
-| OBJ-075 | Planters | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✓ | ✗ | ✗ | ✗ | no |
-| OBJ-080 | Planters | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✓ | ✗ | ✗ | ✗ | no |
-| OBJ-085 | Planters | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✓ | ✗ | ✗ | ✗ | no |
-| OBJ-154 | Planters | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✓ | ✗ | ✗ | ✗ | no |
-| OBJ-155 (new 11 Nov) | Planters | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✓ | ✗ | ✗ | ✗ | no |
-| OBJ-173 | Planters | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✓ | ✗ | ✗ | ✗ | no |
-
-What every product lacks: approved name (EN, AR), price incl. VAT, lead time type (7–14 or 30–45 days, Polycraft), real dimensions, packed weight, colours actually offered (then variants), approved images, short description, story, materials, care, SEO title and description. Extra: OBJ-166 heights (850 vs 700 mm), OBJ-175 panel options, OBJ-176 four colours, OBJ-099 colours (store vs book), OBJ-152 and OBJ-156 sold as pair or each.
+- **Store writes (CHANGELOG 11 Nov): created 8 drafts** that the plan and the book both list as IN: OBJ-020, 152, 156, 094, 103, 132, 068, 155. OBJ-020 has since become SLAB (live, by Sabry).
+- Readiness: 0 of 41. Table replaced on 12 Nov (in git history).
 
 #### Sun 8 Nov 2026 (first run)
-- Ran: `get-shop-info` = OBJEKT / hs1a1c-ut, EGP. Read all 53 products (titles, status, type, tags, collections, variants, metafields), the 4 collections and the `colour` metaobjects.
-- Day-1 list not approved yet, so I worked only on the 33 products that the plan, the production book and the store all agree on. The 8 agreed by plan and book but not in the store (OBJ-020, 068, 094, 103, 132, 152, 155, 156) are **not created**; I create them as drafts the day the list is approved.
-- Structure checked on the 33: titles are OBJ codes, every one is in the right collection for its plan category, type and tags match, `custom.reference` set, fulfilment `made_to_order` with placeholder lead time. No duplicate OBJ codes.
-- Store writes (CHANGELOG 8 Nov): `colour` metaobjects got their hex from `brand/COLOURS-FINISHES.md`, and the missing eighth colour **Chocolate** was added; OBJ-099's four colour variants and product colour list now link to the colour entries. Read back OK. Not seen in a browser.
-- Not written: no prices, sizes, lead times, copy, variants or images. Nothing in CONTENT_TO_SUPPLY or STATUS is supplied by Sabry or Polycraft yet (section 3d is all "proposed" or blank), and no render is approved for the site.
-- Seen: OBJ-148 (on hold, rec. drop) is **active** (`preview-active`) with a reference photo. Website session's revert list covers it.
-- Readiness: **0 of 33 ready to activate.** Placeholders (9999.00, [PLACEHOLDER], 00 cm, `placeholder-data`) left in place on all.
-
-Readiness table of 8 Nov replaced by the 11 Nov table above (in git history).
+- Ran: `get-shop-info` = OBJEKT / hs1a1c-ut, EGP. Read all 53 products, the 4 collections and the `colour` metaobjects. Worked only on the 33 products all sources agreed on.
+- Store writes (CHANGELOG 8 Nov): `colour` metaobjects got their hex from `brand/COLOURS-FINISHES.md`; Chocolate added; OBJ-099's colour variants linked to the colour entries.
+- Readiness: 0 of 33.
 
 ## Faux books (design)
 ### 11 Nov 2026
