@@ -47,7 +47,7 @@ Source: the production book (45 product slides), Drive and the Magnific history.
 - OBJ-155 Planter, fluted base with flared rim (design file: NOT READY)
 - OBJ-156 Side table pair, stacked-disc tops (design file: NOT READY)
 - OBJ-159 Tall shelf, aluminium side plates with circular cut-outs (design file: NOT READY)
-- OBJ-164 Corner shelf pair, triangular (design file: NOT READY)
+- OBJ-164 Corner shelf pair, triangular (design file: DRAFT rev 0 made 12 Nov, awaiting Sabry's approval; 220 x 220 mm is Sabry's, the rest is proposed, not costed; no renders; reference photo `images/OBJ-164.jpg`, no approved drawing yet so any render is shape-to-confirm)
 - OBJ-165 Bench, folded plate, rounded corners (design file: NOT READY)
 - OBJ-171 Tissue holder, L-shaped block, three positions (design file: NOT READY)
 - OBJ-172 Sculpture, faceted mirror-polished steel (design file: NOT READY)
