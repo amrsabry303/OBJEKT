@@ -169,7 +169,7 @@ Only facts already recorded in the repo, the production book or the product shee
 | OBJ-142 | Furniture · Side Tables and Bedside Tables | Printed pattern, then moulded (guess) | Bone, Oxblood (proposed) | Duco, Gloss (proposed) | Not ready | None (reference photo only) |  |  |  |  |
 | OBJ-152 | Furniture · Side Tables and Bedside Tables | Printed pattern, then moulded | Ink, Oxblood, Carbon, Bone | Duco, Gloss (proposed) | Ready (in folder) | 1 AI render hero, Ink v2c (8 Nov, pending Sabry) |  |  |  |  |
 | OBJ-191 | Table and Living · Trays (confirm subcategory) | Sheet metal, two interlocking plates, laser cut (inferred from the photo; Production to confirm) | (to confirm) | Brushed or satin stainless (looks like it in the photo; Sabry to confirm) | Not started: waiting for Sabry's sizes and finish | None (reference photo only) |  |  |  |  |
-| OBJ-156 | Furniture · Side Tables and Bedside Tables | Printed pattern, then moulded | Clay, Ink, Putty (proposed) | Duco, Matte (proposed) | Not ready | None (reference photo only) |  |  |  |  |
+| OBJ-192 | Planters · (confirm subcategory) | Sheet metal: two side plates with rounded top corners, flat front and back panels, on four swivel casters (inferred from the photo; Production to confirm) | (to confirm, eight colour names only) | (to confirm) | Not started: waiting for Sabry's sizes, colours, finish, drainage and casters | None (reference photo only) |  |  |  |  || OBJ-156 | Furniture · Side Tables and Bedside Tables | Printed pattern, then moulded | Clay, Ink, Putty (proposed) | Duco, Matte (proposed) | Not ready | None (reference photo only) |  |  |  |  |
 | OBJ-165 | Furniture · Stools and Benches | Metal (guess) | Oxblood, Carbon, Putty (proposed) | Powder coating, Matte (proposed) | Not ready | None (reference photo only) |  |  |  |  |
 | OBJ-166 | Furniture · Pedestals and plinths | Metal (guess) | Carbon matte (powder coating), or brushed stainless |  | Ready (in folder) | 11 AI renders (v5, v6 best) |  |  |  |  |
 | OBJ-167 | Furniture · Pedestals and plinths | Metal, curved or technical (guess) | Oxblood, Objekt Green, Ink, Chocolate, Bone | Powder coating, Matte (proposed) | Ready (in folder) | 3 AI renders |  |  |  |  |
@@ -228,7 +228,7 @@ Only facts already recorded in the repo, the production book or the product shee
 - OBJ-159: Sabry: reference is a named designer's piece; approve an own design or drop.
 - OBJ-166: Sabry: variant heights differ between sources (book: 850 / 1000 mm; import template: 700 / 1000 mm). Polycraft: confirm.
 - OBJ-191: Sabry: real dimensions (tray, notch, plate thickness, glass spacing) and finish; the reference is a third-party maker's reel, draw as our own.
-- OBJ-172: Polycraft: large mirror-polished piece; confirm it fits the polishers' queue.
+- OBJ-192: Sabry: real dimensions, colours (eight names), finish, drainage, casters (type, locking, load); the reference is a low-resolution render of unknown source, draw as our own.- OBJ-172: Polycraft: large mirror-polished piece; confirm it fits the polishers' queue.
 - OBJ-175: Sabry: list the panel options (modular) so the variants can be set.
 - OBJ-176: Sabry: confirm the four colours (book: Bone, Clay, Ink, Objekt Green).
 

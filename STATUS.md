@@ -80,6 +80,7 @@ Three daily sessions work on this repo, one section each. Each session updates *
 
 ### Thu 12 Nov 2026
 - **OBJ-191 tray, two interlocking plates (product session):** registered in the day-1 list (decision: not decided), image inventory and CONTENT_TO_SUPPLY; no sizes, price or name invented. Done conditions: (1) drawing approved: no, not started, waiting for Sabry's sizes and finish; (2) renders approved: no, none (need the approved drawing first); (3) Shopify listing live: no.
+- **OBJ-192 long planter on four swivel casters (product session):** registered in the day-1 list (decision: not decided), image inventory and CONTENT_TO_SUPPLY; no sizes, colours, finish, price or name invented. Done conditions: (1) drawing approved: no, not started, waiting for Sabry's answers; (2) renders approved: no, none (need the approved drawing first); (3) Shopify listing live: no.
 
 ### Wed 11 Nov 2026
 - **OBJ-190 side table (Sabry, 11 Nov):** drawn from his 3 photos and 55 x 55 x 45 cm, redrawn after his correction (top has 4 Vs = 8 sides; each leg one V matching the top), approved by Sabry the same day, finish brushed stainless, number confirmed. Set: `venture/drawings/OBJ-190/` (PDF, 5 SVG, 4 part DXFs, nest DXF), generator `venture/src/drawings/make_obj190_rev0.py`. Uploaded to a new Drive folder OBJ-190 on his yes; added to the Google product sheet (Products row 146, Design folders) and the day-1 list. Next: Production review; ask him for real dimensions or the CAD.

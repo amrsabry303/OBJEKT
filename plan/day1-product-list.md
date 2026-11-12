@@ -166,3 +166,11 @@ Not part of the 41 / 4 / 16 tally above. It brings the in-list total to 42 if th
 | OBJ-191 | OBJ-191 | Table & Living | Trays (to confirm) | Tray, two interlocking plates, brushed stainless (no name approved) | Sheet metal, two plates with slotted cuts (inferred from one photo; Production to confirm) | Not started: waiting for Sabry's sizes and finish | None (reference photo only) | **Not decided** | Reference is a screenshot of a third-party maker's reel; draw as our own design. No sizes, finish, price or lead time given. Not costed. Number assigned by the previous session. | Sabry, 12 Nov |
 
 Not part of the 41 / 4 / 16 tally. Sabry decides whether it is in for 20 Nov.
+
+## Added 12 Nov 2026: OBJ-192 long planter on four swivel casters (product session)
+
+| OBJ | Code | Website category | Subcategory | Name | Process | Design file | Images | Day 1 | Note | Source |
+|---|---|---|---|---|---|---|---|---|---|---|
+| OBJ-192 | OBJ-192 | Planters | (to confirm) | Planter, long low sheet-metal trough on four swivel casters (no name approved) | Sheet metal: two plates with rounded top corners, flat front and back panels (inferred from one photo; Production to confirm) | Not started: waiting for Sabry's sizes, colours, finish, drainage and casters | None (reference photo only) | **Not decided** | Reference is a low-resolution render in black and sage green; source and maker unknown, draw as our own design. No sizes, colours, finish, price or lead time given. Not costed. | Sabry, 12 Nov |
+
+Not part of the 41 / 4 / 16 tally. Sabry decides whether it is in for 20 Nov.
