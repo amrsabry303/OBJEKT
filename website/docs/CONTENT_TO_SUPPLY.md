@@ -194,7 +194,7 @@ Only facts already recorded in the repo, the production book or the product shee
 | OBJ-147 | Objects · Vases | Printed pattern, then moulded (guess) | Oxblood, Bone (proposed) | Duco, Gloss (proposed) | Not ready | None (reference photo only) |  |  |  |  |
 | OBJ-149 | Objects · Ashtrays and Incense Holders | Metal (guess) | Carbon (proposed) | Powder coating, Matte (proposed) | Not ready | None (reference photo only) |  |  |  |  |
 | OBJ-151 | Objects · Ashtrays and Incense Holders | Printed pattern, then moulded | Putty, Bone, Objekt Green (proposed) | Duco, Matte (proposed) | Not ready | None (reference photo only) |  |  |  |  |
-| OBJ-159 | Furniture · Shelving (new subcategory, Sabry yes 12 Nov; store not touched) | Sheet metal, laser cut and folded stainless (proposal) | Brushed stainless, as OBJ-190 | Brushed | Draft rev 6 (74 x 34 x 14 in, five circles, screwed shelves, no feet), awaiting Sabry's approval | None (reference photo only; third-party piece, idea only) |  |  |  |  |
+| OBJ-159 | Furniture · Shelving (new subcategory, Sabry yes 12 Nov; store not touched) | Sheet metal, laser cut and folded stainless (proposal) | Brushed stainless, as OBJ-190 | Brushed | Draft rev 7 (74 x 34 x 14 in, five circles, screwed shelves, no feet, two floor pads cut in the plate edge), awaiting Sabry's approval | None (reference photo only; third-party piece, idea only) |  |  |  |  |
 | OBJ-164 | Objects · Shelves and Display Storage | Sheet stainless, 2 mm, folded top plate and welded gusset, sold as a pair (proposal; Production to confirm) | Bare brushed stainless (proposal) | Brushed (proposed) | Drawing rev 0 approved by Sabry 12 Nov 2026, Production review pending; sizes not costed | None (reference photo only) |  |  |  |  |
 | OBJ-172 | Objects · Statement Sculptures | Metal, curved or technical (guess) |  | Mirror (proposed) | Not ready | None (reference photo only) |  |  |  |  |
 | OBJ-175 | Objects · Shelves and Display Storage | Metal (guess) | Carbon, Putty, Bone (proposed) | Powder coating, Matte (proposed) | Not ready | None (reference photo only) |  |  |  |  |
@@ -228,7 +228,7 @@ Only facts already recorded in the repo, the production book or the product shee
 - OBJ-137: Polycraft: prototype built; send photos, cost, lead time.
 - OBJ-147: Polycraft: launch board notes it may need ceramic or glass; confirm the material.
 - OBJ-148: Sabry: reference is a named retail product; approve an own design or drop.
-- OBJ-159: Sabry: approve drawing rev 6 (74 x 34 x 14 in, six 1.25 in shelves screwed to the plates, five circles, no feet). Polycraft: confirm sheet, folds, fixings, bottom edge on the floor, about 79 kg steel and 30-45 day fit.
+- OBJ-159: Sabry: approve drawing rev 7 (74 x 34 x 14 in, six 1.25 in shelves screwed to the plates, five circles, no feet, 3 mm step in the plate bottom edge). Polycraft: confirm sheet, folds, fixings, bottom edge on the floor, about 79 kg steel and 30-45 day fit.
 - OBJ-166: Sabry: variant heights differ between sources (book: 850 / 1000 mm; import template: 700 / 1000 mm). Polycraft: confirm.
 - OBJ-168: Sabry: approve the drawing (160 x 160 x 800 mm, 2 mm stainless, five holes, liner are proposals; height 800 is his); Production: confirm. Reference is a third-party photo, drawn as our own.
 - OBJ-196: Sabry: approve the drawing (disc Ø300, height 400, 2 mm stainless, plate offset and 22 gap, pot hole Ø204 for a 4 L pot, shelf Ø176 are proposals); Production: confirm, above all the shelf joint and the tie between plates. Reference is a third-party render, drawn as our own.
