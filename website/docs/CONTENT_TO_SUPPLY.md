@@ -228,7 +228,7 @@ Only facts already recorded in the repo, the production book or the product shee
 - OBJ-137: Polycraft: prototype built; send photos, cost, lead time.
 - OBJ-147: Polycraft: launch board notes it may need ceramic or glass; confirm the material.
 - OBJ-148: Sabry: reference is a named retail product; approve an own design or drop.
-- OBJ-159: Sabry: reference is a named designer's piece. Own redesign proposed 12 Nov (about 1800 x 800 x 350 mm, stainless, stadium cut-outs; proposal, not costed, Production to confirm); approve or change. Category: Objects or Furniture?
+- OBJ-159: Sabry: reference is a named designer's piece. Own redesign proposed 12 Nov (about 2150 x 800 x 350 mm (Sabry 12 Nov: 210-220 cm tall, six shelves), stainless, stadium cut-outs; proposal, not costed, Production to confirm); approve or change. Category: Objects or Furniture?
 - OBJ-166: Sabry: variant heights differ between sources (book: 850 / 1000 mm; import template: 700 / 1000 mm). Polycraft: confirm.
 - OBJ-168: Sabry: approve the drawing (160 x 160 x 800 mm, 2 mm stainless, five holes, liner are proposals; height 800 is his); Production: confirm. Reference is a third-party photo, drawn as our own.
 - OBJ-196: Sabry: approve the drawing (disc Ø300, height 400, 2 mm stainless, plate offset and 22 gap, pot hole Ø204 for a 4 L pot, shelf Ø176 are proposals); Production: confirm, above all the shelf joint and the tie between plates. Reference is a third-party render, drawn as our own.
