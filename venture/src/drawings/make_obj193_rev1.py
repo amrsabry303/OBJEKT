@@ -13,11 +13,11 @@ PHOTO = ROOT + '/images/OBJ-193.jpg'
 REV = 1; DATE = '12 Nov 2026'; PN = 'OBJ-193'
 L, W, H = 1100, 800, 350
 WALL = 4                          # GRP laminate wall, proposal
-R = 120
+R = 125                  # corner radius = leg radius: the legs sit flush at the corners, concentric with the arcs (Sabry, 12 Nov)
 SLAB = 110; SKIRT_H = 100; REV_H = 10; REV_IN = 6
 LEG_D, LEG_H, PAD = 250, 240, 10
 SHELL_H = LEG_H - PAD
-INSET = 120
+INSET = 0                                                   # leg surface flush with the slab edge
 LX = [INSET + LEG_D/2, L - INSET - LEG_D/2]
 LY = [INSET + LEG_D/2, W - INSET - LEG_D/2]
 CAP_D = LEG_D - 2*WALL; CAP_T = 6                          # bottom cap, 6 mm GRP disc
@@ -119,7 +119,6 @@ for cx_ in LX:
 b += rect(fx(REV_IN), fz(ZS0+REV_H), (L-2*REV_IN)*S, REV_H*S, .35, INK, '#6f4a52') + rect(fx(0), fz(H), L*S, SKIRT_H*S, .45, INK, '#b58f98')
 b += dim_h(fx(0), fx(L), fz(0)+12, f'{L}', ext=fz(0)) + t(fx(L/2), fz(0)+17, 'OVERALL LENGTH / الطول الكلي', 2, 400, 'middle', DIM)
 b += dim_h(fx(LX[0]-LEG_D/2), fx(LX[0]+LEG_D/2), fz(0)+5, f'Ø{LEG_D}', ext=fz(0))
-b += dim_h(fx(0), fx(INSET), fz(H)-4, f'{INSET}', ext=fz(H))
 b += dim_v(fx(0)-8, fz(H), fz(0), f'{H}', ext=fx(0))
 b += dim_v(fx(L)+8, fz(H), fz(ZS0), f'{SLAB}', ext=fx(L)) + dim_v(fx(L)+8, fz(ZS0), fz(0), f'{LEG_H}', ext=fx(L))
 b += t(fx(L/2), fz(H)+SKIRT_H*S/2+1, 'upper shell, skirt 100 high', 2.1, 400, 'middle', '#fff') 
@@ -127,7 +126,7 @@ b += t(fx(L/2), fz(ZS0+REV_H)-.4+REV_H*S+2.8, '', 2)
 b += t(fx(L/2)+0, fz(ZS0)+3.6+REV_H*S-5.4, '', 2)
 b += t(fx(400), fz(ZS0)+4.2, 'lower shell, 10 high, set back 6 (joint = shadow line)', 1.9, 400, fill=DIM)
 b += balloon(fx(L/2), fz(H)-5, 1) + balloon(fx(LX[0]), fz(120), 3) + balloon(fx(LX[1])+3, fz(PAD/2)+0.6, 6)
-b += t(fx(LX[1]+LEG_D/2)+2, fz(130), 'back legs hidden,', 1.9, 400, fill=HID) + t(fx(LX[1]+LEG_D/2)+2, fz(130)+2.6, 'same positions', 1.9, 400, fill=HID)
+b += t(fx(L/2), fz(130), 'back legs hidden, same positions', 1.9, 400, 'middle', HID)
 # side elevation
 ox_s = 235
 def sx(y): return ox_s + y*S
@@ -151,7 +150,7 @@ b += dim_h(px(0), px(L), py(W)+7, f'{L}', ext=py(W)) + dim_v(px(0)-6, py(0), py(
 b += dim_h(px(LX[0]), px(LX[1]), py(0)-3.5, f'{LX[1]-LX[0]:.0f}', ext=py(LY[0])) + dim_v(px(L)+6, py(LY[0]), py(LY[1]), f'{LY[1]-LY[0]:.0f}', ext=px(LX[1]))
 b += t(px(LX[0]+LEG_D/2)+1, py(LY[0])-LEG_D/2*S-1, f'R{R}', 2.2, 500, fill=DIM) if False else ''
 b += t(px(L/2), py(W/2)+1, 'legs shown dashed (below the top)', 2.1, 400, 'middle', '#555') + t(px(L/2), py(W/2)+4.2, 'الأرجل بخط متقطع (أسفل السطح)', 2.1, 400, 'middle', '#555', extra=AR)
-b += t(px(L)+10, py(60)+1, f'corner R{R}', 2.2, 500, fill=DIM) + t(px(L)+10, py(60)+4, f'legs set in {INSET} from the edges', 2.0, 400, fill=DIM)
+b += t(px(L)+10, py(60)+1, f'corner R{R} = leg radius', 2.2, 500, fill=DIM) + t(px(L)+10, py(60)+4, 'legs flush with the edge, concentric', 2.0, 400, fill=DIM) + t(px(L)+10, py(60)+7, 'with the corner arcs', 2.0, 400, fill=DIM)
 # reference photo
 b += t(235, 108, 'REFERENCE PHOTO (not ours; render, source unknown)', 2.3, 600) + t(410, 112, 'صورة مرجعية (ليست لنا، المصدر مجهول)', 2.3, 500, 'end', extra=AR)
 b += f'<image href="{datauri(PHOTO)}" x="235" y="116" width="100" height="72.4" preserveAspectRatio="xMidYMid slice"/>' + rect(235, 116, 100, 72.4, .2, HID)
@@ -342,13 +341,13 @@ for i, (n_, en, ar, q, m_) in enumerate(bom):
     yy = 44 + i*6
     b += line(10, yy+2.0, 410, yy+2.0, .15, HID) + t(12, yy, n_, 2.3) + t(24, yy, en, 2.3) + t(140, yy, ar, 2.3, 400, 'end', extra=AR) + t(150, yy, q, 2.3) + t(215, yy, m_, 2.3)
 b += t(10, 106, 'NOTES', 2.8, 600) + t(410, 106, 'ملاحظات', 2.8, 600, 'end', extra=AR)
-notes = [(f'Overall {L} x {W} x {H} mm, wall {WALL} mm, corner radius {R} mm, leg Ø{LEG_D} x {LEG_H} mm (incl. 10 mm pad) set in {INSET} mm, and the whole construction are proposals, not costed. Production to confirm.', 'المقاسات والسماكات والتصنيع مقترحة وغير مُسعّرة. يؤكدها التصنيع.'),
+notes = [(f'Overall {L} x {W} x {H} mm, wall {WALL} mm, corner radius {R} mm, leg Ø{LEG_D} x {LEG_H} mm (incl. 10 mm pad), flush at the corners (leg radius = corner radius, concentric), and the whole construction are proposals, not costed. Production to confirm.', 'المقاسات والسماكات والتصنيع مقترحة وغير مُسعّرة. يؤكدها التصنيع.'),
          ('The shape is estimated by eye from one render of unknown source (not ours): a thick rounded-rectangle top with a visible joint line under it, on four fat cylindrical legs. Drawn as objekt\'s own design. The lamp in the photo is not part of the product.', 'الشكل مقدّر من صورة واحدة مجهولة المصدر ومرسوم كتصميم خاص بأوبجيكت. المصباح ليس جزءاً من المنتج.'),
          ('Material: moulded GRP (glass-fibre laminate), made from patterns and moulds. Changed from welded steel (rev 0, superseded) on Sabry\'s call, 12 Nov: the table in the render is probably not metal. Lay-up, resin, any core and wall thickness are Production\'s.', 'الخامة: فايبر جلاس مصبوب، بدلاً من الصلب (المراجعة ٠). التفاصيل من التصنيع.'),
          ('Colour and finish (proposal): Duco gloss over primer, Oxblood #5A1F25; Chocolate #4A2A1B is the alternative (colour unconfirmed). Paint system and gloss to be confirmed; codes to follow. Gloss shows every flaw: Production decides fairing, polishing and painter capacity, which is not known to us.', 'اللون والتشطيب (مقترح): دوكو لامع على برايمر، عنابي داكن. البديل بني شوكولاتة.'),
          (f'Weight, calculated (not weighed): about {KG:.0f} kg of laminate (slab {KG_SLAB:.0f} kg, four legs {KG_LEGS:.0f} kg), assuming {WALL} mm wall and 1.6 g/cm3, before inserts, pads, adhesive, filler, primer and paint. Density and wall are guesses. Ships in two parts: slab {L} x {W} x {SLAB}, and legs bolted up from inside.', f'الوزن محسوب (غير موزون): حوالي {KG:.0f} كجم فايبر جلاس. الكثافة والسماكة تخمين.'),
          ('The slab is two shells bonded together; the lower shell is set back 6 mm, giving the shadow line. Bolts go up from inside each leg (bottom cap removable) into M8 inserts in bonded pads. Bonding, fixing and access method are proposals.', 'السطح غلافان ملصوقان، والغلاف السفلي متراجع ٦ مم. التثبيت بالبراغي من داخل الرجل مقترح.'),
-         ('Front-to-back, the clear gap between the legs is only 60 mm with these sizes (800 - 2 x 120 - 2 x 250). The photo may show a wider gap: Sabry to check the proportion on the render.', 'المسافة بين الأرجل من الأمام للخلف ٦٠ مم فقط. سبري يراجع النسبة.'),
+         (f'The legs sit flush at the four corners and follow the corner curve exactly: corner radius {R} = leg radius, same centre (Sabry, 12 Nov, from the render). Clear gap between legs: {LY[1]-LY[0]-LEG_D:.0f} mm front to back, {LX[1]-LX[0]-LEG_D:.0f} mm left to right. The lower shell is set back 6 mm, so each leg shows 6 mm proud of it at the corner.', 'الأرجل في الأركان تتبع انحناء السطح تماماً: نصف قطر الركن = نصف قطر الرجل.'),
          ('Material, wall thickness, draft, split lines, tolerances, joints and finish details are Production\'s to decide.', 'الخامة والسماكة والميل وخطوط الفصل والسماحيات يقررها التصنيع.'),
          ('No structural claims, stress figures, load figures, costs or prices on this drawing. Not engineered. Arabic wording is a draft for a technical reader.', 'لا ادعاءات إنشائية ولا تكاليف ولا أسعار. الصياغة العربية مسودة.'),
          ('Product number OBJ-193 was the next free number; Sabry can override.', 'رقم المنتج التالي المتاح؛ يمكن لسبري تغييره.')]
