@@ -75,7 +75,7 @@ Built from the print design files, so they are not AI renders and not photos. Th
 - OBJ-190 Side table, 8-sided faceted top on two legs, brushed stainless (design file: READY, rev 0 approved 11 Nov; no images yet, reference photos only)
 - OBJ-191 Tray, two interlocking plates, stainless (design file: DRAFT rev 0, sizes proposed by us, awaiting Sabry's approval; no renders; reference screenshot only, third-party maker)
 - OBJ-192 Planter, long low sheet-metal trough on four swivel casters (design file: DRAFT rev 0 made 12 Nov, awaiting Sabry's approval (Carbon, Oxblood, Bone; matte powder coat; rubber casters; 900 x 300 x 450 proposed); no renders; reference is a low-resolution render in black and sage green, maker unknown; see images/OBJ-192.jpg)
-- OBJ-193 Coffee table, low, thick rounded top on four cylinder legs (design file: DRAFT rev 1, moulded GRP (Sabry 12 Nov), made 12 Nov, sizes, wall, construction and finish proposed by us (Duco gloss Oxblood, Chocolate alternative), awaiting Sabry's approval; steel rev 0 superseded; no renders; reference is a render of unknown source with a lamp that is not part of the product, see images/OBJ-193.jpg)
+- OBJ-193 Coffee table, low, thick rounded top on four cylinder legs (design file: rev 1, moulded GRP, APPROVED by Sabry 12 Nov (Production review pending; wall, construction and finish are our proposals: Duco gloss Oxblood, Chocolate alternative); steel rev 0 superseded; no renders; reference is a render of unknown source with a lamp that is not part of the product, see images/OBJ-193.jpg)
 
 ## Not filed
 Six other sculpture renders in the Magnific history (baby elephant calf, falcon, abstract geometric) are not matched to a launch product. Renders from other projects and are not touched.

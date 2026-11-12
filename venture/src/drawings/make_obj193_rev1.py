@@ -1,4 +1,4 @@
-"""OBJ-193: low coffee table, thick rounded-rectangle top on four fat cylindrical legs. Production drawing set, REV 1 (DRAFT), MOULDED GRP.
+"""OBJ-193: low coffee table, thick rounded-rectangle top on four fat cylindrical legs. Production drawing set, REV 1 (APPROVED by Sabry 12 Nov 2026), MOULDED GRP.
 Rev 0 (welded steel) is in superseded-rev0: Sabry thought the table is not metal (12 Nov), so it is redrawn as moulded GRP, painted Duco gloss.
 Run: python3 make_obj193_rev1.py <repo root>   Then make_pdf.js for the PDF.
 ALL sizes, wall thickness, split lines, construction and finish are PROPOSALS (not costed, Production to confirm). Shape estimated by eye from one render of
@@ -83,7 +83,7 @@ def datauri(path, w=360):
     im = Image.open(path).convert('RGB'); im.thumbnail((w, w)); b = io.BytesIO(); im.save(b, 'JPEG', quality=72)
     return 'data:image/jpeg;base64,' + base64.b64encode(b.getvalue()).decode()
 
-STAMP = 'DRAFT, not approved, not engineered'; STAMP_AR = 'مسودة، غير معتمدة، غير مهندسة'
+STAMP = 'Approved by Sabry 12 Nov 2026. Production review pending. Not engineered'; STAMP_AR = 'اعتمده سبري ١٢ نوفمبر ٢٠٢٦. مراجعة التصنيع معلقة. غير مهندس'
 COLS = [('Oxblood', '#5A1F25', 'عنابي داكن', 'proposed, nearest palette colour to the photo'), ('Chocolate', '#4A2A1B', 'بني شوكولاتة', 'alternative, colour still unconfirmed')]
 def frame(n, N, title_en, title_ar, scale):
     s = rect(5, 5, 410, 287, .5) + rect(7, 7, 406, 283, .2)
@@ -95,7 +95,7 @@ def frame(n, N, title_en, title_ar, scale):
     s += bi(X+2, Y+25, 'MATERIAL  Moulded GRP, 4 mm wall (proposal)', 'الخامة: فايبر جلاس مصبوب ٤ مم (مقترح)', 88, 2.1) + bi(X+94, Y+25, 'FINISH  Duco gloss on primer (proposal)', 'التشطيب: دوكو لامع (مقترح)', 88, 2.1)
     s += bi(X+2, Y+36, f'DATE  {DATE}      SHEET {n} / {N}', 'التاريخ، الورقة', 88, 2.3) + bi(X+94, Y+36, f'REV  {REV}', 'المراجعة', 88, 2.3)
     s += rect(X, Y-14, Wd, 12, .5, '#b3261e', '#fff')
-    s += t(X+Wd/2, Y-8.6, STAMP, 2.9, 700, 'middle', '#b3261e') + t(X+Wd/2, Y-3.8, STAMP_AR, 2.9, 700, 'middle', '#b3261e')
+    s += t(X+Wd/2, Y-8.6, STAMP, 2.5, 700, 'middle', '#b3261e') + t(X+Wd/2, Y-3.8, STAMP_AR, 2.7, 700, 'middle', '#b3261e')
     s += t(10, 14, title_en, 4.2, 700) + t(410, 14, title_ar, 4.2, 700, 'end', extra=' direction="rtl"')
     return s
 def sheet(n, N, title_en, title_ar, scale, body):
