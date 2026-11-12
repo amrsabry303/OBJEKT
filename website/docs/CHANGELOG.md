@@ -207,3 +207,12 @@
 - Theme file on the **unpublished** theme 189754769632 only (`themeFilesUpsert`): `sections/footer-group.json` now has three link columns, Shop (`footer-shop`), Support (`footer`), Policies (`footer-policies`). Repo file updated to match.
 - Verified by read-back (3 menus, theme file). Not seen in a browser. Delivery & Returns and the terms, refund and shipping policies join the footer once written.
 - Facts from Sabry (10 Nov), not yet on the site: shipping is worldwide; every made-to-order piece takes a 50% deposit, collected first; made-to-order lead time 30–45 days.
+
+## 12 Nov 2026: UI/UX audit pass (draft theme `190236524768`, "OBJEKT UX audit (draft 12 Nov)"; not published by the agent)
+Checked in a browser on the draft at 1440 and 390 wide: home, category, all products, two product pages, bag, search. Quick add tested by hand in both sizes (adds, count updates). Not tested: Arabic/RTL, tablet width, real phones, checkout, filters drawer, keyboard-only purchase.
+- **Categories (store data):** CAIRN, OCTA, SPAN and INGOT were in no collection; added to Furniture. Collections are manual: every new product must be added to its category by hand.
+- **Plates (`product-card`, `card.css`):** image, name, price and one muted availability line ("Made to order · 14–30 days"). Outlined Quick add / Choose options buttons under every plate removed. Quick add now sits on the image: a bar on hover or keyboard focus (pointer devices), a 44 px plus on touch. Products with options have no button; the plate links to the product page. On phones the caption stacks (name, price, availability).
+- **Home:** staggered "Selected objekts" grid replaced by one lead plate and a calm grid, same 4:5 frame; availability legend removed. Hero, editorial split and category pane no longer show "IMAGE TO COME": with no image chosen they borrow product photographs (hero: first landscape product image, light text over a flat veil; new "Text colour" setting). "Image to come" text removed from About, The Edit and the collection feature too.
+- **Product page:** the product description is now shown (first accordion, open). Complete the look uses the same plate language.
+- **Collection:** `/collections/all` is titled "All objekts". Search page no longer scrolls sideways on phones (grid children may shrink).
+- **Open, for Sabry:** choose real hero and editorial images in the theme editor (the fallback currently picks the ROTA Candleholders photograph); TORSO, BLOK, SLAB and SPAN have no lead-time days on their variants, so they show "Made to order" with no time.

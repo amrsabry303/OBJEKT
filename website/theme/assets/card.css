@@ -8,7 +8,7 @@
 @media (hover: hover) { .obj:hover .ph .alt, .obj:focus-within .ph .alt { opacity: 1; } }
 .obj .cap { display: grid; grid-template-columns: minmax(0, 1fr) auto; column-gap: 16px; row-gap: 3px; padding-block-start: 12px; font-size: var(--fs-small); line-height: 1.4; color: var(--navy); }
 .obj .name { font-weight: 500; overflow-wrap: anywhere; }
-.obj .price { white-space: nowrap; text-align: end; font-variant-numeric: tabular-nums; }
+.obj .price { margin: 0; font-size: inherit; letter-spacing: 0; white-space: nowrap; text-align: end; font-variant-numeric: tabular-nums; }
 /* Availability on a plate: one muted line. The hollow made-to-order marker is dropped here (it is the default, D-023); the solid marker stays for ready pieces. */
 .obj .avail { grid-column: 1 / -1; display: flex; align-items: baseline; gap: 7px; margin: 0; font-size: 12px; font-weight: 400; letter-spacing: 0; text-transform: none; color: var(--grey-text); }
 .obj .avail .dot { width: 7px; height: 7px; margin: 0; align-self: center; }
@@ -32,13 +32,13 @@
 .quick__btn { pointer-events: auto; display: flex; align-items: center; justify-content: center; gap: 8px; width: 100%; min-height: 44px; padding: 0 12px; border: 0; background: color-mix(in srgb, var(--paper) 92%, transparent); color: var(--navy); font: inherit; font-size: 11px; font-weight: 500; letter-spacing: .12em; text-transform: uppercase; cursor: pointer; }
 .quick__plus { font-size: 16px; line-height: 1; letter-spacing: 0; font-weight: 400; }
 .quick__btn[disabled] { cursor: default; }
-@media (hover: hover) {
+@media (hover: hover) and (pointer: fine) {
   .quick__btn { opacity: 0; transform: translateY(6px); transition: opacity var(--t-fast), transform var(--t-fast), background var(--t-fast), color var(--t-fast); }
   .obj:hover .quick__btn, .quick__btn:focus-visible, .quick__btn[data-state] { opacity: 1; transform: none; }
   .quick__btn:hover { background: var(--navy); color: var(--paper); }
   .quick__plus { display: none; }
 }
-@media (hover: none) {
+@media (hover: none), (pointer: coarse) {
   .quick { inset-inline: auto 0; }
   .quick__btn { width: 44px; height: 44px; padding: 0; background: none; }
   .quick__plus { display: grid; place-items: center; width: 32px; height: 32px; background: color-mix(in srgb, var(--paper) 92%, transparent); }
