@@ -1,7 +1,15 @@
 {{ 'home.css' | asset_url | stylesheet_tag }}
 <section class="story" aria-labelledby="story-h-{{ section.id }}">
+  {%- assign story_media = blank -%}
+  {%- unless section.settings.image -%}
+    {%- for p in collections.all.products limit: 24 offset: 2 -%}
+      {%- if p.featured_media and p.featured_media.aspect_ratio < 1 -%}{%- assign story_media = p.featured_media -%}{%- break -%}{%- endif -%}
+    {%- endfor -%}
+  {%- endunless -%}
   <div class="ph">
-    {%- if section.settings.image -%}{{ section.settings.image | image_url: width: 1400 | image_tag: loading: 'lazy', widths: '600, 900, 1200, 1400', sizes: '(max-width: 760px) 100vw, 54vw', alt: section.settings.image.alt }}{%- else -%}<span class="tag">{{ 'home.image_to_come' | t }}</span>{%- endif -%}
+    {%- if section.settings.image -%}{{ section.settings.image | image_url: width: 1400 | image_tag: loading: 'lazy', widths: '600, 900, 1200, 1400', sizes: '(max-width: 760px) 100vw, 54vw', alt: section.settings.image.alt }}
+    {%- elsif story_media != blank -%}{{ story_media | image_url: width: 1400 | image_tag: loading: 'lazy', widths: '600, 900, 1200, 1400', sizes: '(max-width: 760px) 100vw, 54vw', alt: '' }}
+    {%- endif -%}
   </div>
   <div class="story__copy">
     {%- if section.settings.label != blank -%}<span class="label">{{ section.settings.label }}</span>{%- else -%}<span></span>{%- endif -%}

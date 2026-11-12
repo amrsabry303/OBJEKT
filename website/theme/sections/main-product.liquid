@@ -103,6 +103,9 @@
         {%- assign delivery_page = pages[section.settings.delivery_page] -%}
         {%- assign acc_keys = 'story,materials_craft,dimensions,care' | split: ',' -%}
         {%- assign acc_opened = false -%}
+        {%- if product.description != blank -%}
+          <details open>{%- assign acc_opened = true -%}<summary><span class="label">{% if request.locale.iso_code == 'ar' %}الوصف{% else %}Description{% endif %}</span><i aria-hidden="true"></i></summary><div class="acc__body acc__body--desc">{{ product.description }}</div></details>
+        {%- endif -%}
         {%- for key in acc_keys -%}
           {%- assign mf = product.metafields.custom[key] -%}
           {%- if mf.value != blank -%}
@@ -150,6 +153,9 @@
   .share { display: inline-flex; align-items: center; gap: 8px; background: none; border: 0; padding: 8px; margin: -8px; color: var(--navy); cursor: pointer; }
   .share:hover { opacity: .65; }
   .share__msg { font-size: 11px; }
+  .acc__body--desc p { margin: 0 0 12px; }
+  .acc__body--desc ul { list-style: none; margin: 14px 0 0; padding: 0; display: grid; gap: 4px; }
+  .acc__body--desc strong { font-weight: 500; color: var(--navy); }
 
   /* Option tiles: colour and finish as pictures, size as boxes */
   .optset { border: 0; margin: 0 0 24px; padding: 0; min-width: 0; }

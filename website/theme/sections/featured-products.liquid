@@ -7,7 +7,6 @@
     {%- if source != blank and source.products_count > 0 -%}<a class="link" href="{{ source.url }}">{{ 'home.view_all' | t }}</a>{%- endif -%}
   </div>
   {%- if source != blank and source.products.size > 0 -%}
-    <p class="legend label muted"><span class="dot" aria-hidden="true"></span>{{ 'availability.ready' | t }}<span class="dot dot--mto" aria-hidden="true"></span>{{ 'availability.mto' | t }}</p>
     <div class="grid sel">
       {%- for product in source.products limit: section.settings.limit -%}
         <div class="o{{ forloop.index }}">{% render 'product-card', product: product %}</div>

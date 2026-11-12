@@ -17,7 +17,8 @@
           <div class="ph{% if forloop.first %} on{% endif %}" data-pane="{{ forloop.index }}">
             {%- if block.settings.image -%}{{ block.settings.image | image_url: width: 900 | image_tag: loading: 'lazy', widths: '450, 700, 900', sizes: '40vw', alt: '' }}
             {%- elsif c.image -%}{{ c.image | image_url: width: 900 | image_tag: loading: 'lazy', widths: '450, 700, 900', sizes: '40vw', alt: '' }}
-            {%- else -%}{%- assign pane_shape = block.settings.shape | default: 'vase' -%}{% render 'shape', name: pane_shape %}<span class="tag">{{ 'home.image_to_come' | t }}</span>{%- endif -%}
+            {%- elsif c.products.first.featured_media -%}{{ c.products.first.featured_media | image_url: width: 900 | image_tag: loading: 'lazy', widths: '450, 700, 900', sizes: '40vw', alt: '' }}
+            {%- else -%}{%- assign pane_shape = block.settings.shape | default: 'vase' -%}{% render 'shape', name: pane_shape %}{%- endif -%}
           </div>
         {%- endif -%}
       {%- endfor -%}

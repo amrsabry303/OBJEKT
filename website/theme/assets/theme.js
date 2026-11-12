@@ -33,21 +33,23 @@
     document.addEventListener('submit', function (e) {
       var f = e.target; if (!f || !f.matches || !f.matches('form[data-quick]')) return;
       e.preventDefault();
-      var btn = f.querySelector('.quick__btn'), st = f.querySelector('.quick__status'), label = btn.textContent, props = {};
+      var btn = f.querySelector('.quick__btn'), txt = f.querySelector('.quick__txt'), plus = f.querySelector('.quick__plus'), st = f.querySelector('.quick__status');
+      var label = txt.textContent, props = {};
       new FormData(f).forEach(function (v, k) { var m = /^properties\[(.+)\]$/.exec(k); if (m) props[m[1]] = v; });
       btn.disabled = true;
+      function show(state, msg) { btn.dataset.state = state; txt.textContent = msg; if (plus) plus.textContent = state === 'ok' ? '\u2713' : '!'; if (st) st.textContent = msg; }
       var root = (window.Shopify && Shopify.routes && Shopify.routes.root) || '/';
       fetch(root + 'cart/add.js', { method: 'POST', headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
         body: JSON.stringify({ items: [{ id: Number(f.elements.id.value), quantity: 1, properties: props }] }) })
         .then(function (r) { return r.json().then(function (j) { return { ok: r.ok, j: j }; }); })
         .then(function (res) {
-          if (!res.ok) { btn.textContent = f.dataset.error; if (st) st.textContent = res.j.description || f.dataset.error; return; }
-          btn.textContent = f.dataset.added; if (st) st.textContent = f.dataset.added;
+          if (!res.ok) { show('err', f.dataset.error); if (st) st.textContent = res.j.description || f.dataset.error; return; }
+          show('ok', f.dataset.added);
           return fetch(root + 'cart.js', { headers: { Accept: 'application/json' } }).then(function (r) { return r.json(); })
             .then(function (c) { document.querySelectorAll('[data-bag]').forEach(function (el) { el.textContent = c.item_count; }); });
         })
-        .catch(function () { btn.textContent = f.dataset.error; })
-        .then(function () { btn.disabled = false; setTimeout(function () { btn.textContent = label; }, 2200); });
+        .catch(function () { show('err', f.dataset.error); })
+        .then(function () { btn.disabled = false; setTimeout(function () { delete btn.dataset.state; txt.textContent = label; if (plus) plus.textContent = '+'; }, 2400); });
     });
   });
 })();

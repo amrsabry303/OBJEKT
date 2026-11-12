@@ -1,11 +1,12 @@
 /* Complete the look: compact row of small cards, in the manner of Zara Home */
 .look { padding-block: clamp(28px, 3.5vw, 48px) clamp(48px, 6vw, 88px); }
-.look__h { margin: 0 0 clamp(14px, 1.6vw, 22px); color: var(--navy); }
-.look .igc { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 8px; margin: 0; }
+.look { border-block-start: 1px solid color-mix(in srgb, var(--navy) 14%, transparent); }
+.look__h { margin: 0 0 clamp(18px, 2vw, 28px); color: var(--navy); }
+.look .igc { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: var(--gutter); margin: 0; }
 .look .igc .obj:nth-child(3) { display: block; }
-.look .obj .cap { display: grid; gap: 2px; padding-block-start: 10px; font-size: 12px; line-height: 1.35; }
-.look .obj .name { font-weight: 400; text-transform: uppercase; letter-spacing: .04em; overflow-wrap: anywhere; }
-.look .obj .price { font-size: 12px; }
+.look .obj .cap { grid-template-columns: minmax(0, 1fr); row-gap: 2px; padding-block-start: 10px; font-size: 12px; line-height: 1.35; }
+.look .obj .name { font-weight: 500; overflow-wrap: anywhere; }
+.look .obj .price { font-size: 12px; text-align: start; }
 .look .obj .cap .avail { display: none; }
 @media (max-width: 1100px) { .look .igc { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
 @media (max-width: 880px) {

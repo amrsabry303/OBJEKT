@@ -84,3 +84,6 @@ html.js .drawer__foot { padding-inline: var(--margin); }
 .search-form:focus-within { outline: 2px solid var(--navy); outline-offset: 4px; }
 .search-form button { min-height: 44px; min-width: 44px; padding-inline: 8px; color: var(--navy); }
 @media (max-width: 880px) { .search-form { grid-column: 1; } }
+
+/* Guards: grid children may shrink (fixes the 6px sideways scroll on the search page on phones) */
+.chead__row > *, .plp > * { min-width: 0; }
