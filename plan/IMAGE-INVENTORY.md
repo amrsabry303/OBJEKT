@@ -36,7 +36,7 @@ Source: the production book (45 product slides), Drive and the Magnific history.
 - OBJ-104 Coasters and Trivets ref 2 (design file: NOT READY)
 - OBJ-115 Trays ref 1 (design file: NOT READY)
 - OBJ-125 Statement Sculptures ref 5 (design file: NOT READY)
-- OBJ-132 Wall Art and Photo Displays ref 1 (design file: NOT READY)
+- OBJ-132 Wall Art and Photo Displays ref 1 (design file: DRAFT rev 0, not approved). No renders yet; they wait for the approved drawing (draft: 3 plates 300 x 330 x 2, window 130, brushed stainless, all proposed). The reference photo's window pictures are not ours: render with a neutral insert.
 - OBJ-142 Side table, stacked pebble (design file: NOT READY)
 - OBJ-145 Totems, stacked bowls and spheres, two sizes (design file: NOT READY)
 - OBJ-147 Vase, double bulb (design file: NOT READY)
