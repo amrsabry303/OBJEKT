@@ -186,7 +186,7 @@ Only facts already recorded in the repo, the production book or the product shee
 | OBJ-099 | Objects · Candleholders and Candle Vessels | Printed pattern, then moulded | Objekt Green, Bone, Putty (proposed) | Duco, Matte (proposed) | Not ready | 5 AI renders (on the store draft) |  |  |  |  |
 | OBJ-100 | Objects · Candleholders and Candle Vessels | Metal (guess) |  | Brushed (proposed) | Not ready | None (reference photo only) |  |  |  |  |
 | OBJ-125 | Objects · Statement Sculptures | Metal |  | Mirror (proposed) | Not ready | None (reference photo only) |  |  |  |  |
-| OBJ-132 | Objects · Wall Art and Photo Displays | Metal (set of three plates, proposal: 3 x 300 x 330 x 2 mm stainless, window 130, not costed) |  | Brushed (proposed) | Drawing rev 0 DRAFT, waiting for Sabry | None (reference photo only; its window pictures are not ours) |  |  |  |  |
+| OBJ-132 | Objects · Wall Art and Photo Displays | Metal (set of three plates, proposal: 3 x 300 x 330 x 2 mm stainless, window 130, not costed) |  | Brushed (proposed) | Drawing rev 0 APPROVED by Sabry 12 Nov (Production review pending) | None (reference photo only; its window pictures are not ours) |  |  |  |  |
 | OBJ-145 | Objects · Decorative Sculptures | Printed pattern, then moulded (guess) | Ink, Oxblood, Bone (proposed) | Duco, Gloss (proposed) | Not ready | None (reference photo only) |  |  |  |  |
 | OBJ-147 | Objects · Vases | Printed pattern, then moulded (guess) | Oxblood, Bone (proposed) | Duco, Gloss (proposed) | Not ready | None (reference photo only) |  |  |  |  |
 | OBJ-149 | Objects · Ashtrays and Incense Holders | Metal (guess) | Carbon (proposed) | Powder coating, Matte (proposed) | Not ready | None (reference photo only) |  |  |  |  |

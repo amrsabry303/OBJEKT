@@ -148,7 +148,7 @@ def frame(n, title_en, title_ar, scale):
     s += bi(X+2, Y+25, 'MATERIAL  Stainless steel sheet, 2 mm proposed', 'الخامة: ستانلس ستيل ٢ مم مقترح', 88, 2.0) + bi(X+94, Y+25, 'FINISH  Brushed stainless (exposed metal)', 'التشطيب: ستانلس مصقول بالفرشاة', 88, 2.0)
     s += bi(X+2, Y+36, f'DATE  {DATE}      SHEET {n} / {N}', 'التاريخ، الورقة', 88, 2.3) + bi(X+94, Y+36, f'REV  {REV}', 'المراجعة', 88, 2.3)
     s += rect(X, Y-14, Wd, 12, .5, RED, '#fff')
-    s += t(X+Wd/2, Y-8.6, 'DRAFT, not approved, not engineered', 2.9, 700, 'middle', RED) + t(X+Wd/2, Y-3.8, 'مسودة، غير معتمدة، غير مهندسة', 2.9, 700, 'middle', RED)
+    s += t(X+Wd/2, Y-8.6, 'Approved by Sabry 12 Nov 2026. Production review pending. Not engineered', 2.3, 700, 'middle', RED) + t(X+Wd/2, Y-3.8, 'معتمد من سبري ١٢ نوفمبر ٢٠٢٦. مراجعة التصنيع قيد الانتظار. غير مهندس', 2.5, 700, 'middle', RED)
     return s + t(10, 14, title_en, 4.2, 700) + ar(410, 14, title_ar, 4.2, 700)
 def sheet(n, te, ta, sc, body):
     return f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 297" width="420mm" height="297mm"><rect width="420" height="297" fill="#fff"/>{frame(n, te, ta, sc)}{body}</svg>'
