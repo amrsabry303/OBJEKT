@@ -13,3 +13,4 @@ transcripts/
 handover/
 *.zip
 .env*
+venture/models/

@@ -106,13 +106,13 @@ else:
     shelf.data.materials.append(m)
 
 # walls: plain context planes behind the shelf (not part of the product)
-wallm = mat("wall", (0.78, 0.78, 0.78, 1) if mode == "grey" else (0.90, 0.88, 0.84, 1), 0.0, 0.95)
+wallm = mat("wall", (0.60, 0.60, 0.60, 1) if mode == "grey" else (0.90, 0.88, 0.84, 1), 0.0, 0.95)
 for w in (box("wall_a", -20, 420, -20, 0, -60, 300), box("wall_b", -20, 0, 0, 420, -60, 300)):
     w.data.materials.append(wallm)
 
 world = bpy.data.worlds.new("w"); scn.world = world; world.use_nodes = True
 bg = world.node_tree.nodes["Background"]
-bg.inputs["Color"].default_value = (0.85, 0.85, 0.85, 1); bg.inputs["Strength"].default_value = 0.35
+bg.inputs["Color"].default_value = (0.85, 0.85, 0.85, 1); bg.inputs["Strength"].default_value = 0.2
 
 
 def area(name, loc, size, energy):
@@ -122,9 +122,9 @@ def area(name, loc, size, energy):
     l.rotation_euler = (Vector((0.07, 0.07, 0.08)) - Vector(loc)).to_track_quat("-Z", "Y").to_euler()
 
 
-area("key", (0.8, 0.2, 0.9), 0.9, 22)
-area("fill", (0.2, 0.9, 0.5), 0.9, 10)
-area("front", (0.8, 0.8, 0.5), 1.0, 12)
+area("key", (0.8, 0.2, 0.9), 0.9, 5)
+area("fill", (0.2, 0.9, 0.5), 0.9, 2.5)
+area("front", (0.8, 0.8, 0.5), 1.0, 3)
 
 cam_data = bpy.data.cameras.new("cam")
 cam = bpy.data.objects.new("cam", cam_data); scn.collection.objects.link(cam); scn.camera = cam
@@ -152,6 +152,6 @@ scn.render.resolution_y = 1100
 scn.view_settings.view_transform = "Standard" if mode == "grey" else "AgX"
 
 shoot("front", (1.1, 1.1, 0.10), lens=120, ortho=0.5)                 # along the corner diagonal
-shoot("side", (1.2, 0.0, 0.10), lens=120, ortho=0.5)                   # along wall A, shows the gusset true size
+shoot("side", (1.2, 0.0, 0.10), lens=120, ortho=0.6, target=Vector((0.0, 0.11, 0.10)))                   # along wall A, shows the gusset true size
 shoot("three-quarter", (0.50, 0.15, 0.30), lens=45)
 shoot("underside", (0.30, 0.28, -0.12), lens=35, target=Vector((0.06, 0.06, 0.06)))   # gusset and fold from below
