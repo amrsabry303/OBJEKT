@@ -174,3 +174,11 @@ Not part of the 41 / 4 / 16 tally. Sabry said it is in for 20 Nov (12 Nov). Fini
 | OBJ-192 | OBJ-192 | Planters | Planters | Planter, long low sheet-metal trough on four swivel casters (no name approved) | Sheet metal: two plates with rounded top corners, flat front and back panels (inferred from one photo; Production to confirm) | DRAFT rev 0 made 12 Nov, awaiting Sabry's approval: `venture/drawings/OBJ-192/` | None (reference photo only) | **Not decided** | Reference is a low-resolution render in black and sage green; source and maker unknown, drawn as our own design. Sabry: Carbon, Oxblood, Bone; matte powder coat; rubber casters. Size 900 x 300 x 450 mm incl. casters, 2 mm steel, loose liner (no drain hole), 4 swivel casters (2 locking) are proposals. No price or lead time. Not costed. | Sabry, 12 Nov |
 
 Not part of the 41 / 4 / 16 tally. Sabry decides whether it is in for 20 Nov.
+
+## Added 12 Nov 2026: OBJ-193 low coffee table on four cylinder legs (product session)
+
+| OBJ | Code | Website category | Subcategory | Name | Process | Design file | Images | Day 1 | Note | Source |
+|---|---|---|---|---|---|---|---|---|---|---|
+| OBJ-193 | OBJ-193 | Furniture | Coffee Tables | Coffee table, low, thick rounded top on four cylinder legs (no name approved) | Sheet metal, curved (rolled legs, rolled bands), welded box top, Duco gloss (inferred from one render; Production to confirm) | DRAFT rev 0 made 12 Nov, awaiting Sabry's approval: `venture/drawings/OBJ-193/` (files not in git) | None (reference render only) | **Not decided** | Reference is a render of unknown source and maker, drawn as our own design; the lamp in it is not part of the product. Proposal, not costed, Production to confirm: about 1100 x 800 x 350 mm, closed steel box top 110 thick (2 mm), corner radius 120; four rolled cylinders Ø250 x 240 incl. 10 mm levelling pad, set in 120, bolted up from inside; Duco gloss Oxblood (Chocolate is the alternative). About 56 kg of steel (calculated, not weighed). Counts as metal curved in the process mix. No price or lead time. | Sabry, 12 Nov |
+
+Not part of the 41 / 4 / 16 tally. Sabry decides whether it is in for 20 Nov.
