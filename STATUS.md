@@ -22,6 +22,7 @@ Three daily sessions work on this repo, one section each. Each session updates *
 - [catalogue] Colours per product: the book's colours are proposals. Confirm the colours each product is sold in (start with the 10 that have drawings or renders) · list per OBJ · rec: confirm in CONTENT_TO_SUPPLY 3d, then I build the colour variants.
 - [catalogue] Online Store channel: no product is published to the Online Store channel, so an activated product may not show on the site · I add the channel to the day-1 drafts now (they stay hidden while draft) / you do it at launch · rec: I add it once the day-1 list is approved.
 - [catalogue] OBJ-099 colours: store has Oxblood, Ink, Objekt Green, Putty; book has Objekt Green, Bone, Putty · keep store / switch to book · rec: keep store (renders exist for those four).
+- [images] **Magnific credits 195 of 20,000 (12 Nov).** Image runs are stopped until topped up. At ~65 per render, the 4 hero follow-ups plus the 9 freeze candidates need roughly 3,000–4,000 · top up / buy extra credits / pause images · rec: top up before Sat 14 Nov so heroes can be finished by 19 Nov.
 - [images] Approve or retake the 4 hero renders (AI renders): OBJ-152 Ink v2c, OBJ-002 Oxblood v1c, OBJ-038 Carbon v1c (sent 8 Nov, re-sent 11 Nov), OBJ-015 Chocolate v1c (11 Nov) · approve / retake per image · only after approval do other colours and the context shot get made.
 - [images] Repo is public: the 8 Nov renders of 002, 038, 152 are already visible on GitHub; new render files are held back · make the repo private / allow renders in public · rec: private (same as the drawings line).
 - [images] With the day-1 list unapproved, no product with an approved drawing is left without a hero. Next: render day-1 products from their reference photos without an approved drawing? · yes / wait for drawings · rec: yes for the simplest planters and objects, renders marked shape-to-confirm.
@@ -67,6 +68,12 @@ Three daily sessions work on this repo, one section each. Each session updates *
 - Next: if (b) is chosen, turn the shortlist answers into CONTENT_TO_SUPPLY rows as they arrive; if the list is approved, mark the final in/out.
 
 ## Product images
+
+### Thu 12 Nov 2026
+- Magnific balance **195** (of 20,000). Below the 2,000 stop line, so **no renders today**. 6,465 was left after this session on 11 Nov; about 6,270 went to other Magnific work since, not this session.
+- No hero answered yet (152, 002, 038, 015), day-1 list not approved. Next product would have been OBJ-149 (sheet says rev 0 approved 11 Nov; the reference's proportions fit both drawing versions).
+- Nothing generated, uploaded or changed in the inventory. Stickers not changed.
+- Next: once credits are topped up, OBJ-149 hero (brushed), then other colours and context shots for any approved hero.
 
 ### Wed 11 Nov 2026
 - Magnific balance **6,530** at start, **6,465** at end (65 spent: 1 render). Note: 15,840 was left after 8 Nov; about 9,300 went to other Magnific work since (OBJ-167 and OBJ-003 room composites, OBJ-173 mood, social mock-ups, a 3D test), not this session.
