@@ -46,7 +46,7 @@ Source: the production book (45 product slides), Drive and the Magnific history.
 - OBJ-154 Planter, stacked lacquer pods (design file: NOT READY)
 - OBJ-155 Planter, fluted base with flared rim (design file: NOT READY)
 - OBJ-156 Side table pair, stacked-disc tops (design file: NOT READY)
-- OBJ-159 Tall shelf, six shelves, brushed stainless side plates with circular cut-outs, own redesign (design file: DRAFT rev 2 made 12 Nov, awaiting Sabry; no renders; grey model and renders only after the drawing is approved)
+- OBJ-159 Tall shelf, six shelves, brushed stainless side plates with circular cut-outs, own redesign (design file: DRAFT rev 3 made 12 Nov, awaiting Sabry; no renders; grey model and renders only after the drawing is approved)
 - OBJ-164 Corner shelf pair, triangular (design file: rev 0 APPROVED by Sabry 12 Nov 2026, Production review pending, not engineered, Drive upload pending; sizes proposed by us and approved, not costed; 1 render in the Image Picker (`OBJ-164_ai-render_brushed-stainless_three-quarter_drawing-rev0_v1.jpg`, AI render, drawing rev 0, 220 x 220 x 152, brushed stainless, text-only prompt so gusset and fold to check; not in Drive, not approved); reference photo `images/OBJ-164.jpg`; renders to use the approved drawing: 220 x 220 legs, 152 high, brushed stainless)
 - OBJ-165 Bench, folded plate, rounded corners (design file: NOT READY)
 - OBJ-171 Tissue holder, L-shaped block, three positions (design file: NOT READY)
@@ -74,10 +74,10 @@ Built from the print design files, so they are not AI renders and not photos. Th
 | OBJ-188 BETWEEN THE LINES | 1 | 3D mockup at size M from the design files (not an AI render, not a photo): `plan/faux-books/renders/FB-11_*_3d-mockup_M.jpg` | the one mockup |
 - OBJ-190 Side table, 8-sided faceted top on two legs, brushed stainless (design file: READY, rev 0 approved 11 Nov; no images yet, reference photos only)
 - OBJ-191 Tray, two interlocking plates, stainless (design file: DRAFT rev 0, sizes proposed by us, awaiting Sabry's approval; no renders; reference screenshot only, third-party maker)
-- OBJ-192 Planter, long low sheet-metal trough on four swivel casters (design file: DRAFT rev 2 made 12 Nov, awaiting Sabry's approval (Carbon, Oxblood, Bone; matte powder coat; rubber casters; 900 x 300 x 450 proposed); no renders; reference is a low-resolution render in black and sage green, maker unknown; see images/OBJ-192.jpg)
+- OBJ-192 Planter, long low sheet-metal trough on four swivel casters (design file: DRAFT rev 3 made 12 Nov, awaiting Sabry's approval (Carbon, Oxblood, Bone; matte powder coat; rubber casters; 900 x 300 x 450 proposed); no renders; reference is a low-resolution render in black and sage green, maker unknown; see images/OBJ-192.jpg)
 - OBJ-193 Coffee table, low, thick rounded top on four cylinder legs (design file: rev 1, moulded GRP, APPROVED by Sabry 12 Nov (Production review pending; wall, construction and finish are our proposals: Duco gloss Oxblood, Chocolate alternative); steel rev 0 superseded; no renders; reference is a render of unknown source with a lamp that is not part of the product, see images/OBJ-193.jpg)
 
 ## Not filed
 Six other sculpture renders in the Magnific history (baby elephant calf, falcon, abstract geometric) are not matched to a launch product. Renders from other projects and are not touched.
-- OBJ-168 Planter, tall square column with round holes (design file: DRAFT rev 2 made 12 Nov, awaiting Sabry's approval; 160 x 160 x 800 mm, brushed stainless, 2 mm, five holes: proposal; no renders; reference photo is a third-party maker's, see images/OBJ-168.jpg, not committed)
+- OBJ-168 Planter, tall square column with round holes (design file: DRAFT rev 3 made 12 Nov, awaiting Sabry's approval; 160 x 160 x 800 mm, brushed stainless, 2 mm, five holes: proposal; no renders; reference photo is a third-party maker's, see images/OBJ-168.jpg, not committed)
 - OBJ-196 Plant stand, flat round base disc, two offset plates, round top disc and shelf (design file: Rev 1 APPROVED by Sabry 12 Nov (Production review pending) (rev 0, off-centre plates, superseded), approved; disc Ø300, height 400, brushed stainless 2 mm, two identical plates: proposal; no renders; reference photos are third-party, see images/OBJ-196.jpg)

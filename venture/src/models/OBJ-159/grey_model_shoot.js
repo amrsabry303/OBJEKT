@@ -10,5 +10,5 @@ const V={ front:[1400,2000,-2500,[cx,cy,12500],[cx,cy,0]],
  foot:[1500,1100,20,[620,330,1300],[40,70,60]],
  fixing:[1500,1100,22,[-1000,1560,1350],[0,1420,40]],
  cutout:[1500,1100,22,[cx+1700,1350,2100],[400,1100,0]]};
-for(const [n,[w,h,f,pos,t]] of Object.entries(V)){const d=await p.evaluate(a=>window.shot(...a),[w,h,f,pos,t]);fs.writeFileSync(`${out}/OBJ-159_grey-model_${n}_rev2-shape-to-confirm.png`,Buffer.from(d.split(',')[1],'base64'));console.log(n)}
+for(const [n,[w,h,f,pos,t]] of Object.entries(V)){const d=await p.evaluate(a=>window.shot(...a),[w,h,f,pos,t]);fs.writeFileSync(`${out}/OBJ-159_grey-model_${n}_rev3-shape-to-confirm.png`,Buffer.from(d.split(',')[1],'base64'));console.log(n)}
 await b.close()})();

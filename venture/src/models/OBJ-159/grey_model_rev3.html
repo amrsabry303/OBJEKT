@@ -1,0 +1,54 @@
+<!doctype html><meta charset="utf-8"><body style="margin:0;background:#e9e9e7">
+<script type="importmap">{"imports":{"three":"./node_modules/three/build/three.module.js"}}</script>
+<script type="module">
+import * as THREE from 'three';
+// OBJ-159 rev 1 geometry, mm. three: x width, y height, z depth (front = +z). Plain matt grey, no texture.
+const OH=2150, OW=800, OD=400, FOOT=40, TP=4, TS=3, FL=30, PITCH=370, R=130, HZ=2120;
+const SHELF_TOP=[0,1,2,3,4,5].map(k=>HZ-PITCH*k);
+const grey=new THREE.MeshStandardMaterial({color:0xb2b2b0,roughness:.92,metalness:0});
+const scene=new THREE.Scene(); scene.background=new THREE.Color(0xe9e9e7);
+const root=new THREE.Group(); scene.add(root);
+function box(x0,x1,y0,y1,z0,z1){const m=new THREE.Mesh(new THREE.BoxGeometry(x1-x0,y1-y0,z1-z0),grey);m.position.set((x0+x1)/2,(y0+y1)/2,(z0+z1)/2);m.castShadow=m.receiveShadow=true;root.add(m);return m}
+function cyl(r,h,x,y,z,axis='y',seg=48){const g=new THREE.CylinderGeometry(r,r,h,seg);const m=new THREE.Mesh(g,grey);if(axis==='x')m.rotation.z=Math.PI/2;m.position.set(x,y,z);m.castShadow=m.receiveShadow=true;root.add(m);return m}
+// side plate: shape (sx = depth axis -> three z, sy = height)
+function plate(xo){
+  const h=OH-FOOT-8, y0=FOOT+8, hw=OD/2, rc=10;           // body from tab bend up to the top edge
+  const s=new THREE.Shape(); s.moveTo(-hw,y0); s.lineTo(hw,y0); s.lineTo(hw,OH-rc); s.absarc(hw-rc,OH-rc,rc,0,Math.PI/2,false); s.lineTo(-hw+rc,OH); s.absarc(-hw+rc,OH-rc,rc,Math.PI/2,Math.PI,false); s.lineTo(-hw,y0);
+  SHELF_TOP.forEach((t,i)=>{ if(i<5){const c=new THREE.Path(); c.absarc(0,t-200,R,0,Math.PI*2,true); s.holes.push(c);}
+    for(const sx of [OD/2-80,-(OD/2-80)]){const hh=new THREE.Path(); hh.absarc(sx,t-15,3.25,0,Math.PI*2,true); s.holes.push(hh);} });
+  const g=new THREE.ExtrudeGeometry(s,{depth:TP,bevelEnabled:false,curveSegments:64}); g.rotateY(-Math.PI/2); g.translate(xo+TP,0,0);
+  const m=new THREE.Mesh(g,grey); m.castShadow=m.receiveShadow=true; root.add(m);
+}
+plate(0); plate(OW-TP);
+// foot tabs, bend blocks, weld nuts, levelling feet (two per plate)
+for(const side of [0,1]) for(const dz of [70,OD-70]){
+  const z=OD/2-dz, xs=side?OW-TP:0, dir=side?-1:1;
+  const xa=side?OW-60:0, xb=side?OW:60;
+  box(xa,xb,FOOT,FOOT+TP,z-20,z+20);                           // tab
+  box(side?OW-TP:0,side?OW:TP,FOOT,FOOT+8,z-20,z+20);          // bend
+  const fx=side?OW-35:35;
+  cyl(6.5,6,fx,FOOT+TP+3,z,'y',6);                             // weld nut (hex)
+  cyl(4,FOOT,fx,FOOT/2,z); cyl(15,3,fx,1.5,z);                  // stem and pad
+}
+// shelves
+for(let i=0;i<6;i++){ const h=SHELF_TOP[i];
+  box(TP,OW-TP,h-TS,h,-OD/2,OD/2);                               // web
+  box(TP,OW-TP,h-FL,h,OD/2-TS,OD/2);                             // front return (front = +z)
+  box(TP,OW-TP,h-TS,h+FL,-OD/2,-OD/2+TS);                        // rear lip, up
+  box(TP,TP+TS,h-FL,h,-OD/2+6,OD/2-6); box(OW-TP-TS,OW-TP,h-FL,h,-OD/2+6,OD/2-6); // side flanges
+  for(const dz of [80,OD-80]) for(const side of [0,1]){          // visible button-head screws on the outer faces
+    const z=OD/2-dz, y=h-15; const x=side?OW+1.5:-1.5; const m=cyl(5.5,3,x,y,z,'x',32); }
+}
+// light + floor
+scene.add(new THREE.HemisphereLight(0xffffff,0xd8d8d4,1.15));
+const sun=new THREE.DirectionalLight(0xffffff,1.6); sun.position.set(-1500,3200,2600); sun.castShadow=true;
+sun.shadow.mapSize.set(4096,4096); const sc=sun.shadow.camera; sc.left=-1800;sc.right=1800;sc.top=2600;sc.bottom=-800;sc.near=100;sc.far=9000; sun.shadow.radius=6; sun.shadow.bias=-0.0004; scene.add(sun);
+const fill=new THREE.DirectionalLight(0xffffff,.5); fill.position.set(2500,1200,1800); scene.add(fill);
+const floor=new THREE.Mesh(new THREE.PlaneGeometry(20000,20000),new THREE.MeshStandardMaterial({color:0xe2e2df,roughness:1}));
+floor.rotation.x=-Math.PI/2; floor.receiveShadow=true; scene.add(floor);
+const back=new THREE.Mesh(new THREE.PlaneGeometry(20000,12000),new THREE.MeshStandardMaterial({color:0xeeeeec,roughness:1})); back.position.set(0,6000,-1400); back.receiveShadow=true;
+const ren=new THREE.WebGLRenderer({antialias:true,preserveDrawingBuffer:true}); ren.shadowMap.enabled=true; ren.shadowMap.type=THREE.PCFSoftShadowMap; ren.toneMapping=THREE.ACESFilmicToneMapping; ren.toneMappingExposure=1.05;
+document.body.appendChild(ren.domElement);
+window.shot=(W,H,fov,pos,tgt)=>{ren.setSize(W,H);const cam=fov<0?new THREE.OrthographicCamera(-(-fov)*W/H/2,(-fov)*W/H/2,(-fov)/2,-(-fov)/2,10,60000):new THREE.PerspectiveCamera(fov,W/H,10,60000);cam.position.set(...pos);cam.lookAt(...tgt);ren.render(scene,cam);return ren.domElement.toDataURL('image/png')};
+window.ready=true;
+</script>
