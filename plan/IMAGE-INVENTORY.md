@@ -51,7 +51,7 @@ Source: the production book (45 product slides), Drive and the Magnific history.
 - OBJ-165 Bench, folded plate, rounded corners (design file: NOT READY)
 - OBJ-171 Tissue holder, L-shaped block, three positions (design file: NOT READY)
 - OBJ-172 Sculpture, faceted mirror-polished steel (design file: NOT READY)
-- OBJ-173 Planter, mirror-polished cube (design file: NOT READY)
+- OBJ-173 Planter, mirror-polished cube, round opening (design file: DRAFT rev 1, 12 Nov, not approved; cube 200, opening Ø172, proposed. No renders yet, they wait for the approved drawing. No render recorded for the picker: drawing, dimensions and colour to be logged here when made)
 - OBJ-175 Wall shelf panels, half-disc shelves (design file: NOT READY)
 - OBJ-176 Wall shelves, half-disc, colour set (design file: NOT READY)
 
