@@ -1,4 +1,4 @@
-"""OBJ-196: plant stand, flat round base disc, two vertical plates, round top disc, shelf disc. Production drawing set, REV 1 (DRAFT).
+"""OBJ-196: plant stand, flat round base disc, two vertical plates, round top disc, shelf disc. Production drawing set, REV 1 (approved by Sabry 12 Nov 2026).
 Run: python3 make_obj196_rev1.py <repo root>   Then: NODE_PATH=<playwright> node make_pdf.js <dir> OBJ-196 1
 Reference: images/OBJ-196.jpg (stainless) plus a second angle Sabry sent in the session (blue, not stored in the repo). Third-party, maker unknown; drawn as objekt's own design.
 READING OF THE REFERENCE (inferred, to confirm): the two plates are parallel with a narrow gap, OFFSET from the disc centre (photo 2: gap about 0.26 D off centre).
@@ -60,7 +60,7 @@ def datauri(path, w=360):
 
 
 
-STAMP = 'DRAFT, not approved, not engineered'; STAMP_AR = 'مسودة، غير معتمدة، غير مهندسة'
+STAMP = 'Approved by Sabry 12 Nov 2026. Production review pending. Not engineered'; STAMP_AR = 'معتمد من سبري ١٢ نوفمبر ٢٠٢٦، بانتظار مراجعة التصنيع، غير مهندس'
 def frame(n, N, title_en, title_ar, scale):
     s = rect(5, 5, 410, 287, .5) + rect(7, 7, 406, 283, .2)
     X, Y, Wd = 228, 247, 185
