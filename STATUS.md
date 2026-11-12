@@ -79,7 +79,7 @@ Three daily sessions work on this repo, one section each. Each session updates *
 ## Drawings and files
 
 ### Thu 12 Nov 2026
-- **OBJ-191 tray, two interlocking plates (product session):** registered in the day-1 list (decision: not decided), image inventory and CONTENT_TO_SUPPLY; no sizes, price or name invented. Done conditions: (1) drawing approved: no, not started, waiting for Sabry's sizes and finish; (2) renders approved: no, none (need the approved drawing first); (3) Shopify listing live: no.
+- **OBJ-191 tray, two interlocking plates (product session):** Sabry 12 Nov: in for launch, "u suggest" sizes, finish brushed stainless or mirror. Drew rev 0 DRAFT, 5 A3 sheets (PDF, SVG), 1 plate DXF, nest DXF; sizes all PROPOSED by us: 2 identical plates 360 x 160 x 3, stagger 40, overall 400 x 320, dovetail tongue and socket 20/32 x 12. Generator `venture/src/drawings/make_obj191_rev0.py`; drawing files are in `venture/drawings/OBJ-191/` locally, not committed (repo public). Done conditions: (1) drawing approved: no, waiting for Sabry; (2) renders approved: no, none yet; (3) listing live: no.
 - **OBJ-192 long planter on four swivel casters (product session):** registered in the day-1 list (decision: not decided), image inventory and CONTENT_TO_SUPPLY; no sizes, colours, finish, price or name invented. Done conditions: (1) drawing approved: no, not started, waiting for Sabry's answers; (2) renders approved: no, none (need the approved drawing first); (3) Shopify listing live: no.
 
 ### Wed 11 Nov 2026
