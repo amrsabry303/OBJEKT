@@ -1,0 +1,21 @@
+<!doctype html><meta charset="utf-8"><body style="margin:0;background:#d9d4cb"><canvas id="c" width="1600" height="1200"></canvas>
+<script src="node_modules/three/build/three.min.js"></script>
+<script>
+// OBJ-193 rev 1 geometry (mm): top 1100x800, R175, upper shell z250-350, lower shell lip z240-250 set back 6, four legs D350 z10-240 flush at corners
+const L=1100,W=800,R=175,Z0=240; // OBJ-193 rev 1: legs D350, R=leg radius
+const r=new THREE.WebGLRenderer({canvas:document.getElementById('c'),antialias:true,preserveDrawingBuffer:true});
+r.shadowMap.enabled=true;r.shadowMap.type=THREE.PCFSoftShadowMap;
+const s=new THREE.Scene();s.background=new THREE.Color(0xc9c3b9);s.fog=new THREE.Fog(0xc9c3b9,6000,16000);
+function rr(w,h,rad){const sh=new THREE.Shape();const x=-w/2,y=-h/2;sh.moveTo(x+rad,y);sh.lineTo(x+w-rad,y);sh.absarc(x+w-rad,y+rad,rad,-Math.PI/2,0);sh.lineTo(x+w,y+h-rad);sh.absarc(x+w-rad,y+h-rad,rad,0,Math.PI/2);sh.lineTo(x+rad,y+h);sh.absarc(x+rad,y+h-rad,rad,Math.PI/2,Math.PI);sh.lineTo(x,y+rad);sh.absarc(x+rad,y+rad,rad,Math.PI,1.5*Math.PI);return sh;}
+const mat=new THREE.MeshStandardMaterial({color:0x8a8a8a,roughness:.6,metalness:0});
+function ext(shape,h,z){const g=new THREE.ExtrudeGeometry(shape,{depth:h,bevelEnabled:false,curveSegments:48});g.rotateX(-Math.PI/2);const m=new THREE.Mesh(g,mat);m.position.y=z;m.castShadow=m.receiveShadow=true;s.add(m);}
+ext(rr(L,W,R),100,250); ext(rr(L-12,W-12,R-6),10,240);
+for(const sx of[-1,1])for(const sz of[-1,1]){const g=new THREE.CylinderGeometry(R,R,230,96);const m=new THREE.Mesh(g,mat);m.position.set(sx*(L/2-R),10+115,sz*(W/2-R));m.castShadow=m.receiveShadow=true;s.add(m);}
+const fl=new THREE.Mesh(new THREE.PlaneGeometry(90000,90000),new THREE.MeshStandardMaterial({color:0xd9d4cb,roughness:1}));fl.rotation.x=-Math.PI/2;fl.receiveShadow=true;s.add(fl);
+s.add(new THREE.HemisphereLight(0xffffff,0xbfb8ac,.9));
+const d=new THREE.DirectionalLight(0xffffff,1.6);d.position.set(-1400,2200,1600);d.castShadow=true;d.shadow.mapSize.set(2048,2048);Object.assign(d.shadow.camera,{left:-1800,right:1800,top:1800,bottom:-1800,near:100,far:6000});d.shadow.radius=6;s.add(d);
+const cam=new THREE.PerspectiveCamera(30,4/3,100,200000);
+const yaw=-38*Math.PI/180,el=21*Math.PI/180,dist=3300;
+cam.position.set(dist*Math.cos(el)*Math.sin(yaw),dist*Math.sin(el)+175,dist*Math.cos(el)*Math.cos(yaw));cam.lookAt(0,170,0);
+r.render(s,cam);document.title='done';
+</script>

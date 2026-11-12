@@ -13,15 +13,15 @@ PHOTO = ROOT + '/images/OBJ-193.jpg'
 REV = 1; DATE = '12 Nov 2026'; PN = 'OBJ-193'
 L, W, H = 1100, 800, 350
 WALL = 4                          # GRP laminate wall, proposal
-R = 140                  # corner radius = leg radius: the legs sit flush at the corners, concentric with the arcs (Sabry, 12 Nov)
+R = 175                  # corner radius = leg radius: the legs sit flush at the corners, concentric with the arcs (Sabry, 12 Nov)
 SLAB = 110; SKIRT_H = 100; REV_H = 10; REV_IN = 6
-LEG_D, LEG_H, PAD = 280, 240, 10
+LEG_D, LEG_H, PAD = 350, 240, 10
 SHELL_H = LEG_H - PAD
 INSET = 0                                                   # leg surface flush with the slab edge
 LX = [INSET + LEG_D/2, L - INSET - LEG_D/2]
 LY = [INSET + LEG_D/2, W - INSET - LEG_D/2]
 CAP_D = LEG_D - 2*WALL; CAP_T = 6                          # bottom cap, 6 mm GRP disc
-PCD = 150; HOLE = 9; MP = 180                              # bolt circle, bolt hole, bonded pad 160 x 160
+PCD = 190; HOLE = 9; MP = 220                              # bolt circle, bolt hole, bonded pad 160 x 160
 ZS0 = LEG_H; ZS1 = H
 P3W, P3H, R3 = L-2*REV_IN, W-2*REV_IN, R-REV_IN
 def holes_bolt(): return [(PCD/2*math.cos(math.radians(a)), PCD/2*math.sin(math.radians(a))) for a in (45, 135, 225, 315)]
