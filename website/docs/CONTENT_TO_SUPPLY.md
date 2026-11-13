@@ -255,6 +255,37 @@ For OBJ-002, 038, 152, 173, 075, 115 and 164 the 3d rows above still apply; each
 
 **Every live product also lacks:** Arabic title and copy (Sabry or translator; drafts must be marked "draft, needs a native reader"), packed weight (Polycraft; shipping is by weight), and a trademark check on the names marked "suggestion" (Sabry). Store housekeeping seen, for the catalogue session on Sabry's yes: PYRA, ARRIS and ROTA still carry the `preview-active` tag and old internal notes ("names not approved", "price ... placeholders").
 
+### 3f. Open answers by person (13 Nov 2026, daily content session)
+
+Collected from 3d and 3e; nothing new invented. To reach the founder approval on Thu 19 Nov, answers are needed by **Tue 17 Nov**. The Polycraft list can be sent as it is.
+
+**Polycraft (Youssef / Production)**
+
+| OBJ | Product | What is missing |
+|---|---|---|
+| all 10 live | SLAB, BLOK, TORSO, OCTA, CAIRN, SPAN, INGOT, PYRA, ARRIS, ROTA | Packed weight per variant (BLOK 70 and 100 cm; TORSO 100 and 55 cm; ROTA per colour). Every order pays 118 EGP until this is in. |
+| OBJ-172 | ARRIS | Size, a model or drawing, lead time, can the mirror polish be made |
+| OBJ-099 | ROTA | Size, lead time |
+| OBJ-197 | SPAN | Height (380 is an estimate), lead time |
+| OBJ-167 + 196 | TORSO | Side 300 or 260; lead time for the 55 cm size |
+| OBJ-166 | BLOK | Lead time |
+| OBJ-190 | OCTA | Confirm 7–14 days (on the store, no source recorded) |
+| OBJ-169 | PYRA | Confirm size (store says "approximate") and 3–5 days |
+| OBJ-002, 038, 152, 194, 149, 173, 075, 115, 164 | candidates | Size, lead time, can it be made by launch; OBJ-194 process |
+
+**Sabry**
+
+| OBJ | Product | What is missing |
+|---|---|---|
+| list | | Yes / edit on the freeze list (`plan/day1-product-list.md`) |
+| all 10 live | | Arabic title and copy: translator or English only at launch; trademark check on the names |
+| OBJ-166, 197, 167 (55 cm) | BLOK, SPAN, TORSO Small | Lead time, if not from Polycraft |
+| OBJ-169, 172, 190 | PYRA, ARRIS, OCTA | Where 3–5, 14–30 and 7–14 days came from |
+| OBJ-002, 038, 152 | candidates | Name, price, hero image approval (renders sent 8 and 11 Nov) |
+| OBJ-194 | candidate | Name (FACET is a suggestion), price, colour, image approval |
+| OBJ-149 | candidate | Which drawing (11 Nov 220 or 12 Nov 140), then name and price |
+| OBJ-173, 075, 115, 164 | candidates | Approve the DRAFT drawings, then name and price; images follow approval |
+
 ## 4. Categories, product types and tags
 
 The customer menu has four categories only, in this order; each needs an English and Arabic title and a one-line description. Everything else (room, process, finish, colour, price) is a filter inside them, not a category. Lighting is wave 2 and joins Objects later; a fifth category "Wall" (shelves, wall art, mirrors) may split off from Objects when lighting launches or the list passes 60.

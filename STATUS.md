@@ -6,7 +6,7 @@ Three daily sessions work on this repo, one section each. Each session updates *
 
 ## Decisions needed from Sabry
 <!-- one line each: [workstream] question · options · recommendation. Remove when answered. -->
-- [content] Freeze list (12 Nov): the 10 live products + 9 that may still join by 19 Nov if each gets name, price and approved image (OBJ-002, 038, 152, 194, 149, 173, 075, 115, 164); all other drafts go live weekly after launch. Table: `plan/day1-product-list.md` · yes / edit · rec: yes. Note: 0 planters live, only 2 pieces under 2,000 EGP.
+- [content] Freeze list (12 Nov, unchanged 13 Nov; candidates need answers by Tue 17 Nov): the 10 live products + 9 that may still join by 19 Nov if each gets name, price and approved image (OBJ-002, 038, 152, 194, 149, 173, 075, 115, 164); all other drafts go live weekly after launch. Table: `plan/day1-product-list.md` · yes / edit · rec: yes. Note: 0 planters live, only 2 pieces under 2,000 EGP.
 - [content] 4 live products are in no collection, so they do not show on the Furniture page: OCTA (190), CAIRN (195), SPAN (197), INGOT (198) · catalogue session adds them to Furniture / you do it · rec: catalogue session, on your yes.
 - [content] ARRIS (172) is live with no drawing, size or lead time; PYRA (169) shows 3–5 days and "approximate" sizes with no recorded source · ask Polycraft today / put ARRIS back to draft until sized · rec: ask Polycraft today; draft ARRIS if no size by Tue 17 Nov.
 - [content] OBJ-149 has two drawings: sheet says rev 0 approved 11 Nov (about 220 × 220 × 60, brushed); the drawings session made a different DRAFT 12 Nov (140 × 140 × 38, book size) · keep 11 Nov / keep 12 Nov · rec: keep your approved 11 Nov one, drop the draft.
@@ -48,6 +48,13 @@ Three daily sessions work on this repo, one section each. Each session updates *
 
 ## Content and product list
 
+### Fri 13 Nov 2026
+- Checked (read only): store 10 active, nothing changed since 12 Nov 11:29 UTC; sheet edited 12 Nov 10:59 UTC but its Products rows match the 12 Nov record; book unchanged since 11 Nov. No decision answered, no copy approval, so no copy drafted.
+- Added section 3f to `website/docs/CONTENT_TO_SUPPLY.md`: every open answer, grouped by who gives it (Polycraft, Sabry). The Polycraft table can be sent as is. Target: answers by **Tue 17 Nov** to make Thu 19 Nov.
+- Added a 13 Nov note to `plan/day1-product-list.md`: no change, freeze-day table stands, cut-off Tue 17 Nov for candidates.
+- Not done: no store, sheet, book or Drive writes.
+- Next: fill 3e and 3f as answers arrive; move candidates to live when Sabry activates them.
+
 ### Thu 12 Nov 2026 (freeze day)
 - Read: store (read only; 67 products, **10 active**, 57 draft), product sheet and production book (both edited 11 Nov, so re-read in full), branch `claude/zen-newton-irxvlr` (not on main). No copy approval in this file, so no copy drafted.
 - Found: Sabry named, priced and activated 10 products on 11–12 Nov: SLAB (020), BLOK (166), TORSO (167, with OBJ-196 as its 55 cm size), OCTA (190), CAIRN (195), SPAN (197), INGOT (198), PYRA (169), ARRIS (172), ROTA (099). The book added OBJ-196, 197, 198; the sheet added 191–195 and an approved OBJ-149 drawing that differs from the 12 Nov draft.
@@ -62,14 +69,6 @@ Three daily sessions work on this repo, one section each. Each session updates *
 - Added a freeze-eve check to `plan/day1-product-list.md`: shortlist 0 of 10 complete; fallback if nothing arrives by 12 Nov.
 - No copy drafted: not approved in this file.
 - Next: on Sabry's answers, mark final in/out and fill the shortlist rows as Polycraft data arrives.
-
-### Mon 9 Nov 2026
-- Sheet (last edit 26 Oct) and book (last edit 2 Nov) unchanged since the first run; no re-read needed. No decision answered yet, so the 41/4/16 recommendation stands.
-- Updated image status for OBJ-002, 038, 152 (hero AI renders made 8 Nov, pending approval) in the day-1 list and CONTENT_TO_SUPPLY 3d. 9 products now have AI renders; none approved for the site.
-- Added a freeze shortlist to `plan/day1-product-list.md`: 7 products with a drawing (001, 002, 038, 152, 166, 167, 169) and 3 with a prototype (003, 137, 099), each with what Sabry and what Polycraft must answer.
-- OBJ-166 heights: still 850/1000 mm (book) vs 700/1000 mm (template). No other source in the repo settles it; Polycraft must confirm.
-- No copy drafted: not approved in this file.
-- Next: if (b) is chosen, turn the shortlist answers into CONTENT_TO_SUPPLY rows as they arrive; if the list is approved, mark the final in/out.
 
 ## Product images
 

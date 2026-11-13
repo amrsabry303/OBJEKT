@@ -1,6 +1,12 @@
-# objekt day-1 product list: reconciliation and recommendation (8 Nov 2026, updated 9, 11 and 12 Nov)
+# objekt day-1 product list: reconciliation and recommendation (8 Nov 2026, updated 9, 11, 12 and 13 Nov)
 
 Prepared by the daily "Content and product list" session. **A recommendation; Sabry decides.** Working titles are the OBJ code until Sabry names a product. Since 11 Nov the live products carry the store titles Sabry put on them (the store notes call SPAN and INGOT approved, the others suggestions not yet trademark-checked).
+
+## Fri 13 Nov 2026: no change since the freeze
+
+Re-checked today (read only): store still **10 active**, no product changed since 12 Nov 11:29 UTC; product sheet last edited 12 Nov 10:59 UTC, Products tab rows unchanged from the 12 Nov record; production book unchanged since 11 Nov 23:08 UTC. No decision answered. The freeze-day table below stands as the recommendation.
+
+Countdown: 7 days to launch. For a candidate to join by Thu 19 Nov it needs name, price and an approved image from Sabry, and size and lead time from Polycraft, by **Tue 17 Nov**. The open answers are listed by person in `website/docs/CONTENT_TO_SUPPLY.md` section 3f.
 
 ## Freeze day (Thu 12 Nov 2026): the list as it stands
 
