@@ -24,7 +24,7 @@
         {%- if block.settings.text != blank -%}<div class="rich">{{ block.settings.text }}</div>{%- endif -%}
         {%- if block.settings.link_label != blank and block.settings.link_url != blank -%}<a class="link" href="{{ block.settings.link_url }}">{{ block.settings.link_label }}</a>{%- endif -%}
       </div>
-      <div class="abt__img ph">{%- if block.settings.image -%}{{ block.settings.image | image_url: width: 1200 | image_tag: loading: 'lazy', widths: '600, 900, 1200', sizes: '(max-width: 880px) 100vw, 50vw', alt: block.settings.image.alt | default: '' }}{%- else -%}<span class="tag">{{ 'home.image_to_come' | t }}</span>{%- endif -%}</div>
+      <div class="abt__img ph">{%- if block.settings.image -%}{{ block.settings.image | image_url: width: 1200 | image_tag: loading: 'lazy', widths: '600, 900, 1200', sizes: '(max-width: 880px) 100vw, 50vw', alt: block.settings.image.alt | default: '' }}{%- else -%}{%- endif -%}</div>
     </section>
   {%- endif -%}
 {%- endfor -%}

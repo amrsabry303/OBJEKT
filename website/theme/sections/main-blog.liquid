@@ -21,7 +21,7 @@
       {%- for article in blog.articles -%}
         <article class="es">
           <a href="{{ article.url }}">
-            <div class="ph">{%- if article.image -%}{{ article.image | image_url: width: 1000 | image_tag: loading: 'lazy', widths: '500, 800, 1000', sizes: '(max-width: 880px) 100vw, 50vw', alt: article.image.alt | default: '' }}{%- else -%}<span class="tag">{{ 'home.image_to_come' | t }}</span>{%- endif -%}</div>
+            <div class="ph">{%- if article.image -%}{{ article.image | image_url: width: 1000 | image_tag: loading: 'lazy', widths: '500, 800, 1000', sizes: '(max-width: 880px) 100vw, 50vw', alt: article.image.alt | default: '' }}{%- else -%}{%- endif -%}</div>
             <div class="meta label muted">{% if article.tags.size > 0 %}<span>{{ article.tags.first }}</span>{% endif %}<span>{{ article.published_at | time_tag: format: 'abbreviated_date' }}</span></div>
             <h2>{{ article.title }}</h2>
           </a>

@@ -1,5 +1,6 @@
 {{ 'card.css' | asset_url | stylesheet_tag }}
 {{ 'product.css' | asset_url | stylesheet_tag }}
+{{ 'look.css' | asset_url | stylesheet_tag }}
 {%- assign current = product.selected_or_first_available_variant -%}
 {%- assign ref = product.metafields.custom.reference.value | default: product.variants.first.sku -%}
 <div id="product-root" data-section-id="{{ section.id }}" data-product-url="{{ product.url }}" data-added="{{ 'product.added' | t }}" data-error="{{ 'product.add_error' | t }}">
@@ -25,7 +26,13 @@
     </div>
 
     <div class="info">
-      {%- if product.type != blank -%}<p class="label muted">{{ product.type }}</p>{%- endif -%}
+      <div class="info__top">
+        {%- if product.type != blank -%}<p class="label muted">{{ product.type }}</p>{%- else -%}<span></span>{%- endif -%}
+        <button type="button" class="share" id="share-btn" aria-label="Share" data-title="{{ product.title | escape }}" data-copied="Link copied">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 15V3.5M8 7l4-4 4 4M6 11H4.5v9.5h15V11H18"/></svg>
+          <span class="share__msg label" role="status" aria-live="polite"></span>
+        </button>
+      </div>
       <h1 class="h2 title">{{ product.title }}</h1>
       {%- if ref != blank -%}<p class="ref label muted">{{ 'product.ref' | t }} <bdi dir="ltr">{{ ref }}</bdi></p>{%- endif -%}
       {%- assign lede = product.metafields.custom.short_description.value -%}
@@ -34,27 +41,59 @@
       <div id="buy-box">
         {%- form 'product', product, id: 'product-form', novalidate: 'novalidate' -%}
           <input type="hidden" name="id" value="{{ current.id }}">
-          <p class="price" aria-live="off">{{ current.price | money }}</p>
+          <p class="price" aria-live="off">{{ current.price | money_without_trailing_zeros }}</p>
+          {%- comment -%} Options: colour or finish as picture tiles (the variant's own image), then the rest (size) as text boxes. Each tile links to the variant that keeps the other selected options. {%- endcomment -%}
           {%- if product.has_only_default_variant == false -%}
-            <fieldset class="finish">
-              <legend class="label">{{ product.options.first }} <span class="muted">· {{ current.title }}</span></legend>
-              <ul class="finish__list">
-                {%- for v in product.variants -%}
-                  <li>
-                    <a class="opt{% unless v.available %} is-out{% endunless %}" href="{{ product.url }}?variant={{ v.id }}" data-variant-id="{{ v.id }}"{% if v.id == current.id %} aria-current="true"{% endif %}>
-                      {%- assign sw = v.metafields.custom.colour.value.hex.value -%}
-                      <span class="sw"{% if sw != blank %} style="--c: {{ sw }}"{% else %} style="--c: var(--sand)"{% endif %} aria-hidden="true"></span>
-                      <span class="nm"{% if v.id == current.id %} data-selected="{{ 'product.selected' | t }}"{% endif %}>{{ v.title }}</span>
-                      <span class="st">{% render 'availability', product: product, variant: v %}</span>
-                    </a>
-                  </li>
-                {%- endfor -%}
-              </ul>
-            </fieldset>
+            {%- assign opt_n = product.options.size -%}
+            {%- for pass in (1..2) -%}
+              {%- for option in product.options_with_values -%}
+                {%- assign oi = forloop.index0 -%}
+                {%- assign oname = option.name | downcase -%}
+                {%- assign is_col = false -%}
+                {%- if oname == 'finish' or oname == 'color' or oname == 'colour' -%}{%- assign is_col = true -%}{%- endif -%}
+                {%- if pass == 1 and is_col == false -%}{%- continue -%}{%- endif -%}
+                {%- if pass == 2 and is_col -%}{%- continue -%}{%- endif -%}
+                {%- if option.values.size < 2 -%}{%- continue -%}{%- endif -%}
+                <fieldset class="optset">
+                  <legend class="label">{% if oname == 'size' %}{% if request.locale.iso_code == 'ar' %}اختر المقاس{% else %}Select size{% endif %}{% else %}{{ option.name }}{% endif %} <span class="muted">· {{ current.options[oi] }}</span></legend>
+                  <ul class="ot__list{% if is_col %} ot__list--img{% endif %}">
+                    {%- for val in option.values -%}
+                      {%- assign tv_id = 0 -%}{%- assign fb_id = 0 -%}
+                      {%- for v in product.variants -%}
+                        {%- if v.options[oi] == val -%}
+                          {%- if fb_id == 0 -%}{%- assign fb_id = v.id -%}{%- endif -%}
+                          {%- assign ok = true -%}
+                          {%- for j in (0..2) -%}{%- if j != oi and j < opt_n and v.options[j] != current.options[j] -%}{%- assign ok = false -%}{%- endif -%}{%- endfor -%}
+                          {%- if ok and tv_id == 0 -%}{%- assign tv_id = v.id -%}{%- endif -%}
+                        {%- endif -%}
+                      {%- endfor -%}
+                      {%- if tv_id == 0 -%}{%- assign tv_id = fb_id -%}{%- endif -%}
+                      {%- assign tv = product.variants | where: 'id', tv_id | first -%}
+                      {%- assign is_sel = false -%}{%- if current.options[oi] == val -%}{%- assign is_sel = true -%}{%- endif -%}
+                      <li>
+                        <a class="opt ot{% if is_col %} ot--img{% else %} ot--box{% endif %}{% unless tv.available %} is-out{% endunless %}" href="{{ product.url }}?variant={{ tv.id }}" data-variant-id="{{ tv.id }}" data-media-id="{{ tv.featured_media.id }}"{% if is_sel %} aria-current="true"{% endif %} title="{{ val | escape }}">
+                          {%- if is_col -%}
+                            {%- if tv.featured_media -%}
+                              {{ tv.featured_media | image_url: width: 240 | image_tag: loading: 'lazy', widths: '120, 240', sizes: '72px', alt: '' }}
+                            {%- else -%}
+                              {%- assign sw = tv.metafields.custom.colour.value.hex.value -%}
+                              <span class="sw" style="--c: {% if sw != blank %}{{ sw }}{% else %}var(--sand){% endif %}" aria-hidden="true"></span>
+                            {%- endif -%}
+                            <span class="sr">{{ val }}</span>
+                          {%- else -%}
+                            <span>{{ val }}</span>
+                          {%- endif -%}
+                        </a>
+                      </li>
+                    {%- endfor -%}
+                  </ul>
+                </fieldset>
+              {%- endfor -%}
+            {%- endfor -%}
           {%- endif -%}
           {% render 'availability', product: product, variant: current, mode: 'buy' %}
           <div class="sticky-buy" id="sticky-buy" hidden>
-            <div><p class="label muted">{{ product.title }}</p><p class="price">{{ current.price | money }}</p></div>
+            <div><p class="label muted">{{ product.title }}</p><p class="price">{{ current.price | money_without_trailing_zeros }}</p></div>
             <button class="btn" type="submit" name="add" form="product-form"{% unless current.available %} disabled{% endunless %}>{{ 'product.add_short' | t }}</button>
           </div>
         {%- endform -%}
@@ -64,6 +103,9 @@
         {%- assign delivery_page = pages[section.settings.delivery_page] -%}
         {%- assign acc_keys = 'story,materials_craft,dimensions,care' | split: ',' -%}
         {%- assign acc_opened = false -%}
+        {%- if product.description != blank -%}
+          <details open>{%- assign acc_opened = true -%}<summary><span class="label">{% if request.locale.iso_code == 'ar' %}الوصف{% else %}Description{% endif %}</span><i aria-hidden="true"></i></summary><div class="acc__body acc__body--desc">{{ product.description }}</div></details>
+        {%- endif -%}
         {%- for key in acc_keys -%}
           {%- assign mf = product.metafields.custom[key] -%}
           {%- if mf.value != blank -%}
@@ -83,16 +125,65 @@
     </div>
   </div>
 
+  {%- comment -%} Complete the look: hand-picked companions (custom.complementary) when set, otherwise other products in the shop {%- endcomment -%}
   {%- assign companions = product.metafields.custom.complementary.value -%}
   {%- if companions.size > 0 -%}
-    <section class="sec wrap" aria-labelledby="igc-h">
-      <h2 class="label" id="igc-h">{{ 'product.in_good_company' | t }}</h2>
-      <div class="igc">
-        {%- for p in companions limit: 3 -%}{% render 'product-card', product: p %}{%- endfor -%}
-      </div>
+    {%- assign look = companions -%}
+  {%- else -%}
+    {%- assign look = collections['all'].products -%}
+  {%- endif -%}
+  {%- assign look_n = 0 -%}
+  {%- capture look_html -%}
+    {%- for p in look -%}
+      {%- if p.id != product.id and look_n < 6 -%}
+        {% render 'product-card', product: p %}
+        {%- assign look_n = look_n | plus: 1 -%}
+      {%- endif -%}
+    {%- endfor -%}
+  {%- endcapture -%}
+  {%- if look_n > 0 -%}
+    <section class="look wrap" aria-labelledby="igc-h">
+      <h2 class="label look__h" id="igc-h">Complete the look</h2>
+      <div class="igc">{{ look_html }}</div>
     </section>
   {%- endif -%}
 </div>
+<style>
+  .info__top { display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 36px; }
+  .share { display: inline-flex; align-items: center; gap: 8px; background: none; border: 0; padding: 8px; margin: -8px; color: var(--navy); cursor: pointer; }
+  .share:hover { opacity: .65; }
+  .share__msg { font-size: 11px; }
+  .acc__body--desc p { margin: 0 0 12px; }
+  .acc__body--desc ul { list-style: none; margin: 14px 0 0; padding: 0; display: grid; gap: 4px; }
+  .acc__body--desc strong { font-weight: 500; color: var(--navy); }
+
+  /* Option tiles: colour and finish as pictures, size as boxes */
+  .optset { border: 0; margin: 0 0 24px; padding: 0; min-width: 0; }
+  .optset legend { padding: 0 0 12px; }
+  .ot__list { display: flex; flex-wrap: wrap; gap: 8px; list-style: none; margin: 0; padding: 0; }
+  .opt.ot { display: block; position: relative; min-height: 0; padding: 0; border: 1px solid color-mix(in srgb, var(--navy) 22%, transparent); background: none; }
+  .opt.ot:hover { background: none; border-color: var(--navy); }
+  .opt.ot[aria-current="true"] { background: none; border-color: var(--navy); box-shadow: inset 0 0 0 1px var(--navy); }
+  .opt.ot--img { width: 72px; aspect-ratio: 4 / 5; overflow: hidden; background: var(--field); }
+  .opt.ot--img img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .opt.ot--img .sw { position: absolute; inset: 0; width: auto; height: auto; clip-path: none; background: var(--c); }
+  .opt.ot--box { display: flex; align-items: center; justify-content: center; min-width: 88px; min-height: 52px; padding: 0 18px; font-size: var(--fs-small); }
+  .opt.ot.is-out { border-style: dashed; color: var(--grey-text); }
+  .opt.ot.is-out::after { content: ""; position: absolute; inset: 0; background: linear-gradient(to top right, transparent calc(50% - .75px), color-mix(in srgb, var(--navy) 40%, transparent) 50%, transparent calc(50% + .75px)); }
+</style>
+<script>
+  (function () {
+    var b = document.getElementById('share-btn'); if (!b) return;
+    var msg = b.querySelector('.share__msg');
+    function told(t) { msg.textContent = t; setTimeout(function () { msg.textContent = ''; }, 2200); }
+    b.addEventListener('click', function () {
+      var url = location.href;
+      if (navigator.share) { navigator.share({ title: b.dataset.title, url: url }).catch(function () {}); return; }
+      if (navigator.clipboard && navigator.clipboard.writeText) { navigator.clipboard.writeText(url).then(function () { told(b.dataset.copied); }, function () { told(url); }); }
+      else { told(url); }
+    });
+  })();
+</script>
 {% render 'product-jsonld', product: product %}
 <script src="{{ 'product.js' | asset_url }}" defer></script>
 {% schema %}

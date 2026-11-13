@@ -7,27 +7,26 @@
 .hero__copy .label { margin-block-end: 18px; display: block; font-family: var(--font-display); font-style: italic; font-weight: 400; font-size: var(--fs-small); letter-spacing: 0; text-transform: lowercase; }
 .hero__copy .label::before, .coll__copy .label::before, .story__copy .label::before { content: "// " / ""; color: var(--bronze); }
 .hero__copy .h1 { margin-block-end: 28px; }
+.hero__img { position: relative; overflow: hidden; }
+.hero--light .hero__img::after { content: ""; position: absolute; inset: 0; background: color-mix(in srgb, var(--midnight) 36%, transparent); }
+.hero--light .hero__copy, .hero--light .hero__copy .link { color: var(--paper); }
+.hero__photo { width: 100%; height: 100%; object-fit: cover; }
 
-/* Selected objekts: five plates composed on the 12-column grid */
-.legend { display: flex; align-items: center; gap: 10px; margin: calc(-1 * clamp(20px, 3vw, 48px)) 0 clamp(28px, 4vw, 56px); }
-.legend .dot + .dot { margin-inline-start: 18px; }
-.sel { row-gap: clamp(40px, 7vw, 112px); }
-.sel .o1 { grid-column: 1 / 8; } .sel .o1 .ph { aspect-ratio: 4 / 5; }
-.sel .o2 { grid-column: 9 / 13; align-self: end; } .sel .o2 .ph { aspect-ratio: 1; }
-.sel .o3 { grid-column: 2 / 6; } .sel .o3 .ph { aspect-ratio: 3 / 4; }
-.sel .o4 { grid-column: 7 / 13; align-self: center; } .sel .o4 .ph { aspect-ratio: 3 / 2; }
-.sel .o5 { grid-column: 1 / 5; } .sel .o5 .ph { aspect-ratio: 1; }
-.sel .o6, .sel .o7, .sel .o8 { grid-column: span 4; }
+/* Selected objekts: one lead plate and a calm grid beside it. Same 4:5 frame everywhere, so the photographs set the rhythm. */
+.sel { grid-template-columns: repeat(12, 1fr); column-gap: var(--gutter); row-gap: clamp(36px, 4.5vw, 72px); align-items: start; }
+.sel > div { grid-column: span 3; min-width: 0; }
+.sel .o1 { grid-column: 1 / 7; grid-row: span 2; }
+@media (max-width: 1100px) { .sel > div { grid-column: span 4; } .sel .o1 { grid-column: 1 / 9; grid-row: span 2; } }
 @media (max-width: 760px) {
   .sel { grid-template-columns: repeat(2, 1fr); row-gap: 36px; }
-  .sel .o1, .sel .o4 { grid-column: 1 / 3; }
-  .sel .o2, .sel .o3, .sel .o5, .sel .o6, .sel .o7, .sel .o8 { grid-column: auto; align-self: start; }
-  .sel .o2 .ph, .sel .o3 .ph, .sel .o5 .ph { aspect-ratio: 3 / 4; }
+  .sel > div { grid-column: auto; }
+  .sel .o1 { grid-column: 1 / 3; grid-row: auto; }
 }
 
 /* Editorial story */
 .story { display: grid; grid-template-columns: 1.15fr 1fr; background: var(--field); }
 .story .ph { min-height: min(86vh, 860px); background: color-mix(in srgb, var(--navy) 8%, var(--field)); }
+.story .ph > img { position: absolute; inset: 0; }
 .story__copy { padding: var(--margin); display: flex; flex-direction: column; justify-content: space-between; gap: 48px; color: var(--navy); }
 .story__copy .lead { color: var(--ink); }
 .story__copy .label { font-family: var(--font-display); font-style: italic; font-weight: 400; font-size: var(--fs-small); letter-spacing: 0; text-transform: lowercase; }

@@ -98,7 +98,7 @@
           {%- endif -%}
 
           <dl class="sum">
-            <div><dt>{{ 'cart.subtotal' | t }}</dt><dd><bdi>{{ cart.total_price | money }}</bdi></dd></div>
+            <div><dt>{{ 'cart.subtotal' | t }}</dt><dd><bdi>{{ cart.total_price | money_without_trailing_zeros }}</bdi></dd></div>
             <div><dt>{{ 'cart.delivery' | t }}</dt><dd class="muted">{{ 'cart.at_checkout' | t }}</dd></div>
           </dl>
           {%- if mto_n > 0 and section.settings.deposit_note != blank -%}
@@ -112,7 +112,7 @@
         </aside>
       </form>
       <div class="sticky-buy" id="sticky-checkout" hidden>
-        <div><p class="label muted">{{ 'cart.subtotal' | t }}</p><p class="price"><bdi>{{ cart.total_price | money }}</bdi></p></div>
+        <div><p class="label muted">{{ 'cart.subtotal' | t }}</p><p class="price"><bdi>{{ cart.total_price | money_without_trailing_zeros }}</bdi></p></div>
         <button class="btn" type="submit" name="checkout" form="cart-form">{{ 'cart.checkout' | t }}</button>
       </div>
     {%- endif -%}

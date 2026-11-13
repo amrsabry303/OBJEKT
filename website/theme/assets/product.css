@@ -71,6 +71,23 @@
 @media (min-width: 881px) { .sticky-buy { display: none !important; } }
 @media (min-width: 881px) and (max-width: 1100px) { .gallery { grid-column: 1 / 7; } .info { grid-column: 8 / 13; } }
 
+/* Desktop gallery in the style of Zara Home: thumbnail strip, one large image shown whole, details right beside it */
+.th-strip { display: none; }
+@media (min-width: 881px) {
+  .pdp:has(.gallery.zh) { grid-template-columns: max-content minmax(300px, 460px); justify-content: center; column-gap: clamp(32px, 4vw, 64px); }
+  .pdp:has(.gallery.zh) .info { grid-column: 2; }
+  .gallery.zh { grid-column: 1; grid-template-columns: 84px auto; column-gap: 16px; row-gap: 0; position: sticky; top: calc(var(--header-h) + 24px); align-self: start; --frame-h: calc(100vh - var(--header-h) - 48px); }
+  .gallery.zh .th-strip { display: flex; flex-direction: column; gap: 8px; grid-column: 1; grid-row: 1; max-height: var(--frame-h); overflow-y: auto; scrollbar-width: none; }
+  .gallery.zh .th-strip::-webkit-scrollbar { display: none; }
+  .gallery.zh .th { flex: none; display: block; padding: 0; border: 0; background: var(--field); width: 100%; cursor: pointer; opacity: .55; outline: 1px solid transparent; outline-offset: 2px; transition: opacity var(--t-fast); }
+  .gallery.zh .th:hover { opacity: .85; }
+  .gallery.zh .th.is-on { opacity: 1; outline-color: var(--navy); }
+  .gallery.zh .th img { width: 100%; height: auto; display: block; }
+  .gallery.zh .g { display: none; grid-column: 2; grid-row: 1; }
+  .gallery.zh .g.is-on { display: block; aspect-ratio: auto; background: transparent; }
+  .gallery.zh .g.is-on img { display: block; width: auto; height: var(--frame-h); max-width: none; object-fit: contain; }
+}
+
 /* Product tag (brand guidelines p.47): navy tag with a hole, vertical wordmark, small rotated line */
 .ptag { position: relative; width: 104px; height: 236px; margin-block-start: 40px; background: var(--navy); color: var(--sand); border-radius: 12px; overflow: hidden; }
 .ptag__hole { position: absolute; inset-inline-start: 50%; top: 12px; width: 10px; height: 10px; margin-inline-start: -5px; border-radius: 50%; background: var(--paper); }

@@ -1,5 +1,7 @@
 # Live theme vs repo, 12 Nov 2026
 
+> **13 Nov 2026 update:** the live (MAIN) theme is now `190236524768` "OBJEKT UX audit (draft 12 Nov)" (created 12 Nov 08:41 UTC, last edited 09:03 UTC, publish not logged). On 13 Nov all 67 of its files were read through the Admin API (`theme.files` bodies) and written into `website/theme` on main, so the repo now matches the live theme: every liquid, css, js and svg file matches the live MD5; the JSON files carry Shopify's header comment and its formatting (content as served). `theme check`: no offenses. No font files. The table below is the 12 Nov record, kept for history.
+
 Live (MAIN) theme: `190221484256` "OBJEKT hide single option (draft 12 Nov)", published 11 Nov 2026 ~23:15 UTC (not logged by any session). Read via Admin API `theme.files` (MD5). Repo = `website/theme` on main at fccbb73. JSON templates may differ only by Shopify's header comment; liquid, css, js and locales differ in content. Pull with the CLI: `shopify theme pull --theme 190221484256 --path ../theme` (login needed).
 
 | File | Live MD5 | Repo MD5 |

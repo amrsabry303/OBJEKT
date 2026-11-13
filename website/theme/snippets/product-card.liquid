@@ -1,23 +1,43 @@
-{%- comment -%} Accepts: product. A plate: image, title, availability, price. Hover swap only where hover exists (D-020). {%- endcomment -%}
+{%- comment -%}
+  Accepts: product. A plate: image, name, price, one quiet availability line.
+  Hover swap only where hover exists (D-020). Quick add sits on the image: a bar on hover (pointer devices), a small plus on touch.
+  One purchasable variant adds straight to the bag; products with options have no button, the plate links to the product page.
+{%- endcomment -%}
+{%- assign qv = product.selected_or_first_available_variant -%}
 <article class="obj">
-  <a href="{{ product.url }}">
-    <div class="ph{% unless product.featured_media %} ph--empty{% endunless %}">
-      {%- if product.featured_media -%}
-        {{ product.featured_media | image_url: width: 800 | image_tag: loading: 'lazy', widths: '400, 600, 800', sizes: '(max-width: 760px) 50vw, (max-width: 1100px) 33vw, 25vw', alt: product.featured_media.alt | default: product.title }}
-        {%- if product.media.size > 1 -%}
-          {{ product.media[1] | image_url: width: 800 | image_tag: loading: 'lazy', class: 'alt', alt: '', widths: '400, 600, 800', sizes: '(max-width: 760px) 50vw, (max-width: 1100px) 33vw, 25vw' }}
+  <div class="obj__media">
+    <a href="{{ product.url }}" tabindex="-1" aria-hidden="true">
+      <div class="ph{% unless product.featured_media %} ph--empty{% endunless %}">
+        {%- if product.featured_media -%}
+          {{ product.featured_media | image_url: width: 1000 | image_tag: loading: 'lazy', widths: '300, 450, 600, 800, 1000', sizes: '(max-width: 760px) 50vw, (max-width: 1100px) 33vw, 25vw', alt: '' }}
+          {%- if product.media.size > 1 -%}
+            {{ product.media[1] | image_url: width: 1000 | image_tag: loading: 'lazy', class: 'alt', alt: '', widths: '300, 450, 600, 800, 1000', sizes: '(max-width: 760px) 50vw, (max-width: 1100px) 33vw, 25vw' }}
+          {%- endif -%}
+        {%- else -%}
+          {%- assign shape_i = product.id | modulo: 12 -%}{% render 'shape', index: shape_i %}
         {%- endif -%}
-      {%- else -%}
-        {%- assign shape_i = product.id | modulo: 12 -%}{% render 'shape', index: shape_i %}
-        <span class="tag">{{ 'collection.no_image' | t }}</span>
-      {%- endif -%}
-    </div>
-    <div class="cap">
-      <div>
-        <div class="name">{{ product.title }}</div>
-        {% render 'availability', product: product %}
       </div>
-      <div class="price">{% if product.price_varies %}{{ 'collection.from' | t }} {% endif %}<bdi>{{ product.price | money }}</bdi></div>
-    </div>
+    </a>
+    {%- if product.variants.size == 1 and qv.available -%}
+      {%- assign qkey = 'mto' -%}{%- if qv.metafields.custom.fulfilment.value == 'ready' -%}{%- assign qkey = 'ready' -%}{%- endif -%}
+      {%- assign qmin = qv.metafields.custom.lead_time_days_min.value | default: 0 -%}
+      {%- assign qmax = qv.metafields.custom.lead_time_days_max.value | default: 0 -%}
+      {%- if qmax == 0 -%}
+        {%- assign qmin = qv.metafields.custom.lead_time_weeks_min.value | default: 0 | times: 7 -%}
+        {%- assign qmax = qv.metafields.custom.lead_time_weeks_max.value | default: 0 | times: 7 -%}
+      {%- endif -%}
+      <form class="quick" method="post" action="{{ routes.cart_add_url }}" data-quick data-added="{{ 'product.added' | t }}" data-error="{{ 'product.add_error' | t }}">
+        <input type="hidden" name="id" value="{{ qv.id }}">
+        <input type="hidden" name="properties[_fulfilment]" value="{{ qkey }}">
+        {%- if qkey == 'mto' and qmax > 0 -%}<input type="hidden" name="properties[_lead_time_days]" value="{% if qmin == qmax %}{{ qmax }}{% else %}{{ qmin }}-{{ qmax }}{% endif %}">{%- endif -%}
+        <button class="quick__btn" type="submit" aria-label="{{ 'collection.quick_add' | t }}: {{ product.title | escape }}"><span class="quick__plus" aria-hidden="true">+</span><span class="quick__txt">{{ 'collection.quick_add' | t }}</span></button>
+        <span class="quick__status sr" role="status"></span>
+      </form>
+    {%- endif -%}
+  </div>
+  <a class="cap" href="{{ product.url }}">
+    <span class="name">{{ product.title }}</span>
+    <span class="price">{% if product.price_varies %}{{ 'collection.from' | t }} {% endif %}<bdi>{{ product.price | money_without_trailing_zeros }}</bdi></span>
+    {% render 'availability', product: product %}
   </a>
 </article>

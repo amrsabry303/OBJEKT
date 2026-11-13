@@ -1,13 +1,20 @@
+/* Plate: image, name, price, one quiet availability line. The image carries the card; the interface stays out of its way. */
+.obj { position: relative; min-width: 0; }
 .obj a { display: block; }
+.obj__media { position: relative; }
 .obj .ph { position: relative; overflow: hidden; background: var(--field); aspect-ratio: 4 / 5; }
 .obj .ph img { width: 100%; height: 100%; object-fit: cover; }
 .obj .ph .alt { position: absolute; inset: 0; opacity: 0; transition: opacity var(--t-base) var(--ease); }
-@media (hover: hover) { .obj a:hover .alt, .obj a:focus-visible .alt { opacity: 1; } }
-.obj .tag { position: absolute; inset-inline-start: 10px; top: 10px; font-size: 12px; letter-spacing: .1em; text-transform: uppercase; color: var(--ink); font-weight: 500; }
-.obj .cap { display: flex; justify-content: space-between; gap: 16px; padding-block-start: 14px; font-size: var(--fs-small); }
-.obj .cap > div:first-child { min-width: 0; }
-.obj .name { font-weight: 500; }
-.obj .price { white-space: nowrap; }
+@media (hover: hover) { .obj:hover .ph .alt, .obj:focus-within .ph .alt { opacity: 1; } }
+.obj .cap { display: grid; grid-template-columns: minmax(0, 1fr) auto; column-gap: 16px; row-gap: 3px; padding-block-start: 12px; font-size: var(--fs-small); line-height: 1.4; color: var(--navy); }
+.obj .name { font-weight: 500; overflow-wrap: anywhere; }
+.obj .price { margin: 0; font-size: inherit; letter-spacing: 0; white-space: nowrap; text-align: end; font-variant-numeric: tabular-nums; }
+/* Availability on a plate: one muted line. The hollow made-to-order marker is dropped here (it is the default, D-023); the solid marker stays for ready pieces. */
+.obj .avail { grid-column: 1 / -1; display: flex; align-items: baseline; gap: 7px; margin: 0; font-size: 12px; font-weight: 400; letter-spacing: 0; text-transform: none; color: var(--grey-text); }
+.obj .avail .dot { width: 7px; height: 7px; margin: 0; align-self: center; }
+.obj .avail .dot--mto { display: none; }
+.obj .avail .sub { display: inline; margin: 0; font-size: 12px; }
+.obj .avail .sub::before { content: " · "; }
 .avail { display: flex; align-items: flex-start; gap: 9px; margin-block-start: 6px; font-size: 12px; }
 .avail .dot { margin-block-start: 3px; }
 .avail .sub { display: block; margin-block-start: 2px; font-size: 12px; letter-spacing: 0; text-transform: none; }
@@ -15,3 +22,26 @@
 .dot--mto { background: none; border: 1.25px solid var(--navy); }
 .dot--out { background: none; border: 1.25px solid var(--grey-text); position: relative; }
 .dot--out::after { content: ""; position: absolute; inset-inline: -1px; top: 50%; height: 1.25px; background: var(--grey-text); transform: rotate(-45deg); }
+@media (max-width: 760px) {
+  .obj .cap { grid-template-columns: minmax(0, 1fr); row-gap: 2px; padding-block-start: 10px; }
+  .obj .price { text-align: start; }
+}
+
+/* Quick add: on the image. Pointer devices: a bar that appears on hover or keyboard focus. Touch: a small plus, always there. */
+.quick { position: absolute; inset-inline: 0; bottom: 0; margin: 0; pointer-events: none; }
+.quick__btn { pointer-events: auto; display: flex; align-items: center; justify-content: center; gap: 8px; width: 100%; min-height: 44px; padding: 0 12px; border: 0; background: color-mix(in srgb, var(--paper) 92%, transparent); color: var(--navy); font: inherit; font-size: 11px; font-weight: 500; letter-spacing: .12em; text-transform: uppercase; cursor: pointer; }
+.quick__plus { font-size: 16px; line-height: 1; letter-spacing: 0; font-weight: 400; }
+.quick__btn[disabled] { cursor: default; }
+@media (hover: hover) and (pointer: fine) {
+  .quick__btn { opacity: 0; transform: translateY(6px); transition: opacity var(--t-fast), transform var(--t-fast), background var(--t-fast), color var(--t-fast); }
+  .obj:hover .quick__btn, .quick__btn:focus-visible, .quick__btn[data-state] { opacity: 1; transform: none; }
+  .quick__btn:hover { background: var(--navy); color: var(--paper); }
+  .quick__plus { display: none; }
+}
+@media (hover: none), (pointer: coarse) {
+  .quick { inset-inline: auto 0; }
+  .quick__btn { width: 44px; height: 44px; padding: 0; background: none; }
+  .quick__plus { display: grid; place-items: center; width: 32px; height: 32px; background: color-mix(in srgb, var(--paper) 92%, transparent); }
+  .quick__txt { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+  .quick__btn[data-state="ok"] .quick__plus { background: var(--navy); color: var(--paper); }
+}

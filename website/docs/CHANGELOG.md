@@ -294,3 +294,10 @@
 ## 2026-11-12 (daily Shopify catalogue run: read only, no store writes)
 - Store confirmed with `get-shop-info`: OBJEKT, hs1a1c-ut.myshopify.com, EGP. Read 62 products (10 active, 52 draft, 52 `placeholder-data`), the 5 collections, variant weights and lead-time days, metafields, alt text and Arabic translations.
 - No store writes: the open fixes are on active products and wait for Sabry's yes (STATUS, decisions); no draft received supplied data.
+
+## 2026-11-13 (daily website run: live theme brought into git; no store writes)
+- Store confirmed with `get-shop-info`: OBJEKT, hs1a1c-ut.myshopify.com, EGP. `theme check` on main before the change: 48 files, no offenses. Shopify CLI not logged in.
+- Found (not done by this session, not logged in the repo): the MAIN theme changed again. Now `190236524768` "OBJEKT UX audit (draft 12 Nov)" (created 12 Nov 08:41 UTC, edited until 09:03 UTC); `190221484256` is unpublished. Password protection still **off**; 10 products active; 0 orders. Menus, pages and the 5 policies unchanged since 10–11 Nov (the 3 policy typos are still there).
+- Repo: all 67 live theme files read with the Admin API (`theme.files` bodies, read only) and written into `website/theme` (38 files differed, 4 were missing: `header-zara.css`, `look.css`, `main-custom-request.liquid`, `page.custom-request.json`). Liquid, css, js and svg match the live MD5; JSON files as served (Shopify header comment). `theme check` after: 50 files, no offenses. No font files. This closes "live theme pulled into git" without the CLI. The unpublished dev theme `189754769632` is now behind the repo; not pushed.
+- Public site checked with Playwright (1440 and 375 px): home, Furniture, all products, Custom request, Delivery & Returns, About, bag all 200, no horizontal scroll, no placeholder text. Checkout reached with PYRA in the bag (no details entered, no order): **PayPal still the only payment method**, EGP, full price (no deposit).
+- Not done: Paymob (not signed in), menus/About/collection intros (no new supplied text), theme push (nothing to fix that is approved).

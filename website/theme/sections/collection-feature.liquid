@@ -5,7 +5,7 @@
   <div class="ph">
     {%- if section.settings.image -%}{{ section.settings.image | image_url: width: 2400 | image_tag: loading: 'lazy', widths: '1000, 1600, 2400', sizes: '100vw', alt: section.settings.image.alt }}
     {%- elsif c.image -%}{{ c.image | image_url: width: 2400 | image_tag: loading: 'lazy', widths: '1000, 1600, 2400', sizes: '100vw', alt: c.image.alt }}
-    {%- else -%}{% render 'shape', name: 'pedestal' %}<span class="tag">{{ 'home.image_to_come' | t }}</span>{%- endif -%}
+    {%- else -%}{% render 'shape', name: 'pedestal' %}{%- endif -%}
   </div>
   <div class="coll__copy">
     {%- if section.settings.label != blank -%}<span class="label">{{ section.settings.label }}</span>{%- endif -%}
