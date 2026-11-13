@@ -21,7 +21,7 @@ Three daily sessions work on this repo, one section each. Each session updates *
 - [website] Lawyer check on 48-hour returns, non-refundable deposit and governing law: the policies are now public · who checks, by when · rec: this week.
 - [website] Branch `claude/handoff-section-7-shipping-umz7rf` still holds 10 Nov non-website work not on main (OBJ-167/003 renders, Arabic pack, Polycraft sheet). Website part now on main · merge rest / leave · rec: merge after the repo is private.
 - [website] Arabic for the menu, About, collection intros and SEO text: send to the translator, or launch English only? · translator / EN only · rec: translator before 19 Nov.
-- [catalogue] Fix the live listings from your own notes, on your yes: lead-time days SLAB 14–20 and TORSO 14–30 (both sizes, or give Small its own), `made_to_order` on BLOK's 4 variants; plus the 4 collection joins in the content line above · yes / no · rec: yes today, the buy box shows no days on SLAB and TORSO.
+- [catalogue] Fix the live listings from your own notes, on your yes: lead-time days SLAB 14–20 and TORSO 14–30 (both sizes, or give Small its own), `made_to_order` on BLOK's 4 variants · yes / no · rec: yes today, the buy box shows no days on SLAB and TORSO. (13 Nov: OCTA, CAIRN, SPAN, INGOT now show in Furniture, so no collection join is needed.)
 - [catalogue] Lead time for BLOK and SPAN, and where PYRA 3–5, ARRIS 14–30 and OCTA 7–14 days came from (not in any note) · give days / confirm · rec: answer with the weights from Polycraft.
 - [catalogue] SEO title and description are empty on all 10 live products · I draft them in Dough voice from the approved copy for your review / you write them · rec: I draft, nothing goes on the store until you say yes.
 - [catalogue] Online Store channel: the 10 live products are on it; the 9 candidate drafts are not · I add it when each candidate is approved / you do it on activation · rec: I add it on approval.
@@ -151,6 +151,12 @@ Three daily sessions work on this repo, one section each. Each session updates *
 ### Shopify catalogue
 <!-- daily catalogue session; dated, newest first, last 3 entries -->
 
+#### Fri 13 Nov 2026
+- Ran: `get-shop-info` = OBJEKT / hs1a1c-ut, EGP. Pulled main (7fdf323). Read: products changed since 12 Nov 11:00 UTC (only SPAN 11:14 and INGOT 11:29 UTC, both after yesterday's 07:40 run), the 10 active products (collections, variant weights, SEO), the Furniture collection.
+- Found: 62 products, **10 active**, nothing edited on the store since 12 Nov 11:29 UTC. **OCTA, CAIRN, SPAN, INGOT are now in Furniture** (manual, 18 products; not by this session, probably with the 12 Nov 11:14–11:29 edits), so that gap is closed; table updated. The content line on this can go. Still: all variants **0 kg**, SEO empty on all 10.
+- No answer from Sabry on any catalogue or content line, no supplied value, no approved image, day-1 list not approved. So **no store writes**, nothing to log in CHANGELOG.
+- Readiness: **0 of 19 complete**. Placeholders left on all drafts.
+
 #### Thu 12 Nov 2026 (freeze day)
 - Ran: `get-shop-info` = OBJEKT / hs1a1c-ut, EGP. Pulled main (22234fb). Read all 62 products (variants, weights, lead-time days, collections, channel count, metafields, media alt, Arabic translations) and the 5 collections.
 - Found: Sabry activated **10 products** on 11–12 Nov himself (SLAB 020, BLOK 166, TORSO 167 + 196, OCTA 190, CAIRN 195, SPAN 197, INGOT 198, PYRA 169, ARRIS 172, ROTA 099). All 10 are on the Online Store channel. 52 drafts, all tagged `placeholder-data`. No duplicate OBJ codes. OBJ-099 colours settled by Sabry (Oxblood, Chocolate, Objekt Green, Putty, linked to the colour entries).
@@ -159,17 +165,17 @@ Three daily sessions work on this repo, one section each. Each session updates *
 - Alt text: none of the live images says "AI render". That follows Sabry's 10 Nov rule (never mention renders in public text), which replaces this task's alt-text line; left as is.
 - Readiness: **0 of 19 complete** (10 live, 9 candidates). Placeholders left on all drafts.
 
-**Readiness (12 Nov; ✓ done, ~ partly, ✗ missing).** Live = active now. "Complete" needs all 12 checks.
+**Readiness (13 Nov; ✓ done, ~ partly, ✗ missing).** Live = active now. "Complete" needs all 12 checks.
 
 | OBJ | Title | Named | Copy EN | Copy AR | Price | Lead time | Sizes | Variants | Images | Collection | Metafields | SEO | Placeholders gone | Complete |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
 | OBJ-020 | SLAB (live) | ✓ | ✓ | ✗ | ✓ | ✗ note only | ✓ | ✓ | ✓ | ✓ Furniture | ~ no care, 0 kg | ✗ | ✓ | no |
 | OBJ-166 | BLOK (live) | ✓ | ✓ | ✗ | ✓ | ✗ | ✓ | ✓ | ~ no mirror at sold heights | ✓ Furniture | ✗ no fulfilment, 0 kg | ✗ | ✓ | no |
 | OBJ-167 + 196 | TORSO (live) | ✓ | ✓ | ✗ | ✓ | ✗ note only | ~ estimates | ✓ | ✓ | ✓ Furniture | ~ no care, 0 kg | ✗ | ✓ | no |
-| OBJ-190 | OCTA (live) | ✓ | ✓ | ✗ | ✓ | ~ 7–14, source? | ✓ | ✓ | ✓ | ✗ | ~ no care, 0 kg | ✗ | ✓ | no |
-| OBJ-195 | CAIRN (live) | ✓ | ✓ | ✗ | ✓ | ✓ 7–14 | ✓ | ✓ | ✓ | ✗ | ~ no care, 0 kg | ✗ | ✓ | no |
-| OBJ-197 | SPAN (live) | ✓ | ✓ | ✗ | ✓ | ✗ | ~ height est. | ✓ | ✓ | ✗ | ~ no care, 0 kg | ✗ | ✓ | no |
-| OBJ-198 | INGOT (live) | ✓ | ✓ | ✗ | ✓ | ✓ 14–30 | ✓ | ✓ | ✓ | ✗ | ~ no care, 0 kg | ✗ | ✓ | no |
+| OBJ-190 | OCTA (live) | ✓ | ✓ | ✗ | ✓ | ~ 7–14, source? | ✓ | ✓ | ✓ | ✓ Furniture | ~ no care, 0 kg | ✗ | ✓ | no |
+| OBJ-195 | CAIRN (live) | ✓ | ✓ | ✗ | ✓ | ✓ 7–14 | ✓ | ✓ | ✓ | ✓ Furniture | ~ no care, 0 kg | ✗ | ✓ | no |
+| OBJ-197 | SPAN (live) | ✓ | ✓ | ✗ | ✓ | ✗ | ~ height est. | ✓ | ✓ | ✓ Furniture | ~ no care, 0 kg | ✗ | ✓ | no |
+| OBJ-198 | INGOT (live) | ✓ | ✓ | ✗ | ✓ | ✓ 14–30 | ✓ | ✓ | ✓ | ✓ Furniture | ~ no care, 0 kg | ✗ | ✓ | no |
 | OBJ-169 | PYRA (live) | ✓ | ✓ | ✗ | ✓ | ~ 3–5, source? | ~ approximate | ✓ | ✓ | ✓ T&L | ~ no care, 0 kg | ✗ | ✓ | no |
 | OBJ-172 | ARRIS (live) | ✓ | ✓ | ✗ | ✓ | ~ 14–30, source? | ✗ | ✓ | ✓ | ✓ Objekts | ✗ no size, 0 kg | ✗ | ✓ | no |
 | OBJ-099 | ROTA (live) | ✓ | ✓ | ✗ | ✓ | ✓ 7–14 | ✗ | ✓ 4 colours | ✓ | ✓ Objekts | ✗ no size, 0 kg | ✗ | ✓ | no |
@@ -191,11 +197,6 @@ What the live products still need, by who: **Polycraft** packed weight per varia
 - Ran: `get-shop-info` = OBJEKT / hs1a1c-ut, EGP. Read all 50 products (all draft, no duplicate OBJ codes) and the 5 collections. Pulled main (4849649).
 - **Store writes (CHANGELOG 11 Nov): created 8 drafts** that the plan and the book both list as IN: OBJ-020, 152, 156, 094, 103, 132, 068, 155. OBJ-020 has since become SLAB (live, by Sabry).
 - Readiness: 0 of 41. Table replaced on 12 Nov (in git history).
-
-#### Sun 8 Nov 2026 (first run)
-- Ran: `get-shop-info` = OBJEKT / hs1a1c-ut, EGP. Read all 53 products, the 4 collections and the `colour` metaobjects. Worked only on the 33 products all sources agreed on.
-- Store writes (CHANGELOG 8 Nov): `colour` metaobjects got their hex from `brand/COLOURS-FINISHES.md`; Chocolate added; OBJ-099's colour variants linked to the colour entries.
-- Readiness: 0 of 33.
 
 ## Faux books (design)
 ### 11 Nov 2026
