@@ -40,6 +40,7 @@ Three daily sessions work on this repo, one section each. Each session updates *
 - [drawings] Approve or correct the DRAFT sets OBJ-164 (corner shelf pair) and OBJ-149 (ashtray), sent 12 Nov · write "approved" or the change · rec: settle the two size lines below first.
 - [drawings] OBJ-164 size: the reference photo's caption says 22 × 22 cm (drawn: top 220 × 220, drop 200 estimated); the book says about 250 × 250 × 60 · 220 / 250 / your size, and the drop · rec: 220 as the reference, drop from a sample.
 - [drawings] OBJ-164 wall fixing: none shows in the photo · Production proposes a hidden fixing / keyhole slots in the top / adhesive · rec: Production proposes, you approve before the sample.
+- [drawings] OBJ-172 ARRIS is live with no drawing; one photo cannot show its facets · send the maker's model, or photos from 3 sides with the height / Polycraft measures a sample / leave undrawn · rec: model or 3 photos, then I draw it the same day.
 - [drawings] OBJ-100 candleholder reference carries another maker's engraved mark ("IT'S NOT OVER YET"), like 001, 148 and 159 · redesign as our own / drop / draw anyway · rec: drop for day 1. Not drawn. OBJ-176 (half-disc shelves) is also a recognisable designer piece with several versions: same question · rec: redesign as our own after launch.
 - [all] Licences: PP Mori (web), Galak Round, logo lettering (Raftwork). No public launch without them.
 - [faux books] Who prints them? No printer or binder, no sample, price or lead time, and the print files have no wrap allowance · ask two Cairo printers this week / hold to wave 2 / list as pre-order on 20 Nov · rec: ask this week, list as pre-order only if a maker confirms.
@@ -94,6 +95,13 @@ Three daily sessions work on this repo, one section each. Each session updates *
 - Approvals: none yet. Next: other colours and context shots for approved heroes; then OBJ-015 (hold) or day-1 list products.
 
 ## Drawings and files
+
+### Fri 13 Nov 2026
+- Checked: repo still **public** (GitHub API, 13 Nov), no "approved" for any drawing in this file, main unchanged since 12 Nov. So no import push, no approval routine, no Drive upload, no sticker change.
+- Step 1 not redone: it cannot be pushed while the repo is public (third day). The Drive export still holds everything.
+- Step 2: every freeze candidate without an approved drawing (149, 173, 075, 115, 164) already has a DRAFT waiting for you, so **no new drafts today**. 171, 165, 175 are after launch; drafting them now would add to the five unanswered sets a week before launch.
+- Looked at OBJ-172 ARRIS (live on the store, no drawing): the book has one photo of a faceted mirror-polished piece, about 800 × 600 × 1600. The back facets cannot be seen, so a drawing from that photo would be invented, not traced. Not drawn: see decisions.
+- Next: your answers on the 5 drafts (redraw the 11 Nov three from the sent PDFs on approval); ARRIS once a model or more photos arrive; then 171, 165, 175 after launch.
 
 ### Thu 12 Nov 2026
 - Checked: repo still public (GitHub search API: visibility public), no "approved" for any drawing in this file. So no import push, no approval routine, no Drive upload, no sticker change.
