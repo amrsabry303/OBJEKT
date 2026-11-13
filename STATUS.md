@@ -25,7 +25,7 @@ Three daily sessions work on this repo, one section each. Each session updates *
 - [catalogue] Lead time for BLOK and SPAN, and where PYRA 3–5, ARRIS 14–30 and OCTA 7–14 days came from (not in any note) · give days / confirm · rec: answer with the weights from Polycraft.
 - [catalogue] SEO title and description are empty on all 10 live products · I draft them in Dough voice from the approved copy for your review / you write them · rec: I draft, nothing goes on the store until you say yes.
 - [catalogue] Online Store channel: the 10 live products are on it; the 9 candidate drafts are not · I add it when each candidate is approved / you do it on activation · rec: I add it on approval.
-- [images] **Magnific credits 195 of 20,000 (12 Nov).** Image runs are stopped until topped up. At ~65 per render, the 4 hero follow-ups plus the 9 freeze candidates need roughly 3,000–4,000 · top up / buy extra credits / pause images · rec: top up before Sat 14 Nov so heroes can be finished by 19 Nov.
+- [images] **Magnific credits 0 of 20,000 (13 Nov; 195 on 12 Nov).** Image runs are stopped until topped up. At ~65 per render, the 4 hero follow-ups plus the 9 freeze candidates need roughly 3,000–4,000 · top up / buy extra credits / pause images · rec: top up today; after Sat 14 Nov there is little time left to finish heroes by Thu 19 Nov.
 - [images] Approve or retake the 4 hero renders (AI renders): OBJ-152 Ink v2c, OBJ-002 Oxblood v1c, OBJ-038 Carbon v1c (sent 8 Nov, re-sent 11 Nov), OBJ-015 Chocolate v1c (11 Nov) · approve / retake per image · only after approval do other colours and the context shot get made.
 - [images] Repo is public: the 8 Nov renders of 002, 038, 152 are already visible on GitHub; new render files are held back · make the repo private / allow renders in public · rec: private (same as the drawings line).
 - [images] With the day-1 list unapproved, no product with an approved drawing is left without a hero. Next: render day-1 products from their reference photos without an approved drawing? · yes / wait for drawings · rec: yes for the simplest planters and objects, renders marked shape-to-confirm.
@@ -72,6 +72,12 @@ Three daily sessions work on this repo, one section each. Each session updates *
 
 ## Product images
 
+### Fri 13 Nov 2026
+- Magnific balance **0** (of 20,000; 20,000 spent). Below the 2,000 stop line, so **no renders today**. 195 was left on 12 Nov; this session spent nothing since 11 Nov.
+- No hero answered in this file (152, 002, 038, 015), day-1 list not approved. Next product stays OBJ-149 (brushed).
+- Nothing generated, uploaded or changed in the inventory. Stickers not changed.
+- Next: once credits are topped up, OBJ-149 hero, then other colours and context shots for any approved hero.
+
 ### Thu 12 Nov 2026
 - Magnific balance **195** (of 20,000). Below the 2,000 stop line, so **no renders today**. 6,465 was left after this session on 11 Nov; about 6,270 went to other Magnific work since, not this session.
 - No hero answered yet (152, 002, 038, 015), day-1 list not approved. Next product would have been OBJ-149 (sheet says rev 0 approved 11 Nov; the reference's proportions fit both drawing versions).
@@ -84,14 +90,6 @@ Three daily sessions work on this repo, one section each. Each session updates *
 - OBJ-015 Chocolate: v1 kept first try (two crossing plates, seat ledge, leather back, seat and lumbar cushions match the photo; own room, not the reference's). Frame drifted olive (hue 27°, sat 0.51) → recoloured to Chocolate #4A2A1B inside a hand-drawn product-only mask, leather and vase excluded → v1c (plate median now 74,41,27 vs 74,42,27). Frame and leather now read close in tone.
 - **Render files not pushed**: the repo is public (same reason as the drawings run). v1 and v1c are in Magnific and were sent to Sabry; only STATUS and the inventory are pushed. Inventory .md and .csv updated. Nothing uploaded to Drive, stickers not changed.
 - Approvals: none yet. Next: on approval, other colours and context shots for the approved heroes; then the 3 drawing drafts (173, 115, 075) once approved, or day-1 list products from the reference photo if Sabry says so.
-
-### Sun 8 Nov 2026
-- First run. Magnific balance 16,100 at start, **15,840** at end (260 spent: 4 renders × 65). Day-1 list not yet approved, so worked the approved-drawing products, simplest first. Drawings not yet in `venture/drawings/`, so all three came from the reference photo (cropped, own house scene, reference room not copied).
-- OBJ-152 Ink pair: v1 rejected (left table lost its waist), v2 kept; hue drifted to 208°, recoloured to Ink 221° inside a product box mask → v2c.
-- OBJ-002 Oxblood: v1 kept first try; hue 4° → recoloured to 354° inside a solid product silhouette (floor untouched) → v1c.
-- OBJ-038 Carbon: v1 kept first try; plates had a teal cast → neutralised inside a product mask → v1c. Cut-out shape is close to, not identical to, the reference.
-- Files: `plan/images/OBJ-{002,038,152}/` (JPEG, 2000 px). Inventory .md and .csv updated. Nothing uploaded to Drive, stickers not changed.
-- Approvals: none yet. Next: other colours and context shots for approved heroes; then OBJ-015 (hold) or day-1 list products.
 
 ## Drawings and files
 
