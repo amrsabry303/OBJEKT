@@ -32,7 +32,7 @@ Three daily sessions work on this repo, one section each. Each session updates *
 - [images] Hero colours used are the proposed ones from CONTENT_TO_SUPPLY 3d (002 Oxblood matte, 038 Carbon matte, 152 Ink gloss). The "mirror on the metal segment" for 002 and 038 is not shown: which part is mirror? · tell me / leave all-coated · rec: leave all-coated until the drawing says.
 - [images] OBJ-001 reference photo carries a third-party maker mark (NM3), like 148/159 · redesign as our own / render anyway · rec: wait for the Polycraft design file and render from that. Skipped today.
 - [images] Drive upload and production-book stickers for new renders need your yes · yes / not yet · rec: yes once heroes are approved.
-- [drawings] GitHub repo is still **public** (checked 12 Nov). The import, the 11 Nov drafts and today's drafts are not pushed; 11 Nov's local work was lost with that run's workspace, so each run now sends its files to you as a zip · make the repo private / say what may be public (OBJ-190's drawings are already public on main) · rec: private, then the next run re-imports from Drive and pushes.
+- [drawings] GitHub repo is still **public** (checked 14 Nov). The import, the 11 Nov drafts and today's drafts are not pushed; 11 Nov's local work was lost with that run's workspace, so each run now sends its files to you as a zip · make the repo private / say what may be public (OBJ-190's drawings are already public on main) · rec: private, then the next run re-imports from Drive and pushes.
 - [drawings] Approve or correct the DRAFT sets OBJ-173 (cube planter), OBJ-115 (tray), OBJ-075 (cylinder pair), sent 11 Nov · write "approved" or the change per product · rec: check sizes first, they are estimates. Their generators were lost; on approval I redraw from the sent PDFs.
 - [drawings] OBJ-075: book says one planter Ø300 × 500; photo shows a pair. Draft is the pair (A Ø300 × 390, B Ø240 × 290 on a foot) · pair / single, sizes · rec: pair.
 - [drawings] Drainage for OBJ-173 and OBJ-075 (none shows in the photos) · none / drain hole / loose inner pot · rec: loose inner pot, no hole.
@@ -93,6 +93,13 @@ Three daily sessions work on this repo, one section each. Each session updates *
 
 ## Drawings and files
 
+### Sat 14 Nov 2026
+- Checked: repo still **public** (GitHub API, 14 Nov), no "approved" for any drawing in this file, nothing in Drive changed since 13 Nov. So no import push, no approval routine, no Drive upload, no sticker change.
+- Step 1 not redone (fourth day): it cannot be pushed while the repo is public. The Drive export still holds everything.
+- Step 2: no new drafts. Every freeze candidate without an approved drawing (149, 173, 075, 115, 164) already has a DRAFT waiting; ARRIS (172) still needs a model or photos.
+- Found: three live products have drawing sets in Drive made 11 Nov outside this session: OBJ-195 rev 1, OBJ-197 rev 0, OBJ-198 rev 0 and rev 1 (PDF and production pack each). Not in this repo, not on the approved list. They come in with the import once the repo is private.
+- Next: your answers on the 5 drafts; ARRIS once a model or photos arrive; then 171, 165, 175 after launch.
+
 ### Fri 13 Nov 2026
 - Checked: repo still **public** (GitHub API, 13 Nov), no "approved" for any drawing in this file, main unchanged since 12 Nov. So no import push, no approval routine, no Drive upload, no sticker change.
 - Step 1 not redone: it cannot be pushed while the repo is public (third day). The Drive export still holds everything.
@@ -109,15 +116,6 @@ Three daily sessions work on this repo, one section each. Each session updates *
 - Skipped: OBJ-100 (another maker's engraved mark on the reference) and OBJ-176 (recognisable designer piece). Rebuilt the shared helper as `venture/src/drawings/objekt_sheet.py`.
 - Not pushed (public repo): drawings and generators were sent to Sabry as a zip in the run's message. Only this STATUS update is pushed.
 - Next: your answers on the 5 open drafts; then OBJ-171, 165, 175 (no reference image in `images/`; I take it from the production book slide).
-
-### Wed 11 Nov 2026
-- **OBJ-190 side table (Sabry, 11 Nov):** drawn from his 3 photos and 55 x 55 x 45 cm, redrawn after his correction (top has 4 Vs = 8 sides; each leg one V matching the top), approved by Sabry the same day, finish brushed stainless, number confirmed. Set: `venture/drawings/OBJ-190/` (PDF, 5 SVG, 4 part DXFs, nest DXF), generator `venture/src/drawings/make_obj190_rev0.py`. Uploaded to a new Drive folder OBJ-190 on his yes; added to the Google product sheet (Products row 146, Design folders) and the day-1 list. Next: Production review; ask him for real dimensions or the CAD.
-- Step 1: 410 files from the Drive export (POLYCRAFT-EXPORT) are in a local commit: `venture/drawings/` (8 products with superseded revs), `venture/src/` (21 generators and tools), `venture/workspace-db/` (115 JSON), `venture/artifacts/` (10 pages), `venture/plan/` (7 PDF, DOCX, XLSX). Sizes checked against Drive, no font files. IMPORT.md ticked.
-- **Not pushed.** The GitHub repo is public, and the push was blocked because it would publish the business plans, partner deck, cost template and drawings. Everything from this run exists only in the run's workspace until the repo is private (or you say what may be public). See decisions.
-- Step 2: day-1 products with no approved drawing: 35 of the 41 (approved: 002, 038, 152, 166, 167, 169; OBJ-001's file sits with Production). Simplest first, sheet metal: 173, 115, 075, then 100, 164, 176, 149, 171, 165, 175, 132, 020, 068, 080, 072, 125, 172. Moulded or printed (own set type): 142, 156, 004, 099, 145, 147, 151, 154, 104, 069, 094, 095, 103, 085, 155. OBJ-003 waits on its real size; OBJ-137 has a prototype.
-- Three DRAFT sets made (5 sheets, SVGs, DXFs, nest; PDFs rendered to PNG and checked, DXFs read back, nests inside the sheet): **OBJ-173** mirror cube planter 150 (one cross blank, 4 welded corners), **OBJ-115** tray 400 × 280 × 45 (one blank, 2 folds, 2 hand slots, no welds), **OBJ-075** floor planter pair, A Ø300 × 390 and B Ø240 × 290 on a foot ring. All sizes estimated, drawn exactly from the reference. New shared helper `venture/src/drawings/objekt_sheet.py` (prints PDFs with Playwright on Linux).
-- No approvals written in this file yet, so no approval routine, Drive upload or sticker change.
-- Next: your answers on the 3 drafts; then 100, 164, 176.
 
 ## Website (Shopify)
 ### 13 Nov 2026 (Fri)
