@@ -146,6 +146,12 @@ Three daily sessions work on this repo, one section each. Each session updates *
 ### Shopify catalogue
 <!-- daily catalogue session; dated, newest first, last 3 entries -->
 
+#### Sat 14 Nov 2026
+- Ran: `get-shop-info` = OBJEKT / hs1a1c-ut, EGP. Pulled main (70d1876). Read: product counts and the 12 most recently edited products; diff of STATUS, CONTENT_TO_SUPPLY and the day-1 list since my 13 Nov run.
+- Found: **62 products, 10 active, nothing edited on the store since 12 Nov 11:29 UTC** (INGOT). No new supplied value in CONTENT_TO_SUPPLY, no catalogue or content line answered, no image approved, day-1 list not approved.
+- So **no store writes**, nothing to log in CHANGELOG. Readiness table unchanged: **0 of 19 complete**. Placeholders left on all drafts.
+- Time: the content session's cut-off for candidates is Tue 17 Nov. Each candidate needs name, price, size, lead time, colours and an approved hero; once those land I can build it as a draft the same day.
+
 #### Fri 13 Nov 2026
 - Ran: `get-shop-info` = OBJEKT / hs1a1c-ut, EGP. Pulled main (7fdf323). Read: products changed since 12 Nov 11:00 UTC (only SPAN 11:14 and INGOT 11:29 UTC, both after yesterday's 07:40 run), the 10 active products (collections, variant weights, SEO), the Furniture collection.
 - Found: 62 products, **10 active**, nothing edited on the store since 12 Nov 11:29 UTC. **OCTA, CAIRN, SPAN, INGOT are now in Furniture** (manual, 18 products; not by this session, probably with the 12 Nov 11:14–11:29 edits), so that gap is closed; table updated. The content line on this can go. Still: all variants **0 kg**, SEO empty on all 10.
@@ -160,7 +166,7 @@ Three daily sessions work on this repo, one section each. Each session updates *
 - Alt text: none of the live images says "AI render". That follows Sabry's 10 Nov rule (never mention renders in public text), which replaces this task's alt-text line; left as is.
 - Readiness: **0 of 19 complete** (10 live, 9 candidates). Placeholders left on all drafts.
 
-**Readiness (13 Nov; ✓ done, ~ partly, ✗ missing).** Live = active now. "Complete" needs all 12 checks.
+**Readiness (13 Nov, re-checked 14 Nov: no change; ✓ done, ~ partly, ✗ missing).** Live = active now. "Complete" needs all 12 checks.
 
 | OBJ | Title | Named | Copy EN | Copy AR | Price | Lead time | Sizes | Variants | Images | Collection | Metafields | SEO | Placeholders gone | Complete |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
@@ -187,11 +193,6 @@ Three daily sessions work on this repo, one section each. Each session updates *
 The other 43 drafts (after-launch, on hold or off-plan) are unchanged since the 11 Nov table (git history): 0 ready, placeholders in place. OBJ-194 gets a draft (FACET is only a suggestion, so titled OBJ-194) once Sabry puts it on the list.
 
 What the live products still need, by who: **Polycraft** packed weight per variant (all 10), ARRIS size, ROTA size, SPAN height, TORSO side 300 vs 260; **Sabry** lead time for BLOK, SPAN and TORSO Small, the source of PYRA 3–5 / ARRIS 14–30 / OCTA 7–14 days, Arabic title and copy (or translator), SEO title and description (or say "write drafts"), care text.
-
-#### Wed 11 Nov 2026
-- Ran: `get-shop-info` = OBJEKT / hs1a1c-ut, EGP. Read all 50 products (all draft, no duplicate OBJ codes) and the 5 collections. Pulled main (4849649).
-- **Store writes (CHANGELOG 11 Nov): created 8 drafts** that the plan and the book both list as IN: OBJ-020, 152, 156, 094, 103, 132, 068, 155. OBJ-020 has since become SLAB (live, by Sabry).
-- Readiness: 0 of 41. Table replaced on 12 Nov (in git history).
 
 ## Faux books (design)
 ### 11 Nov 2026
