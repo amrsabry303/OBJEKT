@@ -301,3 +301,9 @@
 - Repo: all 67 live theme files read with the Admin API (`theme.files` bodies, read only) and written into `website/theme` (38 files differed, 4 were missing: `header-zara.css`, `look.css`, `main-custom-request.liquid`, `page.custom-request.json`). Liquid, css, js and svg match the live MD5; JSON files as served (Shopify header comment). `theme check` after: 50 files, no offenses. No font files. This closes "live theme pulled into git" without the CLI. The unpublished dev theme `189754769632` is now behind the repo; not pushed.
 - Public site checked with Playwright (1440 and 375 px): home, Furniture, all products, Custom request, Delivery & Returns, About, bag all 200, no horizontal scroll, no placeholder text. Checkout reached with PYRA in the bag (no details entered, no order): **PayPal still the only payment method**, EGP, full price (no deposit).
 - Not done: Paymob (not signed in), menus/About/collection intros (no new supplied text), theme push (nothing to fix that is approved).
+
+## 2026-11-14 (daily website run: no change on the store; no store writes)
+- Store confirmed with `get-shop-info`: OBJEKT, hs1a1c-ut.myshopify.com, EGP. `theme check` 50 files, no offenses. Shopify CLI not logged in.
+- Store read: MAIN theme still `190236524768` (no file edited since 12 Nov 09:02 UTC, so `website/theme` still matches). 62 products, 10 active, 0 orders. Menus, pages and policies unchanged.
+- Public site checked with Playwright (1440 and 375 px): home, Furniture, all products, About, Delivery & Returns, Custom request, bag all 200, no horizontal scroll, no placeholder text. Password still off. Checkout reached with PYRA (no order): PayPal only.
+- Not done: Paymob (not signed in), menus/About/collection intros (no new supplied text), theme push (CLI not logged in, nothing approved to fix).
