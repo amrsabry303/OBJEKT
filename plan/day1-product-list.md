@@ -1,6 +1,14 @@
-# objekt day-1 product list: reconciliation and recommendation (8 Nov 2026, updated 9, 11, 12 and 13 Nov)
+# objekt day-1 product list: reconciliation and recommendation (8 Nov 2026, updated 9, 11, 12, 13 and 14 Nov)
 
 Prepared by the daily "Content and product list" session. **A recommendation; Sabry decides.** Working titles are the OBJ code until Sabry names a product. Since 11 Nov the live products carry the store titles Sabry put on them (the store notes call SPAN and INGOT approved, the others suggestions not yet trademark-checked).
+
+## Sat 14 Nov 2026: no change, 3 days to the candidate cut-off
+
+Re-checked today (read only): store **62 products, 10 active, 52 draft**; newest edit still INGOT 12 Nov 11:29 UTC. Product sheet last edited 12 Nov 10:59 UTC, production book 11 Nov 23:08 UTC, so neither re-read. No decision answered in STATUS.md. The freeze-day table stands. Correction: the freeze-day note says 67 products on the store; the store has 62 (the catalogue session counted 62 on 12 Nov too).
+
+The 4 tables that were in no collection (OCTA, CAIRN, SPAN, INGOT) are now in Furniture (catalogue session, 13 Nov). Live mix unchanged: 7 Furniture, 1 Table & Living, 2 Objekts, 0 Planters.
+
+Cut-off for candidates stays **Tue 17 Nov**. If nothing arrives by then, launch with the 10 live products and drop the candidates to weekly drops after launch.
 
 ## Fri 13 Nov 2026: no change since the freeze
 

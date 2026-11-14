@@ -6,8 +6,7 @@ Three daily sessions work on this repo, one section each. Each session updates *
 
 ## Decisions needed from Sabry
 <!-- one line each: [workstream] question · options · recommendation. Remove when answered. -->
-- [content] Freeze list (12 Nov, unchanged 13 Nov; candidates need answers by Tue 17 Nov): the 10 live products + 9 that may still join by 19 Nov if each gets name, price and approved image (OBJ-002, 038, 152, 194, 149, 173, 075, 115, 164); all other drafts go live weekly after launch. Table: `plan/day1-product-list.md` · yes / edit · rec: yes. Note: 0 planters live, only 2 pieces under 2,000 EGP.
-- [content] 4 live products are in no collection, so they do not show on the Furniture page: OCTA (190), CAIRN (195), SPAN (197), INGOT (198) · catalogue session adds them to Furniture / you do it · rec: catalogue session, on your yes.
+- [content] Freeze list (12 Nov, unchanged 14 Nov; candidates need answers by Tue 17 Nov, else launch with the 10 live): the 10 live products + 9 that may still join by 19 Nov if each gets name, price and approved image (OBJ-002, 038, 152, 194, 149, 173, 075, 115, 164); all other drafts go live weekly after launch. Table: `plan/day1-product-list.md` · yes / edit · rec: yes. Note: 0 planters live, only 2 pieces under 2,000 EGP.
 - [content] ARRIS (172) is live with no drawing, size or lead time; PYRA (169) shows 3–5 days and "approximate" sizes with no recorded source · ask Polycraft today / put ARRIS back to draft until sized · rec: ask Polycraft today; draft ARRIS if no size by Tue 17 Nov.
 - [content] OBJ-149 has two drawings: sheet says rev 0 approved 11 Nov (about 220 × 220 × 60, brushed); the drawings session made a different DRAFT 12 Nov (140 × 140 × 38, book size) · keep 11 Nov / keep 12 Nov · rec: keep your approved 11 Nov one, drop the draft.
 - [content] Branch `claude/zen-newton-irxvlr` holds the 11–12 Nov records for 020, 166, 167, 194, 197, 198 (not on main) · merge / leave · rec: merge once the repo is private.
@@ -48,6 +47,13 @@ Three daily sessions work on this repo, one section each. Each session updates *
 
 ## Content and product list
 
+### Sat 14 Nov 2026
+- Checked (read only): store 62 products, 10 active, nothing edited since 12 Nov 11:29 UTC; sheet (12 Nov) and book (11 Nov) unchanged by last-edit date. No content decision answered, no copy approval, so no copy drafted.
+- Removed my decision line on the 4 tables in no collection: they are in Furniture since 13 Nov (catalogue session).
+- Added a 14 Nov note to `plan/day1-product-list.md` (no change; store count corrected to 62; fallback if nothing by Tue 17 Nov is launch with the 10 live).
+- Not done: no store, sheet, book or Drive writes.
+- Next: fill CONTENT_TO_SUPPLY 3e and 3f as answers arrive; on Tue 17 Nov mark each candidate in or after-launch.
+
 ### Fri 13 Nov 2026
 - Checked (read only): store 10 active, nothing changed since 12 Nov 11:29 UTC; sheet edited 12 Nov 10:59 UTC but its Products rows match the 12 Nov record; book unchanged since 11 Nov. No decision answered, no copy approval, so no copy drafted.
 - Added section 3f to `website/docs/CONTENT_TO_SUPPLY.md`: every open answer, grouped by who gives it (Polycraft, Sabry). The Polycraft table can be sent as is. Target: answers by **Tue 17 Nov** to make Thu 19 Nov.
@@ -62,13 +68,6 @@ Three daily sessions work on this repo, one section each. Each session updates *
 - Added section 3e to `website/docs/CONTENT_TO_SUPPLY.md`: price, size, finish and lead time for the live products exactly as recorded, with source, and a who-must-answer column. Gaps on every live product: Arabic, packed weight, name trademark check; lead time missing on BLOK, OCTA, SPAN, ARRIS, ROTA (CAIRN's is in the sheet only).
 - Not done: no store, sheet, book or Drive writes. Decisions replaced: the 41-product approval and the (a)/(b)/(c) choice (overtaken by what went live), and the AI-render question (renders are on the live listings).
 - Next: fill 3e as answers arrive; move candidates to live in the table when Sabry activates them.
-
-### Wed 11 Nov 2026
-- Sheet (26 Oct) and book (2 Nov) unchanged; checked by last-edit date. No content decision answered yet.
-- Recorded Sabry's 10 Nov lead time (30–45 days, made to order, 50% deposit) as a store-wide note in CONTENT_TO_SUPPLY 3d. Per-product lead time left blank until Polycraft confirms each fits.
-- Added a freeze-eve check to `plan/day1-product-list.md`: shortlist 0 of 10 complete; fallback if nothing arrives by 12 Nov.
-- No copy drafted: not approved in this file.
-- Next: on Sabry's answers, mark final in/out and fill the shortlist rows as Polycraft data arrives.
 
 ## Product images
 
