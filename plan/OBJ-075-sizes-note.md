@@ -1,5 +1,15 @@
 # OBJ-075 floor planter, three sizes: industry check and proposal (12 Nov 2026)
 
+> **15 Nov 2026 update: Sabry gave the sizes.** S D350 x H350, M D500 x H500, L D600 x H700 (cm in his message: 35 x 35, 50 x 50, 60 x 70; read L as diameter 60, height 70). These replace the ladder in section 2 below (kept for the record). Drawing rev 2 is a DRAFT with these sizes; rev 1 is superseded.
+>
+> | Size | D x H (mm) | H/D | Inner D | Liner it takes (nursery sizes from the sources below) | Steel weight, about |
+> |---|---|---|---|---|---|
+> | S | 350 x 350 | 1.00 | 346 | 15 L (D330 x 300) or 10 L; a 20 L (D355) does not fit | 7.5 kg |
+> | M | 500 x 500 | 1.00 | 496 | 30 L (D410 x 360); a 40 L pot with top D500 does not fit | 15.4 kg |
+> | L | 600 x 700 | 1.17 | 596 | 50 L (D550 x 500) or a 100 L (D520 x 560, sources differ) | 25.2 kg |
+>
+> Differences from the photo: S and M are 1.0 (the photo's pots are about 1.25 to 1.3, by eye); only L is taller than wide. Weight over 15 kg for L means the 1,200 EGP delivery tier in the store, before liner and soil. Sheet check (assumed): S and M fit 1250 x 2500 x 2; L (wall 1879 x 688, base D596, ring strip) needs 1500 x 3000. Production to confirm all of it. Tell me if you want M widened to D520 so a 40 L pot fits.
+
 **Proposal, not costed, Production to confirm.** Sabry's brief (12 Nov): "this pot in 3 sizes. Check the industry sizes." Reference: `images/OBJ-075_ref-sabry-12nov.jpg` (two polished stainless cylinders, maker unknown, reference only). One product, three size variants.
 
 ## 1. What the public sources say (fetched 12 Nov 2026)

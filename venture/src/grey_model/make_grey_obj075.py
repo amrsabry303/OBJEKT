@@ -1,4 +1,4 @@
-"""OBJ-075 grey geometry model (plain untextured grey, soft studio light) from the approved drawing rev 1, exact dimensions.
+"""OBJ-075 grey geometry model (plain untextured grey, soft studio light) from the drawing rev 2 (sizes from Sabry 15 Nov), exact dimensions.
 Numpy ray tracer, no 3D library. Sizes from venture/src/drawings/make_obj075_rev1.py: wall 2 mm, foot ring 12 high set in 10, base disc inside wall bottom.
 Run: python3 make_grey_obj075.py <repo root>. Output venture/grey-models/OBJ-075/ (kept out of git while the repo is public)."""
 import sys, os, numpy as np
@@ -6,7 +6,7 @@ from PIL import Image, ImageDraw, ImageFont
 ROOT = sys.argv[1] if len(sys.argv) > 1 else '/home/user/OBJEKT'
 OUT = ROOT + '/venture/grey-models/OBJ-075'; os.makedirs(OUT, exist_ok=True)
 T, RH, SET = 2.0, 12.0, 10.0
-SIZES = [('S', 300, 360), ('M', 400, 500), ('L', 520, 650)]
+SIZES = [('S', 350, 350), ('M', 500, 500), ('L', 600, 700)]
 GAP = 100.0
 def layout(sel):
     x = 0.0; ps = []
@@ -83,11 +83,11 @@ if __name__ == '__main__':
     ps = layout('SML'); span = ps[-1]['cx']+ps[-1]['R']-(ps[0]['cx']-ps[0]['R'])
     W, Hh = 1800, 1100; sc = (W*0.9)/span
     ims = []
-    ims.append(render('OBJ-075_grey_front_all_rev1.png', ps, W, Hh, (0, 0, -1), sc, (0, 330, 0), title='OBJ-075 grey model, rev 1: FRONT (orthographic), S 300x360, M 400x500, L 520x650 mm'))
-    ims.append(render('OBJ-075_grey_section_all_rev1.png', ps, W, Hh, (0, 0, -1), sc, (0, 330, 0), cut=True, title='SECTION (front half removed): 2 mm wall, base disc inside, 12 mm foot ring set in 10, no drain hole'))
-    ims.append(render('OBJ-075_grey_3q_all_rev1.png', ps, W, Hh, (0.55, -0.32, -0.77), 1.0, (0, 300, 0), persp=int(2.4*span), title='THREE-QUARTER (long lens)'))
-    ims.append(render('OBJ-075_grey_top_all_rev1.png', ps, W, 700, (0, -1, -0.0001), sc*1.0, (0, 0, 0), title='TOP (orthographic)'))
-    render('OBJ-075_grey_M_section3q_rev1.png', layout('M'), 1000, 1200, (0.45, -0.55, -0.7), 1.0, (0, 240, 0), persp=2600, cut=True, title='size M: section, three-quarter from above, base disc and no drain hole')
+    ims.append(render('OBJ-075_grey_front_all_rev2.png', ps, W, Hh, (0, 0, -1), sc, (0, 330, 0), title='OBJ-075 grey model, rev 2 DRAFT: FRONT (orthographic), S 350x350, M 500x500, L 600x700 mm'))
+    ims.append(render('OBJ-075_grey_section_all_rev2.png', ps, W, Hh, (0, 0, -1), sc, (0, 330, 0), cut=True, title='SECTION (front half removed): 2 mm wall, base disc inside, 12 mm foot ring set in 10, no drain hole'))
+    ims.append(render('OBJ-075_grey_3q_all_rev2.png', ps, W, Hh, (0.55, -0.32, -0.77), 1.0, (0, 300, 0), persp=int(2.4*span), title='THREE-QUARTER (long lens)'))
+    ims.append(render('OBJ-075_grey_top_all_rev2.png', ps, W, 700, (0, -1, -0.0001), sc*1.0, (0, 0, 0), title='TOP (orthographic)'))
+    render('OBJ-075_grey_M_section3q_rev2.png', layout('M'), 1000, 1200, (0.45, -0.55, -0.7), 1.0, (0, 280, 0), persp=3200, cut=True, title='size M: section, three-quarter from above, base disc and no drain hole')
     for k in 'SML':
         q = layout(k); R = q[0]['R']; Hq = q[0]['H']
-        render(f'OBJ-075_grey_{k}_3q_rev1.png', q, 1000, 1200, (0.55, -0.32, -0.77), 1.0, (0, Hq*0.48, 0), persp=int(5.2*max(Hq, 2*R)), title=f'size {k}: D{int(2*R)} x H{int(Hq)}, three-quarter')
+        render(f'OBJ-075_grey_{k}_3q_rev2.png', q, 1000, 1200, (0.55, -0.32, -0.77), 1.0, (0, Hq*0.48, 0), persp=int(5.2*max(Hq, 2*R)), title=f'size {k}: D{int(2*R)} x H{int(Hq)}, three-quarter')
