@@ -1,10 +1,9 @@
 """OBJ-164 corner shelf (pair; one shelf modelled) built in Blender from drawing rev 0
-(approved by Sabry 12 Nov 2026, Production review pending, not engineered).
+(rev 1 DRAFT, not yet approved).
 All dimensions in mm, scene scale 0.001 (1 Blender unit = 1 m). Corner of the two walls at the origin,
 wall A in the plane y=0 (runs along +x), wall B in the plane x=0 (runs along +y), z up.
-Geometry from the drawing: top plate right triangle 220 x 220, 2 mm; 10 mm folded front edge on the 311 mm edge;
-two 15 mm wall flanges (200 long, 10 mm relief at the corner); one 2 mm gusset in the corner diagonal plane,
-155.6 mm along the diagonal, 150 mm deep, vertical edge in the corner. Overall height 152.
+REV 1 (draft, 15 Nov 2026; replaces rev 0): one triangle sheet bent 90 degrees along K-L. Horizontal top right triangle
+220 x 220, 2 mm; vertical triangular plate 220 x 150 flat on wall B (vertical edge in the corner); 15 mm flange on the right leg. Overall height 152.
 Usage: python make_obj164_blender.py OUTDIR [grey|steel]
 The walls are plain context planes, not part of the product. Output stays out of git (venture/models/).
 """
@@ -49,19 +48,13 @@ def box(name, x0, x1, y0, y1, z0, z1):
 
 parts = []
 zt = Z_UNDER
+# rev 1 (Sabry, 15 Nov 2026): one triangle sheet bent 90 degrees along K-L.
+# horizontal top K-R-L (K = wall corner at the origin, R on wall A, L on wall B), 2 mm, underside at z = 150
 parts.append(prism("top_plate", [(0, 0, zt), (LEG, 0, zt), (0, LEG, zt)], (0, 0, T)))
-# folded front edge on the hypotenuse, outer face on the hypotenuse line, 10 mm down, 2 mm thick inward
-inw = (-T / R2, -T / R2, 0)
-parts.append(prism("front_fold", [(LEG, 0, zt), (0, LEG, zt), (0, LEG, zt - LIP), (LEG, 0, zt - LIP)], inw))
-# wall flanges, 15 mm down, 200 long, against the walls
+# vertical plate K-L-P flat on wall B (plane x = 0): top edge K-L = 220, vertical edge K-P = 150 in the corner, sloped edge L-P
+parts.append(prism("wall_plate", [(0, 0, zt), (0, LEG, zt), (0, 0, 0)], (T, 0, 0)))
+# 15 mm flange on the right leg K-R, against wall A, 200 long, hidden under the top
 parts.append(box("flange_a", 10, LEG - 10, 0, T, zt - FL, zt))
-parts.append(box("flange_b", 0, T, 10, LEG - 10, zt - FL, zt))
-# gusset in the corner diagonal plane; shifted 1 mm along the diagonal so its 2 mm edge stays clear of the walls
-d = Vector((1, 1, 0)) / R2
-nrm = Vector((1, -1, 0)) / R2
-sh = d * 1.0 - nrm * (T / 2)
-g = [Vector((0, 0, 0)) + sh, Vector((0, 0, DROP)) + sh, d * GL + Vector((0, 0, DROP)) + sh]
-parts.append(prism("gusset", [tuple(p) for p in g], tuple(nrm * T)))
 
 bpy.ops.object.select_all(action="DESELECT")
 for p in parts:
@@ -152,6 +145,7 @@ scn.render.resolution_y = 1100
 scn.view_settings.view_transform = "Standard" if mode == "grey" else "AgX"
 
 shoot("front", (1.1, 1.1, 0.10), lens=120, ortho=0.5)                 # along the corner diagonal
-shoot("side", (1.2, 0.0, 0.10), lens=120, ortho=0.6, target=Vector((0.0, 0.11, 0.10)))                   # along wall A, shows the gusset true size
-shoot("three-quarter", (0.50, 0.15, 0.30), lens=45)
-shoot("underside", (0.30, 0.28, -0.12), lens=35, target=Vector((0.06, 0.06, 0.06)))   # gusset and fold from below
+shoot("left-wall", (1.2, 0.11, 0.10), lens=120, ortho=0.5, target=Vector((0.0, 0.11, 0.10)))   # plate in true shape
+shoot("right-wall", (0.11, 1.2, 0.10), lens=120, ortho=0.5, target=Vector((0.11, 0.0, 0.10)))   # plate edge-on, flange side
+shoot("three-quarter", (0.50, 0.60, 0.30), lens=45)
+shoot("underside", (0.30, 0.28, -0.12), lens=35, target=Vector((0.06, 0.06, 0.06)))   # plate and flange from below

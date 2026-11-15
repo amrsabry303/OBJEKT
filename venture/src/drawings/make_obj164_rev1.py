@@ -1,0 +1,268 @@
+"""OBJ-164: corner shelf, WEDGE, sold as a pair. Production drawing set, REV 1 (DRAFT, replaces rev 0).
+Run: python3 make_obj164_rev1.py <repo root>   Then make_pdf.js for the PDF.
+Rev 1 (15 Nov 2026): Sabry said the shelf is a wedge and rev 0 (vertical gusset in the corner diagonal) was wrong, and that it is
+ONE TRIANGLE SHEET BENT AT 90 DEGREES. Reading: the flat sheet is a triangle R-L-P with the bend line K-L (K on the base R-P).
+Folded 90 degrees along K-L it gives a horizontal top plate K-R-L (right angle at K, legs 220 x 220, along the two walls) and a
+vertical plate K-L-P in the plane of the left wall (top edge K-L = 220, vertical edge K-P = 150 in the wall corner, sloped edge L-P).
+Size 220 x 220 mm legs is Sabry's (production-book caption "2pc 22x22CM"). 2 mm brushed stainless, 150 mm plate depth, a 15 mm
+flange on the right leg for the hidden fixing, pair: PROPOSALS, not costed, Production to confirm. The photo suggests a deeper plate
+(about 180 mm by eye); 150 is carried over from rev 0.
+Arabic wording is a draft for a technical reader. No costs, no structural claims."""
+import sys, os, math, base64, io
+from PIL import Image
+import ezdxf
+ROOT = sys.argv[1] if len(sys.argv) > 1 else '/home/user/OBJEKT'
+OUT = ROOT + '/venture/drawings/OBJ-164'; os.makedirs(OUT, exist_ok=True)
+PHOTO = ROOT + '/images/OBJ-164.jpg'
+REV = 1; DATE = '15 Nov 2026'; PN = 'OBJ-164'
+LEG = 220; T = 2; FL = 15; DROP = 150
+HYP = LEG*math.sqrt(2)                                  # front edge 311.1
+PEDGE = math.hypot(LEG, DROP)                           # sloped edge of the vertical plate 266.2
+OH = T + DROP
+HOLE_D = 5; HOLES_AT = (60, 160)
+SHEET_L, SHEET_W, GAP = 2500, 1250, 10
+OX, OY = DROP, FL                                       # flat origin offset so the bbox starts at (0,0); K = (OX, OY)
+KX, KY = OX, OY
+def flat_pts():
+    L = (KX, KY+LEG); R = (KX+LEG, KY); Pp = (KX-DROP, KY)
+    return [Pp, L, R, (KX+LEG-10, KY), (KX+LEG-10, KY-FL), (KX+10, KY-FL), (KX+10, KY)]
+def holes(): return [(KX+a, KY-FL/2) for a in HOLES_AT]
+def perim(p): return sum(math.dist(p[i], p[(i+1) % len(p)]) for i in range(len(p)))
+BBW, BBH = DROP+LEG, LEG+FL
+PARTS = {'P1': ('Wedge sheet: one triangle, flat', 'لوح الوتد: مثلث واحد مسطح', 2, 'wedge', (BBW, BBH), perim(flat_pts())+len(holes())*math.pi*HOLE_D)}
+TOTAL_CUT = sum(v[2]*v[5] for v in PARTS.values())
+NEST = [('P1', GAP, GAP), ('P1', GAP+BBW+GAP, GAP)]
+def size(k): return PARTS[k][4]
+def nest_ok():
+    r = [(k, x, y, x+size(k)[0], y+size(k)[1]) for k, x, y in NEST]
+    for k, x0, y0, x1, y1 in r:
+        if x0 < 0 or y0 < 0 or x1 > SHEET_L or y1 > SHEET_W: return False, f'{k} outside sheet'
+    for i in range(len(r)):
+        for j in range(i+1, len(r)):
+            a, b = r[i], r[j]
+            if not (a[3]+GAP-1e-6 <= b[1] or b[3]+GAP-1e-6 <= a[1] or a[4]+GAP-1e-6 <= b[2] or b[4]+GAP-1e-6 <= a[2]): return False, f'{a[0]} / {b[0]} spacing'
+    return True, 'ok'
+OK, MSG = nest_ok(); assert OK, MSG
+USED_Y = max(y+size(k)[1] for k, x, y in NEST); USED_X = max(x+size(k)[0] for k, x, y in NEST)
+def new_doc():
+    d = ezdxf.new('R2010'); d.units = 4
+    d.layers.add('CUT', color=7); d.layers.add('FOLD', color=5); d.layers.add('SHEET', color=3); return d
+def add_part(msp, key, ox, oy, fold=True):
+    msp.add_lwpolyline([(ox+x, oy+y) for x, y in flat_pts()], close=True, dxfattribs={'layer': 'CUT'})
+    for hx, hy in holes(): msp.add_circle((ox+hx, oy+hy), HOLE_D/2, dxfattribs={'layer': 'CUT'})
+    if fold:
+        msp.add_line((ox+KX, oy+KY), (ox+KX, oy+KY+LEG), dxfattribs={'layer': 'FOLD'})                # main bend, 90 deg, K-L
+        msp.add_line((ox+KX+10, oy+KY), (ox+KX+LEG-10, oy+KY), dxfattribs={'layer': 'FOLD'})            # flange bend
+FN = {'P1': 'wedge-sheet'}
+for k in PARTS:
+    doc = new_doc(); add_part(doc.modelspace(), k, 0, 0); doc.saveas(f'{OUT}/{PN}_rev{REV}_{k}_{FN[k]}.dxf')
+doc = new_doc(); m = doc.modelspace()
+m.add_lwpolyline([(0, 0), (SHEET_L, 0), (SHEET_L, SHEET_W), (0, SHEET_W)], close=True, dxfattribs={'layer': 'SHEET'})
+for k, x, y in NEST: add_part(m, k, x, y)
+doc.saveas(f'{OUT}/{PN}_rev{REV}_nest_{SHEET_L}x{SHEET_W}.dxf')
+
+# ---- SVG helpers (A3 landscape, mm) ----
+FONT = "DejaVu Sans, Inter, Arial, sans-serif"
+INK, DIM, HID, FILL = '#161616', '#2a4a7a', '#7a7a7a', '#f1efe9'
+def esc(s): return s.replace('&', '&amp;').replace('<', '&lt;')
+def t(x, y, s, size=2.6, w=400, anchor='start', fill=INK, rtl=False, extra=''):
+    extra = extra.replace(' direction="rtl"', '')
+    return f'<text x="{x:.2f}" y="{y:.2f}" font-family="{FONT}" font-size="{size}" font-weight="{w}" text-anchor="{anchor}" fill="{fill}"{extra}>{esc(s)}</text>'
+def bi(x, y, en, ar, wd, size=2.6, w=400, fill=INK):
+    """English on the left, Arabic on the next line, right aligned in a column of width wd."""
+    return t(x, y, en, size, w, fill=fill) + t(x+wd, y+size*1.3, ar, size, w, 'end', fill)
+def line(x1, y1, x2, y2, sw=.3, col=INK, dash=None):
+    return f'<line x1="{x1:.2f}" y1="{y1:.2f}" x2="{x2:.2f}" y2="{y2:.2f}" stroke="{col}" stroke-width="{sw}"' + (f' stroke-dasharray="{dash}"' if dash else '') + '/>'
+def rect(x, y, w, h, sw=.35, col=INK, fill='none', dash=None):
+    return f'<rect x="{x:.2f}" y="{y:.2f}" width="{w:.2f}" height="{h:.2f}" fill="{fill}" stroke="{col}" stroke-width="{sw}"' + (f' stroke-dasharray="{dash}"' if dash else '') + '/>'
+def poly(pts, sw=.35, col=INK, fill='none', dash=None):
+    return '<polygon points="' + ' '.join(f'{x:.2f},{y:.2f}' for x, y in pts) + f'" fill="{fill}" stroke="{col}" stroke-width="{sw}"' + (f' stroke-dasharray="{dash}"' if dash else '') + '/>'
+def arrow(x, y, dx, dy):
+    n = math.hypot(dx, dy); ux, uy = dx/n, dy/n
+    return f'<polygon points="{x:.2f},{y:.2f} {x-ux*2+uy*.7:.2f},{y-uy*2-ux*.7:.2f} {x-ux*2-uy*.7:.2f},{y-uy*2+ux*.7:.2f}" fill="{DIM}"/>'
+def dim_h(x1, x2, y, label, off=0, ext=None):
+    s = line(x1, y, x2, y, .2, DIM) + arrow(x1, y, 1, 0) + arrow(x2, y, -1, 0)
+    if ext is not None: s += line(x1, ext, x1, y+(2 if y > ext else -2), .15, DIM) + line(x2, ext, x2, y+(2 if y > ext else -2), .15, DIM)
+    return s + t((x1+x2)/2, y-1, label, 2.4, 500, 'middle', DIM)
+def dim_v(x, y1, y2, label, ext=None):
+    s = line(x, y1, x, y2, .2, DIM) + arrow(x, y1, 0, 1) + arrow(x, y2, 0, -1)
+    if ext is not None: s += line(ext, y1, x+(2 if x > ext else -2), y1, .15, DIM) + line(ext, y2, x+(2 if x > ext else -2), y2, .15, DIM)
+    return s + f'<text transform="translate({x-1:.2f} {(y1+y2)/2:.2f}) rotate(-90)" font-family="{FONT}" font-size="2.4" font-weight="500" text-anchor="middle" fill="{DIM}">{esc(label)}</text>'
+def balloon(x, y, n):
+    return f'<circle cx="{x:.2f}" cy="{y:.2f}" r="3.2" fill="#fff" stroke="{INK}" stroke-width=".3"/>' + t(x, y+1.1, str(n), 3, 600, 'middle')
+def datauri(path, w=360):
+    im = Image.open(path).convert('RGB'); im.thumbnail((w, w)); b = io.BytesIO(); im.save(b, 'JPEG', quality=72)
+    return 'data:image/jpeg;base64,' + base64.b64encode(b.getvalue()).decode()
+
+
+STAMP = 'DRAFT, not approved, not engineered'; STAMP_AR = 'مسودة، غير معتمدة، غير مهندسة'
+AR = ' direction="rtl"'
+def frame(n, N, title_en, title_ar, scale):
+    s = rect(5, 5, 410, 287, .5) + rect(7, 7, 406, 283, .2)
+    X, Y, Wd = 228, 247, 185
+    s += rect(X, Y, Wd, 41, .4, fill='#fff')
+    s += line(X, Y+9, X+Wd, Y+9, .25) + line(X, Y+20, X+Wd, Y+20, .25) + line(X, Y+31, X+Wd, Y+31, .25) + line(X+92, Y+9, X+92, Y+41, .25)
+    s += bi(X+2, Y+4, f'{PN}   Corner shelf, wedge (pair)', 'رف زاوية وتد (زوج)', Wd-4, 2.6, 600)
+    s += bi(X+2, Y+14, f'SIZE  {LEG} x {LEG} x {OH} mm each', 'المقاس لكل رف', 88, 2.1) + bi(X+94, Y+14, f'SCALE  {scale}   UNITS  mm', 'المقياس والوحدة', 88, 2.3)
+    s += bi(X+2, Y+25, 'MATERIAL  Stainless sheet 2 mm (proposal)', 'الخامة: ستانلس ٢ مم (مقترح)', 88, 2.1) + bi(X+94, Y+25, 'FINISH  Brushed (proposal)', 'التشطيب: مبشور (مقترح)', 88, 2.1)
+    s += bi(X+2, Y+36, f'DATE  {DATE}      SHEET {n} / {N}', 'التاريخ، الورقة', 88, 2.3) + bi(X+94, Y+36, f'REV  {REV}', 'المراجعة', 88, 2.3)
+    s += rect(X, Y-14, Wd, 12, .5, '#b3261e', '#fff')
+    s += t(X+Wd/2, Y-8.6, STAMP, 2.9, 700, 'middle', '#b3261e') + t(X+Wd/2, Y-3.8, STAMP_AR, 2.9, 700, 'middle', '#b3261e')
+    s += t(10, 14, title_en, 4.2, 700) + t(410, 14, title_ar, 4.2, 700, 'end', extra=' direction="rtl"')
+    return s
+def sheet(n, N, title_en, title_ar, scale, body):
+    return f'<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 420 297" width="420mm" height="297mm"><rect width="420" height="297" fill="#fff"/>{frame(n, N, title_en, title_ar, scale)}{body}</svg>'
+N = 5; S = .4
+# ================= SHEET 1: views =================
+oxp, oyp = 30, 40
+def px(x): return oxp + x*S
+def py(y): return oyp + y*S
+b = t(22, 30, 'PLAN (top, true shape)', 2.8, 600) + t(205, 34, 'المسقط الأفقي', 2.6, 500, 'end', extra=AR)
+b += poly([(px(x), py(y)) for x, y in [(0, 0), (LEG, 0), (0, LEG)]], .45, INK, '#e6e6e4')
+b += rect(px(0)-1.5, py(0), 1.5, LEG*S, .6, '#555', '#bbb') + rect(px(0), py(0)-1.5, LEG*S, 1.5, .3, '#999', '#ddd')
+b += t(px(LEG/2), py(0)-3, 'RIGHT WALL / الحائط الأيمن', 2, 400, 'middle', HID) + t(px(0)-4, py(LEG)+4, 'LEFT WALL (plate here) / الحائط الأيسر', 2, 400, 'start', HID)
+b += dim_h(px(0), px(LEG), py(0)-9, f'{LEG}', ext=py(0)-1.5) + dim_v(px(0)-9, py(0), py(LEG), f'{LEG}', ext=px(0)-1.5)
+mx, my = (px(LEG)+px(0))/2, (py(0)+py(LEG))/2
+b += t(mx+8, my-3, f'front edge {HYP:.1f}', 2.3, 500, fill=DIM) + t(mx+8, my+.5, 'الحافة الأمامية', 2.2, 400, 'start', DIM, extra=AR)
+b += t(px(8), py(LEG*.28), '90°', 2.4, 500, fill=DIM) + t(px(LEG*.06), py(LEG*.5), 'K', 2.4, 600, fill=DIM)
+b += t(px(LEG*.12), py(LEG*.7), 'The vertical plate hangs from the left leg,', 2.0, 400, fill=HID) + t(px(LEG*.12), py(LEG*.7)+3, 'flat on the left wall (see next view).', 2.0, 400, fill=HID)
+# ELEVATION A: looking at the left wall (plate in true shape)
+ox, oz = 245, 52
+def fx(x): return ox + x*S
+def fz(z): return oz + z*S
+b += t(215, 30, 'ELEVATION A (looking at the left wall: plate in true shape)', 2.8, 600) + t(410, 34, 'منظر أ (نحو الحائط الأيسر: اللوح بحجمه الحقيقي)', 2.6, 500, 'end', extra=AR)
+b += poly([(fx(0), fz(T)), (fx(LEG), fz(T)), (fx(0), fz(T+DROP))], .45, INK, '#cfcfcc')
+b += rect(fx(0), fz(0), LEG*S, T*S, .45, INK, '#d8d8d5')
+b += rect(fx(0)-1.5, fz(-5), 1.5, (OH+10)*S, .6, '#555', '#bbb') + t(fx(0)-4, fz(OH/2), 'CORNER', 2, 400, 'end', HID)
+b += dim_h(fx(0), fx(LEG), fz(0)-5, f'{LEG}', ext=fz(0)) + dim_v(fx(LEG)+8, fz(0), fz(OH), f'{OH}', ext=fx(LEG)) + dim_v(fx(LEG)+16, fz(T), fz(OH), f'{DROP}', ext=fx(LEG))
+b += t(fx(LEG*.4), fz(T+DROP*.3), f'sloped edge {PEDGE:.1f}', 2.0, 400, fill=HID) + t(fx(LEG*.4), fz(T+DROP*.3)+3, 'الحافة المائلة', 2.0, 400, fill=HID, extra=AR)
+b += balloon(fx(LEG*.3), fz(0)-12, 1) + balloon(fx(14), fz(T+DROP*.75), 2)
+# ELEVATION B: looking at the right wall
+ox2 = 245; oz2 = 150
+def sx(x): return ox2 + x*S
+def sz(z): return oz2 + z*S
+b += t(215, 138, 'ELEVATION B (looking at the right wall: plate edge-on)', 2.8, 600) + t(410, 142, 'منظر ب (نحو الحائط الأيمن: اللوح من جانبه)', 2.6, 500, 'end', extra=AR)
+b += rect(sx(0), sz(0), LEG*S, T*S, .45, INK, '#d8d8d5')
+b += rect(sx(0), sz(T), T*S, DROP*S, .45, INK, '#bdbdb9')
+b += rect(sx(LEG-10-190), sz(T), 190*S, FL*S, .3, HID, 'none', '1 .7')
+b += rect(sx(0)-1.5, sz(-5), 1.5, (OH+10)*S, .3, '#999', '#ddd') + t(sx(0)-4, sz(OH/2), 'CORNER', 2, 400, 'end', HID)
+b += dim_h(sx(0), sx(LEG), sz(OH)+8, f'{LEG}', ext=sz(OH)) + dim_v(sx(LEG)+8, sz(0), sz(OH), f'{OH}', ext=sx(LEG))
+b += t(sx(70), sz(T+FL)+5, 'right-leg flange (dashed): 15 fold, hidden fixing', 2.0, 400, fill=HID) + t(sx(70), sz(T+FL)+8, 'الزعنفة على الضلع الأيمن: تثبيت مخفي', 2.0, 400, fill=HID, extra=AR)
+# reference photo + notes
+b += t(22, 160, 'REFERENCE PHOTO (Sabry, 12 Nov; maker unknown, device on the shelf is not ours)', 2.3, 600) + t(205, 164, 'صورة مرجعية (الجهاز ليس لنا)', 2.3, 500, 'end', extra=AR)
+b += f'<image href="{datauri(PHOTO)}" x="22" y="166" width="64" height="74" preserveAspectRatio="xMidYMid slice"/>' + rect(22, 166, 64, 74, .2, HID)
+for i, ln in enumerate(['Rev 1 (Sabry, 15 Nov): a wedge, one triangle', 'sheet bent 90 degrees. Horizontal triangular', 'top, and a vertical triangular plate hanging', 'from its left leg, flat on the left wall.', 'The shelf-top device in the photo is not drawn.']):
+    b += t(92, 172+i*3.6, ln, 2.0, 400, fill=HID)
+b += t(205, 172, 'مراجعة ١: وتد من مثلث واحد مثني ٩٠°', 2.0, 400, 'end', HID, extra=AR)
+b += t(22, 262, 'Colourways: bare brushed stainless (proposal). No paint colour.  ألوان: ستانلس مبشور بدون دهان (مقترح).', 2.0, 400, fill=HID)
+b += t(22, 276, f'Leg 220 x 220 is Sabry\'s (production-book caption "2pc 22x22CM"). Thickness 2, plate depth {DROP}, flange {FL}, screws, pair: PROPOSALS,', 2.0, 400, fill=HID)
+b += t(22, 279.5, f'not costed, Production to confirm. Overall height {OH} = top plate {T} + plate {DROP} below it.  المقاسات عدا ٢٢٠ مقترحة، يؤكدها التصنيع.', 2.0, 400, fill=HID)
+sh1 = sheet(1, N, 'VIEWS', 'المناظير', '1:2.5', b)
+
+# ================= SHEET 2: flat pattern =================
+S2 = .6
+b = t(10, 22, 'Flat pattern at about 1:1.7, bend allowance NOT applied (Production adds it). Fold lines dashed.', 2.3, 400, fill=HID) + t(410, 22, 'النمط المسطح، بدون سماحية الثني (يضيفها التصنيع). خطوط الثني متقطعة.', 2.3, 400, 'end', HID)
+x1, y1 = 40, 50
+def fx1(x): return x1 + x*S2
+def fy1(y): return y1 + (BBH-y)*S2
+b += poly([(fx1(x), fy1(y)) for x, y in flat_pts()], .4, INK, FILL)
+for hx, hy in holes(): b += f'<circle cx="{fx1(hx):.2f}" cy="{fy1(hy):.2f}" r="{HOLE_D/2*S2:.2f}" fill="#fff" stroke="{INK}" stroke-width=".3"/>'
+b += line(fx1(KX), fy1(KY), fx1(KX), fy1(KY+LEG), .35, DIM, '2.5 1.2') + line(fx1(KX+10), fy1(KY), fx1(KX+LEG-10), fy1(KY), .25, DIM, '2 1')
+b += t(fx1(KX)+2, fy1(KY+LEG*.55), 'bend 90 deg, K-L', 2.2, 500, fill=DIM) + t(fx1(KX)+2, fy1(KY+LEG*.55)+3, 'ثنية ٩٠° K-L', 2.0, 400, fill=DIM)
+b += t(fx1(KX-DROP*.6), fy1(KY+LEG*.18), 'VERTICAL PLATE', 2.2, 600, fill='#555') + t(fx1(KX-DROP*.6), fy1(KY+LEG*.18)+3, 'اللوح الرأسي', 2.0, 400, fill='#555', extra=AR)
+b += t(fx1(KX+LEG*.3), fy1(KY+LEG*.18), 'HORIZONTAL TOP', 2.2, 600, fill='#555') + t(fx1(KX+LEG*.3), fy1(KY+LEG*.18)+3, 'الرف الأفقي', 2.0, 400, fill='#555', extra=AR)
+b += t(fx1(KX)-2, fy1(KY)+4, 'K', 2.4, 600, fill=DIM) + t(fx1(KX)-2, fy1(KY+LEG)-1.5, 'L', 2.4, 600, fill=DIM) + t(fx1(KX+LEG)+1.5, fy1(KY)+1, 'R', 2.4, 600, fill=DIM) + t(fx1(KX-DROP)-4, fy1(KY)+1, 'P', 2.4, 600, fill=DIM)
+b += dim_h(fx1(KX-DROP), fx1(KX), fy1(KY-FL)+8, f'{DROP}', ext=fy1(KY)) + dim_h(fx1(KX), fx1(KX+LEG), fy1(KY-FL)+8, f'{LEG}', ext=fy1(KY))
+b += dim_h(fx1(KX), fx1(KX+HOLES_AT[0]), fy1(KY-FL)+16, f'{HOLES_AT[0]}', ext=fy1(KY-FL/2)) + dim_h(fx1(KX+HOLES_AT[0]), fx1(KX+HOLES_AT[1]), fy1(KY-FL)+16, f'{HOLES_AT[1]-HOLES_AT[0]}', ext=fy1(KY-FL/2))
+b += dim_v(fx1(KX-DROP)-6, fy1(KY+LEG), fy1(KY), f'{LEG}  (K-L)', ext=fx1(KX))
+b += dim_v(fx1(KX+LEG)+10, fy1(KY), fy1(KY-FL), f'{FL}', ext=fx1(KX+LEG-10))
+b += t(x1, y1-8, '1  WEDGE SHEET, one flat triangle, 2 off (one per shelf)', 2.4, 600) + t(x1+BBW*S2, y1-8, 'لوح الوتد، مثلث واحد، عدد ٢', 2.4, 600, 'end', extra=AR) + balloon(x1-14, y1+BBH*S2/2, 1)
+dx, dy = 235, 60
+b += t(dx, dy, 'DATA  mm', 2.4, 600) + t(410, dy, 'بيانات', 2.4, 600, 'end', extra=AR)
+rows = [('Flat sheet outline', 'triangle R-L-P'), ('Flat size (bbox)', f'{BBW:.0f} x {BBH:.0f}'), ('Base P-R (K on it)', f'{DROP+LEG}'), ('Height K-L (bend line)', f'{LEG}'),
+        ('Top plate (folded)', f'K-R-L, right angle at K, {LEG} x {LEG}'), ('Vertical plate (folded)', f'K-L-P, {LEG} x {DROP}, sloped edge {PEDGE:.1f}'), ('Bend', '90 deg along K-L'),
+        ('Flange on leg K-R', f'{FL} fold, {len(holes())} holes dia {HOLE_D}'), ('Outline length each', f'{PARTS["P1"][5]:.0f}')]
+for i, (k, v) in enumerate(rows):
+    yy = dy+6+i*5
+    b += t(dx, yy, k, 2.1, 400) + t(dx+60, yy, v, 2.1, 600) + line(dx, yy+1.6, dx+165, yy+1.6, .12, HID)
+for i, ln in enumerate(['One triangle sheet, bent 90 degrees along K-L (Sabry, 15 Nov). Folded: K-R-L lies flat as the shelf; K-L-P stands vertical on the left wall.',
+                        f'Vertical edge K-P = {DROP} in the wall corner; sloped edge L-P = {PEDGE:.1f}. Flange {FL} on leg K-R folds down; two dia {HOLE_D} holes at {HOLES_AT[0]} and {HOLES_AT[1]} from the corner.',
+                        'The vertical plate faces the room, so no screw can go through it without being seen. How it is held to the left wall (bonded, keyed or other) is not drawn: Production to decide.',
+                        'Left-hand and mirrored right-hand versions: the drawing shows one hand. Whether the pair is two of the same or a mirrored pair: Sabry to confirm.',
+                        'Bend radius and allowance, brushing direction and blending: Production.']):
+    b += t(22, 232+i*3.8, ln, 2.0)
+b += t(410, 232, 'مثلث واحد مثني ٩٠° عند K-L. طريقة تثبيت اللوح الرأسي بالحائط الأيسر يقررها التصنيع.', 2.0, 400, 'end', extra=AR)
+sh2 = sheet(2, N, 'PART SHEET', 'ورقة القطع', '1:1.7', b)
+
+# ================= SHEET 3: folded view =================
+SC = .75
+def P(x, y, z): return 5+130*SC + (x*.9 - y*.4)*SC, 70 + (x*.25 + y*.45 + z)*SC   # z down
+def pl(pts3, fill, sw=.35): return poly([P(*q) for q in pts3], sw, INK, fill)
+b = t(10, 22, 'FOLDED SHELF (proposed; Production decides forming, jigs and fixings)', 2.5, 600) + t(410, 22, 'الرف بعد الثني (مقترح، والتصنيع يقرر التشكيل والقوالب والتثبيت)', 2.5, 600, 'end', extra=AR)
+b += pl([(0, 0, T), (0, LEG, T), (0, 0, T+DROP)], '#bdbdb9')                                    # vertical plate, left wall plane x = 0
+b += pl([(0, 0, 0), (LEG, 0, 0), (0, LEG, 0)], '#d8d8d5', .45)                                  # top plate
+b += pl([(10, 0, 0), (LEG-10, 0, 0), (LEG-10, 0, FL), (10, 0, FL)], '#aeaeaa')                   # flange on the right leg
+for q in [(0, 0, 0), (LEG, 0, 0), (0, LEG, 0)]: pass
+ax, ay = P(LEG*.3, LEG*.3, 0); b += balloon(ax, ay-6, 1)
+ax, ay = P(0, LEG*.3, T+DROP*.3); b += balloon(ax-10, ay+2, 2)
+ax, ay = P(LEG/2, 0, FL); b += balloon(ax+8, ay+6, 3)
+ax, ay = P(0, 0, 0); b += t(ax-8, ay-3, 'K', 2.6, 600, fill=DIM)
+ax, ay = P(0, LEG, 0); b += t(ax-6, ay+1, 'L', 2.6, 600, fill=DIM)
+ax, ay = P(LEG, 0, 0); b += t(ax+2, ay-1, 'R', 2.6, 600, fill=DIM)
+ax, ay = P(0, 0, T+DROP); b += t(ax-8, ay+4, 'P', 2.6, 600, fill=DIM)
+b += t(22, 262, 'Fixing: 2 screws and plugs per shelf through the flange (3) on the right leg, hidden under the top. Holding the vertical plate (2) to the left wall: Production to decide.', 2.0, 400, fill=HID)
+b += t(224, 266, 'التثبيت: مسماران وفيشر عبر الزعنفة (٣) على الضلع الأيمن. تثبيت اللوح الرأسي بالحائط يقرره التصنيع.', 2.0, 400, 'end', HID, extra=AR)
+sx0 = 245
+b += t(sx0, 38, 'ASSEMBLY SEQUENCE (proposed)', 2.6, 600) + t(410, 38, 'تسلسل التجميع (مقترح)', 2.6, 600, 'end', extra=AR)
+steps = [('Cut part 1 (one triangle, outline and holes) from the DXF file; deburr.', 'قص القطعة ١ (مثلث واحد بالفتحات) من ملف DXF وتنعيم الحواف.'),
+         (f'Fold the flange {FL} on leg K-R.', f'ثني الزعنفة {FL} مم على الضلع K-R.'),
+         ('Bend the sheet 90 degrees along K-L: K-R-L becomes the top, K-L-P the vertical plate.', 'ثني اللوح ٩٠° عند K-L: يصبح K-R-L الرف وK-L-P اللوح الرأسي.'),
+         ('Brush the finish in one direction on all visible faces.', 'بشر السطح في اتجاه واحد على كل الوجوه الظاهرة.'),
+         ('Fix to the walls; make two shelves for the pair (same hand or mirrored: Sabry to confirm).', 'التثبيت بالحائطين، وصنع رفين للزوج (نفس الاتجاه أو معكوس: سبري يؤكد).')]
+for i, (en, ar) in enumerate(steps):
+    yy = 48 + i*17
+    b += balloon(sx0+3, yy-1, i+1) + t(sx0+9, yy, en, 2.2) + t(410, yy+5, ar, 2.2, 400, 'end', extra=AR)
+sh3 = sheet(3, N, 'FOLDED VIEW AND ASSEMBLY', 'منظر مثني والتجميع', 'n/a', b)
+
+# ================= SHEET 4: cutting layout =================
+S4 = .1
+b = t(10, 22, f'CUTTING LAYOUT for one PAIR on an assumed sheet {SHEET_L} x {SHEET_W} x {T} (proposal, Production to confirm).', 2.4, 600) + t(410, 22, 'مخطط القص لزوج على لوح مفترض، يؤكده التصنيع', 2.4, 600, 'end', extra=AR)
+ox4, oy4 = 30, 40
+b += rect(ox4, oy4, SHEET_L*S4, SHEET_W*S4, .5, '#2f6b45', '#fbfaf6') + t(ox4, oy4-2, f'SHEET {SHEET_L} x {SHEET_W}', 2.2, 600, fill='#2f6b45')
+for k, x, y in NEST:
+    w, h = size(k)
+    b += poly([(ox4+(x+px_)*S4, oy4+(y+h-py_)*S4) for px_, py_ in flat_pts()], .3, INK, FILL)
+    b += t(ox4+(x+w/2)*S4, oy4+(y+h/2)*S4+1, k[1], 3.4, 600, 'middle', '#555')
+b += dim_h(ox4, ox4+SHEET_L*S4, oy4+SHEET_W*S4+7, f'{SHEET_L}', ext=oy4+SHEET_W*S4) + dim_v(ox4-6, oy4, oy4+SHEET_W*S4, f'{SHEET_W}', ext=ox4)
+b += t(30, 195, f'Parts nested with {GAP} mm spacing in one corner: about {USED_X:.0f} x {USED_Y:.0f} mm used. No offcut is claimed. Two same-hand sheets shown; a mirrored pair is the same shapes flipped.', 2.3)
+b += t(30, 200, f'Total cutting length, 2 wedge sheets (with holes): {TOTAL_CUT/1000:.2f} m ({TOTAL_CUT:.0f} mm), outlines only.', 2.5, 600)
+b += t(410, 195, 'الأجزاء مرتبة بمسافة ١٠ مم. لا يُدّعى أي هالك.', 2.3, 400, 'end', extra=AR) + t(410, 200, f'إجمالي طول القص: {TOTAL_CUT/1000:.2f} متر', 2.5, 600, 'end', extra=AR)
+sh4 = sheet(4, N, 'CUTTING LAYOUT', 'مخطط القص', '1:10', b)
+
+# ================= SHEET 5: BOM and notes =================
+b = t(10, 28, 'BILL OF MATERIALS (for one PAIR = 2 shelves)', 2.8, 600) + t(410, 28, 'قائمة المواد (لزوج = رفان)', 2.8, 600, 'end', extra=AR)
+b += rect(10, 31, 400, 7, .3, INK, '#e9e5dc')
+for x, s_ in zip([12, 24, 150, 215], ['ITEM', 'PART / الجزء', 'QTY / العدد', 'MATERIAL / الخامة']): b += t(x, 36, s_, 2.3, 600)
+bom = [('1', 'Wedge sheet: one triangle bent 90 deg (top, vertical plate, flange)', 'لوح الوتد: مثلث واحد مثني ٩٠°', '2', 'Stainless sheet 2 mm, brushed (proposal)'),
+       ('2', 'Wall screw and plug (flange)', 'مسمار وفيشر للحائط (الزعنفة)', '4 (2 per shelf)', 'Bought-in; for the wall type, by Production'),
+       ('3', 'Hold for the vertical plate on the left wall', 'تثبيت اللوح الرأسي', 'by Production', 'Not drawn; Production to decide')]
+for i, (n_, en, ar, q, m_) in enumerate(bom):
+    yy = 44 + i*7
+    b += line(10, yy+2.2, 410, yy+2.2, .15, HID) + t(12, yy, n_, 2.4) + t(24, yy, en, 2.4) + t(140, yy, ar, 2.4, 400, 'end', extra=AR) + t(150, yy, q, 2.4) + t(215, yy, m_, 2.4)
+b += t(10, 80, 'NOTES', 2.8, 600) + t(410, 80, 'ملاحظات', 2.8, 600, 'end', extra=AR)
+notes = [('REV 1 (15 Nov 2026) replaces rev 0, which was wrong. Sabry: it is a wedge, one triangle sheet bent at 90 degrees. Folded along K-L it gives a horizontal triangular top and a vertical triangular plate flat on the left wall.', 'المراجعة ١ تحل محل ٠: وتد من مثلث واحد مثني ٩٠°، رف أفقي ولوح رأسي على الحائط الأيسر.'),
+         ('Leg length 220 x 220 mm is Sabry\'s size (production-book caption "2pc 22x22CM"), the two straight edges along the walls. Front edge about 311 mm.', 'الضلعان ٢٢٠ × ٢٢٠ مم (مقاس سبري) على الحائطين، والحافة الأمامية حوالي ٣١١ مم.'),
+         (f'Proposals, not costed, Production to confirm: stainless 2 mm, brushed; vertical plate depth {DROP} mm (overall height {OH}; carried over from rev 0, the photo suggests deeper, about 180 by eye); flange {FL} mm with 2 holes dia {HOLE_D} per shelf; sold as a pair.', 'مقترحات غير مسعرة يؤكدها التصنيع: ستانلس ٢ مم مبشور، عمق ١٥٠ مم (الصورة توحي بأعمق)، زعنفة ١٥ مم، زوج.'),
+         ('Shape read from one photo of unknown maker and Sabry\'s correction. Drawn as objekt\'s own design. The device on the shelf is not ours and not drawn.', 'الشكل من صورة واحدة وتصحيح سبري ومرسوم كتصميم خاص بأوبجيكت. الجهاز على الرف ليس لنا.'),
+         ('Open for Sabry: is the pair two of the same hand or a mirrored pair (plate on the left wall for one, on the right wall for the other)? Drawing shows the plate on the left wall.', 'مفتوح: هل الزوج متماثل الاتجاه أم معكوس؟ الرسم يبين اللوح على الحائط الأيسر.'),
+         ('Hidden fixing: the flange on the right leg is covered by the top. The vertical plate faces the room, so how it is held is Production\'s to decide (not drawn). Wall type and plugs are not known.', 'التثبيت المخفي عبر الزعنفة. طريقة تثبيت اللوح الرأسي يقررها التصنيع.'),
+         ('Finish: exposed brushed stainless, no paint (proposal). Stainless grade, brushing direction, bend radius and allowance, tolerances, sheet size are Production\'s to decide.', 'التشطيب: ستانلس مبشور بدون دهان (مقترح). باقي التفاصيل يقررها التصنيع.'),
+         ('No structural claims, stress figures, load figures, costs or prices on this drawing. Not engineered. A stated shelf load is not claimed until Production tests it. Arabic wording is a draft for a technical reader.', 'لا ادعاءات إنشائية ولا حمل مذكور ولا تكاليف. الصياغة العربية مسودة.')]
+for i, (en, ar) in enumerate(notes):
+    yy = 89 + i*12.5
+    b += t(12, yy, f'{i+1}.', 2.4, 600) + t(18, yy, en, 2.0) + t(410, yy+4.5, ar, 2.0, 400, 'end', extra=AR)
+sh5 = sheet(5, N, 'BILL OF MATERIALS AND NOTES', 'قائمة المواد والملاحظات', 'n/a', b)
+
+for i, s_ in enumerate([sh1, sh2, sh3, sh4, sh5], 1):
+    open(f'{OUT}/{PN}_rev{REV}_sheet{i}.svg', 'w').write(s_)
+print('outline (mm):', round(PARTS['P1'][5]), 'total', round(TOTAL_CUT), 'bbox', BBW, BBH, 'sloped', round(PEDGE, 1), 'nest', MSG, 'used', round(USED_X), round(USED_Y))
