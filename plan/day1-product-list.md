@@ -1,6 +1,10 @@
-# objekt day-1 product list: reconciliation and recommendation (8 Nov 2026, updated 9, 11, 12, 13 and 14 Nov)
+# objekt day-1 product list: reconciliation and recommendation (8 Nov 2026, updated 9, 11, 12, 13, 14 and 15 Nov)
 
 Prepared by the daily "Content and product list" session. **A recommendation; Sabry decides.** Working titles are the OBJ code until Sabry names a product. Since 11 Nov the live products carry the store titles Sabry put on them (the store notes call SPAN and INGOT approved, the others suggestions not yet trademark-checked).
+
+## Sun 15 Nov 2026: no change, 2 days to the candidate cut-off
+
+Re-checked today (read only): store **62 products, 10 active**; newest edit still INGOT 12 Nov 11:29 UTC. Sheet last edited 12 Nov 10:59 UTC, book 11 Nov 23:08 UTC, so neither re-read. No decision answered in STATUS.md. The freeze-day table stands. Cut-off **Tue 17 Nov**; without answers, launch with the 10 live.
 
 ## Sat 14 Nov 2026: no change, 3 days to the candidate cut-off
 

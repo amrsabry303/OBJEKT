@@ -6,7 +6,7 @@ Three daily sessions work on this repo, one section each. Each session updates *
 
 ## Decisions needed from Sabry
 <!-- one line each: [workstream] question · options · recommendation. Remove when answered. -->
-- [content] Freeze list (12 Nov, unchanged 14 Nov; candidates need answers by Tue 17 Nov, else launch with the 10 live): the 10 live products + 9 that may still join by 19 Nov if each gets name, price and approved image (OBJ-002, 038, 152, 194, 149, 173, 075, 115, 164); all other drafts go live weekly after launch. Table: `plan/day1-product-list.md` · yes / edit · rec: yes. Note: 0 planters live, only 2 pieces under 2,000 EGP.
+- [content] Freeze list (12 Nov, unchanged 15 Nov; candidates need answers by Tue 17 Nov, else launch with the 10 live): the 10 live products + 9 that may still join by 19 Nov if each gets name, price and approved image (OBJ-002, 038, 152, 194, 149, 173, 075, 115, 164); all other drafts go live weekly after launch. Table: `plan/day1-product-list.md` · yes / edit · rec: yes. Note: 0 planters live, only 2 pieces under 2,000 EGP.
 - [content] ARRIS (172) is live with no drawing, size or lead time; PYRA (169) shows 3–5 days and "approximate" sizes with no recorded source · ask Polycraft today / put ARRIS back to draft until sized · rec: ask Polycraft today; draft ARRIS if no size by Tue 17 Nov.
 - [content] OBJ-149 has two drawings: sheet says rev 0 approved 11 Nov (about 220 × 220 × 60, brushed); the drawings session made a different DRAFT 12 Nov (140 × 140 × 38, book size) · keep 11 Nov / keep 12 Nov · rec: keep your approved 11 Nov one, drop the draft.
 - [content] Branch `claude/zen-newton-irxvlr` holds the 11–12 Nov records for 020, 166, 167, 194, 197, 198 (not on main) · merge / leave · rec: merge once the repo is private.
@@ -47,6 +47,12 @@ Three daily sessions work on this repo, one section each. Each session updates *
 
 ## Content and product list
 
+### Sun 15 Nov 2026
+- Checked (read only): store 62 products, 10 active, nothing edited since 12 Nov 11:29 UTC; sheet (12 Nov) and book (11 Nov) unchanged by last-edit date. No content decision answered, no copy approval, so no copy drafted.
+- Added a 15 Nov note to `plan/day1-product-list.md` (no change). CONTENT_TO_SUPPLY unchanged: nothing new to pre-fill.
+- Not done: no store, sheet, book or Drive writes.
+- Next: Tue 17 Nov cut-off: mark each candidate in or after-launch; fill 3e and 3f as answers arrive.
+
 ### Sat 14 Nov 2026
 - Checked (read only): store 62 products, 10 active, nothing edited since 12 Nov 11:29 UTC; sheet (12 Nov) and book (11 Nov) unchanged by last-edit date. No content decision answered, no copy approval, so no copy drafted.
 - Removed my decision line on the 4 tables in no collection: they are in Furniture since 13 Nov (catalogue session).
@@ -60,14 +66,6 @@ Three daily sessions work on this repo, one section each. Each session updates *
 - Added a 13 Nov note to `plan/day1-product-list.md`: no change, freeze-day table stands, cut-off Tue 17 Nov for candidates.
 - Not done: no store, sheet, book or Drive writes.
 - Next: fill 3e and 3f as answers arrive; move candidates to live when Sabry activates them.
-
-### Thu 12 Nov 2026 (freeze day)
-- Read: store (read only; 67 products, **10 active**, 57 draft), product sheet and production book (both edited 11 Nov, so re-read in full), branch `claude/zen-newton-irxvlr` (not on main). No copy approval in this file, so no copy drafted.
-- Found: Sabry named, priced and activated 10 products on 11–12 Nov: SLAB (020), BLOK (166), TORSO (167, with OBJ-196 as its 55 cm size), OCTA (190), CAIRN (195), SPAN (197), INGOT (198), PYRA (169), ARRIS (172), ROTA (099). The book added OBJ-196, 197, 198; the sheet added 191–195 and an approved OBJ-149 drawing that differs from the 12 Nov draft.
-- Wrote the freeze-day table at the top of `plan/day1-product-list.md` (every OBJ id: title, category, process, drawing, images, in/out, reason). Recommendation: 10 live + 9 candidates, the rest after launch.
-- Added section 3e to `website/docs/CONTENT_TO_SUPPLY.md`: price, size, finish and lead time for the live products exactly as recorded, with source, and a who-must-answer column. Gaps on every live product: Arabic, packed weight, name trademark check; lead time missing on BLOK, OCTA, SPAN, ARRIS, ROTA (CAIRN's is in the sheet only).
-- Not done: no store, sheet, book or Drive writes. Decisions replaced: the 41-product approval and the (a)/(b)/(c) choice (overtaken by what went live), and the AI-render question (renders are on the live listings).
-- Next: fill 3e as answers arrive; move candidates to live in the table when Sabry activates them.
 
 ## Product images
 
