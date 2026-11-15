@@ -139,6 +139,12 @@ Three daily sessions work on this repo, one section each. Each session updates *
 ### Shopify catalogue
 <!-- daily catalogue session; dated, newest first, last 3 entries -->
 
+#### Sun 15 Nov 2026
+- Ran: `get-shop-info` = OBJEKT / hs1a1c-ut, EGP. Pulled main (d00c8b3). Read: product counts, the 5 most recently edited products, latest orders; git log of STATUS, CONTENT_TO_SUPPLY and the day-1 list since my 14 Nov run.
+- Found: **62 products, 10 active, nothing edited on the store since 12 Nov 11:29 UTC** (INGOT). 0 orders. CONTENT_TO_SUPPLY and the day-1 list unchanged; no catalogue or content line answered, no image approved, day-1 list not approved.
+- So **no store writes**, nothing to log in CHANGELOG. Readiness table unchanged: **0 of 19 complete**. Placeholders left on all drafts.
+- Time: 2 days to the Tue 17 Nov cut-off. A candidate with name, price, size, lead time, colours and an approved hero can be built as a draft the same day.
+
 #### Sat 14 Nov 2026
 - Ran: `get-shop-info` = OBJEKT / hs1a1c-ut, EGP. Pulled main (70d1876). Read: product counts and the 12 most recently edited products; diff of STATUS, CONTENT_TO_SUPPLY and the day-1 list since my 13 Nov run.
 - Found: **62 products, 10 active, nothing edited on the store since 12 Nov 11:29 UTC** (INGOT). No new supplied value in CONTENT_TO_SUPPLY, no catalogue or content line answered, no image approved, day-1 list not approved.
@@ -151,15 +157,7 @@ Three daily sessions work on this repo, one section each. Each session updates *
 - No answer from Sabry on any catalogue or content line, no supplied value, no approved image, day-1 list not approved. So **no store writes**, nothing to log in CHANGELOG.
 - Readiness: **0 of 19 complete**. Placeholders left on all drafts.
 
-#### Thu 12 Nov 2026 (freeze day)
-- Ran: `get-shop-info` = OBJEKT / hs1a1c-ut, EGP. Pulled main (22234fb). Read all 62 products (variants, weights, lead-time days, collections, channel count, metafields, media alt, Arabic translations) and the 5 collections.
-- Found: Sabry activated **10 products** on 11–12 Nov himself (SLAB 020, BLOK 166, TORSO 167 + 196, OCTA 190, CAIRN 195, SPAN 197, INGOT 198, PYRA 169, ARRIS 172, ROTA 099). All 10 are on the Online Store channel. 52 drafts, all tagged `placeholder-data`. No duplicate OBJ codes. OBJ-099 colours settled by Sabry (Oxblood, Chocolate, Objekt Green, Putty, linked to the colour entries).
-- **No store writes.** Every gap left on the live products needs Sabry's yes (CLAUDE.md: no live-product changes without approval), and no draft got a supplied value (no name, price, size, colour or approved image for any candidate). Day-1 list not approved.
-- Gaps on the 10 live products, read from the store: all variants **0 kg**; **no Arabic** on any; **SEO title and description empty** on all; care and materials text empty on all. Lead-time days missing on SLAB (14–20 in its note), TORSO (14–30 in its note), BLOK and SPAN (none given). BLOK's 4 variants have no `fulfilment` value. CAIRN, OCTA, SPAN, INGOT in no collection. ARRIS and ROTA have no size; ARRIS shows 14–30 days and OCTA 7–14 days with no source recorded in the repo.
-- Alt text: none of the live images says "AI render". That follows Sabry's 10 Nov rule (never mention renders in public text), which replaces this task's alt-text line; left as is.
-- Readiness: **0 of 19 complete** (10 live, 9 candidates). Placeholders left on all drafts.
-
-**Readiness (13 Nov, re-checked 14 Nov: no change; ✓ done, ~ partly, ✗ missing).** Live = active now. "Complete" needs all 12 checks.
+**Readiness (13 Nov, re-checked 14 and 15 Nov: no change; ✓ done, ~ partly, ✗ missing).** Live = active now. "Complete" needs all 12 checks.
 
 | OBJ | Title | Named | Copy EN | Copy AR | Price | Lead time | Sizes | Variants | Images | Collection | Metafields | SEO | Placeholders gone | Complete |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
