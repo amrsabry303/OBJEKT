@@ -166,11 +166,11 @@ Not part of the 41 / 4 / 16 tally above. It brings the in-list total to 42 if th
 
 Not part of the 41 / 4 / 16 tally. Sabry said it is in for 20 Nov (12 Nov). Finish: brushed stainless or mirror (two colourways, Sabry). Sizes are our proposal, to confirm.
 
-## Added 12 Nov 2026: OBJ-192 long planter on four swivel casters (product session)
+## Added 12 Nov 2026: OBJ-192 long planter on four feet (product session)
 
 | OBJ | Code | Website category | Subcategory | Name | Process | Design file | Images | Day 1 | Note | Source |
 |---|---|---|---|---|---|---|---|---|---|---|
-| OBJ-192 | OBJ-192 | Planters | Planters | Planter, long low sheet-metal trough on four swivel casters (no name approved) | Sheet metal: two plates with rounded top corners, flat front and back panels (inferred from one photo; Production to confirm) | DRAFT rev 0 made 12 Nov, awaiting Sabry's approval: `venture/drawings/OBJ-192/` | None (reference photo only) | **Not decided** | Reference is a low-resolution render in black and sage green; source and maker unknown, drawn as our own design. Sabry: Carbon, Oxblood, Bone; matte powder coat; rubber casters. Size 900 x 300 x 450 mm incl. casters, 2 mm steel, loose liner (no drain hole), 4 swivel casters (2 locking) are proposals. No price or lead time. Not costed. | Sabry, 12 Nov |
+| OBJ-192 | OBJ-192 | Planters | Planters | Planter, long low sheet-metal trough on four feet, no wheels (no name approved) | Sheet metal: two plates with rounded top corners, flat front and back panels (inferred from one photo; Production to confirm) | DRAFT rev 1 made 15 Nov, awaiting Sabry's approval: `venture/drawings/OBJ-192/` | None (reference photo only) | **Not decided** | Reference is a low-resolution render in black and sage green; source and maker unknown, drawn as our own design. Sabry: Carbon, Oxblood, Bone; matte powder coat; feet, no wheels (Sabry, 15 Nov). Size 900 x 300 x 450 mm incl. feet, 2 mm steel, loose liner (no drain hole), 4 rubber-pad feet 20 mm high are proposals. No price or lead time. Not costed. | Sabry, 12 Nov |
 
 Not part of the 41 / 4 / 16 tally. Sabry decides whether it is in for 20 Nov.
 
