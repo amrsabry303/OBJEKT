@@ -1,7 +1,7 @@
-"""OBJ-192: long low planter on four swivel casters. Production drawing set, REV 0 (DRAFT).
+"""OBJ-192: long low planter on four feet, no wheels. Production drawing set, REV 1 (DRAFT).
 Run: python3 make_obj192_rev0.py <repo root>   Then make_pdf.js for the PDF.
 Sizes: 900 x 300 x 450 overall is a PROPOSAL (Sabry: "u suggest"), not costed, Production to confirm. Colours (Carbon, Oxblood, Bone), matte powder coat,
-rubber casters and subcategory Planters are Sabry's answers (12 Nov). Shape is estimated by eye from a low-resolution reference render, approximate.
+and subcategory Planters are Sabry's answers (12 Nov). 15 Nov: Sabry chose feet/glides, no wheels (rev 1). Foot height 20 mm and pad 30 mm are PROPOSALS. Shape is estimated by eye from a low-resolution reference render, approximate.
 Arabic wording is a draft and needs a technical reader. No costs, no structural claims."""
 import sys, os, math, base64, io
 from PIL import Image
@@ -9,16 +9,17 @@ import ezdxf
 ROOT = sys.argv[1] if len(sys.argv) > 1 else '/home/user/OBJEKT'
 OUT = ROOT + '/venture/drawings/OBJ-192'; os.makedirs(OUT, exist_ok=True)
 PHOTO = ROOT + '/images/OBJ-192.jpg'
-REV = 0; DATE = '12 Nov 2026'; PN = 'OBJ-192'
+REV = 1; DATE = '15 Nov 2026'; PN = 'OBJ-192'
 L, W, H = 900, 300, 450           # overall, proposal
 T = 2                             # sheet thickness, proposal
-CASTER_H = 70                     # caster overall height incl. 50 mm wheel, ASSUMED until the caster is chosen
-PLATE_H = H - CASTER_H            # 380 steel height
+CASTER_H = 20                     # foot height, PROPOSAL (rev 1: feet, no wheels)
+FOOT_D = 30                       # foot pad diameter, PROPOSAL
+PLATE_H = H - CASTER_H            # 430 steel height
 R = 60                            # top corner radius of the end plates, from the photo, approximate
-PZ0, PZ1 = 110, 320               # panel bottom / top above plate bottom (panel top = where the plate corner radius starts)
+PZ0, PZ1 = 110, PLATE_H-R               # panel bottom / top above plate bottom (panel top = where the plate corner radius starts)
 PL = L - 2*T; PH = PZ1 - PZ0      # panel 896 x 210
 FL, FW = L - 2*T, W - 2*T         # floor 896 x 296
-CY = [50, W-50]                   # caster positions along the depth
+CY = [50, W-50]                   # foot positions along the depth
 SHEET_L, SHEET_W, GAP = 2500, 1250, 10
 BUL = math.tan(math.radians(90)/4)
 def plate_pts(n=12):
@@ -109,8 +110,8 @@ def frame(n, N, title_en, title_ar, scale):
     X, Y, Wd = 228, 247, 185
     s += rect(X, Y, Wd, 41, .4, fill='#fff')
     s += line(X, Y+9, X+Wd, Y+9, .25) + line(X, Y+20, X+Wd, Y+20, .25) + line(X, Y+31, X+Wd, Y+31, .25) + line(X+92, Y+9, X+92, Y+41, .25)
-    s += bi(X+2, Y+4, f'{PN}   Planter, long low trough on four casters', 'جاردينيرا طويلة منخفضة على أربع عجلات', Wd-4, 2.6, 600)
-    s += bi(X+2, Y+14, f'SIZE  {L} x {W} x {H} mm incl. casters (proposal)', 'المقاس الكلي شاملاً العجلات (مقترح)', 88, 2.1) + bi(X+94, Y+14, f'SCALE  {scale}   UNITS  mm', 'المقياس والوحدة', 88, 2.3)
+    s += bi(X+2, Y+4, f'{PN}   Planter, long low trough on four feet', 'جاردينيرا طويلة منخفضة على أربع أرجل', Wd-4, 2.6, 600)
+    s += bi(X+2, Y+14, f'SIZE  {L} x {W} x {H} mm incl. feet (proposal)', 'المقاس الكلي شاملاً الأرجل (مقترح)', 88, 2.1) + bi(X+94, Y+14, f'SCALE  {scale}   UNITS  mm', 'المقياس والوحدة', 88, 2.3)
     s += bi(X+2, Y+25, 'MATERIAL  Sheet steel 2 mm (proposal), welded', 'الخامة: صاج ٢ مم (مقترح)، لحام', 88, 2.1) + bi(X+94, Y+25, 'FINISH  Powder coating, matte (Sabry)', 'التشطيب: دهان بودرة مطفي', 88, 2.1)
     s += bi(X+2, Y+36, f'DATE  {DATE}      SHEET {n} / {N}', 'التاريخ، الورقة', 88, 2.3) + bi(X+94, Y+36, f'REV  {REV}', 'المراجعة', 88, 2.3)
     s += rect(X, Y-14, Wd, 12, .5, '#b3261e', '#fff')
@@ -129,7 +130,7 @@ b = t(22, 24, 'FRONT ELEVATION', 2.8, 600) + t(202, 28, 'الواجهة الأم
 b += rect(fx(T), fz(PZB), PL*S, PH*S, .4, INK, '#c9c5bb')
 b += rect(fx(0), fz(H), T*S, PLATE_H*S, .4, INK, '#8d8a82') + rect(fx(L-T), fz(H), T*S, PLATE_H*S, .4, INK, '#8d8a82')
 for cx_ in (T/2, L-T/2):
-    b += f'<circle cx="{fx(cx_):.2f}" cy="{fz(25):.2f}" r="{25*S:.2f}" fill="#555" stroke="{INK}" stroke-width=".3"/>' + rect(fx(cx_)-1.2, fz(CASTER_H), 2.4, (CASTER_H-50)*S, .3, INK, '#bbb')
+    b += rect(fx(cx_)-FOOT_D*S/2, fz(CASTER_H), FOOT_D*S, CASTER_H*S, .3, INK, '#555')
 b += dim_h(fx(0), fx(L), fz(0)+9, f'{L}', ext=fz(0)) + t(fx(L/2), fz(0)+14, 'OVERALL LENGTH / الطول الكلي', 2, 400, 'middle', DIM)
 b += dim_v(fx(0)-8, fz(H), fz(0), f'{H}', ext=fx(0))
 b += dim_v(fx(L)+8, fz(H), fz(CASTER_H), f'{PLATE_H}', ext=fx(L)) + dim_v(fx(L)+8, fz(CASTER_H), fz(0), f'{CASTER_H}', ext=fx(L))
@@ -142,7 +143,7 @@ def sx(y): return ox_s + y*S
 b += t(ox_s-2, 24, 'SIDE ELEVATION (end plate)', 2.8, 600) + t(ox_s+70, 28, 'منظر جانبي (لوح الطرف)', 2.6, 500, 'end', extra=AR)
 pp = plate_pts(); b += poly([(sx(x), fz(Z0P+y)) for x, y in pp], .45, INK, '#c9c5bb')
 for yy_ in CY:
-    b += f'<circle cx="{sx(yy_):.2f}" cy="{fz(25):.2f}" r="{25*S:.2f}" fill="#555" stroke="{INK}" stroke-width=".3"/>' + rect(sx(yy_)-2, fz(CASTER_H), 4, (CASTER_H-50)*S, .3, INK, '#bbb')
+    b += rect(sx(yy_)-FOOT_D*S/2, fz(CASTER_H), FOOT_D*S, CASTER_H*S, .3, INK, '#555')
 b += line(sx(T), fz(PZB), sx(W-T), fz(PZB), .15, HID, '1.2 .8') + line(sx(T), fz(PZA), sx(W-T), fz(PZA), .15, HID, '1.2 .8')
 b += dim_h(sx(0), sx(W), fz(0)+9, f'{W}', ext=fz(0)) + t(sx(W/2), fz(0)+14, 'OVERALL DEPTH / العمق الكلي', 2, 400, 'middle', DIM)
 b += dim_v(sx(0)-6, fz(H), fz(Z0P), f'{PLATE_H}', ext=sx(0)) + dim_v(sx(W)+6, fz(PZB), fz(PZA), f'{PH}', ext=sx(W))
@@ -157,7 +158,7 @@ b += t(22, 148, 'PLAN', 2.8, 600) + t(202, 148, 'المسقط الأفقي', 2.6
 b += rect(px(0), py(0), L*S, W*S, .45, INK, '#e7e3da') + rect(px(T), py(T), FL*S, FW*S, .2, HID, 'none', '1 .7')
 b += rect(px(0), py(0), T*S, W*S, .3, INK, '#8d8a82') + rect(px(L-T), py(0), T*S, W*S, .3, INK, '#8d8a82')
 for cx_ in (T/2, L-T/2):
-    for yy_ in CY: b += f'<circle cx="{px(cx_):.2f}" cy="{py(yy_):.2f}" r="{25*S:.2f}" fill="none" stroke="{HID}" stroke-width=".2" stroke-dasharray="1 .7"/>'
+    for yy_ in CY: b += f'<circle cx="{px(cx_):.2f}" cy="{py(yy_):.2f}" r="{FOOT_D/2*S:.2f}" fill="none" stroke="{HID}" stroke-width=".2" stroke-dasharray="1 .7"/>'
 b += dim_h(px(0), px(L), py(W)+7, f'{L}', ext=py(W)) + dim_v(px(0)-6, py(0), py(W), f'{W}', ext=px(0))
 b += t(px(L/2), py(W/2)+1, f'inner clear {FL} x {FW}', 2.2, 400, 'middle', '#555') + t(px(L/2), py(W/2)+4.5, 'المقاس الداخلي الصافي', 2.2, 400, 'middle', '#555', extra=AR)
 b += t(px(L)+1.5, py(CY[0])+1, '', 2)
@@ -172,8 +173,8 @@ for i, (nm, hx, ar) in enumerate(COLS):
     yy = cy0 + i*9
     b += rect(22, yy-3.5, 12, 6, .25, INK, hx) + t(38, yy, f'{nm}  {hx}', 2.4, 600) + t(38, yy+3, f'Electrostatic powder coating · {nm} · Matte', 2.1, 400, fill=HID) + t(215, yy+1.5, ar, 2.3, 400, 'end', extra=AR)
 b += t(22, 262, 'Matte powder coat: Sabry. Powder maker matches HEX with a sample; confirm against a physical sample. Paint codes to follow.', 1.9, 400, fill=HID)
-b += t(22, 284, 'Overall 900 x 300 x 450 mm incl. casters is a PROPOSAL (not costed, Production to confirm). Caster height 70 mm is assumed.  المقاسات مقترحة، وارتفاع العجلة ٧٠ مم افتراضي.', 2.0, 400, fill=HID)
-b += t(22, 287.5, 'Steel height 380 + casters 70 = 450. Panel top where the end-plate corner radius starts.  ارتفاع الصاج ٣٨٠ + العجلات ٧٠ = ٤٥٠.', 2.0, 400, fill=HID)
+b += t(22, 284, 'Overall 900 x 300 x 450 mm incl. feet is a PROPOSAL (not costed, Production to confirm). Foot height 20 mm is assumed.  المقاسات مقترحة، وارتفاع الرجل ٢٠ مم افتراضي.', 2.0, 400, fill=HID)
+b += t(22, 287.5, 'Steel height 430 + feet 20 = 450. Panel top where the end-plate corner radius starts.  ارتفاع الصاج ٤٣٠ + الأرجل ٢٠ = ٤٥٠.', 2.0, 400, fill=HID)
 sh1 = sheet(1, N, 'VIEWS', 'المناظير', '1:5', b)
 
 # ================= SHEET 2: flat patterns =================
@@ -200,9 +201,9 @@ for i, r_ in enumerate(rows):
 for i, ln in enumerate([f'Panels sit between the end plates: {L} - 2 x {T} = {PL}. Floor: {W} - 2 x {T} = {FW} wide.',
                         'Panel bottom is 110 above the plate bottom, top 320 (where the corner radius starts). Floor sits at the panel bottom.',
                         'Sheet thickness 2 mm is a proposal. Bend allowance, joints, weld method and seam sealing: Production.',
-                        'Caster fixing to the plate bottom edge (flange or bracket) is not drawn: Production to decide.']):
+                        'Foot fixing to the plate bottom edge (threaded insert, flange or bracket) is not drawn: Production to decide.']):
     b += t(dx, dy+22+i*3.8, ln, 2.0)
-b += t(410, dy+22, 'سماكة الصاج ٢ مم مقترحة. اللحام وتثبيت العجلات من التصنيع.', 2.0, 400, 'end', extra=AR)
+b += t(410, dy+22, 'سماكة الصاج ٢ مم مقترحة. اللحام وتثبيت الأرجل من التصنيع.', 2.0, 400, 'end', extra=AR)
 sh2 = sheet(2, N, 'PART SHEET', 'ورقة القطع', '1:4', b)
 
 # ================= SHEET 3: assembly =================
@@ -217,24 +218,23 @@ b += pl([(T, 0, PZA-60), (L-T, 0, PZA-60), (L-T, W, PZA-60), (T, W, PZA-60)], '#
 for xp in (-EX, L-T+EX):
     b += pl([(xp, y, Z0P+z) for y, z in plate_pts()], '#a9a69d')
     for yy_ in CY:
-        b += pl([(xp, yy_-3, Z0P-35), (xp, yy_+3, Z0P-35), (xp, yy_+3, Z0P-5), (xp, yy_-3, Z0P-5)], '#bbb', .25)
-        cx_, cz_ = P(xp, yy_, 12); b += f'<circle cx="{cx_:.2f}" cy="{cz_:.2f}" r="{25*SC:.2f}" fill="#555" stroke="{INK}" stroke-width=".3"/>'
+        b += pl([(xp, yy_-FOOT_D/2, Z0P-45), (xp, yy_+FOOT_D/2, Z0P-45), (xp, yy_+FOOT_D/2, Z0P-45+CASTER_H), (xp, yy_-FOOT_D/2, Z0P-45+CASTER_H)], '#555', .3)
 b += pl([(T, -EY, PZA), (L-T, -EY, PZA), (L-T, -EY, PZB), (T, -EY, PZB)], '#c9c5bb')                           # front panel
 for (xa, ya, za, xb_, yb_, zb_) in [(T, -EY, PZA, T, 0, PZA), (L-T, -EY, PZA, L-T, 0, PZA), (T, 0, PZA-60, T, 0, PZA), (-EX, W/2, Z0P+150, 0, W/2, Z0P+150), (L-T+EX, W/2, Z0P+150, L-T, W/2, Z0P+150)]:
     (ax, ay), (bx, by) = P(xa, ya, za), P(xb_, yb_, zb_); b += line(ax, ay, bx, by, .2, HID, '1 1')
 ax, ay = P(L/2, -EY, PZB); b += balloon(ax, ay-5, 2)
 ax, ay = P(-EX, W/2, Z0P+PLATE_H); b += balloon(ax-4, ay-4, 1)
 ax, ay = P(L/2, W/2, PZA-60); b += balloon(ax, ay+6, 3)
-ax, ay = P(-EX, CY[0], 0); b += balloon(ax-8, ay+2, 4)
-b += t(22, 262, 'Casters (4): bought-in, swivel, rubber wheel, 50 mm; two locking (proposal). Load rating: Production to decide with the supplier.', 2.0, 400, fill=HID)
+ax, ay = P(-EX, CY[0], 0); b += balloon(ax-8, ay+8, 4)
+b += t(22, 262, 'Feet (4): bought-in levelling feet or glides with a rubber pad, 30 mm pad, 20 mm high (proposal). Type and load: Production to decide with the supplier.', 2.0, 400, fill=HID)
 b += t(22, 266, 'Inner liner (5): loose, drops into the trough; not drawn, size and material by Production.', 2.0, 400, fill=HID)
-b += t(224, 270, 'العجلات: جاهزة، دوارة، مطاط ٥٠ مم، اثنتان بقفل (مقترح). السعة من التصنيع.', 2.0, 400, 'end', HID, extra=AR)
+b += t(224, 270, 'الأرجل: جاهزة، قابلة للضبط، وسادة مطاط ٣٠ مم، ارتفاع ٢٠ مم (مقترح). النوع والحمل من التصنيع.', 2.0, 400, 'end', HID, extra=AR)
 sx0 = 245
 b += t(sx0, 38, 'ASSEMBLY SEQUENCE (proposed)', 2.6, 600) + t(410, 38, 'تسلسل التجميع (مقترح)', 2.6, 600, 'end', extra=AR)
 steps = [('Cut parts 1, 2, 3 from the DXF files; deburr the edges.', 'قص القطع ١ و٢ و٣ من ملفات DXF وتنعيم الحواف.'),
          ('Weld the floor plate (3) and the two panels (2) between the two end plates (1); seal the trough seams.', 'لحام لوح القاع (٣) واللوحين (٢) بين لوحي الطرف (١) وإحكام سد الوصلات.'),
          ('Grind welds flush. Powder coat, matte, in the chosen colour.', 'صنفرة اللحام ثم الدهان بالبودرة المطفي باللون المختار.'),
-         ('Fit the four rubber swivel casters (4) under the end plates; two with locks.', 'تركيب العجلات الأربع (٤) تحت لوحي الطرف، اثنتان بقفل.'),
+         ('Fit the four rubber-pad feet (4) under the end plates.', 'تركيب الأرجل الأربع (٤) بوسادة مطاط تحت لوحي الطرف.'),
          ('Drop the loose inner liner (5) into the trough.', 'وضع البطانة الداخلية (٥) داخل الحوض.')]
 for i, (en, ar) in enumerate(steps):
     yy = 48 + i*17
@@ -262,16 +262,16 @@ b = t(10, 28, 'BILL OF MATERIALS', 2.8, 600) + t(410, 28, 'قائمة الموا
 b += rect(10, 31, 400, 7, .3, INK, '#e9e5dc')
 for x, s_ in zip([12, 24, 150, 215], ['ITEM', 'PART / الجزء', 'QTY / العدد', 'MATERIAL / الخامة']): b += t(x, 36, s_, 2.3, 600)
 bom = [('1', 'End plate', 'لوح الطرف', '2', 'Sheet steel 2 mm (proposal)'), ('2', 'Front / back panel', 'اللوح الأمامي والخلفي', '2', 'Sheet steel 2 mm (proposal)'), ('3', 'Floor plate', 'لوح القاع', '1', 'Sheet steel 2 mm (proposal)'),
-       ('4', 'Swivel caster, rubber wheel 50 mm', 'عجلة دوارة مطاط ٥٠ مم', '4 (2 locking)', 'Bought-in; load rating by Production'), ('5', 'Inner liner, loose', 'بطانة داخلية', '1', 'By Production; not drawn')]
+       ('4', 'Foot / glide, rubber pad 30 mm, 20 mm high', 'رجل بوسادة مطاط ٣٠ مم', '4', 'Bought-in (proposal); type and load by Production'), ('5', 'Inner liner, loose', 'بطانة داخلية', '1', 'By Production; not drawn')]
 for i, (n_, en, ar, q, m_) in enumerate(bom):
     yy = 44 + i*7
     b += line(10, yy+2.2, 410, yy+2.2, .15, HID) + t(12, yy, n_, 2.4) + t(24, yy, en, 2.4) + t(140, yy, ar, 2.4, 400, 'end', extra=AR) + t(150, yy, q, 2.4) + t(215, yy, m_, 2.4)
 b += t(10, 90, 'NOTES', 2.8, 600) + t(410, 90, 'ملاحظات', 2.8, 600, 'end', extra=AR)
-notes = [('Overall 900 x 300 x 450 mm (including casters), sheet thickness 2 mm and the caster height of 70 mm are proposals, not costed. Production to confirm.', 'المقاسات وسماكة الصاج وارتفاع العجلة مقترحة. يؤكدها التصنيع.'),
-         ('The shape is estimated by eye from one low-resolution render of unknown source (not ours): two end plates with rounded top corners, flat front and back panels, floor, four casters. Drawn as objekt\'s own design.', 'الشكل مقدّر من صورة واحدة منخفضة الدقة مجهولة المصدر، ومرسوم كتصميم خاص بأوبجيكت.'),
+notes = [('Overall 900 x 300 x 450 mm (including feet), sheet thickness 2 mm and the foot height of 20 mm are proposals, not costed. Production to confirm.', 'المقاسات وسماكة الصاج وارتفاع الرجل مقترحة. يؤكدها التصنيع.'),
+         ('The shape is estimated by eye from one low-resolution render of unknown source (not ours): two end plates with rounded top corners, flat front and back panels, floor, four feet. Drawn as objekt\'s own design.', 'الشكل مقدّر من صورة واحدة منخفضة الدقة مجهولة المصدر، ومرسوم كتصميم خاص بأوبجيكت.'),
          ('Colours (Sabry): Carbon, Oxblood, Bone. Finish (Sabry): electrostatic powder coating, matte. Powder maker matches the HEX with a sample.', 'الألوان: أسود فحمي، عنابي داكن، عاجي. التشطيب: دهان بودرة مطفي.'),
-         ('Drainage (proposal, same call as OBJ-173 and OBJ-075): the steel trough is sealed with no drain hole, so the floor stays dry on casters; plants sit in a loose inner liner (5) that drains. Production to confirm seam sealing and liner.', 'الصرف (مقترح): الحوض مغلق بدون فتحات، والنباتات في بطانة داخلية قابلة للصرف.'),
-         ('Casters (Sabry: rubber): four swivel casters, rubber wheel, 50 mm, two with locks (proposal). Type, mounting to the plate bottom and load rating are Production\'s to decide.', 'العجلات مطاط (سبري): أربع عجلات دوارة ٥٠ مم، اثنتان بقفل (مقترح).'),
+         ('Drainage (proposal, same call as OBJ-173 and OBJ-075): the steel trough is sealed with no drain hole, so the floor stays dry; plants sit in a loose inner liner (5) that drains. Production to confirm seam sealing and liner.', 'الصرف (مقترح): الحوض مغلق بدون فتحات، والنباتات في بطانة داخلية قابلة للصرف.'),
+         ('Feet (rev 1): Sabry chose feet or glides, no wheels, replacing the casters of rev 0. Four feet with a rubber pad, 30 mm pad, 20 mm high (proposal). Type, mounting to the plate bottom and load rating are Production\'s to decide.', 'الأرجل (المراجعة ١): اختار سبري أرجلاً بدل العجلات. أربع أرجل بوسادة مطاط (مقترح).'),
          ('Material, thickness, bend allowance, tolerances, sheet size, joints, welding and finish details are Production\'s to decide.', 'الخامة والسماكة والسماحيات واللحام وتفاصيل التشطيب يقررها التصنيع.'),
          ('No structural claims, stress figures, load figures, costs or prices on this drawing. Not engineered. Arabic wording is a draft for a technical reader.', 'لا ادعاءات إنشائية ولا تكاليف ولا أسعار. الصياغة العربية مسودة.'),
          ('Product number OBJ-192 was the next free number; Sabry can override.', 'رقم المنتج التالي المتاح؛ يمكن لسبري تغييره.')]
