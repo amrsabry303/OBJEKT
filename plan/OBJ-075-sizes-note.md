@@ -8,6 +8,8 @@
 > | M | 500 x 500 | 1.00 | 496 | 30 L (D410 x 360); a 40 L pot with top D500 does not fit | 15.4 kg |
 > | L | 600 x 700 | 1.17 | 596 | 50 L (D550 x 500) or a 100 L (D520 x 560, sources differ) | 25.2 kg |
 >
+> **Drain holes (Sabry, 15 Nov, rev 3):** replaces the earlier no-hole decision. Proposed: D12 holes in the base disc, 3 / 4 / 6 for S / M / L on a circle inside the foot ring, plus four 20 x 6 notches in the foot ring (without them the closed ring would trap the water). The loose liner's riser, still not designed, must leave the holes clear. Water will reach the floor under the pot; a saucer is the customer's choice.
+>
 > Differences from the photo: S and M are 1.0 (the photo's pots are about 1.25 to 1.3, by eye); only L is taller than wide. Weight over 15 kg for L means the 1,200 EGP delivery tier in the store, before liner and soil. Sheet check (assumed): S and M fit 1250 x 2500 x 2; L (wall 1879 x 688, base D596, ring strip) needs 1500 x 3000. Production to confirm all of it. Tell me if you want M widened to D520 so a 40 L pot fits.
 
 **Proposal, not costed, Production to confirm.** Sabry's brief (12 Nov): "this pot in 3 sizes. Check the industry sizes." Reference: `images/OBJ-075_ref-sabry-12nov.jpg` (two polished stainless cylinders, maker unknown, reference only). One product, three size variants.

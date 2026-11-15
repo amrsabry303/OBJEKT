@@ -1,4 +1,4 @@
-"""OBJ-075 grey geometry model (plain untextured grey, soft studio light) from the drawing rev 2 (sizes from Sabry 15 Nov), exact dimensions.
+"""OBJ-075 grey geometry model (plain untextured grey, soft studio light) from the drawing rev 3 (Sabry's sizes, drain holes), exact dimensions.
 Numpy ray tracer, no 3D library. Sizes from venture/src/drawings/make_obj075_rev1.py: wall 2 mm, foot ring 12 high set in 10, base disc inside wall bottom.
 Run: python3 make_grey_obj075.py <repo root>. Output venture/grey-models/OBJ-075/ (kept out of git while the repo is public)."""
 import sys, os, numpy as np
@@ -8,26 +8,36 @@ OUT = ROOT + '/venture/grey-models/OBJ-075'; os.makedirs(OUT, exist_ok=True)
 T, RH, SET = 2.0, 12.0, 10.0
 SIZES = [('S', 350, 350), ('M', 500, 500), ('L', 600, 700)]
 GAP = 100.0
+HOLES = {'S': 3, 'M': 4, 'L': 6}; HD = 12.0; NN, NW, NHT = 4, 20.0, 6.0   # drain holes in the base, notches in the foot ring (drawing rev 3, proposed)
 def layout(sel):
     x = 0.0; ps = []
     for k, D, H in SIZES:
-        if k in sel: ps.append(dict(k=k, R=D/2, H=H, cx=x+D/2)); x += D+GAP
+        if k in sel: ps.append(dict(k=k, R=D/2, H=H, cx=x+D/2, NH=HOLES[k], PR=round((D-4)*0.28))); x += D+GAP
     mid = (ps[0]['cx']-ps[0]['R'] + ps[-1]['cx']+ps[-1]['R'])/2
     for p in ps: p['cx'] -= mid
     return ps
-def hit_cyl(o, d, cx, r, y0, y1, cut):
+def hit_cyl(o, d, cx, r, y0, y1, cut, notch=False):
     ox, oz = o[..., 0]-cx, o[..., 2]; dx, dz = d[..., 0], d[..., 2]
     a = dx*dx+dz*dz; b = ox*dx+oz*dz; c = ox*ox+oz*oz-r*r
     disc = b*b-a*c; ok = disc > 0; sq = np.sqrt(np.where(ok, disc, 0)); a = np.where(a == 0, 1e-12, a)
     best_t = np.full(a.shape, np.inf); 
     for s in (-1, 1):
         t = (-b+s*sq)/a; y = o[..., 1]+t*d[..., 1]; z = o[..., 2]+t*d[..., 2]
-        v = ok & (t > 1e-3) & (y >= y0) & (y <= y1) & ((not cut) | (z <= 0)); best_t = np.where(v & (t < best_t), t, best_t)
+        v = ok & (t > 1e-3) & (y >= y0) & (y <= y1) & ((not cut) | (z <= 0))
+        if notch:
+            xx = o[..., 0]+t*d[..., 0]-cx; ang = np.arctan2(z, xx); nz = np.zeros(ang.shape, bool)
+            for i in range(NN):
+                dd = np.abs((ang-(i+.5)*2*np.pi/NN+np.pi) % (2*np.pi)-np.pi); nz |= (r*dd < NW/2) & (y < NHT)
+            v &= ~nz
+        best_t = np.where(v & (t < best_t), t, best_t)
     return best_t
-def hit_plane(o, d, y, cx, rin, rout, cut):
+def hit_plane(o, d, y, cx, rin, rout, cut, holes=None):
     dy = np.where(d[..., 1] == 0, 1e-12, d[..., 1]); t = (y-o[..., 1])/dy
     x = o[..., 0]+t*d[..., 0]-cx; z = o[..., 2]+t*d[..., 2]; rr = np.hypot(x, z)
-    v = (t > 1e-3) & (rr >= rin) & (rr <= rout) & ((not cut) | (z <= 0)); return np.where(v, t, np.inf)
+    v = (t > 1e-3) & (rr >= rin) & (rr <= rout) & ((not cut) | (z <= 0))
+    if holes:
+        for hx, hz in holes: v &= np.hypot(x-hx, z-hz) > HD/2
+    return np.where(v, t, np.inf)
 def trace(o, d, ps, cut=False, shadow=True):
     sh = d.shape[:-1]; best = np.full(sh, np.inf); nrm = np.zeros(d.shape); kind = np.zeros(sh, int)
     def upd(t, n_fn, k):
@@ -42,9 +52,10 @@ def trace(o, d, ps, cut=False, shadow=True):
     for p in ps:
         cx, R, H = p['cx'], p['R'], p['H']
         for (r, y0, y1, sg) in [(R, RH, H, 1), (R-T, RH+T, H, -1), (R-SET, 0, RH, 1)]:
-            t = hit_cyl(o, d, cx, r, y0, y1, cut); upd(t, (lambda t, cx=cx, sg=sg: norm(radial(cx, sg)(t))), 1)
+            t = hit_cyl(o, d, cx, r, y0, y1, cut, notch=(r == R-SET)); upd(t, (lambda t, cx=cx, sg=sg: norm(radial(cx, sg)(t))), 1)
         for (y, ri, ro) in [(H, R-T, R), (RH+T, 0, R-T)]:
-            t = hit_plane(o, d, y, cx, ri, ro, cut); upd(t, lambda t: np.broadcast_to([0, 1, 0.], d.shape), 1)
+            hl = [(p['PR']*np.cos(2*np.pi*(j+.5)/p['NH']), p['PR']*np.sin(2*np.pi*(j+.5)/p['NH'])) for j in range(p['NH'])] if y == RH+T else None
+            t = hit_plane(o, d, y, cx, ri, ro, cut, hl); upd(t, lambda t: np.broadcast_to([0, 1, 0.], d.shape), 1)
     return best, nrm, kind
 LIGHT = np.array([-0.45, 0.85, 0.55]); LIGHT /= np.linalg.norm(LIGHT)
 def shade(o, d, ps, cut):
@@ -83,11 +94,11 @@ if __name__ == '__main__':
     ps = layout('SML'); span = ps[-1]['cx']+ps[-1]['R']-(ps[0]['cx']-ps[0]['R'])
     W, Hh = 1800, 1100; sc = (W*0.9)/span
     ims = []
-    ims.append(render('OBJ-075_grey_front_all_rev2.png', ps, W, Hh, (0, 0, -1), sc, (0, 330, 0), title='OBJ-075 grey model, rev 2 DRAFT: FRONT (orthographic), S 350x350, M 500x500, L 600x700 mm'))
-    ims.append(render('OBJ-075_grey_section_all_rev2.png', ps, W, Hh, (0, 0, -1), sc, (0, 330, 0), cut=True, title='SECTION (front half removed): 2 mm wall, base disc inside, 12 mm foot ring set in 10, no drain hole'))
-    ims.append(render('OBJ-075_grey_3q_all_rev2.png', ps, W, Hh, (0.55, -0.32, -0.77), 1.0, (0, 300, 0), persp=int(2.4*span), title='THREE-QUARTER (long lens)'))
-    ims.append(render('OBJ-075_grey_top_all_rev2.png', ps, W, 700, (0, -1, -0.0001), sc*1.0, (0, 0, 0), title='TOP (orthographic)'))
-    render('OBJ-075_grey_M_section3q_rev2.png', layout('M'), 1000, 1200, (0.45, -0.55, -0.7), 1.0, (0, 280, 0), persp=3200, cut=True, title='size M: section, three-quarter from above, base disc and no drain hole')
+    ims.append(render('OBJ-075_grey_front_all_rev3.png', ps, W, Hh, (0, 0, -1), sc, (0, 330, 0), title='OBJ-075 grey model, rev 3: FRONT (orthographic), S 350x350, M 500x500, L 600x700 mm'))
+    ims.append(render('OBJ-075_grey_section_all_rev3.png', ps, W, Hh, (0, 0, -1), sc, (0, 330, 0), cut=True, title='SECTION (front half removed): 2 mm wall, base disc with drain holes, 12 mm foot ring with 4 notches'))
+    ims.append(render('OBJ-075_grey_3q_all_rev3.png', ps, W, Hh, (0.55, -0.32, -0.77), 1.0, (0, 300, 0), persp=int(2.4*span), title='THREE-QUARTER (long lens)'))
+    ims.append(render('OBJ-075_grey_top_all_rev3.png', ps, W, 700, (0, -1, -0.0001), sc*1.0, (0, 0, 0), title='TOP (orthographic)'))
+    render('OBJ-075_grey_M_section3q_rev3.png', layout('M'), 1000, 1200, (0.45, -0.55, -0.7), 1.0, (0, 280, 0), persp=3200, cut=True, title='size M: section, three-quarter from above, base disc with drain holes')
     for k in 'SML':
         q = layout(k); R = q[0]['R']; Hq = q[0]['H']
-        render(f'OBJ-075_grey_{k}_3q_rev2.png', q, 1000, 1200, (0.55, -0.32, -0.77), 1.0, (0, Hq*0.48, 0), persp=int(5.2*max(Hq, 2*R)), title=f'size {k}: D{int(2*R)} x H{int(Hq)}, three-quarter')
+        render(f'OBJ-075_grey_{k}_3q_rev3.png', q, 1000, 1200, (0.55, -0.32, -0.77), 1.0, (0, Hq*0.48, 0), persp=int(5.2*max(Hq, 2*R)), title=f'size {k}: D{int(2*R)} x H{int(Hq)}, three-quarter')
