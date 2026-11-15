@@ -51,10 +51,11 @@ zt = Z_UNDER
 # rev 1 (Sabry, 15 Nov 2026): one triangle sheet bent 90 degrees along K-L.
 # horizontal top K-R-L (K = wall corner at the origin, R on wall A, L on wall B), 2 mm, underside at z = 150
 parts.append(prism("top_plate", [(0, 0, zt), (LEG, 0, zt), (0, LEG, zt)], (0, 0, T)))
-# vertical plate K-L-P flat on wall B (plane x = 0): top edge K-L = 220, vertical edge K-P = 150 in the corner, sloped edge L-P
-parts.append(prism("wall_plate", [(0, 0, zt), (0, LEG, zt), (0, 0, 0)], (T, 0, 0)))
-# 15 mm flange on the right leg K-R, against wall A, 200 long, hidden under the top
-parts.append(box("flange_a", 10, LEG - 10, 0, T, zt - FL, zt))
+# vertical plate K-L-P flat on wall A (plane y = 0, the viewer's LEFT wall when looking into the corner, as in Sabry's photo):
+# top edge K-L = 220 along the wall, vertical edge K-P = 150 in the corner, sloped edge L-P
+parts.append(prism("wall_plate", [(0, 0, zt), (LEG, 0, zt), (0, 0, 0)], (0, T, 0)))
+# 15 mm flange on the other leg K-R, against wall B (plane x = 0), 200 long, hidden under the top
+parts.append(box("flange_b", 0, T, 10, LEG - 10, zt - FL, zt))
 
 bpy.ops.object.select_all(action="DESELECT")
 for p in parts:
@@ -145,7 +146,8 @@ scn.render.resolution_y = 1100
 scn.view_settings.view_transform = "Standard" if mode == "grey" else "AgX"
 
 shoot("front", (1.1, 1.1, 0.10), lens=120, ortho=0.5)                 # along the corner diagonal
-shoot("left-wall", (1.2, 0.11, 0.10), lens=120, ortho=0.5, target=Vector((0.0, 0.11, 0.10)))   # plate in true shape
-shoot("right-wall", (0.11, 1.2, 0.10), lens=120, ortho=0.5, target=Vector((0.11, 0.0, 0.10)))   # plate edge-on, flange side
-shoot("three-quarter", (0.50, 0.60, 0.30), lens=45)
-shoot("underside", (0.30, 0.28, -0.12), lens=35, target=Vector((0.06, 0.06, 0.06)))   # plate and flange from below
+shoot("left-wall", (0.11, 1.2, 0.10), lens=120, ortho=0.5, target=Vector((0.11, 0.0, 0.10)))   # plate in true shape (wall A)
+shoot("right-wall", (1.2, 0.11, 0.10), lens=120, ortho=0.5, target=Vector((0.0, 0.11, 0.10)))  # plate edge-on, flange side (wall B)
+shoot("three-quarter", (0.62, 0.50, 0.30), lens=45)
+shoot("underside", (0.28, 0.30, -0.12), lens=35, target=Vector((0.06, 0.06, 0.06)))   # plate and flange from below
+shoot("photo-match", (0.85, 0.85, 0.24), lens=55, target=Vector((0.07, 0.07, 0.07)))  # like Sabry's 15 Nov photo
