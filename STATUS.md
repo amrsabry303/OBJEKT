@@ -24,7 +24,7 @@ Three daily sessions work on this repo, one section each. Each session updates *
 - [catalogue] Lead time for BLOK and SPAN, and where PYRA 3–5, ARRIS 14–30 and OCTA 7–14 days came from (not in any note) · give days / confirm · rec: answer with the weights from Polycraft.
 - [catalogue] SEO title and description are empty on all 10 live products · I draft them in Dough voice from the approved copy for your review / you write them · rec: I draft, nothing goes on the store until you say yes.
 - [catalogue] Online Store channel: the 10 live products are on it; the 9 candidate drafts are not · I add it when each candidate is approved / you do it on activation · rec: I add it on approval.
-- [images] **Magnific credits 0 of 20,000 (13 and 14 Nov; 195 on 12 Nov).** Image runs are stopped until topped up. At ~65 per render, the 4 hero follow-ups plus the 9 freeze candidates need roughly 3,000–4,000 · top up / buy extra credits / pause images · rec: top up today; heroes for the freeze candidates must be approved before Thu 19 Nov.
+- [images] **Magnific credits 0 of 20,000 (13, 14 and 15 Nov; 195 on 12 Nov).** Image runs are stopped until topped up. At ~65 per render, the 4 hero follow-ups plus the 9 freeze candidates need roughly 3,000–4,000 · top up / buy extra credits / pause images · rec: top up today; heroes for the freeze candidates must be approved before Thu 19 Nov.
 - [images] Approve or retake the 4 hero renders (AI renders): OBJ-152 Ink v2c, OBJ-002 Oxblood v1c, OBJ-038 Carbon v1c (sent 8 Nov, re-sent 11 Nov), OBJ-015 Chocolate v1c (11 Nov) · approve / retake per image · only after approval do other colours and the context shot get made.
 - [images] Repo is public: the 8 Nov renders of 002, 038, 152 are already visible on GitHub; new render files are held back · make the repo private / allow renders in public · rec: private (same as the drawings line).
 - [images] With the day-1 list unapproved, no product with an approved drawing is left without a hero. Next: render day-1 products from their reference photos without an approved drawing? · yes / wait for drawings · rec: yes for the simplest planters and objects, renders marked shape-to-confirm.
@@ -69,6 +69,12 @@ Three daily sessions work on this repo, one section each. Each session updates *
 
 ## Product images
 
+### Sun 15 Nov 2026
+- Magnific balance **0** (of 20,000), same as 13 and 14 Nov. Below the 2,000 stop line, so **no renders today** (third day running).
+- No hero answered (152, 002, 038, 015); day-1 freeze list not approved. Next product stays OBJ-149 (brushed).
+- Nothing generated, uploaded or changed in the inventory. Stickers not changed.
+- Next: once credits are topped up, OBJ-149 hero, then other colours and context shots for any approved hero. 5 days to launch, 4 to founder approval (Thu 19 Nov): a top-up later than Tue 17 Nov leaves too little time to render and approve the 9 candidates.
+
 ### Sat 14 Nov 2026
 - Magnific balance **0** (of 20,000), same as 13 Nov. Below the 2,000 stop line, so **no renders today** (second day running).
 - No hero answered (152, 002, 038, 015); day-1 freeze list not approved. Next product stays OBJ-149 (brushed).
@@ -80,12 +86,6 @@ Three daily sessions work on this repo, one section each. Each session updates *
 - No hero answered in this file (152, 002, 038, 015), day-1 list not approved. Next product stays OBJ-149 (brushed).
 - Nothing generated, uploaded or changed in the inventory. Stickers not changed.
 - Next: once credits are topped up, OBJ-149 hero, then other colours and context shots for any approved hero.
-
-### Thu 12 Nov 2026
-- Magnific balance **195** (of 20,000). Below the 2,000 stop line, so **no renders today**. 6,465 was left after this session on 11 Nov; about 6,270 went to other Magnific work since, not this session.
-- No hero answered yet (152, 002, 038, 015), day-1 list not approved. Next product would have been OBJ-149 (sheet says rev 0 approved 11 Nov; the reference's proportions fit both drawing versions).
-- Nothing generated, uploaded or changed in the inventory. Stickers not changed.
-- Next: once credits are topped up, OBJ-149 hero (brushed), then other colours and context shots for any approved hero.
 
 ## Drawings and files
 
