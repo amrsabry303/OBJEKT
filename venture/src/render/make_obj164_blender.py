@@ -3,7 +3,7 @@
 All dimensions in mm, scene scale 0.001 (1 Blender unit = 1 m). Corner of the two walls at the origin,
 wall A in the plane y=0 (runs along +x), wall B in the plane x=0 (runs along +y), z up.
 REV 1 (draft, 15 Nov 2026; replaces rev 0): one triangle sheet bent 90 degrees along K-L. Horizontal top right triangle
-220 x 220, 2 mm; vertical triangular plate 220 x 150 flat on wall B (vertical edge in the corner); 15 mm flange on the right leg. Overall height 152.
+250 x 250, 2 mm; vertical triangular plate 250 x 150 flat on wall A (vertical edge in the corner); 15 mm flange on the right leg. Overall height 152.
 Usage: python make_obj164_blender.py OUTDIR [grey|steel]
 The walls are plain context planes, not part of the product. Output stays out of git (venture/models/).
 """
@@ -13,7 +13,7 @@ from mathutils import Vector
 out = sys.argv[1]
 mode = sys.argv[2] if len(sys.argv) > 2 else "grey"
 S = 0.001
-LEG, T, LIP, FL, DROP = 220.0, 2.0, 10.0, 15.0, 150.0
+LEG, T, LIP, FL, DROP = 250.0, 2.0, 10.0, 15.0, 150.0
 GL = LEG / math.sqrt(2)
 Z_UNDER = DROP            # underside of the top plate; gusset bottom at z = 0
 R2 = math.sqrt(2)
@@ -52,10 +52,25 @@ zt = Z_UNDER
 # horizontal top K-R-L (K = wall corner at the origin, R on wall A, L on wall B), 2 mm, underside at z = 150
 parts.append(prism("top_plate", [(0, 0, zt), (LEG, 0, zt), (0, LEG, zt)], (0, 0, T)))
 # vertical plate K-L-P flat on wall A (plane y = 0, the viewer's LEFT wall when looking into the corner, as in Sabry's photo):
-# top edge K-L = 220 along the wall, vertical edge K-P = 150 in the corner, sloped edge L-P
+# top edge K-L = 250 along the wall, vertical edge K-P = 150 in the corner, sloped edge L-P
 parts.append(prism("wall_plate", [(0, 0, zt), (LEG, 0, zt), (0, 0, 0)], (0, T, 0)))
 # 15 mm flange on the other leg K-R, against wall B (plane x = 0), 200 long, hidden under the top
 parts.append(box("flange_b", 0, T, 10, LEG - 10, zt - FL, zt))
+
+# screw holes, dia 5: 2 in the vertical plate (Sabry, 15 Nov; 20 below the top edge, at 40 and 130 from the corner),
+# 2 in the right-leg flange (at 60 and 160 from the corner)
+def drill(obj, locs_mm, axis):
+    for lx, ly, lz in locs_mm:
+        bpy.ops.mesh.primitive_cylinder_add(vertices=48, radius=2.5 * S, depth=12 * S, location=(lx * S, ly * S, lz * S))
+        cyl = bpy.context.active_object
+        cyl.rotation_euler = (math.pi / 2, 0, 0) if axis == "y" else (0, math.pi / 2, 0)
+        mod = obj.modifiers.new("hole", "BOOLEAN"); mod.operation = "DIFFERENCE"; mod.object = cyl
+        bpy.context.view_layer.objects.active = obj
+        bpy.ops.object.modifier_apply(modifier="hole")
+        bpy.data.objects.remove(cyl, do_unlink=True)
+
+drill(parts[1], [(40, T / 2, zt - 20), (130, T / 2, zt - 20)], "y")
+drill(parts[2], [(T / 2, 60, zt - FL / 2), (T / 2, 160, zt - FL / 2)], "x")
 
 bpy.ops.object.select_all(action="DESELECT")
 for p in parts:
