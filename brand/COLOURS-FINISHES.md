@@ -22,3 +22,8 @@ Eight colours across the range. Hex values are screen approximations: confirm ag
 ## Mixing guide (starting mixes, parts by weight, total 100; adjust against a physical sample)
 Bone: White 98, Yellow oxide 1.3, Raw umber 0.7 · Putty: White 83, Raw umber 11, Yellow oxide 4, Black 2 · Carbon: Black 95, White 5 · Ink: Ultramarine 62, Black 20, White 18 · Oxblood: Crimson red 62, Burnt umber 28, Black 10 · Clay: Red oxide 55, Yellow oxide 15, White 30 · Chocolate: Burnt umber 88, Red oxide 10, Black 2 · Objekt Green: Phthalo green 22, Yellow oxide 30, White 42, Raw umber 6.
 Powder coating is matched by the powder maker: send HEX, a sample and the finish. Duco can be tinted in the workshop.
+
+## Timber (added 15 Nov 2026, from Sabry, for OBJ-159)
+Not paint colours. Timber options for solid wood parts. Species and finish are confirmed by the woodworker against a physical sample.
+- **Light wood**: oak, natural light finish, like the OBJ-159 reference photo (AR: خشب فاتح). Swatch #C9A06A, indicative only.
+- **Dark oak**: oak, dark finish (AR: بلوط داكن). Swatch #4B3426, indicative only. How it is darkened (stain or oil) is not decided.

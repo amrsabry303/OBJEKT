@@ -1,7 +1,7 @@
-"""OBJ-159: tall shelf, six WOOD shelves, two stainless side plates with five circular cut-outs each. Production drawing set, REV 9 (DRAFT).
+"""OBJ-159: tall shelf, six WOOD shelves, two stainless side plates with five circular cut-outs each. Production drawing set, REV 9 (approved 15 Nov).
 Run: python3 make_obj159_rev9.py <repo root>   then: NODE_PATH=<playwright> node make_pdf.js <dir> OBJ-159 9
 Reference: images/OBJ-159.jpg is a third-party piece (jeremylechatelier, Hublot). Used for the IDEA only. This is objekt's OWN design.
-REV 9 (15 Nov): Sabry: the drawing said the shelves are metal, they are WOOD SLABS like the reference photo. Wood options: light wood like the reference, or dark oak.
+REV 9 (15 Nov): Sabry: the drawing said the shelves are metal, they are WOOD SLABS like the reference photo. Wood options: light wood (oak) like the reference, or dark oak.
   Shelves are now solid wood slabs 1.25 in (31.75 mm) thick, rounded long edges, made by a woodworker (not Polycraft sheet metal). Only the two stainless plates are cut and nested.
   Fixing: M6 threaded inserts in the slab ends and M6 screws through the plate holes, centred in the slab thickness (hole 15.875 below the top face).
 Rev 8 (approved 12 Nov) had hollow folded stainless shelves: superseded. Everything else is as rev 8: 74 x 34 x 14 in, five circles per plate, equal shelf gaps, no feet, 3 mm step and two 40 mm pads.
@@ -151,9 +151,9 @@ def frame(n, title_en, title_ar, scale):
     s += bi(X+2, Y+14, f'SIZE  74 x 34 x 14 in  ({OH:.1f} x {OW:.1f} x {OD:.1f} mm)', 'المقاس الكلي (سبري)', 88, 2.2) + bi(X+94, Y+14, f'SCALE  {scale}   UNITS  mm', 'المقياس والوحدة', 88, 2.2)
     s += bi(X+2, Y+25, f'MATERIAL  Plates stainless {TP} mm, shelves solid wood', 'اللوحان ستانلس ٤ مم، الأرفف خشب', 88, 1.9) + bi(X+94, Y+25, 'FINISH  brushed steel / light wood or dark oak', 'ستانلس مصقول / خشب فاتح أو بلوط داكن', 88, 2.0)
     s += bi(X+2, Y+36, f'DATE  {DATE}      SHEET {n} / {N}', 'التاريخ، الورقة', 88, 2.2) + bi(X+94, Y+36, f'REV  {REV}', 'المراجعة', 88, 2.2)
-    OKC = '#b3261e'
+    OKC = '#2f6b45'
     s += rect(X, Y-14, Wd, 12, .5, OKC, '#fff')
-    s += t(X+Wd/2, Y-8.6, 'DRAFT, not approved, not engineered', 2.25, 700, 'middle', OKC) + t(X+Wd/2, Y-3.8, 'مسودة، غير معتمدة، غير مهندسة', 2.25, 700, 'middle', OKC)
+    s += t(X+Wd/2, Y-8.6, 'Approved by Sabry 15 Nov 2026. Production review pending. Not engineered', 2.25, 700, 'middle', OKC) + t(X+Wd/2, Y-3.8, 'اعتمده سبري ١٥ نوفمبر ٢٠٢٦. مراجعة التصنيع قيد الانتظار. غير مهندسة', 2.25, 700, 'middle', OKC)
     return s + t(10, 14, title_en, 4.2, 700) + ar(410, 14, title_ar, 4.2, 700)
 def sheet(n, te, ta, sc, body):
     return f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 297" width="420mm" height="297mm"><rect width="420" height="297" fill="#fff"/>{frame(n, te, ta, sc)}{body}</svg>'
@@ -164,7 +164,7 @@ b_ = io.BytesIO(); im.save(b_, 'JPEG', quality=70); PHOTO = 'data:image/jpeg;bas
 
 
 def fmm(v): return f'{v:.1f}'
-WOODN = 'Solid timber slab, light wood like the reference, or dark oak'
+WOODN = 'Solid timber slab, light wood (oak) like the reference, or dark oak'
 # ===== SHEET 1: views (1:12) =====
 S = 1/12; ox, oy = 28, 38
 def X(x): return ox + x*S
@@ -210,7 +210,7 @@ for i, s_ in enumerate(["Another designer's piece. We keep the idea only:", 'two
 cy0 = 25 + ih + 9
 b += t(rx, cy0, 'COLOURWAYS', 2.6, 600) + ar(410, cy0, 'التشطيبات', 2.6, 600)
 b += rect(rx, cy0+3, 22, 10, .3, INK, '#b8b8b4') + t(rx+25, cy0+7, 'Plates: brushed stainless steel (Sabry)', 2.1, 600) + t(rx+25, cy0+10.5, 'Same family as OBJ-190. Swatch indicative.', 1.7, 400, fill=HID)
-b += rect(rx, cy0+16, 22, 10, .3, INK, WOOD_LIGHT) + t(rx+25, cy0+20, 'Shelves option 1: light wood, like the reference (Sabry)', 2.1, 600) + t(rx+25, cy0+23.5, f'Species and finish to confirm. Swatch {WOOD_LIGHT}, indicative.', 1.7, 400, fill=HID)
+b += rect(rx, cy0+16, 22, 10, .3, INK, WOOD_LIGHT) + t(rx+25, cy0+20, 'Shelves option 1: light wood (oak), like the reference (Sabry)', 2.1, 600) + t(rx+25, cy0+23.5, f'Oak. Finish to confirm. Swatch {WOOD_LIGHT}, indicative.', 1.7, 400, fill=HID)
 b += rect(rx, cy0+29, 22, 10, .3, INK, WOOD_DARK) + t(rx+25, cy0+33, 'Shelves option 2: dark oak (Sabry)', 2.1, 600) + t(rx+25, cy0+36.5, f'Finish to confirm. Swatch {WOOD_DARK}, indicative.', 1.7, 400, fill=HID)
 sh1 = sheet(1, 'VIEWS', 'المناظر', '1:12', b)
 
@@ -335,7 +335,7 @@ b += t(tx0, 44, 'SHEET A', 2.4, 600) + t(tx0, 49, f'2 plates, {GAP} mm spacing, 
 b += t(tx0, 64, 'Not optimised. No offcut use is claimed.', 1.8, 400, fill=HID)
 b += t(10, 150, 'WOOD CUTTING LIST (for the woodworker, not nested)', 2.6, 600) + ar(410, 150, 'قائمة الخشب', 2.6, 600)
 b += t(10, 158, f'6 slabs, each about {fmm(WS)} x {fmm(OD)} x {SHT} mm finished (length is nominal, between the plates). Long edges R{EDGE_R:.0f}. One piece or glued boards: the woodworker decides.', 2.0)
-b += t(10, 163, f'Light wood or dark oak (Sabry). Species not stated. M6 insert holes dia {INS_D:.0f} x {INS_DEPTH:.0f} deep in both ends of every slab (4 per slab).', 2.0)
+b += t(10, 163, f'Light wood or dark oak (Sabry). Light wood is oak (Sabry). M6 insert holes dia {INS_D:.0f} x {INS_DEPTH:.0f} deep in both ends of every slab (4 per slab).', 2.0)
 b += t(10, 168, 'The top slab (item 3) also gets 2 strap pilot holes dia 5 in its rear edge (indicative).', 2.0)
 b += ar(410, 158, 'ستة ألواح خشب، النوع غير محدد.', 2.0)
 sh4 = sheet(4, 'CUTTING LAYOUT', 'مخطط القص', '1:20', b)
@@ -344,7 +344,7 @@ sh4 = sheet(4, 'CUTTING LAYOUT', 'مخطط القص', '1:20', b)
 b = t(10, 28, 'BILL OF MATERIALS', 2.8, 600) + ar(410, 28, 'قائمة المواد', 2.8, 600) + rect(10, 31, 400, 7, .3, INK, '#e9e5dc')
 for x, s_ in zip([12, 24, 130, 150], ['ITEM', 'PART / الجزء', 'QTY', 'MATERIAL / الخامة']): b += t(x, 36, s_, 2.3, 600)
 bom = [('1', 'Side plate, laser cut, flat, stands on its bottom edge', 'لوح جانبي', '2', f'Stainless steel sheet {TP} mm, brushed (proposed)'),
-       ('2', f'Shelf, solid wood slab {SHT} thick, R{EDGE_R:.0f} long edges, M6 inserts in the ends', 'رف خشبي', '5', 'Solid wood: light wood or dark oak (Sabry); species to confirm'),
+       ('2', f'Shelf, solid wood slab {SHT} thick, R{EDGE_R:.0f} long edges, M6 inserts in the ends', 'رف خشبي', '5', 'Solid oak: light wood or dark oak (Sabry); finish to confirm'),
        ('3', 'Top shelf (item 2 + 2 strap pilot holes in the rear edge)', 'الرف العلوي', '1', 'Solid wood, same as item 2'),
        ('4', 'Screw M6 button head + M6 threaded insert (indicative)', 'برغي وقلاووظ داخلي', '24', 'Stainless screw, insert bought in'),
        ('5', 'Anti-tip wall strap kit', 'حزام منع السقوط', '1', 'Bought in, wall fixings by the installer')]
@@ -355,7 +355,7 @@ b += t(10, 82, 'NOTES', 2.8, 600) + ar(410, 82, 'ملاحظات', 2.8, 600)
 notes = [("Sabry (12 and 15 Nov 2026): overall 74 x 34 x 14 in, shelves 1.25 in thick and screwed to the plates, six shelves, five circles per plate, no feet (plates stand on two 40 mm pads, 3 mm step between), plates brushed stainless, shelves WOOD SLABS like the reference: light wood or dark oak. All other sizes are PROPOSED by Claude, to confirm.", 'المقاسات من سبري: الأرفف ألواح خشب، واللوحان ستانلس، والباقي مقترح.'),
          ('The reference photo is another designer\'s piece. We keep the idea only (two tall plates with cut-outs, wood slabs between, plates standing on the floor edge). Our count, size and proportions are different.', 'المرجع قطعة مصمم آخر. نأخذ الفكرة فقط.'),
          ('Plate thickness, tolerances, sheet size, edge treatment and finish are Production\'s. The wood species, grain, joins, edge radius, insert type and finish are the woodworker\'s. Who makes the timber is not decided (Polycraft works sheet metal).', 'السماكة والسماحيات يقررها التصنيع، والخشب يقرره النجار.'),
-         (f'Steel plates alone are about {TOTAL_STEEL:.0f} kg (arithmetic). Wood weight is not calculated (species not stated). Lifting, packing and the 15 kg shipping band need real figures. Ships in parts, assembled on site.', f'وزن اللوحين نحو {TOTAL_STEEL:.0f} كجم، ووزن الخشب غير محسوب.'),
+         (f'Steel plates alone are about {TOTAL_STEEL:.0f} kg (arithmetic). Wood weight is not calculated (dark oak finish to confirm). Lifting, packing and the 15 kg shipping band need real figures. Ships in parts, assembled on site.', f'وزن اللوحين نحو {TOTAL_STEEL:.0f} كجم، ووزن الخشب غير محسوب.'),
          ('Tip-over: the wall strap (item 5) is part of the design. No levelling feet, so an uneven floor is for Production and the installer to consider. No claim about stability or shelf loading. Not engineered.', 'حزام الحائط جزء من التصميم. لا ادعاءات عن الثبات أو التحميل.'),
          ('Plates brushed stainless (same family as OBJ-190). No costs or prices on this drawing. Arabic wording is a draft for a technical reader.', 'لا أسعار. الصياغة العربية مسودة.')]
 for i, (en, a) in enumerate(notes):
