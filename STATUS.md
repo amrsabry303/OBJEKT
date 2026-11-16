@@ -132,6 +132,13 @@ Three daily sessions work on this repo, one section each. Each session updates *
 ### Shopify catalogue
 <!-- daily catalogue session; dated, newest first, last 3 entries -->
 
+#### Mon 16 Nov 2026
+- Ran: `get-shop-info` = OBJEKT / hs1a1c-ut, EGP. Pulled main (c20133c). Read: product counts, the 5 most recently edited products, latest orders; git log of STATUS, CONTENT_TO_SUPPLY, the day-1 list and `plan/images/` since my 15 Nov run.
+- Found: **62 products, 10 active, nothing edited on the store since 12 Nov 11:29 UTC** (INGOT). 0 orders. CONTENT_TO_SUPPLY and `plan/images/` unchanged; no catalogue line answered; day-1 list still not approved (cut-off Tue 17 Nov).
+- New in STATUS (drawings session): approved sizes for **OBJ-075** (S D350 × 350, M D500 × 500, L D600 × 700 mm), **OBJ-173** (cube 150) and **OBJ-149** (220 × 220 × 60). Not entered: these are candidates, not agreed day-1 products, and 075 needs S/M/L variants. Table updated (Sizes ~).
+- So **no store writes**, nothing to log in CHANGELOG. Readiness: **0 of 19 complete**. Placeholders left on all drafts.
+- Next: on the Tue 17 Nov list, build each approved candidate as a draft the same day (sizes, size variants, collection, metafields), with prices and names as they come.
+
 #### Sun 15 Nov 2026
 - Ran: `get-shop-info` = OBJEKT / hs1a1c-ut, EGP. Pulled main (d00c8b3). Read: product counts, the 5 most recently edited products, latest orders; git log of STATUS, CONTENT_TO_SUPPLY and the day-1 list since my 14 Nov run.
 - Found: **62 products, 10 active, nothing edited on the store since 12 Nov 11:29 UTC** (INGOT). 0 orders. CONTENT_TO_SUPPLY and the day-1 list unchanged; no catalogue or content line answered, no image approved, day-1 list not approved.
@@ -144,13 +151,7 @@ Three daily sessions work on this repo, one section each. Each session updates *
 - So **no store writes**, nothing to log in CHANGELOG. Readiness table unchanged: **0 of 19 complete**. Placeholders left on all drafts.
 - Time: the content session's cut-off for candidates is Tue 17 Nov. Each candidate needs name, price, size, lead time, colours and an approved hero; once those land I can build it as a draft the same day.
 
-#### Fri 13 Nov 2026
-- Ran: `get-shop-info` = OBJEKT / hs1a1c-ut, EGP. Pulled main (7fdf323). Read: products changed since 12 Nov 11:00 UTC (only SPAN 11:14 and INGOT 11:29 UTC, both after yesterday's 07:40 run), the 10 active products (collections, variant weights, SEO), the Furniture collection.
-- Found: 62 products, **10 active**, nothing edited on the store since 12 Nov 11:29 UTC. **OCTA, CAIRN, SPAN, INGOT are now in Furniture** (manual, 18 products; not by this session, probably with the 12 Nov 11:14–11:29 edits), so that gap is closed; table updated. The content line on this can go. Still: all variants **0 kg**, SEO empty on all 10.
-- No answer from Sabry on any catalogue or content line, no supplied value, no approved image, day-1 list not approved. So **no store writes**, nothing to log in CHANGELOG.
-- Readiness: **0 of 19 complete**. Placeholders left on all drafts.
-
-**Readiness (13 Nov, re-checked 14 and 15 Nov: no change; ✓ done, ~ partly, ✗ missing).** Live = active now. "Complete" needs all 12 checks.
+**Readiness (13 Nov, re-checked 14, 15 and 16 Nov; 16 Nov: sizes known for 149, 173, 075; ✓ done, ~ partly, ✗ missing).** Live = active now. "Complete" needs all 12 checks.
 
 | OBJ | Title | Named | Copy EN | Copy AR | Price | Lead time | Sizes | Variants | Images | Collection | Metafields | SEO | Placeholders gone | Complete |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
@@ -168,9 +169,9 @@ Three daily sessions work on this repo, one section each. Each session updates *
 | OBJ-038 | draft | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | hero pending | ✓ Furniture | ✗ | ✗ | ✗ | no |
 | OBJ-152 | draft | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | hero pending | ✓ Furniture | ✗ | ✗ | ✗ | no |
 | OBJ-194 | no draft yet | ✗ | ✗ | ✗ | ✗ | ✗ | ✓ 1200 × 450 × 750 | ✗ | 2 renders, not approved | – | ✗ | ✗ | – | no |
-| OBJ-149 | draft | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ two drawings | ✗ | ✗ | ✓ Objekts | ✗ | ✗ | ✗ | no |
-| OBJ-173 | draft | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✓ Planters | ✗ | ✗ | ✗ | no |
-| OBJ-075 | draft | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✓ Planters | ✗ | ✗ | ✗ | no |
+| OBJ-149 | draft | ✗ | ✗ | ✗ | ✗ | ✗ | ~ 220 × 220 × 60 approved, not entered | ✗ | ✗ | ✓ Objekts | ✗ | ✗ | ✗ | no |
+| OBJ-173 | draft | ✗ | ✗ | ✗ | ✗ | ✗ | ~ cube 150 approved, not entered | ✗ | ✗ | ✓ Planters | ✗ | ✗ | ✗ | no |
+| OBJ-075 | draft | ✗ | ✗ | ✗ | ✗ | ✗ | ~ S/M/L approved, not entered | ✗ needs size variants | ✗ | ✓ Planters | ✗ | ✗ | ✗ | no |
 | OBJ-115 | draft | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✓ T&L | ✗ | ✗ | ✗ | no |
 | OBJ-164 | draft | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✓ Objekts | ✗ | ✗ | ✗ | no |
 
