@@ -3,10 +3,11 @@ Run: python3 make_obj164_rev1.py <repo root>   Then make_pdf.js for the PDF.
 Rev 1 (15 Nov 2026): Sabry said the shelf is a wedge and rev 0 (vertical gusset in the corner diagonal) was wrong, and that it is
 ONE TRIANGLE SHEET BENT AT 90 DEGREES. Reading: the flat sheet is a triangle R-L-P with the bend line K-L (K on the base R-P).
 Folded 90 degrees along K-L it gives a horizontal top plate K-R-L (right angle at K, legs 250 x 250, along the two walls) and a
-vertical plate K-L-P in the plane of the left wall (top edge K-L = 250, vertical edge K-P = 150 in the wall corner, sloped edge L-P).
-Size 250 x 250 mm legs is Sabry's (15 Nov: "make it 25 x 25"; it was 220 x 220, production-book caption "2pc 22x22CM", until then). 2 mm brushed stainless, 150 mm plate depth, a 15 mm
-flange on the right leg for the fixing, pair: PROPOSALS, not costed, Production to confirm. The photo suggests a deeper plate
-(about 180 mm by eye); 150 is carried over from rev 0.
+vertical plate K-L-P in the plane of the left wall (top edge K-L = 250, vertical edge K-P = 250 in the wall corner, sloped edge L-P).
+Size 250 x 250 mm legs is Sabry's (15 Nov: "make it 25 x 25"; it was 220 x 220, production-book caption "2pc 22x22CM", until then). 2 mm brushed stainless, a 15 mm
+flange on the right leg for the fixing, four screw holes, pair: PROPOSALS, not costed, Production to confirm.
+Sabry 16 Nov: the two triangles (top and vertical plate) are symmetrical and equal size, so the plate is 250 x 250 as well (rev 1 first had it 150 deep).
+The flat sheet is then one right isosceles triangle (hypotenuse 2 x 250 = 500) folded 90 degrees along its altitude.
 Arabic wording is a draft for a technical reader. No costs, no structural claims."""
 import sys, os, math, base64, io
 from PIL import Image
@@ -14,8 +15,8 @@ import ezdxf
 ROOT = sys.argv[1] if len(sys.argv) > 1 else '/home/user/OBJEKT'
 OUT = ROOT + '/venture/drawings/OBJ-164'; os.makedirs(OUT, exist_ok=True)
 PHOTO = ROOT + '/images/OBJ-164.jpg'
-REV = 1; DATE = '15 Nov 2026'; PN = 'OBJ-164'
-LEG = 250; T = 2; FL = 15; DROP = 150
+REV = 1; DATE = '16 Nov 2026'; PN = 'OBJ-164'
+LEG = 250; T = 2; FL = 15; DROP = LEG                       # DROP = LEG: the vertical plate is the same triangle as the top (Sabry, 16 Nov: symmetrical, equal size)
 HYP = LEG*math.sqrt(2)                                  # front edge 311.1
 PEDGE = math.hypot(LEG, DROP)                           # sloped edge of the vertical plate 266.2
 OH = T + DROP
@@ -113,7 +114,7 @@ def frame(n, N, title_en, title_ar, scale):
     return s
 def sheet(n, N, title_en, title_ar, scale, body):
     return f'<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 420 297" width="420mm" height="297mm"><rect width="420" height="297" fill="#fff"/>{frame(n, N, title_en, title_ar, scale)}{body}</svg>'
-N = 5; S = .4
+N = 5; S = .28
 # ================= SHEET 1: views =================
 oxp, oyp = 30, 40
 def px(x): return oxp + x*S
@@ -128,23 +129,23 @@ b += t(mx+8, my-3, f'front edge {HYP:.1f}', 2.3, 500, fill=DIM) + t(mx+8, my+.5,
 b += t(px(8), py(LEG*.28), '90°', 2.4, 500, fill=DIM) + t(px(LEG*.06), py(LEG*.5), 'K', 2.4, 600, fill=DIM)
 b += t(px(LEG*.12), py(LEG*.7), 'The vertical plate hangs from the left leg,', 2.0, 400, fill=HID) + t(px(LEG*.12), py(LEG*.7)+3, 'flat on the left wall (see next view).', 2.0, 400, fill=HID)
 # ELEVATION A: looking at the left wall (plate in true shape)
-ox, oz = 245, 52
+ox, oz = 245, 48
 def fx(x): return ox + x*S
 def fz(z): return oz + z*S
 b += t(215, 30, 'ELEVATION A (looking at the left wall: plate in true shape)', 2.8, 600) + t(410, 34, 'منظر أ (نحو الحائط الأيسر: اللوح بحجمه الحقيقي)', 2.6, 500, 'end', extra=AR)
 b += poly([(fx(0), fz(T)), (fx(LEG), fz(T)), (fx(0), fz(T+DROP))], .45, INK, '#cfcfcc')
 b += rect(fx(0), fz(0), LEG*S, T*S, .45, INK, '#d8d8d5')
 for d_, z_ in PLATE_HOLES: b += f'<circle cx="{fx(d_):.2f}" cy="{fz(T+z_):.2f}" r="{HOLE_D/2*S:.2f}" fill="#fff" stroke="{INK}" stroke-width=".3"/>'
-b += t(fx(PLATE_HOLES[0][0]), fz(T+PLATE_HOLES[0][1])-3, f'2 holes dia {HOLE_D}, {PLATE_HOLES[0][1]} below the top edge, at {PLATE_HOLES[0][0]} and {PLATE_HOLES[1][0]} from the corner', 2.0, 400, fill=DIM) + t(fx(PLATE_HOLES[0][0]), fz(T+PLATE_HOLES[0][1])-6, 'ثقبان لبراغي اللوح الرأسي', 2.0, 400, fill=DIM, extra=AR)
+b += t(fx(PLATE_HOLES[0][0]), fz(T+PLATE_HOLES[0][1])+9, f'2 holes dia {HOLE_D}, {PLATE_HOLES[0][1]} below the top edge, at {PLATE_HOLES[0][0]} and {PLATE_HOLES[1][0]} from the corner', 2.0, 400, fill=DIM) + t(fx(PLATE_HOLES[0][0]), fz(T+PLATE_HOLES[0][1])+12, 'ثقبان لبراغي اللوح الرأسي', 2.0, 400, fill=DIM, extra=AR)
 b += rect(fx(0)-1.5, fz(-5), 1.5, (OH+10)*S, .6, '#555', '#bbb') + t(fx(0)-4, fz(OH/2), 'CORNER', 2, 400, 'end', HID)
 b += dim_h(fx(0), fx(LEG), fz(0)-5, f'{LEG}', ext=fz(0)) + dim_v(fx(LEG)+8, fz(0), fz(OH), f'{OH}', ext=fx(LEG)) + dim_v(fx(LEG)+16, fz(T), fz(OH), f'{DROP}', ext=fx(LEG))
 b += t(fx(LEG*.4), fz(T+DROP*.3), f'sloped edge {PEDGE:.1f}', 2.0, 400, fill=HID) + t(fx(LEG*.4), fz(T+DROP*.3)+3, 'الحافة المائلة', 2.0, 400, fill=HID, extra=AR)
 b += balloon(fx(LEG*.3), fz(0)-12, 1) + balloon(fx(14), fz(T+DROP*.75), 2)
 # ELEVATION B: looking at the right wall
-ox2 = 245; oz2 = 150
+ox2 = 245; oz2 = 138
 def sx(x): return ox2 + x*S
 def sz(z): return oz2 + z*S
-b += t(215, 138, 'ELEVATION B (looking at the right wall: plate edge-on)', 2.8, 600) + t(410, 142, 'منظر ب (نحو الحائط الأيمن: اللوح من جانبه)', 2.6, 500, 'end', extra=AR)
+b += t(215, 128, 'ELEVATION B (looking at the right wall: plate edge-on)', 2.8, 600) + t(410, 132, 'منظر ب (نحو الحائط الأيمن: اللوح من جانبه)', 2.6, 500, 'end', extra=AR)
 b += rect(sx(0), sz(0), LEG*S, T*S, .45, INK, '#d8d8d5')
 b += rect(sx(0), sz(T), T*S, DROP*S, .45, INK, '#bdbdb9')
 b += rect(sx(10), sz(T), (LEG-20)*S, FL*S, .3, HID, 'none', '1 .7')
@@ -160,7 +161,7 @@ b += t(205, 172, 'مراجعة ١: وتد من مثلث واحد مثني ٩٠°
 b += t(22, 262, 'Colourways: bare brushed stainless (proposal). No paint colour.  ألوان: ستانلس مبشور بدون دهان (مقترح).', 2.0, 400, fill=HID)
 b += t(22, 276, f'Leg {LEG} x {LEG} is Sabry\'s (15 Nov, "make it 25 x 25"; was 22 x 22). Thickness 2, plate depth {DROP}, flange {FL}, screws, pair: PROPOSALS,', 2.0, 400, fill=HID)
 b += t(22, 279.5, f'not costed, Production to confirm. Overall height {OH} = top plate {T} + plate {DROP} below it.  المقاسات عدا ٢٥٠ مقترحة، يؤكدها التصنيع.', 2.0, 400, fill=HID)
-sh1 = sheet(1, N, 'VIEWS', 'المناظير', '1:2.5', b)
+sh1 = sheet(1, N, 'VIEWS', 'المناظير', '1:3.5', b)
 
 # ================= SHEET 2: flat pattern =================
 S2 = .6
@@ -256,7 +257,7 @@ for i, (n_, en, ar, q, m_) in enumerate(bom):
 b += t(10, 80, 'NOTES', 2.8, 600) + t(410, 80, 'ملاحظات', 2.8, 600, 'end', extra=AR)
 notes = [('REV 1 (15 Nov 2026) replaces rev 0, which was wrong. Sabry: it is a wedge, one triangle sheet bent at 90 degrees. Folded along K-L it gives a horizontal triangular top and a vertical triangular plate flat on the left wall.', 'المراجعة ١ تحل محل ٠: وتد من مثلث واحد مثني ٩٠°، رف أفقي ولوح رأسي على الحائط الأيسر.'),
          (f'Leg length {LEG} x {LEG} mm is Sabry\'s size (15 Nov: "make it 25 x 25"; it was 220 x 220 / book caption "2pc 22x22CM" before), the two straight edges along the walls. Front edge about {HYP:.0f} mm.', 'الضلعان ٢٥٠ × ٢٥٠ مم (مقاس سبري) على الحائطين، والحافة الأمامية حوالي ٣٥٤ مم.'),
-         (f'Proposals, not costed, Production to confirm: stainless 2 mm, brushed; vertical plate depth {DROP} mm (overall height {OH}; carried over from rev 0, the photo suggests deeper, about 180 by eye); flange {FL} mm with 2 holes dia {HOLE_D} per shelf; sold as a pair.', 'مقترحات غير مسعرة يؤكدها التصنيع: ستانلس ٢ مم مبشور، عمق ١٥٠ مم (الصورة توحي بأعمق)، زعنفة ١٥ مم، زوج.'),
+         (f'Proposals, not costed, Production to confirm: stainless 2 mm, brushed; vertical plate the same triangle as the top, {LEG} x {DROP} mm (Sabry, 16 Nov: symmetrical, equal size), so overall height {OH}; flange {FL} mm with 2 holes dia {HOLE_D} per shelf; sold as a pair.', 'مقترحات غير مسعرة يؤكدها التصنيع: ستانلس ٢ مم مبشور، عمق ١٥٠ مم (الصورة توحي بأعمق)، زعنفة ١٥ مم، زوج.'),
          ('Shape read from one photo of unknown maker and Sabry\'s correction. Drawn as objekt\'s own design. The device on the shelf is not ours and not drawn.', 'الشكل من صورة واحدة وتصحيح سبري ومرسوم كتصميم خاص بأوبجيكت. الجهاز على الرف ليس لنا.'),
          ('Open for Sabry: is the pair two of the same hand or a mirrored pair (plate on the left wall for one, on the right wall for the other)? Drawing shows the plate on the left wall.', 'مفتوح: هل الزوج متماثل الاتجاه أم معكوس؟ الرسم يبين اللوح على الحائط الأيسر.'),
          ('Fixing (Sabry added two screw holes in the vertical plate, 15 Nov): 2 holes dia 5 in the flange on the right leg, hidden under the top, and 2 holes dia 5 in the vertical plate, seen from the room. Wall type, plugs and screw finish are not known: Production / installer to decide.', 'التثبيت: ثقبان في الزعنفة مخفيان وثقبان في اللوح الرأسي ظاهران من الغرفة. النوع والفيشر يقررهما التصنيع.'),
