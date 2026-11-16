@@ -12,8 +12,8 @@ Three daily sessions work on this repo, one section each. Each session updates *
 - [content] OBJ-148 reference is a named third-party product (159 is now your own redesign, rev 9 approved) · redesign / drop · rec: drop for day 1.
 - [content] **OBJ number clash:** the product session's branch uses OBJ-191 (tray), 192 (planter trough), 196 (plant stand); on main, the sheet and the store those are CURL / TUFT seating and TORSO Small · renumber the branch pieces / renumber the old ones · rec: give the 3 new pieces the next free numbers before the branch is merged.
 - [content] 14 store drafts not on the plan (OBJ-035, 039, 052, 074, 086, 090, 093, 107, 112, 141, 146, 150, 170, 174; 168 left out, the branch says you made it a planter 12 Nov) · archive / keep as drafts · rec: keep as drafts, never activate.
-- [website] **The store is public** since 11 Nov ~23:15 UTC (still on 15 Nov): password off, 10 products buyable. The live theme changed again on 12 Nov to "OBJEKT UX audit (draft 12 Nov)"; neither change is in any repo log. Was this your go? · keep live / put the password back until 19 Nov · rec: if not intended, password back today (only you can).
-- [website] Checkout offers **PayPal only** (checked 14 Nov); Paymob is not signed in, and checkout takes the full price (no 50% deposit). Sign in to Paymob so I can run test mode · rec: today, live orders can already come in.
+- [website] **The store is public** since 11 Nov ~23:15 UTC (still on 16 Nov): password off, 10 products buyable. The live theme changed again on 12 Nov to "OBJEKT UX audit (draft 12 Nov)"; neither change is in any repo log. Was this your go? · keep live / put the password back until 19 Nov · rec: if not intended, password back today (only you can).
+- [website] Checkout offers **PayPal only** (checked 16 Nov); Paymob is not signed in, and checkout takes the full price (no 50% deposit). Sign in to Paymob so I can run test mode · rec: today, live orders can already come in.
 - [website] All live variants weigh 0 kg, so **every order pays 118 EGP**, even a 28,000 EGP table · send packed weights per product (catalogue session enters them) · rec: weights from Polycraft by Tue 17 Nov.
 - [website] Live theme is now in git (13 Nov, read through the API). Who edits the live theme from here: whoever made the 11–12 Nov drafts keeps going, or all theme edits go through the repo and an unpublished copy first · rec: repo first, so nothing is lost or overwritten before launch.
 - [website] Fix 3 small typos in admin policies (Settings → Policies): Shipping "1,200 EGP.." ; Privacy contact ends "2240.</span>." ; Refund and Shipping headings run into the first sentence · connector cannot write policies.
@@ -104,6 +104,10 @@ Three daily sessions work on this repo, one section each. Each session updates *
 - Next: your answers on the 5 drafts; ARRIS once a model or photos arrive; then 171, 165, 175 after launch.
 
 ## Website (Shopify)
+### 16 Nov 2026 (Mon)
+- Ran: pulled main (6b93369); `npm ci`; `theme check` 50 files, no offenses. Store confirmed OBJEKT / hs1a1c-ut. **No store writes.** CLI not logged in.
+- Found: live theme still `190236524768` (last edit 12 Nov 09:03 UTC), git still matches. Store still **public** (`/password` redirects home). 62 products, 10 active, 0 orders; last product edit 12 Nov 11:29 UTC. Menus and 4 pages unchanged. New: the unpublished **Horizon** theme was edited 15 Nov 14:23 UTC, not by this session and not logged (it is the rollback copy; harmless while unpublished).
+- Browser check (Playwright, 1440 and 375 px): 7 pages 200, no horizontal scroll, no placeholder text. Checkout with PYRA (no order): **PayPal only**, no deposit. No new supplied text, no answer on any website line.
 ### 15 Nov 2026 (Sun)
 - Ran: pulled main (2acbd94); `npm ci`; `theme check` 50 files, no offenses. Store confirmed OBJEKT / hs1a1c-ut. **No store writes.** CLI not logged in.
 - Found: nothing changed since 12 Nov. Live theme still `190236524768` (last edit 12 Nov 09:03 UTC), git still matches. Store still **public** (`/password` redirects to home, pages 200). 0 orders; last product edit 12 Nov 11:29 UTC. Menus and 4 pages unchanged. No new supplied text, no answer on any website line.
@@ -112,21 +116,16 @@ Three daily sessions work on this repo, one section each. Each session updates *
 - Ran: pulled main (0d4159a); `npm ci`; `theme check` 50 files, no offenses. Store confirmed OBJEKT / hs1a1c-ut. **No store writes.** CLI not logged in (waits for login; not attempted).
 - Found: nothing changed on the store since 13 Nov. Live theme still `190236524768` "OBJEKT UX audit (draft 12 Nov)", last file edit 12 Nov 09:02 UTC, so git still matches it. Store still **public**, 10 active of 62, 0 orders. Menus, 4 pages, 5 policies unchanged (3 typos still there). No new supplied text in CONTENT_TO_SUPPLY or STATUS; no answer on any website line.
 - Browser check (Playwright, 1440 and 375 px): 7 pages 200, no horizontal scroll, no placeholder text. Checkout with PYRA (no order): **PayPal only**, no deposit.
-### 13 Nov 2026 (Fri)
-- Ran: pulled main (f37ff7f); `npm ci`; `theme check` clean. Store confirmed OBJEKT / hs1a1c-ut. **No store writes.** CLI not logged in.
-- Found: the live theme changed again, not logged: now `190236524768` "OBJEKT UX audit (draft 12 Nov)" (edited 12 Nov 08:41–09:03 UTC). Store still **public**, 10 active, 0 orders. Menus, pages, policies unchanged (3 typos still there).
-- **Live theme now in git:** read all 67 live files through the Admin API (read only, no CLI needed) and wrote them into `website/theme` (38 differed, 4 were missing). Code files match the live MD5. `theme check` 50 files, no offenses; no font files. Dev theme `189754769632` is now behind; not pushed.
-- Browser check (Playwright, 1440 and 375 px): 7 pages 200, no horizontal scroll, no placeholder text. Checkout with PYRA (no order): **PayPal only**, full price, no deposit.
-**Pre-launch cleanup checklist (HANDOVER section 8; store re-read 15 Nov):**
+**Pre-launch cleanup checklist (HANDOVER section 8; store re-read 16 Nov):**
 - [x] OBJ-099: v2 Oxblood images in, variant linked, v1 removed (8 Nov)
 - [x] Delete the 3 `[TEST]` products and 2 `[TEST]` articles (10 Nov)
 - [x] 13 `preview-active` products back to draft (10 Nov); drop `preview-active` / `placeholder-data` tags only when real data is in
 - [x] Remove the 4 reference photos of unknown rights and the 8 placeholder images (10 Nov)
 - [x] `objekt-main` expanded (9 Nov; now Shop, About, Custom request)
 - [x] Footer menus, Delivery & Returns page, 5 policies (10 Nov). Open: 3 typos in admin policies, lawyer check
-- [ ] Shipping: packed weight on every launch product (all 0 kg on 13 Nov; catalogue session); checkout rate test (Egypt, under and over 15 kg)
-- [ ] Paymob: Sabry signs in; then test mode, activate, capture Automatic, test order and refund (14 Nov: PayPal only)
-- [x] QA launch check "no active product with `placeholder-data`, 9999.00 or [PLACEHOLDER]" passes (12 Nov; 13 Nov public pages show no placeholder text)
+- [ ] Shipping: packed weight on every launch product (all 0 kg on 13 Nov, not re-read 16 Nov; catalogue session); checkout rate test (Egypt, under and over 15 kg)
+- [ ] Paymob: Sabry signs in; then test mode, activate, capture Automatic, test order and refund (16 Nov: PayPal only)
+- [x] QA launch check "no active product with `placeholder-data`, 9999.00 or [PLACEHOLDER]" passes (12 Nov; 16 Nov public pages show no placeholder text)
 - [~] Sabry only: theme published and password removed (found 12 Nov, not logged); live theme changed again to `190236524768`; Paymob live still open. Horizon kept unpublished as rollback.
 - [x] Live theme pulled into git (13 Nov, via Admin API; no CLI needed)
 
