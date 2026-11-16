@@ -3,7 +3,7 @@
 All dimensions in mm, scene scale 0.001 (1 Blender unit = 1 m). Corner of the two walls at the origin,
 wall A in the plane y=0 (runs along +x), wall B in the plane x=0 (runs along +y), z up.
 REV 1 (draft, 15 Nov 2026; replaces rev 0): one triangle sheet bent 90 degrees along K-L. Horizontal top right triangle
-250 x 250, 2 mm; vertical triangular plate 250 x 250 (equal to the top, Sabry 16 Nov) flat on wall A (vertical edge in the corner); 15 mm flange on the right leg. Overall height 252.
+250 x 250, 2 mm; vertical triangular plate 250 x 250 (equal to the top, Sabry 16 Nov) flat on wall A (vertical edge in the corner); no flange (Sabry 16 Nov). Overall height 252.
 Usage: python make_obj164_blender.py OUTDIR [grey|steel]
 The walls are plain context planes, not part of the product. Output stays out of git (venture/models/).
 """
@@ -54,11 +54,9 @@ parts.append(prism("top_plate", [(0, 0, zt), (LEG, 0, zt), (0, LEG, zt)], (0, 0,
 # vertical plate K-L-P flat on wall A (plane y = 0, the viewer's LEFT wall when looking into the corner, as in Sabry's photo):
 # top edge K-L = 250 along the wall, vertical edge K-P = 250 in the corner, sloped edge L-P
 parts.append(prism("wall_plate", [(0, 0, zt), (LEG, 0, zt), (0, 0, 0)], (0, T, 0)))
-# 15 mm flange on the other leg K-R, against wall B (plane x = 0), 200 long, hidden under the top
-parts.append(box("flange_b", 0, T, 10, LEG - 10, zt - FL, zt))
 
 # screw holes, dia 5: 2 in the vertical plate (Sabry, 15 Nov; 20 below the top edge, at 40 and 130 from the corner),
-# 2 in the right-leg flange (at 60 and 160 from the corner)
+# (Sabry 16 Nov: only these two holes, no flange)
 def drill(obj, locs_mm, axis):
     for lx, ly, lz in locs_mm:
         bpy.ops.mesh.primitive_cylinder_add(vertices=48, radius=2.5 * S, depth=12 * S, location=(lx * S, ly * S, lz * S))
@@ -70,7 +68,6 @@ def drill(obj, locs_mm, axis):
         bpy.data.objects.remove(cyl, do_unlink=True)
 
 drill(parts[1], [(40, T / 2, zt - 20), (130, T / 2, zt - 20)], "y")
-drill(parts[2], [(T / 2, 60, zt - FL / 2), (T / 2, 160, zt - FL / 2)], "x")
 
 bpy.ops.object.select_all(action="DESELECT")
 for p in parts:

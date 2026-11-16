@@ -5,7 +5,7 @@ ONE TRIANGLE SHEET BENT AT 90 DEGREES. Reading: the flat sheet is a triangle R-L
 Folded 90 degrees along K-L it gives a horizontal top plate K-R-L (right angle at K, legs 250 x 250, along the two walls) and a
 vertical plate K-L-P in the plane of the left wall (top edge K-L = 250, vertical edge K-P = 250 in the wall corner, sloped edge L-P).
 Size 250 x 250 mm legs is Sabry's (15 Nov: "make it 25 x 25"; it was 220 x 220, production-book caption "2pc 22x22CM", until then). 2 mm brushed stainless, a 15 mm
-flange on the right leg for the fixing, four screw holes, pair: PROPOSALS, not costed, Production to confirm.
+two screw holes in the vertical plate (Sabry 16 Nov: only these two, no flange), pair: PROPOSALS, not costed, Production to confirm.
 Sabry 16 Nov: the two triangles (top and vertical plate) are symmetrical and equal size, so the plate is 250 x 250 as well (rev 1 first had it 150 deep).
 The flat sheet is then one right isosceles triangle (hypotenuse 2 x 250 = 500) folded 90 degrees along its altitude.
 Arabic wording is a draft for a technical reader. No costs, no structural claims."""
@@ -16,21 +16,21 @@ ROOT = sys.argv[1] if len(sys.argv) > 1 else '/home/user/OBJEKT'
 OUT = ROOT + '/venture/drawings/OBJ-164'; os.makedirs(OUT, exist_ok=True)
 PHOTO = ROOT + '/images/OBJ-164.jpg'
 REV = 1; DATE = '16 Nov 2026'; PN = 'OBJ-164'
-LEG = 250; T = 2; FL = 15; DROP = LEG                       # DROP = LEG: the vertical plate is the same triangle as the top (Sabry, 16 Nov: symmetrical, equal size)
+LEG = 250; T = 2; DROP = LEG                       # DROP = LEG: the vertical plate is the same triangle as the top (Sabry, 16 Nov: symmetrical, equal size)
 HYP = LEG*math.sqrt(2)                                  # front edge 311.1
 PEDGE = math.hypot(LEG, DROP)                           # sloped edge of the vertical plate 266.2
 OH = T + DROP
-HOLE_D = 5; HOLES_AT = (60, 160)
+HOLE_D = 5
 PLATE_HOLES = [(40, 20), (130, 20)]                      # (distance along K-L from K, depth below the bend line): 2 screw holes in the vertical plate (Sabry, 15 Nov)
 SHEET_L, SHEET_W, GAP = 2500, 1250, 10
-OX, OY = DROP, FL                                       # flat origin offset so the bbox starts at (0,0); K = (OX, OY)
+OX, OY = DROP, 0                                       # flat origin offset so the bbox starts at (0,0); K = (OX, OY)
 KX, KY = OX, OY
 def flat_pts():
     L = (KX, KY+LEG); R = (KX+LEG, KY); Pp = (KX-DROP, KY)
-    return [Pp, L, R, (KX+LEG-10, KY), (KX+LEG-10, KY-FL), (KX+10, KY-FL), (KX+10, KY)]
-def holes(): return [(KX+a, KY-FL/2) for a in HOLES_AT] + [(KX-z, KY+d) for d, z in PLATE_HOLES]
+    return [Pp, L, R]
+def holes(): return [(KX-z, KY+d) for d, z in PLATE_HOLES]
 def perim(p): return sum(math.dist(p[i], p[(i+1) % len(p)]) for i in range(len(p)))
-BBW, BBH = DROP+LEG, LEG+FL
+BBW, BBH = DROP+LEG, LEG
 PARTS = {'P1': ('Wedge sheet: one triangle, flat', 'لوح الوتد: مثلث واحد مسطح', 2, 'wedge', (BBW, BBH), perim(flat_pts())+len(holes())*math.pi*HOLE_D)}
 TOTAL_CUT = sum(v[2]*v[5] for v in PARTS.values())
 NEST = [('P1', GAP, GAP), ('P1', GAP+BBW+GAP, GAP)]
@@ -54,7 +54,6 @@ def add_part(msp, key, ox, oy, fold=True):
     for hx, hy in holes(): msp.add_circle((ox+hx, oy+hy), HOLE_D/2, dxfattribs={'layer': 'CUT'})
     if fold:
         msp.add_line((ox+KX, oy+KY), (ox+KX, oy+KY+LEG), dxfattribs={'layer': 'FOLD'})                # main bend, 90 deg, K-L
-        msp.add_line((ox+KX+10, oy+KY), (ox+KX+LEG-10, oy+KY), dxfattribs={'layer': 'FOLD'})            # flange bend
 FN = {'P1': 'wedge-sheet'}
 for k in PARTS:
     doc = new_doc(); add_part(doc.modelspace(), k, 0, 0); doc.saveas(f'{OUT}/{PN}_rev{REV}_{k}_{FN[k]}.dxf')
@@ -148,10 +147,9 @@ def sz(z): return oz2 + z*S
 b += t(215, 128, 'ELEVATION B (looking at the right wall: plate edge-on)', 2.8, 600) + t(410, 132, 'منظر ب (نحو الحائط الأيمن: اللوح من جانبه)', 2.6, 500, 'end', extra=AR)
 b += rect(sx(0), sz(0), LEG*S, T*S, .45, INK, '#d8d8d5')
 b += rect(sx(0), sz(T), T*S, DROP*S, .45, INK, '#bdbdb9')
-b += rect(sx(10), sz(T), (LEG-20)*S, FL*S, .3, HID, 'none', '1 .7')
 b += rect(sx(0)-1.5, sz(-5), 1.5, (OH+10)*S, .3, '#999', '#ddd') + t(sx(0)-4, sz(OH/2), 'CORNER', 2, 400, 'end', HID)
 b += dim_h(sx(0), sx(LEG), sz(OH)+8, f'{LEG}', ext=sz(OH)) + dim_v(sx(LEG)+8, sz(0), sz(OH), f'{OH}', ext=sx(LEG))
-b += t(sx(70), sz(T+FL)+5, 'right-leg flange (dashed): 15 fold, 2 holes, hidden fixing', 2.0, 400, fill=HID) + t(sx(70), sz(T+FL)+8, 'الزعنفة على الضلع الأيمن: تثبيت مخفي', 2.0, 400, fill=HID, extra=AR)
+b += t(sx(70), sz(T+30), 'the plate is edge-on here (2 mm line); no flange', 2.0, 400, fill=HID) + t(sx(70), sz(T+30)+3, 'اللوح من جانبه: خط بسماكة ٢ مم', 2.0, 400, fill=HID, extra=AR)
 # reference photo + notes
 b += t(22, 160, 'REFERENCE PHOTO (Sabry, 12 Nov; maker unknown, device on the shelf is not ours)', 2.3, 600) + t(205, 164, 'صورة مرجعية (الجهاز ليس لنا)', 2.3, 500, 'end', extra=AR)
 b += f'<image href="{datauri(PHOTO)}" x="22" y="166" width="64" height="74" preserveAspectRatio="xMidYMid slice"/>' + rect(22, 166, 64, 74, .2, HID)
@@ -159,7 +157,7 @@ for i, ln in enumerate(['Rev 1 (Sabry, 15 Nov): a wedge, one triangle', 'sheet b
     b += t(92, 172+i*3.6, ln, 2.0, 400, fill=HID)
 b += t(205, 172, 'مراجعة ١: وتد من مثلث واحد مثني ٩٠°', 2.0, 400, 'end', HID, extra=AR)
 b += t(22, 262, 'Colourways: bare brushed stainless (proposal). No paint colour.  ألوان: ستانلس مبشور بدون دهان (مقترح).', 2.0, 400, fill=HID)
-b += t(22, 276, f'Leg {LEG} x {LEG} is Sabry\'s (15 Nov, "make it 25 x 25"; was 22 x 22). Thickness 2, plate depth {DROP}, flange {FL}, screws, pair: PROPOSALS,', 2.0, 400, fill=HID)
+b += t(22, 276, f'Leg {LEG} x {LEG} is Sabry\'s (15 Nov, "make it 25 x 25"; was 22 x 22). Thickness 2, screw holes, pair: PROPOSALS,', 2.0, 400, fill=HID)
 b += t(22, 279.5, f'not costed, Production to confirm. Overall height {OH} = top plate {T} + plate {DROP} below it.  المقاسات عدا ٢٥٠ مقترحة، يؤكدها التصنيع.', 2.0, 400, fill=HID)
 sh1 = sheet(1, N, 'VIEWS', 'المناظير', '1:3.5', b)
 
@@ -176,21 +174,19 @@ b += t(fx1(KX)+2, fy1(KY+LEG*.55), 'bend 90 deg, K-L', 2.2, 500, fill=DIM) + t(f
 b += t(fx1(KX-DROP*.6), fy1(KY+LEG*.18), 'VERTICAL PLATE', 2.2, 600, fill='#555') + t(fx1(KX-DROP*.6), fy1(KY+LEG*.18)+3, 'اللوح الرأسي', 2.0, 400, fill='#555', extra=AR)
 b += t(fx1(KX+LEG*.3), fy1(KY+LEG*.18), 'HORIZONTAL TOP', 2.2, 600, fill='#555') + t(fx1(KX+LEG*.3), fy1(KY+LEG*.18)+3, 'الرف الأفقي', 2.0, 400, fill='#555', extra=AR)
 b += t(fx1(KX)-2, fy1(KY)+4, 'K', 2.4, 600, fill=DIM) + t(fx1(KX)-2, fy1(KY+LEG)-1.5, 'L', 2.4, 600, fill=DIM) + t(fx1(KX+LEG)+1.5, fy1(KY)+1, 'R', 2.4, 600, fill=DIM) + t(fx1(KX-DROP)-4, fy1(KY)+1, 'P', 2.4, 600, fill=DIM)
-b += dim_h(fx1(KX-DROP), fx1(KX), fy1(KY-FL)+8, f'{DROP}', ext=fy1(KY)) + dim_h(fx1(KX), fx1(KX+LEG), fy1(KY-FL)+8, f'{LEG}', ext=fy1(KY))
-b += dim_h(fx1(KX), fx1(KX+HOLES_AT[0]), fy1(KY-FL)+16, f'{HOLES_AT[0]}', ext=fy1(KY-FL/2)) + dim_h(fx1(KX+HOLES_AT[0]), fx1(KX+HOLES_AT[1]), fy1(KY-FL)+16, f'{HOLES_AT[1]-HOLES_AT[0]}', ext=fy1(KY-FL/2))
+b += dim_h(fx1(KX-DROP), fx1(KX), fy1(KY)+8, f'{DROP}', ext=fy1(KY)) + dim_h(fx1(KX), fx1(KX+LEG), fy1(KY)+8, f'{LEG}', ext=fy1(KY))
 b += dim_v(fx1(KX-DROP)-6, fy1(KY+LEG), fy1(KY), f'{LEG}  (K-L)', ext=fx1(KX))
-b += dim_v(fx1(KX+LEG)+10, fy1(KY), fy1(KY-FL), f'{FL}', ext=fx1(KX+LEG-10))
 b += t(x1, y1-8, '1  WEDGE SHEET, one flat triangle, 2 off (one per shelf)', 2.4, 600) + t(x1+BBW*S2, y1-8, 'لوح الوتد، مثلث واحد، عدد ٢', 2.4, 600, 'end', extra=AR) + balloon(x1-14, y1+BBH*S2/2, 1)
 dx, dy = 235, 60
 b += t(dx, dy, 'DATA  mm', 2.4, 600) + t(410, dy, 'بيانات', 2.4, 600, 'end', extra=AR)
 rows = [('Flat sheet outline', 'triangle R-L-P'), ('Flat size (bbox)', f'{BBW:.0f} x {BBH:.0f}'), ('Base P-R (K on it)', f'{DROP+LEG}'), ('Height K-L (bend line)', f'{LEG}'),
         ('Top plate (folded)', f'K-R-L, right angle at K, {LEG} x {LEG}'), ('Vertical plate (folded)', f'K-L-P, {LEG} x {DROP}, sloped edge {PEDGE:.1f}'), ('Bend', '90 deg along K-L'),
-        ('Flange on leg K-R', f'{FL} fold, {len(HOLES_AT)} holes dia {HOLE_D}'), ('Vertical plate holes', f'{len(PLATE_HOLES)} dia {HOLE_D}, {PLATE_HOLES[0][1]} from the bend'), ('Outline length each', f'{PARTS["P1"][5]:.0f}')]
+        ('Vertical plate holes', f'{len(PLATE_HOLES)} dia {HOLE_D}, {PLATE_HOLES[0][1]} from the bend'), ('Outline length each', f'{PARTS["P1"][5]:.0f}')]
 for i, (k, v) in enumerate(rows):
     yy = dy+6+i*5
     b += t(dx, yy, k, 2.1, 400) + t(dx+60, yy, v, 2.1, 600) + line(dx, yy+1.6, dx+165, yy+1.6, .12, HID)
 for i, ln in enumerate(['One triangle sheet, bent 90 degrees along K-L (Sabry, 15 Nov). Folded: K-R-L lies flat as the shelf; K-L-P stands vertical on the left wall.',
-                        f'Vertical edge K-P = {DROP} in the wall corner; sloped edge L-P = {PEDGE:.1f}. Flange {FL} on leg K-R folds down; two dia {HOLE_D} holes at {HOLES_AT[0]} and {HOLES_AT[1]} from the corner.',
+                        f'Vertical edge K-P = {DROP} in the wall corner; sloped edge L-P = {PEDGE:.1f}.',
                         f'Vertical plate: two dia {HOLE_D} screw holes (Sabry, 15 Nov), {PLATE_HOLES[0][1]} below the bend line, at {PLATE_HOLES[0][0]} and {PLATE_HOLES[1][0]} from K along K-L (in the flat sheet they are {PLATE_HOLES[0][1]} left of the bend line).',
                         'The two plate screws are seen from the room (screw type and finish: Production). Wall type and plugs are not known.',
                         'Left-hand and mirrored right-hand versions: the drawing shows one hand. Whether the pair is two of the same or a mirrored pair: Sabry to confirm.',
@@ -200,30 +196,28 @@ b += t(410, 232, 'مثلث واحد مثني ٩٠° عند K-L. طريقة تث�
 sh2 = sheet(2, N, 'PART SHEET', 'ورقة القطع', '1:1.7', b)
 
 # ================= SHEET 3: folded view =================
-SC = .75
+SC = .62
 def P(x, y, z): return 5+130*SC + (x*.9 - y*.4)*SC, 70 + (x*.25 + y*.45 + z)*SC   # z down
 def pl(pts3, fill, sw=.35): return poly([P(*q) for q in pts3], sw, INK, fill)
 b = t(10, 22, 'FOLDED SHELF (proposed; Production decides forming, jigs and fixings)', 2.5, 600) + t(410, 22, 'الرف بعد الثني (مقترح، والتصنيع يقرر التشكيل والقوالب والتثبيت)', 2.5, 600, 'end', extra=AR)
 b += pl([(0, 0, T), (0, LEG, T), (0, 0, T+DROP)], '#bdbdb9')                                    # vertical plate, left wall plane x = 0
 b += pl([(0, 0, 0), (LEG, 0, 0), (0, LEG, 0)], '#d8d8d5', .45)                                  # top plate
-b += pl([(10, 0, 0), (LEG-10, 0, 0), (LEG-10, 0, FL), (10, 0, FL)], '#aeaeaa')                   # flange on the right leg
+b += ''
 for q in [(0, 0, 0), (LEG, 0, 0), (0, LEG, 0)]: pass
 ax, ay = P(LEG*.3, LEG*.3, 0); b += balloon(ax, ay-6, 1)
 ax, ay = P(0, LEG*.3, T+DROP*.3); b += balloon(ax-10, ay+2, 2)
-ax, ay = P(LEG/2, 0, FL); b += balloon(ax+8, ay+6, 3)
 ax, ay = P(0, 0, 0); b += t(ax-8, ay-3, 'K', 2.6, 600, fill=DIM)
 ax, ay = P(0, LEG, 0); b += t(ax-6, ay+1, 'L', 2.6, 600, fill=DIM)
 ax, ay = P(LEG, 0, 0); b += t(ax+2, ay-1, 'R', 2.6, 600, fill=DIM)
 ax, ay = P(0, 0, T+DROP); b += t(ax-8, ay+4, 'P', 2.6, 600, fill=DIM)
-b += t(22, 262, 'Fixing: 4 screws and plugs per shelf: 2 through the flange (3) on the right leg, hidden under the top, and 2 through the vertical plate (2) into the left wall, seen from the room.', 2.0, 400, fill=HID)
-b += t(224, 266, 'التثبيت: مسماران وفيشر عبر الزعنفة (٣) على الضلع الأيمن. تثبيت اللوح الرأسي بالحائط يقرره التصنيع.', 2.0, 400, 'end', HID, extra=AR)
+b += t(22, 262, 'Fixing: 2 screws and plugs per shelf, through the two holes in the vertical plate (2) into the left wall, seen from the room. No flange.', 2.0, 400, fill=HID)
+b += t(224, 266, 'التثبيت: مسماران وفيشر لكل رف عبر ثقبي اللوح الرأسي في الحائط الأيسر، ظاهران من الغرفة. بدون زعنفة.', 2.0, 400, 'end', HID, extra=AR)
 sx0 = 245
 b += t(sx0, 38, 'ASSEMBLY SEQUENCE (proposed)', 2.6, 600) + t(410, 38, 'تسلسل التجميع (مقترح)', 2.6, 600, 'end', extra=AR)
 steps = [('Cut part 1 (one triangle, outline and holes) from the DXF file; deburr.', 'قص القطعة ١ (مثلث واحد بالفتحات) من ملف DXF وتنعيم الحواف.'),
-         (f'Fold the flange {FL} on leg K-R.', f'ثني الزعنفة {FL} مم على الضلع K-R.'),
          ('Bend the sheet 90 degrees along K-L: K-R-L becomes the top, K-L-P the vertical plate.', 'ثني اللوح ٩٠° عند K-L: يصبح K-R-L الرف وK-L-P اللوح الرأسي.'),
          ('Brush the finish in one direction on all visible faces.', 'بشر السطح في اتجاه واحد على كل الوجوه الظاهرة.'),
-         ('Fix to the walls with 4 screws per shelf (2 flange, 2 plate); make two shelves for the pair (same hand or mirrored: Sabry to confirm).', 'التثبيت بالحائطين، وصنع رفين للزوج (نفس الاتجاه أو معكوس: سبري يؤكد).')]
+         ('Fix to the left wall with 2 screws per shelf, through the plate holes; make two shelves for the pair (same hand or mirrored: Sabry to confirm).', 'التثبيت بالحائطين، وصنع رفين للزوج (نفس الاتجاه أو معكوس: سبري يؤكد).')]
 for i, (en, ar) in enumerate(steps):
     yy = 48 + i*17
     b += balloon(sx0+3, yy-1, i+1) + t(sx0+9, yy, en, 2.2) + t(410, yy+5, ar, 2.2, 400, 'end', extra=AR)
@@ -248,19 +242,19 @@ sh4 = sheet(4, N, 'CUTTING LAYOUT', 'مخطط القص', '1:10', b)
 b = t(10, 28, 'BILL OF MATERIALS (for one PAIR = 2 shelves)', 2.8, 600) + t(410, 28, 'قائمة المواد (لزوج = رفان)', 2.8, 600, 'end', extra=AR)
 b += rect(10, 31, 400, 7, .3, INK, '#e9e5dc')
 for x, s_ in zip([12, 24, 150, 215], ['ITEM', 'PART / الجزء', 'QTY / العدد', 'MATERIAL / الخامة']): b += t(x, 36, s_, 2.3, 600)
-bom = [('1', 'Wedge sheet: one triangle bent 90 deg (top, vertical plate, flange)', 'لوح الوتد: مثلث واحد مثني ٩٠°', '2', 'Stainless sheet 2 mm, brushed (proposal)'),
-       ('2', 'Wall screw and plug', 'مسمار وفيشر للحائط', '8 (4 per shelf: 2 flange, 2 plate)', 'Bought-in; for the wall type, by Production'),
-       ('3', 'Screw finish for the 2 visible plate screws', 'تشطيب مسماري اللوح الرأسي', '4 (2 per shelf)', 'Production to decide (match the brushed stainless)')]
+bom = [('1', 'Wedge sheet: one triangle bent 90 deg (top and vertical plate)', 'لوح الوتد: مثلث واحد مثني ٩٠°', '2', 'Stainless sheet 2 mm, brushed (proposal)'),
+       ('2', 'Wall screw and plug', 'مسمار وفيشر للحائط', '4 (2 per shelf, through the plate)', 'Bought-in; for the wall type, by Production'),
+       ('3', 'Screw finish for the visible plate screws', 'تشطيب مسماري اللوح الرأسي', '4', 'Production to decide (match the brushed stainless)')]
 for i, (n_, en, ar, q, m_) in enumerate(bom):
     yy = 44 + i*7
     b += line(10, yy+2.2, 410, yy+2.2, .15, HID) + t(12, yy, n_, 2.4) + t(24, yy, en, 2.4) + t(140, yy, ar, 2.4, 400, 'end', extra=AR) + t(150, yy, q, 2.4) + t(215, yy, m_, 2.4)
 b += t(10, 80, 'NOTES', 2.8, 600) + t(410, 80, 'ملاحظات', 2.8, 600, 'end', extra=AR)
 notes = [('REV 1 (15 Nov 2026) replaces rev 0, which was wrong. Sabry: it is a wedge, one triangle sheet bent at 90 degrees. Folded along K-L it gives a horizontal triangular top and a vertical triangular plate flat on the left wall.', 'المراجعة ١ تحل محل ٠: وتد من مثلث واحد مثني ٩٠°، رف أفقي ولوح رأسي على الحائط الأيسر.'),
          (f'Leg length {LEG} x {LEG} mm is Sabry\'s size (15 Nov: "make it 25 x 25"; it was 220 x 220 / book caption "2pc 22x22CM" before), the two straight edges along the walls. Front edge about {HYP:.0f} mm.', 'الضلعان ٢٥٠ × ٢٥٠ مم (مقاس سبري) على الحائطين، والحافة الأمامية حوالي ٣٥٤ مم.'),
-         (f'Proposals, not costed, Production to confirm: stainless 2 mm, brushed; vertical plate the same triangle as the top, {LEG} x {DROP} mm (Sabry, 16 Nov: symmetrical, equal size), so overall height {OH}; flange {FL} mm with 2 holes dia {HOLE_D} per shelf; sold as a pair.', 'مقترحات غير مسعرة يؤكدها التصنيع: ستانلس ٢ مم مبشور، عمق ١٥٠ مم (الصورة توحي بأعمق)، زعنفة ١٥ مم، زوج.'),
+         (f'Proposals, not costed, Production to confirm: stainless 2 mm, brushed; vertical plate the same triangle as the top, {LEG} x {DROP} mm (Sabry, 16 Nov: symmetrical, equal size), so overall height {OH}; 2 screw holes dia {HOLE_D} in the vertical plate per shelf and no flange (Sabry, 16 Nov); sold as a pair.', 'مقترحات غير مسعرة يؤكدها التصنيع: ستانلس ٢ مم مبشور، عمق ١٥٠ مم (الصورة توحي بأعمق)، زعنفة ١٥ مم، زوج.'),
          ('Shape read from one photo of unknown maker and Sabry\'s correction. Drawn as objekt\'s own design. The device on the shelf is not ours and not drawn.', 'الشكل من صورة واحدة وتصحيح سبري ومرسوم كتصميم خاص بأوبجيكت. الجهاز على الرف ليس لنا.'),
          ('Open for Sabry: is the pair two of the same hand or a mirrored pair (plate on the left wall for one, on the right wall for the other)? Drawing shows the plate on the left wall.', 'مفتوح: هل الزوج متماثل الاتجاه أم معكوس؟ الرسم يبين اللوح على الحائط الأيسر.'),
-         ('Fixing (Sabry added two screw holes in the vertical plate, 15 Nov): 2 holes dia 5 in the flange on the right leg, hidden under the top, and 2 holes dia 5 in the vertical plate, seen from the room. Wall type, plugs and screw finish are not known: Production / installer to decide.', 'التثبيت: ثقبان في الزعنفة مخفيان وثقبان في اللوح الرأسي ظاهران من الغرفة. النوع والفيشر يقررهما التصنيع.'),
+         ('Fixing (Sabry, 15-16 Nov): two screw holes dia 5 in the vertical plate, seen from the room, and nothing else: no flange, no other holes. Wall type, plugs and screw finish are not known: Production / installer to decide. A shelf held by two screws on one wall only: Production to confirm it is enough.', 'التثبيت: ثقبان في الزعنفة مخفيان وثقبان في اللوح الرأسي ظاهران من الغرفة. النوع والفيشر يقررهما التصنيع.'),
          ('Finish: exposed brushed stainless, no paint (proposal). Stainless grade, brushing direction, bend radius and allowance, tolerances, sheet size are Production\'s to decide.', 'التشطيب: ستانلس مبشور بدون دهان (مقترح). باقي التفاصيل يقررها التصنيع.'),
          ('No structural claims, stress figures, load figures, costs or prices on this drawing. Not engineered. A stated shelf load is not claimed until Production tests it. Arabic wording is a draft for a technical reader.', 'لا ادعاءات إنشائية ولا حمل مذكور ولا تكاليف. الصياغة العربية مسودة.')]
 for i, (en, ar) in enumerate(notes):
