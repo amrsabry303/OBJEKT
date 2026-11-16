@@ -1,6 +1,34 @@
-# objekt day-1 product list: reconciliation and recommendation (8 Nov 2026, updated 9, 11, 12, 13, 14 and 15 Nov)
+# objekt day-1 product list: reconciliation and recommendation (8 Nov 2026, updated 9, 11, 12, 13, 14, 15 and 16 Nov)
 
 Prepared by the daily "Content and product list" session. **A recommendation; Sabry decides.** Working titles are the OBJ code until Sabry names a product. Since 11 Nov the live products carry the store titles Sabry put on them (the store notes call SPAN and INGOT approved, the others suggestions not yet trademark-checked).
+
+## Mon 16 Nov 2026: candidate drawings mostly settled; new decisions sit on an unmerged branch
+
+Re-checked today (read only): store **62 products, 10 active**, newest edit still INGOT 12 Nov 11:29 UTC; sheet last edited 12 Nov 10:59 UTC, book 11 Nov 23:08 UTC, so neither re-read. No decision line answered in STATUS.md.
+
+**New (from the repo, not from Sabry to this session):** the product session's branch `claude/festive-bardeen-djigox` (not on `main`) records Sabry's approvals and day-1 calls from 12–15 Nov. The drawings session confirmed the 075, 173, 164 and 149 stamps on 16 Nov. Updated candidate table (store values unchanged; nothing below has a name, price or approved hero yet):
+
+| OBJ | Working title | Category · type | Process | Drawing | Images (AI renders unless said) | In / out (rec.) | Reason |
+|---|---|---|---|---|---|---|---|
+| OBJ-002 | OBJ-002 | Furniture · Coffee Tables | Metal (guess) | Approved REV 5 (27 Oct) | Hero Oxblood v1c, pending | Candidate | Needs name, price, hero approval, mirror answer. |
+| OBJ-038 | OBJ-038 | Furniture · Side Tables | Metal (guess) | REV 4 with Production | Hero Carbon v1c, pending | Candidate | Same as 002. |
+| OBJ-152 | OBJ-152 | Furniture · Side Tables | Printed pattern, then moulded | Ready (in folder) | Hero Ink v2c, pending | Candidate | Name, price (pair or each), hero approval. |
+| OBJ-194 | OBJ-194 (FACET suggested) | Furniture · Side Tables (a console) | Not decided | Rev 4 approved 11 Nov | 2 plain renders, not approved | Candidate | Name, price, colour, hero approval. |
+| OBJ-149 | OBJ-149 (TAB suggested) | Objekts · Ashtrays | Metal (guess) | **Rev 0 approved 11 Nov** (about 220 × 220 × 60, brushed); 12 Nov draft withdrawn | None | Candidate | Conflict settled. Needs name, price, hero (credits 0). |
+| OBJ-173 | OBJ-173 | Planters · Tabletop | Stainless sheet, folded (proposal) | **Rev 2 approved 12 Nov** (150 cube) | None | Candidate, **rec. first** | Only small planter; drawing done. |
+| OBJ-075 | OBJ-075 | Planters · Floor | Rolled 2 mm stainless cylinder (inferred) | **Rev 3 approved 15 Nov** (S 350 × 350, M 500 × 500, L 600 × 700, Sabry's sizes) | None | Candidate, **rec. first** | Drawing and sizes done; 3 size variants. |
+| OBJ-115 | OBJ-115 | Table & Living · Trays | Metal (guess) | DRAFT 11 Nov, waiting | None | Candidate | Only candidate still without an approved drawing. |
+| OBJ-164 | OBJ-164 | Objekts · Shelves | Stainless sheet, bent wedge | Rev 0 approved 12 Nov, **superseded**; rev 1 DRAFT 15 Nov waiting | None | After launch (rec.) | Drawing reopened 15 Nov; too late for 19 Nov. |
+| OBJ-159 | OBJ-159 | Furniture · Shelving (new subcategory) | Stainless plates + solid oak shelves (maker open) | **Rev 9 approved 15 Nov** (own redesign) | 3 Blender detail renders of rev 8 (steel shelves): out of date | Branch says IN (Sabry 12 Nov); **rec. after launch** | No timber maker, no prototype, about 27 kg steel plus oak; no name or price. |
+| OBJ-132 | OBJ-132 | Objekts · Wall Art | Stainless sheet (proposal) | Rev 0 approved 12 Nov | v1 approved in chat 12 Nov (plates render square vs drawing 300 × 330) | Candidate (new) | Needs name, price, a render that matches the drawing. |
+| OBJ-168 | OBJ-168 | Planters · Floor (was Vases) | Folded stainless tube (proposal) | DRAFT 12 Nov, waiting | None | Branch says IN (Sabry 12 Nov); rec. after launch | Drawing not approved; was off-plan. |
+| "OBJ-191" (tray) | – | Table & Living · Trays | Two slotted plates (inferred) | DRAFT, sizes ours | None | Branch says IN; **hold: ID clash** | See below. |
+| "OBJ-193" (GRP table) | OBJ-193 | Furniture · Coffee Tables | Moulded GRP | Rev 1 approved 12 Nov | None | Not decided (branch); rec. after launch | No image, no maker test. |
+| "OBJ-192" (trough), "OBJ-196" (plant stand) | – | Planters | Sheet metal | 192 DRAFT; 196 rev 1 approved 12 Nov | None | Not decided; **hold: ID clash** | See below. |
+
+**ID clash (needs Sabry):** on `main`, the sheet and the store, OBJ-196 is TORSO Small (55 cm, a live variant) and OBJ-191 / 192 are seating (CURL, TUFT suggested, SUBJEKT candidates). The branch uses OBJ-191 for a tray, OBJ-192 for a planter trough and OBJ-196 for a plant stand. Drive folders, drawings and sheet rows may now mix two products under one number. Rec.: give the three branch pieces new numbers (next free after 198) before merging.
+
+**Recommendation for the Tue 17 Nov cut-off:** launch with the 10 live; push hardest on **OBJ-173 and OBJ-075** (drawings approved, they are the only day-1 planters), then 149 and 132. Each still needs name, price and an approved image, and image credits are 0. Everything else goes to weekly drops after launch.
 
 ## Sun 15 Nov 2026: no change, 2 days to the candidate cut-off
 

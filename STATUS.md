@@ -6,12 +6,12 @@ Three daily sessions work on this repo, one section each. Each session updates *
 
 ## Decisions needed from Sabry
 <!-- one line each: [workstream] question · options · recommendation. Remove when answered. -->
-- [content] Freeze list (12 Nov, unchanged 15 Nov; candidates need answers by Tue 17 Nov, else launch with the 10 live): the 10 live products + 9 that may still join by 19 Nov if each gets name, price and approved image (OBJ-002, 038, 152, 194, 149, 173, 075, 115, 164); all other drafts go live weekly after launch. Table: `plan/day1-product-list.md` · yes / edit · rec: yes. Note: 0 planters live, only 2 pieces under 2,000 EGP.
+- [content] Freeze list (cut-off **Tue 17 Nov**, else launch with the 10 live): 10 live + candidates 173, 075 (drawings approved, the only planters), then 149, 132, 002, 038, 152, 194, 115; each needs name, price and an approved image. 164, 159, 168, 193 after launch. Table: `plan/day1-product-list.md` (16 Nov) · yes / edit · rec: yes, names and prices for 173 and 075 first.
 - [content] ARRIS (172) is live with no drawing, size or lead time; PYRA (169) shows 3–5 days and "approximate" sizes with no recorded source · ask Polycraft today / put ARRIS back to draft until sized · rec: ask Polycraft today; draft ARRIS if no size by Tue 17 Nov.
-- [content] OBJ-149 has two drawings: sheet says rev 0 approved 11 Nov (about 220 × 220 × 60, brushed); the drawings session made a different DRAFT 12 Nov (140 × 140 × 38, book size) · keep 11 Nov / keep 12 Nov · rec: keep your approved 11 Nov one, drop the draft.
 - [content] Branch `claude/zen-newton-irxvlr` holds the 11–12 Nov records for 020, 166, 167, 194, 197, 198 (not on main) · merge / leave · rec: merge once the repo is private.
-- [content] OBJ-148 and OBJ-159 references are named third-party products · redesign as our own / drop · rec: drop for day 1.
-- [content] 15 store drafts not on the plan (OBJ-035, 039, 052, 074, 086, 090, 093, 107, 112, 141, 146, 150, 168, 170, 174) · archive / keep as drafts · rec: keep as drafts, never activate.
+- [content] OBJ-148 reference is a named third-party product (159 is now your own redesign, rev 9 approved) · redesign / drop · rec: drop for day 1.
+- [content] **OBJ number clash:** the product session's branch uses OBJ-191 (tray), 192 (planter trough), 196 (plant stand); on main, the sheet and the store those are CURL / TUFT seating and TORSO Small · renumber the branch pieces / renumber the old ones · rec: give the 3 new pieces the next free numbers before the branch is merged.
+- [content] 14 store drafts not on the plan (OBJ-035, 039, 052, 074, 086, 090, 093, 107, 112, 141, 146, 150, 170, 174; 168 left out, the branch says you made it a planter 12 Nov) · archive / keep as drafts · rec: keep as drafts, never activate.
 - [website] **The store is public** since 11 Nov ~23:15 UTC (still on 15 Nov): password off, 10 products buyable. The live theme changed again on 12 Nov to "OBJEKT UX audit (draft 12 Nov)"; neither change is in any repo log. Was this your go? · keep live / put the password back until 19 Nov · rec: if not intended, password back today (only you can).
 - [website] Checkout offers **PayPal only** (checked 14 Nov); Paymob is not signed in, and checkout takes the full price (no 50% deposit). Sign in to Paymob so I can run test mode · rec: today, live orders can already come in.
 - [website] All live variants weigh 0 kg, so **every order pays 118 EGP**, even a 28,000 EGP table · send packed weights per product (catalogue session enters them) · rec: weights from Polycraft by Tue 17 Nov.
@@ -42,6 +42,13 @@ Three daily sessions work on this repo, one section each. Each session updates *
 
 ## Content and product list
 
+### Mon 16 Nov 2026
+- Checked (read only): store 62 products, 10 active, nothing edited since 12 Nov 11:29 UTC; sheet (12 Nov) and book (11 Nov) unchanged. No content line answered, no copy approval, so no copy drafted.
+- Found on the unmerged branch `claude/festive-bardeen-djigox`: drawings approved for 173 (12 Nov), 075 (15 Nov, your sizes), 132 (12 Nov), 159 rev 9 (15 Nov, own redesign), 193 (12 Nov); 164 reopened (rev 1 draft); 149 rev 0 stands. Added a 16 Nov table to `plan/day1-product-list.md`; removed my OBJ-149 line, narrowed the 148/159 line, added an OBJ number clash line (191, 192, 196).
+- CONTENT_TO_SUPPLY not changed: the new facts are on that branch's copy already; copying them to main would clash at merge.
+- Not done: no store, sheet, book or Drive writes.
+- Next: Tue 17 Nov cut-off: mark each candidate in or after-launch.
+
 ### Sun 15 Nov 2026
 - Checked (read only): store 62 products, 10 active, nothing edited since 12 Nov 11:29 UTC; sheet (12 Nov) and book (11 Nov) unchanged by last-edit date. No content decision answered, no copy approval, so no copy drafted.
 - Added a 15 Nov note to `plan/day1-product-list.md` (no change). CONTENT_TO_SUPPLY unchanged: nothing new to pre-fill.
@@ -54,13 +61,6 @@ Three daily sessions work on this repo, one section each. Each session updates *
 - Added a 14 Nov note to `plan/day1-product-list.md` (no change; store count corrected to 62; fallback if nothing by Tue 17 Nov is launch with the 10 live).
 - Not done: no store, sheet, book or Drive writes.
 - Next: fill CONTENT_TO_SUPPLY 3e and 3f as answers arrive; on Tue 17 Nov mark each candidate in or after-launch.
-
-### Fri 13 Nov 2026
-- Checked (read only): store 10 active, nothing changed since 12 Nov 11:29 UTC; sheet edited 12 Nov 10:59 UTC but its Products rows match the 12 Nov record; book unchanged since 11 Nov. No decision answered, no copy approval, so no copy drafted.
-- Added section 3f to `website/docs/CONTENT_TO_SUPPLY.md`: every open answer, grouped by who gives it (Polycraft, Sabry). The Polycraft table can be sent as is. Target: answers by **Tue 17 Nov** to make Thu 19 Nov.
-- Added a 13 Nov note to `plan/day1-product-list.md`: no change, freeze-day table stands, cut-off Tue 17 Nov for candidates.
-- Not done: no store, sheet, book or Drive writes.
-- Next: fill 3e and 3f as answers arrive; move candidates to live when Sabry activates them.
 
 ## Product images
 
