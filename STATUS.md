@@ -31,14 +31,9 @@ Three daily sessions work on this repo, one section each. Each session updates *
 - [images] Hero colours used are the proposed ones from CONTENT_TO_SUPPLY 3d (002 Oxblood matte, 038 Carbon matte, 152 Ink gloss). The "mirror on the metal segment" for 002 and 038 is not shown: which part is mirror? · tell me / leave all-coated · rec: leave all-coated until the drawing says.
 - [images] OBJ-001 reference photo carries a third-party maker mark (NM3), like 148/159 · redesign as our own / render anyway · rec: wait for the Polycraft design file and render from that. Skipped today.
 - [images] Drive upload and production-book stickers for new renders need your yes · yes / not yet · rec: yes once heroes are approved.
-- [drawings] GitHub repo is still **public** (checked 15 Nov). The import, the 11 Nov drafts and today's drafts are not pushed; 11 Nov's local work was lost with that run's workspace, so each run now sends its files to you as a zip · make the repo private / say what may be public (OBJ-190's drawings are already public on main) · rec: private, then the next run re-imports from Drive and pushes.
-- [drawings] Approve or correct the DRAFT sets OBJ-173 (cube planter), OBJ-115 (tray), OBJ-075 (cylinder pair), sent 11 Nov · write "approved" or the change per product · rec: check sizes first, they are estimates. Their generators were lost; on approval I redraw from the sent PDFs.
-- [drawings] OBJ-075: book says one planter Ø300 × 500; photo shows a pair. Draft is the pair (A Ø300 × 390, B Ø240 × 290 on a foot) · pair / single, sizes · rec: pair.
-- [drawings] Drainage for OBJ-173 and OBJ-075 (none shows in the photos) · none / drain hole / loose inner pot · rec: loose inner pot, no hole.
+- [drawings] GitHub repo is still **public** (checked 16 Nov). The import and this session's drafts are not pushed; the product session's branch `claude/festive-bardeen-djigox` has already pushed drawing sets for OBJ-164, 173, 190, 192, 196 (OBJ-190 also on main) · make the repo private / say what may be public · rec: private, then the next run re-imports from Drive and pushes.
+- [drawings] Approve or correct the DRAFT OBJ-115 (tray 400 × 280 × 45, sizes estimated), sent 11 Nov · write "approved" or the change · rec: check the size first. Generator was lost; on approval I redraw from the sent PDF. (173 and 075 from that batch are settled: the product session got your approval of OBJ-173 rev 2 on 12 Nov and OBJ-075 rev 3 on 15 Nov.)
 - [drawings] OBJ-003 real size: your model says top 130.06, height 40 (units not stated); the book says about 900 × 380 · give diameter and height in mm.
-- [drawings] Approve or correct the DRAFT sets OBJ-164 (corner shelf pair) and OBJ-149 (ashtray), sent 12 Nov · write "approved" or the change · rec: settle the two size lines below first.
-- [drawings] OBJ-164 size: the reference photo's caption says 22 × 22 cm (drawn: top 220 × 220, drop 200 estimated); the book says about 250 × 250 × 60 · 220 / 250 / your size, and the drop · rec: 220 as the reference, drop from a sample.
-- [drawings] OBJ-164 wall fixing: none shows in the photo · Production proposes a hidden fixing / keyhole slots in the top / adhesive · rec: Production proposes, you approve before the sample.
 - [drawings] OBJ-172 ARRIS is live with no drawing; one photo cannot show its facets · send the maker's model, or photos from 3 sides with the height / Polycraft measures a sample / leave undrawn · rec: model or 3 photos, then I draw it the same day.
 - [drawings] OBJ-100 candleholder reference carries another maker's engraved mark ("IT'S NOT OVER YET"), like 001, 148 and 159 · redesign as our own / drop / draw anyway · rec: drop for day 1. Not drawn. OBJ-176 (half-disc shelves) is also a recognisable designer piece with several versions: same question · rec: redesign as our own after launch.
 - [all] Licences: PP Mori (web), Galak Round, logo lettering (Raftwork). No public launch without them.
@@ -89,6 +84,12 @@ Three daily sessions work on this repo, one section each. Each session updates *
 
 ## Drawings and files
 
+### Mon 16 Nov 2026
+- Checked: repo still **public** (GitHub API, 16 Nov); no "approved" for a drawing written in this file; production book unchanged since 11 Nov. So no import push and no approval routine from here.
+- Found: the product session (branch `claude/festive-bardeen-djigox`, 101 commits, not on main) got your approval on several of my open lines: **OBJ-075 rev 3** (S D350 × 350, M D500 × 500, L D600 × 700, drain holes; stamped approved 15 Nov, in its Drive folder; I opened the PDF and checked the stamp), **OBJ-173 rev 2** (cube 150, approved 12 Nov), **OBJ-164 rev 0** (approved 12 Nov; rev 1 DRAFT 15 Nov is with that session). Also **OBJ-149 rev 0** in Drive is stamped "Approved by Sabry 11 Nov" (220 × 220 × 60). So my 11–12 Nov drafts of 075, 173, 164 and 149 are withdrawn, and their decision lines are removed.
+- Freeze candidates: every one now has an approved drawing except **OBJ-115** (my DRAFT, waiting for you). No new drafts today: 171, 165, 175 are after launch, and the product session is drawing with you live, so I am not adding a second queue 4 days before launch.
+- Next: OBJ-115 on your answer; import and push once the repo is private (the import must then also take the branch's approved sets); ARRIS once a model or photos arrive.
+
 ### Sun 15 Nov 2026
 - Checked: repo still **public** (GitHub API, 15 Nov), no "approved" for any drawing in this file, production book unchanged since 11 Nov, nothing objekt-related changed in Drive since 13 Nov. So no import push, no approval routine, no Drive upload, no sticker change.
 - Step 1 not redone (fifth day): it cannot be pushed while the repo is public. The Drive export still holds everything.
@@ -101,13 +102,6 @@ Three daily sessions work on this repo, one section each. Each session updates *
 - Step 2: no new drafts. Every freeze candidate without an approved drawing (149, 173, 075, 115, 164) already has a DRAFT waiting; ARRIS (172) still needs a model or photos.
 - Found: three live products have drawing sets in Drive made 11 Nov outside this session: OBJ-195 rev 1, OBJ-197 rev 0, OBJ-198 rev 0 and rev 1 (PDF and production pack each). Not in this repo, not on the approved list. They come in with the import once the repo is private.
 - Next: your answers on the 5 drafts; ARRIS once a model or photos arrive; then 171, 165, 175 after launch.
-
-### Fri 13 Nov 2026
-- Checked: repo still **public** (GitHub API, 13 Nov), no "approved" for any drawing in this file, main unchanged since 12 Nov. So no import push, no approval routine, no Drive upload, no sticker change.
-- Step 1 not redone: it cannot be pushed while the repo is public (third day). The Drive export still holds everything.
-- Step 2: every freeze candidate without an approved drawing (149, 173, 075, 115, 164) already has a DRAFT waiting for you, so **no new drafts today**. 171, 165, 175 are after launch; drafting them now would add to the five unanswered sets a week before launch.
-- Looked at OBJ-172 ARRIS (live on the store, no drawing): the book has one photo of a faceted mirror-polished piece, about 800 × 600 × 1600. The back facets cannot be seen, so a drawing from that photo would be invented, not traced. Not drawn: see decisions.
-- Next: your answers on the 5 drafts (redraw the 11 Nov three from the sent PDFs on approval); ARRIS once a model or more photos arrive; then 171, 165, 175 after launch.
 
 ## Website (Shopify)
 ### 15 Nov 2026 (Sun)
