@@ -1,4 +1,4 @@
-"""OBJ-164: corner shelf, WEDGE, sold as a pair. Production drawing set, REV 1 (DRAFT, replaces rev 0).
+"""OBJ-164: corner shelf, WEDGE, sold as a pair. Production drawing set, REV 1 (approved by Sabry 16 Nov 2026, replaces rev 0).
 Run: python3 make_obj164_rev1.py <repo root>   Then make_pdf.js for the PDF.
 Rev 1 (15 Nov 2026): Sabry said the shelf is a wedge and rev 0 (vertical gusset in the corner diagonal) was wrong, and that it is
 ONE TRIANGLE SHEET BENT AT 90 DEGREES. Reading: the flat sheet is a triangle R-L-P with the bend line K-L (K on the base R-P).
@@ -96,7 +96,7 @@ def datauri(path, w=360):
     return 'data:image/jpeg;base64,' + base64.b64encode(b.getvalue()).decode()
 
 
-STAMP = 'DRAFT, not approved, not engineered'; STAMP_AR = 'مسودة، غير معتمدة، غير مهندسة'
+STAMP = 'Approved by Sabry 16 Nov 2026. Production review pending. Not engineered'; STAMP_AR = 'معتمد من سبري ١٦ نوفمبر ٢٠٢٦. بانتظار مراجعة التصنيع. غير مهندس'
 AR = ' direction="rtl"'
 def frame(n, N, title_en, title_ar, scale):
     s = rect(5, 5, 410, 287, .5) + rect(7, 7, 406, 283, .2)
@@ -107,8 +107,8 @@ def frame(n, N, title_en, title_ar, scale):
     s += bi(X+2, Y+14, f'SIZE  {LEG} x {LEG} x {OH} mm each', 'المقاس لكل رف', 88, 2.1) + bi(X+94, Y+14, f'SCALE  {scale}   UNITS  mm', 'المقياس والوحدة', 88, 2.3)
     s += bi(X+2, Y+25, 'MATERIAL  Stainless sheet 2 mm (proposal)', 'الخامة: ستانلس ٢ مم (مقترح)', 88, 2.1) + bi(X+94, Y+25, 'FINISH  Brushed (proposal)', 'التشطيب: مبشور (مقترح)', 88, 2.1)
     s += bi(X+2, Y+36, f'DATE  {DATE}      SHEET {n} / {N}', 'التاريخ، الورقة', 88, 2.3) + bi(X+94, Y+36, f'REV  {REV}', 'المراجعة', 88, 2.3)
-    s += rect(X, Y-14, Wd, 12, .5, '#b3261e', '#fff')
-    s += t(X+Wd/2, Y-8.6, STAMP, 2.9, 700, 'middle', '#b3261e') + t(X+Wd/2, Y-3.8, STAMP_AR, 2.9, 700, 'middle', '#b3261e')
+    s += rect(X, Y-14, Wd, 12, .5, '#2f6b45', '#fff')
+    s += t(X+Wd/2, Y-8.6, STAMP, 2.5, 700, 'middle', '#2f6b45') + t(X+Wd/2, Y-3.8, STAMP_AR, 2.5, 700, 'middle', '#2f6b45')
     s += t(10, 14, title_en, 4.2, 700) + t(410, 14, title_ar, 4.2, 700, 'end', extra=' direction="rtl"')
     return s
 def sheet(n, N, title_en, title_ar, scale, body):
@@ -249,12 +249,12 @@ for i, (n_, en, ar, q, m_) in enumerate(bom):
     yy = 44 + i*7
     b += line(10, yy+2.2, 410, yy+2.2, .15, HID) + t(12, yy, n_, 2.4) + t(24, yy, en, 2.4) + t(140, yy, ar, 2.4, 400, 'end', extra=AR) + t(150, yy, q, 2.4) + t(215, yy, m_, 2.4)
 b += t(10, 80, 'NOTES', 2.8, 600) + t(410, 80, 'ملاحظات', 2.8, 600, 'end', extra=AR)
-notes = [('REV 1 (15 Nov 2026) replaces rev 0, which was wrong. Sabry: it is a wedge, one triangle sheet bent at 90 degrees. Folded along K-L it gives a horizontal triangular top and a vertical triangular plate flat on the left wall.', 'المراجعة ١ تحل محل ٠: وتد من مثلث واحد مثني ٩٠°، رف أفقي ولوح رأسي على الحائط الأيسر.'),
+notes = [('REV 1 (approved by Sabry 16 Nov 2026) replaces rev 0, which was wrong. Sabry: it is a wedge, one triangle sheet bent at 90 degrees. Folded along K-L it gives a horizontal triangular top and a vertical triangular plate flat on the left wall.', 'المراجعة ١ تحل محل ٠: وتد من مثلث واحد مثني ٩٠°، رف أفقي ولوح رأسي على الحائط الأيسر.'),
          (f'Leg length {LEG} x {LEG} mm is Sabry\'s size (15 Nov: "make it 25 x 25"; it was 220 x 220 / book caption "2pc 22x22CM" before), the two straight edges along the walls. Front edge about {HYP:.0f} mm.', 'الضلعان ٢٥٠ × ٢٥٠ مم (مقاس سبري) على الحائطين، والحافة الأمامية حوالي ٣٥٤ مم.'),
-         (f'Proposals, not costed, Production to confirm: stainless 2 mm, brushed; vertical plate the same triangle as the top, {LEG} x {DROP} mm (Sabry, 16 Nov: symmetrical, equal size), so overall height {OH}; 2 screw holes dia {HOLE_D} in the vertical plate per shelf and no flange (Sabry, 16 Nov); sold as a pair.', 'مقترحات غير مسعرة يؤكدها التصنيع: ستانلس ٢ مم مبشور، عمق ١٥٠ مم (الصورة توحي بأعمق)، زعنفة ١٥ مم، زوج.'),
+         (f'Proposals, not costed, Production to confirm: stainless 2 mm, brushed; vertical plate the same triangle as the top, {LEG} x {DROP} mm (Sabry, 16 Nov: symmetrical, equal size), so overall height {OH}; 2 screw holes dia {HOLE_D} in the vertical plate per shelf and no flange (Sabry, 16 Nov); sold as a pair.', 'مقترحات غير مسعرة يؤكدها التصنيع: ستانلس ٢ مم مبشور، اللوح الرأسي مثلث مطابق للرف ٢٥٠ × ٢٥٠ مم، الارتفاع الكلي ٢٥٢ مم، ثقبان في اللوح بدون زعنفة، زوج.'),
          ('Shape read from one photo of unknown maker and Sabry\'s correction. Drawn as objekt\'s own design. The device on the shelf is not ours and not drawn.', 'الشكل من صورة واحدة وتصحيح سبري ومرسوم كتصميم خاص بأوبجيكت. الجهاز على الرف ليس لنا.'),
          ('Open for Sabry: is the pair two of the same hand or a mirrored pair (plate on the left wall for one, on the right wall for the other)? Drawing shows the plate on the left wall.', 'مفتوح: هل الزوج متماثل الاتجاه أم معكوس؟ الرسم يبين اللوح على الحائط الأيسر.'),
-         ('Fixing (Sabry, 15-16 Nov): two screw holes dia 5 in the vertical plate, seen from the room, and nothing else: no flange, no other holes. Wall type, plugs and screw finish are not known: Production / installer to decide. A shelf held by two screws on one wall only: Production to confirm it is enough.', 'التثبيت: ثقبان في الزعنفة مخفيان وثقبان في اللوح الرأسي ظاهران من الغرفة. النوع والفيشر يقررهما التصنيع.'),
+         ('Fixing (Sabry, 15-16 Nov): two screw holes dia 5 in the vertical plate, seen from the room, and nothing else: no flange, no other holes. Wall type, plugs and screw finish are not known: Production / installer to decide. A shelf held by two screws on one wall only: Production to confirm it is enough.', 'التثبيت: ثقبان فقط في اللوح الرأسي ظاهران من الغرفة، بدون زعنفة. النوع والفيشر والمسامير يقررها التصنيع، والتصنيع يؤكد كفاية مسمارين على حائط واحد.'),
          ('Finish: exposed brushed stainless, no paint (proposal). Stainless grade, brushing direction, bend radius and allowance, tolerances, sheet size are Production\'s to decide.', 'التشطيب: ستانلس مبشور بدون دهان (مقترح). باقي التفاصيل يقررها التصنيع.'),
          ('No structural claims, stress figures, load figures, costs or prices on this drawing. Not engineered. A stated shelf load is not claimed until Production tests it. Arabic wording is a draft for a technical reader.', 'لا ادعاءات إنشائية ولا حمل مذكور ولا تكاليف. الصياغة العربية مسودة.')]
 for i, (en, ar) in enumerate(notes):
