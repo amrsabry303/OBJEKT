@@ -131,6 +131,12 @@ Three daily sessions work on this repo, one section each. Each session updates *
 ### Shopify catalogue
 <!-- daily catalogue session; dated, newest first, last 3 entries -->
 
+#### Tue 17 Nov 2026
+- Ran: `get-shop-info` = OBJEKT / hs1a1c-ut, EGP. Pulled main (5f6f360). Read: product counts, the 5 most recently edited products, latest orders; git log of STATUS, CONTENT_TO_SUPPLY, the day-1 list, PRODUCT_SCHEMA, DECISIONS, COLOURS-FINISHES and `plan/images/` since my 16 Nov run.
+- Found: **62 products, 10 active, nothing edited on the store since 12 Nov 11:29 UTC** (INGOT). 0 orders. CONTENT_TO_SUPPLY and `plan/images/` unchanged; no catalogue line answered; no image approved. Day-1 list: cut-off passed with no answer; the content session now recommends day 1 = the 10 live, with 173 and 075 as the first drop. Not yet approved, so not acted on.
+- So **no store writes**, nothing to log in CHANGELOG. Readiness: **0 of 19 complete**. Placeholders left on all drafts.
+- Next: on your yes to the 10-live list, the work is the live 10 only: lead times and `made_to_order` (my decision line), weights, SEO drafts. If you add 173 and 075, I build both as drafts the same day from the approved sizes (075 with S/M/L variants), with price and name as they come.
+
 #### Mon 16 Nov 2026
 - Ran: `get-shop-info` = OBJEKT / hs1a1c-ut, EGP. Pulled main (c20133c). Read: product counts, the 5 most recently edited products, latest orders; git log of STATUS, CONTENT_TO_SUPPLY, the day-1 list and `plan/images/` since my 15 Nov run.
 - Found: **62 products, 10 active, nothing edited on the store since 12 Nov 11:29 UTC** (INGOT). 0 orders. CONTENT_TO_SUPPLY and `plan/images/` unchanged; no catalogue line answered; day-1 list still not approved (cut-off Tue 17 Nov).
@@ -144,13 +150,7 @@ Three daily sessions work on this repo, one section each. Each session updates *
 - So **no store writes**, nothing to log in CHANGELOG. Readiness table unchanged: **0 of 19 complete**. Placeholders left on all drafts.
 - Time: 2 days to the Tue 17 Nov cut-off. A candidate with name, price, size, lead time, colours and an approved hero can be built as a draft the same day.
 
-#### Sat 14 Nov 2026
-- Ran: `get-shop-info` = OBJEKT / hs1a1c-ut, EGP. Pulled main (70d1876). Read: product counts and the 12 most recently edited products; diff of STATUS, CONTENT_TO_SUPPLY and the day-1 list since my 13 Nov run.
-- Found: **62 products, 10 active, nothing edited on the store since 12 Nov 11:29 UTC** (INGOT). No new supplied value in CONTENT_TO_SUPPLY, no catalogue or content line answered, no image approved, day-1 list not approved.
-- So **no store writes**, nothing to log in CHANGELOG. Readiness table unchanged: **0 of 19 complete**. Placeholders left on all drafts.
-- Time: the content session's cut-off for candidates is Tue 17 Nov. Each candidate needs name, price, size, lead time, colours and an approved hero; once those land I can build it as a draft the same day.
-
-**Readiness (13 Nov, re-checked 14, 15 and 16 Nov; 16 Nov: sizes known for 149, 173, 075; ✓ done, ~ partly, ✗ missing).** Live = active now. "Complete" needs all 12 checks.
+**Readiness (13 Nov, re-checked 14–17 Nov; 16 Nov: sizes known for 149, 173, 075; ✓ done, ~ partly, ✗ missing).** Live = active now. "Complete" needs all 12 checks.
 
 | OBJ | Title | Named | Copy EN | Copy AR | Price | Lead time | Sizes | Variants | Images | Collection | Metafields | SEO | Placeholders gone | Complete |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
