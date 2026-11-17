@@ -313,3 +313,9 @@
 - Store read: MAIN theme still `190236524768` (last edit 12 Nov 09:03 UTC, `website/theme` still matches). 62 products, 10 active, 0 orders. Menus and pages unchanged. Unpublished Horizon theme shows an edit 15 Nov 14:23 UTC, not by this session.
 - Public site checked with Playwright (1440 and 375 px): 7 pages 200, no horizontal scroll, no placeholder text. Password still off. Checkout reached with PYRA (no order): PayPal only.
 - Not done: Paymob (not signed in), menus/About/collection intros (no new supplied text), theme push (CLI not logged in, nothing approved to fix).
+
+## 2026-11-17 (daily website run: no change on the live store; no store writes)
+- Store confirmed with `get-shop-info`: OBJEKT, hs1a1c-ut.myshopify.com, EGP. `theme check` 50 files, no offenses. Shopify CLI not logged in.
+- Store read: MAIN theme still `190236524768` (last edit 12 Nov 09:03 UTC, `website/theme` still matches). 62 products, 10 active, 0 orders. Menus and pages unchanged.
+- Public site checked with Playwright (1440 and 375 px): 8 URLs 200, no horizontal scroll, no placeholder text. Password still off. Checkout reached with ARRIS (no order): PayPal only.
+- Not done: Paymob (not signed in), menus/About/collection intros (no new supplied text), theme push (CLI not logged in, nothing approved to fix).
