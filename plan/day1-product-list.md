@@ -1,6 +1,22 @@
-# objekt day-1 product list: reconciliation and recommendation (8 Nov 2026, updated 9, 11, 12, 13, 14, 15 and 16 Nov)
+# objekt day-1 product list: reconciliation and recommendation (8 Nov 2026, updated 9, 11, 12, 13, 14, 15, 16 and 17 Nov)
 
 Prepared by the daily "Content and product list" session. **A recommendation; Sabry decides.** Working titles are the OBJ code until Sabry names a product. Since 11 Nov the live products carry the store titles Sabry put on them (the store notes call SPAN and INGOT approved, the others suggestions not yet trademark-checked).
+
+## Tue 17 Nov 2026: cut-off day, no answer, so day 1 = the 10 live
+
+Re-checked today (read only): store **62 products, 10 active**, newest edit still INGOT 12 Nov 11:29 UTC; sheet last edited 12 Nov 10:59 UTC, book 11 Nov 23:08 UTC; no new commit on the product branch since 16 Nov 10:22 UTC; no freeze-list answer in STATUS.md. Image credits still 0 (images session, 16 Nov).
+
+**Recommended final day-1 list (Sabry decides):** the 10 live products, unchanged. No candidate has a name, price and approved image, and none can get an approved render before Thu 19 Nov without credits.
+
+| Group | Products | Call (rec.) | Reason |
+|---|---|---|---|
+| Day 1 | The 10 live (SLAB, TORSO, BLOK, SPAN, INGOT, OCTA, CAIRN, PYRA, ARRIS, OBJ-099) | In | Already live. ARRIS still has no drawing, size or lead time (separate STATUS line). |
+| First drop after launch | OBJ-173, OBJ-075 | Out of day 1, first drop | Drawings approved; the only planters. Need name, price, hero. |
+| Later drops | OBJ-149, 132, 002, 038, 152, 194, 115 | Out of day 1 | Missing name, price and approved hero; 115 also lacks an approved drawing. |
+| After launch, no date | OBJ-164, 159, 168, 193, branch 191/192/196 | Out | Drawing reopened, no maker, draft only, or number clash. |
+| Off plan | 14 store drafts (035, 039, 052, 074, 086, 090, 093, 107, 112, 141, 146, 150, 170, 174) | Out, stay draft | Not on the plan. |
+
+Exception: if Sabry sends name, price and says "use the drawing image" for 173 or 075 by Wed 18 Nov, the catalogue session can still build them as drafts for the Thu 19 Nov approval.
 
 ## Mon 16 Nov 2026: candidate drawings mostly settled; new decisions sit on an unmerged branch
 

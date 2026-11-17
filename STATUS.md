@@ -6,7 +6,7 @@ Three daily sessions work on this repo, one section each. Each session updates *
 
 ## Decisions needed from Sabry
 <!-- one line each: [workstream] question · options · recommendation. Remove when answered. -->
-- [content] Freeze list (cut-off **Tue 17 Nov**, else launch with the 10 live): 10 live + candidates 173, 075 (drawings approved, the only planters), then 149, 132, 002, 038, 152, 194, 115; each needs name, price and an approved image. 164, 159, 168, 193 after launch. Table: `plan/day1-product-list.md` (16 Nov) · yes / edit · rec: yes, names and prices for 173 and 075 first.
+- [content] **Day-1 list, cut-off passed 17 Nov with no answer:** launch with the 10 live; 173 and 075 first drop after launch, the rest later (table 17 Nov in `plan/day1-product-list.md`) · yes / add 173 and 075 if you send name and price by Wed 18 Nov · rec: yes, 10 live.
 - [content] ARRIS (172) is live with no drawing, size or lead time; PYRA (169) shows 3–5 days and "approximate" sizes with no recorded source · ask Polycraft today / put ARRIS back to draft until sized · rec: ask Polycraft today; draft ARRIS if no size by Tue 17 Nov.
 - [content] Branch `claude/zen-newton-irxvlr` holds the 11–12 Nov records for 020, 166, 167, 194, 197, 198 (not on main) · merge / leave · rec: merge once the repo is private.
 - [content] OBJ-148 reference is a named third-party product (159 is now your own redesign, rev 9 approved) · redesign / drop · rec: drop for day 1.
@@ -42,6 +42,13 @@ Three daily sessions work on this repo, one section each. Each session updates *
 
 ## Content and product list
 
+### Tue 17 Nov 2026
+- Checked (read only): store 62 products, 10 active, nothing edited since 12 Nov 11:29 UTC; sheet (12 Nov) and book (11 Nov) unchanged; no new commit on the product branch since 16 Nov. No content line answered, no copy approval, so no copy drafted.
+- Cut-off day with no answer: wrote the final recommendation in `plan/day1-product-list.md` (17 Nov): day 1 = the 10 live; 173 and 075 first drop; all other candidates later. Replaced my freeze-list decision line with that call.
+- CONTENT_TO_SUPPLY not changed: nothing new to pre-fill.
+- Not done: no store, sheet, book or Drive writes.
+- Next: on your yes, mark the list final; prepare 173 and 075 rows (from the approved drawings) for the first drop.
+
 ### Mon 16 Nov 2026
 - Checked (read only): store 62 products, 10 active, nothing edited since 12 Nov 11:29 UTC; sheet (12 Nov) and book (11 Nov) unchanged. No content line answered, no copy approval, so no copy drafted.
 - Found on the unmerged branch `claude/festive-bardeen-djigox`: drawings approved for 173 (12 Nov), 075 (15 Nov, your sizes), 132 (12 Nov), 159 rev 9 (15 Nov, own redesign), 193 (12 Nov); 164 reopened (rev 1 draft); 149 rev 0 stands. Added a 16 Nov table to `plan/day1-product-list.md`; removed my OBJ-149 line, narrowed the 148/159 line, added an OBJ number clash line (191, 192, 196).
@@ -54,13 +61,6 @@ Three daily sessions work on this repo, one section each. Each session updates *
 - Added a 15 Nov note to `plan/day1-product-list.md` (no change). CONTENT_TO_SUPPLY unchanged: nothing new to pre-fill.
 - Not done: no store, sheet, book or Drive writes.
 - Next: Tue 17 Nov cut-off: mark each candidate in or after-launch; fill 3e and 3f as answers arrive.
-
-### Sat 14 Nov 2026
-- Checked (read only): store 62 products, 10 active, nothing edited since 12 Nov 11:29 UTC; sheet (12 Nov) and book (11 Nov) unchanged by last-edit date. No content decision answered, no copy approval, so no copy drafted.
-- Removed my decision line on the 4 tables in no collection: they are in Furniture since 13 Nov (catalogue session).
-- Added a 14 Nov note to `plan/day1-product-list.md` (no change; store count corrected to 62; fallback if nothing by Tue 17 Nov is launch with the 10 live).
-- Not done: no store, sheet, book or Drive writes.
-- Next: fill CONTENT_TO_SUPPLY 3e and 3f as answers arrive; on Tue 17 Nov mark each candidate in or after-launch.
 
 ## Product images
 
