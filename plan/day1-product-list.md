@@ -1,6 +1,14 @@
-# objekt day-1 product list: reconciliation and recommendation (8 Nov 2026, updated 9, 11, 12, 13, 14, 15, 16 and 17 Nov)
+# objekt day-1 product list: reconciliation and recommendation (8 Nov 2026, updated 9, 11, 12, 13, 14, 15, 16, 17 and 18 Nov)
 
 Prepared by the daily "Content and product list" session. **A recommendation; Sabry decides.** Working titles are the OBJ code until Sabry names a product. Since 11 Nov the live products carry the store titles Sabry put on them (the store notes call SPAN and INGOT approved, the others suggestions not yet trademark-checked).
+
+## Wed 18 Nov 2026: last day for 173 / 075, no answer; list unchanged
+
+Re-checked today (read only): store **62 products, 10 active**, newest edit still INGOT 12 Nov 11:29 UTC; sheet last edited 12 Nov 10:59 UTC, book 11 Nov 23:08 UTC; no Sabry answer in STATUS.md.
+
+Only change found: the product branch `claude/festive-bardeen-djigox` (commit fb00314, 17 Nov 19:55 UTC) records **OBJ-164 rev 1 approved by Sabry 16 Nov** (wedge, 250 × 250 × 252, 2 mm brushed, Production review pending). It still has no name, price or approved render, so it stays **after launch**.
+
+**Recommended final day-1 list (Sabry decides): the 10 live, as in the 17 Nov table below.** Today was the last day for 173 or 075 to join (name, price, "use the drawing image"); unless that arrives before the Thu 19 Nov approval, both go to the first drop after launch.
 
 ## Tue 17 Nov 2026: cut-off day, no answer, so day 1 = the 10 live
 
