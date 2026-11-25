@@ -1,6 +1,6 @@
 # OBJ-075 listing: price, name, description (proposal, 25 Nov 2026)
 
-**Proposal, not costed, Production to confirm. Nothing below is written to Shopify.** Lead time 30 days was given by Sabry (25 Nov) and is set on all three draft variants.
+**Proposal, not costed, Production to confirm. Nothing below is written to Shopify.** Lead time was given by Sabry on 25 Nov: first 30 days, then changed to **30 to 45 days**; set on all three variants. Sabry approved this proposal ('agreed') and said 'go live' the same day; the product is live.
 
 ## Prices (EGP, incl. VAT as the store shows them)
 
@@ -37,8 +37,8 @@ Not near-twins of the live names (BLOK, TORSO, PYRA, ARRIS, ROTA, SLAB, CAIRN, O
 
 Short: A plain round planter in brushed stainless steel. Three sizes, one shape.
 
-Long (EN): DRUM is a plain steel cylinder. It has no ornament and no mark. A low foot ring lifts it off the floor. It is rolled from 2 mm 304 stainless steel, welded once and brushed. Drain holes in the base let water out. It takes a standard nursery pot: about 15 L in S, 30 L in M and 50 L in L. Plant and pot are not included. Made to order, 30 days.
+Long (EN): DRUM is a plain steel cylinder. It has no ornament and no mark. A low foot ring lifts it off the floor. It is rolled from 2 mm 304 stainless steel, welded once and brushed. Drain holes in the base let water out. It takes a standard nursery pot: about 15 L in S, 30 L in M and 50 L in L. Plant and pot are not included. Made to order, 30 to 45 days.
 
-Long (AR, draft): درام أصيص أسطواني بسيط من الستانلس ستيل المصقول بالفرشاة. بلا زخارف ولا علامات. حلقة قاعدة منخفضة ترفعه عن الأرض. مصنوع من ستانلس ستيل 304 بسماكة 2 مم، بلحام واحد. ثقوب تصريف في القاعدة. يناسب أصيص زراعة قياسي: حوالي 15 لتر في المقاس S و30 لتر في M و50 لتر في L. النبات والأصيص الداخلي غير مرفقين. يُصنع عند الطلب خلال 30 يوماً.
+Long (AR, draft): درام أصيص أسطواني بسيط من الستانلس ستيل المصقول بالفرشاة. بلا زخارف ولا علامات. حلقة قاعدة منخفضة ترفعه عن الأرض. مصنوع من ستانلس ستيل 304 بسماكة 2 مم، بلحام واحد. ثقوب تصريف في القاعدة. يناسب أصيص زراعة قياسي: حوالي 15 لتر في المقاس S و30 لتر في M و50 لتر في L. النبات والأصيص الداخلي غير مرفقين. يُصنع عند الطلب خلال 30 إلى 45 يوماً.
 
 Facts used: sizes (Sabry), 304 and 2 mm, one weld, foot ring and drain holes (drawing rev 3, Production to confirm), liner sizes from public nursery pages (plan/OBJ-075-sizes-note.md), lead time (Sabry).
