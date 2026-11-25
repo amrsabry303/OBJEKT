@@ -1,4 +1,4 @@
-"""OBJ-201: plant stand, flat round base disc, two vertical plates, round top disc, shelf disc. Production drawing set, REV 2 (DRAFT: same geometry as approved rev 1, more views, separated sheets).
+"""OBJ-201: plant stand, flat round base disc, two vertical plates, round top disc, shelf disc. Production drawing set, REV 2 (approved by Sabry 25 Nov 2026: same geometry as rev 1, more views, separated sheets).
 Run: python3 make_obj201_rev2.py <repo root>   Then: NODE_PATH=<playwright> node make_pdf.js <dir> OBJ-201 1
 Reference: images/OBJ-201.jpg (stainless) plus a second angle Sabry sent in the session (blue, not stored in the repo). Third-party, maker unknown; drawn as objekt's own design.
 READING OF THE REFERENCE (inferred, to confirm): the two plates are parallel with a narrow gap, OFFSET from the disc centre (photo 2: gap about 0.26 D off centre).
@@ -60,7 +60,7 @@ def datauri(path, w=360):
 
 
 
-STAMP = 'DRAFT rev 2, not approved, not engineered'; STAMP_AR = 'مسودة المراجعة ٢، غير معتمدة، غير مهندسة'
+STAMP = 'Approved by Sabry 25 Nov 2026. Production review pending. Not engineered'; STAMP_AR = 'معتمد من سبري ٢٥ نوفمبر ٢٠٢٦، بانتظار مراجعة التصنيع، غير مهندس'
 def frame(n, N, title_en, title_ar, scale):
     s = rect(5, 5, 410, 287, .5) + rect(7, 7, 406, 283, .2)
     X, Y, Wd = 228, 247, 185
@@ -206,8 +206,8 @@ for i_, (a_, b_) in enumerate(rows):
     yy = dy0 + 5.2 + i_*4.3
     b += line(dx0, yy+1.4, 205, yy+1.4, .1, HID) + t(dx0, yy, a_, 2.0) + t(dx0+80, yy, b_, 2.0, 600)
 b += f'<image href="{datauri(PHOTO, 300)}" x="14" y="262" width="17" height="22.7" preserveAspectRatio="xMidYMid slice"/>' + rect(14, 262, 17, 22.7, .2, HID)
-b += t(35, 266, 'Reference photo (third-party, maker unknown). Drawn as objekt\'s own design.', 1.9, 400, fill=HID) + t(35, 270, 'REV 2 is a DRAFT: same geometry as approved rev 1; only the views and the sheet layout changed.', 1.9, 400, fill=HID)
-b += t(35, 274, 'Finish: brushed stainless, no paint. All sizes are a proposal, not costed, Production to confirm.', 1.9, 400, fill=HID) + t(35, 278, 'المراجعة ٢ مسودة. الهندسة كما في المراجعة ١ المعتمدة؛ تغيرت المناظير وتوزيع الأوراق فقط.', 1.9, 400, fill=HID)
+b += t(35, 266, 'Reference photo (third-party, maker unknown). Drawn as objekt\'s own design.', 1.9, 400, fill=HID) + t(35, 270, 'REV 2 (approved 25 Nov) replaces rev 1: same geometry, more views and a separated sheet layout.', 1.9, 400, fill=HID)
+b += t(35, 274, 'Finish: brushed stainless, no paint. All sizes are a proposal, not costed, Production to confirm.', 1.9, 400, fill=HID) + t(35, 278, 'المراجعة ٢ (معتمدة ٢٥ نوفمبر) تحل محل المراجعة ١: نفس الهندسة مع مناظير أكثر.', 1.9, 400, fill=HID)
 sh1 = sheet(1, N, 'OVERVIEW', 'نظرة عامة', 'n/a', b)
 # ================= SHEET 2: front and side =================
 S2 = .42; b = ''
@@ -464,7 +464,7 @@ for i, (n_, en, ar, q, m_) in enumerate(bom):
     yy = 44 + i*7
     b += line(10, yy+2.2, 410, yy+2.2, .15, HID) + t(12, yy, n_, 2.4) + t(24, yy, en, 2.4) + t(140, yy, ar, 2.4, 400, 'end', extra=AR) + t(150, yy, q, 2.4) + t(215, yy, m_, 2.4)
 b += t(10, 70, 'NOTES', 2.8, 600) + t(410, 70, 'ملاحظات', 2.8, 600, 'end', extra=AR)
-nts = [('REV 2 is a DRAFT: same geometry as the approved rev 1, with more views and separated sheets. It needs Sabry\'s approval before it replaces rev 1.', 'المراجعة ٢ مسودة بنفس هندسة المراجعة ١ المعتمدة، وتحتاج موافقة سبري.'),
+nts = [('REV 2, approved by Sabry 25 Nov 2026, replaces rev 1: same geometry, with more views and separated sheets. Production review pending.', 'المراجعة ٢ معتمدة من سبري ٢٥ نوفمبر وتحل محل المراجعة ١.'),
        ('Reference: third-party photos (maker unknown). Drawn as objekt\'s own design. Layout (Sabry, 12 Nov): gap in the centre, two mirrored halves; rev 0 had off-centre plates and is superseded.', 'المرجع صور لصانع مجهول. التصميم: فتحة في المنتصف ونصفان متماثلان (سبري).'),
        (f'Pot (not ours): 4 L class, rim {POT_RIM}, base {POT_BASE}, height {POT_H} (size-charts.com 4 L pot: 20 cm rim, 15.5 cm base, 16.5 cm high). Hole Ø{2*RH}; the pot passes both plate windows and stands on the two shelf flanges (Ø{2*RS}). 19 to 22 cm rims: Production to confirm the hole.', 'الأصيص ليس من منتجنا. الفتحة ٢٠٤ مم. جناحا الرف قطرهما ١٧٦ مم.'),
        ('Disc, height, 2 mm sheet, gap 22, shelf height 280 and all sizes are a PROPOSAL, not costed, Production to confirm.', 'كل المقاسات مقترحة ويؤكدها التصنيع.'),
