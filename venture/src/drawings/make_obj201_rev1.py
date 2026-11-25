@@ -1,6 +1,6 @@
-"""OBJ-196: plant stand, flat round base disc, two vertical plates, round top disc, shelf disc. Production drawing set, REV 1 (approved by Sabry 12 Nov 2026).
-Run: python3 make_obj196_rev1.py <repo root>   Then: NODE_PATH=<playwright> node make_pdf.js <dir> OBJ-196 1
-Reference: images/OBJ-196.jpg (stainless) plus a second angle Sabry sent in the session (blue, not stored in the repo). Third-party, maker unknown; drawn as objekt's own design.
+"""OBJ-201: plant stand, flat round base disc, two vertical plates, round top disc, shelf disc. Production drawing set, REV 1 (approved by Sabry 12 Nov 2026).
+Run: python3 make_obj201_rev1.py <repo root>   Then: NODE_PATH=<playwright> node make_pdf.js <dir> OBJ-201 1
+Reference: images/OBJ-201.jpg (stainless) plus a second angle Sabry sent in the session (blue, not stored in the repo). Third-party, maker unknown; drawn as objekt's own design.
 READING OF THE REFERENCE (inferred, to confirm): the two plates are parallel with a narrow gap, OFFSET from the disc centre (photo 2: gap about 0.26 D off centre).
 The near plate carries the big segment of the base disc and of the top disc; the far plate the small segment. The pot stands on a shelf and goes through a round hole in the top disc.
 Every size is a PROPOSAL, not costed, Production to confirm. Pot sizes from size-charts.com 4 L pot (rim 20 cm, base 15.5 cm, height 16.5 cm). Arabic is a draft. No costs, no structural claims."""
@@ -8,9 +8,9 @@ import sys, os, math, base64, io
 from PIL import Image
 import ezdxf
 ROOT = sys.argv[1] if len(sys.argv) > 1 else '/home/user/OBJEKT'
-OUT = ROOT + '/venture/drawings/OBJ-196'; os.makedirs(OUT, exist_ok=True)
-PHOTO = ROOT + '/images/OBJ-196.jpg'
-REV = 1; DATE = '12 Nov 2026'; PN = 'OBJ-196'
+OUT = ROOT + '/venture/drawings/OBJ-201'; os.makedirs(OUT, exist_ok=True)
+PHOTO = ROOT + '/images/OBJ-201.jpg'
+REV = 1; DATE = '12 Nov 2026'; PN = 'OBJ-201'
 D, R, H, T = 300, 150, 400, 2          # disc diameter, radius, height to top face of top disc, sheet
 POT_RIM, POT_BASE, POT_H = 200, 155, 165   # reference pot (size-charts.com 4 L), NOT part of the product
 RH = 102                               # hole radius in top disc = pot rim 100 + 2 clearance
