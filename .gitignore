@@ -14,3 +14,6 @@ handover/
 *.zip
 .env*
 venture/models/
+
+# social posts: exported images stay out of git while the repo is public
+venture/social/*.png

@@ -1,0 +1,28 @@
+<!doctype html><meta charset="utf-8">
+<!-- objekt first three Instagram posts, DRAFT. Fonts: Jost + Inter (open licence) as stand-ins for Galak Round / PP Mori. FONT_DIR is injected by build.mjs; no font files in the repo. -->
+<style>
+:root{--navy:#263A5A;--sand:#E2D9CF;--white:#FCFBF9;--grey:#B4AEA7}
+*{margin:0;box-sizing:border-box}
+body{background:#888}
+.post{width:1080px;height:1350px;position:relative;overflow:hidden;font-family:Jost,sans-serif;color:var(--navy)}
+.label{position:absolute;left:90px;top:90px;font:400 26px Inter,sans-serif;letter-spacing:.12em;text-transform:uppercase}
+.h{text-transform:uppercase;font-weight:400;letter-spacing:-.01em;line-height:.98}
+.foot{position:absolute;left:90px;right:90px;bottom:90px;display:flex;justify-content:space-between;align-items:flex-end;font:400 26px Inter,sans-serif;letter-spacing:.12em;text-transform:uppercase}
+.foot img{display:block}
+#p1{background:var(--navy);color:var(--sand)}
+#p1 .sym{position:absolute;left:50%;top:44%;width:560px;transform:translate(-50%,-50%)}
+#p1 .h{position:absolute;left:0;right:0;bottom:150px;text-align:center;font-size:54px;letter-spacing:.14em}
+#p2{background:var(--sand)}
+#p2 .h{position:absolute;left:90px;right:90px;bottom:250px;font-size:150px;font-weight:300}
+#p3{background:var(--white)}
+#p3 ul{position:absolute;left:90px;right:90px;top:230px;list-style:none;padding:0;border-top:1px solid var(--grey)}
+#p3 li{display:flex;align-items:baseline;gap:40px;height:190px;border-bottom:1px solid var(--grey);padding-top:34px}
+#p3 li span{font:400 26px Inter,sans-serif;letter-spacing:.12em;width:60px}
+#p3 li b{font-size:96px;font-weight:300;text-transform:uppercase;letter-spacing:-.01em;line-height:1}
+</style>
+<div class="post" id="p1"><img class="sym" src="SYM_SAND"><div class="h">Design worth noticing.</div></div>
+<div class="post" id="p2"><div class="label">01 // position</div><div class="h">Between function and expression.</div>
+<div class="foot"><span></span><img src="LOGO_NAVY" width="150"></div></div>
+<div class="post" id="p3"><div class="label">02 // range</div>
+<ul><li><span>01</span><b>Furniture</b></li><li><span>02</span><b>Table &amp; Living</b></li><li><span>03</span><b>Objekts</b></li><li><span>04</span><b>Planters</b></li></ul>
+<div class="foot"><img src="LOGO_NAVY" width="150"><span style="text-transform:none;letter-spacing:.06em">objekt-eg.com</span></div></div>
