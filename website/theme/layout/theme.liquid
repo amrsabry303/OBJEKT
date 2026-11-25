@@ -18,7 +18,7 @@
   {{ 'base.css' | asset_url | stylesheet_tag }}
   {{ content_for_header }}
 </head>
-<body>
+<body class="pg-{{ request.page_type }}">
   <a class="skip" href="#main">{{ 'general.skip_to_content' | t }}</a>
   {% sections 'header-group' %}
   <main id="main" tabindex="-1">{{ content_for_layout }}</main>

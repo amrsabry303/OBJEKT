@@ -10,7 +10,7 @@ Each piece is presented as a gallery plate: a flat field, one object, a hairline
 |---|---|---|
 | navy | `#263A5A` | brand exact — type, nav, key UI, one or two full-bleed sections |
 | sand | `#E2D9CF` | brand exact — editorial sections, footer, image fields |
-| paper (page ground) | `#E2D9CF` | default page; since D-026 the same as sand, per Brand Guidelines V1 |
+| paper (page ground) | `#E2D9CF` | default page; since D-026 the same as sand, per Brand Guidelines V1. On product, collection, cart and search pages (D-027) `--paper` is the white token `#FCFBF9` |
 | white | `#FCFBF9` | alternate image field, cards |
 | ink | `#263A5A` | body text (navy, per the guidelines) |
 | grey | `#B4AEA7` | hairlines and decoration only (2.02:1 on paper; never text) |
