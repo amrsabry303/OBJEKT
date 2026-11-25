@@ -144,7 +144,7 @@ These are the 49 items flagged Launch in the workspace, sorted into the four cat
 | OBJ-069 | Floor Planters | Planters | (name to come) |  |
 | OBJ-072 | Floor Planters | Planters | (name to come) |  |
 | OBJ-074 | Floor Planters | Planters | (name to come) |  |
-| OBJ-075 | Floor Planters | Planters | (name to come; one product, three size variants S / M / L) |  |
+| OBJ-075 | Floor Planters | Planters | DRUM Floor Planter (approved by Sabry 25 Nov 2026; one product, three size variants S / M / L; not trademark-cleared) | أصيص أرضي درام |
 | OBJ-080 | Planter Screens | Planters | (name to come) |  |
 | OBJ-085 | Tabletop Planters | Planters | (name to come) |  |
 | OBJ-086 | Tabletop Planters | Planters | (name to come) |  |
